@@ -1,0 +1,43 @@
+#defaultlanguage:vhdl
+#OPTIONS:"|-layerid|0|-orig_srs|Z:\\windows\\LVR_firmware\\synthesis\\synwork\\TOP_LVR_GEN3_CNTL_comp.srs|-top|work.TOP_LVR_GEN3_CNTL|-prodtype|synplify_pro|-nram|-fixsmult|-divnmod|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-vhdl2008|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work|-lib|work"
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\bin64\\c_vhdl.exe":1509044428
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\location.map":1509050436
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\std.vhd":1509043928
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd\\snps_haps_pkg.vhd":1509043928
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\std1164.vhd":1509043928
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\std_textio.vhd":1509043928
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\numeric.vhd":1509044246
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd\\umr_capim.vhd":1509043928
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\arith.vhd":1509043928
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\unsigned.vhd":1509043928
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd\\hyperents.vhd":1509043928
+#CUR:"Z:\\windows\\LVR_firmware\\hdl\\IIR_FILT.vhd":1554892602
+#CUR:"Z:\\windows\\LVR_firmware\\hdl\\MAIN_SEQUENCER_NEW.vhd":1554892678
+#CUR:"Z:\\windows\\LVR_firmware\\hdl\\Slow_PulseEn_Gen.vhd":1554892690
+#CUR:"Z:\\windows\\LVR_firmware\\hdl\\TOP_LVR_GEN3_Cntl.vhd":1554974394
+0 "Z:\windows\LVR_firmware\hdl\IIR_FILT.vhd" vhdl
+1 "Z:\windows\LVR_firmware\hdl\MAIN_SEQUENCER_NEW.vhd" vhdl
+2 "Z:\windows\LVR_firmware\hdl\Slow_PulseEn_Gen.vhd" vhdl
+3 "Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd" vhdl
+
+# Dependency Lists (Uses list)
+0 -1
+1 -1
+2 -1
+3 1 2 0 
+
+# Dependency Lists (Users Of)
+0 3 
+1 3 
+2 3 
+3 -1
+
+# Design Unit to File Association
+arch work iir_filt rtl 0
+module work iir_filt 0
+arch work main_sequencer_new rtl 1
+module work main_sequencer_new 1
+arch work slow_pulse_en_gen rtl 2
+module work slow_pulse_en_gen 2
+arch work top_lvr_gen3_cntl rtl 3
+module work top_lvr_gen3_cntl 3

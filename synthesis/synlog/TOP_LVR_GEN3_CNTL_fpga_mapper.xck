@@ -1,0 +1,2 @@
+CKID0001:@|S:BUF5M_J11_15_TCONN_inferred_clock@|E:VAL_MAN_EN_CH_4TO1_tmr2@|F:@syn_sample_clock_path==CKID0001@|M:ClockId0001 
+CKID0002:@|S:CLK40M_OSC@|E:CLK_5M_GL@|F:@syn_sample_clock_path==CKID0002@|M:ClockId0002 

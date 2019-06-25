@@ -1,0 +1,63 @@
+*****************************************************************
+Pin Report - Date: Tue Jun 25 08:41:02 2019 UNCOMPLETED LAYOUT
+Product: Designer
+Release: v11.9 SP2
+Version: 11.9.2.1
+Design Name: TOP_LVR_GEN3_CNTL
+Family: ProASIC3
+Die: A3PN250
+Package: 100 VQFP
+*****************************************************************
+Port                |Pin |Fixed |Function      |I/O Std  |Output Drive (mA) |Slew |Resistor Pull |Output Load (pF) |Use I/O Reg |Hot Swappable |Schmitt Trigger |
+--------------------|----|------|--------------|---------|------------------|-----|--------------|-----------------|------------|--------------|----------------|
+BUF5M_J11_15_TCONN   35   Yes    IO41RSB2       LVCMOS15  2                  High  None           35                No           No             ---
+CH1_2_MS_CFG_EN      21   Yes    GEC0/IO53RSB3  LVCMOS15  ---                ---   None           ---               No           No             Yes
+CH3_4_MS_CFG_EN      20   Yes    GEC1/IO54RSB3  LVCMOS15  ---                ---   None           ---               No           No             Yes
+CH5_6_MS_CFG_EN      19   Yes    GFC2/IO55RSB3  LVCMOS15  ---                ---   None           ---               No           No             Yes
+CH7_8_MS_CFG_EN      16   Yes    GFA2/IO56RSB3  LVCMOS15  ---                ---   None           ---               No           No             Yes
+CLK40M_OSC           57   Yes    GDA1/IO33RSB1  LVCMOS33  ---                ---   None           ---               No           No             No
+FPGA_FUSE_1_2_OK[0]  42   Yes    IO37RSB2       LVCMOS15  ---                ---   None           ---               No           No             Yes
+FPGA_FUSE_3_4_OK[0]  41   Yes    IO38RSB2       LVCMOS15  ---                ---   None           ---               No           No             Yes
+FPGA_FUSE_5_6_OK[0]  40   Yes    IO39RSB2       LVCMOS15  ---                ---   None           ---               No           No             Yes
+FPGA_FUSE_7_8_OK[0]  36   Yes    IO40RSB2       LVCMOS15  ---                ---   None           ---               No           No             Yes
+J11_17_TCONN         32   Yes    IO44RSB2       LVCMOS15  2                  High  None           35                No           No             ---
+J11_19_TCONN         8    Yes    IO61RSB3       LVCMOS15  2                  High  None           35                No           No             ---
+J11_21_TCONN         7    Yes    IO62RSB3       LVCMOS15  2                  High  None           35                No           No             ---
+J11_23_TCONN         5    Yes    IO64RSB3       LVCMOS15  2                  High  None           35                No           No             ---
+MAN_EN_CH_4TO1       15   Yes    GFA1/IO58RSB3  LVCMOS15  ---                ---   None           ---               No           No             Yes
+MAN_EN_CH_8TO5       13   Yes    GFA0/IO57RSB3  LVCMOS15  ---                ---   None           ---               No           No             Yes
+MODE_DCYC_NORMB      31   Yes    IO45RSB2       LVCMOS15  ---                ---   None           ---               No           No             Yes
+P_CH_IAUX_EN[0]      90   Yes    IO08RSB0       LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_IAUX_EN[1]      84   Yes    IO11RSB0       LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_IAUX_EN[2]      82   Yes    IO13RSB0       LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_IAUX_EN[3]      79   Yes    GBB0/IO16RSB0  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_IAUX_EN[4]      73   Yes    GBA2/IO20RSB1  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_IAUX_EN[5]      70   Yes    GBC2/IO23RSB1  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_IAUX_EN[6]      64   Yes    GCC0/IO26RSB1  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_IAUX_EN[7]      61   Yes    GCB2/IO29RSB1  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_MREG_EN[0]      86   Yes    IO09RSB0       LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_MREG_EN[1]      92   Yes    IO06RSB0       LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_MREG_EN[2]      83   Yes    IO12RSB0       LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_MREG_EN[3]      80   Yes    GBC1/IO15RSB0  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_MREG_EN[4]      76   Yes    GBA1/IO19RSB0  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_MREG_EN[5]      71   Yes    GBB2/IO22RSB1  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_MREG_EN[6]      65   Yes    GCC1/IO25RSB1  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_MREG_EN[7]      62   Yes    GCA1/IO27RSB1  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_VOSG_EN[0]      91   Yes    IO07RSB0       LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_VOSG_EN[1]      85   Yes    IO10RSB0       LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_VOSG_EN[2]      81   Yes    GBC0/IO14RSB0  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_VOSG_EN[3]      78   Yes    GBB1/IO17RSB0  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_VOSG_EN[4]      72   Yes    IO21RSB1       LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_VOSG_EN[5]      69   Yes    IO24RSB1       LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_VOSG_EN[6]      63   Yes    GCA0/IO28RSB1  LVCMOS33  8                  High  None           35                No           No             ---
+P_CH_VOSG_EN[7]      60   Yes    IO30RSB1       LVCMOS33  8                  High  None           35                No           No             ---
+POR_FPGA             93   Yes    GAC1/IO05RSB0  LVCMOS33  ---                ---   None           ---               No           No             Yes
+POR_OUT_TO_SCA       6    Yes    GAC2/IO63RSB3  LVCMOS15  2                  High  None           35                No           No             ---
+PRI_RX_EN_BAR        96   Yes    GAB0/IO02RSB0  LVCMOS33  8                  High  None           35                No           No             ---
+PRI_TX_EN            94   Yes    GAC0/IO04RSB0  LVCMOS33  8                  High  None           35                No           No             ---
+PWR_OK_LED           95   Yes    GAB1/IO03RSB0  LVCMOS33  8                  High  None           35                No           No             ---
+SCA_DAT_IN           3    Yes    IO66RSB3       LVCMOS15  2                  High  None           35                No           No             ---
+STATUS_LED           77   Yes    GBA0/IO18RSB0  LVCMOS33  8                  High  None           35                No           No             ---
+STDBY_OFFB           10   Yes    GFB1/IO60RSB3  LVCMOS15  ---                ---   None           ---               No           No             Yes
+TEMP_OK[0]           43   Yes    GDC2/IO36RSB2  LVCMOS15  ---                ---   None           ---               No           No             Yes
+TX_FPGA              98   Yes    GAA0/IO00RSB0  LVCMOS33  8                  High  None           35                No           No             ---

@@ -1,0 +1,44 @@
+FlashPro
+Version: 11.9.2.1
+Release: v11.9 SP2
+
+Software Version: 11.9.2.1
+STAPL file 'C:\Users\TomO_Laptop\Box
+Sync\Shared_Design_Files\LVR\Gen3\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\designer\impl1\TOP_L\
+VR_GEN3_CNTL_WFS1.stp' has been loaded successfully.
+DESIGN : TOP_LVR_GEN3_CNTL;  CHECKSUM : 31A3;  ALG_VERSION : 20
+Warning: The programmer with id '81337' in the project file cannot be detected and connected.
+Opened 'C:\Users\TomO_Laptop\Box
+Sync\Shared_Design_Files\LVR\Gen3\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\designer\impl1\TOP_L\
+VR_GEN3_CNTL_fp\TOP_LVR_GEN3_CNTL.pro'
+STAPL file 'C:\Users\TomO_Laptop\Box
+Sync\Shared_Design_Files\LVR\Gen3\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\designer\impl1\TOP_L\
+VR_GEN3_CNTL_wfs_SPins.stp' has been loaded successfully.
+DESIGN : TOP_LVR_GEN3_CNTL;  CHECKSUM : AE47;  ALG_VERSION : 20
+Error: No programmers found. Please check the programmer connection to the computer and ensure
+       the drivers are properly installed.
+Error: Failed to run Action.
+Rescanning for Programmers...
+Driver : 3.0.0 build 1
+programmer '81337' : FlashPro4
+Rescanning for Programmers DONE.
+programmer '81337' : Scan Chain...
+Warning: programmer '81337' : Vpump has been selected on programmer AND an externally provided
+         Vpump has also been detected. Using externally provided Vpump voltage source.
+programmer '81337' : Scan Chain PASSED.
+programmer '81337' : Executing action PROGRAM
+programmer '81337' : EXPORT FSN[48] = 01664828cc31
+programmer '81337' : Erase ...
+programmer '81337' : Completed erase
+programmer '81337' : EXPORT CHECKSUM[16] = ae47
+programmer '81337' : Programming FPGA Array
+programmer '81337' : Verifying FPGA Array
+programmer '81337' :         Verifying FPGA Array -- pass
+programmer '81337' : Finished: Fri Apr 12 14:46:46 2019 (Elapsed time 00:00:29)
+programmer '81337' : Executing action PROGRAM PASSED.
+
+                        o - o - o - o - o - o
+
+Warning: Project 'TOP_LVR_GEN3_CNTL' has been modified. Do you want to save it? [YES]
+Project saved.
+Project closed.

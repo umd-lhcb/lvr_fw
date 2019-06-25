@@ -1,0 +1,81 @@
+----------------------------------------------------------------------
+Report for cell TOP_LVR_GEN3_CNTL.rtl
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AX1C         1       1.0        1.0
+                               AX1D         1       1.0        1.0
+                             CLKINT         2       0.0        0.0
+                             DFN1C0        10       1.0       10.0
+                           DFN1E0C0         3       1.0        3.0
+                           DFN1E0P0         3       1.0        3.0
+                           DFN1E1C0         6       1.0        6.0
+                                GND         1       0.0        0.0
+                              INBUF        10       0.0        0.0
+                                INV         1       1.0        1.0
+                 MAIN_SEQUENCER_NEW         1     203.0      203.0
+                               NOR2         3       1.0        3.0
+                              NOR2A         1       1.0        1.0
+                              NOR3C         2       1.0        2.0
+                                OR2         2       1.0        2.0
+                               OR2A         2       1.0        2.0
+                                OR3         1       1.0        1.0
+                             OUTBUF        36       0.0        0.0
+                  SLOW_PULSE_EN_GEN         1      26.0       26.0
+                                VCC         1       0.0        0.0
+                              XNOR2         1       1.0        1.0
+                               XO1A         1       1.0        1.0
+                               XOR2         3       1.0        3.0
+                            
+                         TOTAL             93                270.0
+----------------------------------------------------------------------
+Report for cell SLOW_PULSE_EN_GEN.netlist
+     Instance path:  TX_PROMPT
+                                          Cell usage:
+                               cell       count     area    count*area
+                                AO1         1       1.0        1.0
+                               AO1A         1       1.0        1.0
+                             DFN1C0         7       1.0        7.0
+                                GND         1       0.0        0.0
+                               MX2A         1       1.0        1.0
+                               NOR2         3       1.0        3.0
+                              NOR2A         3       1.0        3.0
+                              NOR2B         1       1.0        1.0
+                               OA1B         1       1.0        1.0
+                               OR2A         3       1.0        3.0
+                               OR2B         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                                XA1         1       1.0        1.0
+                               XA1A         2       1.0        2.0
+                            
+                         TOTAL             28                 26.0
+----------------------------------------------------------------------
+Report for cell MAIN_SEQUENCER_NEW.netlist
+     Instance path:  CONTROL
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2        22       1.0       22.0
+                                AO1        28       1.0       28.0
+                               AO1A         2       1.0        2.0
+                              AOI1B        10       1.0       10.0
+                               AX1A         4       1.0        4.0
+                             CLKINT         4       0.0        0.0
+                             DFN1C0        21       1.0       21.0
+                           DFN1E1C0        10       1.0       10.0
+                             DFN1P0         7       1.0        7.0
+                                GND         1       0.0        0.0
+                               MX2A         8       1.0        8.0
+                               NOR2        12       1.0       12.0
+                              NOR2A         7       1.0        7.0
+                              NOR2B         2       1.0        2.0
+                               NOR3         4       1.0        4.0
+                              NOR3A         7       1.0        7.0
+                              NOR3B         5       1.0        5.0
+                              NOR3C         3       1.0        3.0
+                               OA1B         1       1.0        1.0
+                                OR2         3       1.0        3.0
+                               OR2A         4       1.0        4.0
+                                OR3         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                               XOR2        42       1.0       42.0
+                            
+                         TOTAL            209                203.0

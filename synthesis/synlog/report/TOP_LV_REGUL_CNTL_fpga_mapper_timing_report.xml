@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- *************************************************************************************
+FILE DESCRIPTION
+Max Top 5 critical clocks will be reported. For rest user needs to refer to Detailed report
+*******************************************************************************************-->
+<report_table display_priority="2" name="Timing Summary">
+<report_link name="Detailed report">
+<data>C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\synlog\TOP_LV_REGUL_CNTL_fpga_mapper.srr</data>
+<title>START OF TIMING REPORT</title>
+</report_link>
+<row>
+<data tcl_name="clock_name">Clock Name</data>
+<data tcl_name="req_freq">Req Freq</data>
+<data tcl_name="est_freq">Est Freq</data>
+<data tcl_name="slack">Slack</data>
+</row>
+<row>
+<data>ext_clk40mhz</data>
+<data>50.0 MHz</data>
+<data>167.3 MHz</data>
+<data>14.022</data>
+</row>
+<row>
+<data>int_clk5mhz</data>
+<data>6.3 MHz</data>
+<data>40.1 MHz</data>
+<data>76.596</data>
+</row>
+</report_table>

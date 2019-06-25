@@ -1,0 +1,45 @@
+Target Part: A3PN250_VQFP100_STD
+Report for cell OVT_FAILSAFE.rtl
+  Core Cell usage:
+              cell count     area count*area
+               AO1     1      1.0        1.0
+              AO13     1      1.0        1.0
+              AO1C     2      1.0        2.0
+              AOI1     1      1.0        1.0
+             AOI1B     1      1.0        1.0
+               GND     1      0.0        0.0
+               INV     1      1.0        1.0
+              NOR2     1      1.0        1.0
+             NOR2A     1      1.0        1.0
+             NOR2B     3      1.0        3.0
+             NOR3A     1      1.0        1.0
+             NOR3C     1      1.0        1.0
+              OA1B     1      1.0        1.0
+              OR2A     1      1.0        1.0
+               OR3     1      1.0        1.0
+               VCC     1      0.0        0.0
+              XOR3     4      1.0        4.0
+
+
+            DFN1C0     1      1.0        1.0
+          DFN1E1P0     1      1.0        1.0
+            DFN1P0     3      1.0        3.0
+                   -----          ----------
+             TOTAL    28                26.0
+
+
+  IO Cell usage:
+              cell count
+            CLKBUF     1
+             INBUF     3
+            OUTBUF     1
+                   -----
+             TOTAL     5
+
+
+Core Cells         : 26 of 6144 (0%)
+IO Cells           : 5
+
+  RAM/ROM Usage Summary
+Block Rams : 0 of 8 (0%)
+

@@ -1,0 +1,16 @@
+@N|Running in 64-bit mode
+@N|Running in 64-bit mode
+@N: CD720 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
+@N:"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\TOP_LV_REGUL_Cntl.vhd":47:7:47:23|Top entity is set to TOP_LV_REGUL_CNTL.
+@N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
+@N: CD630 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\TOP_LV_REGUL_Cntl.vhd":47:7:47:23|Synthesizing work.top_lv_regul_cntl.rtl.
+@N: CD630 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\Slow_PulseEn_Gen.vhd":35:7:35:23|Synthesizing work.slow_pulse_en_gen.rtl.
+@N: CD630 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\MAIN_SEQUENCER.vhd":43:7:43:20|Synthesizing work.main_sequencer.rtl.
+@N: CD231 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\MAIN_SEQUENCER.vhd":72:19:72:20|Using onehot encoding for type seq_sm_states. For example, enumeration init is mapped to "100000000000000".
+@N: CD630 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\SERIAL_TX.vhd":43:7:43:15|Synthesizing work.serial_tx.rtl.
+@N: CD231 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\SERIAL_TX.vhd":61:21:61:22|Using onehot encoding for type transmit_states. For example, enumeration init is mapped to "100000000000000000000000".
+@N: CD630 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\SERIAL_RX.vhd":44:7:44:15|Synthesizing work.serial_rx.rtl.
+@N: CD232 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\SERIAL_RX.vhd":64:20:64:21|Using gray code encoding for type receive_states.
+@N: CD630 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
+@N: CD233 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\IIR_FILT.vhd":58:21:58:22|Using sequential encoding for type threshold_state.
+

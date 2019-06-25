@@ -1,0 +1,16 @@
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled 
+@N: MO195 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\iir_filt.vhd":70:2:70:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for THRESH_VAL[0:2].  
+@N: MF238 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\iir_filt.vhd":102:18:102:31|Found 3-bit incrementor, 'un1_tmp_sum_in_b[3:0]'
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MO195 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\iir_filt.vhd":70:2:70:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for THRESH_VAL[0:2].  
+@N: MF238 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\iir_filt.vhd":102:18:102:31|Found 3-bit incrementor, 'un1_tmp_sum_in_b[3:0]'
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: MO225 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_rx.vhd":87:2:87:3|No possible illegal states for state machine RX_STATE[0:31],safe FSM implementation is disabled
+@N: BN362 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_rx.vhd":87:2:87:3|Removing sequential instance SER_WORD[14] of view:PrimLib.dffr(prim) in hierarchy view:work.SERIAL_RX(rtl) because there are no references to its outputs 
+@N: BN362 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_rx.vhd":87:2:87:3|Removing sequential instance SER_WORD[13] of view:PrimLib.dffr(prim) in hierarchy view:work.SERIAL_RX(rtl) because there are no references to its outputs 
+@N: BN362 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_rx.vhd":87:2:87:3|Removing sequential instance SER_WORD[12] of view:PrimLib.dffr(prim) in hierarchy view:work.SERIAL_RX(rtl) because there are no references to its outputs 
+@N: MO195 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for TX_STATE[0:23].  
+@N: MO195 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\main_sequencer.vhd":99:2:99:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for SEQUENCER_STATE[0:14].  

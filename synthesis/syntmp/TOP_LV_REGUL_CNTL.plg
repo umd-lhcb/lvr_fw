@@ -1,0 +1,20 @@
+@P:  Worst Slack : 14.022
+@P:  ext_clk40mhz - Estimated Frequency : 167.3 MHz
+@P:  ext_clk40mhz - Requested Frequency : 50.0 MHz
+@P:  ext_clk40mhz - Estimated Period : 5.978
+@P:  ext_clk40mhz - Requested Period : 20.000
+@P:  ext_clk40mhz - Slack : 14.022
+@P:  int_clk5mhz - Estimated Frequency : 40.1 MHz
+@P:  int_clk5mhz - Requested Frequency : 6.3 MHz
+@P:  int_clk5mhz - Estimated Period : 24.918
+@P:  int_clk5mhz - Requested Period : 160.000
+@P:  int_clk5mhz - Slack : 76.596
+@P:  Total Area : 2638.0
+@P:  Total Area : 161.0
+@P:  Total Area : 849.0
+@P:  Total Area : 525.0
+@P:  Total Area : 444.0
+@P:  Total Area : 129.0
+@P:  Total Area : 138.0
+@P:  Total Area : 2638.0
+@P:  CPU Time : 0h:00m:12s

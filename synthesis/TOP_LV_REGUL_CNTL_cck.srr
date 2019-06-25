@@ -1,0 +1,144 @@
+Synopsys Microsemi Technology Mapper, Version mapact, Build 1659R, Built Dec 10 2015 09:42:41
+Copyright (C) 1994-2015, Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+Product Version J-2015.03M-SP1-2
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 99MB)
+
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled 
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 100MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 100MB)
+
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 108MB peak: 109MB)
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 108MB peak: 109MB)
+
+Encoding state machine THRESH_VAL[0:2] (view:work.IIR_FILT_1(rtl))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+@N: MO195 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\iir_filt.vhd":70:2:70:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for THRESH_VAL[0:2].  
+@N: MF238 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\iir_filt.vhd":102:18:102:31|Found 3-bit incrementor, 'un1_tmp_sum_in_b[3:0]'
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+Encoding state machine THRESH_VAL[0:2] (view:work.IIR_FILT_0(rtl))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+@N: MO195 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\iir_filt.vhd":70:2:70:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for THRESH_VAL[0:2].  
+@N: MF238 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\iir_filt.vhd":102:18:102:31|Found 3-bit incrementor, 'un1_tmp_sum_in_b[3:0]'
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+Encoding state machine RX_STATE[0:31] (view:work.SERIAL_RX(rtl))
+original code -> new code
+   00000 -> 00000
+   00001 -> 00001
+   00010 -> 00011
+   00011 -> 00010
+   00100 -> 00110
+   00101 -> 00111
+   00110 -> 00101
+   00111 -> 00100
+   01000 -> 01100
+   01001 -> 01101
+   01010 -> 01111
+   01011 -> 01110
+   01100 -> 01010
+   01101 -> 01011
+   01110 -> 01001
+   01111 -> 01000
+   10000 -> 11000
+   10001 -> 11001
+   10010 -> 11011
+   10011 -> 11010
+   10100 -> 11110
+   10101 -> 11111
+   10110 -> 11101
+   10111 -> 11100
+   11000 -> 10100
+   11001 -> 10101
+   11010 -> 10111
+   11011 -> 10110
+   11100 -> 10010
+   11101 -> 10011
+   11110 -> 10001
+   11111 -> 10000
+@N: MO225 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_rx.vhd":87:2:87:3|No possible illegal states for state machine RX_STATE[0:31],safe FSM implementation is disabled
+@N: BN362 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_rx.vhd":87:2:87:3|Removing sequential instance SER_WORD[14] of view:PrimLib.dffr(prim) in hierarchy view:work.SERIAL_RX(rtl) because there are no references to its outputs 
+@N: BN362 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_rx.vhd":87:2:87:3|Removing sequential instance SER_WORD[13] of view:PrimLib.dffr(prim) in hierarchy view:work.SERIAL_RX(rtl) because there are no references to its outputs 
+@N: BN362 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_rx.vhd":87:2:87:3|Removing sequential instance SER_WORD[12] of view:PrimLib.dffr(prim) in hierarchy view:work.SERIAL_RX(rtl) because there are no references to its outputs 
+@N:"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Found counter in view:work.SERIAL_TX(rtl) inst BIT_POSN_CNT[5:0]
+Encoding state machine TX_STATE[0:23] (view:work.SERIAL_TX(rtl))
+original code -> new code
+   000000000000000000000001 -> 000000000000000000000001
+   000000000000000000000010 -> 000000000000000000000010
+   000000000000000000000100 -> 000000000000000000000100
+   000000000000000000001000 -> 000000000000000000001000
+   000000000000000000010000 -> 000000000000000000010000
+   000000000000000000100000 -> 000000000000000000100000
+   000000000000000001000000 -> 000000000000000001000000
+   000000000000000010000000 -> 000000000000000010000000
+   000000000000000100000000 -> 000000000000000100000000
+   000000000000001000000000 -> 000000000000001000000000
+   000000000000010000000000 -> 000000000000010000000000
+   000000000000100000000000 -> 000000000000100000000000
+   000000000001000000000000 -> 000000000001000000000000
+   000000000010000000000000 -> 000000000010000000000000
+   000000000100000000000000 -> 000000000100000000000000
+   000000001000000000000000 -> 000000001000000000000000
+   000000010000000000000000 -> 000000010000000000000000
+   000000100000000000000000 -> 000000100000000000000000
+   000001000000000000000000 -> 000001000000000000000000
+   000010000000000000000000 -> 000010000000000000000000
+   000100000000000000000000 -> 000100000000000000000000
+   001000000000000000000000 -> 001000000000000000000000
+   010000000000000000000000 -> 010000000000000000000000
+   100000000000000000000000 -> 100000000000000000000000
+@N: MO195 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for TX_STATE[0:23].  
+@W: MO160 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Register bit RET_STATE[21] is always 0, optimizing ...
+@W: MO160 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Register bit RET_STATE[22] is always 0, optimizing ...
+@N:"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\main_sequencer.vhd":99:2:99:3|Found counter in view:work.MAIN_SEQUENCER(rtl) inst DEL_CNTR[14:0]
+Encoding state machine SEQUENCER_STATE[0:14] (view:work.MAIN_SEQUENCER(rtl))
+original code -> new code
+   000000000000001 -> 000000000000001
+   000000000000010 -> 000000000000010
+   000000000000100 -> 000000000000100
+   000000000001000 -> 000000000001000
+   000000000010000 -> 000000000010000
+   000000000100000 -> 000000000100000
+   000000001000000 -> 000000001000000
+   000000010000000 -> 000000010000000
+   000000100000000 -> 000000100000000
+   000001000000000 -> 000001000000000
+   000010000000000 -> 000010000000000
+   000100000000000 -> 000100000000000
+   001000000000000 -> 001000000000000
+   010000000000000 -> 010000000000000
+   100000000000000 -> 100000000000000
+@N: MO195 :"f:\0_all_libero_project\cern_lhcb\lvregul_dig_cntl\hdl\main_sequencer.vhd":99:2:99:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for SEQUENCER_STATE[0:14].  
+
+Finished factoring (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:12s; Memory used current: 129MB peak: 133MB)
+
+
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:12s; Memory used current: 126MB peak: 133MB)
+
+Constraint Checker successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:12s; Memory used current: 52MB peak: 133MB)
+
+Process took 0h:00m:13s realtime, 0h:00m:12s cputime
+# Wed Apr 05 10:39:41 2017
+
+###########################################################]

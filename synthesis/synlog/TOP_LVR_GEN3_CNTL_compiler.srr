@@ -1,0 +1,97 @@
+Synopsys HDL Compiler, version comp2016q4p1, Build 512R, built Oct 26 2017
+@N|Running in 64-bit mode
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+Synopsys VHDL Compiler, version comp2016q4p1, Build 512R, built Oct 26 2017
+@N|Running in 64-bit mode
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+@N: CD720 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
+@N:"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":53:7:53:23|Top entity is set to TOP_LVR_GEN3_CNTL.
+Options changed - recompiling
+VHDL syntax check successful!
+Options changed - recompiling
+@N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
+@N: CD630 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":53:7:53:23|Synthesizing work.top_lvr_gen3_cntl.rtl.
+@N: CD630 :"Z:\windows\LVR_firmware\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
+@N: CD233 :"Z:\windows\LVR_firmware\hdl\IIR_FILT.vhd":73:21:73:22|Using sequential encoding for type threshold_state.
+Post processing for work.iir_filt.rtl
+@W: CL111 :"Z:\windows\LVR_firmware\hdl\IIR_FILT.vhd":85:2:85:3|All reachable assignments to SUM_IN_A(0) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"Z:\windows\LVR_firmware\hdl\IIR_FILT.vhd":85:2:85:3|All reachable assignments to SUM_IN_A(1) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"Z:\windows\LVR_firmware\hdl\IIR_FILT.vhd":85:2:85:3|All reachable assignments to SUM_IN_A(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"Z:\windows\LVR_firmware\hdl\IIR_FILT.vhd":85:2:85:3|All reachable assignments to SUM_IN_A(3) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@N: CD630 :"Z:\windows\LVR_firmware\hdl\Slow_PulseEn_Gen.vhd":35:7:35:23|Synthesizing work.slow_pulse_en_gen.rtl.
+Post processing for work.slow_pulse_en_gen.rtl
+@N: CD630 :"Z:\windows\LVR_firmware\hdl\MAIN_SEQUENCER_NEW.vhd":55:7:55:24|Synthesizing work.main_sequencer_new.rtl.
+@N: CD231 :"Z:\windows\LVR_firmware\hdl\MAIN_SEQUENCER_NEW.vhd":99:19:99:20|Using onehot encoding for type seq_sm_states. For example, enumeration init is mapped to "1000000000".
+Post processing for work.main_sequencer_new.rtl
+@W: CL169 :"Z:\windows\LVR_firmware\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning unused register PREV_M_CH_EN_3(1 downto 0). Make sure that there are no unused intermediate registers.
+Post processing for work.top_lvr_gen3_cntl.rtl
+@W: CL169 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":358:2:358:3|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":358:2:358:3|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
+@N: CL201 :"Z:\windows\LVR_firmware\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Trying to extract state machine for register SEQUENCER_STATE.
+Extracted state machine for register SEQUENCER_STATE
+State machine has 10 reachable states with original encodings of:
+   0000000001
+   0000000010
+   0000000100
+   0000001000
+   0000010000
+   0000100000
+   0001000000
+   0010000000
+   0100000000
+   1000000000
+@W: CL260 :"Z:\windows\LVR_firmware\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning register bit 1 of CH_IAUX_EN(1 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"Z:\windows\LVR_firmware\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning register bit 1 of CH_MREG_EN(1 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\MAIN_SEQUENCER_NEW.vhd":61:2:61:14|Input CMND_WORD_STB is unused.
+@N: CL201 :"Z:\windows\LVR_firmware\hdl\IIR_FILT.vhd":85:2:85:3|Trying to extract state machine for register THRESH_VAL.
+Extracted state machine for register THRESH_VAL
+State machine has 3 reachable states with original encodings of:
+   00
+   01
+   10
+@W: CL279 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":358:2:358:3|Pruning register bits 7 to 5 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":358:2:358:3|Pruning register bits 3 to 1 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":72:2:72:12|Input MODE_WDT_EN is unused.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":74:2:74:16|Input MODE_DIAG_NORMB is unused.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":88:2:88:17|Input TEMP_FAILSAFE_EN is unused.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":92:2:92:8|Input RX_FPGA is unused.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":98:2:98:9|Input ADDR_SEL is unused.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":101:2:101:12|Input SCA_CLK_OUT is unused.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":102:2:102:14|Input SCA_RESET_OUT is unused.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":104:2:104:12|Input SCA_DAT_OUT is unused.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":122:2:122:9|Input UNUSED_1 is unused.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":123:2:123:9|Input UNUSED_2 is unused.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":124:2:124:13|Input J11_25_TCONN is unused.
+@N: CL159 :"Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd":125:2:125:13|Input J11_27_TCONN is unused.
+
+At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 76MB peak: 78MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Tue Jun 25 07:48:03 2019
+
+###########################################################]
+Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
+@N|Running in 64-bit mode
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Tue Jun 25 07:48:03 2019
+
+###########################################################]
+@END
+
+At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 3MB peak: 4MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Tue Jun 25 07:48:03 2019
+
+###########################################################]

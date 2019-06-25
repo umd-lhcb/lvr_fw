@@ -1,0 +1,92 @@
+FlashPro
+Version: 11.8.0.26
+Release: v11.8
+
+Checking for software updates...
+This software version is up to date.
+Software Version: 11.8.0.26
+STAPL file
+'F:\0_all_libero_project\CERN_LHCb\LVRegul_DIg_Cntl\designer\impl1\TOP_LV_REGUL_CNTL.stp' has
+been loaded successfully.
+DESIGN : TOP_LV_REGUL_CNTL;  CHECKSUM : 9097;  ALG_VERSION : 20
+Driver : 3.0.0 build 1
+programmer '81337' : FlashPro4
+Opened
+'F:\0_all_libero_project\CERN_LHCb\LVRegul_DIg_Cntl\designer\impl1\Top_LV_Regul_Cntl\Top_LV_Reg\
+ul_Cntl.pro'
+STAPL file
+'F:\0_all_libero_project\CERN_LHCb\LVRegul_DIg_Cntl\designer\impl1\TOP_LV_REGUL_CNTL.stp' has
+been loaded successfully.
+DESIGN : TOP_LV_REGUL_CNTL;  CHECKSUM : 9097;  ALG_VERSION : 20
+Selecting device A3P125 for debug.
+Error: Unable to read device information for the selected device: IDCode verify failed.
+Error: Unable to read device information for the selected device: IDCode verify failed.
+Rescanning for Programmers...
+programmer '81337' : FlashPro4
+Rescanning for Programmers DONE.
+Selecting device A3P125 for debug.
+programmer '81337' : Scan Chain...
+programmer '81337' : Vpump will not be driven from the programmer, an external voltage source
+has been detected that will provide Vpump.
+Info: programmer '81337' : Discrete clocking is enabled.
+programmer '81337' : Scan Chain PASSED.
+programmer '81337' : Executing action PROGRAM
+programmer '81337' : EXPORT FSN[48] = 814bc62c5860
+programmer '81337' : Erase ...
+programmer '81337' : Completed erase
+programmer '81337' : EXPORT CHECKSUM[16] = 9097
+programmer '81337' : Programming FPGA Array
+programmer '81337' : Verifying FPGA Array
+programmer '81337' :         Verifying FPGA Array -- pass
+programmer '81337' : Finished: Tue May 09 17:42:34 2017 (Elapsed time 00:00:59)
+programmer '81337' : Executing action PROGRAM PASSED.
+
+                        o - o - o - o - o - o
+
+STAPL file
+'F:\0_all_libero_project\CERN_LHCb\LVRegul_DIg_Cntl\designer\impl1\TOP_LV_REGUL_CNTL.stp' has
+been loaded successfully.
+DESIGN : TOP_LV_REGUL_CNTL;  CHECKSUM : CE3A;  ALG_VERSION : 20
+programmer '81337' : Scan Chain...
+programmer '81337' : Vpump will not be driven from the programmer, an external voltage source
+has been detected that will provide Vpump.
+Info: programmer '81337' : Discrete clocking is enabled.
+programmer '81337' : Scan Chain PASSED.
+programmer '81337' : Executing action PROGRAM
+programmer '81337' : EXPORT FSN[48] = 814bc62c5860
+programmer '81337' : Erase ...
+programmer '81337' : Completed erase
+programmer '81337' : EXPORT CHECKSUM[16] = ce3a
+programmer '81337' : Programming FPGA Array
+programmer '81337' : Verifying FPGA Array
+programmer '81337' :         Verifying FPGA Array -- pass
+programmer '81337' : Finished: Tue May 09 18:23:24 2017 (Elapsed time 00:00:58)
+programmer '81337' : Executing action PROGRAM PASSED.
+
+                        o - o - o - o - o - o
+
+STAPL file
+'F:\0_all_libero_project\CERN_LHCb\LVRegul_DIg_Cntl\designer\impl1\TOP_LV_REGUL_CNTL.stp' has
+been loaded successfully.
+DESIGN : TOP_LV_REGUL_CNTL;  CHECKSUM : 8DFD;  ALG_VERSION : 20
+programmer '81337' : Scan Chain...
+programmer '81337' : Vpump will not be driven from the programmer, an external voltage source
+has been detected that will provide Vpump.
+Info: programmer '81337' : Discrete clocking is enabled.
+programmer '81337' : Scan Chain PASSED.
+programmer '81337' : Executing action PROGRAM
+programmer '81337' : EXPORT FSN[48] = 814bc62c5860
+programmer '81337' : Erase ...
+programmer '81337' : Completed erase
+programmer '81337' : EXPORT CHECKSUM[16] = 8dfd
+programmer '81337' : Programming FPGA Array
+programmer '81337' : Verifying FPGA Array
+programmer '81337' :         Verifying FPGA Array -- pass
+programmer '81337' : Finished: Tue May 09 18:38:06 2017 (Elapsed time 00:00:58)
+programmer '81337' : Executing action PROGRAM PASSED.
+
+                        o - o - o - o - o - o
+
+Warning: Project 'Top_LV_Regul_Cntl' has been modified. Do you want to save it? [YES]
+Project saved.
+Project closed.

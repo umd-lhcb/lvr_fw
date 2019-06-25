@@ -1,0 +1,174 @@
+
+fsm_encoding {8557551} original
+
+fsm_state_encoding {8557551} init {00}
+
+fsm_state_encoding {8557551} rising {01}
+
+fsm_state_encoding {8557551} falling {10}
+
+fsm_registers {8557551} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+
+fsm_encoding {8557551} sequential
+
+fsm_state_encoding {8557551} init {00}
+
+fsm_state_encoding {8557551} rising {01}
+
+fsm_state_encoding {8557551} falling {10}
+
+fsm_registers {8557551} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+
+fsm_encoding {14902902} gray
+
+fsm_state_encoding {14902902} init {00000}
+
+fsm_state_encoding {14902902} bit_del_wait {00001}
+
+fsm_state_encoding {14902902} det_2nd_start_bit {00011}
+
+fsm_state_encoding {14902902} det_1st_start_bit {00010}
+
+fsm_state_encoding {14902902} rx_3_bit {00110}
+
+fsm_state_encoding {14902902} rx_2_bit {00111}
+
+fsm_state_encoding {14902902} rx_0ls_bit {00101}
+
+fsm_state_encoding {14902902} rx_1_bit {00100}
+
+fsm_state_encoding {14902902} rx_11_bit {01100}
+
+fsm_state_encoding {14902902} rx_10_bit {01101}
+
+fsm_state_encoding {14902902} rx_8_bit {01111}
+
+fsm_state_encoding {14902902} rx_9_bit {01110}
+
+fsm_state_encoding {14902902} rx_4_bit {01010}
+
+fsm_state_encoding {14902902} rx_5_bit {01011}
+
+fsm_state_encoding {14902902} rx_7_bit {01001}
+
+fsm_state_encoding {14902902} rx_6_bit {01000}
+
+fsm_state_encoding {14902902} 10000 {11000}
+
+fsm_state_encoding {14902902} 10001 {11001}
+
+fsm_state_encoding {14902902} 10010 {11011}
+
+fsm_state_encoding {14902902} 10011 {11010}
+
+fsm_state_encoding {14902902} finish_strobe {11110}
+
+fsm_state_encoding {14902902} 10101 {11111}
+
+fsm_state_encoding {14902902} 10110 {11101}
+
+fsm_state_encoding {14902902} 10111 {11100}
+
+fsm_state_encoding {14902902} rx_12_bit {10100}
+
+fsm_state_encoding {14902902} rx_13_bit {10101}
+
+fsm_state_encoding {14902902} rx_15_bit {10111}
+
+fsm_state_encoding {14902902} rx_14_bit {10110}
+
+fsm_state_encoding {14902902} check_m_addr {10010}
+
+fsm_state_encoding {14902902} check_parity {10011}
+
+fsm_state_encoding {14902902} det_1st_stop_bit {10001}
+
+fsm_state_encoding {14902902} det_2nd_stop_bit {10000}
+
+fsm_registers {14902902} {RX_STATE[4]}  {RX_STATE[3]}  {RX_STATE[2]}  {RX_STATE[1]}  {RX_STATE[0]} 
+
+fsm_encoding {15852853} original
+
+fsm_state_encoding {15852853} init {000000000000000000000001}
+
+fsm_state_encoding {15852853} bit_del_wait {000000000000000000000010}
+
+fsm_state_encoding {15852853} tx_1st_start_bit {000000000000000000000100}
+
+fsm_state_encoding {15852853} tx_2nd_start_bit {000000000000000000001000}
+
+fsm_state_encoding {15852853} tx_0ls_bit {000000000000000000010000}
+
+fsm_state_encoding {15852853} tx_1_bit {000000000000000000100000}
+
+fsm_state_encoding {15852853} tx_2_bit {000000000000000001000000}
+
+fsm_state_encoding {15852853} tx_3_bit {000000000000000010000000}
+
+fsm_state_encoding {15852853} tx_4_bit {000000000000000100000000}
+
+fsm_state_encoding {15852853} tx_5_bit {000000000000001000000000}
+
+fsm_state_encoding {15852853} tx_6_bit {000000000000010000000000}
+
+fsm_state_encoding {15852853} tx_7_bit {000000000000100000000000}
+
+fsm_state_encoding {15852853} tx_8_bit {000000000001000000000000}
+
+fsm_state_encoding {15852853} tx_9_bit {000000000010000000000000}
+
+fsm_state_encoding {15852853} tx_10_bit {000000000100000000000000}
+
+fsm_state_encoding {15852853} tx_11_bit {000000001000000000000000}
+
+fsm_state_encoding {15852853} tx_12_bit {000000010000000000000000}
+
+fsm_state_encoding {15852853} tx_13_bit {000000100000000000000000}
+
+fsm_state_encoding {15852853} tx_14_bit {000001000000000000000000}
+
+fsm_state_encoding {15852853} tx_15_bit {000010000000000000000000}
+
+fsm_state_encoding {15852853} tx_1st_stop_bit {000100000000000000000000}
+
+fsm_state_encoding {15852853} tx_2nd_stop_bit {001000000000000000000000}
+
+fsm_state_encoding {15852853} finish_frame {010000000000000000000000}
+
+fsm_state_encoding {15852853} finish_strobe {100000000000000000000000}
+
+fsm_registers {15852853} {TX_STATE[23]}  {TX_STATE[22]}  {TX_STATE[21]}  {TX_STATE[20]}  {TX_STATE[19]}  {TX_STATE[18]}  {TX_STATE[17]}  {TX_STATE[16]}  {TX_STATE[15]}  {TX_STATE[14]}  {TX_STATE[13]}  {TX_STATE[12]}  {TX_STATE[11]}  {TX_STATE[10]}  {TX_STATE[9]}  {TX_STATE[8]}  {TX_STATE[7]}  {TX_STATE[6]}  {TX_STATE[5]}  {TX_STATE[4]}  {TX_STATE[3]}  {TX_STATE[2]}  {TX_STATE[1]}  {TX_STATE[0]} 
+
+fsm_encoding {1310821084} original
+
+fsm_state_encoding {1310821084} init {000000000000001}
+
+fsm_state_encoding {1310821084} test_ch0_en {000000000000010}
+
+fsm_state_encoding {1310821084} test_ch1_en {000000000000100}
+
+fsm_state_encoding {1310821084} test_ch2_en {000000000001000}
+
+fsm_state_encoding {1310821084} test_ch3_en {000000000010000}
+
+fsm_state_encoding {1310821084} test_ch4_en {000000000100000}
+
+fsm_state_encoding {1310821084} test_ch5_en {000000001000000}
+
+fsm_state_encoding {1310821084} test_ch6_en {000000010000000}
+
+fsm_state_encoding {1310821084} test_ch7_en {000000100000000}
+
+fsm_state_encoding {1310821084} ch_1st_step {000001000000000}
+
+fsm_state_encoding {1310821084} ch_2nd_step {000010000000000}
+
+fsm_state_encoding {1310821084} ch_3rd_step {000100000000000}
+
+fsm_state_encoding {1310821084} seq_done {001000000000000}
+
+fsm_state_encoding {1310821084} hold_at_uvl {010000000000000}
+
+fsm_state_encoding {1310821084} chk_if_uvl_clear {100000000000000}
+
+fsm_registers {1310821084} {SEQUENCER_STATE[14]}  {SEQUENCER_STATE[13]}  {SEQUENCER_STATE[12]}  {SEQUENCER_STATE[11]}  {SEQUENCER_STATE[10]}  {SEQUENCER_STATE[9]}  {SEQUENCER_STATE[8]}  {SEQUENCER_STATE[7]}  {SEQUENCER_STATE[6]}  {SEQUENCER_STATE[5]}  {SEQUENCER_STATE[4]}  {SEQUENCER_STATE[3]}  {SEQUENCER_STATE[2]}  {SEQUENCER_STATE[1]}  {SEQUENCER_STATE[0]} 

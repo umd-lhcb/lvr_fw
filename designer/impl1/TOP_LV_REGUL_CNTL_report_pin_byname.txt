@@ -1,0 +1,60 @@
+*****************************************************************
+Pin Report - Date: Wed May 10 08:43:41 2017 Pinchecksum: NOT-AVAILABLE
+Product: Designer
+Release: v11.8
+Version: 11.8.0.26
+Design Name: TOP_LV_REGUL_CNTL
+Family: ProASIC3
+Die: A3P125
+Package: 100 VQFP
+*****************************************************************
+Port                |Pin |Fixed |Function       |I/O Std  |Output Drive (mA) |Slew |Resistor Pull |Skew |Output Load (pF) |Use I/O Reg |Hot Swappable |
+--------------------|----|------|---------------|---------|------------------|-----|--------------|-----|-----------------|------------|--------------|
+CH_STAT_LED          77   Yes    GBA0/IO39RSB0   LVCMOS33  12                 Low   Down           No    35                No           No
+CLK40MHZ             60   Yes    GCC2/IO59RSB0   LVCMOS33  ---                ---   None           ---   ---               No           No
+DEV_RST_B            6    Yes    GAC2/IO131RSB1  LVCMOS15  ---                ---   None           ---   ---               No           No
+EXT_CH_EN_PORT[0]    21   Yes    GEB0/IO109RSB1  LVCMOS15  ---                ---   Up             ---   ---               No           No
+EXT_CH_EN_PORT[1]    20   Yes    GEB1/IO110RSB1  LVCMOS15  ---                ---   Up             ---   ---               No           No
+EXT_CH_EN_PORT[2]    19   Yes    GEC0/IO111RSB1  LVCMOS15  ---                ---   Up             ---   ---               No           No
+EXT_CH_EN_PORT[3]    16   Yes    GFA2/IO120RSB1  LVCMOS15  ---                ---   Up             ---   ---               No           No
+EXT_CH_EN_PORT[4]    15   Yes    GFA1/IO121RSB1  LVCMOS15  ---                ---   Up             ---   ---               No           No
+EXT_CH_EN_PORT[5]    13   Yes    GFA0/IO122RSB1  LVCMOS15  ---                ---   Up             ---   ---               No           No
+EXT_CH_EN_PORT[6]    11   Yes    GFB0/IO123RSB1  LVCMOS15  ---                ---   Up             ---   ---               No           No
+EXT_CH_EN_PORT[7]    10   Yes    GFB1/IO124RSB1  LVCMOS15  ---                ---   Up             ---   ---               No           No
+MAN_GPIO_ENABLES[0]  31   Yes    IO99RSB1        LVCMOS15  ---                ---   Up             ---   ---               No           No
+MOD_ADDR[0]          26   Yes    GEA2/IO106RSB1  LVCMOS15  ---                ---   Up             ---   ---               No           No
+MOD_ADDR[1]          27   Yes    GEB2/IO105RSB1  LVCMOS15  ---                ---   Up             ---   ---               No           No
+MOD_ADDR[2]          28   Yes    GEC2/IO104RSB1  LVCMOS15  ---                ---   Up             ---   ---               No           No
+MOD_ADDR[3]          30   Yes    IO100RSB1       LVCMOS15  ---                ---   Up             ---   ---               No           No
+P_CH_IAUX_EN[0]      91   Yes    IO13RSB0        LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_IAUX_EN[1]      85   Yes    IO22RSB0        LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_IAUX_EN[2]      82   Yes    IO32RSB0        LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_IAUX_EN[3]      79   Yes    GBB0/IO37RSB0   LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_IAUX_EN[4]      73   Yes    GBA2/IO41RSB0   LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_IAUX_EN[5]      70   Yes    GBC2/IO45RSB0   LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_IAUX_EN[6]      64   Yes    GCC0/IO52RSB0   LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_IAUX_EN[7]      61   Yes    GCB2/IO58RSB0   LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_MREG_EN_B[0]    92   Yes    IO11RSB0        LVCMOS33  12                 Low   Up             No    35                No           No
+P_CH_MREG_EN_B[1]    86   Yes    IO19RSB0        LVCMOS33  12                 Low   Up             No    35                No           No
+P_CH_MREG_EN_B[2]    83   Yes    IO28RSB0        LVCMOS33  12                 Low   Up             No    35                No           No
+P_CH_MREG_EN_B[3]    80   Yes    GBC1/IO36RSB0   LVCMOS33  12                 Low   Up             No    35                No           No
+P_CH_MREG_EN_B[4]    76   Yes    GBA1/IO40RSB0   LVCMOS33  12                 Low   Up             No    35                No           No
+P_CH_MREG_EN_B[5]    71   Yes    GBB2/IO43RSB0   LVCMOS33  12                 Low   Up             No    35                No           No
+P_CH_MREG_EN_B[6]    65   Yes    GCC1/IO51RSB0   LVCMOS33  12                 Low   Up             No    35                No           No
+P_CH_MREG_EN_B[7]    62   Yes    GCA0/IO56RSB0   LVCMOS33  12                 Low   Up             No    35                No           No
+P_CH_VOSG_EN[0]      90   Yes    IO15RSB0        LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_VOSG_EN[1]      84   Yes    IO25RSB0        LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_VOSG_EN[2]      81   Yes    GBC0/IO35RSB0   LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_VOSG_EN[3]      78   Yes    GBB1/IO38RSB0   LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_VOSG_EN[4]      72   Yes    IO42RSB0        LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_VOSG_EN[5]      69   Yes    IO47RSB0        LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_VOSG_EN[6]      63   Yes    GCA1/IO55RSB0   LVCMOS33  12                 Low   Down           No    35                No           No
+P_CH_VOSG_EN[7]      57   Yes    GDA1/IO65RSB0   LVCMOS33  12                 Low   Down           No    35                No           No
+P_CLK_5M_GL          7    Yes    IO130RSB1       LVCMOS15  4                  High  None           No    35                No           No
+P_MASTER_RST_B       2    Yes    GAA2/IO67RSB1   LVCMOS15  4                  Low   None           No    35                No           No
+P_SER_TX_EN          94   Yes    IO07RSB0        LVCMOS33  12                 Low   Down           No    35                No           No
+P_SERIAL_TX[0]       95   Yes    GAC1/IO05RSB0   LVCMOS33  12                 Low   Down           No    35                No           No
+RX_SIG_IN[0]         96   Yes    GAC0/IO04RSB0   LVCMOS33  ---                ---   Down           ---   ---               No           No
+TX_EN[0]             97   Yes    GAB1/IO03RSB0   LVCMOS33  12                 Low   Down           No    35                No           No
+UVL_1V5_IN[0]        8    Yes    IO129RSB1       LVCMOS15  ---                ---   None           ---   ---               No           No
+UVL_VOP_IN[0]        44   Yes    GDC2/IO72RSB1   LVCMOS15  ---                ---   None           ---   ---               No           No

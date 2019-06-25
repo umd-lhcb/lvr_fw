@@ -1,0 +1,225 @@
+# Tue Jan 08 10:21:24 2019
+
+Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
+Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+Product Version L-2016.09M-SP1-5
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 100MB)
+
+Reading constraint file: C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\TOP_LVRegul_cntl.fdc
+@L: C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\TOP_LV_REGUL_CNTL_scck.rpt 
+Printing clock  summary report in "C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\TOP_LV_REGUL_CNTL_scck.rpt" file 
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
+
+Adding property syn_pad_type, value "LVCMOS_15", to port DEV_RST_B
+Adding property syn_io_schmitt, value 1, to port DEV_RST_B
+Adding property syn_encoding, value "safe,original", to instance CONTROL.SEQUENCER_STATE[0:14]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_TRANS.TX_STATE[0:23]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[23]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[22]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[21]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[20]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[19]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[18]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[17]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[16]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[15]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[14]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[13]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[12]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[11]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[10]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[9]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[8]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[7]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[6]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[5]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[4]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[3]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[2]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[1]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[0]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[23]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[22]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[21]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[20]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[19]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[18]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[17]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[16]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[15]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[14]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[13]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[12]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[11]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[10]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[9]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[8]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[7]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[6]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[5]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[4]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[3]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[2]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[1]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[0]
+Adding property syn_encoding, value "safe,original", to instance RX_FILT.THRESH_VAL[0:2]
+@N: BN362 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Removing sequential instance TX_EN (in view: work.SERIAL_TX(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer.vhd":53:2:53:15|Removing sequential instance COMPLETED_SEQ (in view: work.MAIN_SEQUENCER(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[23]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[22]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[21]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[20]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[19]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[18]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[17]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[16]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[15]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[14]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[13]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[12]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[11]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[10]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[9]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[8]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[7]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[6]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[5]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[4]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[3]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[2]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[1]
+Adding property syn_encoding, value "safe,original", to instance SERIAL_REC.RX_STATE[0]
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
+
+
+
+Clock Summary
+*****************
+
+Start            Requested     Requested     Clock        Clock                Clock
+Clock            Frequency     Period        Type         Group                Load 
+------------------------------------------------------------------------------------
+ext_clk40mhz     50.0 MHz      20.000        declared     default_clkgroup     5    
+int_clk5mhz      6.3 MHz       160.000       declared     default_clkgroup     369  
+====================================================================================
+
+@W: BN105 :"c:/users/tomo_laptop/box sync/lv_reg_gen3_dig_cntl_gw/lvregul_dig_cntl/synthesis/top_lvregul_cntl.fdc":39:0:39:0|Cannot apply constraint syn_encoding to UVL_FILT.THRESH_VAL[0:2]
+@W: BN105 :"c:/users/tomo_laptop/box sync/lv_reg_gen3_dig_cntl_gw/lvregul_dig_cntl/synthesis/top_lvregul_cntl.fdc":47:0:47:0|Cannot apply constraint syn_pad_type to UVL_SIG_IN[0]
+@W: BN105 :"c:/users/tomo_laptop/box sync/lv_reg_gen3_dig_cntl_gw/lvregul_dig_cntl/synthesis/top_lvregul_cntl.fdc":47:0:47:0|Cannot apply constraint syn_io_schmitt to UVL_SIG_IN[0]
+Finished Pre Mapping Phase.
+@N: BN225 |Writing default property annotation file C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\TOP_LV_REGUL_CNTL.sap.
+
+Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
+
+Encoding state machine THRESH_VAL[0:2] (in view: work.IIR_FILT_1(rtl))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+@N: MO195 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\iir_filt.vhd":55:7:55:14|Using syn_encoding = safe, FSM error recovery to reset state is enabled for THRESH_VAL[0:2].  
+Encoding state machine THRESH_VAL[0:2] (in view: work.IIR_FILT_0(rtl))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+Encoding state machine RX_STATE[0:31] (in view: work.SERIAL_RX(rtl))
+original code -> new code
+   00000 -> 00000
+   00001 -> 00001
+   00010 -> 00011
+   00011 -> 00010
+   00100 -> 00110
+   00101 -> 00111
+   00110 -> 00101
+   00111 -> 00100
+   01000 -> 01100
+   01001 -> 01101
+   01010 -> 01111
+   01011 -> 01110
+   01100 -> 01010
+   01101 -> 01011
+   01110 -> 01001
+   01111 -> 01000
+   10000 -> 11000
+   10001 -> 11001
+   10010 -> 11011
+   10011 -> 11010
+   10100 -> 11110
+   10101 -> 11111
+   10110 -> 11101
+   10111 -> 11100
+   11000 -> 10100
+   11001 -> 10101
+   11010 -> 10111
+   11011 -> 10110
+   11100 -> 10010
+   11101 -> 10011
+   11110 -> 10001
+   11111 -> 10000
+@N: MO225 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\serial_rx.vhd":90:2:90:3|There are no possible illegal states for state machine RX_STATE[0:31] (in view: work.SERIAL_RX(rtl)); safe FSM implementation is not required.
+Encoding state machine TX_STATE[0:23] (in view: work.SERIAL_TX(rtl))
+original code -> new code
+   000000000000000000000001 -> 000000000000000000000001
+   000000000000000000000010 -> 000000000000000000000010
+   000000000000000000000100 -> 000000000000000000000100
+   000000000000000000001000 -> 000000000000000000001000
+   000000000000000000010000 -> 000000000000000000010000
+   000000000000000000100000 -> 000000000000000000100000
+   000000000000000001000000 -> 000000000000000001000000
+   000000000000000010000000 -> 000000000000000010000000
+   000000000000000100000000 -> 000000000000000100000000
+   000000000000001000000000 -> 000000000000001000000000
+   000000000000010000000000 -> 000000000000010000000000
+   000000000000100000000000 -> 000000000000100000000000
+   000000000001000000000000 -> 000000000001000000000000
+   000000000010000000000000 -> 000000000010000000000000
+   000000000100000000000000 -> 000000000100000000000000
+   000000001000000000000000 -> 000000001000000000000000
+   000000010000000000000000 -> 000000010000000000000000
+   000000100000000000000000 -> 000000100000000000000000
+   000001000000000000000000 -> 000001000000000000000000
+   000010000000000000000000 -> 000010000000000000000000
+   000100000000000000000000 -> 000100000000000000000000
+   001000000000000000000000 -> 001000000000000000000000
+   010000000000000000000000 -> 010000000000000000000000
+   100000000000000000000000 -> 100000000000000000000000
+@N: MO195 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for TX_STATE[0:23].  
+Encoding state machine SEQUENCER_STATE[0:14] (in view: work.MAIN_SEQUENCER(rtl))
+original code -> new code
+   000000000000001 -> 000000000000001
+   000000000000010 -> 000000000000010
+   000000000000100 -> 000000000000100
+   000000000001000 -> 000000000001000
+   000000000010000 -> 000000000010000
+   000000000100000 -> 000000000100000
+   000000001000000 -> 000000001000000
+   000000010000000 -> 000000010000000
+   000000100000000 -> 000000100000000
+   000001000000000 -> 000001000000000
+   000010000000000 -> 000010000000000
+   000100000000000 -> 000100000000000
+   001000000000000 -> 001000000000000
+   010000000000000 -> 010000000000000
+   100000000000000 -> 100000000000000
+@N: MO195 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer.vhd":108:2:108:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for SEQUENCER_STATE[0:14].  
+None
+None
+
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 117MB peak: 119MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 27MB peak: 119MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Tue Jan 08 10:21:26 2019
+
+###########################################################]

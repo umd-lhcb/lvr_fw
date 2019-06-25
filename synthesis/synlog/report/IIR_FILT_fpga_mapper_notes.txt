@@ -1,0 +1,10 @@
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+@N: MF176 |Default generator successful 
+@N: MF179 :"c:\microsemi\libero_soc_v11.9\synplifypro\lib\vhd2008\arith.vhd":271:17:271:52|Found 8 by 8 bit less-than operator ('<') HYSTERISIS\.op_gt\.op_gt\.n_sigout3 (in view: work.IIR_FILT(rtl))
+@N: MF179 :"c:\microsemi\libero_soc_v11.9\synplifypro\lib\vhd2008\arith.vhd":283:17:283:52|Found 8 by 8 bit less-than operator ('<') HYSTERISIS\.op_lt\.op_lt\.n_sigout15 (in view: work.IIR_FILT(rtl))
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+@N: FP130 |Promoting Net CLK_5M_GL_c on CLKBUF  CLK_5M_GL_pad 
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.

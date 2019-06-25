@@ -1,0 +1,184 @@
+Microsemi Libero Software
+Version: 11.9.2.1
+Release: v11.9 SP2
+
+Info: The design TOP_LVR_GEN3_CNTL.adb was last modified by software version 11.9.2.1.
+Opened an existing Libero design TOP_LVR_GEN3_CNTL.adb.
+'BA_NAME' set to 'TOP_LVR_GEN3_CNTL_ba'
+'IDE_DESIGNERVIEW_NAME' set to 'Impl1'
+'IDE_DESIGNERVIEW_COUNT' set to '1'
+'IDE_DESIGNERVIEW_REV0' set to 'Impl1'
+'IDE_DESIGNERVIEW_REVNUM0' set to '1'
+'IDE_DESIGNERVIEW_ROOTDIR' set to 'Z:\windows\LVR_firmware\designer'
+'IDE_DESIGNERVIEW_LASTREV' set to '1'
+
+ Netlist Reading Time = 0.0 seconds
+Imported the files:
+   Z:\windows\LVR_firmware\synthesis\TOP_LVR_GEN3_CNTL.edn
+   Z:\windows\LVR_firmware\constraint\TOP_LV_REGUL_CNTL_a3pN250.pdc
+
+The Import command succeeded ( 00:00:02 )
+=====================================================================
+Parameters used to run compile:
+===============================
+
+Family      : ProASIC3
+Device      : A3PN250
+Package     : 100 VQFP
+Source      : Z:\windows\LVR_firmware\synthesis\TOP_LVR_GEN3_CNTL.edn
+              Z:\windows\LVR_firmware\constraint\TOP_LV_REGUL_CNTL_a3pN250.pdc
+Format      : EDIF
+Topcell     : TOP_LVR_GEN3_CNTL
+Speed grade : STD
+Temp        : 0:25:70
+Voltage     : 1.58:1.50:1.42
+
+Keep Existing Physical Constraints : Yes
+Keep Existing Timing Constraints   : Yes
+
+pdc_abort_on_error                 : Yes
+pdc_eco_display_unmatched_objects  : No
+pdc_eco_max_warnings               : 10000
+
+demote_globals                     : No
+promote_globals                    : No
+localclock_max_shared_instances    : 12
+localclock_buffer_tree_max_fanout  : 12
+
+combine_register                   : No
+delete_buffer_tree                 : No
+
+report_high_fanout_nets_limit      : 10
+
+=====================================================================
+Compile starts ...
+
+Warning: Top level port MODE_WDT_EN is not connected to any IO pad
+Warning: Top level port MODE_DIAG_NORMB is not connected to any IO pad
+Warning: Top level port TEMP_FAILSAFE_EN is not connected to any IO pad
+Warning: Top level port RX_FPGA is not connected to any IO pad
+Warning: Top level port ADDR_SEL<4> is not connected to any IO pad
+Warning: Top level port ADDR_SEL<3> is not connected to any IO pad
+Warning: Top level port ADDR_SEL<2> is not connected to any IO pad
+Warning: Top level port ADDR_SEL<1> is not connected to any IO pad
+Warning: Top level port ADDR_SEL<0> is not connected to any IO pad
+Warning: Top level port SCA_CLK_OUT is not connected to any IO pad
+Warning: Top level port SCA_RESET_OUT is not connected to any IO pad
+Warning: Top level port SCA_DAT_OUT is not connected to any IO pad
+Warning: Top level port UNUSED_1 is not connected to any IO pad
+Warning: Top level port UNUSED_2 is not connected to any IO pad
+Warning: Top level port J11_25_TCONN is not connected to any IO pad
+Warning: Top level port J11_27_TCONN is not connected to any IO pad
+
+Netlist Optimization Report
+===========================
+
+Optimized macros:
+  - Dangling net drivers:   0
+  - Buffers:                0
+  - Inverters:              0
+  - Tieoff:                 0
+  - Logic combining:        66
+
+    Total macros optimized  66
+
+There were 0 error(s) and 16 warning(s) in this design.
+=====================================================================
+
+Reading previous post-compile physical placement constraints.
+
+
+There were 0 error(s) and 0 warning(s).
+
+=====================================================================
+
+Reading user pdc (Physical Design Constraints) file(s) postcompile
+
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io CH_STAT_LED -iostd LVCMOS33 -REGISTER No -OUT_DRIVE 12 -SLEW Low
+       -RES_PULL Down -SKEW Off -OUT_LOAD 35 -pinname 77 -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io CLK40MHZ -iostd LVCMOS33 -REGISTER No -RES_PULL None -pinname 57 -fixed
+       yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io DEV_RST_B -iostd LVCMOS15 -RES_PULL None -REGISTER No -pinname 93
+       -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io EXT_CH_EN_PORT[0] -iostd LVCMOS15 -REGISTER No -RES_PULL Up -pinname 21
+       -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io EXT_CH_EN_PORT[1] -iostd LVCMOS15 -REGISTER No -RES_PULL Up -pinname 20
+       -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io EXT_CH_EN_PORT[2] -iostd LVCMOS15 -REGISTER No -RES_PULL Up -pinname 19
+       -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io EXT_CH_EN_PORT[3] -iostd LVCMOS15 -REGISTER No -RES_PULL Up -pinname 16
+       -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io EXT_CH_EN_PORT[4] -iostd LVCMOS15 -REGISTER No -RES_PULL Up -pinname 15
+       -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io EXT_CH_EN_PORT[5] -iostd LVCMOS15 -REGISTER No -RES_PULL Up -pinname 13
+       -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io EXT_CH_EN_PORT[6] -iostd LVCMOS15 -REGISTER No -RES_PULL Up -pinname 11
+       -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io EXT_CH_EN_PORT[7] -iostd LVCMOS15 -REGISTER No -RES_PULL Up -pinname 10
+       -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io MOD_ADDR[0] -iostd LVCMOS15 -REGISTER No -RES_PULL Up -pinname 26
+       -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io MOD_ADDR[1] -iostd LVCMOS15 -REGISTER No -RES_PULL Up -pinname 27
+       -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io MOD_ADDR[2] -iostd LVCMOS15 -REGISTER No -RES_PULL Up -pinname 28
+       -fixed yes
+Error: PDC-01: port name doesn't exist in the netlist or is not connected to an IoCell macro at
+       PDC Line : set_io MOD_ADDR[3] -iostd LVCMOS15 -REGISTER No -RES_PULL Up -pinname 30
+       -fixed yes
+Error: PDC-10: Processing IO 'P_CH_IAUX_EN[0]'. Invalid value for I/O Attribute -OUT_DRIVE at
+       PDC line : set_io P_CH_IAUX_EN[0] -iostd LVCMOS33 -REGISTER No -OUT_DRIVE 12 -SLEW Low
+       -RES_PULL Down -SKEW Off -OUT_LOAD 35 -pinname 91 -fixed yes
+Error: PDC-08: Processing IO 'P_CH_IAUX_EN[0]'. Unknown I/O Attribute -SKEW for this IO at PDC
+       line : set_io P_CH_IAUX_EN[0] -iostd LVCMOS33 -REGISTER No -OUT_DRIVE 12 -SLEW Low
+       -RES_PULL Down -SKEW Off -OUT_LOAD 35 -pinname 91 -fixed yes
+Error: PDC-86: This port is already placed and locked in another position. Ignore this
+       placement. at PDC Line : set_io P_CH_IAUX_EN[0] -iostd LVCMOS33 -REGISTER No -OUT_DRIVE
+       12 -SLEW Low -RES_PULL Down -SKEW Off -OUT_LOAD 35 -pinname 91 -fixed yes
+Error: PDC-10: Processing IO 'P_CH_IAUX_EN[1]'. Invalid value for I/O Attribute -OUT_DRIVE at
+       PDC line : set_io P_CH_IAUX_EN[1] -iostd LVCMOS33 -REGISTER No -OUT_DRIVE 12 -SLEW Low
+       -RES_PULL Down -SKEW Off -OUT_LOAD 35 -pinname 85 -fixed yes
+Error: PDC-08: Processing IO 'P_CH_IAUX_EN[1]'. Unknown I/O Attribute -SKEW for this IO at PDC
+       line : set_io P_CH_IAUX_EN[1] -iostd LVCMOS33 -REGISTER No -OUT_DRIVE 12 -SLEW Low
+       -RES_PULL Down -SKEW Off -OUT_LOAD 35 -pinname 85 -fixed yes
+Error: PDC-86: This port is already placed and locked in another position. Ignore this
+       placement. at PDC Line : set_io P_CH_IAUX_EN[1] -iostd LVCMOS33 -REGISTER No -OUT_DRIVE
+       12 -SLEW Low -RES_PULL Down -SKEW Off -OUT_LOAD 35 -pinname 85 -fixed yes
+Error: PDC-10: Processing IO 'P_CH_IAUX_EN[2]'. Invalid value for I/O Attribute -OUT_DRIVE at
+       PDC line : set_io P_CH_IAUX_EN[2] -iostd LVCMOS33 -REGISTER No -OUT_DRIVE 12 -SLEW Low
+       -RES_PULL Down -SKEW Off -OUT_LOAD 35 -pinname 82 -fixed yes
+Error: PDC-08: Processing IO 'P_CH_IAUX_EN[2]'. Unknown I/O Attribute -SKEW for this IO at PDC
+       line : set_io P_CH_IAUX_EN[2] -iostd LVCMOS33 -REGISTER No -OUT_DRIVE 12 -SLEW Low
+       -RES_PULL Down -SKEW Off -OUT_LOAD 35 -pinname 82 -fixed yes
+Error: PDC-10: Processing IO 'P_CH_IAUX_EN[3]'. Invalid value for I/O Attribute -OUT_DRIVE at
+       PDC line : set_io P_CH_IAUX_EN[3] -iostd LVCMOS33 -REGISTER No -OUT_DRIVE 12 -SLEW Low
+       -RES_PULL Down -SKEW Off -OUT_LOAD 35 -pinname 79 -fixed yes
+Error: PDC-08: Processing IO 'P_CH_IAUX_EN[3]'. Unknown I/O Attribute -SKEW for this IO at PDC
+       line : set_io P_CH_IAUX_EN[3] -iostd LVCMOS33 -REGISTER No -OUT_DRIVE 12 -SLEW Low
+       -RES_PULL Down -SKEW Off -OUT_LOAD 35 -pinname 79 -fixed yes
+
+There were 68 error(s) and 0 warning(s) in reading the user pdc.
+
+Info: There were errors found due to conflicting constraints in the user PDC and previous
+      post-compile physical constraints.
+
+The Compile command failed ( 00:00:00 )
+Error: Failure when executing Tcl script. [ Line 22 ]
+
+The Execute Script command failed ( 00:00:04 )
+Warning: The database was closed without a save, modifications are lost
+Design closed.
+

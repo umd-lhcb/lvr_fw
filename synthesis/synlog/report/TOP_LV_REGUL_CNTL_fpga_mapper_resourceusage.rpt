@@ -1,0 +1,85 @@
+Target Part: A3P250_VQFP100_STD
+Report for cell TOP_LV_REGUL_CNTL.rtl
+  Core Cell usage:
+              cell count     area count*area
+              AND2    13      1.0       13.0
+               AO1    58      1.0       58.0
+              AO13     6      1.0        6.0
+              AO18     4      1.0        4.0
+              AO1A    31      1.0       31.0
+              AO1C     6      1.0        6.0
+              AO1D     5      1.0        5.0
+              AOI1     5      1.0        5.0
+             AOI1B     5      1.0        5.0
+              AX1A     1      1.0        1.0
+              AX1B     5      1.0        5.0
+              AX1C    10      1.0       10.0
+              AX1D     1      1.0        1.0
+              AXO1     1      1.0        1.0
+              AXO3     1      1.0        1.0
+              AXO5     1      1.0        1.0
+            CLKINT     3      0.0        0.0
+               GND     7      0.0        0.0
+               INV     1      1.0        1.0
+              MAJ3   349      1.0      349.0
+             MIN3X     4      1.0        4.0
+            MIN3XI     2      1.0        2.0
+               MX2   112      1.0      112.0
+              MX2A    38      1.0       38.0
+              MX2B    20      1.0       20.0
+              MX2C     5      1.0        5.0
+              NOR2    58      1.0       58.0
+             NOR2A   175      1.0      175.0
+             NOR2B   109      1.0      109.0
+              NOR3    33      1.0       33.0
+             NOR3A    44      1.0       44.0
+             NOR3B    61      1.0       61.0
+             NOR3C    57      1.0       57.0
+               OA1    12      1.0       12.0
+              OA1A    11      1.0       11.0
+              OA1B    21      1.0       21.0
+              OA1C     9      1.0        9.0
+              OAI1     1      1.0        1.0
+               OR2    74      1.0       74.0
+              OR2A    40      1.0       40.0
+              OR2B    12      1.0       12.0
+               OR3    62      1.0       62.0
+              OR3A    11      1.0       11.0
+              OR3B     3      1.0        3.0
+              OR3C     2      1.0        2.0
+               VCC     7      0.0        0.0
+               XA1    14      1.0       14.0
+              XA1B    14      1.0       14.0
+             XNOR2     9      1.0        9.0
+             XNOR3     8      1.0        8.0
+               XO1    11      1.0       11.0
+              XO1A     2      1.0        2.0
+              XOR2    68      1.0       68.0
+              XOR3     4      1.0        4.0
+
+
+            DFN0C0     9      1.0        9.0
+            DFN1C0   822      1.0      822.0
+            DFN1C1   117      1.0      117.0
+            DFN1P0    75      1.0       75.0
+            DFN1P1     6      1.0        6.0
+                   -----          ----------
+             TOTAL  2655              2638.0
+
+
+  IO Cell usage:
+              cell count
+            CLKBUF     1
+             INBUF    16
+    INBUF_LVCMOS15     1
+            OUTBUF    30
+                   -----
+             TOTAL    48
+
+
+Core Cells         : 2638 of 6144 (43%)
+IO Cells           : 48
+
+  RAM/ROM Usage Summary
+Block Rams : 0 of 8 (0%)
+

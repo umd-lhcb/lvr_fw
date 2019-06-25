@@ -1,0 +1,3 @@
+@W: CG296 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\OVT_FAILSAFE.vhd":63:8:63:14|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\OVT_FAILSAFE.vhd":102:20:102:28|Referenced variable l_t_fault is not in sensitivity list.
+

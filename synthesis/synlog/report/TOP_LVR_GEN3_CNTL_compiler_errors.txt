@@ -1,0 +1,7 @@
+@E: CD145 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\MAIN_SEQUENCER_NEW.vhd":74:2:74:13|Formal, "p_ch_mreg_en", and actual agree on type but not on size
+@E: CD145 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\TOP_LVR_GEN3_Cntl.vhd":566:0:566:6|Formal, "p_ch_mreg_en", and actual agree on type but not on size
+@E: CD145 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\MAIN_SEQUENCER_NEW.vhd":75:2:75:13|Formal, "p_ch_iaux_en", and actual agree on type but not on size
+@E: CD145 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\TOP_LVR_GEN3_Cntl.vhd":566:0:566:6|Formal, "p_ch_iaux_en", and actual agree on type but not on size
+@E: CD145 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\MAIN_SEQUENCER_NEW.vhd":76:2:76:13|Formal, "p_ch_vosg_en", and actual agree on type but not on size
+@E: CD145 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\TOP_LVR_GEN3_Cntl.vhd":566:0:566:6|Formal, "p_ch_vosg_en", and actual agree on type but not on size
+

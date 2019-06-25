@@ -1,0 +1,22 @@
+Synopsys HDL Compiler, version comp201503sp1p1, Build 240R, built Dec  1 2015
+@N|Running in 64-bit mode
+Copyright (C) 1994-2015 Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+
+Synopsys VHDL Compiler, version comp201503sp1p1, Build 240R, built Dec  1 2015
+@N|Running in 64-bit mode
+Copyright (C) 1994-2015 Synopsys, Inc. This software and the associated documentation are proprietary to Synopsys, Inc. This software may only be used in accordance with the terms and conditions of a written license agreement with Synopsys, Inc.  All other use, reproduction, or distribution of this software is strictly prohibited.
+
+@N: CD720 :"C:\Microsemi\Libero_SoC_v11.7\Synplify\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ns
+@N:"F:\0_all_libero_project\CERN_LHCb\LVRegul_DIg_Cntl\hdl\TOP_LV_REGUL_Cntl.vhd":37:7:37:23|Top entity is set to TOP_LV_REGUL_CNTL.
+@E: CD200 :"F:\0_all_libero_project\CERN_LHCb\LVRegul_DIg_Cntl\hdl\TOP_LV_REGUL_Cntl.vhd":369:4:369:16|Misspelled variable, signal or procedure name?
+1 error parsing file F:\0_all_libero_project\CERN_LHCb\LVRegul_DIg_Cntl\hdl\TOP_LV_REGUL_Cntl.vhd
+@E|Parse errors encountered - exiting
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Mon May 08 15:03:18 2017
+
+###########################################################]
+@END
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Mon May 08 15:03:18 2017
+
+###########################################################]

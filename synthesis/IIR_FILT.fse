@@ -1,0 +1,10 @@
+
+fsm_encoding {9852851} sequential
+
+fsm_state_encoding {9852851} init {00}
+
+fsm_state_encoding {9852851} rising {01}
+
+fsm_state_encoding {9852851} falling {10}
+
+fsm_registers {9852851} {THRESH_VAL[1]}  {THRESH_VAL[0]} 

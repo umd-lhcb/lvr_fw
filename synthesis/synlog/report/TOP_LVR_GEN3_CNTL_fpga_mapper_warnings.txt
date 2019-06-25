@@ -1,0 +1,13 @@
+@W: MO160 :"z:\windows\lvr_firmware\hdl\main_sequencer_new.vhd":131:2:131:3|Register bit RET_STATE[0] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"z:\windows\lvr_firmware\hdl\main_sequencer_new.vhd":131:2:131:3|Register bit RET_STATE[1] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"z:\windows\lvr_firmware\hdl\main_sequencer_new.vhd":131:2:131:3|Register bit RET_STATE[2] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"z:\windows\lvr_firmware\hdl\main_sequencer_new.vhd":131:2:131:3|Register bit RET_STATE[3] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"z:\windows\lvr_firmware\hdl\main_sequencer_new.vhd":131:2:131:3|Register bit RET_STATE[7] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"z:\windows\lvr_firmware\hdl\main_sequencer_new.vhd":131:2:131:3|Register bit RET_STATE[8] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO197 :"z:\windows\lvr_firmware\hdl\main_sequencer_new.vhd":131:2:131:3|Removing FSM register SEQUENCER_STATE[0] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.
+@W: MO197 :"z:\windows\lvr_firmware\hdl\main_sequencer_new.vhd":131:2:131:3|Removing FSM register SEQUENCER_STATE[1] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.
+@W: MO197 :"z:\windows\lvr_firmware\hdl\main_sequencer_new.vhd":131:2:131:3|Removing FSM register SEQUENCER_STATE[2] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.
+@W: BN132 :"z:\windows\lvr_firmware\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance CONTROL34.CH_ACTIVE_STAT because it is equivalent to instance CONTROL12.CH_ACTIVE_STAT. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"z:\windows\lvr_firmware\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance CONTROL78.CH_ACTIVE_STAT because it is equivalent to instance CONTROL56.CH_ACTIVE_STAT. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W:|Clock TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock_1 is overridden on source cell instance pin BUF5M_J11_15_TCONN_inferred_clock.Y by clock TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock
+@W:|Clock TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock_1 is overridden on all sources and thus undefined

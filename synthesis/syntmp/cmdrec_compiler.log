@@ -1,0 +1,11 @@
+C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin64\c_hdl.exe  -osyn  Z:\windows\LVR_firmware\synthesis\synwork\TOP_LVR_GEN3_CNTL_comp.srs  -top  work.TOP_LVR_GEN3_CNTL  -hdllog  Z:\windows\LVR_firmware\synthesis\synlog\TOP_LVR_GEN3_CNTL_compiler.srr  -encrypt  -mp  4  -verification_mode 0  -vhdl  -prodtype  synplify_pro  -nram -fixsmult -divnmod  -encrypt  -pro  -dmgen  Z:\windows\LVR_firmware\synthesis\dm  -lite -ui -fid2 -ram -sharing on -ll 2000 -autosm  -vhdl2008  -ignore_undefined_lib  -lib work Z:\windows\LVR_firmware\hdl\IIR_FILT.vhd -lib work Z:\windows\LVR_firmware\hdl\MAIN_SEQUENCER_NEW.vhd -lib work Z:\windows\LVR_firmware\hdl\Slow_PulseEn_Gen.vhd -lib work Z:\windows\LVR_firmware\hdl\TOP_LVR_GEN3_Cntl.vhd 
+relcom:C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin64\c_hdl.exe -osyn ..\synwork\TOP_LVR_GEN3_CNTL_comp.srs -top work.TOP_LVR_GEN3_CNTL -hdllog ..\synlog\TOP_LVR_GEN3_CNTL_compiler.srr -encrypt -mp 4 -verification_mode 0 -vhdl -prodtype synplify_pro -nram -fixsmult -divnmod -encrypt -pro -dmgen ..\dm -lite -ui -fid2 -ram -sharing on -ll 2000 -autosm -vhdl2008 -ignore_undefined_lib -lib work ..\..\hdl\IIR_FILT.vhd -lib work ..\..\hdl\MAIN_SEQUENCER_NEW.vhd -lib work ..\..\hdl\Slow_PulseEn_Gen.vhd -lib work ..\..\hdl\TOP_LVR_GEN3_Cntl.vhd
+rc:0 success:1 runtime:3
+file:..\synwork\TOP_LVR_GEN3_CNTL_comp.srs|io:o|time:1561474083|size:15438|exec:0|csum:
+file:..\synlog\TOP_LVR_GEN3_CNTL_compiler.srr|io:o|time:1561474083|size:7785|exec:0|csum:
+file:..\..\hdl\IIR_FILT.vhd|io:i|time:1554892602|size:7168|exec:0|csum:54F37F39FDF1920825D6D6DB476A7C69
+file:..\..\hdl\MAIN_SEQUENCER_NEW.vhd|io:i|time:1554892678|size:18737|exec:0|csum:3495293D3E6E3308B25AB31411FB9DF9
+file:..\..\hdl\Slow_PulseEn_Gen.vhd|io:i|time:1554892690|size:4574|exec:0|csum:AF5C5B7DCABD5B98C426E56896B40AA3
+file:..\..\hdl\TOP_LVR_GEN3_Cntl.vhd|io:i|time:1554974394|size:40974|exec:0|csum:6E7AEE8914F8E400A9B2453FBC750752
+file:C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\c_hdl.exe|io:i|time:1509044116|size:1338368|exec:1|csum:4BE9471CC8F1F34D3F79DD6F3C07C7F5
+file:C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin64\c_hdl.exe|io:i|time:1509044324|size:1754112|exec:1|csum:0724D6BF71D325162DC071CC1383571C

@@ -1,0 +1,581 @@
+# Tue Jan 08 10:21:26 2019
+
+Synopsys Microsemi Technology Mapper, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
+Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+Product Version L-2016.09M-SP1-5
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 100MB)
+
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 101MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 101MB)
+
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
+
+Encoding state machine THRESH_VAL[0:2] (in view: work.IIR_FILT_1(rtl))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+@N: MO195 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\iir_filt.vhd":55:7:55:14|Using syn_encoding = safe, FSM error recovery to reset state is enabled for THRESH_VAL[0:2].  
+@N: MF238 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\iir_filt.vhd":102:18:102:31|Found 3-bit incrementor, 'un1_tmp_sum_in_b_0[3:0]'
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+Encoding state machine THRESH_VAL[0:2] (in view: work.IIR_FILT_0(rtl))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+@N: MF238 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\iir_filt.vhd":102:18:102:31|Found 3-bit incrementor, 'un1_tmp_sum_in_b_0[3:0]'
+@N: MF176 |Default generator successful 
+@N: MF176 |Default generator successful 
+Encoding state machine RX_STATE[0:31] (in view: work.SERIAL_RX(rtl))
+original code -> new code
+   00000 -> 00000
+   00001 -> 00001
+   00010 -> 00011
+   00011 -> 00010
+   00100 -> 00110
+   00101 -> 00111
+   00110 -> 00101
+   00111 -> 00100
+   01000 -> 01100
+   01001 -> 01101
+   01010 -> 01111
+   01011 -> 01110
+   01100 -> 01010
+   01101 -> 01011
+   01110 -> 01001
+   01111 -> 01000
+   10000 -> 11000
+   10001 -> 11001
+   10010 -> 11011
+   10011 -> 11010
+   10100 -> 11110
+   10101 -> 11111
+   10110 -> 11101
+   10111 -> 11100
+   11000 -> 10100
+   11001 -> 10101
+   11010 -> 10111
+   11011 -> 10110
+   11100 -> 10010
+   11101 -> 10011
+   11110 -> 10001
+   11111 -> 10000
+@N: MO225 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\serial_rx.vhd":90:2:90:3|There are no possible illegal states for state machine RX_STATE[0:31] (in view: work.SERIAL_RX(rtl)); safe FSM implementation is not required.
+@N: MO231 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Found counter in view:work.SERIAL_TX(rtl) instance BIT_POSN_CNT[5:0] 
+Encoding state machine TX_STATE[0:23] (in view: work.SERIAL_TX(rtl))
+original code -> new code
+   000000000000000000000001 -> 000000000000000000000001
+   000000000000000000000010 -> 000000000000000000000010
+   000000000000000000000100 -> 000000000000000000000100
+   000000000000000000001000 -> 000000000000000000001000
+   000000000000000000010000 -> 000000000000000000010000
+   000000000000000000100000 -> 000000000000000000100000
+   000000000000000001000000 -> 000000000000000001000000
+   000000000000000010000000 -> 000000000000000010000000
+   000000000000000100000000 -> 000000000000000100000000
+   000000000000001000000000 -> 000000000000001000000000
+   000000000000010000000000 -> 000000000000010000000000
+   000000000000100000000000 -> 000000000000100000000000
+   000000000001000000000000 -> 000000000001000000000000
+   000000000010000000000000 -> 000000000010000000000000
+   000000000100000000000000 -> 000000000100000000000000
+   000000001000000000000000 -> 000000001000000000000000
+   000000010000000000000000 -> 000000010000000000000000
+   000000100000000000000000 -> 000000100000000000000000
+   000001000000000000000000 -> 000001000000000000000000
+   000010000000000000000000 -> 000010000000000000000000
+   000100000000000000000000 -> 000100000000000000000000
+   001000000000000000000000 -> 001000000000000000000000
+   010000000000000000000000 -> 010000000000000000000000
+   100000000000000000000000 -> 100000000000000000000000
+@N: MO195 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for TX_STATE[0:23].  
+@W: MO160 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Register bit RET_STATE[21] (in view view:work.SERIAL_TX(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Register bit RET_STATE[22] (in view view:work.SERIAL_TX(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@N: MO231 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer.vhd":53:2:53:15|Found counter in view:work.MAIN_SEQUENCER(rtl) instance DEL_CNTR[14:0] 
+Encoding state machine SEQUENCER_STATE[0:14] (in view: work.MAIN_SEQUENCER(rtl))
+original code -> new code
+   000000000000001 -> 000000000000001
+   000000000000010 -> 000000000000010
+   000000000000100 -> 000000000000100
+   000000000001000 -> 000000000001000
+   000000000010000 -> 000000000010000
+   000000000100000 -> 000000000100000
+   000000001000000 -> 000000001000000
+   000000010000000 -> 000000010000000
+   000000100000000 -> 000000100000000
+   000001000000000 -> 000001000000000
+   000010000000000 -> 000010000000000
+   000100000000000 -> 000100000000000
+   001000000000000 -> 001000000000000
+   010000000000000 -> 010000000000000
+   100000000000000 -> 100000000000000
+@N: MO195 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer.vhd":108:2:108:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for SEQUENCER_STATE[0:14].  
+@N: MO231 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\slow_pulseen_gen.vhd":67:2:67:3|Found counter in view:work.SLOW_PULSE_EN_GEN(rtl) instance CNT_VAL[22:0] 
+
+Starting factoring (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:09s; Memory used current: 131MB peak: 135MB)
+
+
+Finished factoring (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:10s; Memory used current: 138MB peak: 139MB)
+
+@W: MO160 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer.vhd":53:2:53:15|Register bit CONTROL.RET_STATE[0] (in view view:work.TOP_LV_REGUL_CNTL(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer.vhd":53:2:53:15|Register bit CONTROL.RET_STATE[1] (in view view:work.TOP_LV_REGUL_CNTL(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer.vhd":53:2:53:15|Register bit CONTROL.RET_STATE[3] (in view view:work.TOP_LV_REGUL_CNTL(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer.vhd":53:2:53:15|Register bit CONTROL.RET_STATE[4] (in view view:work.TOP_LV_REGUL_CNTL(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer.vhd":53:2:53:15|Register bit CONTROL.RET_STATE[13] (in view view:work.TOP_LV_REGUL_CNTL(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:10s; Memory used current: 135MB peak: 139MB)
+
+
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:10s; Memory used current: 135MB peak: 139MB)
+
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:10s; Memory used current: 122MB peak: 139MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:10s; Memory used current: 122MB peak: 139MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:10s; Memory used current: 122MB peak: 139MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:10s; Memory used current: 122MB peak: 139MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:10s; Memory used current: 121MB peak: 139MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:11s; Memory used current: 145MB peak: 148MB)
+
+
+High Fanout Net Report
+**********************
+
+Driver Instance / Pin Name                  Fanout, notes                   
+----------------------------------------------------------------------------
+RX_FILT.SIGOUT_maj / Y                      27                              
+VOP_UVL_FILT.SIGOUT_maj / Y                 43                              
+TX_PROMPT.ONE_SEC_CLK_EN_SIG_maj / Y        44                              
+TX_PROMPT.ONE_SEC.un11_cnt_vallto22 / Y     26                              
+CONTROL.SEQUENCER_STATE_66 / Y              45 : 45 asynchronous set/reset  
+SERIAL_TRANS.TX_STATE_57 / Y                72 : 72 asynchronous set/reset  
+SERIAL_REC.RX_STATE_maj[4] / Y              25                              
+MASTER_RST_B_maj / Y                        904 : 900 asynchronous set/reset
+CLK_5M_GL_maj / Y                           1017                            
+MASTER_RST_B_maj / Y                        904 : 900 asynchronous set/reset
+TX_PROMPT.ONE_SEC_CLK_EN_SIG_maj / Y        44                              
+SERIAL_REC.RX_STATE_maj[4] / Y              25                              
+VOP_UVL_FILT.SIGOUT_maj / Y                 43                              
+RX_FILT.SIGOUT_maj / Y                      27                              
+============================================================================
+
+@N: FP130 |Promoting Net P_CLK_5M_GL_c on CLKINT  P_CLK_5M_GL_keep 
+@N: FP130 |Promoting Net P_MASTER_RST_B_c on CLKINT  I_119 
+@N: FP130 |Promoting Net SERIAL_TRANS.N_238 on CLKINT  I_120 
+@N: FP130 |Promoting Net CLK40MHZ_c on CLKBUF  CLK40MHZ_pad 
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:11s; Memory used current: 145MB peak: 148MB)
+
+Replicating Combinational Instance RX_FILT.SIGOUT_maj, fanout 27 segments 2
+Replicating Combinational Instance VOP_UVL_FILT.SIGOUT_maj, fanout 43 segments 2
+Replicating Combinational Instance SERIAL_REC.RX_STATE_maj[4], fanout 25 segments 2
+Replicating Combinational Instance TX_PROMPT.ONE_SEC_CLK_EN_SIG_maj, fanout 44 segments 2
+Replicating Combinational Instance CONTROL.SEQUENCER_STATE_66, fanout 45 segments 2
+Replicating Combinational Instance TX_PROMPT.ONE_SEC.un11_cnt_vallto22, fanout 26 segments 2
+
+Added 0 Buffers
+Added 6 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 6 Combinational Cells via replication
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:11s; Memory used current: 146MB peak: 148MB)
+
+
+
+@S |Clock Optimization Summary
+
+
+#### START OF CLOCK OPTIMIZATION REPORT #####[
+
+Clock optimization not enabled
+2 non-gated/non-generated clock tree(s) driving 1029 clock pin(s) of sequential element(s)
+0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+0 instances converted, 0 sequential instances remain driven by gated/generated clocks
+
+================================ Non-Gated/Non-Generated Clocks ================================
+Clock Tree ID     Driving Element      Drive Element Type             Fanout     Sample Instance
+------------------------------------------------------------------------------------------------
+@K:CKID0001       P_CLK_5M_GL_keep     clock definition on CLKINT     1014       UVL_VOP0_IN[0] 
+@K:CKID0002       CLK40MHZ             clock definition on port       15         CLK_5M_GL      
+================================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######]
+
+
+Start Writing Netlists (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:11s; Memory used current: 143MB peak: 148MB)
+
+Writing Analyst data base C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\synwork\TOP_LV_REGUL_CNTL_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:11s; Memory used current: 145MB peak: 148MB)
+
+Writing EDIF Netlist and constraint files
+L-2016.09M-SP1-5
+
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:12s; Memory used current: 147MB peak: 149MB)
+
+
+Start final timing analysis (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:12s; Memory used current: 145MB peak: 149MB)
+
+@N: MT615 |Found clock ext_clk40mhz with period 20.00ns 
+@N: MT615 |Found clock int_clk5mhz with period 160.00ns 
+
+
+##### START OF TIMING REPORT #####[
+# Timing Report written on Tue Jan 08 10:21:40 2019
+#
+
+
+Top view:               TOP_LV_REGUL_CNTL
+Library name:           PA3
+Operating conditions:   COMWCSTD ( T = 70.0, V = 1.42, P = 1.74, tree_type = balanced_tree )
+Requested Frequency:    6.3 MHz
+Wire load mode:         top
+Wire load model:        proasic3
+Paths requested:        5
+Constraint File(s):    C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\TOP_LVRegul_cntl.fdc
+                       
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.
+
+
+
+Performance Summary
+*******************
+
+
+Worst slack in design: 14.022
+
+                   Requested     Estimated     Requested     Estimated                Clock        Clock           
+Starting Clock     Frequency     Frequency     Period        Period        Slack      Type         Group           
+-------------------------------------------------------------------------------------------------------------------
+ext_clk40mhz       50.0 MHz      167.3 MHz     20.000        5.978         14.022     declared     default_clkgroup
+int_clk5mhz        6.3 MHz       40.1 MHz      160.000       24.918        76.596     declared     default_clkgroup
+===================================================================================================================
+
+
+
+
+
+Clock Relationships
+*******************
+
+Clocks                      |    rise  to  rise     |    fall  to  fall   |    rise  to  fall    |    fall  to  rise 
+---------------------------------------------------------------------------------------------------------------------
+Starting      Ending        |  constraint  slack    |  constraint  slack  |  constraint  slack   |  constraint  slack
+---------------------------------------------------------------------------------------------------------------------
+ext_clk40mhz  ext_clk40mhz  |  20.000      14.022   |  No paths    -      |  No paths    -       |  No paths    -    
+int_clk5mhz   int_clk5mhz   |  160.000     135.082  |  No paths    -      |  80.000      76.596  |  No paths    -    
+=====================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+No IO constraint found
+
+
+
+====================================
+Detailed Report for Clock: ext_clk40mhz
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                        Starting                                                    Arrival           
+Instance                Reference        Type       Pin     Net                     Time        Slack 
+                        Clock                                                                         
+------------------------------------------------------------------------------------------------------
+CLK_5M_GL_tmr2          ext_clk40mhz     DFN1C0     Q       CLK_5M_GL_tmr2          0.580       14.022
+CLK_5M_GL_tmr3          ext_clk40mhz     DFN1C0     Q       CLK_5M_GL_tmr3          0.737       14.121
+CLK_5M_GL               ext_clk40mhz     DFN1C0     Q       CLK_5M_GL_0             0.737       14.418
+REFCNT_tmr2[0]          ext_clk40mhz     DFN1C0     Q       REFCNT_tmr2[0]          0.580       14.674
+REFCNT_tmr3[0]          ext_clk40mhz     DFN1C0     Q       REFCNT_tmr3[0]          0.737       14.769
+REFCNT_tmr2[1]          ext_clk40mhz     DFN1C0     Q       REFCNT_tmr2[1]          0.737       15.051
+REFCNT[0]               ext_clk40mhz     DFN1C0     Q       REFCNT_0[0]             0.737       15.066
+REFCNT_tmr3[1]          ext_clk40mhz     DFN1C0     Q       REFCNT_tmr3[1]          0.737       15.077
+REFCNT[1]               ext_clk40mhz     DFN1C0     Q       REFCNT_0[1]             0.737       15.374
+DEL0_DEV_RST_B_tmr2     ext_clk40mhz     DFN1C0     Q       DEL0_DEV_RST_B_tmr2     0.580       16.769
+======================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                      Starting                                               Required           
+Instance              Reference        Type       Pin     Net                Time         Slack 
+                      Clock                                                                     
+------------------------------------------------------------------------------------------------
+REFCNT[1]             ext_clk40mhz     DFN1C0     D       SUM1               19.461       15.447
+REFCNT_tmr2[1]        ext_clk40mhz     DFN1C0     D       SUM1               19.461       15.447
+REFCNT_tmr3[1]        ext_clk40mhz     DFN1C0     D       SUM1               19.461       15.447
+REFCNT[0]             ext_clk40mhz     DFN1C0     D       REFCNT_i[0]        19.461       15.551
+REFCNT_tmr2[0]        ext_clk40mhz     DFN1C0     D       REFCNT_i[0]        19.461       15.551
+REFCNT_tmr3[0]        ext_clk40mhz     DFN1C0     D       REFCNT_i[0]        19.461       15.551
+MASTER_RST_B          ext_clk40mhz     DFN1C0     D       DEL0_DEV_RST_B     19.461       16.769
+MASTER_RST_B_tmr2     ext_clk40mhz     DFN1C0     D       DEL0_DEV_RST_B     19.461       16.769
+MASTER_RST_B_tmr3     ext_clk40mhz     DFN1C0     D       DEL0_DEV_RST_B     19.461       16.769
+================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      20.000
+    - Setup time:                            0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         19.427
+
+    - Propagation time:                      5.405
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     14.022
+
+    Number of logic level(s):                3
+    Starting point:                          CLK_5M_GL_tmr2 / Q
+    Ending point:                            CLK_5M_GL / D
+    The start point is clocked by            ext_clk40mhz [rising] on pin CLK
+    The end   point is clocked by            ext_clk40mhz [rising] on pin CLK
+
+Instance / Net                       Pin      Pin               Arrival     No. of    
+Name                      Type       Name     Dir     Delay     Time        Fan Out(s)
+--------------------------------------------------------------------------------------
+CLK_5M_GL_tmr2            DFN1C0     Q        Out     0.580     0.580       -         
+CLK_5M_GL_tmr2            Net        -        -       0.322     -           1         
+CLK_5M_GL_maj             MAJ3       B        In      -         0.902       -         
+CLK_5M_GL_maj             MAJ3       Y        Out     0.984     1.886       -         
+CLK_5M_GL                 Net        -        -       0.386     -           2         
+P_CLK_5M_GL_keep          CLKINT     A        In      -         2.271       -         
+P_CLK_5M_GL_keep          CLKINT     Y        Out     0.174     2.445       -         
+P_CLK_5M_GL_c             Net        -        -       1.601     -           1016      
+CLK_5M_GL_maj_RNI79LN     MX2B       B        In      -         4.046       -         
+CLK_5M_GL_maj_RNI79LN     MX2B       Y        Out     0.553     4.598       -         
+CLK_5M_GL_maj_RNI79LN     Net        -        -       0.806     -           3         
+CLK_5M_GL                 DFN1C0     D        In      -         5.405       -         
+======================================================================================
+Total path delay (propagation time + setup) of 5.978 is 2.864(47.9%) logic and 3.114(52.1%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+
+====================================
+Detailed Report for Clock: int_clk5mhz
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                              Starting                                                                 Arrival            
+Instance                                      Reference       Type       Pin     Net                                   Time        Slack  
+                                              Clock                                                                                       
+------------------------------------------------------------------------------------------------------------------------------------------
+CONTROL.SEQUENCER_STATE_illegalpipe1_tmr2     int_clk5mhz     DFN1C0     Q       SEQUENCER_STATE_illegalpipe1_tmr2     0.580       76.596 
+RX_FILT.THRESH_VAL_illegalpipe1_tmr2          int_clk5mhz     DFN1C0     Q       THRESH_VAL_illegalpipe1_tmr2          0.580       76.596 
+SERIAL_TRANS.TX_STATE_illegalpipe1_tmr2       int_clk5mhz     DFN1C0     Q       TX_STATE_illegalpipe1_tmr2            0.580       76.596 
+CONTROL.SEQUENCER_STATE_illegalpipe1_tmr3     int_clk5mhz     DFN1C0     Q       SEQUENCER_STATE_illegalpipe1_tmr3     0.737       76.717 
+RX_FILT.THRESH_VAL_illegalpipe1_tmr3          int_clk5mhz     DFN1C0     Q       THRESH_VAL_illegalpipe1_tmr3          0.737       76.717 
+SERIAL_TRANS.TX_STATE_illegalpipe1_tmr3       int_clk5mhz     DFN1C0     Q       TX_STATE_illegalpipe1_tmr3            0.737       76.717 
+CONTROL.SEQUENCER_STATE_illegalpipe1          int_clk5mhz     DFN1C0     Q       SEQUENCER_STATE_illegalpipe1_0        0.737       77.014 
+RX_FILT.THRESH_VAL_illegalpipe1               int_clk5mhz     DFN1C0     Q       THRESH_VAL_illegalpipe1_0             0.737       77.014 
+SERIAL_TRANS.TX_STATE_illegalpipe1            int_clk5mhz     DFN1C0     Q       TX_STATE_illegalpipe1_0               0.737       77.014 
+CONTROL.DEL_CNTR_tmr2[0]                      int_clk5mhz     DFN1P0     Q       DEL_CNTR_tmr2[0]                      0.737       135.082
+==========================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                              Starting                                                            Required            
+Instance                                      Reference       Type       Pin     Net                              Time         Slack  
+                                              Clock                                                                                   
+--------------------------------------------------------------------------------------------------------------------------------------
+CONTROL.SEQUENCER_STATE_illegalpipe2          int_clk5mhz     DFN0C0     D       SEQUENCER_STATE_illegalpipe1     79.287       76.596 
+CONTROL.SEQUENCER_STATE_illegalpipe2_tmr2     int_clk5mhz     DFN0C0     D       SEQUENCER_STATE_illegalpipe1     79.287       76.596 
+CONTROL.SEQUENCER_STATE_illegalpipe2_tmr3     int_clk5mhz     DFN0C0     D       SEQUENCER_STATE_illegalpipe1     79.287       76.596 
+RX_FILT.THRESH_VAL_illegalpipe2               int_clk5mhz     DFN0C0     D       THRESH_VAL_illegalpipe1          79.287       76.596 
+RX_FILT.THRESH_VAL_illegalpipe2_tmr2          int_clk5mhz     DFN0C0     D       THRESH_VAL_illegalpipe1          79.287       76.596 
+RX_FILT.THRESH_VAL_illegalpipe2_tmr3          int_clk5mhz     DFN0C0     D       THRESH_VAL_illegalpipe1          79.287       76.596 
+SERIAL_TRANS.TX_STATE_illegalpipe2            int_clk5mhz     DFN0C0     D       TX_STATE_illegalpipe1            79.287       76.596 
+SERIAL_TRANS.TX_STATE_illegalpipe2_tmr2       int_clk5mhz     DFN0C0     D       TX_STATE_illegalpipe1            79.287       76.596 
+SERIAL_TRANS.TX_STATE_illegalpipe2_tmr3       int_clk5mhz     DFN0C0     D       TX_STATE_illegalpipe1            79.287       76.596 
+CONTROL.CH_VOSG_EN[5]                         int_clk5mhz     DFN1C0     D       CH_VOSG_EN_maj_RNICVD001[5]      159.427      135.082
+======================================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      80.000
+    - Setup time:                            0.713
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         79.287
+
+    - Propagation time:                      2.692
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 76.595
+
+    Number of logic level(s):                1
+    Starting point:                          CONTROL.SEQUENCER_STATE_illegalpipe1_tmr2 / Q
+    Ending point:                            CONTROL.SEQUENCER_STATE_illegalpipe2 / D
+    The start point is clocked by            int_clk5mhz [rising] on pin CLK
+    The end   point is clocked by            int_clk5mhz [falling] on pin CLK
+
+Instance / Net                                           Pin      Pin               Arrival     No. of    
+Name                                          Type       Name     Dir     Delay     Time        Fan Out(s)
+----------------------------------------------------------------------------------------------------------
+CONTROL.SEQUENCER_STATE_illegalpipe1_tmr2     DFN1C0     Q        Out     0.580     0.580       -         
+SEQUENCER_STATE_illegalpipe1_tmr2             Net        -        -       0.322     -           1         
+CONTROL.SEQUENCER_STATE_illegalpipe1_maj      MAJ3       B        In      -         0.902       -         
+CONTROL.SEQUENCER_STATE_illegalpipe1_maj      MAJ3       Y        Out     0.984     1.886       -         
+SEQUENCER_STATE_illegalpipe1                  Net        -        -       0.806     -           3         
+CONTROL.SEQUENCER_STATE_illegalpipe2          DFN0C0     D        In      -         2.692       -         
+==========================================================================================================
+Total path delay (propagation time + setup) of 3.405 is 2.277(66.9%) logic and 1.128(33.1%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+##### END OF TIMING REPORT #####]
+
+Timing exceptions that could not be applied
+None
+
+Finished final timing analysis (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:12s; Memory used current: 145MB peak: 149MB)
+
+
+Finished timing report (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:12s; Memory used current: 145MB peak: 149MB)
+
+--------------------------------------------------------------------------------
+Target Part: A3P250_VQFP100_STD
+Report for cell TOP_LV_REGUL_CNTL.rtl
+  Core Cell usage:
+              cell count     area count*area
+              AND2    13      1.0       13.0
+               AO1    58      1.0       58.0
+              AO13     6      1.0        6.0
+              AO18     4      1.0        4.0
+              AO1A    31      1.0       31.0
+              AO1C     6      1.0        6.0
+              AO1D     5      1.0        5.0
+              AOI1     5      1.0        5.0
+             AOI1B     5      1.0        5.0
+              AX1A     1      1.0        1.0
+              AX1B     5      1.0        5.0
+              AX1C    10      1.0       10.0
+              AX1D     1      1.0        1.0
+              AXO1     1      1.0        1.0
+              AXO3     1      1.0        1.0
+              AXO5     1      1.0        1.0
+            CLKINT     3      0.0        0.0
+               GND     7      0.0        0.0
+               INV     1      1.0        1.0
+              MAJ3   349      1.0      349.0
+             MIN3X     4      1.0        4.0
+            MIN3XI     2      1.0        2.0
+               MX2   112      1.0      112.0
+              MX2A    38      1.0       38.0
+              MX2B    20      1.0       20.0
+              MX2C     5      1.0        5.0
+              NOR2    58      1.0       58.0
+             NOR2A   175      1.0      175.0
+             NOR2B   109      1.0      109.0
+              NOR3    33      1.0       33.0
+             NOR3A    44      1.0       44.0
+             NOR3B    61      1.0       61.0
+             NOR3C    57      1.0       57.0
+               OA1    12      1.0       12.0
+              OA1A    11      1.0       11.0
+              OA1B    21      1.0       21.0
+              OA1C     9      1.0        9.0
+              OAI1     1      1.0        1.0
+               OR2    74      1.0       74.0
+              OR2A    40      1.0       40.0
+              OR2B    12      1.0       12.0
+               OR3    62      1.0       62.0
+              OR3A    11      1.0       11.0
+              OR3B     3      1.0        3.0
+              OR3C     2      1.0        2.0
+               VCC     7      0.0        0.0
+               XA1    14      1.0       14.0
+              XA1B    14      1.0       14.0
+             XNOR2     9      1.0        9.0
+             XNOR3     8      1.0        8.0
+               XO1    11      1.0       11.0
+              XO1A     2      1.0        2.0
+              XOR2    68      1.0       68.0
+              XOR3     4      1.0        4.0
+
+
+            DFN0C0     9      1.0        9.0
+            DFN1C0   822      1.0      822.0
+            DFN1C1   117      1.0      117.0
+            DFN1P0    75      1.0       75.0
+            DFN1P1     6      1.0        6.0
+                   -----          ----------
+             TOTAL  2655              2638.0
+
+
+  IO Cell usage:
+              cell count
+            CLKBUF     1
+             INBUF    16
+    INBUF_LVCMOS15     1
+            OUTBUF    30
+                   -----
+             TOTAL    48
+
+
+Core Cells         : 2638 of 6144 (43%)
+IO Cells           : 48
+
+  RAM/ROM Usage Summary
+Block Rams : 0 of 8 (0%)
+
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:12s; Memory used current: 29MB peak: 149MB)
+
+Process took 0h:00m:13s realtime, 0h:00m:12s cputime
+# Tue Jan 08 10:21:40 2019
+
+###########################################################]

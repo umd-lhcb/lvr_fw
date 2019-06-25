@@ -1,0 +1,649 @@
+<html><body><samp><pre>
+<!@TC:1551281410>
+# Wed Feb 27 10:30:08 2019
+
+<a name=mapperReport7></a>Synopsys Microsemi Technology Mapper, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39</a>
+Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+Product Version L-2016.09M-SP1-5
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 100MB)
+
+@N:<a href="@N:MF248:@XP_HELP">MF248</a> : <!@TM:1551281410> | Running in 64-bit mode. 
+@N:<a href="@N:MF667:@XP_HELP">MF667</a> : <!@TM:1551281410> | Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.) 
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 101MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 101MB)
+
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 108MB peak: 110MB)
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 108MB peak: 110MB)
+
+@N:<a href="@N:MO231:@XP_HELP">MO231</a> : <a href="c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\top_lvr_gen3_cntl.vhd:387:2:387:4:@N:MO231:@XP_MSG">top_lvr_gen3_cntl.vhd(387)</a><!@TM:1551281410> | Found counter in view:work.TOP_LVR_GEN3_CNTL(rtl) instance DTYCYC_CNT[4:0] 
+@N:<a href="@N:MO231:@XP_HELP">MO231</a> : <a href="c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer_new.vhd:130:2:130:4:@N:MO231:@XP_MSG">main_sequencer_new.vhd(130)</a><!@TM:1551281410> | Found counter in view:work.MAIN_SEQUENCER_NEW(rtl) instance DEL_CNTR[14:0] 
+Encoding state machine SEQUENCER_STATE[0:9] (in view: work.MAIN_SEQUENCER_NEW(rtl))
+original code -> new code
+   0000000001 -> 0000000001
+   0000000010 -> 0000000010
+   0000000100 -> 0000000100
+   0000001000 -> 0000001000
+   0000010000 -> 0000010000
+   0000100000 -> 0000100000
+   0001000000 -> 0001000000
+   0010000000 -> 0010000000
+   0100000000 -> 0100000000
+   1000000000 -> 1000000000
+<font color=#A52A2A>@W:<a href="@W:MO160:@XP_HELP">MO160</a> : <a href="c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer_new.vhd:130:2:130:4:@W:MO160:@XP_MSG">main_sequencer_new.vhd(130)</a><!@TM:1551281410> | Register bit RET_STATE[0] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.</font>
+<font color=#A52A2A>@W:<a href="@W:MO160:@XP_HELP">MO160</a> : <a href="c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer_new.vhd:130:2:130:4:@W:MO160:@XP_MSG">main_sequencer_new.vhd(130)</a><!@TM:1551281410> | Register bit RET_STATE[1] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.</font>
+<font color=#A52A2A>@W:<a href="@W:MO160:@XP_HELP">MO160</a> : <a href="c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer_new.vhd:130:2:130:4:@W:MO160:@XP_MSG">main_sequencer_new.vhd(130)</a><!@TM:1551281410> | Register bit RET_STATE[2] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.</font>
+<font color=#A52A2A>@W:<a href="@W:MO160:@XP_HELP">MO160</a> : <a href="c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer_new.vhd:130:2:130:4:@W:MO160:@XP_MSG">main_sequencer_new.vhd(130)</a><!@TM:1551281410> | Register bit RET_STATE[6] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.</font>
+<font color=#A52A2A>@W:<a href="@W:MO160:@XP_HELP">MO160</a> : <a href="c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer_new.vhd:130:2:130:4:@W:MO160:@XP_MSG">main_sequencer_new.vhd(130)</a><!@TM:1551281410> | Register bit RET_STATE[7] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.</font>
+<font color=#A52A2A>@W:<a href="@W:MO160:@XP_HELP">MO160</a> : <a href="c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer_new.vhd:130:2:130:4:@W:MO160:@XP_MSG">main_sequencer_new.vhd(130)</a><!@TM:1551281410> | Register bit RET_STATE[8] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.</font>
+<font color=#A52A2A>@W:<a href="@W:MO197:@XP_HELP">MO197</a> : <a href="c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer_new.vhd:130:2:130:4:@W:MO197:@XP_MSG">main_sequencer_new.vhd(130)</a><!@TM:1551281410> | Removing FSM register SEQUENCER_STATE[1] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.</font>
+@N:<a href="@N:MO231:@XP_HELP">MO231</a> : <a href="c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\slow_pulseen_gen.vhd:73:2:73:4:@N:MO231:@XP_MSG">slow_pulseen_gen.vhd(73)</a><!@TM:1551281410> | Found counter in view:work.SLOW_PULSE_EN_GEN(rtl) instance CNT_VAL[20:0] 
+
+Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 110MB peak: 111MB)
+
+
+Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 112MB peak: 113MB)
+
+
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 111MB peak: 113MB)
+
+
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 111MB peak: 113MB)
+
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 112MB peak: 113MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 113MB peak: 113MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 116MB peak: 117MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 116MB peak: 117MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 116MB peak: 117MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 116MB peak: 117MB)
+
+
+High Fanout Net Report
+**********************
+
+Driver Instance / Pin Name     Fanout, notes                   
+---------------------------------------------------------------
+MASTER_RST_B / Q               101 : 100 asynchronous set/reset
+===============================================================
+
+@N:<a href="@N:FP130:@XP_HELP">FP130</a> : <!@TM:1551281410> | Promoting Net BUF5M_J11_15_TCONN_c on CLKINT  BUF5M_J11_15_TCONN_inferred_clock  
+@N:<a href="@N:FP130:@XP_HELP">FP130</a> : <!@TM:1551281410> | Promoting Net POR_OUT_TO_SCA_c on CLKINT  I_38  
+@N:<a href="@N:FP130:@XP_HELP">FP130</a> : <!@TM:1551281410> | Promoting Net CLK40M_OSC_c on CLKBUF  CLK40M_OSC_pad  
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 116MB peak: 117MB)
+
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 116MB peak: 117MB)
+
+
+
+@S |Clock Optimization Summary
+
+
+<a name=clockReport8></a>#### START OF CLOCK OPTIMIZATION REPORT #####[</a>
+
+Clock optimization not enabled
+1 non-gated/non-generated clock tree(s) driving 5 clock pin(s) of sequential element(s)
+1 gated/generated clock tree(s) driving 97 clock pin(s) of sequential element(s)
+0 instances converted, 97 sequential instances remain driven by gated/generated clocks
+
+=========================== Non-Gated/Non-Generated Clocks ============================
+Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance
+---------------------------------------------------------------------------------------
+<a href="@|S:CLK40M_OSC@|E:CLK_5M_GL@|F:@syn_sample_clock_path1==CKID0002@|M:ClockId0002  @XP_NAMES_BY_PROP">ClockId0002 </a>       CLK40M_OSC          port                   5          CLK_5M_GL      
+=======================================================================================
+====================================================================== Gated/Generated Clocks =======================================================================
+Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance      Explanation                                                             
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<a href="@|S:CLK_5M_GL@|E:MAN_EN_CH_4TO1_A@|F:@syn_sample_clock_path==CKID0001@|M:ClockId0001  @XP_NAMES_BY_PROP">ClockId0001 </a>       CLK_5M_GL           DFN1C0                 97         MAN_EN_CH_4TO1_A     No generated or derived clock directive on output of sequential instance
+=====================================================================================================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######]
+
+
+Start Writing Netlists (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 115MB peak: 117MB)
+
+Writing Analyst data base C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\synwork\TOP_LVR_GEN3_CNTL_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 116MB peak: 117MB)
+
+Writing EDIF Netlist and constraint files
+L-2016.09M-SP1-5
+
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 116MB peak: 117MB)
+
+
+Start final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 116MB peak: 117MB)
+
+<font color=#A52A2A>@W:<a href="@W:MT420:@XP_HELP">MT420</a> : <!@TM:1551281410> | Found inferred clock TOP_LVR_GEN3_CNTL|CLK40M_OSC with period 10.00ns. Please declare a user-defined clock on object "p:CLK40M_OSC"</font> 
+<font color=#A52A2A>@W:<a href="@W:MT420:@XP_HELP">MT420</a> : <!@TM:1551281410> | Found inferred clock TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock with period 10.00ns. Please declare a user-defined clock on object "n:BUF5M_J11_15_TCONN"</font> 
+
+
+<a name=timingReport9></a>##### START OF TIMING REPORT #####[</a>
+# Timing Report written on Wed Feb 27 10:30:10 2019
+#
+
+
+Top view:               TOP_LVR_GEN3_CNTL
+Library name:           PA3
+Operating conditions:   COMWCSTD ( T = 70.0, V = 1.42, P = 1.74, tree_type = balanced_tree )
+Requested Frequency:    100.0 MHz
+Wire load mode:         top
+Wire load model:        proasic3
+Paths requested:        5
+Constraint File(s):    
+@N:<a href="@N:MT320:@XP_HELP">MT320</a> : <!@TM:1551281410> | This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report. 
+
+@N:<a href="@N:MT322:@XP_HELP">MT322</a> : <!@TM:1551281410> | Clock constraints include only register-to-register paths associated with each individual clock. 
+
+
+
+<a name=performanceSummary10></a>Performance Summary</a>
+*******************
+
+
+Worst slack in design: -1.921
+
+                                                        Requested     Estimated     Requested     Estimated                Clock        Clock              
+Starting Clock                                          Frequency     Frequency     Period        Period        Slack      Type         Group              
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     100.0 MHz     83.9 MHz      10.000        11.921        -1.921     inferred     Inferred_clkgroup_1
+TOP_LVR_GEN3_CNTL|CLK40M_OSC                            100.0 MHz     296.4 MHz     10.000        3.373         6.627      inferred     Inferred_clkgroup_0
+===========================================================================================================================================================
+
+
+
+
+
+<a name=clockRelationships11></a>Clock Relationships</a>
+*******************
+
+Clocks                                                                                                    |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Starting                                             Ending                                               |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOP_LVR_GEN3_CNTL|CLK40M_OSC                         TOP_LVR_GEN3_CNTL|CLK40M_OSC                         |  10.000      6.627   |  No paths    -      |  No paths    -      |  No paths    -    
+TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock  TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock  |  10.000      -1.921  |  No paths    -      |  No paths    -      |  No paths    -    
+=================================================================================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+<a name=interfaceInfo12></a>Interface Information </a>
+*********************
+
+No IO constraint found
+
+
+
+====================================
+<a name=clockReport13></a>Detailed Report for Clock: TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock</a>
+====================================
+
+
+
+<a name=startingSlack14></a>Starting Points with Worst Slack</a>
+********************************
+
+                          Starting                                                                                      Arrival           
+Instance                  Reference                                               Type         Pin     Net              Time        Slack 
+                          Clock                                                                                                           
+------------------------------------------------------------------------------------------------------------------------------------------
+CONTROL.DEL_CNTR[4]       TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     Q       DEL_CNTR[4]      0.580       -1.921
+CONTROL.DEL_CNTR[2]       TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     Q       DEL_CNTR[2]      0.580       -1.769
+CONTROL.DEL_CNTR[3]       TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     Q       DEL_CNTR[3]      0.580       -1.627
+CONTROL.DEL_CNTR[11]      TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     Q       DEL_CNTR[11]     0.737       -1.399
+CONTROL.DEL_CNTR[5]       TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     Q       DEL_CNTR[5]      0.737       -1.343
+CONTROL.DEL_CNTR[0]       TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     Q       DEL_CNTR[0]      0.737       -1.123
+TX_PROMPT.CNT_VAL[12]     TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1C0       Q       CNT_VAL[12]      0.737       -1.041
+CONTROL.DEL_CNTR[8]       TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     Q       DEL_CNTR[8]      0.737       -0.968
+CONTROL.DEL_CNTR[9]       TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     Q       DEL_CNTR[9]      0.737       -0.909
+CONTROL.DEL_CNTR[12]      TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     Q       DEL_CNTR[12]     0.737       -0.883
+==========================================================================================================================================
+
+
+<a name=endingSlack15></a>Ending Points with Worst Slack</a>
+******************************
+
+                               Starting                                                                                       Required           
+Instance                       Reference                                               Type         Pin     Net               Time         Slack 
+                               Clock                                                                                                             
+-------------------------------------------------------------------------------------------------------------------------------------------------
+CONTROL.DEL_CNTR[8]            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     D       N_23              9.427        -1.921
+CONTROL.SEQUENCER_STATE[6]     TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1C0       D       N_13              9.427        -1.799
+CONTROL.SEQUENCER_STATE[9]     TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1P0       D       N_15              9.461        -1.778
+CONTROL.DEL_CNTR[6]            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     D       DEL_N_3_mux_3     9.427        -1.731
+CONTROL.DEL_CNTR[4]            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     D       N_31              9.427        -1.695
+CONTROL.DEL_CNTR[7]            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     D       DEL_N_3_mux_0     9.427        -1.604
+CONTROL.DEL_CNTR[0]            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     D       N_517             9.461        -1.399
+CONTROL.DEL_CNTR[1]            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     D       N_37              9.461        -1.399
+CONTROL.DEL_CNTR[2]            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     D       N_35              9.461        -1.399
+CONTROL.DEL_CNTR[9]            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock     DFN1E0P0     D       N_526             9.461        -1.399
+=================================================================================================================================================
+
+
+
+<a name=worstPaths16></a>Worst Path Information</a>
+<a href="C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\synlog\TOP_LVR_GEN3_CNTL_fpga_mapper.srr:srsfC:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\TOP_LVR_GEN3_CNTL.srs:fp:18667:20725:@XP_NAMES_GATE">View Worst Path in Analyst</a>
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.427
+
+    - Propagation time:                      11.347
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -1.921
+
+    Number of logic level(s):                6
+    Starting point:                          CONTROL.DEL_CNTR[4] / Q
+    Ending point:                            CONTROL.DEL_CNTR[8] / D
+    The start point is clocked by            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock [rising] on pin CLK
+    The end   point is clocked by            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock [rising] on pin CLK
+
+Instance / Net                                 Pin      Pin               Arrival     No. of    
+Name                              Type         Name     Dir     Delay     Time        Fan Out(s)
+------------------------------------------------------------------------------------------------
+CONTROL.DEL_CNTR[4]               DFN1E0P0     Q        Out     0.580     0.580       -         
+DEL_CNTR[4]                       Net          -        -       1.184     -           4         
+CONTROL.DEL_CNTR_RNIAO0J[2]       NOR2         B        In      -         1.764       -         
+CONTROL.DEL_CNTR_RNIAO0J[2]       NOR2         Y        Out     0.514     2.278       -         
+DEL_m1_e_7_0                      Net          -        -       0.806     -           3         
+CONTROL.DEL_CNTR_RNIMI161[5]      NOR2B        B        In      -         3.085       -         
+CONTROL.DEL_CNTR_RNIMI161[5]      NOR2B        Y        Out     0.627     3.712       -         
+DEL_N_7_mux                       Net          -        -       0.806     -           3         
+CONTROL.DEL_CNTR_RNIR52P1[1]      NOR2A        A        In      -         4.519       -         
+CONTROL.DEL_CNTR_RNIR52P1[1]      NOR2A        Y        Out     0.627     5.146       -         
+un1_m1_e_0_0                      Net          -        -       1.279     -           5         
+CONTROL.DEL_CNTR_RNIC1RU4[14]     NOR3C        C        In      -         6.425       -         
+CONTROL.DEL_CNTR_RNIC1RU4[14]     NOR3C        Y        Out     0.641     7.066       -         
+N_107                             Net          -        -       2.172     -           16        
+CONTROL.DEL_CNTR_RNO_1[8]         OR3A         B        In      -         9.239       -         
+CONTROL.DEL_CNTR_RNO_1[8]         OR3A         Y        Out     0.714     9.953       -         
+DEL_CNTR_n8_i_1                   Net          -        -       0.322     -           1         
+CONTROL.DEL_CNTR_RNO[8]           OR3          C        In      -         10.275      -         
+CONTROL.DEL_CNTR_RNO[8]           OR3          Y        Out     0.751     11.026      -         
+N_23                              Net          -        -       0.322     -           1         
+CONTROL.DEL_CNTR[8]               DFN1E0P0     D        In      -         11.347      -         
+================================================================================================
+Total path delay (propagation time + setup) of 11.921 is 5.029(42.2%) logic and 6.891(57.8%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 2: 
+      Requested Period:                      10.000
+    - Setup time:                            0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.427
+
+    - Propagation time:                      11.225
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -1.799
+
+    Number of logic level(s):                7
+    Starting point:                          CONTROL.DEL_CNTR[4] / Q
+    Ending point:                            CONTROL.SEQUENCER_STATE[6] / D
+    The start point is clocked by            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock [rising] on pin CLK
+    The end   point is clocked by            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock [rising] on pin CLK
+
+Instance / Net                                    Pin      Pin               Arrival     No. of    
+Name                                 Type         Name     Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------------
+CONTROL.DEL_CNTR[4]                  DFN1E0P0     Q        Out     0.580     0.580       -         
+DEL_CNTR[4]                          Net          -        -       1.184     -           4         
+CONTROL.DEL_CNTR_RNIAO0J[2]          NOR2         B        In      -         1.764       -         
+CONTROL.DEL_CNTR_RNIAO0J[2]          NOR2         Y        Out     0.514     2.278       -         
+DEL_m1_e_7_0                         Net          -        -       0.806     -           3         
+CONTROL.DEL_CNTR_RNIMI161[5]         NOR2B        B        In      -         3.085       -         
+CONTROL.DEL_CNTR_RNIMI161[5]         NOR2B        Y        Out     0.627     3.712       -         
+DEL_N_7_mux                          Net          -        -       0.806     -           3         
+CONTROL.DEL_CNTR_RNIR52P1[1]         NOR2A        A        In      -         4.519       -         
+CONTROL.DEL_CNTR_RNIR52P1[1]         NOR2A        Y        Out     0.627     5.146       -         
+un1_m1_e_0_0                         Net          -        -       1.279     -           5         
+CONTROL.DEL_CNTR_RNIAR1G4[10]        NOR3C        C        In      -         6.425       -         
+CONTROL.DEL_CNTR_RNIAR1G4[10]        NOR3C        Y        Out     0.641     7.066       -         
+N_148                                Net          -        -       1.184     -           4         
+CONTROL.SEQUENCER_STATE_RNO_3[6]     NOR2A        A        In      -         8.250       -         
+CONTROL.SEQUENCER_STATE_RNO_3[6]     NOR2A        Y        Out     0.627     8.877       -         
+N_80                                 Net          -        -       0.322     -           1         
+CONTROL.SEQUENCER_STATE_RNO_0[6]     OR3          C        In      -         9.199       -         
+CONTROL.SEQUENCER_STATE_RNO_0[6]     OR3          Y        Out     0.751     9.950       -         
+SEQUENCER_STATE_ns_i_i_1[3]          Net          -        -       0.322     -           1         
+CONTROL.SEQUENCER_STATE_RNO[6]       AO1          C        In      -         10.271      -         
+CONTROL.SEQUENCER_STATE_RNO[6]       AO1          Y        Out     0.633     10.904      -         
+N_13                                 Net          -        -       0.322     -           1         
+CONTROL.SEQUENCER_STATE[6]           DFN1C0       D        In      -         11.225      -         
+===================================================================================================
+Total path delay (propagation time + setup) of 11.799 is 5.575(47.3%) logic and 6.224(52.7%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 3: 
+      Requested Period:                      10.000
+    - Setup time:                            0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.427
+
+    - Propagation time:                      11.196
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -1.769
+
+    Number of logic level(s):                6
+    Starting point:                          CONTROL.DEL_CNTR[2] / Q
+    Ending point:                            CONTROL.DEL_CNTR[8] / D
+    The start point is clocked by            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock [rising] on pin CLK
+    The end   point is clocked by            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock [rising] on pin CLK
+
+Instance / Net                                 Pin      Pin               Arrival     No. of    
+Name                              Type         Name     Dir     Delay     Time        Fan Out(s)
+------------------------------------------------------------------------------------------------
+CONTROL.DEL_CNTR[2]               DFN1E0P0     Q        Out     0.580     0.580       -         
+DEL_CNTR[2]                       Net          -        -       1.184     -           4         
+CONTROL.DEL_CNTR_RNIAO0J[2]       NOR2         A        In      -         1.764       -         
+CONTROL.DEL_CNTR_RNIAO0J[2]       NOR2         Y        Out     0.363     2.127       -         
+DEL_m1_e_7_0                      Net          -        -       0.806     -           3         
+CONTROL.DEL_CNTR_RNIMI161[5]      NOR2B        B        In      -         2.934       -         
+CONTROL.DEL_CNTR_RNIMI161[5]      NOR2B        Y        Out     0.627     3.561       -         
+DEL_N_7_mux                       Net          -        -       0.806     -           3         
+CONTROL.DEL_CNTR_RNIR52P1[1]      NOR2A        A        In      -         4.367       -         
+CONTROL.DEL_CNTR_RNIR52P1[1]      NOR2A        Y        Out     0.627     4.995       -         
+un1_m1_e_0_0                      Net          -        -       1.279     -           5         
+CONTROL.DEL_CNTR_RNIC1RU4[14]     NOR3C        C        In      -         6.274       -         
+CONTROL.DEL_CNTR_RNIC1RU4[14]     NOR3C        Y        Out     0.641     6.915       -         
+N_107                             Net          -        -       2.172     -           16        
+CONTROL.DEL_CNTR_RNO_1[8]         OR3A         B        In      -         9.088       -         
+CONTROL.DEL_CNTR_RNO_1[8]         OR3A         Y        Out     0.714     9.802       -         
+DEL_CNTR_n8_i_1                   Net          -        -       0.322     -           1         
+CONTROL.DEL_CNTR_RNO[8]           OR3          C        In      -         10.124      -         
+CONTROL.DEL_CNTR_RNO[8]           OR3          Y        Out     0.751     10.874      -         
+N_23                              Net          -        -       0.322     -           1         
+CONTROL.DEL_CNTR[8]               DFN1E0P0     D        In      -         11.196      -         
+================================================================================================
+Total path delay (propagation time + setup) of 11.769 is 4.878(41.4%) logic and 6.891(58.6%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 4: 
+      Requested Period:                      10.000
+    - Setup time:                            0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.427
+
+    - Propagation time:                      11.158
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -1.731
+
+    Number of logic level(s):                6
+    Starting point:                          CONTROL.DEL_CNTR[4] / Q
+    Ending point:                            CONTROL.DEL_CNTR[6] / D
+    The start point is clocked by            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock [rising] on pin CLK
+    The end   point is clocked by            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock [rising] on pin CLK
+
+Instance / Net                                 Pin      Pin               Arrival     No. of    
+Name                              Type         Name     Dir     Delay     Time        Fan Out(s)
+------------------------------------------------------------------------------------------------
+CONTROL.DEL_CNTR[4]               DFN1E0P0     Q        Out     0.580     0.580       -         
+DEL_CNTR[4]                       Net          -        -       1.184     -           4         
+CONTROL.DEL_CNTR_RNIAO0J[2]       NOR2         B        In      -         1.764       -         
+CONTROL.DEL_CNTR_RNIAO0J[2]       NOR2         Y        Out     0.514     2.278       -         
+DEL_m1_e_7_0                      Net          -        -       0.806     -           3         
+CONTROL.DEL_CNTR_RNIMI161[5]      NOR2B        B        In      -         3.085       -         
+CONTROL.DEL_CNTR_RNIMI161[5]      NOR2B        Y        Out     0.627     3.712       -         
+DEL_N_7_mux                       Net          -        -       0.806     -           3         
+CONTROL.DEL_CNTR_RNIR52P1[1]      NOR2A        A        In      -         4.519       -         
+CONTROL.DEL_CNTR_RNIR52P1[1]      NOR2A        Y        Out     0.627     5.146       -         
+un1_m1_e_0_0                      Net          -        -       1.279     -           5         
+CONTROL.DEL_CNTR_RNIC1RU4[14]     NOR3C        C        In      -         6.425       -         
+CONTROL.DEL_CNTR_RNIC1RU4[14]     NOR3C        Y        Out     0.641     7.066       -         
+N_107                             Net          -        -       2.172     -           16        
+CONTROL.DEL_CNTR_RNO_0[6]         NOR3         C        In      -         9.239       -         
+CONTROL.DEL_CNTR_RNO_0[6]         NOR3         Y        Out     0.751     9.990       -         
+DEL_m1_e_1_1                      Net          -        -       0.322     -           1         
+CONTROL.DEL_CNTR_RNO[6]           OR3A         A        In      -         10.311      -         
+CONTROL.DEL_CNTR_RNO[6]           OR3A         Y        Out     0.525     10.836      -         
+DEL_N_3_mux_3                     Net          -        -       0.322     -           1         
+CONTROL.DEL_CNTR[6]               DFN1E0P0     D        In      -         11.158      -         
+================================================================================================
+Total path delay (propagation time + setup) of 11.731 is 4.840(41.3%) logic and 6.891(58.7%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 5: 
+      Requested Period:                      10.000
+    - Setup time:                            0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.427
+
+    - Propagation time:                      11.121
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -1.695
+
+    Number of logic level(s):                6
+    Starting point:                          CONTROL.DEL_CNTR[4] / Q
+    Ending point:                            CONTROL.DEL_CNTR[4] / D
+    The start point is clocked by            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock [rising] on pin CLK
+    The end   point is clocked by            TOP_LVR_GEN3_CNTL|BUF5M_J11_15_TCONN_inferred_clock [rising] on pin CLK
+
+Instance / Net                                 Pin      Pin               Arrival     No. of    
+Name                              Type         Name     Dir     Delay     Time        Fan Out(s)
+------------------------------------------------------------------------------------------------
+CONTROL.DEL_CNTR[4]               DFN1E0P0     Q        Out     0.580     0.580       -         
+DEL_CNTR[4]                       Net          -        -       1.184     -           4         
+CONTROL.DEL_CNTR_RNIAO0J[2]       NOR2         B        In      -         1.764       -         
+CONTROL.DEL_CNTR_RNIAO0J[2]       NOR2         Y        Out     0.514     2.278       -         
+DEL_m1_e_7_0                      Net          -        -       0.806     -           3         
+CONTROL.DEL_CNTR_RNIMI161[5]      NOR2B        B        In      -         3.085       -         
+CONTROL.DEL_CNTR_RNIMI161[5]      NOR2B        Y        Out     0.627     3.712       -         
+DEL_N_7_mux                       Net          -        -       0.806     -           3         
+CONTROL.DEL_CNTR_RNIR52P1[1]      NOR2A        A        In      -         4.519       -         
+CONTROL.DEL_CNTR_RNIR52P1[1]      NOR2A        Y        Out     0.627     5.146       -         
+un1_m1_e_0_0                      Net          -        -       1.279     -           5         
+CONTROL.DEL_CNTR_RNIC1RU4[14]     NOR3C        C        In      -         6.425       -         
+CONTROL.DEL_CNTR_RNIC1RU4[14]     NOR3C        Y        Out     0.641     7.066       -         
+N_107                             Net          -        -       2.172     -           16        
+CONTROL.DEL_CNTR_RNO_0[4]         OR3          A        In      -         9.239       -         
+CONTROL.DEL_CNTR_RNO_0[4]         OR3          Y        Out     0.488     9.727       -         
+DEL_CNTR_n4_i_1                   Net          -        -       0.322     -           1         
+CONTROL.DEL_CNTR_RNO[4]           OR3          C        In      -         10.049      -         
+CONTROL.DEL_CNTR_RNO[4]           OR3          Y        Out     0.751     10.800      -         
+N_31                              Net          -        -       0.322     -           1         
+CONTROL.DEL_CNTR[4]               DFN1E0P0     D        In      -         11.121      -         
+================================================================================================
+Total path delay (propagation time + setup) of 11.695 is 4.803(41.1%) logic and 6.891(58.9%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+
+====================================
+<a name=clockReport17></a>Detailed Report for Clock: TOP_LVR_GEN3_CNTL|CLK40M_OSC</a>
+====================================
+
+
+
+<a name=startingSlack18></a>Starting Points with Worst Slack</a>
+********************************
+
+                   Starting                                                                     Arrival          
+Instance           Reference                        Type       Pin     Net                      Time        Slack
+                   Clock                                                                                         
+-----------------------------------------------------------------------------------------------------------------
+REFCNT[0]          TOP_LVR_GEN3_CNTL|CLK40M_OSC     DFN1C0     Q       REFCNT[0]                0.737       6.627
+REFCNT[1]          TOP_LVR_GEN3_CNTL|CLK40M_OSC     DFN1C0     Q       REFCNT[1]                0.737       7.073
+CLK_5M_GL          TOP_LVR_GEN3_CNTL|CLK40M_OSC     DFN1C0     Q       BUF5M_J11_15_TCONN_i     0.737       7.529
+DEL0_DEV_RST_B     TOP_LVR_GEN3_CNTL|CLK40M_OSC     DFN1C0     Q       DEL0_DEV_RST_B           0.737       8.368
+=================================================================================================================
+
+
+<a name=endingSlack19></a>Ending Points with Worst Slack</a>
+******************************
+
+                 Starting                                                               Required          
+Instance         Reference                        Type       Pin     Net                Time         Slack
+                 Clock                                                                                    
+----------------------------------------------------------------------------------------------------------
+CLK_5M_GL        TOP_LVR_GEN3_CNTL|CLK40M_OSC     DFN1C0     D       CLK_5M_GL_RNO      9.461        6.627
+REFCNT[1]        TOP_LVR_GEN3_CNTL|CLK40M_OSC     DFN1C0     D       SUM1               9.461        7.080
+REFCNT[0]        TOP_LVR_GEN3_CNTL|CLK40M_OSC     DFN1C0     D       REFCNT_i[0]        9.461        7.089
+MASTER_RST_B     TOP_LVR_GEN3_CNTL|CLK40M_OSC     DFN1C0     D       DEL0_DEV_RST_B     9.427        8.368
+==========================================================================================================
+
+
+
+<a name=worstPaths20></a>Worst Path Information</a>
+<a href="C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\synlog\TOP_LVR_GEN3_CNTL_fpga_mapper.srr:srsfC:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\TOP_LVR_GEN3_CNTL.srs:fp:38927:39413:@XP_NAMES_GATE">View Worst Path in Analyst</a>
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            0.539
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.461
+
+    - Propagation time:                      2.835
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 6.627
+
+    Number of logic level(s):                1
+    Starting point:                          REFCNT[0] / Q
+    Ending point:                            CLK_5M_GL / D
+    The start point is clocked by            TOP_LVR_GEN3_CNTL|CLK40M_OSC [rising] on pin CLK
+    The end   point is clocked by            TOP_LVR_GEN3_CNTL|CLK40M_OSC [rising] on pin CLK
+
+Instance / Net                Pin      Pin               Arrival     No. of    
+Name               Type       Name     Dir     Delay     Time        Fan Out(s)
+-------------------------------------------------------------------------------
+REFCNT[0]          DFN1C0     Q        Out     0.737     0.737       -         
+REFCNT[0]          Net        -        -       0.806     -           3         
+CLK_5M_GL_RNO      AX1C       B        In      -         1.543       -         
+CLK_5M_GL_RNO      AX1C       Y        Out     0.970     2.513       -         
+CLK_5M_GL_RNO      Net        -        -       0.322     -           1         
+CLK_5M_GL          DFN1C0     D        In      -         2.835       -         
+===============================================================================
+Total path delay (propagation time + setup) of 3.373 is 2.245(66.6%) logic and 1.128(33.4%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+##### END OF TIMING REPORT #####]
+
+Timing exceptions that could not be applied
+None
+
+Finished final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 116MB peak: 117MB)
+
+
+Finished timing report (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 116MB peak: 117MB)
+
+--------------------------------------------------------------------------------
+Target Part: A3P250_VQFP100_STD
+<a name=cellReport21></a>Report for cell TOP_LVR_GEN3_CNTL.rtl</a>
+  Core Cell usage:
+              cell count     area count*area
+               AO1     5      1.0        5.0
+              AO18     1      1.0        1.0
+              AO1A     4      1.0        4.0
+              AO1C     1      1.0        1.0
+              AOI1     1      1.0        1.0
+             AOI1B     2      1.0        2.0
+               AX1     2      1.0        2.0
+              AX1C    12      1.0       12.0
+              AX1D     1      1.0        1.0
+              AX1E     1      1.0        1.0
+              AXO1     3      1.0        3.0
+            CLKINT     2      0.0        0.0
+               GND     3      0.0        0.0
+               INV     1      1.0        1.0
+              MAJ3     1      1.0        1.0
+              NOR2    20      1.0       20.0
+             NOR2A    40      1.0       40.0
+             NOR2B    35      1.0       35.0
+              NOR3     5      1.0        5.0
+             NOR3A     8      1.0        8.0
+             NOR3B     9      1.0        9.0
+             NOR3C    33      1.0       33.0
+               OA1     3      1.0        3.0
+              OA1A     6      1.0        6.0
+              OA1C     3      1.0        3.0
+               OR2     8      1.0        8.0
+              OR2A     2      1.0        2.0
+              OR2B     6      1.0        6.0
+               OR3     8      1.0        8.0
+              OR3A    11      1.0       11.0
+              OR3B     3      1.0        3.0
+               VCC     3      0.0        0.0
+              XA1A     1      1.0        1.0
+              XA1B     4      1.0        4.0
+              XA1C     1      1.0        1.0
+              XAI1     1      1.0        1.0
+             XNOR2     3      1.0        3.0
+              XOR2    14      1.0       14.0
+
+
+            DFN1C0    44      1.0       44.0
+          DFN1E0C0     8      1.0        8.0
+          DFN1E0P0    15      1.0       15.0
+          DFN1E1C0    28      1.0       28.0
+            DFN1P0     7      1.0        7.0
+                   -----          ----------
+             TOTAL   369               361.0
+
+
+  IO Cell usage:
+              cell count
+            CLKBUF     1
+             INBUF     8
+            OUTBUF    36
+                   -----
+             TOTAL    45
+
+
+Core Cells         : 361 of 6144 (6%)
+IO Cells           : 45
+
+  RAM/ROM Usage Summary
+Block Rams : 0 of 8 (0%)
+
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 26MB peak: 117MB)
+
+Process took 0h:00m:02s realtime, 0h:00m:02s cputime
+# Wed Feb 27 10:30:10 2019
+
+###########################################################]
+
+</pre></samp></body></html>

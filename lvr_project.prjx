@@ -30,7 +30,7 @@ KEY VendorTechnology_VCCI_1.8_VOLTR "COM"
 KEY VendorTechnology_VCCI_2.5_VOLTR "COM"
 KEY VendorTechnology_VCCI_3.3_VOLTR "COM"
 KEY VendorTechnology_VOLTR "COM"
-KEY ProjectLocation "Z:\windows\LVR_firmware"
+KEY ProjectLocation "Z:\windows\lvr_fw"
 KEY ProjectDescription ""
 KEY Pa4PeripheralNewSeq "GOOD"
 KEY SimulationType "VHDL"
@@ -78,17 +78,17 @@ SIZE="211"
 ENDFILE
 VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL.adb,adb"
 STATE="utd"
-TIME="1555060498"
-SIZE="903168"
+TIME="1563310850"
+SIZE="1099264"
 ENDFILE
 VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL.ide_des,ide_des"
 STATE="utd"
-TIME="1555060498"
-SIZE="1251"
+TIME="1563310850"
+SIZE="1100"
 ENDFILE
 VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL.pdb,pdb"
 STATE="utd"
-TIME="1554980280"
+TIME="1563311171"
 SIZE="82688"
 ENDFILE
 VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL.stp,stp"
@@ -108,8 +108,8 @@ SIZE="488002"
 ENDFILE
 VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL_compile_log.rpt,log"
 STATE="utd"
-TIME="1554976564"
-SIZE="15220"
+TIME="1563305004"
+SIZE="10115"
 ENDFILE
 VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL_fp\projectData\TOP_LVR_GEN3_CNTL.pdb,pdb"
 STATE="utd"
@@ -128,22 +128,22 @@ SIZE="136153"
 ENDFILE
 VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL_fp\TOP_LVR_GEN3_CNTL.pro,pro"
 STATE="utd"
-TIME="1557128288"
-SIZE="2624"
+TIME="1563310978"
+SIZE="0"
 ENDFILE
 VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1555060580"
-SIZE="3754"
+TIME="1563310852"
+SIZE="3120"
 ENDFILE
 VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL_prgdata_log.rpt,log"
 STATE="utd"
-TIME="1554980708"
+TIME="1563311189"
 SIZE="3214"
 ENDFILE
 VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL_verifytiming_log.rpt,log"
 STATE="utd"
-TIME="1554980266"
+TIME="1563311198"
 SIZE="1292"
 ENDFILE
 VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL_WFS.pdb,pdb"
@@ -208,13 +208,13 @@ SIZE="128630"
 ENDFILE
 VALUE "<project>\designer\impl1\TOP_LV_REGUL_CNTL_fp\TOP_LV_REGUL_CNTL.pro,pro"
 STATE="utd"
-TIME="1554777192"
+TIME="1563310978"
 SIZE="0"
 ENDFILE
 VALUE "<project>\hdl\IIR_FILT.vhd,hdl"
 STATE="utd"
-TIME="1554892602"
-SIZE="7168"
+TIME="1561482380"
+SIZE="7354"
 ENDFILE
 VALUE "<project>\hdl\MAIN_SEQUENCER_NEW.vhd,hdl"
 STATE="utd"
@@ -238,13 +238,13 @@ SIZE="4574"
 ENDFILE
 VALUE "<project>\hdl\SPI.vhd,hdl"
 STATE="utd"
-TIME="1554454106"
-SIZE="2215"
+TIME="1561482385"
+SIZE="2277"
 ENDFILE
 VALUE "<project>\hdl\TOP_LVR_GEN3_Cntl.vhd,hdl"
 STATE="utd"
-TIME="1554974394"
-SIZE="40974"
+TIME="1562505506"
+SIZE="41642"
 ENDFILE
 VALUE "<project>\simulation\power.vcd,vcd"
 STATE="utd"
@@ -263,7 +263,7 @@ SIZE="4115"
 ENDFILE
 VALUE "<project>\simulation\TB_TOP_LVR_GEN3_CNTL_postsynth_simulation.log,log"
 STATE="utd"
-TIME="1557128456"
+TIME="1563311223"
 SIZE="7229"
 ENDFILE
 VALUE "<project>\simulation\testbench_postsynth_simulation.log,log"
@@ -318,8 +318,8 @@ SIZE="3035"
 ENDFILE
 VALUE "<project>\stimulus\TB_TOP_LVR_GEN3_CNTL.vhd,tb_hdl"
 STATE="utd"
-TIME="1554963368"
-SIZE="8369"
+TIME="1563310328"
+SIZE="7866"
 ENDFILE
 VALUE "<project>\synthesis\AutoConstraint_TOP_LVR_GEN3_CNTL.sdc,sdc"
 STATE="utd"
@@ -358,8 +358,8 @@ SIZE="409"
 ENDFILE
 VALUE "<project>\synthesis\IIR_FILT_syn.prj,prj"
 STATE="utd"
-TIME="1554916238"
-SIZE="686"
+TIME="1563310978"
+SIZE="0"
 ENDFILE
 VALUE "<project>\synthesis\layer0.so,so"
 STATE="utd"
@@ -368,7 +368,7 @@ SIZE="159"
 ENDFILE
 VALUE "<project>\synthesis\MAIN_SEQUENCER_NEW_syn.prj,prj"
 STATE="utd"
-TIME="1554777192"
+TIME="1563310978"
 SIZE="0"
 ENDFILE
 VALUE "<project>\synthesis\OVT_FAILSAFE.so,so"
@@ -378,7 +378,7 @@ SIZE="264"
 ENDFILE
 VALUE "<project>\synthesis\OVT_FAILSAFE_syn.prj,prj"
 STATE="utd"
-TIME="1554916238"
+TIME="1563310978"
 SIZE="0"
 ENDFILE
 VALUE "<project>\synthesis\TomO_Constraint_TOP_LVR_GEN3_CNTL.sdc,sdc"
@@ -388,13 +388,13 @@ SIZE="487"
 ENDFILE
 VALUE "<project>\synthesis\TOP_LVR_GEN3_CNTL.edn,syn_edn"
 STATE="utd"
-TIME="1554974546"
+TIME="1563304993"
 SIZE="857103"
 ENDFILE
 VALUE "<project>\synthesis\TOP_LVR_GEN3_CNTL.so,so"
 STATE="utd"
-TIME="1554974546"
-SIZE="274"
+TIME="1563304993"
+SIZE="227"
 ENDFILE
 VALUE "<project>\synthesis\TOP_LVR_GEN3_CNTL.vhd,syn_hdl"
 STATE="utd"
@@ -408,12 +408,12 @@ SIZE="213"
 ENDFILE
 VALUE "<project>\synthesis\TOP_LVR_GEN3_CNTL_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1554974546"
+TIME="1563304993"
 SIZE="577"
 ENDFILE
 VALUE "<project>\synthesis\TOP_LVR_GEN3_CNTL_syn.prj,prj"
 STATE="utd"
-TIME="1555044074"
+TIME="1563310978"
 SIZE="0"
 ENDFILE
 VALUE "<project>\synthesis\TOP_LV_REGUL_CNTL.so,so"
@@ -428,7 +428,7 @@ SIZE="22308"
 ENDFILE
 VALUE "<project>\synthesis\TOP_LV_REGUL_CNTL_syn.prj,prj"
 STATE="utd"
-TIME="1554777192"
+TIME="1563310978"
 SIZE="0"
 ENDFILE
 ENDLIST
@@ -476,10 +476,6 @@ ENDLIST
 Used_File_List
 ENDUsed_File_List
 ENDLIST
-ENDLIST
-LIST PinReports
-VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL_report_pin_byname.txt,log"
-VALUE "<project>\designer\impl1\TOP_LVR_GEN3_CNTL_report_pin_bynumber.txt,log"
 ENDLIST
 ENDLIST
 ENDLIST

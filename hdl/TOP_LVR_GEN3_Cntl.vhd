@@ -52,7 +52,7 @@ use synplify.attributes.all;
 
 entity TOP_LVR_GEN3_CNTL is
   port (
-    CLK40M_OSC : in std_logic;          -- pin 57, EXTERNAL 3.3V 40 MHZ CLOCK 
+    CLK40MHZ_OSC : in std_logic;          -- pin 57, EXTERNAL 3.3V 40 MHZ CLOCK 
     POR_FPGA   : in std_logic;  -- pin 93, ACTIVE LOW RESET --DEDICATED RC TIME CONSTANT---NEEDS SCHMITT-TRIGGER!
 
 -- UNDER-VOLTAGE LOCKOUT AND FUSE STATUS DETECTION      
@@ -307,13 +307,13 @@ architecture RTL of TOP_LVR_GEN3_CNTL is
 begin
 -- THIS PROCESS SYNCHRONIZES THE EXTERNAL POR_FPGA SIGNAL TO THE 40 MHZ CLOCK
 -- HOWEVER, THE GENERATED 5 MHZ CLOCK IS SYNCHRONOUSLY STARTED BY RELEASE OF THE MASTER_RST_B
-  SYNC_DEV_RST_B : process(POR_FPGA, CLK40M_OSC)
+  SYNC_DEV_RST_B : process(POR_FPGA, CLK40MHZ_OSC)
   begin
     if POR_FPGA = '0' then
       DEL0_DEV_RST_B <= '0';
       MASTER_RST_B   <= '0';
 
-    elsif (CLK40M_OSC'event and CLK40M_OSC = '1') then
+    elsif (CLK40MHZ_OSC'event and CLK40MHZ_OSC = '1') then
       DEL0_DEV_RST_B <= POR_FPGA;
       MASTER_RST_B   <= DEL0_DEV_RST_B;
 
@@ -323,13 +323,13 @@ begin
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- REGISTERS USED TO GENERATE A 5 MHZ CLOCK (DIV-BY-4 FOLLOWED BY DIV-BY-2)
-  GENCLKREG : process(MASTER_RST_B, CLK40M_OSC)
+  GENCLKREG : process(MASTER_RST_B, CLK40MHZ_OSC)
   begin
     if MASTER_RST_B = '0' then
       CLK_5M_GL <= '0';
       REFCNT    <= 0;
 
-    elsif (CLK40M_OSC'event and CLK40M_OSC = '1') then
+    elsif (CLK40MHZ_OSC'event and CLK40MHZ_OSC = '1') then
       CLK_5M_GL <= N_CLK_5M_GL;
       REFCNT    <= N_REFCNT;
 

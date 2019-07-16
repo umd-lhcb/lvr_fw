@@ -1,0 +1,77 @@
+# Microsemi Physical design constraints file
+
+# Version: v11.9 SP2 11.9.2.1
+
+# Design Name: TOP_LVR_GEN3_CNTL 
+
+# Input Netlist Format: edif 
+
+# Family: ProASIC3 , Die: A3PN250 , Package: 100 VQFP , Speed grade: STD 
+
+# Date generated: Tue Jul 16 13:58:00 2019 
+
+
+#
+# IO banks setting
+#
+
+set_iobank Bank3 -vcci 1.50 -fixed yes
+set_iobank Bank2 -vcci 1.50 -fixed yes
+set_iobank Bank1 -vcci 3.30 -fixed no
+set_iobank Bank0 -vcci 3.30 -fixed no
+
+#
+# I/O constraints
+#
+
+set_io BUF5M_J11_15_TCONN    -pinname 35 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 2 -SLEW High
+set_io CH1_2_MS_CFG_EN       -pinname 21 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io CH3_4_MS_CFG_EN       -pinname 20 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io CH5_6_MS_CFG_EN       -pinname 19 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io CH7_8_MS_CFG_EN       -pinname 16 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io CLK40MHZ_OSC          -pinname 57 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER Off                        
+set_io FPGA_FUSE_1_2_OK\[0\] -pinname 42 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io FPGA_FUSE_3_4_OK\[0\] -pinname 41 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io FPGA_FUSE_5_6_OK\[0\] -pinname 40 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io FPGA_FUSE_7_8_OK\[0\] -pinname 36 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io J11_17_TCONN          -pinname 32 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 2 -SLEW High
+set_io J11_19_TCONN          -pinname 8  -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 2 -SLEW High
+set_io J11_21_TCONN          -pinname 7  -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 2 -SLEW High
+set_io J11_23_TCONN          -pinname 5  -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 2 -SLEW High
+set_io MAN_EN_CH_4TO1        -pinname 15 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io MAN_EN_CH_8TO5        -pinname 13 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io MODE_DCYC_NORMB       -pinname 31 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io POR_FPGA              -pinname 93 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io POR_OUT_TO_SCA        -pinname 6  -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 2 -SLEW High
+set_io PRI_RX_EN_BAR         -pinname 96 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io PRI_TX_EN             -pinname 94 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io PWR_OK_LED            -pinname 95 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_IAUX_EN\[0\]     -pinname 90 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_IAUX_EN\[1\]     -pinname 84 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_IAUX_EN\[2\]     -pinname 82 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_IAUX_EN\[3\]     -pinname 79 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_IAUX_EN\[4\]     -pinname 73 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_IAUX_EN\[5\]     -pinname 70 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_IAUX_EN\[6\]     -pinname 64 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_IAUX_EN\[7\]     -pinname 61 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_MREG_EN\[0\]     -pinname 86 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_MREG_EN\[1\]     -pinname 92 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_MREG_EN\[2\]     -pinname 83 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_MREG_EN\[3\]     -pinname 80 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_MREG_EN\[4\]     -pinname 76 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_MREG_EN\[5\]     -pinname 71 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_MREG_EN\[6\]     -pinname 65 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_MREG_EN\[7\]     -pinname 62 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_VOSG_EN\[0\]     -pinname 91 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_VOSG_EN\[1\]     -pinname 85 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_VOSG_EN\[2\]     -pinname 81 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_VOSG_EN\[3\]     -pinname 78 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_VOSG_EN\[4\]     -pinname 72 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_VOSG_EN\[5\]     -pinname 69 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_VOSG_EN\[6\]     -pinname 63 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io P_CH_VOSG_EN\[7\]     -pinname 60 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io SCA_DAT_IN            -pinname 3  -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 2 -SLEW High
+set_io STATUS_LED            -pinname 77 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High
+set_io STDBY_OFFB            -pinname 10 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io TEMP_OK\[0\]          -pinname 43 -fixed yes -iostd LVCMOS15 -REGISTER No  -RES_PULL None -SCHMITT_TRIGGER On                         
+set_io TX_FPGA               -pinname 98 -fixed yes -iostd LVCMOS33 -REGISTER No  -RES_PULL None -OUT_LOAD 35         -OUT_DRIVE 8 -SLEW High

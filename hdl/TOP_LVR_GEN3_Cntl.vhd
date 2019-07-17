@@ -333,6 +333,37 @@ architecture RTL of TOP_LVR_GEN3_CNTL is
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 begin
+
+  -- SPI
+  spi_slave_pm : spi_slave
+    port map (
+      CLK5M_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
+      MASTER_RST_B => SCA_RESET_OUT,    -- INTERNAL ACTIVE LOW RESET
+
+      SCA_CLK_OUT => SCA_CLK_OUT,  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
+      SCA_DAT_OUT => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
+      SCA_DAT_IN  => SCA_DAT_IN,  -- SERIAL DATA OUTPUT FROM THE FPGA TO THE SCA MASTER
+
+      SPI_TX_WORD => SPI_TX_WORD,       -- 32 BIT SERIAL WORD TO BE TRANSMITTED
+      SPI_RX_WORD => SPI_RX_WORD,       -- RECEIVED SERIAL FRAME
+      SPI_RX_STRB => SPI_RX_STRB,  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
+
+      P_TX_32BIT_REG => SPI_P_TX_32BIT_REG,
+      P_STATE_ID     => SPI_P_STATE_ID
+      );
+
+  -- spi_tx_word <= spi_rx_word when falling_edge(spi_rx_strb) else spi_tx_word;
+  -- 
+  -- spi_tx_word_pcs : process(spi_rx_strb)
+  -- begin
+  --   if spi_rx_strb = '1' then
+  --     spi_tx_word <= spi_rx_word;
+  --   else
+  --     spi_tx_word <= spi_tx_word;
+  --   end if;
+  -- end process spi_tx_word_pcs;
+  
+
 -- THIS PROCESS SYNCHRONIZES THE EXTERNAL POR_FPGA SIGNAL TO THE 40 MHZ CLOCK
 -- HOWEVER, THE GENERATED 5 MHZ CLOCK IS SYNCHRONOUSLY STARTED BY RELEASE OF THE MASTER_RST_B
   SYNC_DEV_RST_B : process(POR_FPGA, CLK40MHZ_OSC)
@@ -564,24 +595,6 @@ begin
     end case;
 
   end process LDCCNT;
-
-  spi_slave_pm : spi_slave
-    port map (
-      CLK5M_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
-      MASTER_RST_B => SCA_RESET_OUT,    -- INTERNAL ACTIVE LOW RESET
-
-      SCA_CLK_OUT => SCA_CLK_OUT,  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
-      SCA_DAT_OUT => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
-      SCA_DAT_IN  => SCA_DAT_IN,  -- SERIAL DATA OUTPUT FROM THE FPGA TO THE SCA MASTER
-
-      SPI_TX_WORD => SPI_TX_WORD,       -- 32 BIT SERIAL WORD TO BE TRANSMITTED
-      SPI_RX_WORD => SPI_RX_WORD,       -- RECEIVED SERIAL FRAME
-      SPI_RX_STRB => SPI_RX_STRB,  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
-
-      P_TX_32BIT_REG => SPI_P_TX_32BIT_REG,
-      P_STATE_ID     => SPI_P_STATE_ID
-      );
-
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

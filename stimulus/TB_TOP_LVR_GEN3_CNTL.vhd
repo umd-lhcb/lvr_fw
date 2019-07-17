@@ -53,7 +53,7 @@ architecture behavioral of TB_TOP_LVR_GEN3_CNTL is
   -- SPI signals
   signal clk312khz : std_logic := '0';
   signal counter_clk312khz : integer := 0;
-  signal sca_data_reg : std_logic_vector(31 downto 0) := x"12345678";
+  signal sca_data_reg, sca_data_reg_in : std_logic_vector(31 downto 0) := x"12345678";
 
   signal SCA_CLK_OUT, sca_clk_mask      : std_logic;
   signal SCA_RESET_OUT    : std_logic;
@@ -171,14 +171,18 @@ begin
     end if;
   end process Divide_Frequency;
   
-  sca_data_reg <= x"DCFEB123" when (sca_reset_out = '1') else
+  sca_data_reg <= x"DCFEB123" when (sca_reset_out = '0') else
                 sca_data_reg(30 downto 0) & sca_data_reg(31) when rising_edge(sca_clk_out) else
                 sca_data_reg;
 
-  SCA_CLK_mask <= '0', '1' after 22.5 us, '0' after 125 us;
+  sca_data_reg_in <= x"abababab" when (sca_reset_out = '0') else
+                sca_data_reg_in(30 downto 0) & sca_dat_in when falling_edge(sca_clk_out) else
+                sca_data_reg_in;
+
+  SCA_CLK_mask <= '0', '1' after 32.5 us, '0' after 135 us, '1' after 141 us, '0' after 243.5 us;
   SCA_CLK_OUT   <= sca_clk_mask and clk312khz;
-  SCA_RESET_OUT <= '0', '1' after 10 us, '0' after 20 us;
-  SCA_DAT_OUT   <= sca_data_reg(0);
+  SCA_RESET_OUT <= '1', '0' after 10 us, '1' after 20 us;
+  SCA_DAT_OUT   <= sca_data_reg(31);
 
   
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

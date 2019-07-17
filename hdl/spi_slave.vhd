@@ -32,7 +32,7 @@ use IEEE.STD_LOGIC_MISC.all;
 library proasic3;
 use proasic3.all;
 
-entity SPI_alt is
+entity spi_slave is
   port (
     CLK5M_OSC    : in std_logic;        -- INTERNAL GENERATED 5 MHZ CLOCK 
     MASTER_RST_B : in std_logic;        -- INTERNAL ACTIVE LOW RESET
@@ -49,9 +49,9 @@ entity SPI_alt is
     P_STATE_ID     : out std_logic_vector(3 downto 0)
 
     );
-end SPI_ALT;
+end spi_slave;
 
-architecture RTL of SPI_ALT is
+architecture RTL of spi_slave is
 
   signal RX_32BIT_SREG, N_RX_32BIT_SREG : std_logic_vector(31 downto 0);  -- 32 BIT SHIFT REGISTER DEDICATED FOR ACTIVE SPI RECEIVE
 
@@ -71,7 +71,7 @@ architecture RTL of SPI_ALT is
   signal SPI_CLR, N_SPI_CLR             : std_logic;  -- SIGNAL USED TO CLEAR SPI REGSITERS
   signal CLK_FCNT_EN, N_CLK_FCNT_EN     : std_logic;  -- ENABLE FOR THE FRAME COUNTER
   signal I_SPI_RX_STRB, N_I_SPI_RX_STRB : std_logic;  -- SINGLE CLOCK PULSE STROBE INDICATES NEW SPI WORD RECEIVED
-  signal I_SPI_RX_WORD, N_I_SPI_RX_WORD : std_logic_vector(31 downto 0);  -- INTERNAL 32 BIT SHIFT REGISTER DEDICATED FOR ACTIVE SPI RECEIVE
+  signal I_SPI_RX_WORD, N_I_SPI_RX_WORD : std_logic_vector(31 downto 0) := x"ABCDEF12";  -- INTERNAL 32 BIT SHIFT REGISTER DEDICATED FOR ACTIVE SPI RECEIVE
 
   -- DEFINE THE STATES FOR THE MACHINE STATE MANAGING THE SPI PORT
   type SPI_SM_STATES is (INIT, DET_NULLCLK, EN_DET_FRAME1CNT, PIPELINE_DELAY, DET_FRAME_DONE, PROCESS_FRAME);
@@ -198,6 +198,8 @@ begin
         N_I_SCA_DAT_IN <= TX_32BIT_SREG(1);
       when 31 =>
         N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);
+      when 32 =>
+        N_I_SCA_DAT_IN <= '1'; -- Error if all 33 cases were not covered
 
     end case;
 

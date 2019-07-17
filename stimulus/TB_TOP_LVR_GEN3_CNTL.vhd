@@ -31,7 +31,7 @@ use ieee.std_logic_1164.all;
 use IEEE.STD_LOGIC_ARITH.all;
 use IEEE.STD_LOGIC_UNSIGNED.all;
 use IEEE.STD_LOGIC_MISC.all;
--- USE IEEE.NUMERIC_STD.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
 library proasic3;
 use proasic3.all;
@@ -45,10 +45,20 @@ end TB_TOP_LVR_GEN3_CNTL;
 
 architecture behavioral of TB_TOP_LVR_GEN3_CNTL is
 
-  constant SYSCLK_PERIOD : time := 25 ns;  -- 40MHZ
+  constant CLK40MHZ_PERIOD : time := 25 ns;  -- 40MHZ
 
-  signal SYSCLK    : std_logic := '0';
+  signal CLK40MHZ    : std_logic := '0';
   signal NSYSRESET : std_logic := '0';
+
+  -- SPI signals
+  signal clk312khz : std_logic := '0';
+  signal counter_clk312khz : integer := 0;
+  signal sca_data_reg : std_logic_vector(31 downto 0) := x"12345678";
+
+  signal SCA_CLK_OUT, sca_clk_mask      : std_logic;
+  signal SCA_RESET_OUT    : std_logic;
+  signal SCA_DAT_OUT      : std_logic;
+  signal SCA_DAT_IN       : std_logic;
 
   signal CH_MREG_EN : std_logic_vector(7 downto 0);
   signal CH_IAUX_EN : std_logic_vector(7 downto 0);
@@ -71,7 +81,7 @@ architecture behavioral of TB_TOP_LVR_GEN3_CNTL is
     -- ports
     port(
       -- Inputs
-      CLK40M_OSC       : in std_logic;
+      CLK40MHZ_OSC       : in std_logic;
       POR_FPGA         : in std_logic;
       FPGA_FUSE_1_2_OK : in std_logic_vector(0 downto 0);
       FPGA_FUSE_3_4_OK : in std_logic_vector(0 downto 0);
@@ -132,7 +142,7 @@ begin
     if (vhdl_initial) then
       -- Assert Reset
       NSYSRESET <= '0';
-      wait for (SYSCLK_PERIOD * 10);
+      wait for (CLK40MHZ_PERIOD * 10);
 
       NSYSRESET <= '1';
       wait;
@@ -142,8 +152,35 @@ begin
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   -- Clock Driver
-  SYSCLK <= not SYSCLK after (SYSCLK_PERIOD / 2.0);
+  CLK40MHZ <= not CLK40MHZ after (CLK40MHZ_PERIOD / 2.0);
 
+  
+  Divide_Frequency : process(clk40mhz)
+  begin
+    if clk40mhz'event and clk40mhz = '1' then
+      if counter_clk312khz = 64 then
+        counter_clk312khz <= 1;
+        if clk312khz = '1' then
+          clk312khz <= '0';
+        else
+          clk312khz <= '1';
+        end if;
+      else
+        counter_clk312khz <= counter_clk312khz + 1;
+      end if;
+    end if;
+  end process Divide_Frequency;
+  
+  sca_data_reg <= x"DCFEB123" when (sca_reset_out = '1') else
+                sca_data_reg(30 downto 0) & sca_data_reg(31) when rising_edge(sca_clk_out) else
+                sca_data_reg;
+
+  SCA_CLK_mask <= '0', '1' after 22.5 us, '0' after 125 us;
+  SCA_CLK_OUT   <= sca_clk_mask and clk312khz;
+  SCA_RESET_OUT <= '0', '1' after 10 us, '0' after 20 us;
+  SCA_DAT_OUT   <= sca_data_reg(0);
+
+  
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- GENERATE AN INPUT SIGNAL TO TRIGGER A CHANNEL ENABLE EVENT
 
@@ -158,44 +195,44 @@ begin
     FUSE_12_OK <= "0";
     FUSE_34_OK <= "0";
 
-    wait for (SYSCLK_PERIOD * 20000);   -- 0.5 MSEC
+    wait for (CLK40MHZ_PERIOD * 20000);   -- 0.5 MSEC
     STDBY_OFFB <= '1';
 
-    wait for (SYSCLK_PERIOD * 20000);   -- SET TEMP = OK
+    wait for (CLK40MHZ_PERIOD * 20000);   -- SET TEMP = OK
     TEMP_OK    <= "1";
     FUSE_12_OK <= "0";
     FUSE_34_OK <= "0";
 
-    wait for (SYSCLK_PERIOD * 20000);  -- SET TEMP = OK & ONE OF THE INPUTS TO BE ABOVE UVL MIN
+    wait for (CLK40MHZ_PERIOD * 20000);  -- SET TEMP = OK & ONE OF THE INPUTS TO BE ABOVE UVL MIN
     TEMP_OK    <= "1";
     FUSE_12_OK <= "1";
     FUSE_34_OK <= "0";
     CH_ENABLE  <= '1';
 
-    wait for (SYSCLK_PERIOD * 20000);   --
+    wait for (CLK40MHZ_PERIOD * 20000);   --
     TEMP_OK    <= "1";
     FUSE_12_OK <= "1";
     FUSE_34_OK <= "1";
 
-    wait for (SYSCLK_PERIOD * 20000);   --
+    wait for (CLK40MHZ_PERIOD * 20000);   --
     TEMP_OK    <= "0";
     FUSE_12_OK <= "1";
     FUSE_34_OK <= "1";
 
-    wait for (SYSCLK_PERIOD * 20000);   --
+    wait for (CLK40MHZ_PERIOD * 20000);   --
     TEMP_OK    <= "0";
     FUSE_12_OK <= "1";
     FUSE_34_OK <= "1";
 
-    wait for (SYSCLK_PERIOD * 20000);   --
+    wait for (CLK40MHZ_PERIOD * 20000);   --
     TEMP_OK    <= "1";
     FUSE_12_OK <= "1";
     FUSE_34_OK <= "1";
 
-    wait for (SYSCLK_PERIOD * 20000);   --
+    wait for (CLK40MHZ_PERIOD * 20000);   --
     CH_ENABLE <= '1';
 
-    wait for (SYSCLK_PERIOD * 20000);   --
+    wait for (CLK40MHZ_PERIOD * 20000);   --
     CH_ENABLE <= '1';
 
     wait;
@@ -207,7 +244,7 @@ begin
     -- port map
     port map(
       -- Inputs
-      CLK40M_OSC       => SYSCLK,
+      CLK40MHZ_OSC       => CLK40MHZ,
       POR_FPGA         => NSYSRESET,
       FPGA_FUSE_1_2_OK => FUSE_12_OK,
       FPGA_FUSE_3_4_OK => FUSE_34_OK,
@@ -227,9 +264,9 @@ begin
       STDBY_OFFB       => STDBY_OFFB,
       RX_FPGA          => '0',
       ADDR_SEL         => (others => '0'),
-      SCA_CLK_OUT      => SYSCLK,
-      SCA_RESET_OUT    => '0',
-      SCA_DAT_OUT      => '0',
+      SCA_CLK_OUT      => SCA_CLK_OUT,
+      SCA_RESET_OUT    => SCA_RESET_OUT,
+      SCA_DAT_OUT      => SCA_DAT_OUT,
       UNUSED_1         => '0',
       UNUSED_2         => '0',
       J11_25_TCONN     => '0',
@@ -239,7 +276,7 @@ begin
       TX_FPGA            => TEMPSIMPROBE,
       PRI_RX_EN_BAR      => open,
       PRI_TX_EN          => open,
-      SCA_DAT_IN         => open,
+      SCA_DAT_IN         => SCA_DAT_IN,
       POR_OUT_TO_SCA     => open,
       P_CH_MREG_EN       => CH_MREG_EN,
       P_CH_IAUX_EN       => CH_IAUX_EN,

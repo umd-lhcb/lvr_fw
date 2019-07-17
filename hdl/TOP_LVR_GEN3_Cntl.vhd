@@ -47,13 +47,13 @@ library proasic3;
 use proasic3.all;
 
 -- NOTE:  THE SYNPLIFY LIBRARY NEEDS TO BE COMMENTED OUT FOR MODELSIM PRESYNTH SIMS SINCE MODELSIM DOES NOT RECOGNIZE IT
-library synplify;
-use synplify.attributes.all;
+--library synplify;
+--use synplify.attributes.all;
 
 entity TOP_LVR_GEN3_CNTL is
   port (
-    CLK40MHZ_OSC : in std_logic;          -- pin 57, EXTERNAL 3.3V 40 MHZ CLOCK 
-    POR_FPGA   : in std_logic;  -- pin 93, ACTIVE LOW RESET --DEDICATED RC TIME CONSTANT---NEEDS SCHMITT-TRIGGER!
+    CLK40MHZ_OSC : in std_logic;        -- pin 57, EXTERNAL 3.3V 40 MHZ CLOCK 
+    POR_FPGA     : in std_logic;  -- pin 93, ACTIVE LOW RESET --DEDICATED RC TIME CONSTANT---NEEDS SCHMITT-TRIGGER!
 
 -- UNDER-VOLTAGE LOCKOUT AND FUSE STATUS DETECTION      
     FPGA_FUSE_1_2_OK : in std_logic_vector(0 downto 0);  -- pin 42, UNDER-VOLTAGE LOCKOUT FAILSAFE INPUT ('1'= INPUT FUSED RAIL FOR CH1&2 ABOVE THRESHOLD)
@@ -68,11 +68,11 @@ entity TOP_LVR_GEN3_CNTL is
 
     -- OPERATION AND FAILSAFE MODES: DIP SW SETTINGS
     MODE_DCYC_NORMB : in std_logic;  -- pin 31, SCHEMA MODE 0   '1' = SPECIAL TEST LOW DUTY CYCLE MODE
-                                     --                                             '0' = NORMAL OP WITH STAGGERED ENABLE SEQUENCES (19.6608 MS PER CHANNEL)
+    --                                             '0' = NORMAL OP WITH STAGGERED ENABLE SEQUENCES (19.6608 MS PER CHANNEL)
     MODE_WDT_EN     : in std_logic;  -- pin 30, SCHEMA MODE 1       '1' = WATCH DOG TIMER ENABLED
-                                     --                                                 '0' = WATCH DOG TIMER DISABLED
+    --                                                 '0' = WATCH DOG TIMER DISABLED
     MODE_DIAG_NORMB : in std_logic;  -- pin 29, SCHEMA MODE 2   '1' = DISABLE FRAME ERROR CHECKING
-                                     --                                                     '0' = NORMAL OPERATION FRAME ERROR CHECK ENABLED
+    --                                                     '0' = NORMAL OPERATION FRAME ERROR CHECK ENABLED
     -- MASTER-SLAVE CHANNEL GROUP ENABLES: DIP SW SETTINGS
     -- '0' = DISABLED STATE WHERE SPECIFIED CHANNELS TREATED INDEPENDENTLY      
     -- '1' = ENABLED STATE WHERE SPECIFIED CHANNELS ARE TREATED AS A MASTER-SLAVE PAIR  
@@ -112,7 +112,7 @@ entity TOP_LVR_GEN3_CNTL is
 
 -- MONITOR AND STATUS SIGNALS
     PWR_OK_LED : out std_logic;  -- pin 95,     STATUS YELLOW LED INDICATING AT LEAST ONE CHANNEL IS ACTIVE
-                                     --                         SINGLE BLINK - CHANNEL ENABLE / DISABLE EVENT
+    --                         SINGLE BLINK - CHANNEL ENABLE / DISABLE EVENT
     STATUS_LED : out std_logic;  -- pin 77,     STEADY=UVL'S OK, SINGLE BLINK=SEU AND/OR WDT
 
 -- DIAGNOSTIC & TEST I/O
@@ -138,8 +138,8 @@ architecture RTL of TOP_LVR_GEN3_CNTL is
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-  attribute SYN_RADHARDLEVEL of RTL : architecture is "TMR";
-  attribute SYN_HIER of RTL         : architecture is "FIRM";
+--  attribute SYN_RADHARDLEVEL of RTL : architecture is "TMR";
+--  attribute SYN_HIER of RTL         : architecture is "FIRM";
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -170,6 +170,26 @@ architecture RTL of TOP_LVR_GEN3_CNTL is
       THRESH_LOWER : in  std_logic_vector(7 downto 0);  -- LOWER HYSTERISIS THRESHOLD (IE FALLING SIGNAL THRESHOLD)
       FILT_SIGOUT  : out std_logic_vector(7 downto 0);  -- RESULTING SIGNAL FILTER VALUE 
       P_SIGOUT     : out std_logic  -- FINAL SIGNAL BIT VALUE AFTER THE FILTER FUNCTION AND HYSTERISIS HAVE BEEN APPLIED
+
+      );
+  end component;
+
+  -- SPI interface with TCM
+  component spi_slave is
+    port (
+      CLK5M_OSC    : in std_logic;      -- INTERNAL GENERATED 5 MHZ CLOCK 
+      MASTER_RST_B : in std_logic;      -- INTERNAL ACTIVE LOW RESET
+
+      SCA_CLK_OUT : in  std_logic;  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
+      SCA_DAT_OUT : in  std_logic;  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
+      SCA_DAT_IN  : out std_logic;  -- SERIAL DATA OUTPUT FROM THE FPGA TO THE SCA MASTER
+
+      SPI_TX_WORD : in  std_logic_vector(31 downto 0);  -- 32 BIT SERIAL WORD TO BE TRANSMITTED
+      SPI_RX_WORD : out std_logic_vector(31 downto 0);  -- RECEIVED SERIAL FRAME
+      SPI_RX_STRB : out std_logic;  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
+
+      P_TX_32BIT_REG : out std_logic_vector(31 downto 0);
+      P_STATE_ID     : out std_logic_vector(3 downto 0)
 
       );
   end component;
@@ -294,6 +314,14 @@ architecture RTL of TOP_LVR_GEN3_CNTL is
 
   signal FILTD_TEMP_OK                                          : std_logic;  -- FILTERED VERSION OF THE TEMP_OK STATUS
   signal UVL_OK_CH1A2, UVL_OK_CH3A4, UVL_OK_CH5A6, UVL_OK_CH7A8 : std_logic;  -- UVL FOR THE 4 CHANNEL PAIRS 
+
+
+  -- SPI variables
+  signal SPI_TX_WORD        : std_logic_vector(31 downto 0) := x"dbdb1234";  -- 32 BIT SERIAL WORD TO BE TRANSMITTED
+  signal SPI_RX_WORD        : std_logic_vector(31 downto 0);  -- RECEIVED SERIAL FRAME
+  signal SPI_RX_STRB        : std_logic;  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
+  signal SPI_P_TX_32BIT_REG : std_logic_vector(31 downto 0);
+  signal SPI_P_STATE_ID     : std_logic_vector(3 downto 0);
 
 -- DEBUG
   signal IIR_OVT_FILT   : std_logic_vector(7 downto 0);
@@ -513,7 +541,7 @@ begin
       when '0' =>  -- NORMAL OP MODE, SO LOW CYCLE FUNCTION IS INACTIVED                                                                        
         N_DTYCYC_CNT <= DTYCYC_TIME;
         N_DTYCYC_EN  <= '1';  -- THIS BIT ONLY ACTIVE FOR SPECIAL TEST MODE WITH THE LOW DUTY CYCLE
-                                   -- BIT STUCK AT '1' LEAVES DOWNSTREAM SIGNALS IN CONTINUOS OP MODE
+      -- BIT STUCK AT '1' LEAVES DOWNSTREAM SIGNALS IN CONTINUOS OP MODE
       when '1' =>  -- SPECIAL TEST LOW DUTY CYCLE MODE IS ACTIVE
 
         if SLOW_PLS_STB = '1' then  -- ONLY UPDATE WHEN THIS STROBE IS PULSED (1 CLOCK CYCLE STROBE)
@@ -532,9 +560,28 @@ begin
 
         end if;
 
+      when others =>  NULL;
     end case;
 
   end process LDCCNT;
+
+  spi_slave_pm : spi_slave
+    port map (
+      CLK5M_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
+      MASTER_RST_B => SCA_RESET_OUT,    -- INTERNAL ACTIVE LOW RESET
+
+      SCA_CLK_OUT => SCA_CLK_OUT,  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
+      SCA_DAT_OUT => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
+      SCA_DAT_IN  => SCA_DAT_IN,  -- SERIAL DATA OUTPUT FROM THE FPGA TO THE SCA MASTER
+
+      SPI_TX_WORD => SPI_TX_WORD,       -- 32 BIT SERIAL WORD TO BE TRANSMITTED
+      SPI_RX_WORD => SPI_RX_WORD,       -- RECEIVED SERIAL FRAME
+      SPI_RX_STRB => SPI_RX_STRB,  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
+
+      P_TX_32BIT_REG => SPI_P_TX_32BIT_REG,
+      P_STATE_ID     => SPI_P_STATE_ID
+      );
+
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -759,7 +806,7 @@ begin
   TX_FPGA       <= DTYCYC_EN;           -- '0';  using this as a temp probe pin
   PRI_RX_EN_BAR <= '0';
   PRI_TX_EN     <= '1';                 -- CAN BE USED AS A TEST STROBE TRIGGER
-  SCA_DAT_IN    <= SLOW_PLS_STB;        -- '0';  using this as a temp probe pin
+--  SCA_DAT_IN    <= SLOW_PLS_STB;        -- '0';  using this as a temp probe pin
 
 -- temp assignments!
 -- LED LIGHTS WHEN SIGNAL IS LOW

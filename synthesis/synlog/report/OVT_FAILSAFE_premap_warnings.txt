@@ -1,1 +1,0 @@
-@W: MT530 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\ovt_failsafe.vhd":49:2:49:3|Found inferred clock OVT_FAILSAFE|CLK_5M_GL which controls 5 sequential elements including T_FLT_CNT[3:0]. This clock has no specified timing constraint which may adversely impact design performance. 

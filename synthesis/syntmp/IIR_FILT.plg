@@ -1,9 +1,0 @@
-@P:  Worst Slack : -1.990
-@P:  IIR_FILT|CLK_5M_GL - Estimated Frequency : 83.4 MHz
-@P:  IIR_FILT|CLK_5M_GL - Requested Frequency : 100.0 MHz
-@P:  IIR_FILT|CLK_5M_GL - Estimated Period : 11.990
-@P:  IIR_FILT|CLK_5M_GL - Requested Period : 10.000
-@P:  IIR_FILT|CLK_5M_GL - Slack : -1.990
-@P:  Total Area : 88.0
-@P:  Total Area : 88.0
-@P:  CPU Time : 0h:00m:01s

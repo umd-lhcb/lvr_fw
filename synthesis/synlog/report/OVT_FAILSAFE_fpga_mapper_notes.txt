@@ -1,6 +1,0 @@
-@N: MF248 |Running in 64-bit mode.
-@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
-@N: MO230 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\ovt_failsafe.vhd":49:2:49:3|Found up-down counter in view:work.OVT_FAILSAFE(rtl) instance T_FLT_CNT[3:0]  
-@N: FP130 |Promoting Net CLK_5M_GL_c on CLKBUF  CLK_5M_GL_pad 
-@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
-@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.

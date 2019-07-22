@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SynplifyOutput>
+	<result>Success</result>
+	<design>top_lvr_fw</design>
+	<target_edif>Z:\windows\lvr_fw\lvr_fw\synthesis\top_lvr_fw.edn</target_edif>
+</SynplifyOutput>

@@ -1,9 +1,0 @@
-@N: MF248 |Running in 64-bit mode.
-@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
-@N: BN362 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Removing sequential instance TX_EN (in view: work.SERIAL_TX(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer.vhd":53:2:53:15|Removing sequential instance COMPLETED_SEQ (in view: work.MAIN_SEQUENCER(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN225 |Writing default property annotation file C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\synthesis\TOP_LV_REGUL_CNTL.sap.
-@N: MO195 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\iir_filt.vhd":55:7:55:14|Using syn_encoding = safe, FSM error recovery to reset state is enabled for THRESH_VAL[0:2].  
-@N: MO225 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\serial_rx.vhd":90:2:90:3|There are no possible illegal states for state machine RX_STATE[0:31] (in view: work.SERIAL_RX(rtl)); safe FSM implementation is not required.
-@N: MO195 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\serial_tx.vhd":85:2:85:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for TX_STATE[0:23].  
-@N: MO195 :"c:\users\tomo_laptop\box sync\lv_reg_gen3_dig_cntl_gw\lvregul_dig_cntl\hdl\main_sequencer.vhd":108:2:108:3|Using syn_encoding = safe, FSM error recovery to reset state is enabled for SEQUENCER_STATE[0:14].  

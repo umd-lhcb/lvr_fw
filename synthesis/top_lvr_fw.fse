@@ -1,0 +1,163 @@
+
+fsm_encoding {1421842181} onehot
+
+fsm_state_encoding {1421842181} init {000001}
+
+fsm_state_encoding {1421842181} det_nullclk {000010}
+
+fsm_state_encoding {1421842181} en_det_frame1cnt {000100}
+
+fsm_state_encoding {1421842181} pipeline_delay {001000}
+
+fsm_state_encoding {1421842181} det_frame_done {010000}
+
+fsm_state_encoding {1421842181} process_frame {100000}
+
+fsm_registers {1421842181} {SPI_SM[0]}  {SPI_SM[1]}  {SPI_SM[2]}  {SPI_SM[3]}  {SPI_SM[4]}  {SPI_SM[5]} 
+
+fsm_encoding {1213121312} onehot
+
+fsm_state_encoding {1213121312} init {0000000001}
+
+fsm_state_encoding {1213121312} wait_step {0000000010}
+
+fsm_state_encoding {1213121312} ch_1st_step {0000000100}
+
+fsm_state_encoding {1213121312} ch_2nd_step {0000001000}
+
+fsm_state_encoding {1213121312} ch_3rd_step {0000010000}
+
+fsm_state_encoding {1213121312} standby_hold {0000100000}
+
+fsm_state_encoding {1213121312} operate_hold {0001000000}
+
+fsm_state_encoding {1213121312} seq_done {0010000000}
+
+fsm_state_encoding {1213121312} hold_at_uvl {0100000000}
+
+fsm_state_encoding {1213121312} chk_if_uvl_clear {1000000000}
+
+fsm_registers {1213121312} {SEQUENCER_STATE[0]}  {SEQUENCER_STATE[1]}  {SEQUENCER_STATE[2]}  {SEQUENCER_STATE[3]}  {SEQUENCER_STATE[4]}  {SEQUENCER_STATE[5]}  {SEQUENCER_STATE[6]}  {SEQUENCER_STATE[7]}  {SEQUENCER_STATE[8]}  {SEQUENCER_STATE[9]} 
+
+fsm_encoding {9854853} sequential
+
+fsm_state_encoding {9854853} init {00}
+
+fsm_state_encoding {9854853} rising {01}
+
+fsm_state_encoding {9854853} falling {10}
+
+fsm_registers {9854853} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+1213121312} ch_2nd_step {0000001000}
+
+fsm_state_encoding {1213121312} ch_3rd_step {0000010000}
+
+fsm_state_encoding {1213121312} standby_hold {0000100000}
+
+fsm_state_encoding {1213121312} operate_hold {0001000000}
+
+fsm_state_encoding {1213121312} seq_done {0010000000}
+
+fsm_state_encoding {1213121312} hold_at_uvl {0100000000}
+
+fsm_state_encoding {1213121312} chk_if_uvl_clear {1000000000}
+
+fsm_registers {1213121312} {SEQUENCER_STATE[0]}  {SEQUENCER_STATE[1]}  {SEQUENCER_STATE[2]}  {SEQUENCER_STATE[3]}  {SEQUENCER_STATE[4]}  {SEQUENCER_STATE[5]}  {SEQUENCER_STATE[6]}  {SEQUENCER_STATE[7]}  {SEQUENCER_STATE[8]}  {SEQUENCER_STATE[9]} 
+
+fsm_encoding {1213121312} onehot
+
+fsm_state_encoding {1213121312} init {0000000001}
+
+fsm_state_encoding {1213121312} wait_step {0000000010}
+
+fsm_state_encoding {1213121312} ch_1st_step {0000000100}
+
+fsm_state_encoding {1213121312} ch_2nd_step {0000001000}
+
+fsm_state_encoding {1213121312} ch_3rd_step {0000010000}
+
+fsm_state_encoding {1213121312} standby_hold {0000100000}
+
+fsm_state_encoding {1213121312} operate_hold {0001000000}
+
+fsm_state_encoding {1213121312} seq_done {0010000000}
+
+fsm_state_encoding {1213121312} hold_at_uvl {0100000000}
+
+fsm_state_encoding {1213121312} chk_if_uvl_clear {1000000000}
+
+fsm_registers {1213121312} {SEQUENCER_STATE[0]}  {SEQUENCER_STATE[1]}  {SEQUENCER_STATE[2]}  {SEQUENCER_STATE[3]}  {SEQUENCER_STATE[4]}  {SEQUENCER_STATE[5]}  {SEQUENCER_STATE[6]}  {SEQUENCER_STATE[7]}  {SEQUENCER_STATE[8]}  {SEQUENCER_STATE[9]} 
+
+fsm_encoding {1213121312} onehot
+
+fsm_state_encoding {1213121312} init {0000000001}
+
+fsm_state_encoding {1213121312} wait_step {0000000010}
+
+fsm_state_encoding {1213121312} ch_1st_step {0000000100}
+
+fsm_state_encoding {1213121312} ch_2nd_step {0000001000}
+
+fsm_state_encoding {1213121312} ch_3rd_step {0000010000}
+
+fsm_state_encoding {1213121312} standby_hold {0000100000}
+
+fsm_state_encoding {1213121312} operate_hold {0001000000}
+
+fsm_state_encoding {1213121312} seq_done {0010000000}
+
+fsm_state_encoding {1213121312} hold_at_uvl {0100000000}
+
+fsm_state_encoding {1213121312} chk_if_uvl_clear {1000000000}
+
+fsm_registers {1213121312} {SEQUENCER_STATE[0]}  {SEQUENCER_STATE[1]}  {SEQUENCER_STATE[2]}  {SEQUENCER_STATE[3]}  {SEQUENCER_STATE[4]}  {SEQUENCER_STATE[5]}  {SEQUENCER_STATE[6]}  {SEQUENCER_STATE[7]}  {SEQUENCER_STATE[8]}  {SEQUENCER_STATE[9]} 
+
+fsm_encoding {9854853} sequential
+
+fsm_state_encoding {9854853} init {00}
+
+fsm_state_encoding {9854853} rising {01}
+
+fsm_state_encoding {9854853} falling {10}
+
+fsm_registers {9854853} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+
+fsm_encoding {9854853} sequential
+
+fsm_state_encoding {9854853} init {00}
+
+fsm_state_encoding {9854853} rising {01}
+
+fsm_state_encoding {9854853} falling {10}
+
+fsm_registers {9854853} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+
+fsm_encoding {9854853} sequential
+
+fsm_state_encoding {9854853} init {00}
+
+fsm_state_encoding {9854853} rising {01}
+
+fsm_state_encoding {9854853} falling {10}
+
+fsm_registers {9854853} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+
+fsm_encoding {9854853} sequential
+
+fsm_state_encoding {9854853} init {00}
+
+fsm_state_encoding {9854853} rising {01}
+
+fsm_state_encoding {9854853} falling {10}
+
+fsm_registers {9854853} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+
+fsm_encoding {9854853} sequential
+
+fsm_state_encoding {9854853} init {00}
+
+fsm_state_encoding {9854853} rising {01}
+
+fsm_state_encoding {9854853} falling {10}
+
+fsm_registers {9854853} {THRESH_VAL[1]}  {THRESH_VAL[0]} 

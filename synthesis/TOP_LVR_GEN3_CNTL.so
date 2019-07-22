@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<SynplifyOutput>
-	<result>Success</result>
-	<design>TOP_LVR_GEN3_CNTL</design>
-	<target_edif>Z:\windows\LVR_firmware\synthesis\TOP_LVR_GEN3_CNTL.edn</target_edif>
-</SynplifyOutput>

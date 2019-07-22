@@ -1,9 +1,8 @@
 KEY IDE_DES_TOOL "Ide"
-KEY IDE_DES_ADB_PATH "C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\designer\impl1\IIR_FILT.adb"
+KEY IDE_DES_ADB_PATH "Z:\windows\lvr_fw\lvr_fw\designer\impl1\IIR_FILT.adb"
 LIST SOURCE_FILES
 ENDLIST
 LIST OPTIONAL_FILES
 ENDLIST
 LIST VCD_FILES
-VALUE "C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\simulation\power.vcd;0"
 ENDLIST

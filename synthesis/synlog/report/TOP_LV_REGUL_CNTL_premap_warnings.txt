@@ -1,3 +1,0 @@
-@W: BN105 :"c:/users/tomo_laptop/box sync/lv_reg_gen3_dig_cntl_gw/lvregul_dig_cntl/synthesis/top_lvregul_cntl.fdc":39:0:39:0|Cannot apply constraint syn_encoding to UVL_FILT.THRESH_VAL[0:2]
-@W: BN105 :"c:/users/tomo_laptop/box sync/lv_reg_gen3_dig_cntl_gw/lvregul_dig_cntl/synthesis/top_lvregul_cntl.fdc":47:0:47:0|Cannot apply constraint syn_pad_type to UVL_SIG_IN[0]
-@W: BN105 :"c:/users/tomo_laptop/box sync/lv_reg_gen3_dig_cntl_gw/lvregul_dig_cntl/synthesis/top_lvregul_cntl.fdc":47:0:47:0|Cannot apply constraint syn_io_schmitt to UVL_SIG_IN[0]

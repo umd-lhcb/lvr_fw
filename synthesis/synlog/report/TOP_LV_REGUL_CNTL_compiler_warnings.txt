@@ -1,4 +1,0 @@
-@W: CD285 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\TOP_LV_REGUL_Cntl.vhd":487:20:487:27|Port map width mismatch (4 => 5) on port MODULE_ADDR of component SERIAL_RX 
-@W: CD285 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\TOP_LV_REGUL_Cntl.vhd":502:17:502:29|Port map width mismatch (15 => 16) on port TX_WORD of component SERIAL_TX 
-@W: CD638 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\TOP_LV_REGUL_Cntl.vhd":231:7:231:22|Signal man_gpio_enables is undriven. Either assign the signal a value or remove the signal declaration.
-

@@ -1,5 +1,0 @@
-@E: CD145 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\SERIAL_TX.vhd":47:2:47:8|Formal, "tx_word", and actual agree on type but not on size
-@E: CD145 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\TOP_LV_REGUL_Cntl.vhd":498:0:498:11|Formal, "tx_word", and actual agree on type but not on size
-@E: CD145 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\SERIAL_RX.vhd":49:2:49:12|Formal, "module_addr", and actual agree on type but not on size
-@E: CD145 :"C:\Users\TomO_Laptop\Box Sync\LV_Reg_GEN3_Dig_Cntl_GW\LVRegul_DIg_Cntl\hdl\TOP_LV_REGUL_Cntl.vhd":482:0:482:9|Formal, "module_addr", and actual agree on type but not on size
-

@@ -1,15 +1,15 @@
 #--  Synopsys, Inc.
 #--  Version L-2016.09M-SP1-5
-#--  Project file Z:\windows\LVR_firmware\synthesis\run_options.txt
-#--  Written on Tue Jun 25 07:48:02 2019
+#--  Project file Z:\windows\lvr_fw\lvr_fw\synthesis\run_options.txt
+#--  Written on Mon Jul 22 08:36:46 2019
 
 
 #project files
-add_file -vhdl -lib work "Z:/windows/LVR_firmware/hdl/IIR_FILT.vhd"
-add_file -vhdl -lib work "Z:/windows/LVR_firmware/hdl/MAIN_SEQUENCER_NEW.vhd"
-add_file -vhdl -lib work "Z:/windows/LVR_firmware/hdl/Slow_PulseEn_Gen.vhd"
-add_file -vhdl -lib work "Z:/windows/LVR_firmware/hdl/TOP_LVR_GEN3_Cntl.vhd"
-add_file -constraint "Z:/windows/LVR_firmware/synthesis/TomO_Constraint_TOP_LVR_GEN3_CNTL.sdc"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw/hdl/IIR_FILT.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw/hdl/MAIN_SEQUENCER_NEW.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw/hdl/Slow_PulseEn_Gen.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw/hdl/spi_slave.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw/hdl/top_lvr_fw.vhd"
 
 
 
@@ -18,14 +18,14 @@ impl -add synthesis -type fpga
 
 #device options
 set_option -technology ProASIC3
-set_option -part A3PN250
+set_option -part A3P250
 set_option -package VQFP100
 set_option -speed_grade STD
 set_option -part_companion ""
 
 #compilation/mapping options
 set_option -use_fsm_explorer 0
-set_option -top_module "work.TOP_LVR_GEN3_CNTL"
+set_option -top_module "work.top_lvr_fw"
 
 # hdl_compiler_options
 set_option -distributed_compile 0
@@ -74,5 +74,5 @@ set_option -vhdl2008 1
 set_option -write_apr_constraint 1
 
 #set result format/file last
-project -result_file "./TOP_LVR_GEN3_CNTL.edn"
+project -result_file "./top_lvr_fw.edn"
 impl -active "synthesis"

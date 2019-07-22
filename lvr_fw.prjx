@@ -1,0 +1,301 @@
+KEY LIBERO "11.9"
+KEY CAPTURE "11.9.2.1"
+KEY DEFAULT_IMPORT_LOC "X:\Projects\Interrupts_MSS_GPIO\Design\Verilog"
+KEY DEFAULT_OPEN_LOC ""
+KEY ProjectID "0"
+KEY HDLTechnology "VHDL"
+KEY VERILOGMODE "VERILOG2001"
+KEY VHDLMODE "VHDL2008"
+KEY UseConstraintFlowTechnology "FALSE"
+KEY VendorTechnology_Family "ProASIC3"
+KEY VendorTechnology_Die "IS4X4M1"
+KEY VendorTechnology_Package "vq100"
+KEY VendorTechnology_Speed "STD"
+KEY VendorTechnology_DieVoltage "1.5"
+KEY VendorTechnology_PART_RANGE "COM"
+KEY VendorTechnology_IO_DEFT_STD "LVCMOS33"
+KEY VendorTechnology_RESERVEMIGRATIONPINS "1"
+KEY VendorTechnology_RESTRICTPROBEPINS "1"
+KEY VendorTechnology_RESTRICTSPIPINS "0"
+KEY VendorTechnology_TARGETDEVICESFORMIGRATION "IS4X4M1"
+KEY VendorTechnology_TEMPR "COM"
+KEY VendorTechnology_UNUSED_MSS_IO_RESISTOR_PULL "None"
+KEY VendorTechnology_VCCI_1.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_1.8_VOLTR "COM"
+KEY VendorTechnology_VCCI_2.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_3.3_VOLTR "COM"
+KEY VendorTechnology_VOLTR "COM"
+KEY ProjectLocation "Z:\windows\lvr_fw\lvr_fw"
+KEY ProjectDescription ""
+KEY Pa4PeripheralNewSeq "GOOD"
+KEY SimulationType "VHDL"
+KEY Vendor "Actel"
+KEY ActiveRoot "top_lvr_fw::work"
+LIST REVISIONS
+VALUE="Impl1",NUM=1
+CURREV=1
+ENDLIST
+LIST FileManager
+VALUE "<project>\constraint\top_lvr_fw.pdc,pdc"
+STATE="utd"
+TIME="1563809476"
+SIZE="82114"
+ENDFILE
+VALUE "<project>\designer\impl1\IIR_FILT.ide_des,ide_des"
+STATE="utd"
+TIME="1563809476"
+SIZE="184"
+ENDFILE
+VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
+STATE="utd"
+TIME="1563809509"
+SIZE="446976"
+ENDFILE
+VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
+STATE="utd"
+TIME="1563809481"
+SIZE="186"
+ENDFILE
+VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
+STATE="utd"
+TIME="1563809821"
+SIZE="10464"
+ENDFILE
+VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
+STATE="utd"
+TIME="1563810074"
+SIZE="2679"
+ENDFILE
+VALUE "<project>\hdl\IIR_FILT.vhd,hdl"
+STATE="utd"
+TIME="1563809476"
+SIZE="7360"
+ENDFILE
+VALUE "<project>\hdl\MAIN_SEQUENCER_NEW.vhd,hdl"
+STATE="utd"
+TIME="1563809476"
+SIZE="18743"
+ENDFILE
+VALUE "<project>\hdl\Slow_PulseEn_Gen.vhd,hdl"
+STATE="utd"
+TIME="1563809476"
+SIZE="4679"
+ENDFILE
+VALUE "<project>\hdl\spi_slave.vhd,hdl"
+STATE="utd"
+TIME="1563809476"
+SIZE="13961"
+ENDFILE
+VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
+STATE="utd"
+TIME="1563809799"
+SIZE="44162"
+ENDFILE
+VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
+STATE="utd"
+TIME="1563809498"
+SIZE="587873"
+ENDFILE
+VALUE "<project>\synthesis\top_lvr_fw.so,so"
+STATE="utd"
+TIME="1563809498"
+SIZE="214"
+ENDFILE
+VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
+STATE="utd"
+TIME="1563809498"
+SIZE="522"
+ENDFILE
+VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
+STATE="utd"
+TIME="1563809499"
+SIZE="1987"
+ENDFILE
+ENDLIST
+LIST UsedFile
+ENDLIST
+LIST NewModulesInfo
+LIST "top_lvr_fw::work"
+FILE "<project>\hdl\top_lvr_fw.vhd,hdl"
+LIST ProjectState5.1
+LIST Impl1
+LiberoState=Post_Layout
+ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST PinReports
+VALUE "<project>\designer\impl1\top_lvr_fw_report_pin_byname.txt,log"
+VALUE "<project>\designer\impl1\top_lvr_fw_report_pin_bynumber.txt,log"
+ENDLIST
+ENDLIST
+ENDLIST
+LIST AssociatedStimulus
+ENDLIST
+LIST Other_Association
+ENDLIST
+LIST SimulationOptions
+UseAutomaticDoFile=true
+IncludeWaveDo=false
+Type=max
+RunTime=1000ns
+Resolution=1ps
+VsimOpt=
+EntityName=testbench
+TopInstanceName=<top>_0
+DoFileName=
+DoFileName2=wave.do
+DoFileParams=
+DisplayDUTWave=false
+LogAllSignals=false
+DisablePulseFiltering=false
+DumpVCD=false
+VCDFileName=power.vcd
+VHDL2008=false
+Verilog2001=false
+SystemVerilog=false
+TimeUnit=1
+TimeUnitBase=ns
+Precision=100
+PrecisionBase=ps
+ENDLIST
+LIST ModelSimLibPath
+UseCustomPath=FALSE
+LibraryPath=
+ENDLIST
+LIST GlobalFlowOptions
+GenerateHDLAfterSynthesis=FALSE
+GenerateHDLAfterPhySynthesis=FALSE
+RunDRCAfterSynthesis=FALSE
+AutoCheckConstraints=TRUE
+UpdateModelSimIni=TRUE
+NoIOMode=FALSE
+PeriInitStandalone=FALSE
+EnableViewDraw=FALSE
+UpdateViewDrawIni=TRUE
+GenerateHDLFromSchematic=TRUE
+VmNetlistFlowOn=FALSE
+EnableDesignSeparationOn=FALSE
+EnableSETMitigationOn=FALSE
+DisplayFanoutLimit=10
+AbortFlowOnPDCErrorsOn=TRUE
+AbortFlowOnSDCErrorsOn=TRUE
+InstantiateInSmartDesign=TRUE
+FlashProInputFile=pdb
+SmartGenCompileReport=T
+ENDLIST
+LIST PhySynthesisOptions
+ENDLIST
+LIST Profiles
+NAME="SoftConsole"
+FUNCTION="SoftwareIDE"
+TOOL="SoftConsole"
+LOCATION="eclipse.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Synplify Pro ME"
+FUNCTION="Synthesis"
+TOOL="Synplify Pro ME"
+LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="ModelSim ME"
+FUNCTION="Simulation"
+TOOL="ModelSim"
+LOCATION="C:\Microsemi\Libero_SoC_v11.9\Modelsim\win32acoem\modelsim.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="FPExpress"
+FUNCTION="Program"
+TOOL="FlashPro"
+LOCATION="C:\Microsemi\Libero_SoC_v11.9\Designer\bin\FPExpress.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Identify Debugger"
+FUNCTION="IdentifyDebugger"
+TOOL="Identify Debugger"
+LOCATION="C:\Microsemi\Libero_SoC_v11.9\Identify\bin\identify_debugger.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+ENDLIST
+LIST ProjectState5.1
+LIST "top_lvr_fw::work"
+LIST Impl1
+LiberoState=Post_Layout
+ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST ExcludePackageForSimulation
+ENDLIST
+LIST ExcludePackageForSynthesis
+ENDLIST
+LIST IncludeModuleForSimulation
+ENDLIST
+LIST CDBOrder
+ENDLIST
+LIST UserCustomizedFileList
+ENDLIST
+LIST OpenedFileList
+ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Synthesize:top_lvr_fw.srr
+StartPage;StartPage;0
+ACTIVEVIEW;Reports
+ENDLIST
+LIST ModuleSubBlockList
+LIST "IIR_FILT::work","hdl\IIR_FILT.vhd","FALSE","FALSE"
+ENDLIST
+LIST "MAIN_SEQUENCER_NEW::work","hdl\MAIN_SEQUENCER_NEW.vhd","FALSE","FALSE"
+ENDLIST
+LIST "SLOW_PULSE_EN_GEN::work","hdl\Slow_PulseEn_Gen.vhd","FALSE","FALSE"
+ENDLIST
+LIST "spi_slave::work","hdl\spi_slave.vhd","FALSE","FALSE"
+ENDLIST
+LIST "top_lvr_fw::work","hdl\top_lvr_fw.vhd","FALSE","FALSE"
+SUBBLOCK "IIR_FILT::work","hdl\IIR_FILT.vhd","FALSE","FALSE"
+SUBBLOCK "MAIN_SEQUENCER_NEW::work","hdl\MAIN_SEQUENCER_NEW.vhd","FALSE","FALSE"
+SUBBLOCK "SLOW_PULSE_EN_GEN::work","hdl\Slow_PulseEn_Gen.vhd","FALSE","FALSE"
+SUBBLOCK "spi_slave::work","hdl\spi_slave.vhd","FALSE","FALSE"
+ENDLIST
+ENDLIST
+LIST ActiveTestBenchList
+ENDLIST
+LIST IOTabList
+ENDLIST
+LIST FPTabList
+ENDLIST
+LIST TimingTabList
+ENDLIST
+LIST FDCTabList
+ENDLIST

@@ -4,7 +4,7 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timeStamp 2019 7 22 8 36 52)
+      (timeStamp 2019 7 22 15 11 45)
       (author "Synopsys, Inc.")
       (program "Synplify Pro" (version "L-2016.09M-SP1-5, mapper mapact, Build 2172R"))
      )
@@ -9246,7 +9246,7 @@
            (port I_SPI_RX_STRB (direction OUTPUT))
            (port SCA_DAT_OUT_c (direction INPUT))
            (port SCA_DAT_IN_c (direction OUTPUT))
-           (port SCA_CLK_OUT_c (direction INPUT))
+           (port sca_clk_out_buf (direction INPUT))
            (port SCA_RESET_OUT_c (direction INPUT))
            (port BUF5M_J11_15_TCONN_c (direction INPUT))
          )
@@ -10200,8 +10200,8 @@
            (portRef QN (instanceRef SCA_CLK_OUT_1C))
            (portRef D (instanceRef SCA_CLK_OUT_2C))
           ))
-          (net SCA_CLK_OUT_c (joined
-           (portRef SCA_CLK_OUT_c)
+          (net sca_clk_out_buf (joined
+           (portRef sca_clk_out_buf)
            (portRef CLK (instanceRef RX_32BIT_SREG_31))
            (portRef CLK (instanceRef RX_32BIT_SREG_30))
            (portRef CLK (instanceRef RX_32BIT_SREG_29))
@@ -11418,8 +11418,6 @@
            (port J11_23_TCONN (direction OUTPUT))
          )
          (contents
-          (instance SCA_CLK_OUT_pad (viewRef prim (cellRef CLKBUF (libraryRef PA3)))
-          )
           (instance MASTER_RST_B_RNI5KT3 (viewRef prim (cellRef CLKINT (libraryRef PA3)))
           )
           (instance SCA_RESET_OUT_pad (viewRef prim (cellRef CLKBUF (libraryRef PA3)))
@@ -11639,6 +11637,9 @@
           )
           (instance CLK40MHZ_OSC_pad (viewRef prim (cellRef INBUF (libraryRef PA3)))
           )
+          (instance SPI_CLK_BUF (viewRef prim (cellRef CLKBUF (libraryRef PA3)))
+           (property is_instantiated (integer 1))
+          )
           (instance spi_slave_pm (viewRef netlist (cellRef spi_slave))
           )
           (instance CONTROL12 (viewRef netlist (cellRef MAIN_SEQUENCER_NEW_3))
@@ -11690,6 +11691,10 @@
           (net (rename ADDR_SEL_4 "ADDR_SEL[4]") (joined
            (portRef (member addr_sel 0))
           ))
+          (net SCA_CLK_OUT (joined
+           (portRef SCA_CLK_OUT)
+           (portRef PAD (instanceRef SPI_CLK_BUF))
+          ))
           (net UNUSED_1 (joined
            (portRef UNUSED_1)
           ))
@@ -11701,6 +11706,10 @@
           ))
           (net J11_27_TCONN (joined
            (portRef J11_27_TCONN)
+          ))
+          (net sca_clk_out_buf (joined
+           (portRef Y (instanceRef SPI_CLK_BUF))
+           (portRef sca_clk_out_buf (instanceRef spi_slave_pm))
           ))
           (net (rename SPI_TX_WORDZ0Z_0 "SPI_TX_WORD[0]") (joined
            (portRef Q (instanceRef SPI_TX_WORD_0))
@@ -12276,14 +12285,6 @@
           (net PRI_TX_EN (joined
            (portRef PAD (instanceRef PRI_TX_EN_pad))
            (portRef PRI_TX_EN)
-          ))
-          (net SCA_CLK_OUT_c (joined
-           (portRef Y (instanceRef SCA_CLK_OUT_pad))
-           (portRef SCA_CLK_OUT_c (instanceRef spi_slave_pm))
-          ))
-          (net SCA_CLK_OUT (joined
-           (portRef SCA_CLK_OUT)
-           (portRef PAD (instanceRef SCA_CLK_OUT_pad))
           ))
           (net SCA_RESET_OUT_c (joined
            (portRef Y (instanceRef SCA_RESET_OUT_pad))

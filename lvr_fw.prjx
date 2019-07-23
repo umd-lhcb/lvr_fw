@@ -13,10 +13,15 @@ KEY VendorTechnology_Package "vq100"
 KEY VendorTechnology_Speed "STD"
 KEY VendorTechnology_DieVoltage "1.5"
 KEY VendorTechnology_PART_RANGE "COM"
+KEY VendorTechnology_DSW_VCCA_VOLTAGE_RAMP_RATE ""
 KEY VendorTechnology_IO_DEFT_STD "LVCMOS33"
+KEY VendorTechnology_OPCONR ""
+KEY VendorTechnology_PLL_SUPPLY ""
+KEY VendorTechnology_RAD_EXPOSURE ""
 KEY VendorTechnology_RESERVEMIGRATIONPINS "1"
 KEY VendorTechnology_RESTRICTPROBEPINS "1"
 KEY VendorTechnology_RESTRICTSPIPINS "0"
+KEY VendorTechnology_SYSTEM_CONTROLLER_SUSPEND_MODE ""
 KEY VendorTechnology_TARGETDEVICESFORMIGRATION "IS4X4M1"
 KEY VendorTechnology_TEMPR "COM"
 KEY VendorTechnology_UNUSED_MSS_IO_RESISTOR_PULL "None"
@@ -38,77 +43,87 @@ ENDLIST
 LIST FileManager
 VALUE "<project>\constraint\top_lvr_fw.pdc,pdc"
 STATE="utd"
-TIME="1563809476"
-SIZE="82114"
+TIME="1563849308"
+SIZE="7030"
 ENDFILE
 VALUE "<project>\designer\impl1\IIR_FILT.ide_des,ide_des"
 STATE="utd"
-TIME="1563809476"
+TIME="1563829748"
 SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="utd"
-TIME="1563809509"
-SIZE="446976"
+TIME="1563829748"
+SIZE="884736"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1563809481"
-SIZE="186"
+TIME="1563829748"
+SIZE="1088"
+ENDFILE
+VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
+STATE="utd"
+TIME="1563848827"
+SIZE="129926"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
 STATE="utd"
-TIME="1563809821"
-SIZE="10464"
+TIME="1563833546"
+SIZE="10140"
+ENDFILE
+VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
+STATE="utd"
+TIME="1563849444"
+SIZE="2670"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1563810074"
-SIZE="2679"
+TIME="1563848464"
+SIZE="1264"
 ENDFILE
 VALUE "<project>\hdl\IIR_FILT.vhd,hdl"
 STATE="utd"
-TIME="1563809476"
+TIME="1563829748"
 SIZE="7360"
 ENDFILE
 VALUE "<project>\hdl\MAIN_SEQUENCER_NEW.vhd,hdl"
 STATE="utd"
-TIME="1563809476"
+TIME="1563829748"
 SIZE="18743"
 ENDFILE
 VALUE "<project>\hdl\Slow_PulseEn_Gen.vhd,hdl"
 STATE="utd"
-TIME="1563809476"
+TIME="1563829748"
 SIZE="4679"
 ENDFILE
 VALUE "<project>\hdl\spi_slave.vhd,hdl"
 STATE="utd"
-TIME="1563809476"
+TIME="1563829748"
 SIZE="13961"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1563809799"
-SIZE="44162"
+TIME="1563832693"
+SIZE="42939"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
-TIME="1563809498"
-SIZE="587873"
+TIME="1563833506"
+SIZE="654762"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
-TIME="1563809498"
+TIME="1563829748"
 SIZE="214"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1563809498"
+TIME="1563833505"
 SIZE="522"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
 STATE="utd"
-TIME="1563809499"
+TIME="1563829748"
 SIZE="1987"
 ENDFILE
 ENDLIST
@@ -269,7 +284,7 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Synthesize:top_lvr_fw.srr
+ReportsCurrentItem;Place and Route:top_lvr_fw_placeroute_log.rpt
 StartPage;StartPage;0
 ACTIVEVIEW;Reports
 ENDLIST

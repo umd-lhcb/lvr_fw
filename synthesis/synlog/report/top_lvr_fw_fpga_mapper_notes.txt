@@ -1,6 +1,6 @@
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
-@N: MO231 :"z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":418:4:418:5|Found counter in view:work.top_lvr_fw(rtl) instance DTYCYC_CNT[4:0] 
+@N: MO231 :"z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":398:4:398:5|Found counter in view:work.top_lvr_fw(rtl) instance DTYCYC_CNT[4:0] 
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":218:4:218:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw\hdl\slow_pulseen_gen.vhd":73:4:73:5|Found counter in view:work.SLOW_PULSE_EN_GEN(rtl) instance CNT_VAL[20:0] 
 @N: MF176 |Default generator successful 
@@ -9,7 +9,6 @@
 @N: FP130 |Promoting Net BUF5M_J11_15_TCONN_c on CLKINT  BUF5M_J11_15_TCONN_inferred_clock 
 @N: FP130 |Promoting Net SCA_RESET_OUT_c on CLKBUF  SCA_RESET_OUT_pad 
 @N: FP130 |Promoting Net MASTER_RST_B_i_0_i on CLKINT  I_50 
-@N: FP130 |Promoting Net SCA_CLK_OUT_c on CLKBUF  SCA_CLK_OUT_pad 
 @N: FP130 |Promoting Net spi_slave_pm.SPI_CLR on CLKINT  I_51 
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
 @N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.

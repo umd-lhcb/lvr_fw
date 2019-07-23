@@ -1,5 +1,5 @@
 *****************************************************************
-Pin Report - Date: Mon Jul 22 08:41:13 2019 Pinchecksum: NOT-AVAILABLE
+Pin Report - Date: Mon Jul 22 19:37:23 2019 Pinchecksum: NOT-AVAILABLE
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
@@ -10,12 +10,12 @@ Package: 100 VQFP
 *****************************************************************
 Port                |Pin |Fixed |Function       |I/O Std  |Output Drive (mA) |Slew |Resistor Pull |Skew |Output Load (pF) |Use I/O Reg |Hot Swappable |
 --------------------|----|------|---------------|---------|------------------|-----|--------------|-----|-----------------|------------|--------------|
-BUF5M_J11_15_TCONN   45   No     GDA2/IO61RSB2   LVCMOS15  4                  High  None           No    35                No           No
+BUF5M_J11_15_TCONN   34   No     IO86RSB2        LVCMOS15  4                  High  None           No    35                No           No
 CH1_2_MS_CFG_EN      21   Yes    GEC0/IO100NDB3  LVCMOS15  ---                ---   None           ---   ---               No           No
 CH3_4_MS_CFG_EN      20   Yes    GEC1/IO100PDB3  LVCMOS15  ---                ---   None           ---   ---               No           No
 CH5_6_MS_CFG_EN      19   Yes    GFC2/IO105PSB3  LVCMOS15  ---                ---   None           ---   ---               No           No
 CH7_8_MS_CFG_EN      16   Yes    GFA2/IO107PSB3  LVCMOS15  ---                ---   None           ---   ---               No           No
-CLK40MHZ_OSC         11   Yes    GFB0/IO109NDB3  LVCMOS15  ---                ---   None           ---   ---               No           No
+CLK40MHZ_OSC         61   Yes    GCB2/IO52PDB1   LVCMOS33  ---                ---   None           ---   ---               No           No
 FPGA_FUSE_1_2_OK[0]  42   Yes    IO71RSB2        LVCMOS15  ---                ---   None           ---   ---               No           No
 FPGA_FUSE_3_4_OK[0]  41   Yes    IO74RSB2        LVCMOS15  ---                ---   None           ---   ---               No           No
 FPGA_FUSE_5_6_OK[0]  40   Yes    IO77RSB2        LVCMOS15  ---                ---   None           ---   ---               No           No
@@ -25,7 +25,7 @@ J11_19_TCONN         8    Yes    IO112PSB3       LVCMOS15  4                  Hi
 J11_21_TCONN         7    Yes    IO116VDB3       LVCMOS15  4                  High  None           No    35                No           No
 J11_23_TCONN         5    Yes    IO117VDB3       LVCMOS15  4                  High  None           No    35                No           No
 MAN_EN_CH_4TO1       15   Yes    GFA1/IO108PPB3  LVCMOS15  ---                ---   None           ---   ---               No           No
-MAN_EN_CH_8TO5       34   No     IO86RSB2        LVCMOS15  ---                ---   None           ---   ---               No           No
+MAN_EN_CH_8TO5       13   Yes    GFA0/IO108NPB3  LVCMOS15  ---                ---   None           ---   ---               No           No
 MODE_DCYC_NORMB      31   Yes    IO91RSB2        LVCMOS15  ---                ---   None           ---   ---               No           No
 P_CH_IAUX_EN[0]      90   Yes    IO15RSB0        LVCMOS33  12                 High  None           No    35                No           No
 P_CH_IAUX_EN[1]      84   Yes    IO25RSB0        LVCMOS33  12                 High  None           No    35                No           No
@@ -34,7 +34,7 @@ P_CH_IAUX_EN[3]      79   Yes    GBB0/IO37RSB0   LVCMOS33  12                 Hi
 P_CH_IAUX_EN[4]      73   Yes    GBA2/IO41PDB1   LVCMOS33  12                 High  None           No    35                No           No
 P_CH_IAUX_EN[5]      70   Yes    GBC2/IO43PDB1   LVCMOS33  12                 High  None           No    35                No           No
 P_CH_IAUX_EN[6]      64   Yes    GCC0/IO48NDB1   LVCMOS33  12                 High  None           No    35                No           No
-P_CH_IAUX_EN[7]      61   Yes    GCB2/IO52PDB1   LVCMOS33  12                 High  None           No    35                No           No
+P_CH_IAUX_EN[7]      57   Yes    GDA1/IO60USB1   LVCMOS33  12                 High  None           No    35                No           No
 P_CH_MREG_EN[0]      86   Yes    IO21RSB0        LVCMOS33  12                 High  None           No    35                No           No
 P_CH_MREG_EN[1]      92   Yes    IO11RSB0        LVCMOS33  12                 High  None           No    35                No           No
 P_CH_MREG_EN[2]      83   Yes    IO27RSB0        LVCMOS33  12                 High  None           No    35                No           No
@@ -52,11 +52,11 @@ P_CH_VOSG_EN[5]      69   Yes    IO43NDB1        LVCMOS33  12                 Hi
 P_CH_VOSG_EN[6]      63   Yes    GCA0/IO50NDB1   LVCMOS33  12                 High  None           No    35                No           No
 P_CH_VOSG_EN[7]      60   Yes    IO52NDB1        LVCMOS33  12                 High  None           No    35                No           No
 POR_FPGA             93   Yes    GAC1/IO05RSB0   LVCMOS33  ---                ---   None           ---   ---               No           No
-POR_OUT_TO_SCA       4    Yes    GAB2/IO117UDB3  LVCMOS15  4                  High  None           No    35                No           No
+POR_OUT_TO_SCA       6    Yes    GAC2/IO116UDB3  LVCMOS15  4                  High  None           No    35                No           No
 PRI_RX_EN_BAR        96   Yes    GAB0/IO02RSB0   LVCMOS33  12                 High  None           No    35                No           No
 PRI_TX_EN            94   Yes    GAC0/IO04RSB0   LVCMOS33  12                 High  None           No    35                No           No
 PWR_OK_LED           95   Yes    GAB1/IO03RSB0   LVCMOS33  12                 High  None           No    35                No           No
-SCA_CLK_OUT          13   Yes    GFA0/IO108NPB3  LVCMOS15  ---                ---   None           ---   ---               No           No
+SCA_CLK_OUT          11   Yes    GFB0/IO109NDB3  LVCMOS15  ---                ---   None           ---   ---               No           No
 SCA_DAT_IN           3    Yes    IO118VDB3       LVCMOS15  4                  High  None           No    35                No           No
 SCA_DAT_OUT          2    Yes    GAA2/IO118UDB3  LVCMOS15  ---                ---   None           ---   ---               No           No
 SCA_RESET_OUT        28   No     GEC2/IO95RSB2   LVCMOS15  ---                ---   None           ---   ---               No           No

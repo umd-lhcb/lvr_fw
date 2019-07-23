@@ -12,6 +12,7 @@
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":35:7:35:15|Synthesizing work.spi_slave.rtl.
 @N: CD231 :"Z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":77:21:77:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
 @N: CD604 :"Z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":342:6:342:19|OTHERS clause is not synthesized.
+@N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":797:10:797:15|Synthesizing proasic3.clkbuf.syn_black_box.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":218:4:218:5|Trying to extract state machine for register SPI_SM.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Trying to extract state machine for register SEQUENCER_STATE.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\MAIN_SEQUENCER_NEW.vhd":61:2:61:14|Input CMND_WORD_STB is unused.

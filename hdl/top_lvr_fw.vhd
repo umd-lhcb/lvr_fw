@@ -47,8 +47,8 @@ library proasic3;
 use proasic3.all;
 
 -- NOTE:  THE SYNPLIFY LIBRARY NEEDS TO BE COMMENTED OUT FOR MODELSIM PRESYNTH SIMS SINCE MODELSIM DOES NOT RECOGNIZE IT
---library synplify;
---use synplify.attributes.all;
+library synplify;
+use synplify.all;
 
 entity top_lvr_fw is
   port (
@@ -174,6 +174,11 @@ architecture RTL of top_lvr_fw is
       );
   end component;
 
+  component clkbuf
+    port ( pad  : in std_logic; y : out std_logic );
+  end component;
+
+  
   -- SPI interface with TCM
   component spi_slave is
     port (
@@ -191,34 +196,6 @@ architecture RTL of top_lvr_fw is
       P_TX_32BIT_REG : out std_logic_vector(31 downto 0);
       P_STATE_ID     : out std_logic_vector(3 downto 0)
 
-      );
-  end component;
-
--- RS-485 SERIAL RECEIVE MODULE
-  component SERIAL_RX is
-    port (
-      MASTER_RST_B : in std_logic;  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    : in std_logic;
-      RX_INPUT     : in std_logic;  -- FINAL RX SIGNAL BIT STREAM AFTER THE FILTER FUNCTION AND HYSTERISIS HAVE BEEN APPLIED
-      MODULE_ADDR  : in std_logic_vector(4 downto 0);  -- HARDWIRED ADDRESS OF THIS MODULE
-
-      RX_WORD       : out std_logic_vector(14 downto 0);  -- FINAL RECEIVED RX WORD
-      RX_ODD_PARITY : out std_logic;    -- ODD PARITY FOR THE RX_WORD
-      RX_PARITY_ERR : out std_logic;  -- LATCHED VESRION OF THE LAST RX PARITY ERROR
-      RX_STRB       : out std_logic  -- SINGLE CLOCK PULSE STRB INDICATES THE RX_WORD WAS UPDATED
-      );
-  end component;
-
--- RS-485 SERIAL TRANSMIT MODULE
-  component SERIAL_TX is
-    port (
-      MASTER_RST_B : in std_logic;  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    : in std_logic;
-      TX_WORD      : in std_logic_vector(14 downto 0);  -- PARALLEL WORD TO BE TRANSMITTED (NOTE--BIT 15 IS ODD PARITY CALCULATED AS SERIAL TX IS SENT)
-      TX_STRB      : in std_logic;  -- SINGLE CLOCK PULSE STRB INDICATES NEW TX_WORD READY FOR TX
-
-      P_TX_EN    : out std_logic;       -- SERIAL TX DRIVER ENABLE
-      SER_TX_BIT : out std_logic        -- TX BIT STREAM
       );
   end component;
 
@@ -322,7 +299,8 @@ architecture RTL of top_lvr_fw is
   signal SPI_RX_STRB        : std_logic;  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
   signal SPI_P_TX_32BIT_REG : std_logic_vector(31 downto 0);
   signal SPI_P_STATE_ID     : std_logic_vector(3 downto 0);
-
+  signal sca_clk_out_buf : std_logic;
+  
 -- DEBUG
   signal IIR_OVT_FILT   : std_logic_vector(7 downto 0);
   signal IIR_UVL12_FILT : std_logic_vector(7 downto 0);
@@ -334,13 +312,15 @@ architecture RTL of top_lvr_fw is
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 begin
 
+  SPI_CLK_BUF : CLKBUF port map(PAD => SCA_CLK_OUT, Y => sca_clk_out_buf); 
+
   -- SPI
   spi_slave_pm : spi_slave
     port map (
       CLK5M_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
       MASTER_RST_B => SCA_RESET_OUT,    -- INTERNAL ACTIVE LOW RESET
 
-      SCA_CLK_OUT => SCA_CLK_OUT,  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
+      SCA_CLK_OUT => SCA_CLK_OUT_buf,  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
       SCA_DAT_OUT => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
       SCA_DAT_IN  => SCA_DAT_IN,  -- SERIAL DATA OUTPUT FROM THE FPGA TO THE SCA MASTER
 

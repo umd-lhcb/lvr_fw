@@ -8,14 +8,7 @@ Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys softwa
 
 @N: CD720 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
 @N:"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":53:7:53:16|Top entity is set to top_lvr_fw.
-File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\misc.vhd changed - recompiling
-File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd changed - recompiling
-File Z:\windows\lvr_fw\lvr_fw\hdl\MAIN_SEQUENCER_NEW.vhd changed - recompiling
-File Z:\windows\lvr_fw\lvr_fw\hdl\Slow_PulseEn_Gen.vhd changed - recompiling
-File Z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd changed - recompiling
-File Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd changed - recompiling
 VHDL syntax check successful!
-File Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":53:7:53:16|Synthesizing work.top_lvr_fw.rtl.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
@@ -36,10 +29,12 @@ Post processing for work.main_sequencer_new.rtl
 @N: CD604 :"Z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":342:6:342:19|OTHERS clause is not synthesized.
 Post processing for work.spi_slave.rtl
 @W: CL260 :"Z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":97:4:97:5|Pruning register bit 31 of TX_32BIT_SREG(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":797:10:797:15|Synthesizing proasic3.clkbuf.syn_black_box.
+Post processing for proasic3.clkbuf.syn_black_box
 Post processing for work.top_lvr_fw.rtl
 @W: CL240 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":105:4:105:17|Signal POR_OUT_TO_SCA is floating; a simulation mismatch is possible.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":418:4:418:5|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":418:4:418:5|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":398:4:398:5|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":398:4:398:5|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":218:4:218:5|Trying to extract state machine for register SPI_SM.
 Extracted state machine for register SPI_SM
 State machine has 6 reachable states with original encodings of:
@@ -71,8 +66,8 @@ State machine has 3 reachable states with original encodings of:
    00
    01
    10
-@W: CL279 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":418:4:418:5|Pruning register bits 7 to 5 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL279 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":418:4:418:5|Pruning register bits 3 to 1 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":398:4:398:5|Pruning register bits 7 to 5 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":398:4:398:5|Pruning register bits 3 to 1 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":72:4:72:14|Input MODE_WDT_EN is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":74:4:74:18|Input MODE_DIAG_NORMB is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":88:4:88:19|Input TEMP_FAILSAFE_EN is unused.
@@ -83,12 +78,12 @@ State machine has 3 reachable states with original encodings of:
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":124:4:124:15|Input J11_25_TCONN is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":125:4:125:15|Input J11_27_TCONN is unused.
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 77MB peak: 78MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 77MB peak: 79MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 22 08:36:46 2019
+# Mon Jul 22 15:11:36 2019
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -99,16 +94,16 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 22 08:36:46 2019
+# Mon Jul 22 15:11:37 2019
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 3MB peak: 4MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 3MB peak: 4MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 22 08:36:47 2019
+# Mon Jul 22 15:11:37 2019
 
 ###########################################################]

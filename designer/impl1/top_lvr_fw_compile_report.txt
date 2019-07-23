@@ -1,13 +1,13 @@
 ***************************************************************************
                                Status Report
-                          Mon Jul 22 08:36:59 2019 ***************************************************************************
+                          Mon Jul 22 15:12:24 2019 ***************************************************************************
 
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
 File Name: Z:\windows\lvr_fw\lvr_fw\designer\impl1\top_lvr_fw.adb
 Design Name: top_lvr_fw  Design State: compile
-Last Saved: Mon Jul 22 08:32:22 2019
+Last Saved: Mon Jul 22 15:00:13 2019
 
 ***** Device Data **************************************************
 
@@ -22,9 +22,8 @@ Voltage Range:   COM
 
 ***** Import Variables *********************************************
 
-Source File(s) Imported on Mon Jul 22 08:36:56 2019:
+Source File(s) Imported on Mon Jul 22 15:12:20 2019:
         Z:\windows\lvr_fw\lvr_fw\synthesis\top_lvr_fw.edn
-        Z:\windows\lvr_fw\lvr_fw\constraint\top_lvr_fw.pdc
 
 
 ***** CAE Variables ************************************************
@@ -51,14 +50,13 @@ Family      : ProASIC3
 Device      : A3P250
 Package     : 100 VQFP
 Source      : Z:\windows\lvr_fw\lvr_fw\synthesis\top_lvr_fw.edn
-              Z:\windows\lvr_fw\lvr_fw\constraint\top_lvr_fw.pdc
 Format      : EDIF
 Topcell     : top_lvr_fw
 Speed grade : STD
 Temp        : 0:25:70
 Voltage     : 1.58:1.50:1.42
 
-Keep Existing Physical Constraints : No
+Keep Existing Physical Constraints : Yes
 Keep Existing Timing Constraints   : Yes
 
 pdc_abort_on_error                 : Yes
@@ -105,13 +103,6 @@ Optimized macros:
     Total macros optimized  69
 
 There were 0 error(s) and 13 warning(s) in this design.
-=====================================================================
-
-Reading user pdc (Physical Design Constraints) file(s) postcompile
-
-
-There were 0 error(s) and 0 warning(s) in reading the user pdc.
-
 =====================================================================
 
 Reading previous post-compile physical placement constraints.
@@ -167,14 +158,14 @@ I/O Technology:
     --------------------------------|-------|-------|-------|--------|--------------
     I/O Standard(s)                 | Vcci  | Vref  | Input | Output | Bidirectional
     --------------------------------|-------|-------|-------|--------|--------------
-    LVCMOS33                        | 3.30v | N/A   | 1     | 29     | 0
-    LVCMOS15                        | 1.50v | N/A   | 17    | 7      | 0
+    LVCMOS33                        | 3.30v | N/A   | 2     | 29     | 0
+    LVCMOS15                        | 1.50v | N/A   | 16    | 7      | 0
 
 I/O Placement:
 
-    Locked  :  51 ( 94.44% )
-    Placed  :   3 (  5.56% )
-    UnPlaced:   0
+    Locked  :  50 ( 92.59% )
+    Placed  :   1 (  1.85% )
+    UnPlaced:   3 (  5.56% )
 
 Warning: Only some I/Os are locked
 
@@ -190,8 +181,8 @@ The following nets have been assigned to a chip global resource:
     234     SET/RESET_NET Net   : MASTER_RST_B_i_0_i
                           Driver: MASTER_RST_B_RNI5KT3
                           Source: NETLIST
-    71      CLK_NET       Net   : SCA_CLK_OUT_c
-                          Driver: SCA_CLK_OUT_pad
+    71      CLK_NET       Net   : sca_clk_out_buf
+                          Driver: SPI_CLK_BUF
                           Source: NETLIST
     70      SET/RESET_NET Net   : spi_slave_pm/SPI_CLR
                           Driver: spi_slave_pm/SPI_CLR_RNIS247

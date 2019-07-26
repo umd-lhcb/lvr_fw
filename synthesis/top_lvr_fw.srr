@@ -3,7 +3,7 @@
 #OS: Windows 8 6.2
 #Hostname: DESKTOP-PLJUDQE
 
-# Mon Jul 22 15:11:35 2019
+# Fri Jul 26 06:45:03 2019
 
 #Implementation: synthesis
 
@@ -17,7 +17,15 @@ Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys softwa
 
 @N: CD720 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
 @N:"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":53:7:53:16|Top entity is set to top_lvr_fw.
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\misc.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw\hdl\MAIN_SEQUENCER_NEW.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw\hdl\Slow_PulseEn_Gen.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhdl_sim\synplify.vhd changed - recompiling
 VHDL syntax check successful!
+File Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":53:7:53:16|Synthesizing work.top_lvr_fw.rtl.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
@@ -82,6 +90,7 @@ State machine has 3 reachable states with original encodings of:
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":88:4:88:19|Input TEMP_FAILSAFE_EN is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":92:4:92:10|Input RX_FPGA is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":98:4:98:11|Input ADDR_SEL is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":102:4:102:16|Input SCA_RESET_OUT is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":122:4:122:11|Input UNUSED_1 is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":123:4:123:11|Input UNUSED_2 is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":124:4:124:15|Input J11_25_TCONN is unused.
@@ -92,7 +101,7 @@ At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memor
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 22 15:11:36 2019
+# Fri Jul 26 06:45:04 2019
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -103,7 +112,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 22 15:11:37 2019
+# Fri Jul 26 06:45:05 2019
 
 ###########################################################]
 @END
@@ -113,23 +122,22 @@ At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 22 15:11:37 2019
+# Fri Jul 26 06:45:05 2019
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
 @N|Running in 64-bit mode
+File Z:\windows\lvr_fw\lvr_fw\synthesis\synwork\top_lvr_fw_comp.srs changed - recompiling
 
 At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 68MB peak: 68MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 22 15:11:39 2019
+# Fri Jul 26 06:45:07 2019
 
 ###########################################################]
-Pre-mapping Report
-
-# Mon Jul 22 15:11:39 2019
+# Fri Jul 26 06:45:07 2019
 
 Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -263,19 +271,17 @@ original code -> new code
 None
 None
 
-Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 112MB peak: 113MB)
+Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 112MB peak: 113MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 26MB peak: 113MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 26MB peak: 113MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Mon Jul 22 15:11:41 2019
+# Fri Jul 26 06:45:08 2019
 
 ###########################################################]
-Map & Optimize Report
-
-# Mon Jul 22 15:11:42 2019
+# Fri Jul 26 06:45:09 2019
 
 Synopsys Microsemi Technology Mapper, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -343,43 +349,37 @@ original code -> new code
 @N: MF176 |Default generator successful 
 @N: MF176 |Default generator successful 
 
-Starting factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 112MB peak: 112MB)
+Starting factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 112MB peak: 112MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 114MB peak: 114MB)
+Finished factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 114MB peak: 114MB)
 
 @W: BN132 :"z:\windows\lvr_fw\lvr_fw\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance CONTROL34.CH_ACTIVE_STAT because it is equivalent to instance CONTROL12.CH_ACTIVE_STAT. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"z:\windows\lvr_fw\lvr_fw\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance CONTROL78.CH_ACTIVE_STAT because it is equivalent to instance CONTROL56.CH_ACTIVE_STAT. To keep the instance, apply constraint syn_preserve=1 on the instance.
 
-Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 113MB peak: 114MB)
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 113MB peak: 114MB)
 
 
-Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 113MB peak: 114MB)
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 113MB peak: 114MB)
 
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 116MB peak: 117MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 117MB peak: 118MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 117MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 118MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 117MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 118MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 116MB peak: 118MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 118MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 116MB peak: 118MB)
+Finished preparing to map (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 118MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 121MB)
+Finished technology mapping (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 119MB peak: 121MB)
 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.CLK_FCNT_1C[4] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.CLK_FCNT_1C[3] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.CLK_FCNT_1C[2] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.CLK_FCNT_1C[1] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.CLK_FCNT_1C[0] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.SCA_CLK_OUT_1C (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
 
 High Fanout Net Report
 **********************
@@ -392,22 +392,20 @@ CONTROL34.SEQUENCER_STATE_ns_o2[5] / Y     44
 CONTROL12.SEQUENCER_STATE_ns_o2[5] / Y     44                              
 spi_slave_pm.SPI_SM[0] / Q                 35                              
 spi_slave_pm.SPI_SM[1] / Q                 34                              
-spi_slave_pm.SPI_CLR / Q                   70 : 70 asynchronous set/reset  
-SCA_RESET_OUT_pad / Y                      92 : 92 asynchronous set/reset  
-OVT_FS.SIGOUT / Q                          25                              
 spi_slave_pm.m6_0 / Y                      31                              
+spi_slave_pm.SPI_CLR / Q                   70 : 70 asynchronous set/reset  
+OVT_FS.SIGOUT / Q                          25                              
 MASTER_RST_B / QN                          233 : 233 asynchronous set/reset
 ===========================================================================
 
 @N: FP130 |Promoting Net BUF5M_J11_15_TCONN_c on CLKINT  BUF5M_J11_15_TCONN_inferred_clock 
-@N: FP130 |Promoting Net SCA_RESET_OUT_c on CLKBUF  SCA_RESET_OUT_pad 
 @N: FP130 |Promoting Net MASTER_RST_B_i_0_i on CLKINT  I_50 
 @N: FP130 |Promoting Net spi_slave_pm.SPI_CLR on CLKINT  I_51 
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 120MB peak: 122MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 120MB peak: 121MB)
 
-Replicating Combinational Instance spi_slave_pm.m6_0, fanout 31 segments 2
 Replicating Sequential Instance OVT_FS.SIGOUT, fanout 25 segments 2
+Replicating Combinational Instance spi_slave_pm.m6_0, fanout 31 segments 2
 Replicating Sequential Instance spi_slave_pm.SPI_SM[1], fanout 34 segments 2
 Replicating Sequential Instance spi_slave_pm.SPI_SM[0], fanout 35 segments 2
 Replicating Combinational Instance CONTROL12.SEQUENCER_STATE_ns_o2[5], fanout 44 segments 2
@@ -420,7 +418,7 @@ Added 8 Cells via replication
 	Added 3 Sequential Cells via replication
 	Added 5 Combinational Cells via replication
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 120MB peak: 122MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 120MB peak: 121MB)
 
 
 
@@ -434,36 +432,36 @@ Clock optimization not enabled
 2 gated/generated clock tree(s) driving 357 clock pin(s) of sequential element(s)
 0 instances converted, 357 sequential instances remain driven by gated/generated clocks
 
-=================================== Non-Gated/Non-Generated Clocks ===================================
-Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance               
-------------------------------------------------------------------------------------------------------
-@K:CKID0003       SCA_CLK_OUT         port                   70         spi_slave_pm.RX_32BIT_SREG[31]
-@K:CKID0004       CLK40MHZ_OSC        port                   5          CLK_5M_GL                     
-======================================================================================================
+================================ Non-Gated/Non-Generated Clocks ================================
+Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance         
+------------------------------------------------------------------------------------------------
+@K:CKID0003       SCA_CLK_OUT         port                   70         spi_slave_pm.CLK_FCNT[5]
+@K:CKID0004       CLK40MHZ_OSC        port                   5          CLK_5M_GL               
+================================================================================================
 =========================================================================== Gated/Generated Clocks ============================================================================
 Clock Tree ID     Driving Element                Drive Element Type     Fanout     Sample Instance     Explanation                                                             
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 @K:CKID0001       CLK_5M_GL                      DFN1C0                 325        DTYCYC_EN           No generated or derived clock directive on output of sequential instance
-@K:CKID0002       spi_slave_pm.I_SPI_RX_STRB     DFN1C0                 32         SPI_TX_WORD[0]      No generated or derived clock directive on output of sequential instance
+@K:CKID0002       spi_slave_pm.I_SPI_RX_STRB     DFN1                   32         SPI_TX_WORD[0]      No generated or derived clock directive on output of sequential instance
 ===============================================================================================================================================================================
 
 
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 118MB peak: 122MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 121MB)
 
 Writing Analyst data base Z:\windows\lvr_fw\lvr_fw\synthesis\synwork\top_lvr_fw_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 122MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 118MB peak: 121MB)
 
 Writing EDIF Netlist and constraint files
 L-2016.09M-SP1-5
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 120MB peak: 122MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 121MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 122MB)
+Start final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 121MB)
 
 @W: MT420 |Found inferred clock top_lvr_fw|CLK40MHZ_OSC with period 10.00ns. Please declare a user-defined clock on object "p:CLK40MHZ_OSC"
 @W: MT420 |Found inferred clock top_lvr_fw|SCA_CLK_OUT with period 10.00ns. Please declare a user-defined clock on object "p:SCA_CLK_OUT"
@@ -472,7 +470,7 @@ Start final timing analysis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:0
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Mon Jul 22 15:11:46 2019
+# Timing Report written on Fri Jul 26 06:45:12 2019
 #
 
 
@@ -1258,10 +1256,10 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 Timing exceptions that could not be applied
 None
 
-Finished final timing analysis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 122MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 121MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 122MB)
+Finished timing report (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 121MB)
 
 --------------------------------------------------------------------------------
 Target Part: A3P250_VQFP100_STD
@@ -1269,10 +1267,11 @@ Report for cell top_lvr_fw.rtl
   Core Cell usage:
               cell count     area count*area
               AND2    90      1.0       90.0
-               AO1    94      1.0       94.0
+               AO1    93      1.0       93.0
               AO13     5      1.0        5.0
               AO18    25      1.0       25.0
               AO1A    22      1.0       22.0
+              AO1B     1      1.0        1.0
               AOI1     1      1.0        1.0
              AOI1B    12      1.0       12.0
                AX1     5      1.0        5.0
@@ -1288,13 +1287,13 @@ Report for cell top_lvr_fw.rtl
                MX2    19      1.0       19.0
               MX2B     4      1.0        4.0
               MX2C    17      1.0       17.0
-              NOR2    39      1.0       39.0
-             NOR2A    55      1.0       55.0
-             NOR2B    29      1.0       29.0
-              NOR3    15      1.0       15.0
-             NOR3A    12      1.0       12.0
-             NOR3B    32      1.0       32.0
-             NOR3C    49      1.0       49.0
+              NOR2    41      1.0       41.0
+             NOR2A    57      1.0       57.0
+             NOR2B    27      1.0       27.0
+              NOR3    16      1.0       16.0
+             NOR3A    13      1.0       13.0
+             NOR3B    33      1.0       33.0
+             NOR3C    45      1.0       45.0
                OA1     1      1.0        1.0
               OA1A     6      1.0        6.0
               OA1B    10      1.0       10.0
@@ -1316,40 +1315,43 @@ Report for cell top_lvr_fw.rtl
               XOR3     5      1.0        5.0
 
 
-            DFI1C0     7      1.0        7.0
+            DFI1C0     1      1.0        1.0
             DFI1P0     1      1.0        1.0
               DFN0    32      1.0       32.0
-            DFN1C0   145      1.0      145.0
+              DFN1    23      1.0       23.0
+            DFN1C0   136      1.0      136.0
             DFN1C1    39      1.0       39.0
-          DFN1E0C0    30      1.0       30.0
+            DFN1E0     5      1.0        5.0
+          DFN1E0C0    25      1.0       25.0
           DFN1E0P0     3      1.0        3.0
-          DFN1E1C0    72      1.0       72.0
-          DFN1E1C1    31      1.0       31.0
-            DFN1P0    72      1.0       72.0
+            DFN1E1    34      1.0       34.0
+          DFN1E1C0     6      1.0        6.0
+          DFN1E1C1    63      1.0       63.0
+            DFN1P0    64      1.0       64.0
                    -----          ----------
-             TOTAL  1374              1347.0
+             TOTAL  1375              1348.0
 
 
   IO Cell usage:
               cell count
-            CLKBUF     2
+            CLKBUF     1
              INBUF    16
             OUTBUF    36
                    -----
-             TOTAL    54
+             TOTAL    53
 
 
-Core Cells         : 1347 of 6144 (22%)
-IO Cells           : 54
+Core Cells         : 1348 of 6144 (22%)
+IO Cells           : 53
 
   RAM/ROM Usage Summary
 Block Rams : 0 of 8 (0%)
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 27MB peak: 122MB)
+At Mapper Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 27MB peak: 121MB)
 
-Process took 0h:00m:04s realtime, 0h:00m:04s cputime
-# Mon Jul 22 15:11:46 2019
+Process took 0h:00m:03s realtime, 0h:00m:03s cputime
+# Fri Jul 26 06:45:13 2019
 
 ###########################################################]

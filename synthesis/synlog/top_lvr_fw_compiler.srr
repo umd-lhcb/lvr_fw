@@ -8,7 +8,15 @@ Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys softwa
 
 @N: CD720 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
 @N:"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":53:7:53:16|Top entity is set to top_lvr_fw.
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\misc.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw\hdl\MAIN_SEQUENCER_NEW.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw\hdl\Slow_PulseEn_Gen.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhdl_sim\synplify.vhd changed - recompiling
 VHDL syntax check successful!
+File Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":53:7:53:16|Synthesizing work.top_lvr_fw.rtl.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
@@ -73,6 +81,7 @@ State machine has 3 reachable states with original encodings of:
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":88:4:88:19|Input TEMP_FAILSAFE_EN is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":92:4:92:10|Input RX_FPGA is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":98:4:98:11|Input ADDR_SEL is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":102:4:102:16|Input SCA_RESET_OUT is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":122:4:122:11|Input UNUSED_1 is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":123:4:123:11|Input UNUSED_2 is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":124:4:124:15|Input J11_25_TCONN is unused.
@@ -83,7 +92,7 @@ At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memor
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 22 15:11:36 2019
+# Fri Jul 26 06:45:04 2019
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -94,7 +103,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 22 15:11:37 2019
+# Fri Jul 26 06:45:05 2019
 
 ###########################################################]
 @END
@@ -104,6 +113,6 @@ At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 22 15:11:37 2019
+# Fri Jul 26 06:45:05 2019
 
 ###########################################################]

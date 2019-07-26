@@ -62,6 +62,7 @@ State machine has 3 reachable states with original encodings of:
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":88:4:88:19|Input TEMP_FAILSAFE_EN is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":92:4:92:10|Input RX_FPGA is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":98:4:98:11|Input ADDR_SEL is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":102:4:102:16|Input SCA_RESET_OUT is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":122:4:122:11|Input UNUSED_1 is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":123:4:123:11|Input UNUSED_2 is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":124:4:124:15|Input J11_25_TCONN is unused.

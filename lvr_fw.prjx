@@ -53,18 +53,13 @@ SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="utd"
-TIME="1563829748"
-SIZE="884736"
+TIME="1563849442"
+SIZE="893952"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1563829748"
-SIZE="1088"
-ENDFILE
-VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
-STATE="utd"
-TIME="1563848827"
-SIZE="129926"
+TIME="1563849442"
+SIZE="1021"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
 STATE="utd"
@@ -113,7 +108,7 @@ SIZE="654762"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
-TIME="1563829748"
+TIME="1563833506"
 SIZE="214"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
@@ -123,7 +118,7 @@ SIZE="522"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
 STATE="utd"
-TIME="1563829748"
+TIME="1563833507"
 SIZE="1987"
 ENDFILE
 ENDLIST
@@ -283,10 +278,8 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-Reports;Reports;0
-ReportsCurrentItem;Place and Route:top_lvr_fw_placeroute_log.rpt
 StartPage;StartPage;0
-ACTIVEVIEW;Reports
+ACTIVEVIEW;StartPage
 ENDLIST
 LIST ModuleSubBlockList
 LIST "IIR_FILT::work","hdl\IIR_FILT.vhd","FALSE","FALSE"

@@ -1,5 +1,5 @@
 *****************************************************************
-Pin Report - Date: Mon Jul 22 19:37:23 2019 Pinchecksum: NOT-AVAILABLE
+Pin Report - Date: Fri Jul 26 06:45:54 2019 Pinchecksum: NOT-AVAILABLE
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
@@ -10,7 +10,7 @@ Package: 100 VQFP
 *****************************************************************
 Port                |Pin |Fixed |Function       |I/O Std  |Output Drive (mA) |Slew |Resistor Pull |Skew |Output Load (pF) |Use I/O Reg |Hot Swappable |
 --------------------|----|------|---------------|---------|------------------|-----|--------------|-----|-----------------|------------|--------------|
-BUF5M_J11_15_TCONN   34   No     IO86RSB2        LVCMOS15  4                  High  None           No    35                No           No
+BUF5M_J11_15_TCONN   44   No     GDB2/IO62RSB2   LVCMOS15  4                  High  None           No    35                No           No
 CH1_2_MS_CFG_EN      21   Yes    GEC0/IO100NDB3  LVCMOS15  ---                ---   None           ---   ---               No           No
 CH3_4_MS_CFG_EN      20   Yes    GEC1/IO100PDB3  LVCMOS15  ---                ---   None           ---   ---               No           No
 CH5_6_MS_CFG_EN      19   Yes    GFC2/IO105PSB3  LVCMOS15  ---                ---   None           ---   ---               No           No
@@ -59,7 +59,6 @@ PWR_OK_LED           95   Yes    GAB1/IO03RSB0   LVCMOS33  12                 Hi
 SCA_CLK_OUT          11   Yes    GFB0/IO109NDB3  LVCMOS15  ---                ---   None           ---   ---               No           No
 SCA_DAT_IN           3    Yes    IO118VDB3       LVCMOS15  4                  High  None           No    35                No           No
 SCA_DAT_OUT          2    Yes    GAA2/IO118UDB3  LVCMOS15  ---                ---   None           ---   ---               No           No
-SCA_RESET_OUT        28   No     GEC2/IO95RSB2   LVCMOS15  ---                ---   None           ---   ---               No           No
 STATUS_LED           77   Yes    GBA0/IO39RSB0   LVCMOS33  12                 High  None           No    35                No           No
 STDBY_OFFB           10   Yes    GFB1/IO109PDB3  LVCMOS15  ---                ---   None           ---   ---               No           No
 TEMP_OK[0]           43   Yes    GDC2/IO63RSB2   LVCMOS15  ---                ---   None           ---   ---               No           No

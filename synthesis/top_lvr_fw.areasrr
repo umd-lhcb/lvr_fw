@@ -3,7 +3,7 @@ Report for cell top_lvr_fw.rtl
                                           Cell usage:
                                cell       count     area    count*area
                                AX1C         1       1.0        1.0
-                             CLKBUF         1       0.0        0.0
+                             CLKBUF         2       0.0        0.0
                              CLKINT         2       0.0        0.0
                              DFI1C0         1       1.0        1.0
                              DFI1P0         1       1.0        1.0
@@ -17,7 +17,7 @@ Report for cell top_lvr_fw.rtl
                        IIR_FILT_4_0         1      44.0       44.0
                        IIR_FILT_4_1         1      45.0       45.0
                        IIR_FILT_4_2         1      44.0       44.0
-                       IIR_FILT_4_3         1      45.0       45.0
+                       IIR_FILT_4_3         1      44.0       44.0
                               INBUF        16       0.0        0.0
                                 INV         1       1.0        1.0
                MAIN_SEQUENCER_NEW_3         1     182.0      182.0
@@ -30,7 +30,7 @@ Report for cell top_lvr_fw.rtl
                                XOR2         1       1.0        1.0
                           spi_slave         1     243.0      243.0
                             
-                         TOTAL            124               1348.0
+                         TOTAL            125               1347.0
 ----------------------------------------------------------------------
 Report for cell IIR_FILT_4_3.netlist
   Original Cell name IIR_FILT_4
@@ -48,7 +48,6 @@ Report for cell IIR_FILT_4_3.netlist
                                 GND         1       0.0        0.0
                                MAJ3         1       1.0        1.0
                                NOR2         1       1.0        1.0
-                              NOR2A         1       1.0        1.0
                               NOR2B         3       1.0        3.0
                                NOR3         1       1.0        1.0
                               NOR3C         1       1.0        1.0
@@ -60,7 +59,7 @@ Report for cell IIR_FILT_4_3.netlist
                                XOR2         2       1.0        2.0
                                XOR3         1       1.0        1.0
                             
-                         TOTAL             47                 45.0
+                         TOTAL             46                 44.0
 ----------------------------------------------------------------------
 Report for cell IIR_FILT_4_2.netlist
   Original Cell name IIR_FILT_4
@@ -328,13 +327,13 @@ Report for cell MAIN_SEQUENCER_NEW_3.netlist
                               MIN3X         1       1.0        1.0
                                 MX2         1       1.0        1.0
                                MX2B         1       1.0        1.0
-                               NOR2         6       1.0        6.0
-                              NOR2A         8       1.0        8.0
-                              NOR2B         3       1.0        3.0
+                               NOR2         7       1.0        7.0
+                              NOR2A         7       1.0        7.0
+                              NOR2B         2       1.0        2.0
                                NOR3         2       1.0        2.0
-                              NOR3A         3       1.0        3.0
-                              NOR3B         5       1.0        5.0
-                              NOR3C         6       1.0        6.0
+                              NOR3A         2       1.0        2.0
+                              NOR3B         6       1.0        6.0
+                              NOR3C         7       1.0        7.0
                                OA1A         1       1.0        1.0
                                OA1B         1       1.0        1.0
                                OA1C         1       1.0        1.0
@@ -353,27 +352,27 @@ Report for cell spi_slave.netlist
                                           Cell usage:
                                cell       count     area    count*area
                                AND2         2       1.0        2.0
-                               AO1B         1       1.0        1.0
+                                AO1         1       1.0        1.0
                                AOI1         1       1.0        1.0
                               AOI1B         2       1.0        2.0
                                AX1E         2       1.0        2.0
                              CLKINT         1       0.0        0.0
-                               DFN1        23       1.0       23.0
-                             DFN1C1        39       1.0       39.0
-                             DFN1E0         5       1.0        5.0
-                             DFN1E1        34       1.0       34.0
-                           DFN1E1C1        63       1.0       63.0
+                             DFI1C1         6       1.0        6.0
+                             DFN1C1        48       1.0       48.0
+                           DFN1E0C1         5       1.0        5.0
+                           DFN1E1C1        97       1.0       97.0
+                             DFN1P1         8       1.0        8.0
                                 GND         1       0.0        0.0
                                 INV         2       1.0        2.0
                                 MX2        15       1.0       15.0
                                MX2C        17       1.0       17.0
-                               NOR2         5       1.0        5.0
+                               NOR2         2       1.0        2.0
                               NOR2A         6       1.0        6.0
-                              NOR2B         5       1.0        5.0
-                               NOR3         2       1.0        2.0
+                              NOR2B         8       1.0        8.0
+                               NOR3         1       1.0        1.0
                               NOR3A         1       1.0        1.0
-                              NOR3B         7       1.0        7.0
-                              NOR3C         2       1.0        2.0
+                              NOR3B         5       1.0        5.0
+                              NOR3C         5       1.0        5.0
                                OR2A         1       1.0        1.0
                                 VCC         1       0.0        0.0
                               XNOR2         2       1.0        2.0

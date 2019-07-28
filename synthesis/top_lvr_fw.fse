@@ -13,7 +13,7 @@ fsm_state_encoding {1421842181} det_frame_done {010000}
 
 fsm_state_encoding {1421842181} process_frame {100000}
 
-fsm_registers {1421842181} {SPI_SM[0]}  {SPI_SM[1]}  {SPI_SM[2]}  {SPI_SM[3]}  {SPI_SM[4]}  {SPI_SM_i[5]} 
+fsm_registers {1421842181} {SPI_SM[0]}  {SPI_SM[1]}  {SPI_SM[2]}  {SPI_SM[3]}  {SPI_SM[4]}  {SPI_SM[5]} 
 
 fsm_encoding {1213121312} onehot
 

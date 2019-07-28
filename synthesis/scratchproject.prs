@@ -1,22 +1,22 @@
 #--  Synopsys, Inc.
 #--  Version L-2016.09M-SP1-5
-#--  Project file Z:\windows\lvr_fw\lvr_fw\synthesis\scratchproject.prs
+#--  Project file Z:\windows\lvr_fw\lvr_fw_manuel\synthesis\scratchproject.prs
 
 #project files
-add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw/hdl/IIR_FILT.vhd"
-add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw/hdl/MAIN_SEQUENCER_NEW.vhd"
-add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw/hdl/Slow_PulseEn_Gen.vhd"
-add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw/hdl/spi_slave.vhd"
-add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw/hdl/top_lvr_fw.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_manuel/hdl/IIR_FILT.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_manuel/hdl/MAIN_SEQUENCER_NEW.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_manuel/hdl/Slow_PulseEn_Gen.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_manuel/hdl/spi_slave.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_manuel/hdl/top_lvr_fw.vhd"
 
 
 
 #implementation: "synthesis"
-impl -add Z:\windows\lvr_fw\lvr_fw\synthesis -type fpga
+impl -add Z:\windows\lvr_fw\lvr_fw_manuel\synthesis -type fpga
 
 #device options
 set_option -technology ProASIC3
-set_option -part A3P250
+set_option -part A3PN250
 set_option -package VQFP100
 set_option -speed_grade STD
 set_option -part_companion ""
@@ -72,5 +72,5 @@ set_option -vhdl2008 1
 set_option -write_apr_constraint 1
 
 #set result format/file last
-project -result_file "Z:/windows/lvr_fw/lvr_fw/synthesis/top_lvr_fw.edn"
+project -result_file "Z:/windows/lvr_fw/lvr_fw_manuel/synthesis/top_lvr_fw.edn"
 impl -active "synthesis"

@@ -1,4 +1,4 @@
 CKID0001:@|S:CLK_5M_GL@|E:DTYCYC_EN@|F:@syn_sample_clock_path==CKID0001@|M:ClockId0001 
 CKID0002:@|S:spi_slave_pm.I_SPI_RX_STRB@|E:SPI_TX_WORD[0]@|F:@syn_sample_clock_path==CKID0002@|M:ClockId0002 
-CKID0003:@|S:SCA_CLK_OUT@|E:spi_slave_pm.CLK_FCNT[5]@|F:@syn_sample_clock_path==CKID0003@|M:ClockId0003 
+CKID0003:@|S:SCA_CLK_OUT@|E:spi_slave_pm.RX_32BIT_SREG[31]@|F:@syn_sample_clock_path==CKID0003@|M:ClockId0003 
 CKID0004:@|S:CLK40MHZ_OSC@|E:CLK_5M_GL@|F:@syn_sample_clock_path1==CKID0004@|M:ClockId0004 

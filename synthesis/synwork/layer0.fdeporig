@@ -1,5 +1,5 @@
 #defaultlanguage:vhdl
-#OPTIONS:"|-layerid|0|-orig_srs|Z:\\windows\\lvr_fw\\lvr_fw\\synthesis\\synwork\\top_lvr_fw_comp.srs|-top|work.top_lvr_fw|-prodtype|synplify_pro|-nram|-fixsmult|-divnmod|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-vhdl2008|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
+#OPTIONS:"|-layerid|0|-orig_srs|Z:\\windows\\lvr_fw\\lvr_fw_manuel\\synthesis\\synwork\\top_lvr_fw_comp.srs|-top|work.top_lvr_fw|-prodtype|synplify_pro|-nram|-fixsmult|-divnmod|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-vhdl2008|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\bin64\\c_vhdl.exe":1509044428
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\location.map":1509050436
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\std.vhd":1509043928
@@ -11,16 +11,16 @@
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\arith.vhd":1509043928
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\unsigned.vhd":1509043928
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd\\hyperents.vhd":1509043928
-#CUR:"Z:\\windows\\lvr_fw\\lvr_fw\\hdl\\IIR_FILT.vhd":1563829748
-#CUR:"Z:\\windows\\lvr_fw\\lvr_fw\\hdl\\MAIN_SEQUENCER_NEW.vhd":1563829748
-#CUR:"Z:\\windows\\lvr_fw\\lvr_fw\\hdl\\Slow_PulseEn_Gen.vhd":1563829748
-#CUR:"Z:\\windows\\lvr_fw\\lvr_fw\\hdl\\spi_slave.vhd":1563829748
-#CUR:"Z:\\windows\\lvr_fw\\lvr_fw\\hdl\\top_lvr_fw.vhd":1564148619
-0 "Z:\windows\lvr_fw\lvr_fw\hdl\IIR_FILT.vhd" vhdl
-1 "Z:\windows\lvr_fw\lvr_fw\hdl\MAIN_SEQUENCER_NEW.vhd" vhdl
-2 "Z:\windows\lvr_fw\lvr_fw\hdl\Slow_PulseEn_Gen.vhd" vhdl
-3 "Z:\windows\lvr_fw\lvr_fw\hdl\spi_slave.vhd" vhdl
-4 "Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd" vhdl
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_manuel\\hdl\\IIR_FILT.vhd":1563829748
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_manuel\\hdl\\MAIN_SEQUENCER_NEW.vhd":1563829748
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_manuel\\hdl\\Slow_PulseEn_Gen.vhd":1563829748
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_manuel\\hdl\\spi_slave.vhd":1563829748
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_manuel\\hdl\\top_lvr_fw.vhd":1564274369
+0 "Z:\windows\lvr_fw\lvr_fw_manuel\hdl\IIR_FILT.vhd" vhdl
+1 "Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd" vhdl
+2 "Z:\windows\lvr_fw\lvr_fw_manuel\hdl\Slow_PulseEn_Gen.vhd" vhdl
+3 "Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd" vhdl
+4 "Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd" vhdl
 
 # Dependency Lists (Uses list)
 0 -1

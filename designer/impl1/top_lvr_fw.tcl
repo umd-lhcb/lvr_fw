@@ -1,5 +1,5 @@
 # Created by Microsemi Libero Software 11.9.2.1
-# Fri Jul 26 06:47:13 2019
+# Sat Jul 27 17:40:19 2019
 
 # (OPEN DESIGN)
 
@@ -12,5 +12,5 @@ set_defvar "IDE_DESIGNERVIEW_NAME" {Impl1}
 set_defvar "IDE_DESIGNERVIEW_COUNT" "1"
 set_defvar "IDE_DESIGNERVIEW_REV0" {Impl1}
 set_defvar "IDE_DESIGNERVIEW_REVNUM0" "1"
-set_defvar "IDE_DESIGNERVIEW_ROOTDIR" {Z:\windows\lvr_fw\lvr_fw\designer}
+set_defvar "IDE_DESIGNERVIEW_ROOTDIR" {Z:\windows\lvr_fw\lvr_fw_manuel\designer}
 set_defvar "IDE_DESIGNERVIEW_LASTREV" "1"

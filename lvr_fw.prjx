@@ -30,7 +30,7 @@ KEY VendorTechnology_VCCI_1.8_VOLTR "COM"
 KEY VendorTechnology_VCCI_2.5_VOLTR "COM"
 KEY VendorTechnology_VCCI_3.3_VOLTR "COM"
 KEY VendorTechnology_VOLTR "COM"
-KEY ProjectLocation "Z:\windows\lvr_fw\lvr_fw"
+KEY ProjectLocation "Z:\windows\lvr_fw\lvr_fw_manuel"
 KEY ProjectDescription ""
 KEY Pa4PeripheralNewSeq "GOOD"
 KEY SimulationType "VHDL"
@@ -43,7 +43,7 @@ ENDLIST
 LIST FileManager
 VALUE "<project>\constraint\top_lvr_fw.pdc,pdc"
 STATE="utd"
-TIME="1563849308"
+TIME="1564077349"
 SIZE="7030"
 ENDFILE
 VALUE "<project>\designer\impl1\IIR_FILT.ide_des,ide_des"
@@ -53,18 +53,23 @@ SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="utd"
-TIME="1563849442"
-SIZE="893952"
+TIME="1564148755"
+SIZE="1033728"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1563849442"
-SIZE="1021"
+TIME="1564273305"
+SIZE="1039"
+ENDFILE
+VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
+STATE="utd"
+TIME="1564167047"
+SIZE="130405"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
 STATE="utd"
-TIME="1563833546"
-SIZE="10140"
+TIME="1564148722"
+SIZE="9912"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
 STATE="utd"
@@ -73,8 +78,8 @@ SIZE="2670"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1563848464"
-SIZE="1264"
+TIME="1564273336"
+SIZE="1196"
 ENDFILE
 VALUE "<project>\hdl\IIR_FILT.vhd,hdl"
 STATE="utd"
@@ -98,28 +103,28 @@ SIZE="13961"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1563832693"
-SIZE="42939"
+TIME="1564148619"
+SIZE="42929"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
-TIME="1563833506"
-SIZE="654762"
+TIME="1564148712"
+SIZE="652776"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
-TIME="1563833506"
+TIME="1564148712"
 SIZE="214"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1563833505"
+TIME="1564148712"
 SIZE="522"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
 STATE="utd"
-TIME="1563833507"
-SIZE="1987"
+TIME="1564273297"
+SIZE="2071"
 ENDFILE
 ENDLIST
 LIST UsedFile
@@ -217,8 +222,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile

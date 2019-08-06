@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- *************************************************************************************
+FILE DESCRIPTION
+Max Top 5 critical clocks will be reported. For rest user needs to refer to Detailed report
+*******************************************************************************************-->
+<report_table display_priority="2" name="Timing Summary">
+<report_link name="Detailed report">
+<data>Z:\windows\lvr_fw\lvr_fw_manuel\synthesis\synlog\top_lvr_fw_fpga_mapper.srr</data>
+<title>START OF TIMING REPORT</title>
+</report_link>
+<row>
+<data tcl_name="clock_name">Clock Name</data>
+<data tcl_name="req_freq">Req Freq</data>
+<data tcl_name="est_freq">Est Freq</data>
+<data tcl_name="slack">Slack</data>
+</row>
+<row>
+<data>spi_slave|I_SPI_RX_STRB_inferred_clock</data>
+<data>100.0 MHz</data>
+<data>NA</data>
+<data>NA</data>
+</row>
+<row>
+<data>top_lvr_fw|BUF5M_J11_15_TCONN_inferred_clock</data>
+<data>100.0 MHz</data>
+<data>63.5 MHz</data>
+<data>-5.744</data>
+</row>
+<row>
+<data>top_lvr_fw|CLK40MHZ_OSC</data>
+<data>100.0 MHz</data>
+<data>296.4 MHz</data>
+<data>6.627</data>
+</row>
+<row>
+<data>top_lvr_fw|SCA_CLK_OUT</data>
+<data>100.0 MHz</data>
+<data>74.6 MHz</data>
+<data>-3.413</data>
+</row>
+</report_table>

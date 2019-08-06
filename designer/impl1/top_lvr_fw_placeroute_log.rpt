@@ -18,11 +18,11 @@ Opened an existing Libero design Z:\windows\lvr_fw\lvr_fw_manuel\designer\impl1\
 The Execute Script command succeeded ( 00:00:00 )
 Warning: You changed the output filename from
          'Z:\windows\lvr_fw\lvr_fw_manuel\designer\impl1\top_lvr_fw' to
-         'Z:\windows\lvr_fw\lvr_fw_manuel\fw_files\v1-03_lvr_fw'. This may impact Libero. Do you
+         'Z:\windows\lvr_fw\lvr_fw_manuel\fw_files\v1-02_lvr_fw'. This may impact Libero. Do you
          wish to continue? [YES]
 Warning: The following files already exist:
          
-         Z:\windows\lvr_fw\lvr_fw_manuel\fw_files\v1-03_lvr_fw.stp
+         Z:\windows\lvr_fw\lvr_fw_manuel\fw_files\v1-02_lvr_fw.stp
          
          Do you want to replace the files? [YES]
 ***** Layout Variables *********************************************
@@ -40,22 +40,25 @@ I/O Bank Assigner completed successfully.
  
 
 Planning global net placement...
+Info: PLC007: Created quadrant global region Qclock_SCA_RESET_OUT_c for global net
+      SCA_RESET_OUT_c.
+
 
 
 Global net placement completed successfully.
 
                         o - o - o - o - o - o
 
-Timing-driven Placer Started: Sat Jul 27 17:31:52 2019
+Timing-driven Placer Started: Sat Jul 27 17:41:25 2019
 
-Placer Finished: Sat Jul 27 17:32:01 2019
+Placer Finished: Sat Jul 27 17:41:34 2019
 Total Placer CPU Time:     00:00:09
 
                         o - o - o - o - o - o
 
 
 Timing-driven Router 
-Design: top_lvr_fw                      Started: Sat Jul 27 17:32:03 2019
+Design: top_lvr_fw                      Started: Sat Jul 27 17:41:36 2019
 
  
 Iterative improvement...
@@ -63,9 +66,9 @@ Iterative improvement...
 Timing-driven Router completed successfully.
 
 Design: top_lvr_fw                      
-Finished: Sat Jul 27 17:32:15 2019
-Total CPU Time:     00:00:10            Total Elapsed Time: 00:00:12
-Total Memory Usage: 178.9 Mbytes
+Finished: Sat Jul 27 17:41:46 2019
+Total CPU Time:     00:00:08            Total Elapsed Time: 00:00:10
+Total Memory Usage: 179.2 Mbytes
                         o - o - o - o - o - o
 
 status 257
@@ -73,12 +76,12 @@ status 257
 Loading the Timing data for the design.
 Finished loading the Timing data.
 
-The Layout command succeeded ( 00:00:28 )
+The Layout command succeeded ( 00:00:26 )
 
-The Export-map command succeeded ( 00:00:15 )
-Wrote to the file: Z:\windows\lvr_fw\lvr_fw_manuel\fw_files\v1-03_lvr_fw.stp
-CHECKSUM: 93BA
+The Export-map command succeeded ( 00:00:07 )
+Wrote to the file: Z:\windows\lvr_fw\lvr_fw_manuel\fw_files\v1-02_lvr_fw.stp
+CHECKSUM: D195
 
-The Generate programming file command succeeded ( 00:00:45 )
+The Generate programming file command succeeded ( 00:00:35 )
 Design closed.
 

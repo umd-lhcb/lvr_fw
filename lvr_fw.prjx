@@ -8,7 +8,7 @@ KEY VERILOGMODE "VERILOG2001"
 KEY VHDLMODE "VHDL2008"
 KEY UseConstraintFlowTechnology "FALSE"
 KEY VendorTechnology_Family "ProASIC3"
-KEY VendorTechnology_Die "IS4X4M1"
+KEY VendorTechnology_Die "UM4X4M1N"
 KEY VendorTechnology_Package "vq100"
 KEY VendorTechnology_Speed "STD"
 KEY VendorTechnology_DieVoltage "1.5"
@@ -22,7 +22,7 @@ KEY VendorTechnology_RESERVEMIGRATIONPINS "1"
 KEY VendorTechnology_RESTRICTPROBEPINS "1"
 KEY VendorTechnology_RESTRICTSPIPINS "0"
 KEY VendorTechnology_SYSTEM_CONTROLLER_SUSPEND_MODE ""
-KEY VendorTechnology_TARGETDEVICESFORMIGRATION "IS4X4M1"
+KEY VendorTechnology_TARGETDEVICESFORMIGRATION "UM4X4M1N"
 KEY VendorTechnology_TEMPR "COM"
 KEY VendorTechnology_UNUSED_MSS_IO_RESISTOR_PULL "None"
 KEY VendorTechnology_VCCI_1.5_VOLTR "COM"
@@ -62,7 +62,7 @@ TIME="1564273305"
 SIZE="1039"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
-STATE="utd"
+STATE="ood"
 TIME="1564167047"
 SIZE="130405"
 ENDFILE
@@ -78,8 +78,8 @@ SIZE="2670"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1564273336"
-SIZE="1196"
+TIME="1564274411"
+SIZE="2565"
 ENDFILE
 VALUE "<project>\hdl\IIR_FILT.vhd,hdl"
 STATE="utd"
@@ -103,13 +103,13 @@ SIZE="13961"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1564148619"
-SIZE="42929"
+TIME="1564274369"
+SIZE="42977"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
-TIME="1564148712"
-SIZE="652776"
+TIME="1564273795"
+SIZE="652777"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
@@ -118,7 +118,7 @@ SIZE="214"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1564148712"
+TIME="1564273795"
 SIZE="522"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
@@ -134,9 +134,8 @@ LIST "top_lvr_fw::work"
 FILE "<project>\hdl\top_lvr_fw.vhd,hdl"
 LIST ProjectState5.1
 LIST Impl1
-LiberoState=Post_Layout
+LiberoState=Post_Synthesis
 ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
-ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -222,8 +221,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM=""
-BATCH=0
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -258,9 +257,8 @@ ENDLIST
 LIST ProjectState5.1
 LIST "top_lvr_fw::work"
 LIST Impl1
-LiberoState=Post_Layout
+LiberoState=Post_Synthesis
 ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
-ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -283,8 +281,10 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Place and Route:top_lvr_fw_placeroute_log.rpt
 StartPage;StartPage;0
-ACTIVEVIEW;StartPage
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "IIR_FILT::work","hdl\IIR_FILT.vhd","FALSE","FALSE"

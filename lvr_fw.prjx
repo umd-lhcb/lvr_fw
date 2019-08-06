@@ -53,23 +53,23 @@ SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="utd"
-TIME="1564148755"
+TIME="1564274418"
 SIZE="1033728"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1564273305"
-SIZE="1039"
+TIME="1564274419"
+SIZE="1041"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
-STATE="ood"
-TIME="1564167047"
-SIZE="130405"
+STATE="utd"
+TIME="1565112019"
+SIZE="129700"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
 STATE="utd"
-TIME="1564148722"
-SIZE="9912"
+TIME="1564274419"
+SIZE="9959"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
 STATE="utd"
@@ -78,8 +78,8 @@ SIZE="2670"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1564274411"
-SIZE="2565"
+TIME="1564275136"
+SIZE="2675"
 ENDFILE
 VALUE "<project>\hdl\IIR_FILT.vhd,hdl"
 STATE="utd"
@@ -108,23 +108,23 @@ SIZE="42977"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
-TIME="1564273795"
-SIZE="652777"
+TIME="1564274388"
+SIZE="656459"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
-TIME="1564148712"
-SIZE="214"
+TIME="1564274388"
+SIZE="221"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1564273795"
+TIME="1564274388"
 SIZE="522"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
 STATE="utd"
-TIME="1564273297"
-SIZE="2071"
+TIME="1564274389"
+SIZE="2030"
 ENDFILE
 ENDLIST
 LIST UsedFile
@@ -134,8 +134,9 @@ LIST "top_lvr_fw::work"
 FILE "<project>\hdl\top_lvr_fw.vhd,hdl"
 LIST ProjectState5.1
 LIST Impl1
-LiberoState=Post_Synthesis
+LiberoState=Post_Layout
 ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -257,8 +258,9 @@ ENDLIST
 LIST ProjectState5.1
 LIST "top_lvr_fw::work"
 LIST Impl1
-LiberoState=Post_Synthesis
+LiberoState=Post_Layout
 ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -282,7 +284,7 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Place and Route:top_lvr_fw_placeroute_log.rpt
+ReportsCurrentItem;top_lvr_fw:top_lvr_fw_report_pin_byname.txt
 StartPage;StartPage;0
 ACTIVEVIEW;Reports
 ENDLIST

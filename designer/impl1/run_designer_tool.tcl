@@ -1,4 +1,4 @@
-set_defvar "IDE_DESIGNERVIEW_ROOTDIR" {Z:\windows\lvr_fw\lvr_fw\designer}
+set_defvar "IDE_DESIGNERVIEW_ROOTDIR" {Z:\windows\lvr_fw\lvr_fw_manuel\designer}
 open_design top_lvr_fw.adb
 open_tool mvn_ioedit
 

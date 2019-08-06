@@ -8,7 +8,6 @@
 simulation/
 *.msg
 *.log
-tooldata/
 
 ### ISE ###
 xlnx_auto_0_xdb/

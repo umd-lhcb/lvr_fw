@@ -1,5 +1,5 @@
 *****************************************************************
-Pin Report - Date: Sat Jul 27 17:40:18 2019 UNCOMPLETED LAYOUT
+Pin Report - Date: Tue Aug 06 10:20:28 2019 Pinchecksum: NOT-AVAILABLE
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
@@ -32,12 +32,12 @@ Number |Port                |Function      |State       |I/O Std  |Output Drive 
 20      CH3_4_MS_CFG_EN      GEC1/IO54RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 21      CH1_2_MS_CFG_EN      GEC0/IO53RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 22                           GEA1/IO52RSB3  Special
-23                           GEA0/IO51RSB3  Special
+23      BUF5M_J11_15_TCONN   GEA0/IO51RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
 24                           VMV3           Reserved
 25                           GNDQ           Reserved
 26                           GEA2/IO50RSB2  Special
 27                           GEB2/IO49RSB2  Special
-28                           GEC2/IO48RSB2  Special
+28      SCA_RESET_OUT        GEC2/IO48RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 29                           IO47RSB2       Unassigned
 30                           IO46RSB2       Unassigned
 31      MODE_DCYC_NORMB      IO45RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
@@ -53,7 +53,7 @@ Number |Port                |Function      |State       |I/O Std  |Output Drive 
 41      FPGA_FUSE_3_4_OK[0]  IO38RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
 42      FPGA_FUSE_1_2_OK[0]  IO37RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
 43      TEMP_OK[0]           GDC2/IO36RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-44      BUF5M_J11_15_TCONN   GDB2/IO35RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
+44                           GDB2/IO35RSB2  Special
 45                           GDA2/IO34RSB2  Special
 46                           GNDQ           Reserved
 47                           TCK            Reserved

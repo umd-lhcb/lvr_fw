@@ -41,8 +41,8 @@ Post processing for work.spi_slave.rtl
 Post processing for proasic3.clkbuf.syn_black_box
 Post processing for work.top_lvr_fw.rtl
 @W: CL240 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":105:4:105:17|Signal POR_OUT_TO_SCA is floating; a simulation mismatch is possible.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":399:4:399:5|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":399:4:399:5|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":407:4:407:5|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":407:4:407:5|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":218:4:218:5|Trying to extract state machine for register SPI_SM.
 Extracted state machine for register SPI_SM
 State machine has 6 reachable states with original encodings of:
@@ -74,24 +74,25 @@ State machine has 3 reachable states with original encodings of:
    00
    01
    10
-@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":399:4:399:5|Pruning register bits 7 to 5 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":399:4:399:5|Pruning register bits 3 to 1 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":407:4:407:5|Pruning register bits 7 to 5 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":407:4:407:5|Pruning register bits 3 to 1 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":72:4:72:14|Input MODE_WDT_EN is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":74:4:74:18|Input MODE_DIAG_NORMB is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":88:4:88:19|Input TEMP_FAILSAFE_EN is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":92:4:92:10|Input RX_FPGA is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":98:4:98:11|Input ADDR_SEL is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":122:4:122:11|Input UNUSED_1 is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":123:4:123:11|Input UNUSED_2 is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":124:4:124:15|Input J11_25_TCONN is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":125:4:125:15|Input J11_27_TCONN is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":102:4:102:16|Input SCA_RESET_OUT is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":131:4:131:11|Input UNUSED_1 is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":132:4:132:11|Input UNUSED_2 is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":133:4:133:15|Input J11_25_TCONN is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":134:4:134:15|Input J11_27_TCONN is unused.
 
 At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 77MB peak: 79MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat Jul 27 17:39:41 2019
+# Tue Aug 06 11:17:52 2019
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -102,16 +103,16 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat Jul 27 17:39:41 2019
+# Tue Aug 06 11:17:52 2019
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 3MB peak: 4MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 3MB peak: 4MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sat Jul 27 17:39:41 2019
+# Tue Aug 06 11:17:52 2019
 
 ###########################################################]

@@ -53,16 +53,16 @@ SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="utd"
-TIME="1564274418"
+TIME="1565112026"
 SIZE="1033728"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1564274419"
-SIZE="1041"
+TIME="1565112026"
+SIZE="1043"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
-STATE="utd"
+STATE="ood"
 TIME="1565112019"
 SIZE="129700"
 ENDFILE
@@ -75,11 +75,6 @@ VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
 STATE="utd"
 TIME="1563849444"
 SIZE="2670"
-ENDFILE
-VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
-STATE="utd"
-TIME="1564275136"
-SIZE="2675"
 ENDFILE
 VALUE "<project>\hdl\IIR_FILT.vhd,hdl"
 STATE="utd"
@@ -103,8 +98,8 @@ SIZE="13961"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1564274369"
-SIZE="42977"
+TIME="1565115464"
+SIZE="43263"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
@@ -284,7 +279,7 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;top_lvr_fw:top_lvr_fw_report_pin_byname.txt
+ReportsCurrentItem;Compile:top_lvr_fw_compile_log.rpt
 StartPage;StartPage;0
 ACTIVEVIEW;Reports
 ENDLIST

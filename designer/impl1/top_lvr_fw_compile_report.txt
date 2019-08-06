@@ -1,13 +1,13 @@
 ***************************************************************************
                                Status Report
-                          Sat Jul 27 17:40:17 2019 ***************************************************************************
+                          Tue Aug 06 11:18:09 2019 ***************************************************************************
 
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
 File Name: Z:\windows\lvr_fw\lvr_fw_manuel\designer\impl1\top_lvr_fw.adb
 Design Name: top_lvr_fw  Design State: compile
-Last Saved: Sat Jul 27 17:30:11 2019
+Last Saved: Tue Aug 06 10:20:26 2019
 
 ***** Device Data **************************************************
 
@@ -22,7 +22,7 @@ Voltage Range:   COM
 
 ***** Import Variables *********************************************
 
-Source File(s) Imported on Sat Jul 27 17:40:15 2019:
+Source File(s) Imported on Tue Aug 06 11:18:05 2019:
         Z:\windows\lvr_fw\lvr_fw_manuel\synthesis\top_lvr_fw.edn
 
 
@@ -85,6 +85,7 @@ Warning: Top level port ADDR_SEL<3> is not connected to any IO pad
 Warning: Top level port ADDR_SEL<2> is not connected to any IO pad
 Warning: Top level port ADDR_SEL<1> is not connected to any IO pad
 Warning: Top level port ADDR_SEL<0> is not connected to any IO pad
+Warning: Top level port SCA_RESET_OUT is not connected to any IO pad
 Warning: Top level port UNUSED_1 is not connected to any IO pad
 Warning: Top level port UNUSED_2 is not connected to any IO pad
 Warning: Top level port J11_25_TCONN is not connected to any IO pad
@@ -102,7 +103,7 @@ Optimized macros:
 
     Total macros optimized  69
 
-There were 0 error(s) and 13 warning(s) in this design.
+There were 0 error(s) and 14 warning(s) in this design.
 =====================================================================
 
 Reading previous post-compile physical placement constraints.
@@ -114,9 +115,9 @@ There were 0 error(s) and 0 warning(s).
 Compile report:
 ===============
 
-    CORE                       Used:   1278  Total:   6144   (20.80%)
-    IO (W/ clocks)             Used:     54  Total:     68   (79.41%)
-    GLOBAL (Chip+Quadrant)     Used:      5  Total:     18   (27.78%)
+    CORE                       Used:   1279  Total:   6144   (20.82%)
+    IO (W/ clocks)             Used:     60  Total:     68   (88.24%)
+    GLOBAL (Chip+Quadrant)     Used:      4  Total:     18   (22.22%)
     PLL                        Used:      0  Total:      1   (0.00%)
     RAM/FIFO                   Used:      0  Total:      8   (0.00%)
     Low Static ICC             Used:      0  Total:      1   (0.00%)
@@ -127,7 +128,7 @@ Global Information:
 
     Type            | Used   | Total
     ----------------|--------|--------------
-    Chip global     | 5      | 6  (83.33%)*
+    Chip global     | 4      | 6  (66.67%)*
     Quadrant global | 0      | 12 (0.00%)
 
     (*) Chip globals may be assigned to Quadrant globals using the Multi-View Navigator (MVN)
@@ -138,15 +139,15 @@ Core Information:
 
     Type    | Instances    | Core tiles
     --------|--------------|-----------
-    COMB    | 846          | 846
+    COMB    | 847          | 847
     SEQ     | 432          | 432
 
 I/O Function:
 
     Type                                  | w/o register  | w/ register  | w/ DDR register
     --------------------------------------|---------------|--------------|----------------
-    Input I/O                             | 18            | 0            | 0
-    Output I/O                            | 36            | 0            | 0
+    Input I/O                             | 17            | 0            | 0
+    Output I/O                            | 43            | 0            | 0
     Bidirectional I/O                     | 0             | 0            | 0
     Differential Input I/O Pairs          | 0             | 0            | 0
     Differential Output I/O Pairs         | 0             | 0            | 0
@@ -157,14 +158,14 @@ I/O Technology:
     --------------------------------|-------|-------|-------|--------|--------------
     I/O Standard(s)                 | Vcci  | Vref  | Input | Output | Bidirectional
     --------------------------------|-------|-------|-------|--------|--------------
-    LVCMOS33                        | 3.30v | N/A   | 3     | 29     | 0
+    LVCMOS33                        | 3.30v | N/A   | 2     | 36     | 0
     LVCMOS15                        | 1.50v | N/A   | 15    | 7      | 0
 
 I/O Placement:
 
-    Locked  :  52 ( 96.30% )
-    Placed  :   1 (  1.85% )
-    UnPlaced:   1 (  1.85% )
+    Locked  :  52 ( 86.67% )
+    Placed  :   1 (  1.67% )
+    UnPlaced:   7 ( 11.67% )
 
 Warning: Only some I/Os are locked
 
@@ -174,16 +175,13 @@ Net information report:
 The following nets have been assigned to a chip global resource:
     Fanout  Type          Name
     --------------------------
-    326     CLK_NET       Net   : BUF5M_J11_15_TCONN_c
-                          Driver: BUF5M_J11_15_TCONN_inferred_clock
+    327     CLK_NET       Net   : CLK_5M_GL_c_c
+                          Driver: CLK_5M_GL_inferred_clock
                           Source: NETLIST
     234     SET/RESET_NET Net   : MASTER_RST_B_i_0_i
                           Driver: MASTER_RST_B_RNI5KT3
                           Source: NETLIST
-    94      SET/RESET_NET Net   : SCA_RESET_OUT_c
-                          Driver: SCA_RESET_OUT_pad
-                          Source: NETLIST
-    71      CLK_NET       Net   : sca_clk_out_buf
+    72      CLK_NET       Net   : db_sca_clk_out_c
                           Driver: SPI_CLK_BUF
                           Source: NETLIST
     70      SET/RESET_NET Net   : spi_slave_pm/SPI_CLR
@@ -193,7 +191,7 @@ The following nets have been assigned to a chip global resource:
 High fanout nets in the post compile netlist:
     Fanout  Type          Name
     --------------------------
-    32      CLK_NET       Net   : I_SPI_RX_STRB
+    33      CLK_NET       Net   : I_SPI_RX_STRB
                           Driver: spi_slave_pm/I_SPI_RX_STRB
     22      INT_NET       Net   : CONTROL78/N_230_0
                           Driver: CONTROL78/SEQUENCER_STATE_RNI96G6[4]
@@ -217,7 +215,7 @@ High fanout nets in the post compile netlist:
 Nets that are candidates for clock assignment and the resulting fanout:
     Fanout  Type          Name
     --------------------------
-    32      CLK_NET       Net   : I_SPI_RX_STRB
+    33      CLK_NET       Net   : I_SPI_RX_STRB
                           Driver: spi_slave_pm/I_SPI_RX_STRB
     22      INT_NET       Net   : CONTROL78/N_230_0
                           Driver: CONTROL78/SEQUENCER_STATE_RNI96G6[4]

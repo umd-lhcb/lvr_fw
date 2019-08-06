@@ -5,10 +5,10 @@
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning unused register PREV_M_CH_EN_3(1 downto 0). Make sure that there are no unused intermediate registers.
 @W: CL260 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":97:4:97:5|Pruning register bit 31 of TX_32BIT_SREG(31 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
 @W: CL240 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":105:4:105:17|Signal POR_OUT_TO_SCA is floating; a simulation mismatch is possible.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":399:4:399:5|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":399:4:399:5|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":407:4:407:5|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":407:4:407:5|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
 @W: CL260 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning register bit 1 of CH_IAUX_EN(1 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
 @W: CL260 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning register bit 1 of CH_MREG_EN(1 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":399:4:399:5|Pruning register bits 7 to 5 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":399:4:399:5|Pruning register bits 3 to 1 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":407:4:407:5|Pruning register bits 7 to 5 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":407:4:407:5|Pruning register bits 3 to 1 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 

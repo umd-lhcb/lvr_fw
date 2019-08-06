@@ -1,7 +1,7 @@
 # Synopsys Constraint Checker, version mapact, Build 2172R, built Oct 30 2017
 # Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
 
-# Written on Sat Jul 27 17:39:44 2019
+# Written on Tue Aug 06 11:17:55 2019
 
 
 ##### DESIGN INFO #######################################################
@@ -24,17 +24,17 @@ Found 0 issues in 0 out of 0 constraints
 Clock Relationships
 *******************
 
-Starting                                         Ending                                           |     rise to rise     |     fall to fall     |     rise to fall     |     fall to rise                     
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-spi_slave|I_SPI_RX_STRB_inferred_clock           top_lvr_fw|BUF5M_J11_15_TCONN_inferred_clock     |     No paths         |     No paths         |     No paths         |     Diff grp                         
-top_lvr_fw|CLK40MHZ_OSC                          top_lvr_fw|CLK40MHZ_OSC                          |     10.000           |     No paths         |     No paths         |     No paths                         
-top_lvr_fw|CLK40MHZ_OSC                          top_lvr_fw|BUF5M_J11_15_TCONN_inferred_clock     |     Diff grp         |     No paths         |     No paths         |     No paths                         
-top_lvr_fw|BUF5M_J11_15_TCONN_inferred_clock     spi_slave|I_SPI_RX_STRB_inferred_clock           |     No paths         |     No paths         |     Diff grp         |     No paths                         
-top_lvr_fw|BUF5M_J11_15_TCONN_inferred_clock     top_lvr_fw|BUF5M_J11_15_TCONN_inferred_clock     |     10.000           |     No paths         |     No paths         |     No paths                         
-top_lvr_fw|BUF5M_J11_15_TCONN_inferred_clock     top_lvr_fw|SCA_CLK_OUT                           |     Diff grp         |     No paths         |     No paths         |     No paths                         
-top_lvr_fw|SCA_CLK_OUT                           top_lvr_fw|BUF5M_J11_15_TCONN_inferred_clock     |     Diff grp         |     No paths         |     No paths         |     No paths                         
-top_lvr_fw|SCA_CLK_OUT                           top_lvr_fw|SCA_CLK_OUT                           |     10.000           |     No paths         |     No paths         |     No paths                         
-=============================================================================================================================================================================================================
+Starting                                   Ending                                     |     rise to rise     |     fall to fall     |     rise to fall     |     fall to rise                     
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+spi_slave|I_SPI_RX_STRB_inferred_clock     top_lvr_fw|CLK_5M_GL_inferred_clock        |     No paths         |     No paths         |     No paths         |     Diff grp                         
+top_lvr_fw|CLK40MHZ_OSC                    top_lvr_fw|CLK40MHZ_OSC                    |     10.000           |     No paths         |     No paths         |     No paths                         
+top_lvr_fw|CLK40MHZ_OSC                    top_lvr_fw|CLK_5M_GL_inferred_clock        |     Diff grp         |     No paths         |     No paths         |     No paths                         
+top_lvr_fw|CLK_5M_GL_inferred_clock        spi_slave|I_SPI_RX_STRB_inferred_clock     |     No paths         |     No paths         |     Diff grp         |     No paths                         
+top_lvr_fw|CLK_5M_GL_inferred_clock        top_lvr_fw|CLK_5M_GL_inferred_clock        |     10.000           |     No paths         |     No paths         |     No paths                         
+top_lvr_fw|CLK_5M_GL_inferred_clock        top_lvr_fw|SCA_CLK_OUT                     |     Diff grp         |     No paths         |     No paths         |     No paths                         
+top_lvr_fw|SCA_CLK_OUT                     top_lvr_fw|CLK_5M_GL_inferred_clock        |     Diff grp         |     No paths         |     No paths         |     No paths                         
+top_lvr_fw|SCA_CLK_OUT                     top_lvr_fw|SCA_CLK_OUT                     |     10.000           |     No paths         |     No paths         |     No paths                         
+=================================================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
 
@@ -106,6 +106,10 @@ p:TEMP_OK[0]
 p:TX_FPGA
 p:UNUSED_1
 p:UNUSED_2
+p:db_sca_dat_out
+p:db_spi_state0
+p:db_spi_state1
+p:db_spi_state2
 
 
 Inapplicable constraints

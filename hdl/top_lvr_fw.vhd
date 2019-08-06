@@ -104,6 +104,15 @@ entity top_lvr_fw is
     SCA_DAT_OUT    : in  std_logic;  -- pin 2, SERIAL DATA TO THE FPGA FROM THE SPI MASTER
     POR_OUT_TO_SCA : out std_logic;  -- pin 6, RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
 
+    -- SPI DEBUG signals
+    db_sca_dat_out     : out std_logic;  
+    db_sca_clk_out     : out std_logic;  
+    db_clk5mhz     : out std_logic;  
+    db_spi_strobe     : out std_logic;  
+    db_spi_state0     : out std_logic;  
+    db_spi_state1     : out std_logic;  
+    db_spi_state2     : out std_logic;  
+    
 
 -- CHANNEL ENABLES
     P_CH_MREG_EN : out std_logic_vector(7 downto 0);  -- pins {62, 65, 71, 76, 80, 83, 92, 86} CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
@@ -319,7 +328,7 @@ begin
   spi_slave_pm : spi_slave
     port map (
       CLK5M_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
-      MASTER_RST_B => spi_rst,    -- INTERNAL ACTIVE LOW RESET
+      MASTER_RST_B => '1',    -- INTERNAL ACTIVE LOW RESET
 
       SCA_CLK_OUT => SCA_CLK_OUT_buf,  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
       SCA_DAT_OUT => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
@@ -334,16 +343,15 @@ begin
       );
 
   spi_tx_word <= spi_rx_word when falling_edge(spi_rx_strb) else spi_tx_word;
---  spi_tx_word <= spi_rx_word when spi_rx_strb = '1' else spi_tx_word;
-  -- 
-  -- spi_tx_word_pcs : process(spi_rx_strb)
-  -- begin
-  --   if spi_rx_strb = '1' then
-  --     spi_tx_word <= spi_rx_word;
-  --   else
-  --     spi_tx_word <= spi_tx_word;
-  --   end if;
-  -- end process spi_tx_word_pcs;
+
+  -- DEBUG SPI signals
+  db_sca_dat_out <= sca_dat_out;
+  db_sca_clk_out <= sca_clk_out_buf;
+  db_clk5mhz <= clk_5m_gl;
+  db_spi_strobe <= spi_rx_strb;
+  db_spi_state0 <= spi_p_state_id(0);
+  db_spi_state1 <= spi_p_state_id(1);
+  db_spi_state2 <= spi_p_state_id(2);
   
 
 -- THIS PROCESS SYNCHRONIZES THE EXTERNAL POR_FPGA SIGNAL TO THE 40 MHZ CLOCK

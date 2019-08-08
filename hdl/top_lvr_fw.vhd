@@ -322,13 +322,13 @@ architecture RTL of top_lvr_fw is
 begin
 
   SPI_CLK_BUF : CLKBUF port map(PAD => SCA_CLK_OUT, Y => sca_clk_out_buf); 
-  spi_rst <= not SCA_RESET_OUT;
+  spi_rst <= not SCA_RESET_OUT or not MASTER_RST_B;
   
   -- SPI
   spi_slave_pm : spi_slave
     port map (
       CLK5M_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
-      MASTER_RST_B => MASTER_RST_B,    -- INTERNAL ACTIVE LOW RESET
+      MASTER_RST_B => spi_rst,    -- INTERNAL ACTIVE LOW RESET
 
       SCA_CLK_OUT => SCA_CLK_OUT_buf,  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
       SCA_DAT_OUT => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
@@ -804,7 +804,7 @@ begin
   J11_17_TCONN <= '0';  -- PIN 32, (SCHEMA ALIAS= CS3_SEL_EN) UNUSED I/O PIN
   J11_19_TCONN <= '0';  -- PIN 8,  (SCHEMA ALIAS= CS4_SEL_EN) UNUSED I/O PIN
   J11_21_TCONN <= '0';  -- PIN 7,  (SCHEMA ALIAS= CS5_SEL_EN) UNUSED I/O PIN
-  J11_23_TCONN <= '0';  -- PIN 5,  (SCHEMA ALIAS= CS6_SEL_EN) UNUSED I/O PIN
+  J11_23_TCONN <= '1';  -- PIN 5,  (SCHEMA ALIAS= CS6_SEL_EN) UNUSED I/O PIN
 
   TX_FPGA       <= DTYCYC_EN;           -- '0';  using this as a temp probe pin
   PRI_RX_EN_BAR <= '0';

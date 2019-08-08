@@ -41,6 +41,11 @@ VALUE="Impl1",NUM=1
 CURREV=1
 ENDLIST
 LIST FileManager
+VALUE "<project>\component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf,actgen_cxf"
+STATE="utd"
+TIME="1565209361"
+SIZE="437"
+ENDFILE
 VALUE "<project>\constraint\top_lvr_fw.pdc,pdc"
 STATE="utd"
 TIME="1564077349"
@@ -53,13 +58,13 @@ SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="utd"
-TIME="1565121436"
+TIME="1565272428"
 SIZE="1033728"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1565121436"
-SIZE="1043"
+TIME="1565272430"
+SIZE="1041"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
 STATE="ood"
@@ -68,8 +73,8 @@ SIZE="129700"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
 STATE="utd"
-TIME="1565115491"
-SIZE="9867"
+TIME="1565272429"
+SIZE="9856"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
 STATE="utd"
@@ -98,13 +103,13 @@ SIZE="13961"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1565272351"
-SIZE="43276"
+TIME="1565279356"
+SIZE="43291"
 ENDFILE
 VALUE "<project>\simulation\run.do,do"
 STATE="utd"
-TIME="1565208039"
-SIZE="935"
+TIME="1565209551"
+SIZE="943"
 ENDFILE
 VALUE "<project>\simulation\TB_TOP_LVR_FW_presynth_simulation.log,log"
 STATE="utd"
@@ -118,22 +123,22 @@ SIZE="9303"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
-TIME="1565115480"
-SIZE="655030"
+TIME="1565272414"
+SIZE="656437"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
-TIME="1565115480"
+TIME="1565272414"
 SIZE="221"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1565115480"
+TIME="1565272414"
 SIZE="522"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
 STATE="utd"
-TIME="1565115481"
+TIME="1565272415"
 SIZE="2030"
 ENDFILE
 ENDLIST
@@ -147,9 +152,10 @@ VALUE "<project>\stimulus\tb_top_lvr_fw.vhd,tb_hdl"
 ENDLIST
 LIST ProjectState5.1
 LIST Impl1
-LiberoState=Post_Synthesis
+LiberoState=Post_Layout
 ideSTIMULUS=StateSuccess
 ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -274,9 +280,10 @@ ENDLIST
 LIST ProjectState5.1
 LIST "top_lvr_fw::work"
 LIST Impl1
-LiberoState=Post_Synthesis
+LiberoState=Post_Layout
 ideSTIMULUS=StateSuccess
 ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -301,9 +308,12 @@ LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
 ReportsCurrentItem;Compile:top_lvr_fw_compile_log.rpt
+StartPage;StartPage;0
 ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
+LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"
+ENDLIST
 LIST "IIR_FILT::work","hdl\IIR_FILT.vhd","FALSE","FALSE"
 ENDLIST
 LIST "MAIN_SEQUENCER_NEW::work","hdl\MAIN_SEQUENCER_NEW.vhd","FALSE","FALSE"

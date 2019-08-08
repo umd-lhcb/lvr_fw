@@ -4,33 +4,34 @@ Report for cell top_lvr_fw.rtl
                                cell       count     area    count*area
                                AX1C         1       1.0        1.0
                              CLKBUF         1       0.0        0.0
-                             CLKINT         2       0.0        0.0
+                             CLKINT         3       0.0        0.0
                              DFI1C0         1       1.0        1.0
-                             DFI1P0         1       1.0        1.0
                                DFN0        32       1.0       32.0
                              DFN1C0         7       1.0        7.0
                            DFN1E0C0         3       1.0        3.0
                            DFN1E0P0         3       1.0        3.0
                            DFN1E1C0         6       1.0        6.0
+                             DFN1P0         1       1.0        1.0
                                 GND         1       0.0        0.0
                          IIR_FILT_4         1      46.0       46.0
                        IIR_FILT_4_0         1      44.0       44.0
                        IIR_FILT_4_1         1      45.0       45.0
                        IIR_FILT_4_2         1      44.0       44.0
                        IIR_FILT_4_3         1      44.0       44.0
-                              INBUF        16       0.0        0.0
-                                INV         1       1.0        1.0
+                              INBUF        17       0.0        0.0
+                                INV         2       1.0        2.0
                MAIN_SEQUENCER_NEW_3         1     182.0      182.0
              MAIN_SEQUENCER_NEW_3_0         1     180.0      180.0
              MAIN_SEQUENCER_NEW_3_1         1     197.0      197.0
              MAIN_SEQUENCER_NEW_3_2         1     182.0      182.0
+                               OR2A         1       1.0        1.0
                              OUTBUF        43       0.0        0.0
                   SLOW_PULSE_EN_GEN         1      85.0       85.0
                                 VCC         1       0.0        0.0
                                XOR2         1       1.0        1.0
                           spi_slave         1     242.0      242.0
                             
-                         TOTAL            131               1347.0
+                         TOTAL            135               1349.0
 ----------------------------------------------------------------------
 Report for cell IIR_FILT_4_3.netlist
   Original Cell name IIR_FILT_4

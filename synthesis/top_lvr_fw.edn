@@ -4,7 +4,7 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timeStamp 2019 8 8 6 53 34)
+      (timeStamp 2019 8 8 8 49 49)
       (author "Synopsys, Inc.")
       (program "Synplify Pro" (version "L-2016.09M-SP1-5, mapper mapact, Build 2172R"))
      )
@@ -636,25 +636,6 @@
            (property clock (integer 1))
  )
            (port D (direction INPUT))
-         )
-        (property is_ff (integer 1))
-       )
-    )
-    (cell DFI1P0 (cellType GENERIC)
-      (property is_sequential (integer 1))
-      (property dont_touch (string "false"))
-       (view prim (viewType NETLIST)
-         (interface
-           (port QN (direction OUTPUT)
-           (property function (string "IQN"))
- )
-           (port CLK (direction INPUT)
-           (property clock (integer 1))
- )
-           (port D (direction INPUT))
-           (port PRE (direction INPUT)
-           (property preset (integer 1))
- )
          )
         (property is_ff (integer 1))
        )
@@ -2631,7 +2612,7 @@
          (interface
            (port MASTER_RST_B_i_0_i (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
-           (port N_24_i (direction OUTPUT))
+           (port N_26_i (direction OUTPUT))
          )
          (contents
           (instance (rename CNT_VAL_RNINMS8_10 "CNT_VAL_RNINMS8[10]") (viewRef prim (cellRef NOR2 (libraryRef PA3)))          )
@@ -3175,9 +3156,9 @@
            (portRef Y (instanceRef CNT_VAL_RNI1HBD_17))
            (portRef C (instanceRef CNT_VAL_RNI0G8M_14))
           ))
-          (net N_24_i (joined
+          (net N_26_i (joined
            (portRef Q (instanceRef MS250_CLK_EN_SIG))
-           (portRef N_24_i)
+           (portRef N_26_i)
           ))
           (net CLK_5M_GL_c_c (joined
            (portRef CLK_5M_GL_c_c)
@@ -4722,12 +4703,12 @@
            (port CH5_6_MS_CFG_EN_c (direction INPUT))
            (port TX_FPGA_c (direction INPUT))
            (port un3_n_ch_vosg_en (direction OUTPUT))
-           (port N_63 (direction OUTPUT))
-           (port N_24_i (direction INPUT))
+           (port N_65 (direction OUTPUT))
+           (port N_26_i (direction INPUT))
            (port N_DTYCYC_CNT_2_sqmuxa (direction OUTPUT))
            (port N_4 (direction OUTPUT))
-           (port N_66 (direction OUTPUT))
-           (port N_65 (direction OUTPUT))
+           (port N_68 (direction OUTPUT))
+           (port N_67 (direction OUTPUT))
            (port MODE_DCYC_NORMB_c (direction INPUT))
            (port MAN_EN_CH_4TO1_A (direction INPUT))
            (port MAN_EN_CH_4TO1_c (direction INPUT))
@@ -5594,17 +5575,17 @@
            (portRef A (instanceRef N_DTYCYC_CNT_2_sqmuxa_0_a2))
            (portRef A (instanceRef un1_mode_dcyc_normb_1_0_0))
           ))
-          (net N_39 (joined
+          (net N_31 (joined
            (portRef Y (instanceRef un1_mode_dcyc_normb_1_0_a2_0))
            (portRef B (instanceRef un1_mode_dcyc_normb_1_0_0))
           ))
-          (net N_65 (joined
+          (net N_67 (joined
            (portRef Y (instanceRef DTYCYC_CNT_n2_0))
-           (portRef N_65)
+           (portRef N_67)
           ))
-          (net N_66 (joined
+          (net N_68 (joined
            (portRef Y (instanceRef DTYCYC_CNT_n3_0))
-           (portRef N_66)
+           (portRef N_68)
           ))
           (net N_4 (joined
            (portRef Y (instanceRef DTYCYC_CNT_n4_i))
@@ -5619,13 +5600,13 @@
            (portRef Y (instanceRef N_DTYCYC_CNT_2_sqmuxa_0_a2))
            (portRef N_DTYCYC_CNT_2_sqmuxa)
           ))
-          (net N_24_i (joined
-           (portRef N_24_i)
+          (net N_26_i (joined
+           (portRef N_26_i)
            (portRef B (instanceRef N_DTYCYC_CNT_2_sqmuxa_0_a2))
           ))
-          (net N_63 (joined
+          (net N_65 (joined
            (portRef Y (instanceRef DTYCYC_CNT_n0_0_a2))
-           (portRef N_63)
+           (portRef N_65)
           ))
           (net un3_n_ch_vosg_en (joined
            (portRef Y (instanceRef MAIN_SEQUENCER_un3_n_ch_vosg_en))
@@ -9239,7 +9220,7 @@
            (port SCA_DAT_OUT_c_c (direction INPUT))
            (port SCA_DAT_IN_c (direction OUTPUT))
            (port db_sca_clk_out_c (direction INPUT))
-           (port MASTER_RST_B_i_0_i (direction INPUT))
+           (port spi_rst_1 (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
          )
          (contents
@@ -9795,8 +9776,8 @@
            (portRef CLK (instanceRef SPI_SM_0_1))
            (portRef CLK (instanceRef SPI_SM_0_0))
           ))
-          (net MASTER_RST_B_i_0_i (joined
-           (portRef MASTER_RST_B_i_0_i)
+          (net spi_rst_1 (joined
+           (portRef spi_rst_1)
            (portRef CLR (instanceRef CLK_FCNT_2C_5))
            (portRef PRE (instanceRef CLK_FCNT_2C_4))
            (portRef PRE (instanceRef CLK_FCNT_2C_3))
@@ -11413,17 +11394,21 @@
            (port J11_23_TCONN (direction OUTPUT))
          )
          (contents
-          (instance MASTER_RST_B_RNI5KT3 (viewRef prim (cellRef CLKINT (libraryRef PA3)))
+          (instance SCA_RESET_OUT_pad_RNI93NH_0 (viewRef prim (cellRef CLKINT (libraryRef PA3)))
+          )
+          (instance MASTER_RST_B_RNI5KT3_0 (viewRef prim (cellRef CLKINT (libraryRef PA3)))
           )
           (instance CLK_5M_GL_inferred_clock (viewRef prim (cellRef CLKINT (libraryRef PA3)))
           )
           (instance DEL0_DEV_RST_B (viewRef prim (cellRef DFI1C0 (libraryRef PA3)))
           )
-          (instance MASTER_RST_B (viewRef prim (cellRef DFI1P0 (libraryRef PA3)))
-          )
           (instance (rename REFCNT_RNO_0 "REFCNT_RNO[0]") (viewRef prim (cellRef INV (libraryRef PA3)))          )
+          (instance MASTER_RST_B_RNI5KT3 (viewRef prim (cellRef INV (libraryRef PA3)))          )
           (instance CLK_5M_GL_RNO (viewRef prim (cellRef AX1C (libraryRef PA3)))          )
           (instance un1_n_refcnt_1_SUM1 (viewRef prim (cellRef XOR2 (libraryRef PA3)))          )
+          (instance SCA_RESET_OUT_pad_RNI93NH (viewRef prim (cellRef OR2A (libraryRef PA3)))          )
+          (instance MASTER_RST_B (viewRef prim (cellRef DFN1P0 (libraryRef PA3)))
+          )
           (instance (rename REGISTER_CH_CMD_CH_0 "REGISTER_CH_CMD_CH[0]") (viewRef prim (cellRef DFN1C0 (libraryRef PA3)))
           )
           (instance (rename REGISTER_CH_CMD_CH_4 "REGISTER_CH_CMD_CH[4]") (viewRef prim (cellRef DFN1C0 (libraryRef PA3)))
@@ -11608,6 +11593,8 @@
           )
           (instance SCA_DAT_IN_pad (viewRef prim (cellRef OUTBUF (libraryRef PA3)))
           )
+          (instance SCA_RESET_OUT_pad (viewRef prim (cellRef INBUF (libraryRef PA3)))
+          )
           (instance PRI_TX_EN_pad (viewRef prim (cellRef OUTBUF (libraryRef PA3)))
           )
           (instance PRI_RX_EN_BAR_pad (viewRef prim (cellRef OUTBUF (libraryRef PA3)))
@@ -11702,9 +11689,6 @@
            (portRef SCA_CLK_OUT)
            (portRef PAD (instanceRef SPI_CLK_BUF))
           ))
-          (net SCA_RESET_OUT (joined
-           (portRef SCA_RESET_OUT)
-          ))
           (net UNUSED_1 (joined
            (portRef UNUSED_1)
           ))
@@ -11716,6 +11700,10 @@
           ))
           (net J11_27_TCONN (joined
            (portRef J11_27_TCONN)
+          ))
+          (net spi_rst_1 (joined
+           (portRef Y (instanceRef SCA_RESET_OUT_pad_RNI93NH_0))
+           (portRef spi_rst_1 (instanceRef spi_slave_pm))
           ))
           (net (rename SPI_TX_WORDZ0Z_0 "SPI_TX_WORD[0]") (joined
            (portRef Q (instanceRef SPI_TX_WORD_0))
@@ -11977,9 +11965,9 @@
            (portRef Q (instanceRef REGISTER_CH_CMD_CH_0))
            (portRef REGISTER_CH_CMD_CH_0 (instanceRef CONTROL12))
           ))
-          (net N_24_i (joined
-           (portRef N_24_i (instanceRef TX_PROMPT))
-           (portRef N_24_i (instanceRef CONTROL56))
+          (net N_26_i (joined
+           (portRef N_26_i (instanceRef TX_PROMPT))
+           (portRef N_26_i (instanceRef CONTROL56))
            (portRef E (instanceRef MAN_EN_CH_4TO1_A))
            (portRef E (instanceRef MAN_EN_CH_8TO5_A))
            (portRef E (instanceRef STDBY_OFFB_A))
@@ -12260,14 +12248,17 @@
            (portRef PAD (instanceRef PRI_RX_EN_BAR_pad))
            (portRef PRI_RX_EN_BAR)
           ))
-          (net VCC (joined
-           (portRef Y (instanceRef VCC_i))
-           (portRef D (instanceRef PRI_TX_EN_pad))
-           (portRef D (instanceRef DEL0_DEV_RST_B))
-          ))
           (net PRI_TX_EN (joined
            (portRef PAD (instanceRef PRI_TX_EN_pad))
            (portRef PRI_TX_EN)
+          ))
+          (net SCA_RESET_OUT_c (joined
+           (portRef Y (instanceRef SCA_RESET_OUT_pad))
+           (portRef A (instanceRef SCA_RESET_OUT_pad_RNI93NH))
+          ))
+          (net SCA_RESET_OUT (joined
+           (portRef SCA_RESET_OUT)
+           (portRef PAD (instanceRef SCA_RESET_OUT_pad))
           ))
           (net SCA_DAT_IN_c (joined
            (portRef SCA_DAT_IN_c (instanceRef spi_slave_pm))
@@ -12591,10 +12582,6 @@
            (portRef PAD (instanceRef J11_19_TCONN_pad))
            (portRef J11_19_TCONN)
           ))
-          (net J11_21_TCONN (joined
-           (portRef PAD (instanceRef J11_21_TCONN_pad))
-           (portRef J11_21_TCONN)
-          ))
           (net GND (joined
            (portRef Y (instanceRef GND_i))
            (portRef D (instanceRef PRI_RX_EN_BAR_pad))
@@ -12602,7 +12589,16 @@
            (portRef D (instanceRef J11_17_TCONN_pad))
            (portRef D (instanceRef J11_19_TCONN_pad))
            (portRef D (instanceRef J11_21_TCONN_pad))
+          ))
+          (net J11_21_TCONN (joined
+           (portRef PAD (instanceRef J11_21_TCONN_pad))
+           (portRef J11_21_TCONN)
+          ))
+          (net VCC (joined
+           (portRef Y (instanceRef VCC_i))
+           (portRef D (instanceRef PRI_TX_EN_pad))
            (portRef D (instanceRef J11_23_TCONN_pad))
+           (portRef D (instanceRef DEL0_DEV_RST_B))
           ))
           (net J11_23_TCONN (joined
            (portRef PAD (instanceRef J11_23_TCONN_pad))
@@ -12633,24 +12629,29 @@
            (portRef N_4 (instanceRef CONTROL56))
            (portRef D (instanceRef DTYCYC_CNT_4))
           ))
-          (net N_66 (joined
-           (portRef N_66 (instanceRef CONTROL56))
+          (net N_68 (joined
+           (portRef N_68 (instanceRef CONTROL56))
            (portRef D (instanceRef DTYCYC_CNT_3))
           ))
-          (net N_65 (joined
-           (portRef N_65 (instanceRef CONTROL56))
+          (net N_67 (joined
+           (portRef N_67 (instanceRef CONTROL56))
            (portRef D (instanceRef DTYCYC_CNT_2))
           ))
           (net N_8 (joined
            (portRef N_8 (instanceRef CONTROL56))
            (portRef D (instanceRef DTYCYC_CNT_1))
           ))
-          (net N_63 (joined
-           (portRef N_63 (instanceRef CONTROL56))
+          (net N_65 (joined
+           (portRef N_65 (instanceRef CONTROL56))
            (portRef D (instanceRef DTYCYC_CNT_0))
           ))
+          (net MASTER_RST_B_i_0 (joined
+           (portRef Q (instanceRef MASTER_RST_B))
+           (portRef B (instanceRef SCA_RESET_OUT_pad_RNI93NH))
+           (portRef A (instanceRef MASTER_RST_B_RNI5KT3))
+          ))
           (net MASTER_RST_B_i_0_i (joined
-           (portRef Y (instanceRef MASTER_RST_B_RNI5KT3))
+           (portRef Y (instanceRef MASTER_RST_B_RNI5KT3_0))
            (portRef MASTER_RST_B_i_0_i (instanceRef UVL_78FUSE))
            (portRef MASTER_RST_B_i_0_i (instanceRef UVL_56FUSE))
            (portRef MASTER_RST_B_i_0_i (instanceRef UVL_34FUSE))
@@ -12661,7 +12662,6 @@
            (portRef MASTER_RST_B_i_0_i (instanceRef CONTROL56))
            (portRef MASTER_RST_B_i_0_i (instanceRef CONTROL34))
            (portRef MASTER_RST_B_i_0_i (instanceRef CONTROL12))
-           (portRef MASTER_RST_B_i_0_i (instanceRef spi_slave_pm))
            (portRef CLR (instanceRef REFCNT_1))
            (portRef CLR (instanceRef REFCNT_0))
            (portRef CLR (instanceRef MAN_EN_CH_4TO1_A))
@@ -12690,9 +12690,13 @@
            (portRef QN (instanceRef DEL0_DEV_RST_B))
            (portRef D (instanceRef MASTER_RST_B))
           ))
-          (net (rename MASTER_RST_BZ0 "MASTER_RST_B") (joined
-           (portRef QN (instanceRef MASTER_RST_B))
-           (portRef A (instanceRef MASTER_RST_B_RNI5KT3))
+          (net (rename MASTER_RST_B_RNI5KTZ0Z3 "MASTER_RST_B_RNI5KT3") (joined
+           (portRef Y (instanceRef MASTER_RST_B_RNI5KT3))
+           (portRef A (instanceRef MASTER_RST_B_RNI5KT3_0))
+          ))
+          (net (rename SCA_RESET_OUT_pad_RNI93NHZ0 "SCA_RESET_OUT_pad_RNI93NH") (joined
+           (portRef Y (instanceRef SCA_RESET_OUT_pad_RNI93NH))
+           (portRef A (instanceRef SCA_RESET_OUT_pad_RNI93NH_0))
           ))
           (net STATUS_LED_c_0 (joined
            (portRef STATUS_LED_c_0 (instanceRef OVT_FS))

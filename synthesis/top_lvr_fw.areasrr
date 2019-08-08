@@ -28,9 +28,9 @@ Report for cell top_lvr_fw.rtl
                   SLOW_PULSE_EN_GEN         1      85.0       85.0
                                 VCC         1       0.0        0.0
                                XOR2         1       1.0        1.0
-                          spi_slave         1     243.0      243.0
+                          spi_slave         1     242.0      242.0
                             
-                         TOTAL            131               1348.0
+                         TOTAL            131               1347.0
 ----------------------------------------------------------------------
 Report for cell IIR_FILT_4_3.netlist
   Original Cell name IIR_FILT_4
@@ -354,23 +354,25 @@ Report for cell spi_slave.netlist
                                           Cell usage:
                                cell       count     area    count*area
                                AND2         2       1.0        2.0
+                                AO1         1       1.0        1.0
                                AO1A         1       1.0        1.0
-                               AO1B         1       1.0        1.0
                               AOI1B         2       1.0        2.0
                                AX1E         2       1.0        2.0
                              CLKINT         1       0.0        0.0
-                               DFN1        23       1.0       23.0
+                             DFI1C0         6       1.0        6.0
+                             DFN1C0        10       1.0       10.0
                              DFN1C1        39       1.0       39.0
-                             DFN1E0         5       1.0        5.0
-                             DFN1E1        34       1.0       34.0
-                           DFN1E1C1        63       1.0       63.0
+                           DFN1E0C0         5       1.0        5.0
+                           DFN1E1C0        66       1.0       66.0
+                           DFN1E1C1        31       1.0       31.0
+                             DFN1P0         7       1.0        7.0
                                 GND         1       0.0        0.0
-                                INV         2       1.0        2.0
+                                INV         1       1.0        1.0
                                 MX2        15       1.0       15.0
                                MX2C        17       1.0       17.0
-                               NOR2         4       1.0        4.0
-                              NOR2A         6       1.0        6.0
-                              NOR2B         6       1.0        6.0
+                               NOR2         3       1.0        3.0
+                              NOR2A         4       1.0        4.0
+                              NOR2B         9       1.0        9.0
                                NOR3         1       1.0        1.0
                               NOR3A         1       1.0        1.0
                               NOR3B         5       1.0        5.0
@@ -382,4 +384,4 @@ Report for cell spi_slave.netlist
                               XNOR2         2       1.0        2.0
                                XOR2         6       1.0        6.0
                             
-                         TOTAL            246                243.0
+                         TOTAL            245                242.0

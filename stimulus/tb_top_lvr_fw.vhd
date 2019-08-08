@@ -10,7 +10,7 @@
 --------------------------------------------------------------------------------
 -- Company: <Name>
 --
--- File: TB_TOP_LVR_GEN3_CNTL.vhd
+-- File: TB_TOP_LVR_FW.vhd
 -- File history:
 --      <Revision number>: <Date>: <Comments>
 --      <Revision number>: <Date>: <Comments>
@@ -40,10 +40,10 @@ use proasic3.all;
 --use synplify.attributes.all;
 
 
-entity TB_TOP_LVR_GEN3_CNTL is
-end TB_TOP_LVR_GEN3_CNTL;
+entity TB_TOP_LVR_FW is
+end TB_TOP_LVR_FW;
 
-architecture behavioral of TB_TOP_LVR_GEN3_CNTL is
+architecture behavioral of TB_TOP_LVR_FW is
 
   constant CLK40MHZ_PERIOD : time := 25 ns;  -- 40MHZ
 
@@ -77,7 +77,7 @@ architecture behavioral of TB_TOP_LVR_GEN3_CNTL is
   signal FUSE_12_OK : std_logic_vector(0 downto 0);
   signal FUSE_34_OK : std_logic_vector(0 downto 0);
 
-  component TOP_LVR_GEN3_CNTL
+  component TOP_LVR_FW
     -- ports
     port(
       -- Inputs
@@ -243,8 +243,8 @@ begin
 
   end process;
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  -- Instantiate Unit Under Test:  TOP_LVR_GEN3_CNTL
-  TOP_LVR_GEN3_CNTL_0 : TOP_LVR_GEN3_CNTL
+  -- Instantiate Unit Under Test:  TOP_LVR_FW
+  TOP_LVR_FW_0 : TOP_LVR_FW
     -- port map
     port map(
       -- Inputs

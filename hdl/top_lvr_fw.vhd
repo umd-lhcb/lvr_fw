@@ -47,8 +47,8 @@ library proasic3;
 use proasic3.all;
 
 -- NOTE:  THE SYNPLIFY LIBRARY NEEDS TO BE COMMENTED OUT FOR MODELSIM PRESYNTH SIMS SINCE MODELSIM DOES NOT RECOGNIZE IT
-library synplify;
-use synplify.all;
+--library synplify;
+--use synplify.all;
 
 entity top_lvr_fw is
   port (
@@ -328,7 +328,7 @@ begin
   spi_slave_pm : spi_slave
     port map (
       CLK5M_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
-      MASTER_RST_B => '1',    -- INTERNAL ACTIVE LOW RESET
+      MASTER_RST_B => MASTER_RST_B,    -- INTERNAL ACTIVE LOW RESET
 
       SCA_CLK_OUT => SCA_CLK_OUT_buf,  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
       SCA_DAT_OUT => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER

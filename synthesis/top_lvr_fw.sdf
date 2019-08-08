@@ -2103,6 +2103,8 @@
 
     (PATHCONSTRAINT CONTROL34/RET_STATE\[9\]/CLK  CONTROL34/RET_STATE\[9\]/Q  CONTROL34/RET_STATE_RNI5S5L\[9\]/B  CONTROL34/RET_STATE_RNI5S5L\[9\]/Y  CONTROL34/RET_STATE_RNIOHTM4\[9\]/A  CONTROL34/RET_STATE_RNIOHTM4\[9\]/Y  CONTROL34/RET_STATE_RNI5TBO4\[4\]/A  CONTROL34/RET_STATE_RNI5TBO4\[4\]/Y  CONTROL34/SEQUENCER_STATE_RNO\[5\]/B  CONTROL34/SEQUENCER_STATE_RNO\[5\]/Y  CONTROL34/SEQUENCER_STATE\[5\]/D  	(9.5:9.5:9.5) )
 
+    (PATHCONSTRAINT spi_slave_pm/NULLCLK_CNT\[3\]/CLK  spi_slave_pm/NULLCLK_CNT\[3\]/Q  spi_slave_pm/NULLCLK_CNT_RNISV47\[2\]/C  spi_slave_pm/NULLCLK_CNT_RNISV47\[2\]/Y  spi_slave_pm/NULLCLK_CNT_RNI3KTB\[4\]/S  spi_slave_pm/NULLCLK_CNT_RNI3KTB\[4\]/Y  spi_slave_pm/SPI_SM_RNO\[4\]/A  spi_slave_pm/SPI_SM_RNO\[4\]/Y  spi_slave_pm/SPI_SM\[4\]/D  	(9.5:9.5:9.5) )
+
     (PATHCONSTRAINT TX_PROMPT/CNT_VAL\[13\]/CLK  TX_PROMPT/CNT_VAL\[13\]/Q  TX_PROMPT/CNT_VAL_RNI2MKN\[14\]/A  TX_PROMPT/CNT_VAL_RNI2MKN\[14\]/Y  TX_PROMPT/CNT_VAL_RNO_0\[16\]/B  TX_PROMPT/CNT_VAL_RNO_0\[16\]/Y  TX_PROMPT/CNT_VAL_RNO\[16\]/A  TX_PROMPT/CNT_VAL_RNO\[16\]/Y  TX_PROMPT/CNT_VAL\[16\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT OVT_FS/SIGOUT_0/CLK  OVT_FS/SIGOUT_0/Q  CONTROL34/SEQUENCER_STATE_RNIKCNJ\[9\]/A  CONTROL34/SEQUENCER_STATE_RNIKCNJ\[9\]/Y  CONTROL34/CH_MREG_EN_RNO\[0\]/A  CONTROL34/CH_MREG_EN_RNO\[0\]/Y  CONTROL34/CH_MREG_EN\[0\]/D  	(9.5:9.5:9.5) )
@@ -2130,8 +2132,6 @@
     (PATHCONSTRAINT UVL_12FUSE/FILT_OUT\[7\]/CLK  UVL_12FUSE/FILT_OUT\[7\]/Q  UVL_12FUSE/un1_tmp_sum_in_b_0_m22/B  UVL_12FUSE/un1_tmp_sum_in_b_0_m22/Y  UVL_12FUSE/un2_n_filt_out_1_ADD_4x4_fast_I4_Y_0/A  UVL_12FUSE/un2_n_filt_out_1_ADD_4x4_fast_I4_Y_0/Y  UVL_12FUSE/FILT_OUT_RNO\[7\]/A  UVL_12FUSE/FILT_OUT_RNO\[7\]/Y  UVL_12FUSE/FILT_OUT\[7\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT OVT_FS/FILT_OUT\[7\]/CLK  OVT_FS/FILT_OUT\[7\]/Q  OVT_FS/un1_tmp_sum_in_b_0_m22/B  OVT_FS/un1_tmp_sum_in_b_0_m22/Y  OVT_FS/un2_n_filt_out_1_ADD_4x4_fast_I4_Y_0/A  OVT_FS/un2_n_filt_out_1_ADD_4x4_fast_I4_Y_0/Y  OVT_FS/FILT_OUT_RNO\[7\]/A  OVT_FS/FILT_OUT_RNO\[7\]/Y  OVT_FS/FILT_OUT\[7\]/D  	(9.5:9.5:9.5) )
-
-    (PATHCONSTRAINT spi_slave_pm/NULLCLK_CNT\[3\]/CLK  spi_slave_pm/NULLCLK_CNT\[3\]/Q  spi_slave_pm/NULLCLK_CNT_RNISV47\[2\]/C  spi_slave_pm/NULLCLK_CNT_RNISV47\[2\]/Y  spi_slave_pm/NULLCLK_CNT_RNI3KTB\[4\]/S  spi_slave_pm/NULLCLK_CNT_RNI3KTB\[4\]/Y  spi_slave_pm/SPI_SM_RNO\[4\]/A  spi_slave_pm/SPI_SM_RNO\[4\]/Y  spi_slave_pm/SPI_SM\[4\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL78/RET_STATE\[4\]/CLK  CONTROL78/RET_STATE\[4\]/Q  CONTROL78/RET_STATE_RNI2A1C1\[5\]/C  CONTROL78/RET_STATE_RNI2A1C1\[5\]/Y  CONTROL78/SEQUENCER_STATE_RNO_1\[9\]/B  CONTROL78/SEQUENCER_STATE_RNO_1\[9\]/Y  CONTROL78/SEQUENCER_STATE_RNO\[9\]/C  CONTROL78/SEQUENCER_STATE_RNO\[9\]/Y  CONTROL78/SEQUENCER_STATE\[9\]/D  	(9.5:9.5:9.5) )
 
@@ -2433,6 +2433,8 @@
 
     (PATHCONSTRAINT OVT_FS/SIGOUT_0/CLK  OVT_FS/SIGOUT_0/Q  CONTROL34/SEQUENCER_STATE_RNIJBNJ\[8\]/A  CONTROL34/SEQUENCER_STATE_RNIJBNJ\[8\]/Y  CONTROL34/CH_VOSG_EN\[1\]/E  	(9.6:9.6:9.6) )
 
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[4\]/CLK  spi_slave_pm/SPI_SM\[4\]/Q  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/B  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/Y  spi_slave_pm/SPI_CLR_RNO/A  spi_slave_pm/SPI_CLR_RNO/Y  spi_slave_pm/SPI_CLR/D  	(9.5:9.5:9.5) )
+
     (PATHCONSTRAINT spi_slave_pm/SPI_SM\[1\]/CLK  spi_slave_pm/SPI_SM\[1\]/Q  spi_slave_pm/SPI_SM_RNI7BCD\[1\]/A  spi_slave_pm/SPI_SM_RNI7BCD\[1\]/Y  spi_slave_pm/SPI_SM_RNICI2K\[2\]/A  spi_slave_pm/SPI_SM_RNICI2K\[2\]/Y  spi_slave_pm/CLK_FCNT_EN/E  	(9.6:9.6:9.6) )
 
     (PATHCONSTRAINT spi_slave_pm/NULLCLK_CNT\[4\]/CLK  spi_slave_pm/NULLCLK_CNT\[4\]/Q  spi_slave_pm/NULLCLK_CNT_RNI3KTB\[4\]/A  spi_slave_pm/NULLCLK_CNT_RNI3KTB\[4\]/Y  spi_slave_pm/NULLCLK_CNT_RNO\[0\]/A  spi_slave_pm/NULLCLK_CNT_RNO\[0\]/Y  spi_slave_pm/NULLCLK_CNT\[0\]/D  	(9.5:9.5:9.5) )
@@ -2573,8 +2575,6 @@
 
     (PATHCONSTRAINT REGISTER_CH_CMD_CH\[4\]/CLK  REGISTER_CH_CMD_CH\[4\]/Q  CONTROL56/MAIN_SEQUENCER.un3_n_ch_vosg_en/A  CONTROL56/MAIN_SEQUENCER.un3_n_ch_vosg_en/Y  CONTROL78/CH_VOSG_EN_RNO_0\[1\]/A  CONTROL78/CH_VOSG_EN_RNO_0\[1\]/Y  CONTROL78/CH_VOSG_EN_RNO\[1\]/B  CONTROL78/CH_VOSG_EN_RNO\[1\]/Y  CONTROL78/CH_VOSG_EN\[1\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[4\]/CLK  spi_slave_pm/SPI_SM\[4\]/Q  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/B  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/Y  spi_slave_pm/SPI_CLR_RNO/A  spi_slave_pm/SPI_CLR_RNO/Y  spi_slave_pm/SPI_CLR/D  	(9.5:9.5:9.5) )
-
     (PATHCONSTRAINT spi_slave_pm/NULLCLK_CNT\[1\]/CLK  spi_slave_pm/NULLCLK_CNT\[1\]/Q  spi_slave_pm/NULLCLK_CNT_RNIMP47\[2\]/B  spi_slave_pm/NULLCLK_CNT_RNIMP47\[2\]/Y  spi_slave_pm/NULLCLK_CNT_RNO_0\[3\]/A  spi_slave_pm/NULLCLK_CNT_RNO_0\[3\]/Y  spi_slave_pm/NULLCLK_CNT_RNO\[3\]/C  spi_slave_pm/NULLCLK_CNT_RNO\[3\]/Y  spi_slave_pm/NULLCLK_CNT\[3\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT UVL_78FUSE/FILT_OUT\[5\]/CLK  UVL_78FUSE/FILT_OUT\[5\]/Q  UVL_78FUSE/un1_tmp_sum_in_b_0_m15/B  UVL_78FUSE/un1_tmp_sum_in_b_0_m15/Y  UVL_78FUSE/un2_n_filt_out_0_ADD_4x4_fast_I0_S/B  UVL_78FUSE/un2_n_filt_out_0_ADD_4x4_fast_I0_S/Y  UVL_78FUSE/FILT_OUT\[4\]/D  	(9.5:9.5:9.5) )
@@ -2594,18 +2594,6 @@
     (PATHCONSTRAINT OVT_FS/SIGOUT_0/CLK  OVT_FS/SIGOUT_0/Q  CONTROL56/SEQUENCER_STATE_RNIM2VT\[3\]/A  CONTROL56/SEQUENCER_STATE_RNIM2VT\[3\]/Y  CONTROL56/CH_VOSG_EN_RNO\[1\]/S  CONTROL56/CH_VOSG_EN_RNO\[1\]/Y  CONTROL56/CH_VOSG_EN\[1\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT OVT_FS/SIGOUT_0/CLK  OVT_FS/SIGOUT_0/Q  CONTROL78/SEQUENCER_STATE_RNIUU6O\[3\]/A  CONTROL78/SEQUENCER_STATE_RNIUU6O\[3\]/Y  CONTROL78/CH_VOSG_EN_RNO\[0\]/S  CONTROL78/CH_VOSG_EN_RNO\[0\]/Y  CONTROL78/CH_VOSG_EN\[0\]/D  	(9.5:9.5:9.5) )
-
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM_i\[5\]/CLK  spi_slave_pm/SPI_SM_i\[5\]/Q  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/A  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/Y  spi_slave_pm/SPI_CLR_RNO/A  spi_slave_pm/SPI_CLR_RNO/Y  spi_slave_pm/SPI_CLR/D  	(9.5:9.5:9.5) )
-
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM_i\[5\]/CLK  spi_slave_pm/SPI_SM_i\[5\]/Q  spi_slave_pm/SCA_CLK_OUT_2C_RNIRKQG/A  spi_slave_pm/SCA_CLK_OUT_2C_RNIRKQG/Y  spi_slave_pm/NULLCLK_CNT_RNO\[0\]/B  spi_slave_pm/NULLCLK_CNT_RNO\[0\]/Y  spi_slave_pm/NULLCLK_CNT\[0\]/D  	(9.5:9.5:9.5) )
-
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM_i\[5\]/CLK  spi_slave_pm/SPI_SM_i\[5\]/Q  spi_slave_pm/SCA_CLK_OUT_2C_RNIRKQG/A  spi_slave_pm/SCA_CLK_OUT_2C_RNIRKQG/Y  spi_slave_pm/NULLCLK_CNT_RNO\[1\]/B  spi_slave_pm/NULLCLK_CNT_RNO\[1\]/Y  spi_slave_pm/NULLCLK_CNT\[1\]/D  	(9.5:9.5:9.5) )
-
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM_i\[5\]/CLK  spi_slave_pm/SPI_SM_i\[5\]/Q  spi_slave_pm/SCA_CLK_OUT_2C_RNIRKQG/A  spi_slave_pm/SCA_CLK_OUT_2C_RNIRKQG/Y  spi_slave_pm/NULLCLK_CNT_RNO\[2\]/B  spi_slave_pm/NULLCLK_CNT_RNO\[2\]/Y  spi_slave_pm/NULLCLK_CNT\[2\]/D  	(9.5:9.5:9.5) )
-
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM_i\[5\]/CLK  spi_slave_pm/SPI_SM_i\[5\]/Q  spi_slave_pm/SCA_CLK_OUT_2C_RNIRKQG/A  spi_slave_pm/SCA_CLK_OUT_2C_RNIRKQG/Y  spi_slave_pm/NULLCLK_CNT_RNO\[3\]/B  spi_slave_pm/NULLCLK_CNT_RNO\[3\]/Y  spi_slave_pm/NULLCLK_CNT\[3\]/D  	(9.5:9.5:9.5) )
-
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM_i\[5\]/CLK  spi_slave_pm/SPI_SM_i\[5\]/Q  spi_slave_pm/SCA_CLK_OUT_2C_RNIRKQG/A  spi_slave_pm/SCA_CLK_OUT_2C_RNIRKQG/Y  spi_slave_pm/NULLCLK_CNT_RNO\[4\]/B  spi_slave_pm/NULLCLK_CNT_RNO\[4\]/Y  spi_slave_pm/NULLCLK_CNT\[4\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT DTYCYC_CNT\[0\]/CLK  DTYCYC_CNT\[0\]/Q  CONTROL56/DTYCYC_CNT_n4_i_o2_0/A  CONTROL56/DTYCYC_CNT_n4_i_o2_0/Y  CONTROL56/DTYCYC_CNT_n3_0_x2/A  CONTROL56/DTYCYC_CNT_n3_0_x2/Y  CONTROL56/DTYCYC_CNT_n3_0/A  CONTROL56/DTYCYC_CNT_n3_0/Y  DTYCYC_CNT\[3\]/D  	(9.5:9.5:9.5) )
 
@@ -2629,6 +2617,16 @@
 
     (PATHCONSTRAINT CONTROL12/SEQUENCER_STATE\[7\]/CLK  CONTROL12/SEQUENCER_STATE\[7\]/Q  CONTROL12/SEQUENCER_STATE_RNINNL2\[6\]/B  CONTROL12/SEQUENCER_STATE_RNINNL2\[6\]/Y  CONTROL12/RET_STATE_RNO\[4\]/C  CONTROL12/RET_STATE_RNO\[4\]/Y  CONTROL12/RET_STATE\[4\]/D  	(9.5:9.5:9.5) )
 
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[5\]/CLK  spi_slave_pm/SPI_SM\[5\]/Q  spi_slave_pm/SCA_CLK_OUT_2C_RNIJ15G/B  spi_slave_pm/SCA_CLK_OUT_2C_RNIJ15G/Y  spi_slave_pm/NULLCLK_CNT_RNO\[0\]/B  spi_slave_pm/NULLCLK_CNT_RNO\[0\]/Y  spi_slave_pm/NULLCLK_CNT\[0\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[5\]/CLK  spi_slave_pm/SPI_SM\[5\]/Q  spi_slave_pm/SCA_CLK_OUT_2C_RNIJ15G/B  spi_slave_pm/SCA_CLK_OUT_2C_RNIJ15G/Y  spi_slave_pm/NULLCLK_CNT_RNO\[1\]/B  spi_slave_pm/NULLCLK_CNT_RNO\[1\]/Y  spi_slave_pm/NULLCLK_CNT\[1\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[5\]/CLK  spi_slave_pm/SPI_SM\[5\]/Q  spi_slave_pm/SCA_CLK_OUT_2C_RNIJ15G/B  spi_slave_pm/SCA_CLK_OUT_2C_RNIJ15G/Y  spi_slave_pm/NULLCLK_CNT_RNO\[2\]/B  spi_slave_pm/NULLCLK_CNT_RNO\[2\]/Y  spi_slave_pm/NULLCLK_CNT\[2\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[5\]/CLK  spi_slave_pm/SPI_SM\[5\]/Q  spi_slave_pm/SCA_CLK_OUT_2C_RNIJ15G/B  spi_slave_pm/SCA_CLK_OUT_2C_RNIJ15G/Y  spi_slave_pm/NULLCLK_CNT_RNO\[3\]/B  spi_slave_pm/NULLCLK_CNT_RNO\[3\]/Y  spi_slave_pm/NULLCLK_CNT\[3\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[5\]/CLK  spi_slave_pm/SPI_SM\[5\]/Q  spi_slave_pm/SCA_CLK_OUT_2C_RNIJ15G/B  spi_slave_pm/SCA_CLK_OUT_2C_RNIJ15G/Y  spi_slave_pm/NULLCLK_CNT_RNO\[4\]/B  spi_slave_pm/NULLCLK_CNT_RNO\[4\]/Y  spi_slave_pm/NULLCLK_CNT\[4\]/D  	(9.5:9.5:9.5) )
+
     (PATHCONSTRAINT CONTROL56/SEQUENCER_STATE\[8\]/CLK  CONTROL56/SEQUENCER_STATE\[8\]/Q  CONTROL56/SEQUENCER_STATE_RNO_0\[9\]/A  CONTROL56/SEQUENCER_STATE_RNO_0\[9\]/Y  CONTROL56/SEQUENCER_STATE_RNO\[9\]/B  CONTROL56/SEQUENCER_STATE_RNO\[9\]/Y  CONTROL56/SEQUENCER_STATE\[9\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL34/SEQUENCER_STATE\[8\]/CLK  CONTROL34/SEQUENCER_STATE\[8\]/Q  CONTROL34/SEQUENCER_STATE_RNO_0\[9\]/A  CONTROL34/SEQUENCER_STATE_RNO_0\[9\]/Y  CONTROL34/SEQUENCER_STATE_RNO\[9\]/B  CONTROL34/SEQUENCER_STATE_RNO\[9\]/Y  CONTROL34/SEQUENCER_STATE\[9\]/D  	(9.5:9.5:9.5) )
@@ -2636,6 +2634,8 @@
     (PATHCONSTRAINT CONTROL78/SEQUENCER_STATE\[8\]/CLK  CONTROL78/SEQUENCER_STATE\[8\]/Q  CONTROL78/SEQUENCER_STATE_RNO_0\[9\]/A  CONTROL78/SEQUENCER_STATE_RNO_0\[9\]/Y  CONTROL78/SEQUENCER_STATE_RNO\[9\]/B  CONTROL78/SEQUENCER_STATE_RNO\[9\]/Y  CONTROL78/SEQUENCER_STATE\[9\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL12/SEQUENCER_STATE\[8\]/CLK  CONTROL12/SEQUENCER_STATE\[8\]/Q  CONTROL12/SEQUENCER_STATE_RNO_0\[9\]/A  CONTROL12/SEQUENCER_STATE_RNO_0\[9\]/Y  CONTROL12/SEQUENCER_STATE_RNO\[9\]/B  CONTROL12/SEQUENCER_STATE_RNO\[9\]/Y  CONTROL12/SEQUENCER_STATE\[9\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[5\]/CLK  spi_slave_pm/SPI_SM\[5\]/Q  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/A  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/Y  spi_slave_pm/SPI_CLR_RNO/A  spi_slave_pm/SPI_CLR_RNO/Y  spi_slave_pm/SPI_CLR/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT TX_PROMPT/CNT_VAL\[11\]/CLK  TX_PROMPT/CNT_VAL\[11\]/Q  TX_PROMPT/CNT_VAL_RNO_0\[12\]/A  TX_PROMPT/CNT_VAL_RNO_0\[12\]/Y  TX_PROMPT/CNT_VAL_RNO\[12\]/A  TX_PROMPT/CNT_VAL_RNO\[12\]/Y  TX_PROMPT/CNT_VAL\[12\]/D  	(9.5:9.5:9.5) )
 
@@ -2723,7 +2723,7 @@
 
     (PATHCONSTRAINT spi_slave_pm/SPI_SM\[1\]/CLK  spi_slave_pm/SPI_SM\[1\]/Q  spi_slave_pm/SPI_SM_RNIODLR2\[2\]/B  spi_slave_pm/SPI_SM_RNIODLR2\[2\]/Y  spi_slave_pm/SPI_SM_0\[1\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[5\]/CLK  spi_slave_pm/CLK_FCNT_2C\[5\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI943Q\[4\]/A  spi_slave_pm/CLK_FCNT_2C_RNI943Q\[4\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/C  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/A  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/Y  spi_slave_pm/SPI_SM\[0\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[4\]/CLK  spi_slave_pm/CLK_FCNT_2C\[4\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI943Q\[4\]/B  spi_slave_pm/CLK_FCNT_2C_RNI943Q\[4\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/C  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/A  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/Y  spi_slave_pm/SPI_SM\[0\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT UVL_34FUSE/THRESH_VAL\[1\]/CLK  UVL_34FUSE/THRESH_VAL\[1\]/Q  UVL_34FUSE/THRESH_VAL_RNICQRR\[1\]/C  UVL_34FUSE/THRESH_VAL_RNICQRR\[1\]/Y  UVL_34FUSE/THRESH_VAL_RNO\[0\]/C  UVL_34FUSE/THRESH_VAL_RNO\[0\]/Y  UVL_34FUSE/THRESH_VAL\[0\]/D  	(9.5:9.5:9.5) )
 
@@ -2736,6 +2736,8 @@
     (PATHCONSTRAINT CONTROL56/CH_ACTIVE_STAT/CLK  CONTROL56/CH_ACTIVE_STAT/Q  CONTROL56/SEQUENCER_STATE_RNO_1\[4\]/C  CONTROL56/SEQUENCER_STATE_RNO_1\[4\]/Y  CONTROL56/SEQUENCER_STATE_RNO\[4\]/C  CONTROL56/SEQUENCER_STATE_RNO\[4\]/Y  CONTROL56/SEQUENCER_STATE\[4\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL12/CH_ACTIVE_STAT/CLK  CONTROL12/CH_ACTIVE_STAT/Q  CONTROL12/SEQUENCER_STATE_RNO_1\[4\]/C  CONTROL12/SEQUENCER_STATE_RNO_1\[4\]/Y  CONTROL12/SEQUENCER_STATE_RNO\[4\]/C  CONTROL12/SEQUENCER_STATE_RNO\[4\]/Y  CONTROL12/SEQUENCER_STATE\[4\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[2\]/CLK  spi_slave_pm/CLK_FCNT_2C\[2\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI503Q\[2\]/B  spi_slave_pm/CLK_FCNT_2C_RNI503Q\[2\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/B  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/A  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/Y  spi_slave_pm/SPI_SM\[0\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT UVL_78FUSE/FILT_OUT\[6\]/CLK  UVL_78FUSE/FILT_OUT\[6\]/Q  UVL_78FUSE/un1_tmp_sum_in_b_0_m19/A  UVL_78FUSE/un1_tmp_sum_in_b_0_m19/Y  UVL_78FUSE/FILT_OUT_RNO\[6\]/B  UVL_78FUSE/FILT_OUT_RNO\[6\]/Y  UVL_78FUSE/FILT_OUT\[6\]/D  	(9.5:9.5:9.5) )
 
@@ -2751,6 +2753,8 @@
 
     (PATHCONSTRAINT CONTROL12/RET_STATE\[4\]/CLK  CONTROL12/RET_STATE\[4\]/Q  CONTROL12/SEQUENCER_STATE_RNO_0\[4\]/A  CONTROL12/SEQUENCER_STATE_RNO_0\[4\]/Y  CONTROL12/SEQUENCER_STATE_RNO\[4\]/A  CONTROL12/SEQUENCER_STATE_RNO\[4\]/Y  CONTROL12/SEQUENCER_STATE\[4\]/D  	(9.5:9.5:9.5) )
 
+    (PATHCONSTRAINT spi_slave_pm/SCA_CLK_OUT_2C/CLK  spi_slave_pm/SCA_CLK_OUT_2C/Q  spi_slave_pm/SCA_CLK_OUT_2C_RNIJ15G/A  spi_slave_pm/SCA_CLK_OUT_2C_RNIJ15G/Y  spi_slave_pm/NULLCLK_CNT_RNO\[0\]/B  spi_slave_pm/NULLCLK_CNT_RNO\[0\]/Y  spi_slave_pm/NULLCLK_CNT\[0\]/D  	(9.5:9.5:9.5) )
+
     (PATHCONSTRAINT CONTROL78/RET_STATE\[6\]/CLK  CONTROL78/RET_STATE\[6\]/Q  CONTROL78/SEQUENCER_STATE_RNO_0\[6\]/A  CONTROL78/SEQUENCER_STATE_RNO_0\[6\]/Y  CONTROL78/SEQUENCER_STATE_RNO\[6\]/B  CONTROL78/SEQUENCER_STATE_RNO\[6\]/Y  CONTROL78/SEQUENCER_STATE\[6\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL12/RET_STATE\[5\]/CLK  CONTROL12/RET_STATE\[5\]/Q  CONTROL12/SEQUENCER_STATE_RNO_0\[5\]/A  CONTROL12/SEQUENCER_STATE_RNO_0\[5\]/Y  CONTROL12/SEQUENCER_STATE_RNO\[5\]/B  CONTROL12/SEQUENCER_STATE_RNO\[5\]/Y  CONTROL12/SEQUENCER_STATE\[5\]/D  	(9.5:9.5:9.5) )
@@ -2761,7 +2765,7 @@
 
     (PATHCONSTRAINT spi_slave_pm/NULLCLK_CNT\[0\]/CLK  spi_slave_pm/NULLCLK_CNT\[0\]/Q  spi_slave_pm/NULLCLK_CNT_RNO_0\[2\]/A  spi_slave_pm/NULLCLK_CNT_RNO_0\[2\]/Y  spi_slave_pm/NULLCLK_CNT_RNO\[2\]/C  spi_slave_pm/NULLCLK_CNT_RNO\[2\]/Y  spi_slave_pm/NULLCLK_CNT\[2\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[5\]/CLK  spi_slave_pm/CLK_FCNT_2C\[5\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI943Q\[4\]/A  spi_slave_pm/CLK_FCNT_2C_RNI943Q\[4\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/C  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIODLR2\[2\]/A  spi_slave_pm/SPI_SM_RNIODLR2\[2\]/Y  spi_slave_pm/SPI_SM\[1\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[4\]/CLK  spi_slave_pm/CLK_FCNT_2C\[4\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI943Q\[4\]/B  spi_slave_pm/CLK_FCNT_2C_RNI943Q\[4\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/C  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIODLR2\[2\]/A  spi_slave_pm/SPI_SM_RNIODLR2\[2\]/Y  spi_slave_pm/SPI_SM\[1\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL78/RET_STATE\[6\]/CLK  CONTROL78/RET_STATE\[6\]/Q  CONTROL78/RET_STATE_RNO_0\[6\]/A  CONTROL78/RET_STATE_RNO_0\[6\]/Y  CONTROL78/RET_STATE_RNO\[6\]/B  CONTROL78/RET_STATE_RNO\[6\]/Y  CONTROL78/RET_STATE\[6\]/D  	(9.5:9.5:9.5) )
 
@@ -2779,13 +2783,21 @@
 
     (PATHCONSTRAINT CONTROL12/RET_STATE\[6\]/CLK  CONTROL12/RET_STATE\[6\]/Q  CONTROL12/RET_STATE_RNO_0\[6\]/A  CONTROL12/RET_STATE_RNO_0\[6\]/Y  CONTROL12/RET_STATE_RNO\[6\]/B  CONTROL12/RET_STATE_RNO\[6\]/Y  CONTROL12/RET_STATE\[6\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[0\]/CLK  spi_slave_pm/CLK_FCNT_2C\[0\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI1S2Q\[0\]/B  spi_slave_pm/CLK_FCNT_2C_RNI1S2Q\[0\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/B  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/A  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/Y  spi_slave_pm/SPI_SM\[0\]/D  	(9.5:9.5:9.5) )
-
     (PATHCONSTRAINT spi_slave_pm/NULLCLK_CNT\[1\]/CLK  spi_slave_pm/NULLCLK_CNT\[1\]/Q  spi_slave_pm/NULLCLK_CNT_RNO_0\[2\]/B  spi_slave_pm/NULLCLK_CNT_RNO_0\[2\]/Y  spi_slave_pm/NULLCLK_CNT_RNO\[2\]/C  spi_slave_pm/NULLCLK_CNT_RNO\[2\]/Y  spi_slave_pm/NULLCLK_CNT\[2\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT spi_slave_pm/CLK_FCNT\[0\]/CLK  spi_slave_pm/CLK_FCNT\[0\]/Q  spi_slave_pm/un1_CLK_FCNT_I_17/A  spi_slave_pm/un1_CLK_FCNT_I_17/Y  spi_slave_pm/CLK_FCNT\[0\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT spi_slave_pm/NULLCLK_CNT\[0\]/CLK  spi_slave_pm/NULLCLK_CNT\[0\]/Q  spi_slave_pm/NULLCLK_CNT_RNO_0\[1\]/B  spi_slave_pm/NULLCLK_CNT_RNO_0\[1\]/Y  spi_slave_pm/NULLCLK_CNT_RNO\[1\]/C  spi_slave_pm/NULLCLK_CNT_RNO\[1\]/Y  spi_slave_pm/NULLCLK_CNT\[1\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[4\]/CLK  spi_slave_pm/SPI_SM\[4\]/Q  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/B  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/Y  spi_slave_pm/NULLCLK_CNT\[3\]/E  	(9.6:9.6:9.6) )
+
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[4\]/CLK  spi_slave_pm/SPI_SM\[4\]/Q  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/B  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/Y  spi_slave_pm/NULLCLK_CNT\[2\]/E  	(9.6:9.6:9.6) )
+
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[4\]/CLK  spi_slave_pm/SPI_SM\[4\]/Q  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/B  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/Y  spi_slave_pm/NULLCLK_CNT\[1\]/E  	(9.6:9.6:9.6) )
+
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[4\]/CLK  spi_slave_pm/SPI_SM\[4\]/Q  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/B  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/Y  spi_slave_pm/NULLCLK_CNT\[0\]/E  	(9.6:9.6:9.6) )
+
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[4\]/CLK  spi_slave_pm/SPI_SM\[4\]/Q  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/B  spi_slave_pm/SPI_SM_RNIFJCD\[5\]/Y  spi_slave_pm/NULLCLK_CNT\[4\]/E  	(9.6:9.6:9.6) )
 
     (PATHCONSTRAINT UVL_78FUSE/FILT_OUT\[2\]/CLK  UVL_78FUSE/FILT_OUT\[2\]/Q  UVL_78FUSE/un1_tmp_sum_in_b_0_m4/A  UVL_78FUSE/un1_tmp_sum_in_b_0_m4/Y  UVL_78FUSE/un1_tmp_sum_in_b_0_m30/C  UVL_78FUSE/un1_tmp_sum_in_b_0_m30/Y  UVL_78FUSE/FILT_OUT\[1\]/D  	(9.5:9.5:9.5) )
 
@@ -2807,33 +2819,23 @@
 
     (PATHCONSTRAINT TX_PROMPT/CNT_VAL\[16\]/CLK  TX_PROMPT/CNT_VAL\[16\]/Q  TX_PROMPT/CNT_VAL_RNO_0\[17\]/C  TX_PROMPT/CNT_VAL_RNO_0\[17\]/Y  TX_PROMPT/CNT_VAL_RNO\[17\]/B  TX_PROMPT/CNT_VAL_RNO\[17\]/Y  TX_PROMPT/CNT_VAL\[17\]/D  	(9.5:9.5:9.5) )
 
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[5\]/CLK  spi_slave_pm/CLK_FCNT_2C\[5\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI943Q\[4\]/A  spi_slave_pm/CLK_FCNT_2C_RNI943Q\[4\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/C  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/A  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/Y  spi_slave_pm/SPI_SM\[0\]/D  	(9.5:9.5:9.5) )
+
     (PATHCONSTRAINT CONTROL78/RET_STATE\[9\]/CLK  CONTROL78/RET_STATE\[9\]/Q  CONTROL78/SEQUENCER_STATE_RNO_1\[9\]/C  CONTROL78/SEQUENCER_STATE_RNO_1\[9\]/Y  CONTROL78/SEQUENCER_STATE_RNO\[9\]/C  CONTROL78/SEQUENCER_STATE_RNO\[9\]/Y  CONTROL78/SEQUENCER_STATE\[9\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL12/RET_STATE\[9\]/CLK  CONTROL12/RET_STATE\[9\]/Q  CONTROL12/SEQUENCER_STATE_RNO_1\[9\]/C  CONTROL12/SEQUENCER_STATE_RNO_1\[9\]/Y  CONTROL12/SEQUENCER_STATE_RNO\[9\]/C  CONTROL12/SEQUENCER_STATE_RNO\[9\]/Y  CONTROL12/SEQUENCER_STATE\[9\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[0\]/CLK  spi_slave_pm/SPI_SM\[0\]/Q  spi_slave_pm/SPI_SM_i_RNO\[5\]/A  spi_slave_pm/SPI_SM_i_RNO\[5\]/Y  spi_slave_pm/SPI_SM_i\[5\]/D  	(9.5:9.5:9.5) )
-
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[4\]/CLK  spi_slave_pm/SPI_SM\[4\]/Q  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/B  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/Y  spi_slave_pm/NULLCLK_CNT\[3\]/E  	(9.6:9.6:9.6) )
-
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[4\]/CLK  spi_slave_pm/SPI_SM\[4\]/Q  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/B  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/Y  spi_slave_pm/NULLCLK_CNT\[2\]/E  	(9.6:9.6:9.6) )
-
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[4\]/CLK  spi_slave_pm/SPI_SM\[4\]/Q  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/B  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/Y  spi_slave_pm/NULLCLK_CNT\[1\]/E  	(9.6:9.6:9.6) )
-
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[4\]/CLK  spi_slave_pm/SPI_SM\[4\]/Q  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/B  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/Y  spi_slave_pm/NULLCLK_CNT\[0\]/E  	(9.6:9.6:9.6) )
-
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[4\]/CLK  spi_slave_pm/SPI_SM\[4\]/Q  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/B  spi_slave_pm/SPI_SM_i_RNIN62E\[5\]/Y  spi_slave_pm/NULLCLK_CNT\[4\]/E  	(9.6:9.6:9.6) )
-
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[2\]/CLK  spi_slave_pm/CLK_FCNT_2C\[2\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI503Q\[2\]/B  spi_slave_pm/CLK_FCNT_2C_RNI503Q\[2\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/A  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/A  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/Y  spi_slave_pm/SPI_SM\[0\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[3\]/CLK  spi_slave_pm/CLK_FCNT_2C\[3\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI503Q\[2\]/A  spi_slave_pm/CLK_FCNT_2C_RNI503Q\[2\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/B  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/A  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/Y  spi_slave_pm/SPI_SM\[0\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT spi_slave_pm/CLK_FCNT\[5\]/CLK  spi_slave_pm/CLK_FCNT\[5\]/Q  spi_slave_pm/un1_CLK_FCNT_I_26/A  spi_slave_pm/un1_CLK_FCNT_I_26/Y  spi_slave_pm/CLK_FCNT_RNO\[5\]/C  spi_slave_pm/CLK_FCNT_RNO\[5\]/Y  spi_slave_pm/CLK_FCNT\[5\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[0\]/CLK  spi_slave_pm/CLK_FCNT_2C\[0\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI1S2Q\[0\]/B  spi_slave_pm/CLK_FCNT_2C_RNI1S2Q\[0\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/A  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/A  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/Y  spi_slave_pm/SPI_SM\[0\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL56/RET_STATE\[4\]/CLK  CONTROL56/RET_STATE\[4\]/Q  CONTROL56/SEQUENCER_STATE_RNO_0\[4\]/A  CONTROL56/SEQUENCER_STATE_RNO_0\[4\]/Y  CONTROL56/SEQUENCER_STATE_RNO\[4\]/A  CONTROL56/SEQUENCER_STATE_RNO\[4\]/Y  CONTROL56/SEQUENCER_STATE\[4\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL34/RET_STATE\[4\]/CLK  CONTROL34/RET_STATE\[4\]/Q  CONTROL34/SEQUENCER_STATE_RNO_0\[4\]/A  CONTROL34/SEQUENCER_STATE_RNO_0\[4\]/Y  CONTROL34/SEQUENCER_STATE_RNO\[4\]/A  CONTROL34/SEQUENCER_STATE_RNO\[4\]/Y  CONTROL34/SEQUENCER_STATE\[4\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT TX_PROMPT/CNT_VAL\[15\]/CLK  TX_PROMPT/CNT_VAL\[15\]/Q  TX_PROMPT/CNT_VAL_RNO_0\[17\]/A  TX_PROMPT/CNT_VAL_RNO_0\[17\]/Y  TX_PROMPT/CNT_VAL_RNO\[17\]/B  TX_PROMPT/CNT_VAL_RNO\[17\]/Y  TX_PROMPT/CNT_VAL\[17\]/D  	(9.5:9.5:9.5) )
-
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[1\]/CLK  spi_slave_pm/CLK_FCNT_2C\[1\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI1S2Q\[0\]/A  spi_slave_pm/CLK_FCNT_2C_RNI1S2Q\[0\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/B  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/A  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/Y  spi_slave_pm/SPI_SM\[0\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL78/DEL_CNTR\[14\]/CLK  CONTROL78/DEL_CNTR\[14\]/Q  CONTROL78/un1_DEL_CNTR_I_37/A  CONTROL78/un1_DEL_CNTR_I_37/Y  CONTROL78/un1_DEL_CNTR_I_58/A  CONTROL78/un1_DEL_CNTR_I_58/Y  CONTROL78/DEL_CNTR_RNO\[14\]/C  CONTROL78/DEL_CNTR_RNO\[14\]/Y  CONTROL78/DEL_CNTR\[14\]/D  	(9.5:9.5:9.5) )
 
@@ -2849,8 +2851,6 @@
 
     (PATHCONSTRAINT OVT_FS/THRESH_VAL\[1\]/CLK  OVT_FS/THRESH_VAL\[1\]/Q  OVT_FS/THRESH_VAL_RNIIGDL_0\[1\]/C  OVT_FS/THRESH_VAL_RNIIGDL_0\[1\]/Y  OVT_FS/THRESH_VAL_RNI30RA1\[0\]/C  OVT_FS/THRESH_VAL_RNI30RA1\[0\]/Y  OVT_FS/SIGOUT/E  	(9.6:9.6:9.6) )
 
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[4\]/CLK  spi_slave_pm/CLK_FCNT_2C\[4\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI943Q\[4\]/B  spi_slave_pm/CLK_FCNT_2C_RNI943Q\[4\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/C  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/A  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/Y  spi_slave_pm/SPI_SM\[0\]/D  	(9.5:9.5:9.5) )
-
     (PATHCONSTRAINT spi_slave_pm/CLK_FCNT\[4\]/CLK  spi_slave_pm/CLK_FCNT\[4\]/Q  spi_slave_pm/I_SCA_DAT_IN_RNO_0/S  spi_slave_pm/I_SCA_DAT_IN_RNO_0/Y  spi_slave_pm/I_SCA_DAT_IN_RNO/A  spi_slave_pm/I_SCA_DAT_IN_RNO/Y  spi_slave_pm/I_SCA_DAT_IN/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL78/SEQUENCER_STATE\[9\]/CLK  CONTROL78/SEQUENCER_STATE\[9\]/Q  CONTROL78/SEQUENCER_STATE_RNO_0\[7\]/A  CONTROL78/SEQUENCER_STATE_RNO_0\[7\]/Y  CONTROL78/SEQUENCER_STATE_RNO\[7\]/A  CONTROL78/SEQUENCER_STATE_RNO\[7\]/Y  CONTROL78/SEQUENCER_STATE\[7\]/D  	(9.5:9.5:9.5) )
@@ -2860,8 +2860,6 @@
     (PATHCONSTRAINT CONTROL34/SEQUENCER_STATE\[9\]/CLK  CONTROL34/SEQUENCER_STATE\[9\]/Q  CONTROL34/SEQUENCER_STATE_RNO_0\[7\]/A  CONTROL34/SEQUENCER_STATE_RNO_0\[7\]/Y  CONTROL34/SEQUENCER_STATE_RNO\[7\]/A  CONTROL34/SEQUENCER_STATE_RNO\[7\]/Y  CONTROL34/SEQUENCER_STATE\[7\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL12/SEQUENCER_STATE\[9\]/CLK  CONTROL12/SEQUENCER_STATE\[9\]/Q  CONTROL12/SEQUENCER_STATE_RNO_0\[7\]/A  CONTROL12/SEQUENCER_STATE_RNO_0\[7\]/Y  CONTROL12/SEQUENCER_STATE_RNO\[7\]/A  CONTROL12/SEQUENCER_STATE_RNO\[7\]/Y  CONTROL12/SEQUENCER_STATE\[7\]/D  	(9.5:9.5:9.5) )
-
-    (PATHCONSTRAINT spi_slave_pm/SCA_CLK_OUT_2C/CLK  spi_slave_pm/SCA_CLK_OUT_2C/Q  spi_slave_pm/SCA_CLK_OUT_2C_RNIRKQG/B  spi_slave_pm/SCA_CLK_OUT_2C_RNIRKQG/Y  spi_slave_pm/NULLCLK_CNT_RNO\[0\]/B  spi_slave_pm/NULLCLK_CNT_RNO\[0\]/Y  spi_slave_pm/NULLCLK_CNT\[0\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CONTROL78/RET_STATE\[6\]/CLK  CONTROL78/RET_STATE\[6\]/Q  CONTROL78/SEQUENCER_STATE_RNO_0\[5\]/B  CONTROL78/SEQUENCER_STATE_RNO_0\[5\]/Y  CONTROL78/SEQUENCER_STATE_RNO\[5\]/B  CONTROL78/SEQUENCER_STATE_RNO\[5\]/Y  CONTROL78/SEQUENCER_STATE\[5\]/D  	(9.5:9.5:9.5) )
 
@@ -2873,6 +2871,8 @@
 
     (PATHCONSTRAINT DTYCYC_CNT\[1\]/CLK  DTYCYC_CNT\[1\]/Q  CONTROL56/DTYCYC_CNT_n2_0_x2/B  CONTROL56/DTYCYC_CNT_n2_0_x2/Y  CONTROL56/DTYCYC_CNT_n2_0/A  CONTROL56/DTYCYC_CNT_n2_0/Y  DTYCYC_CNT\[2\]/D  	(9.5:9.5:9.5) )
 
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[1\]/CLK  spi_slave_pm/CLK_FCNT_2C\[1\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI1S2Q\[0\]/A  spi_slave_pm/CLK_FCNT_2C_RNI1S2Q\[0\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/A  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/A  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/Y  spi_slave_pm/SPI_SM\[0\]/D  	(9.5:9.5:9.5) )
+
     (PATHCONSTRAINT UVL_78FUSE/SUM_IN_A\[5\]/CLK  UVL_78FUSE/SUM_IN_A\[5\]/Q  UVL_78FUSE/un2_n_filt_out_1_ADD_4x4_fast_I4_Y_0/B  UVL_78FUSE/un2_n_filt_out_1_ADD_4x4_fast_I4_Y_0/Y  UVL_78FUSE/FILT_OUT_RNO\[7\]/A  UVL_78FUSE/FILT_OUT_RNO\[7\]/Y  UVL_78FUSE/FILT_OUT\[7\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT UVL_56FUSE/SUM_IN_A\[5\]/CLK  UVL_56FUSE/SUM_IN_A\[5\]/Q  UVL_56FUSE/un2_n_filt_out_1_ADD_4x4_fast_I4_Y_0/B  UVL_56FUSE/un2_n_filt_out_1_ADD_4x4_fast_I4_Y_0/Y  UVL_56FUSE/FILT_OUT_RNO\[7\]/A  UVL_56FUSE/FILT_OUT_RNO\[7\]/Y  UVL_56FUSE/FILT_OUT\[7\]/D  	(9.5:9.5:9.5) )
@@ -2882,8 +2882,6 @@
     (PATHCONSTRAINT UVL_12FUSE/SUM_IN_A\[5\]/CLK  UVL_12FUSE/SUM_IN_A\[5\]/Q  UVL_12FUSE/un2_n_filt_out_1_ADD_4x4_fast_I4_Y_0/B  UVL_12FUSE/un2_n_filt_out_1_ADD_4x4_fast_I4_Y_0/Y  UVL_12FUSE/FILT_OUT_RNO\[7\]/A  UVL_12FUSE/FILT_OUT_RNO\[7\]/Y  UVL_12FUSE/FILT_OUT\[7\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT OVT_FS/SUM_IN_A\[5\]/CLK  OVT_FS/SUM_IN_A\[5\]/Q  OVT_FS/un2_n_filt_out_1_ADD_4x4_fast_I4_Y_0/B  OVT_FS/un2_n_filt_out_1_ADD_4x4_fast_I4_Y_0/Y  OVT_FS/FILT_OUT_RNO\[7\]/A  OVT_FS/FILT_OUT_RNO\[7\]/Y  OVT_FS/FILT_OUT\[7\]/D  	(9.5:9.5:9.5) )
-
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[3\]/CLK  spi_slave_pm/CLK_FCNT_2C\[3\]/Q  spi_slave_pm/CLK_FCNT_2C_RNI503Q\[2\]/A  spi_slave_pm/CLK_FCNT_2C_RNI503Q\[2\]/Y  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/A  spi_slave_pm/CLK_FCNT_2C_RNIF09E2\[0\]/Y  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/A  spi_slave_pm/SPI_SM_RNIJ6VK2\[1\]/Y  spi_slave_pm/SPI_SM\[0\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT UVL_34FUSE/THRESH_VAL\[1\]/CLK  UVL_34FUSE/THRESH_VAL\[1\]/Q  UVL_34FUSE/SIGOUT_RNO_1/C  UVL_34FUSE/SIGOUT_RNO_1/Y  UVL_34FUSE/SIGOUT_RNO_0/C  UVL_34FUSE/SIGOUT_RNO_0/Y  UVL_34FUSE/SIGOUT/E  	(9.6:9.6:9.6) )
 
@@ -3121,6 +3119,8 @@
 
     (PATHCONSTRAINT TX_PROMPT/CNT_VAL\[0\]/CLK  TX_PROMPT/CNT_VAL\[0\]/Q  TX_PROMPT/CNT_VAL_RNO\[1\]/A  TX_PROMPT/CNT_VAL_RNO\[1\]/Y  TX_PROMPT/CNT_VAL\[1\]/D  	(9.5:9.5:9.5) )
 
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[0\]/CLK  spi_slave_pm/SPI_SM\[0\]/Q  spi_slave_pm/SPI_SM\[5\]/D  	(9.5:9.5:9.5) )
+
     (PATHCONSTRAINT spi_slave_pm/SPI_SM\[0\]/CLK  spi_slave_pm/SPI_SM\[0\]/Q  spi_slave_pm/I_SPI_RX_STRB/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT spi_slave_pm/SPI_SM\[1\]/CLK  spi_slave_pm/SPI_SM\[1\]/Q  spi_slave_pm/TX_32BIT_REG\[30\]/E  	(9.6:9.6:9.6) )
@@ -3347,7 +3347,7 @@
 
     (PATHCONSTRAINT CONTROL12/SEQUENCER_STATE\[6\]/CLK  CONTROL12/SEQUENCER_STATE\[6\]/Q  CONTROL12/RET_STATE_RNO\[5\]/C  CONTROL12/RET_STATE_RNO\[5\]/Y  CONTROL12/RET_STATE\[5\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/SPI_SM_i\[5\]/CLK  spi_slave_pm/SPI_SM_i\[5\]/Q  spi_slave_pm/SPI_SM_RNO\[4\]/C  spi_slave_pm/SPI_SM_RNO\[4\]/Y  spi_slave_pm/SPI_SM\[4\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/SPI_SM\[5\]/CLK  spi_slave_pm/SPI_SM\[5\]/Q  spi_slave_pm/SPI_SM_RNO\[4\]/C  spi_slave_pm/SPI_SM_RNO\[4\]/Y  spi_slave_pm/SPI_SM\[4\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT UVL_78FUSE/SUM_IN_A\[4\]/CLK  UVL_78FUSE/SUM_IN_A\[4\]/Q  UVL_78FUSE/un2_n_filt_out_0_ADD_4x4_fast_I0_S/C  UVL_78FUSE/un2_n_filt_out_0_ADD_4x4_fast_I0_S/Y  UVL_78FUSE/FILT_OUT\[4\]/D  	(9.5:9.5:9.5) )
 
@@ -3541,17 +3541,17 @@
 
     (PATHCONSTRAINT VAL_MAN_EN_CH_8TO5/CLK  VAL_MAN_EN_CH_8TO5/Q  REGISTER_CH_CMD_CH\[4\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/SCA_CLK_OUT_1C/CLK  spi_slave_pm/SCA_CLK_OUT_1C/Q  spi_slave_pm/SCA_CLK_OUT_2C/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_1C\[4\]/CLK  spi_slave_pm/CLK_FCNT_1C\[4\]/QN  spi_slave_pm/CLK_FCNT_2C\[4\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_1C\[0\]/CLK  spi_slave_pm/CLK_FCNT_1C\[0\]/Q  spi_slave_pm/CLK_FCNT_2C\[0\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_1C\[3\]/CLK  spi_slave_pm/CLK_FCNT_1C\[3\]/QN  spi_slave_pm/CLK_FCNT_2C\[3\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_1C\[1\]/CLK  spi_slave_pm/CLK_FCNT_1C\[1\]/Q  spi_slave_pm/CLK_FCNT_2C\[1\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_1C\[2\]/CLK  spi_slave_pm/CLK_FCNT_1C\[2\]/QN  spi_slave_pm/CLK_FCNT_2C\[2\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_1C\[2\]/CLK  spi_slave_pm/CLK_FCNT_1C\[2\]/Q  spi_slave_pm/CLK_FCNT_2C\[2\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_1C\[1\]/CLK  spi_slave_pm/CLK_FCNT_1C\[1\]/QN  spi_slave_pm/CLK_FCNT_2C\[1\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_1C\[3\]/CLK  spi_slave_pm/CLK_FCNT_1C\[3\]/Q  spi_slave_pm/CLK_FCNT_2C\[3\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_1C\[0\]/CLK  spi_slave_pm/CLK_FCNT_1C\[0\]/QN  spi_slave_pm/CLK_FCNT_2C\[0\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_1C\[4\]/CLK  spi_slave_pm/CLK_FCNT_1C\[4\]/Q  spi_slave_pm/CLK_FCNT_2C\[4\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/SCA_CLK_OUT_1C/CLK  spi_slave_pm/SCA_CLK_OUT_1C/QN  spi_slave_pm/SCA_CLK_OUT_2C/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_1C\[5\]/CLK  spi_slave_pm/CLK_FCNT_1C\[5\]/Q  spi_slave_pm/CLK_FCNT_2C\[5\]/D  	(9.5:9.5:9.5) )
 
@@ -3598,16 +3598,6 @@
     (PATHCONSTRAINT spi_slave_pm/SPI_SM\[3\]/CLK  spi_slave_pm/SPI_SM\[3\]/Q  spi_slave_pm/SPI_SM_RNIBFCD\[3\]/A  spi_slave_pm/SPI_SM_RNIBFCD\[3\]/Y  	(10.0:10.0:10.0) )
 
     (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  	(10.0:10.0:10.0) )
-
-    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/CLK_FCNT_1C\[2\]/CLK  	(100000.0:100000.0:100000.0) )
-
-    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/CLK_FCNT_1C\[1\]/CLK  	(100000.0:100000.0:100000.0) )
-
-    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/CLK_FCNT_1C\[0\]/CLK  	(100000.0:100000.0:100000.0) )
-
-    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/I_SPI_RX_WORD\[31\]/CLK  	(100000.0:100000.0:100000.0) )
-
-    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/I_SPI_RX_WORD\[30\]/CLK  	(100000.0:100000.0:100000.0) )
 
     (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/I_SPI_RX_WORD\[29\]/CLK  	(100000.0:100000.0:100000.0) )
 
@@ -3743,7 +3733,7 @@
 
     (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/SPI_SM\[4\]/CLK  	(100000.0:100000.0:100000.0) )
 
-    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/SPI_SM_i\[5\]/CLK  	(100000.0:100000.0:100000.0) )
+    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/SPI_SM\[5\]/CLK  	(100000.0:100000.0:100000.0) )
 
     (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/CLK_FCNT_EN/CLK  	(100000.0:100000.0:100000.0) )
 
@@ -3761,9 +3751,19 @@
 
     (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/SCA_CLK_OUT_2C/CLK  	(100000.0:100000.0:100000.0) )
 
+    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/I_SPI_RX_STRB/CLK  	(100000.0:100000.0:100000.0) )
+
     (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/SCA_CLK_OUT_1C/CLK  	(100000.0:100000.0:100000.0) )
 
-    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/I_SPI_RX_STRB/CLK  	(100000.0:100000.0:100000.0) )
+    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/CLK_FCNT_1C\[0\]/CLK  	(100000.0:100000.0:100000.0) )
+
+    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/CLK_FCNT_1C\[1\]/CLK  	(100000.0:100000.0:100000.0) )
+
+    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/CLK_FCNT_1C\[2\]/CLK  	(100000.0:100000.0:100000.0) )
+
+    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/CLK_FCNT_1C\[3\]/CLK  	(100000.0:100000.0:100000.0) )
+
+    (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/CLK_FCNT_1C\[4\]/CLK  	(100000.0:100000.0:100000.0) )
 
     (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_inferred_clock/A  CLK_5M_GL_inferred_clock/Y  spi_slave_pm/SPI_SM_0\[1\]/CLK  	(100000.0:100000.0:100000.0) )
 

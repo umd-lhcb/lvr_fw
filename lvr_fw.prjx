@@ -53,12 +53,12 @@ SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="utd"
-TIME="1565112026"
+TIME="1565121436"
 SIZE="1033728"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1565112026"
+TIME="1565121436"
 SIZE="1043"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
@@ -68,8 +68,8 @@ SIZE="129700"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
 STATE="utd"
-TIME="1564274419"
-SIZE="9959"
+TIME="1565115491"
+SIZE="9867"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
 STATE="utd"
@@ -98,27 +98,42 @@ SIZE="13961"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1565115464"
-SIZE="43263"
+TIME="1565272351"
+SIZE="43276"
+ENDFILE
+VALUE "<project>\simulation\run.do,do"
+STATE="utd"
+TIME="1565208039"
+SIZE="935"
+ENDFILE
+VALUE "<project>\simulation\TB_TOP_LVR_FW_presynth_simulation.log,log"
+STATE="utd"
+TIME="1565209789"
+SIZE="14363"
+ENDFILE
+VALUE "<project>\stimulus\tb_top_lvr_fw.vhd,tb_hdl"
+STATE="utd"
+TIME="1565209481"
+SIZE="9303"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
-TIME="1564274388"
-SIZE="656459"
+TIME="1565115480"
+SIZE="655030"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
-TIME="1564274388"
+TIME="1565115480"
 SIZE="221"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1564274388"
+TIME="1565115480"
 SIZE="522"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
 STATE="utd"
-TIME="1564274389"
+TIME="1565115481"
 SIZE="2030"
 ENDFILE
 ENDLIST
@@ -127,11 +142,14 @@ ENDLIST
 LIST NewModulesInfo
 LIST "top_lvr_fw::work"
 FILE "<project>\hdl\top_lvr_fw.vhd,hdl"
+LIST AssociatedStimulus
+VALUE "<project>\stimulus\tb_top_lvr_fw.vhd,tb_hdl"
+ENDLIST
 LIST ProjectState5.1
 LIST Impl1
-LiberoState=Post_Layout
+LiberoState=Post_Synthesis
+ideSTIMULUS=StateSuccess
 ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
-ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -148,6 +166,9 @@ ENDLIST
 ENDLIST
 ENDLIST
 LIST AssociatedStimulus
+LIST top_lvr_fw
+VALUE "<project>\stimulus\tb_top_lvr_fw.vhd,tb_hdl"
+ENDLIST
 ENDLIST
 LIST Other_Association
 ENDLIST
@@ -158,7 +179,7 @@ Type=max
 RunTime=1000ns
 Resolution=1ps
 VsimOpt=
-EntityName=testbench
+EntityName=TB_TOP_LVR_FW
 TopInstanceName=<top>_0
 DoFileName=
 DoFileName2=wave.do
@@ -226,7 +247,7 @@ NAME="ModelSim ME"
 FUNCTION="Simulation"
 TOOL="ModelSim"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\Modelsim\win32acoem\modelsim.exe"
-PARAM=""
+PARAM=" -l TB_TOP_LVR_FW_presynth_simulation.log "
 BATCH=0
 LICENSE=""
 IS32BIT="1"
@@ -253,9 +274,9 @@ ENDLIST
 LIST ProjectState5.1
 LIST "top_lvr_fw::work"
 LIST Impl1
-LiberoState=Post_Layout
+LiberoState=Post_Synthesis
+ideSTIMULUS=StateSuccess
 ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
-ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -280,7 +301,6 @@ LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
 ReportsCurrentItem;Compile:top_lvr_fw_compile_log.rpt
-StartPage;StartPage;0
 ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
@@ -297,6 +317,9 @@ SUBBLOCK "IIR_FILT::work","hdl\IIR_FILT.vhd","FALSE","FALSE"
 SUBBLOCK "MAIN_SEQUENCER_NEW::work","hdl\MAIN_SEQUENCER_NEW.vhd","FALSE","FALSE"
 SUBBLOCK "SLOW_PULSE_EN_GEN::work","hdl\Slow_PulseEn_Gen.vhd","FALSE","FALSE"
 SUBBLOCK "spi_slave::work","hdl\spi_slave.vhd","FALSE","FALSE"
+ENDLIST
+LIST "TB_TOP_LVR_FW::work","stimulus\tb_top_lvr_fw.vhd","FALSE","TRUE"
+SUBBLOCK "top_lvr_fw::work","hdl\top_lvr_fw.vhd","FALSE","FALSE"
 ENDLIST
 ENDLIST
 LIST ActiveTestBenchList

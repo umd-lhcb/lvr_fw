@@ -19,7 +19,7 @@
 @P:  top_lvr_fw|SCA_CLK_OUT - Estimated Period : 13.443
 @P:  top_lvr_fw|SCA_CLK_OUT - Requested Period : 10.000
 @P:  top_lvr_fw|SCA_CLK_OUT - Slack : -3.443
-@P:  Total Area : 1348.0
+@P:  Total Area : 1347.0
 @P:  Total Area : 44.0
 @P:  Total Area : 44.0
 @P:  Total Area : 45.0
@@ -30,6 +30,6 @@
 @P:  Total Area : 197.0
 @P:  Total Area : 180.0
 @P:  Total Area : 182.0
-@P:  Total Area : 243.0
-@P:  Total Area : 1348.0
-@P:  CPU Time : 0h:00m:03s
+@P:  Total Area : 242.0
+@P:  Total Area : 1347.0
+@P:  CPU Time : 0h:00m:04s

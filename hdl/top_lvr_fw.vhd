@@ -308,7 +308,7 @@ architecture RTL of top_lvr_fw is
   signal SPI_RX_STRB        : std_logic;  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
   signal SPI_P_TX_32BIT_REG : std_logic_vector(31 downto 0);
   signal SPI_P_STATE_ID     : std_logic_vector(3 downto 0);
-  signal sca_clk_out_buf, spi_rst : std_logic;
+  signal sca_clk_out_buf, spi_rst_b : std_logic;
   
 -- DEBUG
   signal IIR_OVT_FILT   : std_logic_vector(7 downto 0);
@@ -322,13 +322,13 @@ architecture RTL of top_lvr_fw is
 begin
 
   SPI_CLK_BUF : CLKBUF port map(PAD => SCA_CLK_OUT, Y => sca_clk_out_buf); 
-  spi_rst <= not SCA_RESET_OUT or not MASTER_RST_B;
+  spi_rst_b <= not SCA_RESET_OUT or MASTER_RST_B;
   
   -- SPI
   spi_slave_pm : spi_slave
     port map (
       CLK5M_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
-      MASTER_RST_B => spi_rst,    -- INTERNAL ACTIVE LOW RESET
+      MASTER_RST_B => spi_rst_b,    -- INTERNAL ACTIVE LOW RESET
 
       SCA_CLK_OUT => SCA_CLK_OUT_buf,  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
       SCA_DAT_OUT => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER

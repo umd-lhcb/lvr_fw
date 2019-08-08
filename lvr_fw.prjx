@@ -58,13 +58,13 @@ SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="utd"
-TIME="1565272428"
+TIME="1565279552"
 SIZE="1033728"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1565272430"
-SIZE="1041"
+TIME="1565279553"
+SIZE="1043"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
 STATE="ood"
@@ -73,8 +73,8 @@ SIZE="129700"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
 STATE="utd"
-TIME="1565272429"
-SIZE="9856"
+TIME="1565279555"
+SIZE="11773"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
 STATE="utd"
@@ -123,22 +123,22 @@ SIZE="9303"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
-TIME="1565272414"
-SIZE="656437"
+TIME="1565279389"
+SIZE="657100"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
-TIME="1565272414"
+TIME="1565279389"
 SIZE="221"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1565272414"
+TIME="1565279389"
 SIZE="522"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
 STATE="utd"
-TIME="1565272415"
+TIME="1565279390"
 SIZE="2030"
 ENDFILE
 ENDLIST
@@ -306,10 +306,8 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-Reports;Reports;0
-ReportsCurrentItem;Compile:top_lvr_fw_compile_log.rpt
 StartPage;StartPage;0
-ACTIVEVIEW;Reports
+ACTIVEVIEW;StartPage
 ENDLIST
 LIST ModuleSubBlockList
 LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"

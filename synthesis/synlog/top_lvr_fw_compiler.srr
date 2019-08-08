@@ -85,12 +85,12 @@ State machine has 3 reachable states with original encodings of:
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":133:4:133:15|Input J11_25_TCONN is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":134:4:134:15|Input J11_27_TCONN is unused.
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 77MB peak: 78MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 77MB peak: 78MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Aug 08 08:49:39 2019
+# Thu Aug 08 12:22:55 2019
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -101,16 +101,16 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Aug 08 08:49:40 2019
+# Thu Aug 08 12:22:55 2019
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 3MB peak: 4MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 3MB peak: 4MB)
 
-Process took 0h:00m:02s realtime, 0h:00m:02s cputime
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Aug 08 08:49:40 2019
+# Thu Aug 08 12:22:55 2019
 
 ###########################################################]

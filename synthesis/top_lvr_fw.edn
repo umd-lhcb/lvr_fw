@@ -4,7 +4,7 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timeStamp 2019 8 8 8 49 49)
+      (timeStamp 2019 8 8 12 23 8)
       (author "Synopsys, Inc.")
       (program "Synplify Pro" (version "L-2016.09M-SP1-5, mapper mapact, Build 2172R"))
      )
@@ -849,7 +849,7 @@
          (interface
            (port FPGA_FUSE_7_8_OK_c_0 (direction INPUT))
            (port UVL_OK_CH7A8 (direction OUTPUT))
-           (port MASTER_RST_B_i_0_i (direction INPUT))
+           (port MASTER_RST_B (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
          )
          (contents
@@ -1161,8 +1161,8 @@
            (portRef CLK (instanceRef SIGOUT))
            (portRef CLK (instanceRef SIG_IN_DEL_0))
           ))
-          (net MASTER_RST_B_i_0_i (joined
-           (portRef MASTER_RST_B_i_0_i)
+          (net MASTER_RST_B (joined
+           (portRef MASTER_RST_B)
            (portRef CLR (instanceRef FILT_OUT_7))
            (portRef CLR (instanceRef FILT_OUT_6))
            (portRef CLR (instanceRef FILT_OUT_5))
@@ -1197,7 +1197,7 @@
          (interface
            (port FPGA_FUSE_5_6_OK_c_0 (direction INPUT))
            (port UVL_OK_CH5A6 (direction OUTPUT))
-           (port MASTER_RST_B_i_0_i (direction INPUT))
+           (port MASTER_RST_B (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
          )
          (contents
@@ -1509,8 +1509,8 @@
            (portRef CLK (instanceRef SIGOUT))
            (portRef CLK (instanceRef SIG_IN_DEL_0))
           ))
-          (net MASTER_RST_B_i_0_i (joined
-           (portRef MASTER_RST_B_i_0_i)
+          (net MASTER_RST_B (joined
+           (portRef MASTER_RST_B)
            (portRef CLR (instanceRef FILT_OUT_7))
            (portRef CLR (instanceRef FILT_OUT_6))
            (portRef CLR (instanceRef FILT_OUT_5))
@@ -1545,7 +1545,7 @@
          (interface
            (port FPGA_FUSE_3_4_OK_c_0 (direction INPUT))
            (port UVL_OK_CH3A4 (direction OUTPUT))
-           (port MASTER_RST_B_i_0_i (direction INPUT))
+           (port MASTER_RST_B (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
          )
          (contents
@@ -1863,8 +1863,8 @@
            (portRef CLK (instanceRef SIGOUT))
            (portRef CLK (instanceRef SIG_IN_DEL_0))
           ))
-          (net MASTER_RST_B_i_0_i (joined
-           (portRef MASTER_RST_B_i_0_i)
+          (net MASTER_RST_B (joined
+           (portRef MASTER_RST_B)
            (portRef CLR (instanceRef FILT_OUT_7))
            (portRef CLR (instanceRef FILT_OUT_6))
            (portRef CLR (instanceRef FILT_OUT_5))
@@ -1899,7 +1899,7 @@
          (interface
            (port FPGA_FUSE_1_2_OK_c_0 (direction INPUT))
            (port UVL_OK_CH1A2 (direction OUTPUT))
-           (port MASTER_RST_B_i_0_i (direction INPUT))
+           (port MASTER_RST_B (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
          )
          (contents
@@ -2211,8 +2211,8 @@
            (portRef CLK (instanceRef SIGOUT))
            (portRef CLK (instanceRef SIG_IN_DEL_0))
           ))
-          (net MASTER_RST_B_i_0_i (joined
-           (portRef MASTER_RST_B_i_0_i)
+          (net MASTER_RST_B (joined
+           (portRef MASTER_RST_B)
            (portRef CLR (instanceRef FILT_OUT_7))
            (portRef CLR (instanceRef FILT_OUT_6))
            (portRef CLR (instanceRef FILT_OUT_5))
@@ -2247,7 +2247,7 @@
          (interface
            (port TEMP_OK_c_0 (direction INPUT))
            (port STATUS_LED_c (direction OUTPUT))
-           (port MASTER_RST_B_i_0_i (direction INPUT))
+           (port MASTER_RST_B (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
            (port STATUS_LED_c_0 (direction OUTPUT))
          )
@@ -2337,8 +2337,8 @@
            (portRef CLK (instanceRef SIG_IN_DEL_0))
            (portRef CLK (instanceRef SIGOUT_0))
           ))
-          (net MASTER_RST_B_i_0_i (joined
-           (portRef MASTER_RST_B_i_0_i)
+          (net MASTER_RST_B (joined
+           (portRef MASTER_RST_B)
            (portRef CLR (instanceRef FILT_OUT_7))
            (portRef CLR (instanceRef FILT_OUT_6))
            (portRef CLR (instanceRef FILT_OUT_5))
@@ -2610,7 +2610,7 @@
     (cell SLOW_PULSE_EN_GEN (cellType GENERIC)
        (view netlist (viewType NETLIST)
          (interface
-           (port MASTER_RST_B_i_0_i (direction INPUT))
+           (port MASTER_RST_B (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
            (port N_26_i (direction OUTPUT))
          )
@@ -3185,8 +3185,8 @@
            (portRef CLK (instanceRef CNT_VAL_0))
            (portRef CLK (instanceRef MS250_CLK_EN_SIG))
           ))
-          (net MASTER_RST_B_i_0_i (joined
-           (portRef MASTER_RST_B_i_0_i)
+          (net MASTER_RST_B (joined
+           (portRef MASTER_RST_B)
            (portRef CLR (instanceRef CNT_VAL_20))
            (portRef CLR (instanceRef CNT_VAL_19))
            (portRef CLR (instanceRef CNT_VAL_18))
@@ -3226,7 +3226,7 @@
            (port (array (rename p_ch_vosg_en_c "P_CH_VOSG_EN_c[7:6]") 2) (direction OUTPUT))
            (port P_CH_IAUX_EN_c_c_0 (direction OUTPUT))
            (port P_CH_MREG_EN_c_c_0 (direction OUTPUT))
-           (port MASTER_RST_B_i_0_i (direction INPUT))
+           (port MASTER_RST_B (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
            (port STATUS_LED_c_0 (direction INPUT))
            (port CH7_8_MS_CFG_EN_c (direction INPUT))
@@ -4313,8 +4313,8 @@
            (portRef CLK (instanceRef DEL_CNTR_1))
            (portRef CLK (instanceRef DEL_CNTR_0))
           ))
-          (net MASTER_RST_B_i_0_i (joined
-           (portRef MASTER_RST_B_i_0_i)
+          (net MASTER_RST_B (joined
+           (portRef MASTER_RST_B)
            (portRef CLR (instanceRef RET_STATE_4))
            (portRef CLR (instanceRef RET_STATE_5))
            (portRef CLR (instanceRef RET_STATE_6))
@@ -4697,7 +4697,7 @@
            (port P_CH_MREG_EN_c_c_0 (direction OUTPUT))
            (port REGISTER_CH_CMD_CH_0 (direction INPUT))
            (port (array (rename dtycyc_cnt "DTYCYC_CNT[4:0]") 5) (direction INPUT))
-           (port MASTER_RST_B_i_0_i (direction INPUT))
+           (port MASTER_RST_B (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
            (port STATUS_LED_c (direction INPUT))
            (port CH5_6_MS_CFG_EN_c (direction INPUT))
@@ -5931,8 +5931,8 @@
            (portRef CLK (instanceRef DEL_CNTR_0))
            (portRef CLK (instanceRef CH_ACTIVE_STATZ0))
           ))
-          (net MASTER_RST_B_i_0_i (joined
-           (portRef MASTER_RST_B_i_0_i)
+          (net MASTER_RST_B (joined
+           (portRef MASTER_RST_B)
            (portRef CLR (instanceRef RET_STATE_4))
            (portRef CLR (instanceRef RET_STATE_5))
            (portRef CLR (instanceRef RET_STATE_6))
@@ -6314,7 +6314,7 @@
            (port (array (rename p_ch_vosg_en_c "P_CH_VOSG_EN_c[3:2]") 2) (direction OUTPUT))
            (port P_CH_IAUX_EN_c_c_0 (direction OUTPUT))
            (port P_CH_MREG_EN_c_c_0 (direction OUTPUT))
-           (port MASTER_RST_B_i_0_i (direction INPUT))
+           (port MASTER_RST_B (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
            (port STATUS_LED_c (direction INPUT))
            (port CH3_4_MS_CFG_EN_c (direction INPUT))
@@ -7372,8 +7372,8 @@
            (portRef CLK (instanceRef DEL_CNTR_1))
            (portRef CLK (instanceRef DEL_CNTR_0))
           ))
-          (net MASTER_RST_B_i_0_i (joined
-           (portRef MASTER_RST_B_i_0_i)
+          (net MASTER_RST_B (joined
+           (portRef MASTER_RST_B)
            (portRef CLR (instanceRef RET_STATE_4))
            (portRef CLR (instanceRef RET_STATE_5))
            (portRef CLR (instanceRef RET_STATE_6))
@@ -7755,7 +7755,7 @@
            (port P_CH_IAUX_EN_c_c_0 (direction OUTPUT))
            (port P_CH_MREG_EN_c_c_0 (direction OUTPUT))
            (port REGISTER_CH_CMD_CH_0 (direction INPUT))
-           (port MASTER_RST_B_i_0_i (direction INPUT))
+           (port MASTER_RST_B (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
            (port CH1_2_MS_CFG_EN_c (direction INPUT))
            (port STATUS_LED_c_0 (direction INPUT))
@@ -8831,8 +8831,8 @@
            (portRef CLK (instanceRef DEL_CNTR_0))
            (portRef CLK (instanceRef CH_ACTIVE_STATZ0))
           ))
-          (net MASTER_RST_B_i_0_i (joined
-           (portRef MASTER_RST_B_i_0_i)
+          (net MASTER_RST_B (joined
+           (portRef MASTER_RST_B)
            (portRef CLR (instanceRef RET_STATE_4))
            (portRef CLR (instanceRef RET_STATE_5))
            (portRef CLR (instanceRef RET_STATE_6))
@@ -9220,7 +9220,7 @@
            (port SCA_DAT_OUT_c_c (direction INPUT))
            (port SCA_DAT_IN_c (direction OUTPUT))
            (port db_sca_clk_out_c (direction INPUT))
-           (port spi_rst_1 (direction INPUT))
+           (port spi_rst_b (direction INPUT))
            (port CLK_5M_GL_c_c (direction INPUT))
          )
          (contents
@@ -9776,8 +9776,8 @@
            (portRef CLK (instanceRef SPI_SM_0_1))
            (portRef CLK (instanceRef SPI_SM_0_0))
           ))
-          (net spi_rst_1 (joined
-           (portRef spi_rst_1)
+          (net spi_rst_b (joined
+           (portRef spi_rst_b)
            (portRef CLR (instanceRef CLK_FCNT_2C_5))
            (portRef PRE (instanceRef CLK_FCNT_2C_4))
            (portRef PRE (instanceRef CLK_FCNT_2C_3))
@@ -11396,22 +11396,21 @@
          (contents
           (instance SCA_RESET_OUT_pad_RNI93NH_0 (viewRef prim (cellRef CLKINT (libraryRef PA3)))
           )
-          (instance MASTER_RST_B_RNI5KT3_0 (viewRef prim (cellRef CLKINT (libraryRef PA3)))
+          (instance MASTER_RST_B_RNI5KT3 (viewRef prim (cellRef CLKINT (libraryRef PA3)))
           )
           (instance CLK_5M_GL_inferred_clock (viewRef prim (cellRef CLKINT (libraryRef PA3)))
           )
-          (instance DEL0_DEV_RST_B (viewRef prim (cellRef DFI1C0 (libraryRef PA3)))
-          )
           (instance (rename REFCNT_RNO_0 "REFCNT_RNO[0]") (viewRef prim (cellRef INV (libraryRef PA3)))          )
-          (instance MASTER_RST_B_RNI5KT3 (viewRef prim (cellRef INV (libraryRef PA3)))          )
           (instance CLK_5M_GL_RNO (viewRef prim (cellRef AX1C (libraryRef PA3)))          )
           (instance un1_n_refcnt_1_SUM1 (viewRef prim (cellRef XOR2 (libraryRef PA3)))          )
           (instance SCA_RESET_OUT_pad_RNI93NH (viewRef prim (cellRef OR2A (libraryRef PA3)))          )
-          (instance MASTER_RST_B (viewRef prim (cellRef DFN1P0 (libraryRef PA3)))
+          (instance MASTER_RST_B (viewRef prim (cellRef DFN1C0 (libraryRef PA3)))
           )
           (instance (rename REGISTER_CH_CMD_CH_0 "REGISTER_CH_CMD_CH[0]") (viewRef prim (cellRef DFN1C0 (libraryRef PA3)))
           )
           (instance (rename REGISTER_CH_CMD_CH_4 "REGISTER_CH_CMD_CH[4]") (viewRef prim (cellRef DFN1C0 (libraryRef PA3)))
+          )
+          (instance DEL0_DEV_RST_B (viewRef prim (cellRef DFN1C0 (libraryRef PA3)))
           )
           (instance VAL_MAN_EN_CH_4TO1 (viewRef prim (cellRef DFN1C0 (libraryRef PA3)))
           )
@@ -11701,9 +11700,9 @@
           (net J11_27_TCONN (joined
            (portRef J11_27_TCONN)
           ))
-          (net spi_rst_1 (joined
+          (net spi_rst_b (joined
            (portRef Y (instanceRef SCA_RESET_OUT_pad_RNI93NH_0))
-           (portRef spi_rst_1 (instanceRef spi_slave_pm))
+           (portRef spi_rst_b (instanceRef spi_slave_pm))
           ))
           (net (rename SPI_TX_WORDZ0Z_0 "SPI_TX_WORD[0]") (joined
            (portRef Q (instanceRef SPI_TX_WORD_0))
@@ -11961,6 +11960,39 @@
            (portRef (member spi_rx_word 0) (instanceRef spi_slave_pm))
            (portRef D (instanceRef SPI_TX_WORD_31))
           ))
+          (net (rename MASTER_RST_BZ0 "MASTER_RST_B") (joined
+           (portRef Y (instanceRef MASTER_RST_B_RNI5KT3))
+           (portRef MASTER_RST_B (instanceRef UVL_78FUSE))
+           (portRef MASTER_RST_B (instanceRef UVL_56FUSE))
+           (portRef MASTER_RST_B (instanceRef UVL_34FUSE))
+           (portRef MASTER_RST_B (instanceRef UVL_12FUSE))
+           (portRef MASTER_RST_B (instanceRef OVT_FS))
+           (portRef MASTER_RST_B (instanceRef TX_PROMPT))
+           (portRef MASTER_RST_B (instanceRef CONTROL78))
+           (portRef MASTER_RST_B (instanceRef CONTROL56))
+           (portRef MASTER_RST_B (instanceRef CONTROL34))
+           (portRef MASTER_RST_B (instanceRef CONTROL12))
+           (portRef CLR (instanceRef REFCNT_1))
+           (portRef CLR (instanceRef REFCNT_0))
+           (portRef CLR (instanceRef MAN_EN_CH_4TO1_A))
+           (portRef CLR (instanceRef MAN_EN_CH_8TO5_A))
+           (portRef CLR (instanceRef STDBY_OFFB_A))
+           (portRef CLR (instanceRef MAN_EN_CH_4TO1_B))
+           (portRef CLR (instanceRef MAN_EN_CH_8TO5_B))
+           (portRef CLR (instanceRef STDBY_OFFB_B))
+           (portRef CLR (instanceRef CLK_5M_GL))
+           (portRef CLR (instanceRef DTYCYC_EN))
+           (portRef PRE (instanceRef DTYCYC_CNT_4))
+           (portRef CLR (instanceRef DTYCYC_CNT_3))
+           (portRef CLR (instanceRef DTYCYC_CNT_2))
+           (portRef PRE (instanceRef DTYCYC_CNT_1))
+           (portRef PRE (instanceRef DTYCYC_CNT_0))
+           (portRef CLR (instanceRef VAL_MAN_EN_CH_8TO5))
+           (portRef CLR (instanceRef VAL_MAN_EN_CH_4TO1))
+           (portRef CLR (instanceRef REGISTER_CH_CMD_CH_4))
+           (portRef CLR (instanceRef REGISTER_CH_CMD_CH_0))
+           (portRef B (instanceRef SCA_RESET_OUT_pad_RNI93NH))
+          ))
           (net (rename REGISTER_CH_CMD_CHZ0Z_0 "REGISTER_CH_CMD_CH[0]") (joined
            (portRef Q (instanceRef REGISTER_CH_CMD_CH_0))
            (portRef REGISTER_CH_CMD_CH_0 (instanceRef CONTROL12))
@@ -12024,6 +12056,10 @@
           (net (rename DTYCYC_CNTZ0Z_4 "DTYCYC_CNT[4]") (joined
            (portRef Q (instanceRef DTYCYC_CNT_4))
            (portRef (member dtycyc_cnt 0) (instanceRef CONTROL56))
+          ))
+          (net (rename DEL0_DEV_RST_BZ0 "DEL0_DEV_RST_B") (joined
+           (portRef Q (instanceRef DEL0_DEV_RST_B))
+           (portRef D (instanceRef MASTER_RST_B))
           ))
           (net (rename VAL_MAN_EN_CH_4TOZ0Z1 "VAL_MAN_EN_CH_4TO1") (joined
            (portRef Q (instanceRef VAL_MAN_EN_CH_4TO1))
@@ -12112,8 +12148,8 @@
            (portRef CLK (instanceRef REFCNT_1))
            (portRef CLK (instanceRef REFCNT_0))
            (portRef CLK (instanceRef CLK_5M_GL))
-           (portRef CLK (instanceRef MASTER_RST_B))
            (portRef CLK (instanceRef DEL0_DEV_RST_B))
+           (portRef CLK (instanceRef MASTER_RST_B))
           ))
           (net CLK40MHZ_OSC (joined
            (portRef CLK40MHZ_OSC)
@@ -12121,8 +12157,8 @@
           ))
           (net POR_FPGA_c (joined
            (portRef Y (instanceRef POR_FPGA_pad))
-           (portRef PRE (instanceRef MASTER_RST_B))
            (portRef CLR (instanceRef DEL0_DEV_RST_B))
+           (portRef CLR (instanceRef MASTER_RST_B))
           ))
           (net POR_FPGA (joined
            (portRef POR_FPGA)
@@ -12645,54 +12681,13 @@
            (portRef N_65 (instanceRef CONTROL56))
            (portRef D (instanceRef DTYCYC_CNT_0))
           ))
-          (net MASTER_RST_B_i_0 (joined
-           (portRef Q (instanceRef MASTER_RST_B))
-           (portRef B (instanceRef SCA_RESET_OUT_pad_RNI93NH))
-           (portRef A (instanceRef MASTER_RST_B_RNI5KT3))
-          ))
-          (net MASTER_RST_B_i_0_i (joined
-           (portRef Y (instanceRef MASTER_RST_B_RNI5KT3_0))
-           (portRef MASTER_RST_B_i_0_i (instanceRef UVL_78FUSE))
-           (portRef MASTER_RST_B_i_0_i (instanceRef UVL_56FUSE))
-           (portRef MASTER_RST_B_i_0_i (instanceRef UVL_34FUSE))
-           (portRef MASTER_RST_B_i_0_i (instanceRef UVL_12FUSE))
-           (portRef MASTER_RST_B_i_0_i (instanceRef OVT_FS))
-           (portRef MASTER_RST_B_i_0_i (instanceRef TX_PROMPT))
-           (portRef MASTER_RST_B_i_0_i (instanceRef CONTROL78))
-           (portRef MASTER_RST_B_i_0_i (instanceRef CONTROL56))
-           (portRef MASTER_RST_B_i_0_i (instanceRef CONTROL34))
-           (portRef MASTER_RST_B_i_0_i (instanceRef CONTROL12))
-           (portRef CLR (instanceRef REFCNT_1))
-           (portRef CLR (instanceRef REFCNT_0))
-           (portRef CLR (instanceRef MAN_EN_CH_4TO1_A))
-           (portRef CLR (instanceRef MAN_EN_CH_8TO5_A))
-           (portRef CLR (instanceRef STDBY_OFFB_A))
-           (portRef CLR (instanceRef MAN_EN_CH_4TO1_B))
-           (portRef CLR (instanceRef MAN_EN_CH_8TO5_B))
-           (portRef CLR (instanceRef STDBY_OFFB_B))
-           (portRef CLR (instanceRef CLK_5M_GL))
-           (portRef CLR (instanceRef DTYCYC_EN))
-           (portRef PRE (instanceRef DTYCYC_CNT_4))
-           (portRef CLR (instanceRef DTYCYC_CNT_3))
-           (portRef CLR (instanceRef DTYCYC_CNT_2))
-           (portRef PRE (instanceRef DTYCYC_CNT_1))
-           (portRef PRE (instanceRef DTYCYC_CNT_0))
-           (portRef CLR (instanceRef VAL_MAN_EN_CH_8TO5))
-           (portRef CLR (instanceRef VAL_MAN_EN_CH_4TO1))
-           (portRef CLR (instanceRef REGISTER_CH_CMD_CH_4))
-           (portRef CLR (instanceRef REGISTER_CH_CMD_CH_0))
-          ))
           (net (rename REFCNT_i_0 "REFCNT_i[0]") (joined
            (portRef Y (instanceRef REFCNT_RNO_0))
            (portRef D (instanceRef REFCNT_0))
           ))
-          (net DEL0_DEV_RST_B_i (joined
-           (portRef QN (instanceRef DEL0_DEV_RST_B))
-           (portRef D (instanceRef MASTER_RST_B))
-          ))
-          (net (rename MASTER_RST_B_RNI5KTZ0Z3 "MASTER_RST_B_RNI5KT3") (joined
-           (portRef Y (instanceRef MASTER_RST_B_RNI5KT3))
-           (portRef A (instanceRef MASTER_RST_B_RNI5KT3_0))
+          (net MASTER_RST_B_0 (joined
+           (portRef Q (instanceRef MASTER_RST_B))
+           (portRef A (instanceRef MASTER_RST_B_RNI5KT3))
           ))
           (net (rename SCA_RESET_OUT_pad_RNI93NHZ0 "SCA_RESET_OUT_pad_RNI93NH") (joined
            (portRef Y (instanceRef SCA_RESET_OUT_pad_RNI93NH))

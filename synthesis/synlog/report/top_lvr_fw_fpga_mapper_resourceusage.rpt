@@ -15,7 +15,7 @@ Report for cell top_lvr_fw.rtl
              AXOI5     1      1.0        1.0
             CLKINT     4      0.0        0.0
                GND    12      0.0        0.0
-               INV     3      1.0        3.0
+               INV     2      1.0        2.0
               MAJ3     5      1.0        5.0
              MIN3X     4      1.0        4.0
                MX2    19      1.0       19.0
@@ -49,17 +49,17 @@ Report for cell top_lvr_fw.rtl
               XOR3     5      1.0        5.0
 
 
-            DFI1C0     7      1.0        7.0
+            DFI1C0     6      1.0        6.0
               DFN0    32      1.0       32.0
-            DFN1C0   146      1.0      146.0
+            DFN1C0   148      1.0      148.0
             DFN1C1    39      1.0       39.0
           DFN1E0C0    30      1.0       30.0
           DFN1E0P0     3      1.0        3.0
           DFN1E1C0    72      1.0       72.0
           DFN1E1C1    31      1.0       31.0
-            DFN1P0    72      1.0       72.0
+            DFN1P0    71      1.0       71.0
                    -----          ----------
-             TOTAL  1377              1349.0
+             TOTAL  1376              1348.0
 
 
   IO Cell usage:
@@ -71,7 +71,7 @@ Report for cell top_lvr_fw.rtl
              TOTAL    61
 
 
-Core Cells         : 1349 of 6144 (22%)
+Core Cells         : 1348 of 6144 (22%)
 IO Cells           : 61
 
   RAM/ROM Usage Summary

@@ -103,18 +103,13 @@ SIZE="13759"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1565379809"
-SIZE="43747"
+TIME="1565387098"
+SIZE="43744"
 ENDFILE
 VALUE "<project>\simulation\run.do,do"
 STATE="utd"
 TIME="1565379043"
 SIZE="930"
-ENDFILE
-VALUE "<project>\simulation\TB_TOP_LVR_FW_presynth_simulation.log,log"
-STATE="utd"
-TIME="1565379870"
-SIZE="10378"
 ENDFILE
 VALUE "<project>\simulation\wave.do,do"
 STATE="utd"
@@ -311,8 +306,10 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Compile:top_lvr_fw_compile_log.rpt
 StartPage;StartPage;0
-ACTIVEVIEW;StartPage
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"

@@ -1,5 +1,5 @@
 *****************************************************************
-Pin Report - Date: Fri Aug 09 15:01:51 2019 Pinchecksum: NOT-AVAILABLE
+Pin Report - Date: Fri Aug 09 15:17:14 2019 Pinchecksum: NOT-AVAILABLE
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
@@ -13,7 +13,7 @@ Number |Port                |Function      |State       |I/O Std  |Output Drive 
 1                            GND            Reserved
 2       SCA_DAT_OUT          GAA2/IO67RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 3       SCA_DAT_IN           IO66RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
-4                            GAB2/IO65RSB3  Special
+4       J11_19_TCONN         GAB2/IO65RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
 5       db_spi_state2        IO64RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
 6       db_spi_cnt2          GAC2/IO63RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
 7       db_spi_state1        IO62RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
@@ -31,20 +31,20 @@ Number |Port                |Function      |State       |I/O Std  |Output Drive 
 19      CH5_6_MS_CFG_EN      GFC2/IO55RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 20      CH3_4_MS_CFG_EN      GEC1/IO54RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 21      CH1_2_MS_CFG_EN      GEC0/IO53RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-22      J11_19_TCONN         GEA1/IO52RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
-23      POR_OUT_TO_SCA       GEA0/IO51RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
+22                           GEA1/IO52RSB3  Special
+23      BUF5M_J11_15_TCONN   GEA0/IO51RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
 24                           VMV3           Reserved
 25                           GNDQ           Reserved
-26      J11_23_TCONN         GEA2/IO50RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
-27      J11_17_TCONN         GEB2/IO49RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
-28      J11_21_TCONN         GEC2/IO48RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
-29      db_clk5mhz           IO47RSB2       Assigned     LVCMOS15  2                  High  None           35                No           No             ---
+26      db_clk5mhz           GEA2/IO50RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
+27      J11_21_TCONN         GEB2/IO49RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
+28      J11_17_TCONN         GEC2/IO48RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
+29      J11_23_TCONN         IO47RSB2       Assigned     LVCMOS15  2                  High  None           35                No           No             ---
 30      db_spi_strobe        IO46RSB2       Assigned     LVCMOS15  2                  High  None           35                No           No             ---
 31      MODE_DCYC_NORMB      IO45RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
 32      db_spi_cnt1          IO44RSB2       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
 33      db_spi_cnt0          IO43RSB2       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
-34      BUF5M_J11_15_TCONN   IO42RSB2       Assigned     LVCMOS15  2                  High  None           35                No           No             ---
-35                           IO41RSB2       Unassigned
+34      SCA_RESET_OUT        IO42RSB2       Fixed        LVCMOS15  ---                ---   Up             ---               No           No             No
+35      POR_OUT_TO_SCA       IO41RSB2       Assigned     LVCMOS15  2                  High  None           35                No           No             ---
 36      FPGA_FUSE_7_8_OK[0]  IO40RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
 37                           VCC            Reserved
 38                           GND            Reserved
@@ -67,7 +67,7 @@ Number |Port                |Function      |State       |I/O Std  |Output Drive 
 55                           TRST           Reserved
 56                           VJTAG          Reserved
 57      P_CH_IAUX_EN[7]      GDA1/IO33RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
-58      SCA_RESET_OUT        GDC0/IO32RSB1  Special      LVCMOS33  ---                ---   Up             ---               No           No             No
+58                           GDC0/IO32RSB1  Special
 59                           GDC1/IO31RSB1  Special
 60      P_CH_VOSG_EN[7]      IO30RSB1       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
 61      CLK40MHZ_OSC         GCB2/IO29RSB1  Special      LVCMOS33  ---                ---   None           ---               No           No             No

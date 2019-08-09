@@ -172,14 +172,14 @@ begin
   end process Divide_Frequency;
   
   sca_data_reg <= x"DCFEB123" when (sca_reset_out = '0') else
-                sca_data_reg(30 downto 0) & sca_data_reg(31) when rising_edge(sca_clk_out) else
+                sca_data_reg(30 downto 0) & sca_data_reg(31) when falling_edge(sca_clk_out) else
                 sca_data_reg;
 
   sca_data_reg_in <= x"abababab" when (sca_reset_out = '0') else
                 sca_data_reg_in(30 downto 0) & sca_dat_in when falling_edge(sca_clk_out) else
                 sca_data_reg_in;
 
-  SCA_CLK_mask <= '0', '1' after 32.5 us, '0' after 135 us, '1' after 141 us, '0' after 243.5 us;
+  SCA_CLK_mask <= '0', '1' after 32.5 us, '0' after 135 us, '1' after 141 us, '0' after 243.5 us, '1' after 251 us, '0' after 352 us;
   SCA_CLK_OUT   <= sca_clk_mask and clk312khz;
   SCA_RESET_OUT <= '1', '0' after 10 us, '1' after 20 us;
   SCA_DAT_OUT   <= sca_data_reg(31);

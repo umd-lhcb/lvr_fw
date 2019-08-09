@@ -1,15 +1,15 @@
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
-@N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":407:4:407:5|Found counter in view:work.top_lvr_fw(rtl) instance DTYCYC_CNT[4:0] 
+@N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":418:4:418:5|Found counter in view:work.top_lvr_fw(rtl) instance DTYCYC_CNT[4:0] 
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":218:4:218:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\slow_pulseen_gen.vhd":73:4:73:5|Found counter in view:work.SLOW_PULSE_EN_GEN(rtl) instance CNT_VAL[20:0] 
 @N: MF176 |Default generator successful 
 @N: MF176 |Default generator successful 
 @N: MF176 |Default generator successful 
 @N: FP130 |Promoting Net CLK_5M_GL_c_c on CLKINT  CLK_5M_GL_inferred_clock 
-@N: FP130 |Promoting Net MASTER_RST_B on CLKINT  I_50 
-@N: FP130 |Promoting Net spi_rst_b on CLKINT  I_51 
-@N: FP130 |Promoting Net spi_slave_pm.SPI_CLR on CLKINT  I_52 
+@N: FP130 |Promoting Net MASTER_RST_B on CLKINT  I_56 
+@N: FP130 |Promoting Net spi_rst_b on CLKINT  I_57 
+@N: FP130 |Promoting Net spi_slave_pm.SPI_CLR on CLKINT  I_58 
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
 @N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.
 @N: MT582 |Estimated period and frequency not reported for given clock unless the clock has at least one timing path which is not a false or a max delay path and that does not have excessive slack

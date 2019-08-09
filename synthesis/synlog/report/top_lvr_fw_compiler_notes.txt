@@ -10,8 +10,8 @@
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":55:7:55:24|Synthesizing work.main_sequencer_new.rtl.
 @N: CD231 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":99:19:99:20|Using onehot encoding for type seq_sm_states. For example, enumeration init is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":35:7:35:15|Synthesizing work.spi_slave.rtl.
-@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":77:21:77:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
-@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":342:6:342:19|OTHERS clause is not synthesized.
+@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":78:21:78:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
+@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":341:6:341:19|OTHERS clause is not synthesized.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":797:10:797:15|Synthesizing proasic3.clkbuf.syn_black_box.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":218:4:218:5|Trying to extract state machine for register SPI_SM.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Trying to extract state machine for register SEQUENCER_STATE.
@@ -22,9 +22,9 @@
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":88:4:88:19|Input TEMP_FAILSAFE_EN is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":92:4:92:10|Input RX_FPGA is unused.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":98:4:98:11|Input ADDR_SEL is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":131:4:131:11|Input UNUSED_1 is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":132:4:132:11|Input UNUSED_2 is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":133:4:133:15|Input J11_25_TCONN is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":134:4:134:15|Input J11_27_TCONN is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":134:4:134:11|Input UNUSED_1 is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":135:4:135:11|Input UNUSED_2 is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":136:4:136:15|Input J11_25_TCONN is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":137:4:137:15|Input J11_27_TCONN is unused.
 @N|Running in 64-bit mode
 

@@ -98,13 +98,13 @@ SIZE="4679"
 ENDFILE
 VALUE "<project>\hdl\spi_slave.vhd,hdl"
 STATE="utd"
-TIME="1563829748"
-SIZE="13961"
+TIME="1565379671"
+SIZE="13759"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1565279356"
-SIZE="43291"
+TIME="1565379809"
+SIZE="43747"
 ENDFILE
 VALUE "<project>\simulation\run.do,do"
 STATE="utd"
@@ -113,13 +113,18 @@ SIZE="943"
 ENDFILE
 VALUE "<project>\simulation\TB_TOP_LVR_FW_presynth_simulation.log,log"
 STATE="utd"
-TIME="1565209789"
-SIZE="14363"
+TIME="1565379870"
+SIZE="10378"
+ENDFILE
+VALUE "<project>\simulation\wave.do,do"
+STATE="utd"
+TIME="1565282076"
+SIZE="4392"
 ENDFILE
 VALUE "<project>\stimulus\tb_top_lvr_fw.vhd,tb_hdl"
 STATE="utd"
-TIME="1565209481"
-SIZE="9303"
+TIME="1565377484"
+SIZE="9340"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
@@ -180,7 +185,7 @@ LIST Other_Association
 ENDLIST
 LIST SimulationOptions
 UseAutomaticDoFile=true
-IncludeWaveDo=false
+IncludeWaveDo=true
 Type=max
 RunTime=1000ns
 Resolution=1ps
@@ -198,10 +203,10 @@ VCDFileName=power.vcd
 VHDL2008=false
 Verilog2001=false
 SystemVerilog=false
-TimeUnit=1
-TimeUnitBase=ns
-Precision=100
-PrecisionBase=ps
+TimeUnit=400
+TimeUnitBase=us
+Precision=400
+PrecisionBase=us
 ENDLIST
 LIST ModelSimLibPath
 UseCustomPath=FALSE
@@ -306,8 +311,10 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Compile:top_lvr_fw_compile_log.rpt
 StartPage;StartPage;0
-ACTIVEVIEW;StartPage
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"

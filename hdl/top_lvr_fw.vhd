@@ -112,6 +112,9 @@ entity top_lvr_fw is
     db_spi_state0     : out std_logic;  
     db_spi_state1     : out std_logic;  
     db_spi_state2     : out std_logic;  
+    db_spi_cnt0     : out std_logic;  
+    db_spi_cnt1     : out std_logic;  
+    db_spi_cnt2     : out std_logic;  
     
 
 -- CHANNEL ENABLES
@@ -203,6 +206,7 @@ architecture RTL of top_lvr_fw is
       SPI_RX_STRB : out std_logic;  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
 
       P_TX_32BIT_REG : out std_logic_vector(31 downto 0);
+    clk_fcnt_out : out std_logic_vector(4 downto 0);
       P_STATE_ID     : out std_logic_vector(3 downto 0)
 
       );
@@ -303,11 +307,12 @@ architecture RTL of top_lvr_fw is
 
 
   -- SPI variables
-  signal SPI_TX_WORD        : std_logic_vector(31 downto 0) := x"dbdb1234";  -- 32 BIT SERIAL WORD TO BE TRANSMITTED
+  signal SPI_TX_WORD        : std_logic_vector(31 downto 0) := x"dcb02019";  -- 32 BIT SERIAL WORD TO BE TRANSMITTED
   signal SPI_RX_WORD        : std_logic_vector(31 downto 0);  -- RECEIVED SERIAL FRAME
   signal SPI_RX_STRB        : std_logic;  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
   signal SPI_P_TX_32BIT_REG : std_logic_vector(31 downto 0);
   signal SPI_P_STATE_ID     : std_logic_vector(3 downto 0);
+  signal clk_fcnt_out     : std_logic_vector(4 downto 0);
   signal sca_clk_out_buf, spi_rst_b : std_logic;
   
 -- DEBUG
@@ -339,10 +344,16 @@ begin
       SPI_RX_STRB => SPI_RX_STRB,  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
 
       P_TX_32BIT_REG => SPI_P_TX_32BIT_REG,
+    clk_fcnt_out => clk_fcnt_out,       
       P_STATE_ID     => SPI_P_STATE_ID
       );
 
-  spi_tx_word <= spi_rx_word when falling_edge(spi_rx_strb) else spi_tx_word;
+  db_spi_cnt0 <= clk_fcnt_out(0);
+  db_spi_cnt1 <= clk_fcnt_out(1);
+  db_spi_cnt2 <= clk_fcnt_out(2);
+  spi_tx_word <= x"dcb02019" when spi_rst_b = '0' else
+                 spi_rx_word when falling_edge(spi_rx_strb) else
+                 spi_tx_word;
 
   -- DEBUG SPI signals
   db_sca_dat_out <= sca_dat_out;

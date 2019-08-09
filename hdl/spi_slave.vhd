@@ -27,7 +27,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.STD_LOGIC_ARITH.all;
 use IEEE.STD_LOGIC_UNSIGNED.all;
 use IEEE.STD_LOGIC_MISC.all;
---USE IEEE.NUMERIC_STD.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
 library proasic3;
 use proasic3.all;
@@ -46,6 +46,7 @@ entity spi_slave is
     SPI_RX_STRB : out std_logic;  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
 
     P_TX_32BIT_REG : out std_logic_vector(31 downto 0);
+    clk_fcnt_out : out std_logic_vector(4 downto 0);
     P_STATE_ID     : out std_logic_vector(3 downto 0)
 
     );
@@ -199,10 +200,9 @@ begin
       when 31 =>
         N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);
       when 32 =>
-        N_I_SCA_DAT_IN <= '1';  -- Error if all 33 cases were not covered
+        N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);  -- Holds the last bit for a while
 
     end case;
-
 
 
   end process;
@@ -275,50 +275,49 @@ begin
 
       when INIT =>
 
-        N_CLK_FCNT_EN <= '0';                -- DISABLE THE FRAME COUNTER
-        N_SPI_CLR     <= '1';                -- SEND OUT A CLEAR TO INITIALIZE THE FRAME COUNTER AND SPI INPUT DATA REGISTER
+        N_CLK_FCNT_EN <= '0';           -- DISABLE THE FRAME COUNTER
 
-        N_SPI_SM <= DET_NULLCLK;             -- GO WAIT FOR DETECTION OF A NULL CLOCK CONDITION TO SYNCH THE SPI FRAME
+        N_SPI_SM <= DET_NULLCLK;  -- GO WAIT FOR DETECTION OF A NULL CLOCK CONDITION TO SYNCH THE SPI FRAME
 
-        N_NULLCLK_CNT <= 0;                  -- INITIALIZE THE NULL CLOCK COUNTER
+        N_NULLCLK_CNT <= 0;             -- INITIALIZE THE NULL CLOCK COUNTER
 
         STATE_ID <= "0000";
 
-      when DET_NULLCLK =>                    -- WAIT HERE UNTIL THE SPI CLOCK IS NULL FOR AT LEASTY 3/4 SPI CLOCK PERIOD
-        N_CLK_FCNT_EN <= '0';                -- DISABLE TO THE FRAME COUNTER
-        N_SPI_CLR     <= '1';                -- SEND OUT A CLEAR TO INITIALIZE THE FRAME COUNTER AND SPI INPUT DATA REGISTER
+      when DET_NULLCLK =>  -- WAIT HERE UNTIL THE SPI CLOCK IS NULL FOR AT LEASTY 3/4 SPI CLOCK PERIOD
+        N_CLK_FCNT_EN <= '0';           -- DISABLE TO THE FRAME COUNTER
 
-        if NULLCLK_CNT > 17 then             -- ONE SPI CLOCK PERIOD COUNT WHILE HIGH IS 5MHZ/312KHZ/2 = ~ 8 COUNTS
-          N_NULLCLK_CNT <= 0;                -- IF NULL CLOCK, THEN CLEAR THE CNT
-          N_SPI_SM      <= EN_DET_FRAME1CNT; -- AND GO WAIT FOR THE NEXT FRAME TO BE COMPLETED
+        if NULLCLK_CNT > 17 then  -- ONE SPI CLOCK PERIOD COUNT WHILE HIGH IS 5MHZ/312KHZ/2 = ~ 8 COUNTS
+          N_SPI_CLR     <= '1';  -- SEND OUT A CLEAR TO INITIALIZE THE FRAME COUNTER AND SPI INPUT DATA REGISTER
+          N_NULLCLK_CNT <= 0;           -- IF NULL CLOCK, THEN CLEAR THE CNT
+          N_SPI_SM      <= EN_DET_FRAME1CNT;  -- AND GO WAIT FOR THE NEXT FRAME TO BE COMPLETED
 
-        elsif SCA_CLK_OUT_2C = '0' then      -- ONLY COUNT DURING THE LOGIC LOW PORTION OF THE SPI CLOCK SIGNAL
+        elsif SCA_CLK_OUT_2C = '0' then  -- ONLY COUNT DURING THE LOGIC LOW PORTION OF THE SPI CLOCK SIGNAL
           N_NULLCLK_CNT <= NULLCLK_CNT + 1;
-          N_SPI_SM      <= DET_NULLCLK;      -- STAY HERE UNTIL NULL DETECTED
+          N_SPI_SM      <= DET_NULLCLK;  -- STAY HERE UNTIL NULL DETECTED
 
         else
-          N_NULLCLK_CNT <= 0;                -- ONLY GET HERE IF THE SPI CLOCK IS ACTIVE
-          N_SPI_SM      <= DET_NULLCLK;      -- STAY HERE UNTIL NULL DETECTED
+          N_NULLCLK_CNT <= 0;  -- ONLY GET HERE IF THE SPI CLOCK IS ACTIVE
+          N_SPI_SM      <= DET_NULLCLK;  -- STAY HERE UNTIL NULL DETECTED
 
         end if;
 
         STATE_ID <= "0001";
 
 
-      when EN_DET_FRAME1CNT =>               -- ENABLE THE DET FRAME CNT AND ALSO RELEASE THE CLEAR
-        N_CLK_FCNT_EN <= '1';                -- ENABLE THE FRAME COUNTER
-        N_SPI_CLR     <= '0';                -- DISABLE THE SPI_CLR
-        N_SPI_SM      <= PIPELINE_DELAY;     -- GO WAIT ONE MORE CLOCK CYCLE TO ALLOW FOR THE CLOCK BOUNDARY CROSSING
+      when EN_DET_FRAME1CNT =>  -- ENABLE THE DET FRAME CNT
+        N_SPI_CLR     <= '0';           -- DISABLE THE SPI_CLR
+        N_CLK_FCNT_EN <= '1';           -- ENABLE THE FRAME COUNTER
+        N_SPI_SM      <= PIPELINE_DELAY;  -- GO WAIT ONE MORE CLOCK CYCLE TO ALLOW FOR THE CLOCK BOUNDARY CROSSING
 
         STATE_ID <= "0010";
 
 
-      when PIPELINE_DELAY =>                 -- NEED A PIPELINE DELAY TO ACCOUNT FOR THE CLOCK BOUNDARY CROSSING REGISTERS
+      when PIPELINE_DELAY =>  -- NEED A PIPELINE DELAY TO ACCOUNT FOR THE CLOCK BOUNDARY CROSSING REGISTERS
         N_SPI_SM <= DET_FRAME_DONE;
 
         STATE_ID <= "0011";
 
-      when DET_FRAME_DONE =>                 -- WAIT HERE UNTIL 32 SPI CLOCK PERIODS HAVE BEEN DETECTED.
+      when DET_FRAME_DONE =>  -- WAIT HERE UNTIL 32 SPI CLOCK PERIODS HAVE BEEN DETECTED.
 
 
         if CLK_FCNT_2C = 32 then
@@ -327,13 +326,13 @@ begin
           N_SPI_SM <= DET_FRAME_DONE;
         end if;
 
-        N_TX_32BIT_REG <= SPI_TX_WORD;       -- COPY THE DATA WORD TO BE TRANSMITTED DURING NEXT FRAME INTO A REGISTER
+        N_TX_32BIT_REG <= SPI_TX_WORD;  -- COPY THE DATA WORD TO BE TRANSMITTED DURING NEXT FRAME INTO A REGISTER
 
         STATE_ID <= "0100";
 
       when PROCESS_FRAME =>
-        N_I_SPI_RX_WORD <= RX_32BIT_SREG;    -- SEND OUT A COPY THE RECEIVED SERIAL 32 BIT WORD
-        N_I_SPI_RX_STRB <= '1';              -- SINGLE CLOCK PULSE STROBE INDICATES NEW FRAME READY
+        N_I_SPI_RX_WORD <= RX_32BIT_SREG;  -- SEND OUT A COPY THE RECEIVED SERIAL 32 BIT WORD
+        N_I_SPI_RX_STRB <= '1';  -- SINGLE CLOCK PULSE STROBE INDICATES NEW FRAME READY
         N_SPI_SM        <= INIT;
 
         STATE_ID <= "0101";
@@ -356,5 +355,7 @@ begin
   P_STATE_ID <= STATE_ID;
 
   P_TX_32BIT_REG <= TX_32BIT_REG;
+
+  clk_fcnt_out <= std_logic_vector(to_unsigned(clk_fcnt_2c, 5));
 
 end RTL;

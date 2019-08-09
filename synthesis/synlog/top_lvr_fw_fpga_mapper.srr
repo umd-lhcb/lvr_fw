@@ -1,4 +1,4 @@
-# Thu Aug 08 12:23:01 2019
+# Fri Aug 09 12:44:47 2019
 
 Synopsys Microsemi Technology Mapper, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -16,16 +16,16 @@ Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0
 
 
 
-Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 107MB peak: 109MB)
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
 
 
 Available hyper_sources - for debug and ip models
 	None Found
 
 
-Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:01s; Memory used current: 109MB peak: 110MB)
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
 
-@N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":407:4:407:5|Found counter in view:work.top_lvr_fw(rtl) instance DTYCYC_CNT[4:0] 
+@N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":418:4:418:5|Found counter in view:work.top_lvr_fw(rtl) instance DTYCYC_CNT[4:0] 
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":218:4:218:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
 Encoding state machine SPI_SM[0:5] (in view: work.spi_slave(rtl))
 original code -> new code
@@ -66,42 +66,38 @@ original code -> new code
 @N: MF176 |Default generator successful 
 @N: MF176 |Default generator successful 
 
-Starting factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 112MB peak: 112MB)
+Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 112MB peak: 112MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 114MB peak: 115MB)
+Finished factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 114MB peak: 114MB)
 
 @W: BN132 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance CONTROL34.CH_ACTIVE_STAT because it is equivalent to instance CONTROL12.CH_ACTIVE_STAT. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance CONTROL78.CH_ACTIVE_STAT because it is equivalent to instance CONTROL56.CH_ACTIVE_STAT. To keep the instance, apply constraint syn_preserve=1 on the instance.
 
-Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 113MB peak: 115MB)
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 113MB peak: 115MB)
 
 
-Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 113MB peak: 115MB)
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 113MB peak: 115MB)
 
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 117MB peak: 117MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 118MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 117MB peak: 118MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 118MB peak: 118MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 117MB peak: 118MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 118MB peak: 118MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 117MB peak: 118MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 117MB peak: 119MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 116MB peak: 118MB)
+Finished preparing to map (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 117MB peak: 119MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 119MB peak: 121MB)
+Finished technology mapping (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 120MB)
 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.CLK_FCNT_1C[4] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.CLK_FCNT_1C[3] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.CLK_FCNT_1C[2] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.CLK_FCNT_1C[1] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.CLK_FCNT_1C[0] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.CLK_FCNT_1C[5] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
 @A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":218:4:218:5|Boundary register spi_slave_pm.SCA_CLK_OUT_1C (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
 
 High Fanout Net Report
@@ -109,7 +105,7 @@ High Fanout Net Report
 
 Driver Instance / Pin Name                 Fanout, notes                   
 ---------------------------------------------------------------------------
-spi_rst_b / Y                              92 : 92 asynchronous set/reset  
+spi_rst_b / Y                              124 : 124 asynchronous set/reset
 MASTER_RST_B / Q                           234 : 233 asynchronous set/reset
 CONTROL78.SEQUENCER_STATE_ns_o2[5] / Y     44                              
 CONTROL56.SEQUENCER_STATE_ns_o2[5] / Y     44                              
@@ -117,20 +113,20 @@ CONTROL34.SEQUENCER_STATE_ns_o2[5] / Y     44
 CONTROL12.SEQUENCER_STATE_ns_o2[5] / Y     44                              
 spi_slave_pm.SPI_SM[0] / Q                 36                              
 spi_slave_pm.SPI_SM[1] / Q                 35                              
-spi_slave_pm.m6_0 / Y                      31                              
+spi_slave_pm.m6 / Y                        31                              
 spi_slave_pm.SPI_CLR / Q                   70 : 70 asynchronous set/reset  
 OVT_FS.SIGOUT / Q                          25                              
 ===========================================================================
 
 @N: FP130 |Promoting Net CLK_5M_GL_c_c on CLKINT  CLK_5M_GL_inferred_clock 
-@N: FP130 |Promoting Net MASTER_RST_B on CLKINT  I_50 
-@N: FP130 |Promoting Net spi_rst_b on CLKINT  I_51 
-@N: FP130 |Promoting Net spi_slave_pm.SPI_CLR on CLKINT  I_52 
+@N: FP130 |Promoting Net MASTER_RST_B on CLKINT  I_56 
+@N: FP130 |Promoting Net spi_rst_b on CLKINT  I_57 
+@N: FP130 |Promoting Net spi_slave_pm.SPI_CLR on CLKINT  I_58 
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 120MB peak: 122MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 121MB)
 
 Replicating Sequential Instance OVT_FS.SIGOUT, fanout 25 segments 2
-Replicating Combinational Instance spi_slave_pm.m6_0, fanout 31 segments 2
+Replicating Combinational Instance spi_slave_pm.m6, fanout 31 segments 2
 Replicating Sequential Instance spi_slave_pm.SPI_SM[1], fanout 35 segments 2
 Replicating Sequential Instance spi_slave_pm.SPI_SM[0], fanout 36 segments 2
 Replicating Combinational Instance CONTROL12.SEQUENCER_STATE_ns_o2[5], fanout 44 segments 2
@@ -143,7 +139,7 @@ Added 8 Cells via replication
 	Added 3 Sequential Cells via replication
 	Added 5 Combinational Cells via replication
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 120MB peak: 122MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 121MB)
 
 
 
@@ -174,19 +170,19 @@ Clock Tree ID     Driving Element                Drive Element Type     Fanout  
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 118MB peak: 122MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 117MB peak: 121MB)
 
 Writing Analyst data base Z:\windows\lvr_fw\lvr_fw_manuel\synthesis\synwork\top_lvr_fw_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 119MB peak: 122MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 118MB peak: 121MB)
 
 Writing EDIF Netlist and constraint files
 L-2016.09M-SP1-5
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 120MB peak: 122MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 119MB peak: 121MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 119MB peak: 122MB)
+Start final timing analysis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 118MB peak: 121MB)
 
 @W: MT420 |Found inferred clock top_lvr_fw|CLK40MHZ_OSC with period 10.00ns. Please declare a user-defined clock on object "p:CLK40MHZ_OSC"
 @W: MT420 |Found inferred clock top_lvr_fw|SCA_CLK_OUT with period 10.00ns. Please declare a user-defined clock on object "p:SCA_CLK_OUT"
@@ -195,7 +191,7 @@ Start final timing analysis (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:0
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Thu Aug 08 12:23:08 2019
+# Timing Report written on Fri Aug 09 12:44:51 2019
 #
 
 
@@ -222,9 +218,9 @@ Worst slack in design: -5.744
                                            Requested     Estimated     Requested     Estimated                Clock        Clock              
 Starting Clock                             Frequency     Frequency     Period        Period        Slack      Type         Group              
 ----------------------------------------------------------------------------------------------------------------------------------------------
-spi_slave|I_SPI_RX_STRB_inferred_clock     100.0 MHz     NA            10.000        NA            NA         inferred     Inferred_clkgroup_0
-top_lvr_fw|CLK40MHZ_OSC                    100.0 MHz     296.4 MHz     10.000        3.373         6.627      inferred     Inferred_clkgroup_1
-top_lvr_fw|CLK_5M_GL_inferred_clock        100.0 MHz     63.5 MHz      10.000        15.744        -5.744     inferred     Inferred_clkgroup_2
+spi_slave|I_SPI_RX_STRB_inferred_clock     100.0 MHz     NA            10.000        NA            NA         inferred     Inferred_clkgroup_2
+top_lvr_fw|CLK40MHZ_OSC                    100.0 MHz     296.4 MHz     10.000        3.373         6.627      inferred     Inferred_clkgroup_0
+top_lvr_fw|CLK_5M_GL_inferred_clock        100.0 MHz     63.5 MHz      10.000        15.744        -5.744     inferred     Inferred_clkgroup_1
 top_lvr_fw|SCA_CLK_OUT                     100.0 MHz     74.4 MHz      10.000        13.443        -3.443     inferred     Inferred_clkgroup_3
 ==============================================================================================================================================
 @N: MT582 |Estimated period and frequency not reported for given clock unless the clock has at least one timing path which is not a false or a max delay path and that does not have excessive slack
@@ -240,11 +236,11 @@ Clocks                                                                          
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Starting                                Ending                                  |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-spi_slave|I_SPI_RX_STRB_inferred_clock  top_lvr_fw|CLK_5M_GL_inferred_clock     |  No paths    -       |  No paths    -      |  No paths    -      |  Diff grp    -    
 top_lvr_fw|CLK40MHZ_OSC                 top_lvr_fw|CLK40MHZ_OSC                 |  10.000      6.627   |  No paths    -      |  No paths    -      |  No paths    -    
-top_lvr_fw|CLK_5M_GL_inferred_clock     spi_slave|I_SPI_RX_STRB_inferred_clock  |  No paths    -       |  No paths    -      |  Diff grp    -      |  No paths    -    
 top_lvr_fw|CLK_5M_GL_inferred_clock     top_lvr_fw|CLK_5M_GL_inferred_clock     |  10.000      -5.744  |  No paths    -      |  No paths    -      |  No paths    -    
+top_lvr_fw|CLK_5M_GL_inferred_clock     spi_slave|I_SPI_RX_STRB_inferred_clock  |  No paths    -       |  No paths    -      |  Diff grp    -      |  No paths    -    
 top_lvr_fw|CLK_5M_GL_inferred_clock     top_lvr_fw|SCA_CLK_OUT                  |  Diff grp    -       |  No paths    -      |  No paths    -      |  No paths    -    
+spi_slave|I_SPI_RX_STRB_inferred_clock  top_lvr_fw|CLK_5M_GL_inferred_clock     |  No paths    -       |  No paths    -      |  No paths    -      |  Diff grp    -    
 top_lvr_fw|SCA_CLK_OUT                  top_lvr_fw|CLK_5M_GL_inferred_clock     |  Diff grp    -       |  No paths    -      |  No paths    -      |  No paths    -    
 top_lvr_fw|SCA_CLK_OUT                  top_lvr_fw|SCA_CLK_OUT                  |  10.000      -3.443  |  No paths    -      |  No paths    -      |  No paths    -    
 =======================================================================================================================================================================
@@ -673,10 +669,10 @@ spi_slave_pm.CLK_FCNT[2]          top_lvr_fw|SCA_CLK_OUT     DFN1C1       Q     
 spi_slave_pm.CLK_FCNT[4]          top_lvr_fw|SCA_CLK_OUT     DFN1C1       Q       CLK_FCNT[4]          0.737       -2.332
 spi_slave_pm.CLK_FCNT[3]          top_lvr_fw|SCA_CLK_OUT     DFN1C1       Q       CLK_FCNT[3]          0.737       -2.250
 spi_slave_pm.CLK_FCNT[5]          top_lvr_fw|SCA_CLK_OUT     DFN1C1       Q       CLK_FCNT[5]          0.737       0.044 
-spi_slave_pm.TX_32BIT_SREG[1]     top_lvr_fw|SCA_CLK_OUT     DFN1E1C1     Q       TX_32BIT_SREG[1]     0.737       2.981 
-spi_slave_pm.TX_32BIT_SREG[0]     top_lvr_fw|SCA_CLK_OUT     DFN1E1C1     Q       TX_32BIT_SREG[0]     0.737       2.987 
-spi_slave_pm.TX_32BIT_SREG[3]     top_lvr_fw|SCA_CLK_OUT     DFN1E1C1     Q       TX_32BIT_SREG[3]     0.737       2.998 
-spi_slave_pm.TX_32BIT_SREG[5]     top_lvr_fw|SCA_CLK_OUT     DFN1E1C1     Q       TX_32BIT_SREG[5]     0.737       2.998 
+spi_slave_pm.TX_32BIT_SREG[0]     top_lvr_fw|SCA_CLK_OUT     DFN1E1C1     Q       TX_32BIT_SREG[0]     0.737       2.892 
+spi_slave_pm.TX_32BIT_SREG[1]     top_lvr_fw|SCA_CLK_OUT     DFN1E1C1     Q       TX_32BIT_SREG[1]     0.737       2.949 
+spi_slave_pm.TX_32BIT_SREG[3]     top_lvr_fw|SCA_CLK_OUT     DFN1E1C1     Q       TX_32BIT_SREG[3]     0.737       2.967 
+spi_slave_pm.TX_32BIT_SREG[5]     top_lvr_fw|SCA_CLK_OUT     DFN1E1C1     Q       TX_32BIT_SREG[5]     0.737       2.967 
 =========================================================================================================================
 
 
@@ -728,10 +724,10 @@ spi_slave_pm.CLK_FCNT[0]              DFN1C1     Q        Out     0.737     0.73
 CLK_FCNT[0]                           Net        -        -       2.353     -           20        
 spi_slave_pm.CLK_FCNT_RNIR3UA1[4]     NOR3       C        In      -         3.090       -         
 spi_slave_pm.CLK_FCNT_RNIR3UA1[4]     NOR3       Y        Out     0.751     3.841       -         
-m4_0_2                                Net        -        -       0.322     -           1         
+m4_2                                  Net        -        -       0.322     -           1         
 spi_slave_pm.CLK_FCNT_RNIM4I72[2]     NOR2B      A        In      -         4.162       -         
 spi_slave_pm.CLK_FCNT_RNIM4I72[2]     NOR2B      Y        Out     0.488     4.651       -         
-N_107_mux                             Net        -        -       1.184     -           4         
+N_101_mux                             Net        -        -       1.184     -           4         
 spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      A        In      -         5.834       -         
 spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      Y        Out     0.636     6.471       -         
 un2_clk_fcnt_en                       Net        -        -       0.386     -           2         
@@ -782,10 +778,10 @@ spi_slave_pm.CLK_FCNT[1]              DFN1C1     Q        Out     0.737     0.73
 CLK_FCNT[1]                           Net        -        -       1.994     -           12        
 spi_slave_pm.CLK_FCNT_RNIR0KS[2]      NOR2       B        In      -         2.730       -         
 spi_slave_pm.CLK_FCNT_RNIR0KS[2]      NOR2       Y        Out     0.646     3.377       -         
-m4_0_1                                Net        -        -       0.322     -           1         
+m4_1                                  Net        -        -       0.322     -           1         
 spi_slave_pm.CLK_FCNT_RNIM4I72[2]     NOR2B      B        In      -         3.698       -         
 spi_slave_pm.CLK_FCNT_RNIM4I72[2]     NOR2B      Y        Out     0.516     4.215       -         
-N_107_mux                             Net        -        -       1.184     -           4         
+N_101_mux                             Net        -        -       1.184     -           4         
 spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      A        In      -         5.398       -         
 spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      Y        Out     0.636     6.034       -         
 un2_clk_fcnt_en                       Net        -        -       0.386     -           2         
@@ -836,10 +832,10 @@ spi_slave_pm.CLK_FCNT[2]              DFN1C1     Q        Out     0.737     0.73
 CLK_FCNT[2]                           Net        -        -       1.669     -           9         
 spi_slave_pm.CLK_FCNT_RNIR0KS[2]      NOR2       A        In      -         2.405       -         
 spi_slave_pm.CLK_FCNT_RNIR0KS[2]      NOR2       Y        Out     0.507     2.913       -         
-m4_0_1                                Net        -        -       0.322     -           1         
+m4_1                                  Net        -        -       0.322     -           1         
 spi_slave_pm.CLK_FCNT_RNIM4I72[2]     NOR2B      B        In      -         3.234       -         
 spi_slave_pm.CLK_FCNT_RNIM4I72[2]     NOR2B      Y        Out     0.516     3.750       -         
-N_107_mux                             Net        -        -       1.184     -           4         
+N_101_mux                             Net        -        -       1.184     -           4         
 spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      A        In      -         4.934       -         
 spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      Y        Out     0.636     5.570       -         
 un2_clk_fcnt_en                       Net        -        -       0.386     -           2         
@@ -890,10 +886,10 @@ spi_slave_pm.CLK_FCNT[4]              DFN1C1     Q        Out     0.737     0.73
 CLK_FCNT[4]                           Net        -        -       1.279     -           5         
 spi_slave_pm.CLK_FCNT_RNIR3UA1[4]     NOR3       B        In      -         2.016       -         
 spi_slave_pm.CLK_FCNT_RNIR3UA1[4]     NOR3       Y        Out     0.714     2.730       -         
-m4_0_2                                Net        -        -       0.322     -           1         
+m4_2                                  Net        -        -       0.322     -           1         
 spi_slave_pm.CLK_FCNT_RNIM4I72[2]     NOR2B      A        In      -         3.052       -         
 spi_slave_pm.CLK_FCNT_RNIM4I72[2]     NOR2B      Y        Out     0.488     3.540       -         
-N_107_mux                             Net        -        -       1.184     -           4         
+N_101_mux                             Net        -        -       1.184     -           4         
 spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      A        In      -         4.724       -         
 spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      Y        Out     0.636     5.360       -         
 un2_clk_fcnt_en                       Net        -        -       0.386     -           2         
@@ -944,10 +940,10 @@ spi_slave_pm.CLK_FCNT[3]              DFN1C1     Q        Out     0.737     0.73
 CLK_FCNT[3]                           Net        -        -       1.423     -           6         
 spi_slave_pm.CLK_FCNT_RNIR3UA1[4]     NOR3       A        In      -         2.160       -         
 spi_slave_pm.CLK_FCNT_RNIR3UA1[4]     NOR3       Y        Out     0.488     2.649       -         
-m4_0_2                                Net        -        -       0.322     -           1         
+m4_2                                  Net        -        -       0.322     -           1         
 spi_slave_pm.CLK_FCNT_RNIM4I72[2]     NOR2B      A        In      -         2.970       -         
 spi_slave_pm.CLK_FCNT_RNIM4I72[2]     NOR2B      Y        Out     0.488     3.458       -         
-N_107_mux                             Net        -        -       1.184     -           4         
+N_101_mux                             Net        -        -       1.184     -           4         
 spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      A        In      -         4.642       -         
 spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      Y        Out     0.636     5.278       -         
 un2_clk_fcnt_en                       Net        -        -       0.386     -           2         
@@ -981,10 +977,10 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 Timing exceptions that could not be applied
 None
 
-Finished final timing analysis (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 119MB peak: 122MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 119MB peak: 121MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 119MB peak: 122MB)
+Finished timing report (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 119MB peak: 121MB)
 
 --------------------------------------------------------------------------------
 Target Part: A3PN250_VQFP100_STD
@@ -995,58 +991,62 @@ Report for cell top_lvr_fw.rtl
                AO1    94      1.0       94.0
               AO13     5      1.0        5.0
               AO18    25      1.0       25.0
-              AO1A    23      1.0       23.0
+              AO1A    22      1.0       22.0
+              AO1D     1      1.0        1.0
              AOI1B    12      1.0       12.0
                AX1     5      1.0        5.0
+              AX1A     1      1.0        1.0
               AX1C    10      1.0       10.0
               AX1D     1      1.0        1.0
-              AX1E     2      1.0        2.0
              AXOI5     1      1.0        1.0
             CLKINT     4      0.0        0.0
                GND    12      0.0        0.0
-               INV     2      1.0        2.0
+               INV     1      1.0        1.0
               MAJ3     5      1.0        5.0
              MIN3X     4      1.0        4.0
-               MX2    19      1.0       19.0
-              MX2B     4      1.0        4.0
-              MX2C    17      1.0       17.0
-              NOR2    39      1.0       39.0
-             NOR2A    55      1.0       55.0
-             NOR2B    33      1.0       33.0
-              NOR3    15      1.0       15.0
-             NOR3A    13      1.0       13.0
-             NOR3B    29      1.0       29.0
-             NOR3C    45      1.0       45.0
+               MX2    21      1.0       21.0
+              MX2A     1      1.0        1.0
+              MX2B     2      1.0        2.0
+              MX2C    16      1.0       16.0
+              NOR2    40      1.0       40.0
+             NOR2A    57      1.0       57.0
+             NOR2B    25      1.0       25.0
+              NOR3    16      1.0       16.0
+             NOR3A    11      1.0       11.0
+             NOR3B    28      1.0       28.0
+             NOR3C    44      1.0       44.0
                OA1     1      1.0        1.0
-              OA1A     6      1.0        6.0
+              OA1A     8      1.0        8.0
               OA1B    10      1.0       10.0
               OA1C     4      1.0        4.0
               OAI1     5      1.0        5.0
-               OR2    17      1.0       17.0
-              OR2A     8      1.0        8.0
-              OR2B     2      1.0        2.0
-               OR3     7      1.0        7.0
+               OR2    23      1.0       23.0
+              OR2A     6      1.0        6.0
+              OR2B     4      1.0        4.0
+               OR3     8      1.0        8.0
               OR3A    64      1.0       64.0
               OR3C     4      1.0        4.0
                VCC    12      0.0        0.0
-              XA1A     5      1.0        5.0
+               XA1     1      1.0        1.0
+              XA1A     7      1.0        7.0
               XA1B     4      1.0        4.0
-             XNOR2     3      1.0        3.0
+             XNOR2     1      1.0        1.0
              XNOR3    30      1.0       30.0
               XO1A     1      1.0        1.0
               XOR2   192      1.0      192.0
               XOR3     5      1.0        5.0
 
 
-            DFI1C0     6      1.0        6.0
-              DFN0    32      1.0       32.0
-            DFN1C0   148      1.0      148.0
+            DFI1C0     2      1.0        2.0
+            DFN0C0    20      1.0       20.0
+            DFN0P0    12      1.0       12.0
+            DFN1C0   156      1.0      156.0
             DFN1C1    39      1.0       39.0
-          DFN1E0C0    30      1.0       30.0
+          DFN1E0C0    31      1.0       31.0
           DFN1E0P0     3      1.0        3.0
-          DFN1E1C0    72      1.0       72.0
+          DFN1E1C0    71      1.0       71.0
           DFN1E1C1    31      1.0       31.0
-            DFN1P0    71      1.0       71.0
+            DFN1P0    67      1.0       67.0
                    -----          ----------
              TOTAL  1376              1348.0
 
@@ -1055,22 +1055,22 @@ Report for cell top_lvr_fw.rtl
               cell count
             CLKBUF     1
              INBUF    17
-            OUTBUF    43
+            OUTBUF    46
                    -----
-             TOTAL    61
+             TOTAL    64
 
 
 Core Cells         : 1348 of 6144 (22%)
-IO Cells           : 61
+IO Cells           : 64
 
   RAM/ROM Usage Summary
 Block Rams : 0 of 8 (0%)
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 27MB peak: 122MB)
+At Mapper Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 27MB peak: 121MB)
 
-Process took 0h:00m:06s realtime, 0h:00m:06s cputime
-# Thu Aug 08 12:23:08 2019
+Process took 0h:00m:04s realtime, 0h:00m:04s cputime
+# Fri Aug 09 12:44:52 2019
 
 ###########################################################]

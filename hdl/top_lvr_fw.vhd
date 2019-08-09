@@ -327,7 +327,7 @@ architecture RTL of top_lvr_fw is
 begin
 
   SPI_CLK_BUF : CLKBUF port map(PAD => SCA_CLK_OUT, Y => sca_clk_out_buf); 
-  spi_rst_b <= not SCA_RESET_OUT or MASTER_RST_B;
+  spi_rst_b <= SCA_RESET_OUT and MASTER_RST_B;
   
   -- SPI
   spi_slave_pm : spi_slave

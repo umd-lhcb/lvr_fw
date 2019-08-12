@@ -140,8 +140,10 @@ begin
         N_I_SCA_DAT_IN  <= TX_32BIT_SREG(30);  -- FPGA SPI SENDS MSb OUT FIRST TO SCA
     elsif CLK_FCNT < 31 then
       N_I_SCA_DAT_IN <= TX_32BIT_SREG(30-CLK_FCNT);
-    else
+    elsif CLK_FCNT = 31 then
       N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);
+    else
+      N_I_SCA_DAT_IN <= TX_32BIT_SREG(31);
     end if;
     
       
@@ -242,7 +244,7 @@ begin
 
       NULLCLK_CNT <= 0;
 
-      TX_32BIT_REG <= (others => '0');
+      TX_32BIT_REG <= SPI_TX_WORD;
 
     elsif RISING_EDGE(CLK5M_OSC) then
       SPI_SM        <= N_SPI_SM;

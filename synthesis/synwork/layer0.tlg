@@ -18,7 +18,9 @@ Post processing for work.main_sequencer_new.rtl
 @W: CG296 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":96:13:96:19|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":100:23:100:37|Referenced variable n_tx_32bit_sreg is not in sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":103:22:103:35|Referenced variable n_i_sca_dat_in is not in sensitivity list.
-@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":353:6:353:19|OTHERS clause is not synthesized.
+@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":229:11:229:17|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":247:22:247:32|Referenced variable spi_tx_word is not in sensitivity list.
+@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":355:6:355:19|OTHERS clause is not synthesized.
 Post processing for work.spi_slave.rtl
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":797:10:797:15|Synthesizing proasic3.clkbuf.syn_black_box.
 Post processing for proasic3.clkbuf.syn_black_box
@@ -26,8 +28,7 @@ Post processing for work.top_lvr_fw.rtl
 @W: CL240 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":105:4:105:17|Signal POR_OUT_TO_SCA is floating; a simulation mismatch is possible.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":418:4:418:5|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":418:4:418:5|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":98:4:98:5|Pruning unused register TX_32BIT_SREG(31). Make sure that there are no unused intermediate registers.
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":230:4:230:5|Trying to extract state machine for register SPI_SM.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Trying to extract state machine for register SPI_SM.
 Extracted state machine for register SPI_SM
 State machine has 6 reachable states with original encodings of:
    000001

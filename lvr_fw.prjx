@@ -58,12 +58,12 @@ SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="utd"
-TIME="1565389032"
-SIZE="914944"
+TIME="1565624201"
+SIZE="1008640"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1565389032"
+TIME="1565624201"
 SIZE="1043"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
@@ -73,18 +73,13 @@ SIZE="129700"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
 STATE="utd"
-TIME="1565388111"
-SIZE="23929"
+TIME="1565623979"
+SIZE="9931"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
 STATE="utd"
 TIME="1563849444"
 SIZE="2670"
-ENDFILE
-VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
-STATE="utd"
-TIME="1565624203"
-SIZE="3104"
 ENDFILE
 VALUE "<project>\hdl\IIR_FILT.vhd,hdl"
 STATE="utd"
@@ -103,8 +98,8 @@ SIZE="4679"
 ENDFILE
 VALUE "<project>\hdl\spi_slave.vhd,hdl"
 STATE="utd"
-TIME="1565623867"
-SIZE="14335"
+TIME="1565628993"
+SIZE="14405"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
@@ -113,13 +108,13 @@ SIZE="43744"
 ENDFILE
 VALUE "<project>\simulation\run.do,do"
 STATE="utd"
-TIME="1565379043"
+TIME="1565623702"
 SIZE="930"
 ENDFILE
 VALUE "<project>\simulation\TB_TOP_LVR_FW_presynth_simulation.log,log"
 STATE="utd"
-TIME="1565623939"
-SIZE="10856"
+TIME="1565629009"
+SIZE="68"
 ENDFILE
 VALUE "<project>\simulation\wave.do,do"
 STATE="utd"
@@ -133,22 +128,22 @@ SIZE="9339"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
-TIME="1565387138"
-SIZE="662381"
+TIME="1565623963"
+SIZE="705485"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
-TIME="1565387138"
+TIME="1565623963"
 SIZE="221"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1565387138"
+TIME="1565623963"
 SIZE="522"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
 STATE="utd"
-TIME="1565387139"
+TIME="1565623964"
 SIZE="2030"
 ENDFILE
 ENDLIST
@@ -192,7 +187,7 @@ LIST SimulationOptions
 UseAutomaticDoFile=true
 IncludeWaveDo=true
 Type=max
-RunTime=1000ns
+RunTime=400us
 Resolution=1ps
 VsimOpt=
 EntityName=TB_TOP_LVR_FW
@@ -317,7 +312,7 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Place and Route:top_lvr_fw_placeroute_log.rpt
+ReportsCurrentItem;Compile:top_lvr_fw_compile_log.rpt
 StartPage;StartPage;0
 ACTIVEVIEW;Reports
 ENDLIST

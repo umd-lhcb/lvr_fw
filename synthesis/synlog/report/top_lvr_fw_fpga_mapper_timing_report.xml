@@ -35,7 +35,7 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <row>
 <data>top_lvr_fw|SCA_CLK_OUT</data>
 <data>100.0 MHz</data>
-<data>79.6 MHz</data>
-<data>-2.567</data>
+<data>78.6 MHz</data>
+<data>-2.722</data>
 </row>
 </report_table>

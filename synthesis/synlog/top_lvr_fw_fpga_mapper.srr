@@ -1,4 +1,4 @@
-# Mon Aug 12 08:32:38 2019
+# Mon Aug 12 09:58:24 2019
 
 Synopsys Microsemi Technology Mapper, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -26,7 +26,7 @@ Available hyper_sources - for debug and ip models
 Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
 
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":418:4:418:5|Found counter in view:work.top_lvr_fw(rtl) instance DTYCYC_CNT[4:0] 
-@N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":230:4:230:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
+@N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
 Encoding state machine SPI_SM[0:5] (in view: work.spi_slave(rtl))
 original code -> new code
    000001 -> 000001
@@ -35,8 +35,6 @@ original code -> new code
    001000 -> 001000
    010000 -> 010000
    100000 -> 100000
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":230:4:230:5|Removing sequential instance TX_32BIT_REG[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":230:4:230:5|Boundary register TX_32BIT_REG[31] (in view: work.spi_slave(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
 Encoding state machine SEQUENCER_STATE[0:9] (in view: work.MAIN_SEQUENCER_NEW(rtl))
 original code -> new code
    0000000001 -> 0000000001
@@ -68,75 +66,76 @@ original code -> new code
 @N: MF176 |Default generator successful 
 @N: MF176 |Default generator successful 
 
-Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 112MB peak: 112MB)
+Starting factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 112MB peak: 113MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 115MB peak: 115MB)
+Finished factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 116MB peak: 117MB)
 
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":354:2:354:12|Removing sequential instance SPI_TX_WORD[31] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":354:2:354:12|Boundary register SPI_TX_WORD[31] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":230:4:230:5|Removing sequential instance spi_slave_pm.I_SPI_RX_WORD[31] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":230:4:230:5|Boundary register spi_slave_pm.I_SPI_RX_WORD[31] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":98:4:98:5|Removing sequential instance spi_slave_pm.RX_32BIT_SREG[31] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":98:4:98:5|Boundary register spi_slave_pm.RX_32BIT_SREG[31] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
 @W: BN132 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance CONTROL34.CH_ACTIVE_STAT because it is equivalent to instance CONTROL12.CH_ACTIVE_STAT. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: BN132 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance CONTROL78.CH_ACTIVE_STAT because it is equivalent to instance CONTROL56.CH_ACTIVE_STAT. To keep the instance, apply constraint syn_preserve=1 on the instance.
 
-Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 114MB peak: 116MB)
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 115MB peak: 117MB)
 
 
-Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 114MB peak: 116MB)
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 115MB peak: 117MB)
 
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 114MB peak: 118MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 118MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 115MB peak: 118MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 118MB peak: 118MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 115MB peak: 118MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 118MB peak: 118MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 114MB peak: 118MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 117MB peak: 118MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 114MB peak: 118MB)
+Finished preparing to map (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 117MB peak: 118MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 120MB peak: 122MB)
+Finished technology mapping (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 121MB peak: 122MB)
 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":230:4:230:5|Boundary register spi_slave_pm.CLK_FCNT_1C[5] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
-@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":230:4:230:5|Boundary register spi_slave_pm.SCA_CLK_OUT_1C (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Boundary register spi_slave_pm.CLK_FCNT_1C[5] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Boundary register spi_slave_pm.I_SPI_RX_WORD[29] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Boundary register spi_slave_pm.I_SPI_RX_WORD[19] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Boundary register spi_slave_pm.I_SPI_RX_WORD[15] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Boundary register spi_slave_pm.I_SPI_RX_WORD[11] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Boundary register spi_slave_pm.I_SPI_RX_WORD[7] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Boundary register spi_slave_pm.I_SPI_RX_WORD[2] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Boundary register spi_slave_pm.I_SPI_RX_WORD[1] (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Boundary register spi_slave_pm.SCA_CLK_OUT_1C (in view: work.top_lvr_fw(rtl)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
 
 High Fanout Net Report
 **********************
 
 Driver Instance / Pin Name                   Fanout, notes                   
 -----------------------------------------------------------------------------
-spi_rst_b / Y                                121 : 121 asynchronous set/reset
+spi_rst_b / Y                                156 : 92 asynchronous set/reset 
 MASTER_RST_B / Q                             234 : 233 asynchronous set/reset
 CONTROL78.SEQUENCER_STATE_ns_o2[5] / Y       44                              
 CONTROL56.SEQUENCER_STATE_ns_o2[5] / Y       44                              
 CONTROL34.SEQUENCER_STATE_ns_o2[5] / Y       44                              
 CONTROL12.SEQUENCER_STATE_ns_o2[5] / Y       44                              
-spi_slave_pm.SPI_SM[0] / Q                   35                              
-spi_slave_pm.SPI_SM[1] / Q                   34                              
-spi_slave_pm.SPI_CLR / Q                     101 : 37 asynchronous set/reset 
+spi_slave_pm.SPI_SM[0] / Q                   36                              
+spi_slave_pm.SPI_CLR / Q                     104 : 38 asynchronous set/reset 
+spi_slave_pm.SPI_SM[1] / Q                   35                              
+spi_slave_pm.SREG_DFFI.un10_clk_fcnt / Y     34                              
 OVT_FS.SIGOUT / Q                            25                              
-spi_slave_pm.SREG_DFFI.un10_clk_fcnt / Y     33                              
 =============================================================================
 
 @N: FP130 |Promoting Net CLK_5M_GL_c_c on CLKINT  CLK_5M_GL_inferred_clock 
-@N: FP130 |Promoting Net MASTER_RST_B on CLKINT  I_56 
-@N: FP130 |Promoting Net spi_rst_b on CLKINT  I_57 
-@N: FP130 |Promoting Net spi_slave_pm.SPI_CLR on CLKINT  I_58 
+@N: FP130 |Promoting Net MASTER_RST_B on CLKINT  I_57 
+@N: FP130 |Promoting Net spi_rst_b on CLKINT  I_58 
+@N: FP130 |Promoting Net spi_slave_pm.SPI_CLR on CLKINT  I_59 
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 121MB peak: 123MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 122MB peak: 124MB)
 
-Replicating Combinational Instance spi_slave_pm.SREG_DFFI.un10_clk_fcnt, fanout 33 segments 2
 Replicating Sequential Instance OVT_FS.SIGOUT, fanout 25 segments 2
-Replicating Sequential Instance spi_slave_pm.SPI_SM[1], fanout 34 segments 2
-Replicating Sequential Instance spi_slave_pm.SPI_SM[0], fanout 35 segments 2
+Replicating Combinational Instance spi_slave_pm.SREG_DFFI.un10_clk_fcnt, fanout 34 segments 2
+Replicating Sequential Instance spi_slave_pm.SPI_SM[1], fanout 35 segments 2
+Replicating Sequential Instance spi_slave_pm.SPI_SM[0], fanout 36 segments 2
 Replicating Combinational Instance CONTROL12.SEQUENCER_STATE_ns_o2[5], fanout 44 segments 2
 Replicating Combinational Instance CONTROL34.SEQUENCER_STATE_ns_o2[5], fanout 44 segments 2
 Replicating Combinational Instance CONTROL56.SEQUENCER_STATE_ns_o2[5], fanout 44 segments 2
@@ -147,7 +146,7 @@ Added 8 Cells via replication
 	Added 3 Sequential Cells via replication
 	Added 5 Combinational Cells via replication
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 122MB peak: 123MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 122MB peak: 124MB)
 
 
 
@@ -157,40 +156,40 @@ Finished restoring hierarchy (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:
 #### START OF CLOCK OPTIMIZATION REPORT #####[
 
 Clock optimization not enabled
-2 non-gated/non-generated clock tree(s) driving 74 clock pin(s) of sequential element(s)
-2 gated/generated clock tree(s) driving 354 clock pin(s) of sequential element(s)
-0 instances converted, 354 sequential instances remain driven by gated/generated clocks
+2 non-gated/non-generated clock tree(s) driving 76 clock pin(s) of sequential element(s)
+2 gated/generated clock tree(s) driving 357 clock pin(s) of sequential element(s)
+0 instances converted, 357 sequential instances remain driven by gated/generated clocks
 
 =================================== Non-Gated/Non-Generated Clocks ===================================
 Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance               
 ------------------------------------------------------------------------------------------------------
-@K:CKID0003       SCA_CLK_OUT         port                   69         spi_slave_pm.RX_32BIT_SREG[30]
+@K:CKID0003       SCA_CLK_OUT         port                   71         spi_slave_pm.RX_32BIT_SREG[31]
 @K:CKID0004       CLK40MHZ_OSC        port                   5          CLK_5M_GL                     
 ======================================================================================================
 =========================================================================== Gated/Generated Clocks ============================================================================
 Clock Tree ID     Driving Element                Drive Element Type     Fanout     Sample Instance     Explanation                                                             
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       CLK_5M_GL                      DFN1C0                 323        DTYCYC_EN           No generated or derived clock directive on output of sequential instance
-@K:CKID0002       spi_slave_pm.I_SPI_RX_STRB     DFN1C0                 31         SPI_TX_WORD[0]      No generated or derived clock directive on output of sequential instance
+@K:CKID0001       CLK_5M_GL                      DFN1C0                 325        DTYCYC_EN           No generated or derived clock directive on output of sequential instance
+@K:CKID0002       spi_slave_pm.I_SPI_RX_STRB     DFN1C0                 32         SPI_TX_WORD[0]      No generated or derived clock directive on output of sequential instance
 ===============================================================================================================================================================================
 
 
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 123MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 124MB)
 
 Writing Analyst data base Z:\windows\lvr_fw\lvr_fw_manuel\synthesis\synwork\top_lvr_fw_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 120MB peak: 123MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 120MB peak: 124MB)
 
 Writing EDIF Netlist and constraint files
 L-2016.09M-SP1-5
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 121MB peak: 123MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 121MB peak: 124MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 120MB peak: 123MB)
+Start final timing analysis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 121MB peak: 124MB)
 
 @W: MT420 |Found inferred clock top_lvr_fw|CLK40MHZ_OSC with period 10.00ns. Please declare a user-defined clock on object "p:CLK40MHZ_OSC"
 @W: MT420 |Found inferred clock top_lvr_fw|SCA_CLK_OUT with period 10.00ns. Please declare a user-defined clock on object "p:SCA_CLK_OUT"
@@ -199,7 +198,7 @@ Start final timing analysis (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:0
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Mon Aug 12 08:32:43 2019
+# Timing Report written on Mon Aug 12 09:58:28 2019
 #
 
 
@@ -229,7 +228,7 @@ Starting Clock                             Frequency     Frequency     Period   
 spi_slave|I_SPI_RX_STRB_inferred_clock     100.0 MHz     NA            10.000        NA            NA         inferred     Inferred_clkgroup_2
 top_lvr_fw|CLK40MHZ_OSC                    100.0 MHz     296.4 MHz     10.000        3.373         6.627      inferred     Inferred_clkgroup_0
 top_lvr_fw|CLK_5M_GL_inferred_clock        100.0 MHz     62.0 MHz      10.000        16.121        -6.121     inferred     Inferred_clkgroup_1
-top_lvr_fw|SCA_CLK_OUT                     100.0 MHz     79.6 MHz      10.000        12.567        -2.567     inferred     Inferred_clkgroup_3
+top_lvr_fw|SCA_CLK_OUT                     100.0 MHz     78.6 MHz      10.000        12.722        -2.722     inferred     Inferred_clkgroup_3
 ==============================================================================================================================================
 @N: MT582 |Estimated period and frequency not reported for given clock unless the clock has at least one timing path which is not a false or a max delay path and that does not have excessive slack
 
@@ -250,7 +249,7 @@ top_lvr_fw|CLK_5M_GL_inferred_clock     spi_slave|I_SPI_RX_STRB_inferred_clock  
 top_lvr_fw|CLK_5M_GL_inferred_clock     top_lvr_fw|SCA_CLK_OUT                  |  No paths    -       |  No paths    -       |  Diff grp    -      |  No paths    -    
 spi_slave|I_SPI_RX_STRB_inferred_clock  top_lvr_fw|CLK_5M_GL_inferred_clock     |  No paths    -       |  No paths    -       |  No paths    -      |  Diff grp    -    
 top_lvr_fw|SCA_CLK_OUT                  top_lvr_fw|CLK_5M_GL_inferred_clock     |  Diff grp    -       |  No paths    -       |  No paths    -      |  Diff grp    -    
-top_lvr_fw|SCA_CLK_OUT                  top_lvr_fw|SCA_CLK_OUT                  |  10.000      8.304   |  10.000      -2.567  |  No paths    -      |  No paths    -    
+top_lvr_fw|SCA_CLK_OUT                  top_lvr_fw|SCA_CLK_OUT                  |  10.000      8.304   |  10.000      -2.722  |  No paths    -      |  No paths    -    
 ========================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
@@ -348,8 +347,8 @@ Starting Points with Worst Slack
 Instance                         Reference                               Type       Pin     Net                    Time        Slack 
                                  Clock                                                                                               
 -------------------------------------------------------------------------------------------------------------------------------------
-CONTROL78.SEQUENCER_STATE[3]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       -6.121
-CONTROL12.SEQUENCER_STATE[3]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       -5.744
+CONTROL12.SEQUENCER_STATE[3]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       -6.121
+CONTROL78.SEQUENCER_STATE[3]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       -5.744
 CONTROL56.SEQUENCER_STATE[3]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       -5.744
 CONTROL34.SEQUENCER_STATE[3]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       -5.744
 TX_PROMPT.CNT_VAL[0]             top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1C0     Q       CNT_VAL[0]             0.737       -5.233
@@ -368,16 +367,16 @@ Ending Points with Worst Slack
 Instance                   Reference                               Type       Pin     Net                Time         Slack 
                            Clock                                                                                            
 ----------------------------------------------------------------------------------------------------------------------------
-CONTROL78.DEL_CNTR[13]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[13]     9.461        -6.121
-CONTROL78.DEL_CNTR[14]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[14]     9.461        -6.121
+CONTROL12.DEL_CNTR[13]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[13]     9.461        -6.121
+CONTROL12.DEL_CNTR[14]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[14]     9.461        -6.121
 CONTROL34.DEL_CNTR[13]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[13]     9.461        -5.744
-CONTROL12.DEL_CNTR[13]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[13]     9.461        -5.744
+CONTROL78.DEL_CNTR[13]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[13]     9.461        -5.744
 CONTROL56.DEL_CNTR[13]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[13]     9.461        -5.744
+CONTROL78.DEL_CNTR[14]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[14]     9.461        -5.744
 CONTROL56.DEL_CNTR[14]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[14]     9.461        -5.744
 CONTROL34.DEL_CNTR[14]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[14]     9.461        -5.744
-CONTROL12.DEL_CNTR[14]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[14]     9.461        -5.744
-CONTROL78.DEL_CNTR[11]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[11]     9.461        -5.700
-CONTROL56.DEL_CNTR[11]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[11]     9.461        -5.323
+CONTROL12.DEL_CNTR[11]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[11]     9.461        -5.700
+CONTROL34.DEL_CNTR[11]     top_lvr_fw|CLK_5M_GL_inferred_clock     DFN1P0     D       N_DEL_CNTR[11]     9.461        -5.323
 ============================================================================================================================
 
 
@@ -397,44 +396,44 @@ Path information for path number 1:
     = Slack (critical) :                     -6.121
 
     Number of logic level(s):                9
-    Starting point:                          CONTROL78.SEQUENCER_STATE[3] / Q
-    Ending point:                            CONTROL78.DEL_CNTR[13] / D
+    Starting point:                          CONTROL12.SEQUENCER_STATE[3] / Q
+    Ending point:                            CONTROL12.DEL_CNTR[13] / D
     The start point is clocked by            top_lvr_fw|CLK_5M_GL_inferred_clock [rising] on pin CLK
     The end   point is clocked by            top_lvr_fw|CLK_5M_GL_inferred_clock [rising] on pin CLK
 
 Instance / Net                                      Pin      Pin               Arrival     No. of    
 Name                                     Type       Name     Dir     Delay     Time        Fan Out(s)
 -----------------------------------------------------------------------------------------------------
-CONTROL78.SEQUENCER_STATE[3]             DFN1C0     Q        Out     0.737     0.737       -         
+CONTROL12.SEQUENCER_STATE[3]             DFN1C0     Q        Out     0.737     0.737       -         
 SEQUENCER_STATE[3]                       Net        -        -       1.184     -           4         
-CONTROL78.SEQUENCER_STATE_RNI96G6[4]     NOR2       B        In      -         1.921       -         
-CONTROL78.SEQUENCER_STATE_RNI96G6[4]     NOR2       Y        Out     0.646     2.567       -         
+CONTROL12.SEQUENCER_STATE_RNIHHL2[4]     NOR2       B        In      -         1.921       -         
+CONTROL12.SEQUENCER_STATE_RNIHHL2[4]     NOR2       Y        Out     0.646     2.567       -         
 N_230_0                                  Net        -        -       2.409     -           22        
-CONTROL78.un1_DEL_CNTR.I_30              XOR2       B        In      -         4.976       -         
-CONTROL78.un1_DEL_CNTR.I_30              XOR2       Y        Out     0.937     5.913       -         
+CONTROL12.un1_DEL_CNTR.I_30              XOR2       B        In      -         4.976       -         
+CONTROL12.un1_DEL_CNTR.I_30              XOR2       Y        Out     0.937     5.913       -         
 DWACT_ADD_CI_0_pog_array_0[0]            Net        -        -       0.322     -           1         
-CONTROL78.un1_DEL_CNTR.I_64              AO1        A        In      -         6.234       -         
-CONTROL78.un1_DEL_CNTR.I_64              AO1        Y        Out     0.520     6.754       -         
+CONTROL12.un1_DEL_CNTR.I_64              AO1        A        In      -         6.234       -         
+CONTROL12.un1_DEL_CNTR.I_64              AO1        Y        Out     0.520     6.754       -         
 DWACT_ADD_CI_0_g_array_1[0]              Net        -        -       0.806     -           3         
-CONTROL78.un1_DEL_CNTR.I_77              AO1        B        In      -         7.560       -         
-CONTROL78.un1_DEL_CNTR.I_77              AO1        Y        Out     0.567     8.127       -         
+CONTROL12.un1_DEL_CNTR.I_77              AO1        B        In      -         7.560       -         
+CONTROL12.un1_DEL_CNTR.I_77              AO1        Y        Out     0.567     8.127       -         
 DWACT_ADD_CI_0_g_array_2[0]              Net        -        -       1.184     -           4         
-CONTROL78.un1_DEL_CNTR.I_83              AO1        B        In      -         9.310       -         
-CONTROL78.un1_DEL_CNTR.I_83              AO1        Y        Out     0.567     9.877       -         
+CONTROL12.un1_DEL_CNTR.I_83              AO1        B        In      -         9.310       -         
+CONTROL12.un1_DEL_CNTR.I_83              AO1        Y        Out     0.567     9.877       -         
 DWACT_ADD_CI_0_g_array_3[0]              Net        -        -       1.184     -           4         
-CONTROL78.un1_DEL_CNTR.I_81              AO1        B        In      -         11.060      -         
-CONTROL78.un1_DEL_CNTR.I_81              AO1        Y        Out     0.567     11.627      -         
+CONTROL12.un1_DEL_CNTR.I_81              AO1        B        In      -         11.060      -         
+CONTROL12.un1_DEL_CNTR.I_81              AO1        Y        Out     0.567     11.627      -         
 DWACT_ADD_CI_0_g_array_10[0]             Net        -        -       0.806     -           3         
-CONTROL78.un1_DEL_CNTR.I_65              AO1        B        In      -         12.433      -         
-CONTROL78.un1_DEL_CNTR.I_65              AO1        Y        Out     0.567     13.000      -         
+CONTROL12.un1_DEL_CNTR.I_65              AO1        B        In      -         12.433      -         
+CONTROL12.un1_DEL_CNTR.I_65              AO1        Y        Out     0.567     13.000      -         
 DWACT_ADD_CI_0_g_array_12_5[0]           Net        -        -       0.322     -           1         
-CONTROL78.un1_DEL_CNTR.I_60              XOR2       B        In      -         13.321      -         
-CONTROL78.un1_DEL_CNTR.I_60              XOR2       Y        Out     0.937     14.258      -         
-I_60_2                                   Net        -        -       0.322     -           1         
-CONTROL78.DEL_CNTR_RNO[13]               OR3A       C        In      -         14.579      -         
-CONTROL78.DEL_CNTR_RNO[13]               OR3A       Y        Out     0.681     15.261      -         
+CONTROL12.un1_DEL_CNTR.I_60              XOR2       B        In      -         13.321      -         
+CONTROL12.un1_DEL_CNTR.I_60              XOR2       Y        Out     0.937     14.258      -         
+I_60                                     Net        -        -       0.322     -           1         
+CONTROL12.DEL_CNTR_RNO[13]               OR3A       C        In      -         14.579      -         
+CONTROL12.DEL_CNTR_RNO[13]               OR3A       Y        Out     0.681     15.261      -         
 N_DEL_CNTR[13]                           Net        -        -       0.322     -           1         
-CONTROL78.DEL_CNTR[13]                   DFN1P0     D        In      -         15.582      -         
+CONTROL12.DEL_CNTR[13]                   DFN1P0     D        In      -         15.582      -         
 =====================================================================================================
 Total path delay (propagation time + setup) of 16.121 is 7.262(45.0%) logic and 8.859(55.0%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
@@ -451,44 +450,44 @@ Path information for path number 2:
     = Slack (critical) :                     -6.121
 
     Number of logic level(s):                9
-    Starting point:                          CONTROL78.SEQUENCER_STATE[3] / Q
-    Ending point:                            CONTROL78.DEL_CNTR[14] / D
+    Starting point:                          CONTROL12.SEQUENCER_STATE[3] / Q
+    Ending point:                            CONTROL12.DEL_CNTR[14] / D
     The start point is clocked by            top_lvr_fw|CLK_5M_GL_inferred_clock [rising] on pin CLK
     The end   point is clocked by            top_lvr_fw|CLK_5M_GL_inferred_clock [rising] on pin CLK
 
 Instance / Net                                      Pin      Pin               Arrival     No. of    
 Name                                     Type       Name     Dir     Delay     Time        Fan Out(s)
 -----------------------------------------------------------------------------------------------------
-CONTROL78.SEQUENCER_STATE[3]             DFN1C0     Q        Out     0.737     0.737       -         
+CONTROL12.SEQUENCER_STATE[3]             DFN1C0     Q        Out     0.737     0.737       -         
 SEQUENCER_STATE[3]                       Net        -        -       1.184     -           4         
-CONTROL78.SEQUENCER_STATE_RNI96G6[4]     NOR2       B        In      -         1.921       -         
-CONTROL78.SEQUENCER_STATE_RNI96G6[4]     NOR2       Y        Out     0.646     2.567       -         
+CONTROL12.SEQUENCER_STATE_RNIHHL2[4]     NOR2       B        In      -         1.921       -         
+CONTROL12.SEQUENCER_STATE_RNIHHL2[4]     NOR2       Y        Out     0.646     2.567       -         
 N_230_0                                  Net        -        -       2.409     -           22        
-CONTROL78.un1_DEL_CNTR.I_30              XOR2       B        In      -         4.976       -         
-CONTROL78.un1_DEL_CNTR.I_30              XOR2       Y        Out     0.937     5.913       -         
+CONTROL12.un1_DEL_CNTR.I_30              XOR2       B        In      -         4.976       -         
+CONTROL12.un1_DEL_CNTR.I_30              XOR2       Y        Out     0.937     5.913       -         
 DWACT_ADD_CI_0_pog_array_0[0]            Net        -        -       0.322     -           1         
-CONTROL78.un1_DEL_CNTR.I_64              AO1        A        In      -         6.234       -         
-CONTROL78.un1_DEL_CNTR.I_64              AO1        Y        Out     0.520     6.754       -         
+CONTROL12.un1_DEL_CNTR.I_64              AO1        A        In      -         6.234       -         
+CONTROL12.un1_DEL_CNTR.I_64              AO1        Y        Out     0.520     6.754       -         
 DWACT_ADD_CI_0_g_array_1[0]              Net        -        -       0.806     -           3         
-CONTROL78.un1_DEL_CNTR.I_77              AO1        B        In      -         7.560       -         
-CONTROL78.un1_DEL_CNTR.I_77              AO1        Y        Out     0.567     8.127       -         
+CONTROL12.un1_DEL_CNTR.I_77              AO1        B        In      -         7.560       -         
+CONTROL12.un1_DEL_CNTR.I_77              AO1        Y        Out     0.567     8.127       -         
 DWACT_ADD_CI_0_g_array_2[0]              Net        -        -       1.184     -           4         
-CONTROL78.un1_DEL_CNTR.I_83              AO1        B        In      -         9.310       -         
-CONTROL78.un1_DEL_CNTR.I_83              AO1        Y        Out     0.567     9.877       -         
+CONTROL12.un1_DEL_CNTR.I_83              AO1        B        In      -         9.310       -         
+CONTROL12.un1_DEL_CNTR.I_83              AO1        Y        Out     0.567     9.877       -         
 DWACT_ADD_CI_0_g_array_3[0]              Net        -        -       1.184     -           4         
-CONTROL78.un1_DEL_CNTR.I_81              AO1        B        In      -         11.060      -         
-CONTROL78.un1_DEL_CNTR.I_81              AO1        Y        Out     0.567     11.627      -         
+CONTROL12.un1_DEL_CNTR.I_81              AO1        B        In      -         11.060      -         
+CONTROL12.un1_DEL_CNTR.I_81              AO1        Y        Out     0.567     11.627      -         
 DWACT_ADD_CI_0_g_array_10[0]             Net        -        -       0.806     -           3         
-CONTROL78.un1_DEL_CNTR.I_68              AO1        B        In      -         12.433      -         
-CONTROL78.un1_DEL_CNTR.I_68              AO1        Y        Out     0.567     13.000      -         
+CONTROL12.un1_DEL_CNTR.I_68              AO1        B        In      -         12.433      -         
+CONTROL12.un1_DEL_CNTR.I_68              AO1        Y        Out     0.567     13.000      -         
 DWACT_ADD_CI_0_g_array_11_2[0]           Net        -        -       0.322     -           1         
-CONTROL78.un1_DEL_CNTR.I_58              XOR2       B        In      -         13.321      -         
-CONTROL78.un1_DEL_CNTR.I_58              XOR2       Y        Out     0.937     14.258      -         
-I_58_2                                   Net        -        -       0.322     -           1         
-CONTROL78.DEL_CNTR_RNO[14]               OR3A       C        In      -         14.579      -         
-CONTROL78.DEL_CNTR_RNO[14]               OR3A       Y        Out     0.681     15.261      -         
+CONTROL12.un1_DEL_CNTR.I_58              XOR2       B        In      -         13.321      -         
+CONTROL12.un1_DEL_CNTR.I_58              XOR2       Y        Out     0.937     14.258      -         
+I_58                                     Net        -        -       0.322     -           1         
+CONTROL12.DEL_CNTR_RNO[14]               OR3A       C        In      -         14.579      -         
+CONTROL12.DEL_CNTR_RNO[14]               OR3A       Y        Out     0.681     15.261      -         
 N_DEL_CNTR[14]                           Net        -        -       0.322     -           1         
-CONTROL78.DEL_CNTR[14]                   DFN1P0     D        In      -         15.582      -         
+CONTROL12.DEL_CNTR[14]                   DFN1P0     D        In      -         15.582      -         
 =====================================================================================================
 Total path delay (propagation time + setup) of 16.121 is 7.262(45.0%) logic and 8.859(55.0%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
@@ -505,44 +504,44 @@ Path information for path number 3:
     = Slack (non-critical) :                 -5.836
 
     Number of logic level(s):                9
-    Starting point:                          CONTROL78.SEQUENCER_STATE[3] / Q
-    Ending point:                            CONTROL78.DEL_CNTR[13] / D
+    Starting point:                          CONTROL12.SEQUENCER_STATE[3] / Q
+    Ending point:                            CONTROL12.DEL_CNTR[13] / D
     The start point is clocked by            top_lvr_fw|CLK_5M_GL_inferred_clock [rising] on pin CLK
     The end   point is clocked by            top_lvr_fw|CLK_5M_GL_inferred_clock [rising] on pin CLK
 
 Instance / Net                                      Pin      Pin               Arrival     No. of    
 Name                                     Type       Name     Dir     Delay     Time        Fan Out(s)
 -----------------------------------------------------------------------------------------------------
-CONTROL78.SEQUENCER_STATE[3]             DFN1C0     Q        Out     0.737     0.737       -         
+CONTROL12.SEQUENCER_STATE[3]             DFN1C0     Q        Out     0.737     0.737       -         
 SEQUENCER_STATE[3]                       Net        -        -       1.184     -           4         
-CONTROL78.SEQUENCER_STATE_RNI96G6[4]     NOR2       B        In      -         1.921       -         
-CONTROL78.SEQUENCER_STATE_RNI96G6[4]     NOR2       Y        Out     0.646     2.567       -         
+CONTROL12.SEQUENCER_STATE_RNIHHL2[4]     NOR2       B        In      -         1.921       -         
+CONTROL12.SEQUENCER_STATE_RNIHHL2[4]     NOR2       Y        Out     0.646     2.567       -         
 N_230_0                                  Net        -        -       2.409     -           22        
-CONTROL78.un1_DEL_CNTR.I_18              AND2       B        In      -         4.976       -         
-CONTROL78.un1_DEL_CNTR.I_18              AND2       Y        Out     0.516     5.492       -         
+CONTROL12.un1_DEL_CNTR.I_18              AND2       B        In      -         4.976       -         
+CONTROL12.un1_DEL_CNTR.I_18              AND2       Y        Out     0.516     5.492       -         
 DWACT_ADD_CI_0_g_array_0_1[0]            Net        -        -       0.322     -           1         
-CONTROL78.un1_DEL_CNTR.I_64              AO1        C        In      -         5.814       -         
-CONTROL78.un1_DEL_CNTR.I_64              AO1        Y        Out     0.655     6.469       -         
+CONTROL12.un1_DEL_CNTR.I_64              AO1        C        In      -         5.814       -         
+CONTROL12.un1_DEL_CNTR.I_64              AO1        Y        Out     0.655     6.469       -         
 DWACT_ADD_CI_0_g_array_1[0]              Net        -        -       0.806     -           3         
-CONTROL78.un1_DEL_CNTR.I_77              AO1        B        In      -         7.275       -         
-CONTROL78.un1_DEL_CNTR.I_77              AO1        Y        Out     0.567     7.842       -         
+CONTROL12.un1_DEL_CNTR.I_77              AO1        B        In      -         7.275       -         
+CONTROL12.un1_DEL_CNTR.I_77              AO1        Y        Out     0.567     7.842       -         
 DWACT_ADD_CI_0_g_array_2[0]              Net        -        -       1.184     -           4         
-CONTROL78.un1_DEL_CNTR.I_83              AO1        B        In      -         9.025       -         
-CONTROL78.un1_DEL_CNTR.I_83              AO1        Y        Out     0.567     9.592       -         
+CONTROL12.un1_DEL_CNTR.I_83              AO1        B        In      -         9.025       -         
+CONTROL12.un1_DEL_CNTR.I_83              AO1        Y        Out     0.567     9.592       -         
 DWACT_ADD_CI_0_g_array_3[0]              Net        -        -       1.184     -           4         
-CONTROL78.un1_DEL_CNTR.I_81              AO1        B        In      -         10.775      -         
-CONTROL78.un1_DEL_CNTR.I_81              AO1        Y        Out     0.567     11.342      -         
+CONTROL12.un1_DEL_CNTR.I_81              AO1        B        In      -         10.775      -         
+CONTROL12.un1_DEL_CNTR.I_81              AO1        Y        Out     0.567     11.342      -         
 DWACT_ADD_CI_0_g_array_10[0]             Net        -        -       0.806     -           3         
-CONTROL78.un1_DEL_CNTR.I_65              AO1        B        In      -         12.148      -         
-CONTROL78.un1_DEL_CNTR.I_65              AO1        Y        Out     0.567     12.715      -         
+CONTROL12.un1_DEL_CNTR.I_65              AO1        B        In      -         12.148      -         
+CONTROL12.un1_DEL_CNTR.I_65              AO1        Y        Out     0.567     12.715      -         
 DWACT_ADD_CI_0_g_array_12_5[0]           Net        -        -       0.322     -           1         
-CONTROL78.un1_DEL_CNTR.I_60              XOR2       B        In      -         13.036      -         
-CONTROL78.un1_DEL_CNTR.I_60              XOR2       Y        Out     0.937     13.973      -         
-I_60_2                                   Net        -        -       0.322     -           1         
-CONTROL78.DEL_CNTR_RNO[13]               OR3A       C        In      -         14.294      -         
-CONTROL78.DEL_CNTR_RNO[13]               OR3A       Y        Out     0.681     14.976      -         
+CONTROL12.un1_DEL_CNTR.I_60              XOR2       B        In      -         13.036      -         
+CONTROL12.un1_DEL_CNTR.I_60              XOR2       Y        Out     0.937     13.973      -         
+I_60                                     Net        -        -       0.322     -           1         
+CONTROL12.DEL_CNTR_RNO[13]               OR3A       C        In      -         14.294      -         
+CONTROL12.DEL_CNTR_RNO[13]               OR3A       Y        Out     0.681     14.976      -         
 N_DEL_CNTR[13]                           Net        -        -       0.322     -           1         
-CONTROL78.DEL_CNTR[13]                   DFN1P0     D        In      -         15.297      -         
+CONTROL12.DEL_CNTR[13]                   DFN1P0     D        In      -         15.297      -         
 =====================================================================================================
 Total path delay (propagation time + setup) of 15.836 is 6.977(44.1%) logic and 8.859(55.9%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
@@ -559,44 +558,44 @@ Path information for path number 4:
     = Slack (non-critical) :                 -5.836
 
     Number of logic level(s):                9
-    Starting point:                          CONTROL78.SEQUENCER_STATE[3] / Q
-    Ending point:                            CONTROL78.DEL_CNTR[14] / D
+    Starting point:                          CONTROL12.SEQUENCER_STATE[3] / Q
+    Ending point:                            CONTROL12.DEL_CNTR[14] / D
     The start point is clocked by            top_lvr_fw|CLK_5M_GL_inferred_clock [rising] on pin CLK
     The end   point is clocked by            top_lvr_fw|CLK_5M_GL_inferred_clock [rising] on pin CLK
 
 Instance / Net                                      Pin      Pin               Arrival     No. of    
 Name                                     Type       Name     Dir     Delay     Time        Fan Out(s)
 -----------------------------------------------------------------------------------------------------
-CONTROL78.SEQUENCER_STATE[3]             DFN1C0     Q        Out     0.737     0.737       -         
+CONTROL12.SEQUENCER_STATE[3]             DFN1C0     Q        Out     0.737     0.737       -         
 SEQUENCER_STATE[3]                       Net        -        -       1.184     -           4         
-CONTROL78.SEQUENCER_STATE_RNI96G6[4]     NOR2       B        In      -         1.921       -         
-CONTROL78.SEQUENCER_STATE_RNI96G6[4]     NOR2       Y        Out     0.646     2.567       -         
+CONTROL12.SEQUENCER_STATE_RNIHHL2[4]     NOR2       B        In      -         1.921       -         
+CONTROL12.SEQUENCER_STATE_RNIHHL2[4]     NOR2       Y        Out     0.646     2.567       -         
 N_230_0                                  Net        -        -       2.409     -           22        
-CONTROL78.un1_DEL_CNTR.I_18              AND2       B        In      -         4.976       -         
-CONTROL78.un1_DEL_CNTR.I_18              AND2       Y        Out     0.516     5.492       -         
+CONTROL12.un1_DEL_CNTR.I_18              AND2       B        In      -         4.976       -         
+CONTROL12.un1_DEL_CNTR.I_18              AND2       Y        Out     0.516     5.492       -         
 DWACT_ADD_CI_0_g_array_0_1[0]            Net        -        -       0.322     -           1         
-CONTROL78.un1_DEL_CNTR.I_64              AO1        C        In      -         5.814       -         
-CONTROL78.un1_DEL_CNTR.I_64              AO1        Y        Out     0.655     6.469       -         
+CONTROL12.un1_DEL_CNTR.I_64              AO1        C        In      -         5.814       -         
+CONTROL12.un1_DEL_CNTR.I_64              AO1        Y        Out     0.655     6.469       -         
 DWACT_ADD_CI_0_g_array_1[0]              Net        -        -       0.806     -           3         
-CONTROL78.un1_DEL_CNTR.I_77              AO1        B        In      -         7.275       -         
-CONTROL78.un1_DEL_CNTR.I_77              AO1        Y        Out     0.567     7.842       -         
+CONTROL12.un1_DEL_CNTR.I_77              AO1        B        In      -         7.275       -         
+CONTROL12.un1_DEL_CNTR.I_77              AO1        Y        Out     0.567     7.842       -         
 DWACT_ADD_CI_0_g_array_2[0]              Net        -        -       1.184     -           4         
-CONTROL78.un1_DEL_CNTR.I_83              AO1        B        In      -         9.025       -         
-CONTROL78.un1_DEL_CNTR.I_83              AO1        Y        Out     0.567     9.592       -         
+CONTROL12.un1_DEL_CNTR.I_83              AO1        B        In      -         9.025       -         
+CONTROL12.un1_DEL_CNTR.I_83              AO1        Y        Out     0.567     9.592       -         
 DWACT_ADD_CI_0_g_array_3[0]              Net        -        -       1.184     -           4         
-CONTROL78.un1_DEL_CNTR.I_81              AO1        B        In      -         10.775      -         
-CONTROL78.un1_DEL_CNTR.I_81              AO1        Y        Out     0.567     11.342      -         
+CONTROL12.un1_DEL_CNTR.I_81              AO1        B        In      -         10.775      -         
+CONTROL12.un1_DEL_CNTR.I_81              AO1        Y        Out     0.567     11.342      -         
 DWACT_ADD_CI_0_g_array_10[0]             Net        -        -       0.806     -           3         
-CONTROL78.un1_DEL_CNTR.I_68              AO1        B        In      -         12.148      -         
-CONTROL78.un1_DEL_CNTR.I_68              AO1        Y        Out     0.567     12.715      -         
+CONTROL12.un1_DEL_CNTR.I_68              AO1        B        In      -         12.148      -         
+CONTROL12.un1_DEL_CNTR.I_68              AO1        Y        Out     0.567     12.715      -         
 DWACT_ADD_CI_0_g_array_11_2[0]           Net        -        -       0.322     -           1         
-CONTROL78.un1_DEL_CNTR.I_58              XOR2       B        In      -         13.036      -         
-CONTROL78.un1_DEL_CNTR.I_58              XOR2       Y        Out     0.937     13.973      -         
-I_58_2                                   Net        -        -       0.322     -           1         
-CONTROL78.DEL_CNTR_RNO[14]               OR3A       C        In      -         14.294      -         
-CONTROL78.DEL_CNTR_RNO[14]               OR3A       Y        Out     0.681     14.976      -         
+CONTROL12.un1_DEL_CNTR.I_58              XOR2       B        In      -         13.036      -         
+CONTROL12.un1_DEL_CNTR.I_58              XOR2       Y        Out     0.937     13.973      -         
+I_58                                     Net        -        -       0.322     -           1         
+CONTROL12.DEL_CNTR_RNO[14]               OR3A       C        In      -         14.294      -         
+CONTROL12.DEL_CNTR_RNO[14]               OR3A       Y        Out     0.681     14.976      -         
 N_DEL_CNTR[14]                           Net        -        -       0.322     -           1         
-CONTROL78.DEL_CNTR[14]                   DFN1P0     D        In      -         15.297      -         
+CONTROL12.DEL_CNTR[14]                   DFN1P0     D        In      -         15.297      -         
 =====================================================================================================
 Total path delay (propagation time + setup) of 15.836 is 6.977(44.1%) logic and 8.859(55.9%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
@@ -613,44 +612,44 @@ Path information for path number 5:
     = Slack (non-critical) :                 -5.811
 
     Number of logic level(s):                9
-    Starting point:                          CONTROL78.SEQUENCER_STATE[3] / Q
-    Ending point:                            CONTROL78.DEL_CNTR[13] / D
+    Starting point:                          CONTROL12.SEQUENCER_STATE[3] / Q
+    Ending point:                            CONTROL12.DEL_CNTR[13] / D
     The start point is clocked by            top_lvr_fw|CLK_5M_GL_inferred_clock [rising] on pin CLK
     The end   point is clocked by            top_lvr_fw|CLK_5M_GL_inferred_clock [rising] on pin CLK
 
 Instance / Net                                        Pin      Pin               Arrival     No. of    
 Name                                       Type       Name     Dir     Delay     Time        Fan Out(s)
 -------------------------------------------------------------------------------------------------------
-CONTROL78.SEQUENCER_STATE[3]               DFN1C0     Q        Out     0.737     0.737       -         
+CONTROL12.SEQUENCER_STATE[3]               DFN1C0     Q        Out     0.737     0.737       -         
 SEQUENCER_STATE[3]                         Net        -        -       1.184     -           4         
-CONTROL78.SEQUENCER_STATE_RNI96G6_0[4]     NOR2       B        In      -         1.921       -         
-CONTROL78.SEQUENCER_STATE_RNI96G6_0[4]     NOR2       Y        Out     0.646     2.567       -         
-SEQUENCER_STATE_RNI96G6_0[4]               Net        -        -       2.409     -           22        
-CONTROL78.un1_DEL_CNTR.I_1                 AND2       B        In      -         4.976       -         
-CONTROL78.un1_DEL_CNTR.I_1                 AND2       Y        Out     0.516     5.492       -         
+CONTROL12.SEQUENCER_STATE_RNIHHL2_0[4]     NOR2       B        In      -         1.921       -         
+CONTROL12.SEQUENCER_STATE_RNIHHL2_0[4]     NOR2       Y        Out     0.646     2.567       -         
+SEQUENCER_STATE_RNIHHL2_0[4]               Net        -        -       2.409     -           22        
+CONTROL12.un1_DEL_CNTR.I_1                 AND2       B        In      -         4.976       -         
+CONTROL12.un1_DEL_CNTR.I_1                 AND2       Y        Out     0.516     5.492       -         
 DWACT_ADD_CI_0_TMP[0]                      Net        -        -       0.386     -           2         
-CONTROL78.un1_DEL_CNTR.I_64                AO1        B        In      -         5.878       -         
-CONTROL78.un1_DEL_CNTR.I_64                AO1        Y        Out     0.567     6.444       -         
+CONTROL12.un1_DEL_CNTR.I_64                AO1        B        In      -         5.878       -         
+CONTROL12.un1_DEL_CNTR.I_64                AO1        Y        Out     0.567     6.444       -         
 DWACT_ADD_CI_0_g_array_1[0]                Net        -        -       0.806     -           3         
-CONTROL78.un1_DEL_CNTR.I_77                AO1        B        In      -         7.251       -         
-CONTROL78.un1_DEL_CNTR.I_77                AO1        Y        Out     0.567     7.817       -         
+CONTROL12.un1_DEL_CNTR.I_77                AO1        B        In      -         7.251       -         
+CONTROL12.un1_DEL_CNTR.I_77                AO1        Y        Out     0.567     7.817       -         
 DWACT_ADD_CI_0_g_array_2[0]                Net        -        -       1.184     -           4         
-CONTROL78.un1_DEL_CNTR.I_83                AO1        B        In      -         9.001       -         
-CONTROL78.un1_DEL_CNTR.I_83                AO1        Y        Out     0.567     9.567       -         
+CONTROL12.un1_DEL_CNTR.I_83                AO1        B        In      -         9.001       -         
+CONTROL12.un1_DEL_CNTR.I_83                AO1        Y        Out     0.567     9.567       -         
 DWACT_ADD_CI_0_g_array_3[0]                Net        -        -       1.184     -           4         
-CONTROL78.un1_DEL_CNTR.I_81                AO1        B        In      -         10.751      -         
-CONTROL78.un1_DEL_CNTR.I_81                AO1        Y        Out     0.567     11.317      -         
+CONTROL12.un1_DEL_CNTR.I_81                AO1        B        In      -         10.751      -         
+CONTROL12.un1_DEL_CNTR.I_81                AO1        Y        Out     0.567     11.317      -         
 DWACT_ADD_CI_0_g_array_10[0]               Net        -        -       0.806     -           3         
-CONTROL78.un1_DEL_CNTR.I_65                AO1        B        In      -         12.124      -         
-CONTROL78.un1_DEL_CNTR.I_65                AO1        Y        Out     0.567     12.690      -         
+CONTROL12.un1_DEL_CNTR.I_65                AO1        B        In      -         12.124      -         
+CONTROL12.un1_DEL_CNTR.I_65                AO1        Y        Out     0.567     12.690      -         
 DWACT_ADD_CI_0_g_array_12_5[0]             Net        -        -       0.322     -           1         
-CONTROL78.un1_DEL_CNTR.I_60                XOR2       B        In      -         13.012      -         
-CONTROL78.un1_DEL_CNTR.I_60                XOR2       Y        Out     0.937     13.948      -         
-I_60_2                                     Net        -        -       0.322     -           1         
-CONTROL78.DEL_CNTR_RNO[13]                 OR3A       C        In      -         14.270      -         
-CONTROL78.DEL_CNTR_RNO[13]                 OR3A       Y        Out     0.681     14.951      -         
+CONTROL12.un1_DEL_CNTR.I_60                XOR2       B        In      -         13.012      -         
+CONTROL12.un1_DEL_CNTR.I_60                XOR2       Y        Out     0.937     13.948      -         
+I_60                                       Net        -        -       0.322     -           1         
+CONTROL12.DEL_CNTR_RNO[13]                 OR3A       C        In      -         14.270      -         
+CONTROL12.DEL_CNTR_RNO[13]                 OR3A       Y        Out     0.681     14.951      -         
 N_DEL_CNTR[13]                             Net        -        -       0.322     -           1         
-CONTROL78.DEL_CNTR[13]                     DFN1P0     D        In      -         15.273      -         
+CONTROL12.DEL_CNTR[13]                     DFN1P0     D        In      -         15.273      -         
 =======================================================================================================
 Total path delay (propagation time + setup) of 15.811 is 6.889(43.6%) logic and 8.923(56.4%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
@@ -671,12 +670,12 @@ Starting Points with Worst Slack
 Instance                           Reference                  Type         Pin     Net                   Time        Slack 
                                    Clock                                                                                   
 ---------------------------------------------------------------------------------------------------------------------------
-spi_slave_pm.CLK_FCNT[3]           top_lvr_fw|SCA_CLK_OUT     DFN0C1       Q       CLK_FCNT[3]           0.653       -2.567
-spi_slave_pm.CLK_FCNT[0]           top_lvr_fw|SCA_CLK_OUT     DFN0C1       Q       CLK_FCNT[0]           0.653       -2.538
-spi_slave_pm.CLK_FCNT[2]           top_lvr_fw|SCA_CLK_OUT     DFN0C1       Q       CLK_FCNT[2]           0.653       -2.398
-spi_slave_pm.CLK_FCNT[1]           top_lvr_fw|SCA_CLK_OUT     DFN0C1       Q       CLK_FCNT[1]           0.653       -1.792
-spi_slave_pm.CLK_FCNT[4]           top_lvr_fw|SCA_CLK_OUT     DFN0C1       Q       CLK_FCNT[4]           0.653       -1.512
-spi_slave_pm.CLK_FCNT[5]           top_lvr_fw|SCA_CLK_OUT     DFN0C1       Q       CLK_FCNT[5]           0.653       -0.994
+spi_slave_pm.CLK_FCNT[0]           top_lvr_fw|SCA_CLK_OUT     DFN0C1       Q       CLK_FCNT[0]           0.653       -2.722
+spi_slave_pm.CLK_FCNT[2]           top_lvr_fw|SCA_CLK_OUT     DFN0C1       Q       CLK_FCNT[2]           0.653       -2.567
+spi_slave_pm.CLK_FCNT[3]           top_lvr_fw|SCA_CLK_OUT     DFN0C1       Q       CLK_FCNT[3]           0.653       -2.468
+spi_slave_pm.CLK_FCNT[1]           top_lvr_fw|SCA_CLK_OUT     DFN0C1       Q       CLK_FCNT[1]           0.653       -1.756
+spi_slave_pm.CLK_FCNT[4]           top_lvr_fw|SCA_CLK_OUT     DFN0C1       Q       CLK_FCNT[4]           0.653       -1.557
+spi_slave_pm.CLK_FCNT[5]           top_lvr_fw|SCA_CLK_OUT     DFN0C1       Q       CLK_FCNT[5]           0.653       -1.096
 spi_slave_pm.TX_32BIT_SREG[1]      top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     Q       TX_32BIT_SREG[1]      1.456       -0.433
 spi_slave_pm.TX_32BIT_SREG[3]      top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     Q       TX_32BIT_SREG[3]      1.456       -0.433
 spi_slave_pm.TX_32BIT_SREG[7]      top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     Q       TX_32BIT_SREG[7]      1.456       -0.433
@@ -691,16 +690,16 @@ Ending Points with Worst Slack
 Instance                          Reference                  Type         Pin     Net                    Time         Slack 
                                   Clock                                                                                     
 ----------------------------------------------------------------------------------------------------------------------------
-spi_slave_pm.CLK_FCNT[5]          top_lvr_fw|SCA_CLK_OUT     DFN0C1       D       N_CLK_FCNT[5]          9.287        -2.567
-spi_slave_pm.I_SCA_DAT_IN         top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_I_SCA_DAT_IN         7.301        -2.538
-spi_slave_pm.TX_32BIT_SREG[0]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[0]     7.301        -1.521
-spi_slave_pm.TX_32BIT_SREG[1]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[1]     7.301        -1.521
-spi_slave_pm.TX_32BIT_SREG[2]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[2]     7.301        -1.521
-spi_slave_pm.TX_32BIT_SREG[3]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[3]     7.301        -1.521
-spi_slave_pm.TX_32BIT_SREG[4]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[4]     7.301        -1.521
-spi_slave_pm.TX_32BIT_SREG[5]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[5]     7.301        -1.521
-spi_slave_pm.TX_32BIT_SREG[6]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[6]     7.301        -1.521
-spi_slave_pm.TX_32BIT_SREG[7]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[7]     7.301        -1.521
+spi_slave_pm.I_SCA_DAT_IN         top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_I_SCA_DAT_IN         7.301        -2.722
+spi_slave_pm.CLK_FCNT[5]          top_lvr_fw|SCA_CLK_OUT     DFN0C1       D       N_CLK_FCNT[5]          9.287        -2.589
+spi_slave_pm.TX_32BIT_SREG[0]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[0]     7.301        -1.705
+spi_slave_pm.TX_32BIT_SREG[1]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[1]     7.301        -1.705
+spi_slave_pm.TX_32BIT_SREG[2]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[2]     7.301        -1.705
+spi_slave_pm.TX_32BIT_SREG[3]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[3]     7.301        -1.705
+spi_slave_pm.TX_32BIT_SREG[4]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[4]     7.301        -1.705
+spi_slave_pm.TX_32BIT_SREG[5]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[5]     7.301        -1.705
+spi_slave_pm.TX_32BIT_SREG[6]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[6]     7.301        -1.705
+spi_slave_pm.TX_32BIT_SREG[7]     top_lvr_fw|SCA_CLK_OUT     DFN0P1C1     D       N_TX_32BIT_SREG[7]     7.301        -1.705
 ============================================================================================================================
 
 
@@ -711,6 +710,96 @@ Worst Path Information
 
 Path information for path number 1: 
       Requested Period:                      10.000
+    - Setup time:                            2.699
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         7.301
+
+    - Propagation time:                      10.023
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -2.722
+
+    Number of logic level(s):                4
+    Starting point:                          spi_slave_pm.CLK_FCNT[0] / Q
+    Ending point:                            spi_slave_pm.I_SCA_DAT_IN / D
+    The start point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
+    The end   point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
+
+Instance / Net                                            Pin      Pin               Arrival     No. of    
+Name                                         Type         Name     Dir     Delay     Time        Fan Out(s)
+-----------------------------------------------------------------------------------------------------------
+spi_slave_pm.CLK_FCNT[0]                     DFN0C1       Q        Out     0.653     0.653       -         
+CLK_FCNT[0]                                  Net          -        -       2.353     -           20        
+spi_slave_pm.CLK_FCNT_RNIPUJS[1]             NOR2         B        In      -         3.007       -         
+spi_slave_pm.CLK_FCNT_RNIPUJS[1]             NOR2         Y        Out     0.646     3.653       -         
+un8_clk_fcnt_3                               Net          -        -       1.184     -           4         
+spi_slave_pm.CLK_FCNT_RNIN8SL2_0[5]          NOR3C        C        In      -         4.837       -         
+spi_slave_pm.CLK_FCNT_RNIN8SL2_0[5]          NOR3C        Y        Out     0.666     5.502       -         
+un10_clk_fcnt_0_0                            Net          -        -       2.218     -           17        
+spi_slave_pm.TX_32BIT_SREG_RNIR72H6[30]      AO1          A        In      -         7.720       -         
+spi_slave_pm.TX_32BIT_SREG_RNIR72H6[30]      AO1          Y        Out     0.520     8.240       -         
+N_I_SCA_DAT_IN_iv_1                          Net          -        -       0.322     -           1         
+spi_slave_pm.TX_32BIT_SREG_RNIT6T001[30]     AO1          C        In      -         8.561       -         
+spi_slave_pm.TX_32BIT_SREG_RNIT6T001[30]     AO1          Y        Out     0.655     9.216       -         
+N_I_SCA_DAT_IN                               Net          -        -       0.806     -           3         
+spi_slave_pm.I_SCA_DAT_IN                    DFN0P1C1     D        In      -         10.023      -         
+===========================================================================================================
+Total path delay (propagation time + setup) of 12.722 is 5.839(45.9%) logic and 6.883(54.1%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 2: 
+      Requested Period:                      10.000
+    - Setup time:                            0.713
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.287
+
+    - Propagation time:                      11.877
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -2.589
+
+    Number of logic level(s):                8
+    Starting point:                          spi_slave_pm.CLK_FCNT[0] / Q
+    Ending point:                            spi_slave_pm.CLK_FCNT[5] / D
+    The start point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
+    The end   point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
+
+Instance / Net                                   Pin      Pin               Arrival     No. of    
+Name                                  Type       Name     Dir     Delay     Time        Fan Out(s)
+--------------------------------------------------------------------------------------------------
+spi_slave_pm.CLK_FCNT[0]              DFN0C1     Q        Out     0.653     0.653       -         
+CLK_FCNT[0]                           Net        -        -       2.353     -           20        
+spi_slave_pm.CLK_FCNT_RNIPUJS[1]      NOR2       B        In      -         3.007       -         
+spi_slave_pm.CLK_FCNT_RNIPUJS[1]      NOR2       Y        Out     0.646     3.653       -         
+un8_clk_fcnt_3                        Net        -        -       1.184     -           4         
+spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      B        In      -         4.837       -         
+spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      Y        Out     0.607     5.443       -         
+un2_clk_fcnt_en                       Net        -        -       0.386     -           2         
+spi_slave_pm.un1_CLK_FCNT.I_1         AND2       B        In      -         5.829       -         
+spi_slave_pm.un1_CLK_FCNT.I_1         AND2       Y        Out     0.627     6.457       -         
+DWACT_ADD_CI_0_TMP[0]                 Net        -        -       0.386     -           2         
+spi_slave_pm.un1_CLK_FCNT.I_27        NOR2B      A        In      -         6.842       -         
+spi_slave_pm.un1_CLK_FCNT.I_27        NOR2B      Y        Out     0.514     7.357       -         
+DWACT_ADD_CI_0_g_array_1[0]           Net        -        -       0.806     -           3         
+spi_slave_pm.un1_CLK_FCNT.I_33        NOR2B      A        In      -         8.163       -         
+spi_slave_pm.un1_CLK_FCNT.I_33        NOR2B      Y        Out     0.514     8.678       -         
+DWACT_ADD_CI_0_g_array_2[0]           Net        -        -       0.386     -           2         
+spi_slave_pm.un1_CLK_FCNT.I_29        NOR2B      A        In      -         9.063       -         
+spi_slave_pm.un1_CLK_FCNT.I_29        NOR2B      Y        Out     0.514     9.578       -         
+DWACT_ADD_CI_0_g_array_12_1[0]        Net        -        -       0.322     -           1         
+spi_slave_pm.un1_CLK_FCNT.I_26        XOR2       B        In      -         9.899       -         
+spi_slave_pm.un1_CLK_FCNT.I_26        XOR2       Y        Out     0.937     10.836      -         
+I_26                                  Net        -        -       0.322     -           1         
+spi_slave_pm.CLK_FCNT_RNO[5]          AOI1B      C        In      -         11.157      -         
+spi_slave_pm.CLK_FCNT_RNO[5]          AOI1B      Y        Out     0.398     11.555      -         
+N_CLK_FCNT[5]                         Net        -        -       0.322     -           1         
+spi_slave_pm.CLK_FCNT[5]              DFN0C1     D        In      -         11.877      -         
+==================================================================================================
+Total path delay (propagation time + setup) of 12.589 is 6.124(48.6%) logic and 6.465(51.4%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 3: 
+      Requested Period:                      10.000
     - Setup time:                            0.713
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         9.287
@@ -720,7 +809,7 @@ Path information for path number 1:
     = Slack (non-critical) :                 -2.567
 
     Number of logic level(s):                9
-    Starting point:                          spi_slave_pm.CLK_FCNT[3] / Q
+    Starting point:                          spi_slave_pm.CLK_FCNT[2] / Q
     Ending point:                            spi_slave_pm.CLK_FCNT[5] / D
     The start point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
     The end   point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
@@ -728,8 +817,8 @@ Path information for path number 1:
 Instance / Net                                   Pin      Pin               Arrival     No. of    
 Name                                  Type       Name     Dir     Delay     Time        Fan Out(s)
 --------------------------------------------------------------------------------------------------
-spi_slave_pm.CLK_FCNT[3]              DFN0C1     Q        Out     0.653     0.653       -         
-CLK_FCNT[3]                           Net        -        -       1.669     -           9         
+spi_slave_pm.CLK_FCNT[2]              DFN0C1     Q        Out     0.653     0.653       -         
+CLK_FCNT[2]                           Net        -        -       1.669     -           9         
 spi_slave_pm.CLK_FCNT_RNIT2KS[2]      NOR2       B        In      -         2.322       -         
 spi_slave_pm.CLK_FCNT_RNIT2KS[2]      NOR2       Y        Out     0.646     2.968       -         
 un8_clk_fcnt_2                        Net        -        -       0.806     -           3         
@@ -753,7 +842,7 @@ spi_slave_pm.un1_CLK_FCNT.I_29        NOR2B      Y        Out     0.514     9.55
 DWACT_ADD_CI_0_g_array_12_1[0]        Net        -        -       0.322     -           1         
 spi_slave_pm.un1_CLK_FCNT.I_26        XOR2       B        In      -         9.877       -         
 spi_slave_pm.un1_CLK_FCNT.I_26        XOR2       Y        Out     0.937     10.813      -         
-un1_CLK_FCNT[0]                       Net        -        -       0.322     -           1         
+I_26                                  Net        -        -       0.322     -           1         
 spi_slave_pm.CLK_FCNT_RNO[5]          AOI1B      C        In      -         11.135      -         
 spi_slave_pm.CLK_FCNT_RNO[5]          AOI1B      Y        Out     0.398     11.533      -         
 N_CLK_FCNT[5]                         Net        -        -       0.322     -           1         
@@ -763,108 +852,18 @@ Total path delay (propagation time + setup) of 12.567 is 6.778(53.9%) logic and 
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
-Path information for path number 2: 
-      Requested Period:                      10.000
-    - Setup time:                            2.699
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         7.301
-
-    - Propagation time:                      9.838
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 -2.538
-
-    Number of logic level(s):                4
-    Starting point:                          spi_slave_pm.CLK_FCNT[0] / Q
-    Ending point:                            spi_slave_pm.I_SCA_DAT_IN / D
-    The start point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
-    The end   point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
-
-Instance / Net                                           Pin      Pin               Arrival     No. of    
-Name                                        Type         Name     Dir     Delay     Time        Fan Out(s)
-----------------------------------------------------------------------------------------------------------
-spi_slave_pm.CLK_FCNT[0]                    DFN0C1       Q        Out     0.653     0.653       -         
-CLK_FCNT[0]                                 Net          -        -       2.308     -           19        
-spi_slave_pm.CLK_FCNT_RNIPUJS[1]            NOR2         A        In      -         2.962       -         
-spi_slave_pm.CLK_FCNT_RNIPUJS[1]            NOR2         Y        Out     0.507     3.469       -         
-un8_clk_fcnt_3                              Net          -        -       1.184     -           4         
-spi_slave_pm.CLK_FCNT_RNIN8SL2_0[5]         NOR3C        C        In      -         4.652       -         
-spi_slave_pm.CLK_FCNT_RNIN8SL2_0[5]         NOR3C        Y        Out     0.666     5.318       -         
-un10_clk_fcnt_0_0                           Net          -        -       2.218     -           17        
-spi_slave_pm.TX_32BIT_SREG_RNIFCBU5[30]     AO1          A        In      -         7.536       -         
-spi_slave_pm.TX_32BIT_SREG_RNIFCBU5[30]     AO1          Y        Out     0.520     8.055       -         
-N_I_SCA_DAT_IN_iv_0                         Net          -        -       0.322     -           1         
-spi_slave_pm.TX_32BIT_SREG_RNIHB6EV[30]     AO1          C        In      -         8.377       -         
-spi_slave_pm.TX_32BIT_SREG_RNIHB6EV[30]     AO1          Y        Out     0.655     9.032       -         
-N_I_SCA_DAT_IN                              Net          -        -       0.806     -           3         
-spi_slave_pm.I_SCA_DAT_IN                   DFN0P1C1     D        In      -         9.838       -         
-==========================================================================================================
-Total path delay (propagation time + setup) of 12.538 is 5.700(45.5%) logic and 6.837(54.5%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-Path information for path number 3: 
-      Requested Period:                      10.000
-    - Setup time:                            0.713
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         9.287
-
-    - Propagation time:                      11.693
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 -2.405
-
-    Number of logic level(s):                8
-    Starting point:                          spi_slave_pm.CLK_FCNT[0] / Q
-    Ending point:                            spi_slave_pm.CLK_FCNT[5] / D
-    The start point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
-    The end   point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
-
-Instance / Net                                   Pin      Pin               Arrival     No. of    
-Name                                  Type       Name     Dir     Delay     Time        Fan Out(s)
---------------------------------------------------------------------------------------------------
-spi_slave_pm.CLK_FCNT[0]              DFN0C1     Q        Out     0.653     0.653       -         
-CLK_FCNT[0]                           Net        -        -       2.308     -           19        
-spi_slave_pm.CLK_FCNT_RNIPUJS[1]      NOR2       A        In      -         2.962       -         
-spi_slave_pm.CLK_FCNT_RNIPUJS[1]      NOR2       Y        Out     0.507     3.469       -         
-un8_clk_fcnt_3                        Net        -        -       1.184     -           4         
-spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      B        In      -         4.652       -         
-spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      Y        Out     0.607     5.259       -         
-un2_clk_fcnt_en                       Net        -        -       0.386     -           2         
-spi_slave_pm.un1_CLK_FCNT.I_1         AND2       B        In      -         5.645       -         
-spi_slave_pm.un1_CLK_FCNT.I_1         AND2       Y        Out     0.627     6.272       -         
-DWACT_ADD_CI_0_TMP[0]                 Net        -        -       0.386     -           2         
-spi_slave_pm.un1_CLK_FCNT.I_27        NOR2B      A        In      -         6.658       -         
-spi_slave_pm.un1_CLK_FCNT.I_27        NOR2B      Y        Out     0.514     7.172       -         
-DWACT_ADD_CI_0_g_array_1[0]           Net        -        -       0.806     -           3         
-spi_slave_pm.un1_CLK_FCNT.I_33        NOR2B      A        In      -         7.979       -         
-spi_slave_pm.un1_CLK_FCNT.I_33        NOR2B      Y        Out     0.514     8.493       -         
-DWACT_ADD_CI_0_g_array_2[0]           Net        -        -       0.386     -           2         
-spi_slave_pm.un1_CLK_FCNT.I_29        NOR2B      A        In      -         8.879       -         
-spi_slave_pm.un1_CLK_FCNT.I_29        NOR2B      Y        Out     0.514     9.393       -         
-DWACT_ADD_CI_0_g_array_12_1[0]        Net        -        -       0.322     -           1         
-spi_slave_pm.un1_CLK_FCNT.I_26        XOR2       B        In      -         9.715       -         
-spi_slave_pm.un1_CLK_FCNT.I_26        XOR2       Y        Out     0.937     10.652      -         
-un1_CLK_FCNT[0]                       Net        -        -       0.322     -           1         
-spi_slave_pm.CLK_FCNT_RNO[5]          AOI1B      C        In      -         10.973      -         
-spi_slave_pm.CLK_FCNT_RNO[5]          AOI1B      Y        Out     0.398     11.371      -         
-N_CLK_FCNT[5]                         Net        -        -       0.322     -           1         
-spi_slave_pm.CLK_FCNT[5]              DFN0C1     D        In      -         11.693      -         
-==================================================================================================
-Total path delay (propagation time + setup) of 12.405 is 5.985(48.2%) logic and 6.420(51.8%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
 Path information for path number 4: 
       Requested Period:                      10.000
     - Setup time:                            0.713
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         9.287
 
-    - Propagation time:                      11.685
+    - Propagation time:                      11.755
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 -2.398
+    = Slack (non-critical) :                 -2.468
 
     Number of logic level(s):                9
-    Starting point:                          spi_slave_pm.CLK_FCNT[2] / Q
+    Starting point:                          spi_slave_pm.CLK_FCNT[3] / Q
     Ending point:                            spi_slave_pm.CLK_FCNT[5] / D
     The start point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
     The end   point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
@@ -872,38 +871,38 @@ Path information for path number 4:
 Instance / Net                                   Pin      Pin               Arrival     No. of    
 Name                                  Type       Name     Dir     Delay     Time        Fan Out(s)
 --------------------------------------------------------------------------------------------------
-spi_slave_pm.CLK_FCNT[2]              DFN0C1     Q        Out     0.653     0.653       -         
-CLK_FCNT[2]                           Net        -        -       1.639     -           8         
-spi_slave_pm.CLK_FCNT_RNIT2KS[2]      NOR2       A        In      -         2.292       -         
-spi_slave_pm.CLK_FCNT_RNIT2KS[2]      NOR2       Y        Out     0.507     2.800       -         
+spi_slave_pm.CLK_FCNT[3]              DFN0C1     Q        Out     0.653     0.653       -         
+CLK_FCNT[3]                           Net        -        -       1.708     -           10        
+spi_slave_pm.CLK_FCNT_RNIT2KS[2]      NOR2       A        In      -         2.362       -         
+spi_slave_pm.CLK_FCNT_RNIT2KS[2]      NOR2       Y        Out     0.507     2.869       -         
 un8_clk_fcnt_2                        Net        -        -       0.806     -           3         
-spi_slave_pm.CLK_FCNT_RNIU98P1[5]     NOR3B      B        In      -         3.606       -         
-spi_slave_pm.CLK_FCNT_RNIU98P1[5]     NOR3B      Y        Out     0.624     4.230       -         
+spi_slave_pm.CLK_FCNT_RNIU98P1[5]     NOR3B      B        In      -         3.676       -         
+spi_slave_pm.CLK_FCNT_RNIU98P1[5]     NOR3B      Y        Out     0.624     4.300       -         
 un8_clk_fcnt_1                        Net        -        -       0.386     -           2         
-spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      A        In      -         4.616       -         
-spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      Y        Out     0.636     5.252       -         
+spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      A        In      -         4.685       -         
+spi_slave_pm.CLK_FCNT_EN_RNIT4B43     AOI1B      Y        Out     0.636     5.322       -         
 un2_clk_fcnt_en                       Net        -        -       0.386     -           2         
-spi_slave_pm.un1_CLK_FCNT.I_1         AND2       B        In      -         5.638       -         
-spi_slave_pm.un1_CLK_FCNT.I_1         AND2       Y        Out     0.627     6.265       -         
+spi_slave_pm.un1_CLK_FCNT.I_1         AND2       B        In      -         5.707       -         
+spi_slave_pm.un1_CLK_FCNT.I_1         AND2       Y        Out     0.627     6.335       -         
 DWACT_ADD_CI_0_TMP[0]                 Net        -        -       0.386     -           2         
-spi_slave_pm.un1_CLK_FCNT.I_27        NOR2B      A        In      -         6.651       -         
-spi_slave_pm.un1_CLK_FCNT.I_27        NOR2B      Y        Out     0.514     7.165       -         
+spi_slave_pm.un1_CLK_FCNT.I_27        NOR2B      A        In      -         6.721       -         
+spi_slave_pm.un1_CLK_FCNT.I_27        NOR2B      Y        Out     0.514     7.235       -         
 DWACT_ADD_CI_0_g_array_1[0]           Net        -        -       0.806     -           3         
-spi_slave_pm.un1_CLK_FCNT.I_33        NOR2B      A        In      -         7.972       -         
-spi_slave_pm.un1_CLK_FCNT.I_33        NOR2B      Y        Out     0.514     8.486       -         
+spi_slave_pm.un1_CLK_FCNT.I_33        NOR2B      A        In      -         8.041       -         
+spi_slave_pm.un1_CLK_FCNT.I_33        NOR2B      Y        Out     0.514     8.556       -         
 DWACT_ADD_CI_0_g_array_2[0]           Net        -        -       0.386     -           2         
-spi_slave_pm.un1_CLK_FCNT.I_29        NOR2B      A        In      -         8.872       -         
-spi_slave_pm.un1_CLK_FCNT.I_29        NOR2B      Y        Out     0.514     9.386       -         
+spi_slave_pm.un1_CLK_FCNT.I_29        NOR2B      A        In      -         8.941       -         
+spi_slave_pm.un1_CLK_FCNT.I_29        NOR2B      Y        Out     0.514     9.456       -         
 DWACT_ADD_CI_0_g_array_12_1[0]        Net        -        -       0.322     -           1         
-spi_slave_pm.un1_CLK_FCNT.I_26        XOR2       B        In      -         9.708       -         
-spi_slave_pm.un1_CLK_FCNT.I_26        XOR2       Y        Out     0.937     10.645      -         
-un1_CLK_FCNT[0]                       Net        -        -       0.322     -           1         
-spi_slave_pm.CLK_FCNT_RNO[5]          AOI1B      C        In      -         10.966      -         
-spi_slave_pm.CLK_FCNT_RNO[5]          AOI1B      Y        Out     0.398     11.364      -         
+spi_slave_pm.un1_CLK_FCNT.I_26        XOR2       B        In      -         9.777       -         
+spi_slave_pm.un1_CLK_FCNT.I_26        XOR2       Y        Out     0.937     10.714      -         
+I_26                                  Net        -        -       0.322     -           1         
+spi_slave_pm.CLK_FCNT_RNO[5]          AOI1B      C        In      -         11.036      -         
+spi_slave_pm.CLK_FCNT_RNO[5]          AOI1B      Y        Out     0.398     11.434      -         
 N_CLK_FCNT[5]                         Net        -        -       0.322     -           1         
-spi_slave_pm.CLK_FCNT[5]              DFN0C1     D        In      -         11.685      -         
+spi_slave_pm.CLK_FCNT[5]              DFN0C1     D        In      -         11.755      -         
 ==================================================================================================
-Total path delay (propagation time + setup) of 12.398 is 6.639(53.5%) logic and 5.759(46.5%) route.
+Total path delay (propagation time + setup) of 12.468 is 6.639(53.2%) logic and 5.829(46.8%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -913,9 +912,9 @@ Path information for path number 5:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         7.516
 
-    - Propagation time:                      9.769
+    - Propagation time:                      9.953
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 -2.253
+    = Slack (non-critical) :                 -2.437
 
     Number of logic level(s):                4
     Starting point:                          spi_slave_pm.CLK_FCNT[0] / Q
@@ -923,26 +922,26 @@ Path information for path number 5:
     The start point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
     The end   point is clocked by            top_lvr_fw|SCA_CLK_OUT [falling] on pin CLK
 
-Instance / Net                                           Pin      Pin               Arrival     No. of    
-Name                                        Type         Name     Dir     Delay     Time        Fan Out(s)
-----------------------------------------------------------------------------------------------------------
-spi_slave_pm.CLK_FCNT[0]                    DFN0C1       Q        Out     0.653     0.653       -         
-CLK_FCNT[0]                                 Net          -        -       2.308     -           19        
-spi_slave_pm.CLK_FCNT_RNIPUJS[1]            NOR2         A        In      -         2.962       -         
-spi_slave_pm.CLK_FCNT_RNIPUJS[1]            NOR2         Y        Out     0.507     3.469       -         
-un8_clk_fcnt_3                              Net          -        -       1.184     -           4         
-spi_slave_pm.CLK_FCNT_RNIN8SL2_0[5]         NOR3C        C        In      -         4.652       -         
-spi_slave_pm.CLK_FCNT_RNIN8SL2_0[5]         NOR3C        Y        Out     0.666     5.318       -         
-un10_clk_fcnt_0_0                           Net          -        -       2.218     -           17        
-spi_slave_pm.CLK_FCNT_RNIEHOB5[5]           NOR3A        C        In      -         7.536       -         
-spi_slave_pm.CLK_FCNT_RNIEHOB5[5]           NOR3A        Y        Out     0.641     8.177       -         
-N_I_SCA_DAT_IN_2_m_0                        Net          -        -       0.322     -           1         
-spi_slave_pm.TX_32BIT_SREG_RNIHB6EV[30]     AO1          A        In      -         8.499       -         
-spi_slave_pm.TX_32BIT_SREG_RNIHB6EV[30]     AO1          Y        Out     0.464     8.963       -         
-N_I_SCA_DAT_IN                              Net          -        -       0.806     -           3         
-spi_slave_pm.I_SCA_DAT_IN                   DFN0P1C1     D        In      -         9.769       -         
-==========================================================================================================
-Total path delay (propagation time + setup) of 12.253 is 5.415(44.2%) logic and 6.837(55.8%) route.
+Instance / Net                                            Pin      Pin               Arrival     No. of    
+Name                                         Type         Name     Dir     Delay     Time        Fan Out(s)
+-----------------------------------------------------------------------------------------------------------
+spi_slave_pm.CLK_FCNT[0]                     DFN0C1       Q        Out     0.653     0.653       -         
+CLK_FCNT[0]                                  Net          -        -       2.353     -           20        
+spi_slave_pm.CLK_FCNT_RNIPUJS[1]             NOR2         B        In      -         3.007       -         
+spi_slave_pm.CLK_FCNT_RNIPUJS[1]             NOR2         Y        Out     0.646     3.653       -         
+un8_clk_fcnt_3                               Net          -        -       1.184     -           4         
+spi_slave_pm.CLK_FCNT_RNIN8SL2_0[5]          NOR3C        C        In      -         4.837       -         
+spi_slave_pm.CLK_FCNT_RNIN8SL2_0[5]          NOR3C        Y        Out     0.666     5.502       -         
+un10_clk_fcnt_0_0                            Net          -        -       2.218     -           17        
+spi_slave_pm.CLK_FCNT_RNIEHOB5[5]            NOR3A        C        In      -         7.720       -         
+spi_slave_pm.CLK_FCNT_RNIEHOB5[5]            NOR3A        Y        Out     0.641     8.361       -         
+N_I_SCA_DAT_IN_2_m_1                         Net          -        -       0.322     -           1         
+spi_slave_pm.TX_32BIT_SREG_RNIT6T001[30]     AO1          A        In      -         8.683       -         
+spi_slave_pm.TX_32BIT_SREG_RNIT6T001[30]     AO1          Y        Out     0.464     9.147       -         
+N_I_SCA_DAT_IN                               Net          -        -       0.806     -           3         
+spi_slave_pm.I_SCA_DAT_IN                    DFN0P1C1     D        In      -         9.953       -         
+===========================================================================================================
+Total path delay (propagation time + setup) of 12.437 is 5.554(44.7%) logic and 6.883(55.3%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -952,10 +951,10 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 Timing exceptions that could not be applied
 None
 
-Finished final timing analysis (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 121MB peak: 123MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 121MB peak: 124MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 121MB peak: 123MB)
+Finished timing report (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 121MB peak: 124MB)
 
 --------------------------------------------------------------------------------
 Target Part: A3PN250_VQFP100_STD
@@ -968,8 +967,10 @@ Report for cell top_lvr_fw.rtl
               AO16     1      1.0        1.0
               AO18    24      1.0       24.0
               AO1A    22      1.0       22.0
+              AO1D     1      1.0        1.0
              AOI1B    12      1.0       12.0
                AX1     5      1.0        5.0
+              AX1A     1      1.0        1.0
               AX1C    10      1.0       10.0
               AX1D     1      1.0        1.0
              AXOI5     1      1.0        1.0
@@ -978,31 +979,30 @@ Report for cell top_lvr_fw.rtl
                INV     1      1.0        1.0
               MAJ3     4      1.0        4.0
              MIN3X     4      1.0        4.0
-               MX2    66      1.0       66.0
-              MX2A     1      1.0        1.0
-              MX2B     2      1.0        2.0
-              NOR2    41      1.0       41.0
-             NOR2A    86      1.0       86.0
-             NOR2B    57      1.0       57.0
+               MX2    90      1.0       90.0
+              MX2B    11      1.0       11.0
+              NOR2    73      1.0       73.0
+             NOR2A   119      1.0      119.0
+             NOR2B    60      1.0       60.0
               NOR3    15      1.0       15.0
              NOR3A    14      1.0       14.0
              NOR3B    29      1.0       29.0
-             NOR3C    45      1.0       45.0
+             NOR3C    47      1.0       47.0
                OA1     1      1.0        1.0
-              OA1A     7      1.0        7.0
+              OA1A     8      1.0        8.0
               OA1B    10      1.0       10.0
               OA1C     4      1.0        4.0
               OAI1     5      1.0        5.0
-               OR2    22      1.0       22.0
+               OR2    21      1.0       21.0
               OR2A     7      1.0        7.0
-              OR2B     4      1.0        4.0
+              OR2B     3      1.0        3.0
                OR3     8      1.0        8.0
               OR3A    64      1.0       64.0
               OR3B     1      1.0        1.0
               OR3C     5      1.0        5.0
                VCC    12      0.0        0.0
                XA1     1      1.0        1.0
-              XA1A     7      1.0        7.0
+              XA1A     6      1.0        6.0
               XA1B     4      1.0        4.0
              XAI1A     1      1.0        1.0
              XNOR2     1      1.0        1.0
@@ -1013,18 +1013,20 @@ Report for cell top_lvr_fw.rtl
 
 
             DFI1C0     2      1.0        2.0
-            DFN0C0    20      1.0       20.0
+          DFI1E1C0     7      1.0        7.0
+            DFN0C0    13      1.0       13.0
             DFN0C1     6      1.0        6.0
-            DFN0P0    11      1.0       11.0
-          DFN0P1C1    32      1.0       32.0
+            DFN0P0    19      1.0       19.0
+          DFN0P1C1    33      1.0       33.0
             DFN1C0   155      1.0      155.0
-            DFN1C1    31      1.0       31.0
+            DFN1C1    32      1.0       32.0
           DFN1E0C0    31      1.0       31.0
           DFN1E0P0     3      1.0        3.0
-          DFN1E1C0    70      1.0       70.0
+          DFN1E1C0    33      1.0       33.0
             DFN1P0    67      1.0       67.0
+          DFN1P1C1    32      1.0       32.0
                    -----          ----------
-             TOTAL  1469              1441.0
+             TOTAL  1576              1548.0
 
 
   IO Cell usage:
@@ -1036,7 +1038,7 @@ Report for cell top_lvr_fw.rtl
              TOTAL    64
 
 
-Core Cells         : 1441 of 6144 (23%)
+Core Cells         : 1548 of 6144 (25%)
 IO Cells           : 64
 
   RAM/ROM Usage Summary
@@ -1044,9 +1046,9 @@ Block Rams : 0 of 8 (0%)
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 27MB peak: 123MB)
+At Mapper Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 28MB peak: 124MB)
 
-Process took 0h:00m:05s realtime, 0h:00m:04s cputime
-# Mon Aug 12 08:32:43 2019
+Process took 0h:00m:04s realtime, 0h:00m:04s cputime
+# Mon Aug 12 09:58:29 2019
 
 ###########################################################]

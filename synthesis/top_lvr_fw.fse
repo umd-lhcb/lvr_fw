@@ -1,19 +1,19 @@
 
-fsm_encoding {1421842181} onehot
+fsm_encoding {1423042301} onehot
 
-fsm_state_encoding {1421842181} init {000001}
+fsm_state_encoding {1423042301} init {000001}
 
-fsm_state_encoding {1421842181} det_nullclk {000010}
+fsm_state_encoding {1423042301} det_nullclk {000010}
 
-fsm_state_encoding {1421842181} en_det_frame1cnt {000100}
+fsm_state_encoding {1423042301} en_det_frame1cnt {000100}
 
-fsm_state_encoding {1421842181} pipeline_delay {001000}
+fsm_state_encoding {1423042301} pipeline_delay {001000}
 
-fsm_state_encoding {1421842181} det_frame_done {010000}
+fsm_state_encoding {1423042301} det_frame_done {010000}
 
-fsm_state_encoding {1421842181} process_frame {100000}
+fsm_state_encoding {1423042301} process_frame {100000}
 
-fsm_registers {1421842181} {SPI_SM[0]}  {SPI_SM[1]}  {SPI_SM[2]}  {SPI_SM[3]}  {SPI_SM[4]}  {SPI_SM[5]} 
+fsm_registers {1423042301} {SPI_SM[0]}  {SPI_SM[1]}  {SPI_SM[2]}  {SPI_SM[3]}  {SPI_SM[4]}  {SPI_SM[5]} 
 
 fsm_encoding {1213121312} onehot
 

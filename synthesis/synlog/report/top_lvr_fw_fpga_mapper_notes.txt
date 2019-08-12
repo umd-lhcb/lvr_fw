@@ -1,11 +1,15 @@
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":418:4:418:5|Found counter in view:work.top_lvr_fw(rtl) instance DTYCYC_CNT[4:0] 
-@N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":218:4:218:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
+@N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":230:4:230:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":230:4:230:5|Removing sequential instance TX_32BIT_REG[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\slow_pulseen_gen.vhd":73:4:73:5|Found counter in view:work.SLOW_PULSE_EN_GEN(rtl) instance CNT_VAL[20:0] 
 @N: MF176 |Default generator successful 
 @N: MF176 |Default generator successful 
 @N: MF176 |Default generator successful 
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":354:2:354:12|Removing sequential instance SPI_TX_WORD[31] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":230:4:230:5|Removing sequential instance spi_slave_pm.I_SPI_RX_WORD[31] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":98:4:98:5|Removing sequential instance spi_slave_pm.RX_32BIT_SREG[31] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: FP130 |Promoting Net CLK_5M_GL_c_c on CLKINT  CLK_5M_GL_inferred_clock 
 @N: FP130 |Promoting Net MASTER_RST_B on CLKINT  I_56 
 @N: FP130 |Promoting Net spi_rst_b on CLKINT  I_57 

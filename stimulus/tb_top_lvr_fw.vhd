@@ -176,7 +176,7 @@ begin
                 sca_data_reg;
 
   sca_data_reg_in <= x"abababab" when (sca_reset_out = '0') else
-                sca_data_reg_in(30 downto 0) & sca_dat_in when falling_edge(sca_clk_out) else
+                sca_data_reg_in(30 downto 0) & sca_dat_in when rising_edge(sca_clk_out) else
                 sca_data_reg_in;
 
   SCA_CLK_mask <= '0', '1' after 32.5 us, '0' after 135 us, '1' after 141 us, '0' after 243.5 us, '1' after 251 us, '0' after 352 us;

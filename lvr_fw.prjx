@@ -58,12 +58,12 @@ SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="utd"
-TIME="1565388109"
-SIZE="914432"
+TIME="1565389032"
+SIZE="914944"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1565388109"
+TIME="1565389032"
 SIZE="1043"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
@@ -80,6 +80,11 @@ VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
 STATE="utd"
 TIME="1563849444"
 SIZE="2670"
+ENDFILE
+VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
+STATE="utd"
+TIME="1565624203"
+SIZE="3104"
 ENDFILE
 VALUE "<project>\hdl\IIR_FILT.vhd,hdl"
 STATE="utd"
@@ -98,8 +103,8 @@ SIZE="4679"
 ENDFILE
 VALUE "<project>\hdl\spi_slave.vhd,hdl"
 STATE="utd"
-TIME="1565379671"
-SIZE="13759"
+TIME="1565623867"
+SIZE="14335"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
@@ -111,6 +116,11 @@ STATE="utd"
 TIME="1565379043"
 SIZE="930"
 ENDFILE
+VALUE "<project>\simulation\TB_TOP_LVR_FW_presynth_simulation.log,log"
+STATE="utd"
+TIME="1565623939"
+SIZE="10856"
+ENDFILE
 VALUE "<project>\simulation\wave.do,do"
 STATE="utd"
 TIME="1565378731"
@@ -118,8 +128,8 @@ SIZE="6288"
 ENDFILE
 VALUE "<project>\stimulus\tb_top_lvr_fw.vhd,tb_hdl"
 STATE="utd"
-TIME="1565377484"
-SIZE="9340"
+TIME="1565621882"
+SIZE="9339"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
@@ -307,7 +317,7 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Compile:top_lvr_fw_compile_log.rpt
+ReportsCurrentItem;Place and Route:top_lvr_fw_placeroute_log.rpt
 StartPage;StartPage;0
 ACTIVEVIEW;Reports
 ENDLIST

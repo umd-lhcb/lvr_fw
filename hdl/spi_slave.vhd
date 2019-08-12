@@ -97,13 +97,15 @@ begin
   begin
     if SPI_CLR = '1' then  -- AN EXTERNAL STATE MACHINE FORCES SYNCHRONIZATION OF THE SPI 
       RX_32BIT_SREG <= (others => '0');
-      TX_32BIT_SREG <= (others => '0');
+      TX_32BIT_SREG <= N_TX_32BIT_SREG;
       CLK_FCNT      <= 0;               -- FIRST TRANSITION GOES TO 1
 
-      I_SCA_DAT_IN <= '0';
+      I_SCA_DAT_IN <= N_I_SCA_DAT_IN;
 
     elsif RISING_EDGE(SCA_CLK_OUT) then
       RX_32BIT_SREG <= N_RX_32BIT_SREG;
+      
+    elsif FALLING_EDGE(SCA_CLK_OUT) then
       TX_32BIT_SREG <= N_TX_32BIT_SREG;
       CLK_FCNT      <= N_CLK_FCNT;
 
@@ -129,80 +131,90 @@ begin
       N_CLK_FCNT <= CLK_FCNT;
     end if;
 
-    N_I_SCA_DAT_IN <= TX_32BIT_SREG(31);  -- FPGA SPI SENDS MSb OUT FIRST TO SCA
+--    N_I_SCA_DAT_IN <= TX_32BIT_SREG(31);  -- FPGA SPI SENDS MSb OUT FIRST TO SCA
 
     N_TX_32BIT_SREG <= TX_32BIT_SREG;   -- DEFAULT ASSIGNMENT
 
-    case CLK_FCNT is
-      when 0 =>
+    if CLK_FCNT = 0 then
         N_TX_32BIT_SREG <= TX_32BIT_REG;  -- *** SAMPLE EXTERAL DATA TO BE TRANSMITTED HERE ***
-        N_I_SCA_DAT_IN  <= TX_32BIT_REG(31);  -- FPGA SPI SENDS MSb OUT FIRST TO SCA
-      when 1 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(30);
-      when 2 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(29);
-      when 3 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(28);
-      when 4 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(27);
-      when 5 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(26);
-      when 6 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(25);
-      when 7 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(24);
-      when 8 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(23);
-      when 9 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(22);
-      when 10 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(21);
-      when 11 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(20);
-      when 12 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(19);
-      when 13 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(18);
-      when 14 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(17);
-      when 15 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(16);
-      when 16 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(15);
-      when 17 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(14);
-      when 18 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(13);
-      when 19 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(12);
-      when 20 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(11);
-      when 21 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(10);
-      when 22 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(9);
-      when 23 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(8);
-      when 24 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(7);
-      when 25 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(6);
-      when 26 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(5);
-      when 27 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(4);
-      when 28 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(3);
-      when 29 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(2);
-      when 30 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(1);
-      when 31 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);
-      when 32 =>
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);  -- Holds the last bit for a while
-
-    end case;
+        N_I_SCA_DAT_IN  <= TX_32BIT_SREG(30);  -- FPGA SPI SENDS MSb OUT FIRST TO SCA
+    elsif CLK_FCNT < 31 then
+      N_I_SCA_DAT_IN <= TX_32BIT_SREG(30-CLK_FCNT);
+    else
+      N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);
+    end if;
+    
+      
+--    case CLK_FCNT is
+--      when 0 =>
+--        N_TX_32BIT_SREG <= TX_32BIT_REG;  -- *** SAMPLE EXTERAL DATA TO BE TRANSMITTED HERE ***
+--        N_I_SCA_DAT_IN  <= TX_32BIT_REG(31);  -- FPGA SPI SENDS MSb OUT FIRST TO SCA
+--      when 1 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(30);
+--      when 2 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(29);
+--      when 3 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(28);
+--      when 4 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(27);
+--      when 5 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(26);
+--      when 6 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(25);
+--      when 7 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(24);
+--      when 8 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(23);
+--      when 9 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(22);
+--      when 10 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(21);
+--      when 11 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(20);
+--      when 12 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(19);
+--      when 13 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(18);
+--      when 14 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(17);
+--      when 15 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(16);
+--      when 16 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(15);
+--      when 17 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(14);
+--      when 18 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(13);
+--      when 19 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(12);
+--      when 20 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(11);
+--      when 21 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(10);
+--      when 22 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(9);
+--      when 23 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(8);
+--      when 24 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(7);
+--      when 25 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(6);
+--      when 26 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(5);
+--      when 27 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(4);
+--      when 28 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(3);
+--      when 29 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(2);
+--      when 30 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(1);
+--      when 31 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);
+--      when 32 =>
+--        N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);  -- Holds the last bit for a while
+--
+--    end case;
 
 
   end process;

@@ -47,8 +47,8 @@ library proasic3;
 use proasic3.all;
 
 -- NOTE:  THE SYNPLIFY LIBRARY NEEDS TO BE COMMENTED OUT FOR MODELSIM PRESYNTH SIMS SINCE MODELSIM DOES NOT RECOGNIZE IT
---library synplify;
---use synplify.all;
+library synplify;
+use synplify.all;
 
 entity top_lvr_fw is
   port (
@@ -150,8 +150,8 @@ architecture RTL of top_lvr_fw is
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
---  attribute SYN_RADHARDLEVEL of RTL : architecture is "TMR";
---  attribute SYN_HIER of RTL         : architecture is "FIRM";
+--attribute SYN_RADHARDLEVEL of RTL : architecture is "TMR";
+--attribute SYN_HIER of RTL         : architecture is "FIRM";
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -252,9 +252,32 @@ architecture RTL of top_lvr_fw is
       );
   end component;
 
+
+-- ccc config as 3 global buffers
+	component CCC_Glob_3xBuff is
+
+    port( 
+			POWERDOWN : in    std_logic;
+			  CLKA      : in    std_logic;
+			  LOCK      : out   std_logic;
+			  GLA       : out   std_logic;
+			  GLB       : out   std_logic;
+			  GLC       : out   std_logic;
+			  SDIN      : in    std_logic;
+			  SCLK      : in    std_logic;
+			  SSHIFT    : in    std_logic;
+			  SUPDATE   : in    std_logic;
+			  MODE      : in    std_logic;
+			  SDOUT     : out   std_logic;
+			  CLKB      : in    std_logic;
+			  CLKC      : in    std_logic
+        );
+	end component;
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- DEFINE INTERNAL SIGNALS
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  signal GB_CLK40MHZ_OSC	: STD_LOGIC;  -- GLOBAL CLOCK BUFFER
+  SIGNAL GB_SPI_RST_B       : STD_LOGIC;  -- GLOBAL COMBINED INTERNAL FPGA RESET
 
   signal MASTER_RST_B   : std_logic;    -- POR_FPGA SYNC'D TO THE 40 MHZ CLOCK
   signal DEL0_DEV_RST_B : std_logic;  -- SYNC FF FOR FOR GENERATING THE MASTER_RST_B
@@ -326,14 +349,35 @@ architecture RTL of top_lvr_fw is
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 begin
 
-  SPI_CLK_BUF : CLKBUF port map(PAD => SCA_CLK_OUT, Y => sca_clk_out_buf); 
+GLOB_BUFF:CCC_Glob_3xBuff
+
+    port MAP( 
+				POWERDOWN => '0',
+				CLKA      => CLK40MHZ_OSC,
+				LOCK      => OPEN,
+				GLA       => GB_CLK40MHZ_OSC,
+				GLB       => sca_clk_out_buf,
+				GLC       => GB_SPI_RST_B,
+				SDIN      => '0',
+				SCLK      => '0',
+				SSHIFT    => '0',
+				SUPDATE   => '0',
+				MODE      => '0',
+				SDOUT     => OPEN,
+				CLKB      => SCA_CLK_OUT,
+				CLKC      => spi_rst_b
+			);
+
+
+
+
   spi_rst_b <= SCA_RESET_OUT and MASTER_RST_B;
   
   -- SPI
   spi_slave_pm : spi_slave
     port map (
       CLK5M_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
-      MASTER_RST_B => spi_rst_b,    -- INTERNAL ACTIVE LOW RESET
+      MASTER_RST_B => GB_SPI_RST_B,    -- INTERNAL ACTIVE LOW RESET
 
       SCA_CLK_OUT => SCA_CLK_OUT_buf,  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
       SCA_DAT_OUT => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
@@ -351,7 +395,7 @@ begin
   db_spi_cnt0 <= clk_fcnt_out(0);
   db_spi_cnt1 <= clk_fcnt_out(1);
   db_spi_cnt2 <= clk_fcnt_out(2);
-  spi_tx_word <= x"dcb02019" when spi_rst_b = '0' else
+  spi_tx_word <= x"dcb02019" when GB_SPI_RST_B = '0' else
                  spi_rx_word when falling_edge(spi_rx_strb) else
                  spi_tx_word;
 

@@ -1,15 +1,17 @@
 #--  Synopsys, Inc.
 #--  Version L-2016.09M-SP1-5
-#--  Project file Z:\windows\lvr_fw\lvr_fw_manuel\synthesis\top_lvr_fw_syn.prj
-#--  Written on Mon Aug 12 09:58:29 2019
+#--  Project file Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw_syn.prj
+#--  Written on Wed Sep 04 12:52:52 2019
 
 
 #project files
-add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_manuel/hdl/IIR_FILT.vhd"
-add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_manuel/hdl/MAIN_SEQUENCER_NEW.vhd"
-add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_manuel/hdl/Slow_PulseEn_Gen.vhd"
-add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_manuel/hdl/spi_slave.vhd"
-add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_manuel/hdl/top_lvr_fw.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_sep2/smartgen/CCC_Glob_3xBuff/CCC_Glob_3xBuff.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_sep2/hdl/IIR_FILT.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_sep2/hdl/MAIN_SEQUENCER_NEW.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_sep2/hdl/Slow_PulseEn_Gen.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_sep2/hdl/spi_slave.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_sep2/hdl/top_lvr_fw.vhd"
+add_file -fpga_constraint "top_lvr_fw_syn.fdc"
 
 
 
@@ -31,7 +33,7 @@ set_option -top_module "work.top_lvr_fw"
 set_option -distributed_compile 0
 
 # mapper_without_write_options
-set_option -frequency 100.000
+set_option -frequency 50.000000
 set_option -srs_instrumentation 1
 
 # mapper_options

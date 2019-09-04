@@ -1,3 +1,5 @@
-@E: CD213 :"Z:\windows\lvr_fw\lvr_fw\hdl\top_lvr_fw.vhd":310:16:310:21|Undefined identifier
+@E: CD125 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":153:10:153:25|Reference to unknown attribute definition syn_radhardlevel
+@E: CD424 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":153:49:153:50|Expecting architecture identifier
+@E: CD424 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":154:49:154:50|Expecting architecture identifier
 @E: Parse errors encountered - exiting
 

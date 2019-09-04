@@ -30,8 +30,8 @@ KEY VendorTechnology_VCCI_1.8_VOLTR "COM"
 KEY VendorTechnology_VCCI_2.5_VOLTR "COM"
 KEY VendorTechnology_VCCI_3.3_VOLTR "COM"
 KEY VendorTechnology_VOLTR "COM"
-KEY ProjectLocation "Z:\windows\lvr_fw\lvr_fw_manuel"
-KEY ProjectDescription ""
+KEY ProjectLocation "Z:\windows\lvr_fw\lvr_fw_sep2"
+KEY ProjectDescription "tEST RUN OF lIBERO"
 KEY Pa4PeripheralNewSeq "GOOD"
 KEY SimulationType "VHDL"
 KEY Vendor "Actel"
@@ -43,108 +43,129 @@ ENDLIST
 LIST FileManager
 VALUE "<project>\component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf,actgen_cxf"
 STATE="utd"
-TIME="1565209361"
+TIME="1567444948"
 SIZE="437"
 ENDFILE
 VALUE "<project>\constraint\top_lvr_fw.pdc,pdc"
 STATE="utd"
-TIME="1564077349"
+TIME="1567444988"
 SIZE="7030"
 ENDFILE
 VALUE "<project>\designer\impl1\IIR_FILT.ide_des,ide_des"
 STATE="utd"
-TIME="1563829748"
+TIME="1567444952"
 SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="utd"
-TIME="1565624201"
-SIZE="1008640"
+TIME="1567453238"
+SIZE="1171456"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1565624201"
-SIZE="1043"
+TIME="1567453238"
+SIZE="1074"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
 STATE="ood"
-TIME="1565112019"
+TIME="1567444952"
 SIZE="129700"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
 STATE="utd"
-TIME="1565623979"
-SIZE="9931"
+TIME="1567453242"
+SIZE="12080"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
 STATE="utd"
-TIME="1563849444"
+TIME="1567444952"
 SIZE="2670"
 ENDFILE
 VALUE "<project>\hdl\IIR_FILT.vhd,hdl"
 STATE="utd"
-TIME="1563829748"
+TIME="1567444952"
 SIZE="7360"
 ENDFILE
 VALUE "<project>\hdl\MAIN_SEQUENCER_NEW.vhd,hdl"
 STATE="utd"
-TIME="1563829748"
+TIME="1567444952"
 SIZE="18743"
 ENDFILE
 VALUE "<project>\hdl\Slow_PulseEn_Gen.vhd,hdl"
 STATE="utd"
-TIME="1563829748"
+TIME="1567444952"
 SIZE="4679"
 ENDFILE
 VALUE "<project>\hdl\spi_slave.vhd,hdl"
 STATE="utd"
-TIME="1565628993"
-SIZE="14405"
+TIME="1567446190"
+SIZE="14451"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1565387098"
-SIZE="43744"
+TIME="1567452906"
+SIZE="44855"
 ENDFILE
 VALUE "<project>\simulation\run.do,do"
 STATE="utd"
-TIME="1565623702"
-SIZE="930"
-ENDFILE
-VALUE "<project>\simulation\TB_TOP_LVR_FW_presynth_simulation.log,log"
-STATE="utd"
-TIME="1565629009"
-SIZE="68"
+TIME="1567444946"
+SIZE="929"
 ENDFILE
 VALUE "<project>\simulation\wave.do,do"
 STATE="utd"
-TIME="1565378731"
+TIME="1567444946"
 SIZE="6288"
+ENDFILE
+VALUE "<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.cxf,actgen_cxf"
+STATE="utd"
+TIME="1567451184"
+SIZE="3026"
+ENDFILE
+VALUE "<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.gen,gen"
+STATE="utd"
+TIME="1567451182"
+SIZE="775"
+PARENT="<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.log,log"
+STATE="utd"
+TIME="1567451184"
+SIZE="4529"
+PARENT="<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd,hdl"
+STATE="utd"
+TIME="1567451184"
+SIZE="8845"
+PARENT="<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.cxf"
+IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\stimulus\tb_top_lvr_fw.vhd,tb_hdl"
 STATE="utd"
-TIME="1565621882"
+TIME="1567444946"
 SIZE="9339"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
-TIME="1565623963"
-SIZE="705485"
+TIME="1567452922"
+SIZE="760934"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
-TIME="1565623963"
-SIZE="221"
+TIME="1567452922"
+SIZE="231"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1565623963"
-SIZE="522"
+TIME="1567452922"
+SIZE="605"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
 STATE="utd"
-TIME="1565623964"
-SIZE="2030"
+TIME="1567619000"
+SIZE="2199"
 ENDFILE
 ENDLIST
 LIST UsedFile
@@ -311,12 +332,12 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-Reports;Reports;0
-ReportsCurrentItem;Compile:top_lvr_fw_compile_log.rpt
 StartPage;StartPage;0
-ACTIVEVIEW;Reports
+ACTIVEVIEW;StartPage
 ENDLIST
 LIST ModuleSubBlockList
+LIST "CCC_Glob_3xBuff::work","smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd","TRUE","FALSE"
+ENDLIST
 LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"
 ENDLIST
 LIST "IIR_FILT::work","hdl\IIR_FILT.vhd","FALSE","FALSE"
@@ -328,6 +349,7 @@ ENDLIST
 LIST "spi_slave::work","hdl\spi_slave.vhd","FALSE","FALSE"
 ENDLIST
 LIST "top_lvr_fw::work","hdl\top_lvr_fw.vhd","FALSE","FALSE"
+SUBBLOCK "CCC_Glob_3xBuff::work","smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd","TRUE","FALSE"
 SUBBLOCK "IIR_FILT::work","hdl\IIR_FILT.vhd","FALSE","FALSE"
 SUBBLOCK "MAIN_SEQUENCER_NEW::work","hdl\MAIN_SEQUENCER_NEW.vhd","FALSE","FALSE"
 SUBBLOCK "SLOW_PULSE_EN_GEN::work","hdl\Slow_PulseEn_Gen.vhd","FALSE","FALSE"

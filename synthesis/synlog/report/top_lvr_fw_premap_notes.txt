@@ -1,7 +1,7 @@
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_3(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_2(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_1(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_0(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN225 |Writing default property annotation file Z:\windows\lvr_fw\lvr_fw_manuel\synthesis\top_lvr_fw.sap.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_3(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_2(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_1(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_0(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN225 |Writing default property annotation file Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw.sap.

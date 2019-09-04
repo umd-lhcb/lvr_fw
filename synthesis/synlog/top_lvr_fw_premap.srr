@@ -1,4 +1,4 @@
-# Mon Aug 12 09:58:22 2019
+# Wed Sep 04 12:52:43 2019
 
 Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -6,21 +6,21 @@ Product Version L-2016.09M-SP1-5
 
 Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 99MB)
 
-@A: MF827 |No constraint file specified.
-@L: Z:\windows\lvr_fw\lvr_fw_manuel\synthesis\top_lvr_fw_scck.rpt 
-Printing clock  summary report in "Z:\windows\lvr_fw\lvr_fw_manuel\synthesis\top_lvr_fw_scck.rpt" file 
+Reading constraint file: Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw_syn.fdc
+@L: Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw_scck.rpt 
+Printing clock  summary report in "Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw_scck.rpt" file 
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 
-Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 103MB)
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 103MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
 
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_3(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_2(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_1(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_0(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_3(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_2(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_1(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_0(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 
 Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
 
@@ -32,19 +32,18 @@ Clock Summary
 Start                                      Requested     Requested     Clock        Clock                   Clock
 Clock                                      Frequency     Period        Type         Group                   Load 
 -----------------------------------------------------------------------------------------------------------------
-spi_slave|I_SPI_RX_STRB_inferred_clock     100.0 MHz     10.000        inferred     Inferred_clkgroup_2     32   
-top_lvr_fw|CLK40MHZ_OSC                    100.0 MHz     10.000        inferred     Inferred_clkgroup_0     5    
-top_lvr_fw|CLK_5M_GL_inferred_clock        100.0 MHz     10.000        inferred     Inferred_clkgroup_1     365  
-top_lvr_fw|SCA_CLK_OUT                     100.0 MHz     10.000        inferred     Inferred_clkgroup_3     72   
+CCC_Glob_3xBuff|GLB_inferred_clock         50.0 MHz      20.000        inferred     Inferred_clkgroup_1     72   
+CLK40MHZ_OSC                               40.0 MHz      25.000        declared     MainClkGrp              5    
+CLK_5M_GL                                  5.0 MHz       200.000       declared     MainClkGrp              366  
+SCA_CLK_OUT                                1.0 MHz       1000.000      declared     Spi_MClkGrp             0    
+spi_slave|I_SPI_RX_STRB_inferred_clock     50.0 MHz      20.000        inferred     Inferred_clkgroup_0     32   
 =================================================================================================================
 
-@W: MT530 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":388:4:388:5|Found inferred clock top_lvr_fw|CLK40MHZ_OSC which controls 5 sequential elements including REFCNT[1:0]. This clock has no specified timing constraint which may adversely impact design performance. 
-@W: MT530 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Found inferred clock top_lvr_fw|CLK_5M_GL_inferred_clock which controls 365 sequential elements including spi_slave_pm.CLK_FCNT_1C[5:0]. This clock has no specified timing constraint which may adversely impact design performance. 
-@W: MT530 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":354:2:354:12|Found inferred clock spi_slave|I_SPI_RX_STRB_inferred_clock which controls 32 sequential elements including SPI_TX_WORD[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
-@W: MT530 :"z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":98:4:98:5|Found inferred clock top_lvr_fw|SCA_CLK_OUT which controls 72 sequential elements including spi_slave_pm.I_SCA_DAT_IN. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":398:2:398:12|Found inferred clock spi_slave|I_SPI_RX_STRB_inferred_clock which controls 32 sequential elements including SPI_TX_WORD[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":98:4:98:5|Found inferred clock CCC_Glob_3xBuff|GLB_inferred_clock which controls 72 sequential elements including spi_slave_pm.I_SCA_DAT_IN. This clock has no specified timing constraint which may adversely impact design performance. 
 
 Finished Pre Mapping Phase.
-@N: BN225 |Writing default property annotation file Z:\windows\lvr_fw\lvr_fw_manuel\synthesis\top_lvr_fw.sap.
+@N: BN225 |Writing default property annotation file Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw.sap.
 
 Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
 
@@ -139,6 +138,6 @@ Pre-mapping successful!
 At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 26MB peak: 113MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Mon Aug 12 09:58:23 2019
+# Wed Sep 04 12:52:45 2019
 
 ###########################################################]

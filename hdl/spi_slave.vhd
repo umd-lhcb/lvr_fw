@@ -93,7 +93,7 @@ begin
 -- DEFINE THE FRAME COUNT WHICH COUNTS CLOCK CYCLES DURING THE ACTIVE CLOCK CYCLES OF A 32-CYCLE DATA FRAME
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- DEFINE THE D FF'S
-  SREG_DFF : process(SCA_CLK_OUT, SPI_CLR)
+  SREG_DFF : process(SCA_CLK_OUT, SPI_CLR, N_TX_32BIT_SREG, N_I_SCA_DAT_IN)
   begin
     if SPI_CLR = '1' then  -- AN EXTERNAL STATE MACHINE FORCES SYNCHRONIZATION OF THE SPI 
       RX_32BIT_SREG <= (others => '0');
@@ -226,7 +226,7 @@ begin
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- DEFINE THE REGISTERS THAT OPERATE FROM THE 5 MHZ CLOCK
 
-  REG_5M : process(CLK5M_OSC, MASTER_RST_B)
+  REG_5M : process(CLK5M_OSC, MASTER_RST_B, SPI_TX_WORD)
   begin
 
     if MASTER_RST_B = '0' then

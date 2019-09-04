@@ -1,35 +1,41 @@
-@P:  Worst Slack : -6.121
+@P:  Worst Slack : 7.278
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Frequency : 78.6 MHz
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Requested Frequency : 50.0 MHz
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Period : 12.722
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Requested Period : 20.000
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Slack : 7.278
+@P:  CLK40MHZ_OSC - Estimated Frequency : 238.1 MHz
+@P:  CLK40MHZ_OSC - Requested Frequency : 40.0 MHz
+@P:  CLK40MHZ_OSC - Estimated Period : 4.200
+@P:  CLK40MHZ_OSC - Requested Period : 25.000
+@P:  CLK40MHZ_OSC - Slack : 20.799
+@P:  CLK_5M_GL - Estimated Frequency : 56.9 MHz
+@P:  CLK_5M_GL - Requested Frequency : 5.0 MHz
+@P:  CLK_5M_GL - Estimated Period : 17.560
+@P:  CLK_5M_GL - Requested Period : 200.000
+@P:  CLK_5M_GL - Slack : 182.440
+@P:  SCA_CLK_OUT - Estimated Frequency : NA
+@P:  SCA_CLK_OUT - Requested Frequency : 1.0 MHz
+@P:  SCA_CLK_OUT - Estimated Period : NA
+@P:  SCA_CLK_OUT - Requested Period : 1000.000
+@P:  SCA_CLK_OUT - Slack : NA
 @P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Estimated Frequency : NA
-@P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Requested Frequency : 100.0 MHz
+@P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Requested Frequency : 50.0 MHz
 @P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Estimated Period : NA
-@P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Requested Period : 10.000
+@P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Requested Period : 20.000
 @P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Slack : NA
-@P:  top_lvr_fw|CLK40MHZ_OSC - Estimated Frequency : 296.4 MHz
-@P:  top_lvr_fw|CLK40MHZ_OSC - Requested Frequency : 100.0 MHz
-@P:  top_lvr_fw|CLK40MHZ_OSC - Estimated Period : 3.373
-@P:  top_lvr_fw|CLK40MHZ_OSC - Requested Period : 10.000
-@P:  top_lvr_fw|CLK40MHZ_OSC - Slack : 6.627
-@P:  top_lvr_fw|CLK_5M_GL_inferred_clock - Estimated Frequency : 62.0 MHz
-@P:  top_lvr_fw|CLK_5M_GL_inferred_clock - Requested Frequency : 100.0 MHz
-@P:  top_lvr_fw|CLK_5M_GL_inferred_clock - Estimated Period : 16.121
-@P:  top_lvr_fw|CLK_5M_GL_inferred_clock - Requested Period : 10.000
-@P:  top_lvr_fw|CLK_5M_GL_inferred_clock - Slack : -6.121
-@P:  top_lvr_fw|SCA_CLK_OUT - Estimated Frequency : 78.6 MHz
-@P:  top_lvr_fw|SCA_CLK_OUT - Requested Frequency : 100.0 MHz
-@P:  top_lvr_fw|SCA_CLK_OUT - Estimated Period : 12.722
-@P:  top_lvr_fw|SCA_CLK_OUT - Requested Period : 10.000
-@P:  top_lvr_fw|SCA_CLK_OUT - Slack : -2.722
-@P:  Total Area : 1548.0
-@P:  Total Area : 44.0
-@P:  Total Area : 44.0
-@P:  Total Area : 44.0
+@P:  Total Area : 1543.0
 @P:  Total Area : 46.0
+@P:  Total Area : 44.0
+@P:  Total Area : 44.0
+@P:  Total Area : 44.0
 @P:  Total Area : 45.0
-@P:  Total Area : 85.0
-@P:  Total Area : 180.0
-@P:  Total Area : 195.0
-@P:  Total Area : 180.0
-@P:  Total Area : 185.0
+@P:  Total Area : 80.0
+@P:  Total Area : 181.0
+@P:  Total Area : 183.0
+@P:  Total Area : 181.0
+@P:  Total Area : 194.0
 @P:  Total Area : 443.0
-@P:  Total Area : 1548.0
-@P:  CPU Time : 0h:00m:04s
+@P:  Total Area : 1.0
+@P:  Total Area : 1543.0
+@P:  CPU Time : 0h:00m:03s

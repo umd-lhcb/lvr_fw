@@ -1,0 +1,47 @@
+
+###==== BEGIN Header
+
+# Synopsys, Inc. constraint file
+# C:/UMD_WORK/19-08-28_lvr_fw/lvr_fw_manuel/synthesis/top_lvr_fw_syn.fdc
+# Written on Mon Sep 02 13:59:08 2019
+# by Synplify Pro, L-2016.09M-SP1-5 FDC Constraint Editor
+
+# Custom constraint commands may be added outside of the SCOPE tab sections bounded with BEGIN/END.
+# These sections are generated from SCOPE spreadsheet tabs.
+
+###==== END Header
+
+###==== BEGIN Collections - (Populated from tab in SCOPE, do not edit)
+###==== END Collections
+
+###==== BEGIN Clocks - (Populated from tab in SCOPE, do not edit)
+create_clock  {p:CLK40MHZ_OSC} -period {25} -add
+create_clock  {n:CLK_5M_GL} -period {200} -add
+create_clock  {p:SCA_CLK_OUT} -period {1000} -add
+create_clock  -disable {n:spi_slave_pm.I_SPI_RX_STRB} -period {102400} -waveform {0 200}
+set_clock_groups -derive -asynchronous -name {MainClkGrp} -group { {c:CLK40MHZ_OSC} {c:CLK_5M_GL} }
+set_clock_groups -derive -asynchronous -name {Spi_MClkGrp} -group { {c:SCA_CLK_OUT} }
+###==== END Clocks
+
+###==== BEGIN "Generated Clocks" - (Populated from tab in SCOPE, do not edit)
+###==== END "Generated Clocks"
+
+###==== BEGIN Inputs/Outputs - (Populated from tab in SCOPE, do not edit)
+###==== END Inputs/Outputs
+
+###==== BEGIN Registers - (Populated from tab in SCOPE, do not edit)
+###==== END Registers
+
+###==== BEGIN "Delay Paths" - (Populated from tab in SCOPE, do not edit)
+###==== END "Delay Paths"
+
+###==== BEGIN Attributes - (Populated from tab in SCOPE, do not edit)
+###==== END Attributes
+
+###==== BEGIN "I/O Standards" - (Populated from tab in SCOPE, do not edit)
+###==== END "I/O Standards"
+
+###==== BEGIN "Compile Points" - (Populated from tab in SCOPE, do not edit)
+###==== END "Compile Points"
+
+

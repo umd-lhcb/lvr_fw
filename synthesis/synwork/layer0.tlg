@@ -1,34 +1,37 @@
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":53:7:53:16|Synthesizing work.top_lvr_fw.rtl.
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
-@N: CD233 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\IIR_FILT.vhd":73:23:73:24|Using sequential encoding for type threshold_state.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":53:7:53:16|Synthesizing work.top_lvr_fw.rtl.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
+@N: CD233 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":73:23:73:24|Using sequential encoding for type threshold_state.
 Post processing for work.iir_filt.rtl
-@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(0) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(1) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(3) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\Slow_PulseEn_Gen.vhd":35:7:35:23|Synthesizing work.slow_pulse_en_gen.rtl.
+@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(0) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(1) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(3) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\Slow_PulseEn_Gen.vhd":35:7:35:23|Synthesizing work.slow_pulse_en_gen.rtl.
 Post processing for work.slow_pulse_en_gen.rtl
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":55:7:55:24|Synthesizing work.main_sequencer_new.rtl.
-@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":99:19:99:20|Using onehot encoding for type seq_sm_states. For example, enumeration init is mapped to "1000000000".
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":55:7:55:24|Synthesizing work.main_sequencer_new.rtl.
+@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":99:19:99:20|Using onehot encoding for type seq_sm_states. For example, enumeration init is mapped to "1000000000".
 Post processing for work.main_sequencer_new.rtl
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning unused register PREV_M_CH_EN_3(1 downto 0). Make sure that there are no unused intermediate registers.
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":35:7:35:15|Synthesizing work.spi_slave.rtl.
-@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":78:21:78:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":96:13:96:19|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":100:23:100:37|Referenced variable n_tx_32bit_sreg is not in sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":103:22:103:35|Referenced variable n_i_sca_dat_in is not in sensitivity list.
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":229:11:229:17|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":247:22:247:32|Referenced variable spi_tx_word is not in sensitivity list.
-@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":355:6:355:19|OTHERS clause is not synthesized.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning unused register PREV_M_CH_EN_3(1 downto 0). Make sure that there are no unused intermediate registers.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":35:7:35:15|Synthesizing work.spi_slave.rtl.
+@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":78:21:78:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
+@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":355:6:355:19|OTHERS clause is not synthesized.
 Post processing for work.spi_slave.rtl
-@N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":797:10:797:15|Synthesizing proasic3.clkbuf.syn_black_box.
-Post processing for proasic3.clkbuf.syn_black_box
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd":8:7:8:21|Synthesizing work.ccc_glob_3xbuff.def_arch.
+@N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":3690:10:3690:15|Synthesizing proasic3.dynccc.syn_black_box.
+Post processing for proasic3.dynccc.syn_black_box
+@N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":2722:10:2722:12|Synthesizing proasic3.vcc.syn_black_box.
+Post processing for proasic3.vcc.syn_black_box
+@N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":1782:10:1782:12|Synthesizing proasic3.gnd.syn_black_box.
+Post processing for proasic3.gnd.syn_black_box
+@N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":407:10:407:15|Synthesizing proasic3.pllint.syn_black_box.
+Post processing for proasic3.pllint.syn_black_box
+Post processing for work.ccc_glob_3xbuff.def_arch
 Post processing for work.top_lvr_fw.rtl
-@W: CL240 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":105:4:105:17|Signal POR_OUT_TO_SCA is floating; a simulation mismatch is possible.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":418:4:418:5|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":418:4:418:5|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\spi_slave.vhd":232:4:232:5|Trying to extract state machine for register SPI_SM.
+@W: CL240 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":105:4:105:17|Signal POR_OUT_TO_SCA is floating; a simulation mismatch is possible.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":462:4:462:5|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":462:4:462:5|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":232:4:232:5|Trying to extract state machine for register SPI_SM.
 Extracted state machine for register SPI_SM
 State machine has 6 reachable states with original encodings of:
    000001
@@ -37,7 +40,7 @@ State machine has 6 reachable states with original encodings of:
    001000
    010000
    100000
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Trying to extract state machine for register SEQUENCER_STATE.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Trying to extract state machine for register SEQUENCER_STATE.
 Extracted state machine for register SEQUENCER_STATE
 State machine has 10 reachable states with original encodings of:
    0000000001
@@ -50,23 +53,23 @@ State machine has 10 reachable states with original encodings of:
    0010000000
    0100000000
    1000000000
-@W: CL260 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning register bit 1 of CH_IAUX_EN(1 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@W: CL260 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning register bit 1 of CH_MREG_EN(1 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\MAIN_SEQUENCER_NEW.vhd":61:2:61:14|Input CMND_WORD_STB is unused.
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\IIR_FILT.vhd":85:4:85:5|Trying to extract state machine for register THRESH_VAL.
+@W: CL260 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning register bit 1 of CH_IAUX_EN(1 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning register bit 1 of CH_MREG_EN(1 downto 0). If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":61:2:61:14|Input CMND_WORD_STB is unused.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":85:4:85:5|Trying to extract state machine for register THRESH_VAL.
 Extracted state machine for register THRESH_VAL
 State machine has 3 reachable states with original encodings of:
    00
    01
    10
-@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":418:4:418:5|Pruning register bits 7 to 5 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":418:4:418:5|Pruning register bits 3 to 1 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":72:4:72:14|Input MODE_WDT_EN is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":74:4:74:18|Input MODE_DIAG_NORMB is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":88:4:88:19|Input TEMP_FAILSAFE_EN is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":92:4:92:10|Input RX_FPGA is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":98:4:98:11|Input ADDR_SEL is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":134:4:134:11|Input UNUSED_1 is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":135:4:135:11|Input UNUSED_2 is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":136:4:136:15|Input J11_25_TCONN is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_manuel\hdl\top_lvr_fw.vhd":137:4:137:15|Input J11_27_TCONN is unused.
+@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":462:4:462:5|Pruning register bits 7 to 5 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":462:4:462:5|Pruning register bits 3 to 1 of REGISTER_CH_CMD_CH(7 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":72:4:72:14|Input MODE_WDT_EN is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":74:4:74:18|Input MODE_DIAG_NORMB is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":88:4:88:19|Input TEMP_FAILSAFE_EN is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":92:4:92:10|Input RX_FPGA is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":98:4:98:11|Input ADDR_SEL is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":134:4:134:11|Input UNUSED_1 is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":135:4:135:11|Input UNUSED_2 is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":136:4:136:15|Input J11_25_TCONN is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":137:4:137:15|Input J11_27_TCONN is unused.

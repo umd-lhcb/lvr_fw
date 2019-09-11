@@ -1,7 +1,7 @@
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":462:4:462:5|Found counter in view:work.top_lvr_fw(rtl) instance DTYCYC_CNT[4:0] 
-@N: MO231 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":232:4:232:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
+@N: MO231 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":237:4:237:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\slow_pulseen_gen.vhd":73:4:73:5|Found counter in view:work.SLOW_PULSE_EN_GEN(rtl) instance CNT_VAL[20:0] 
 @N: MF176 |Default generator successful 
 @N: MF176 |Default generator successful 

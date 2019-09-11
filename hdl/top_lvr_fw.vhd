@@ -47,8 +47,8 @@ library proasic3;
 use proasic3.all;
 
 -- NOTE:  THE SYNPLIFY LIBRARY NEEDS TO BE COMMENTED OUT FOR MODELSIM PRESYNTH SIMS SINCE MODELSIM DOES NOT RECOGNIZE IT
-library synplify;
-use synplify.all;
+--library synplify;
+--use synplify.attributes.all;
 
 entity top_lvr_fw is
   port (

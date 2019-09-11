@@ -8,8 +8,20 @@ Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys softwa
 
 @N: CD720 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
 @N:"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":53:7:53:16|Top entity is set to top_lvr_fw.
-Options changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\misc.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\Slow_PulseEn_Gen.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhdl_sim\synplify.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd\synattr.vhd changed - recompiling
 VHDL syntax check successful!
+File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhdl_sim\synplify.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd\synattr.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":53:7:53:16|Synthesizing work.top_lvr_fw.rtl.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
@@ -25,9 +37,9 @@ Post processing for work.slow_pulse_en_gen.rtl
 @N: CD231 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":99:19:99:20|Using onehot encoding for type seq_sm_states. For example, enumeration init is mapped to "1000000000".
 Post processing for work.main_sequencer_new.rtl
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":131:2:131:3|Pruning unused register PREV_M_CH_EN_3(1 downto 0). Make sure that there are no unused intermediate registers.
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":35:7:35:15|Synthesizing work.spi_slave.rtl.
-@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":78:21:78:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
-@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":355:6:355:19|OTHERS clause is not synthesized.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":37:7:37:15|Synthesizing work.spi_slave.rtl.
+@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":83:21:83:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
+@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":360:6:360:19|OTHERS clause is not synthesized.
 Post processing for work.spi_slave.rtl
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd":8:7:8:21|Synthesizing work.ccc_glob_3xbuff.def_arch.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":3690:10:3690:15|Synthesizing proasic3.dynccc.syn_black_box.
@@ -43,7 +55,7 @@ Post processing for work.top_lvr_fw.rtl
 @W: CL240 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":105:4:105:17|Signal POR_OUT_TO_SCA is floating; a simulation mismatch is possible.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":462:4:462:5|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":462:4:462:5|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":232:4:232:5|Trying to extract state machine for register SPI_SM.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":237:4:237:5|Trying to extract state machine for register SPI_SM.
 Extracted state machine for register SPI_SM
 State machine has 6 reachable states with original encodings of:
    000001
@@ -91,7 +103,7 @@ At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memor
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Wed Sep 04 12:52:40 2019
+# Wed Sep 11 13:03:13 2019
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -102,7 +114,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Wed Sep 04 12:52:40 2019
+# Wed Sep 11 13:03:13 2019
 
 ###########################################################]
 @END
@@ -112,6 +124,6 @@ At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Wed Sep 04 12:52:40 2019
+# Wed Sep 11 13:03:13 2019
 
 ###########################################################]

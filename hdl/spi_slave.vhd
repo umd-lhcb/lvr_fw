@@ -31,6 +31,8 @@ USE IEEE.NUMERIC_STD.ALL;
 
 library proasic3;
 use proasic3.all;
+--library synplify;
+--use synplify.attributes.all;
 
 entity spi_slave is
   port (
@@ -54,6 +56,9 @@ end spi_slave;
 
 architecture RTL of spi_slave is
 
+  --attribute SYN_RADHARDLEVEL of RTL : architecture is "TMR";
+
+
   signal RX_32BIT_SREG, N_RX_32BIT_SREG : std_logic_vector(31 downto 0);  -- 32 BIT SHIFT REGISTER DEDICATED FOR ACTIVE SPI RECEIVE
 
   attribute syn_preserve                    : boolean;
@@ -61,8 +66,6 @@ architecture RTL of spi_slave is
   attribute syn_preserve of N_RX_32BIT_SREG : signal is true;
 
   signal TX_32BIT_SREG, N_TX_32BIT_SREG : std_logic_vector(31 downto 0);  -- 32 BIT SHIFT REGISTER DEDICATED FOR ACTIVE SPI TRANSMIT
-
-  signal TX_32BIT_REG, N_TX_32BIT_REG : std_logic_vector(31 downto 0);  -- 32 BIT FIXED REGISTER DEDICATED FOR ACTIVE SPI TRANSMIT
 
   signal CLK_FCNT, N_CLK_FCNT     : integer range 0 to 32;  -- SPI FRAME COUNTER
   signal CLK_FCNT_1C, CLK_FCNT_2C : integer range 0 to 32;  -- USED FOR CLOCK BOUNDARY CROSSING
@@ -93,131 +96,44 @@ begin
 -- DEFINE THE FRAME COUNT WHICH COUNTS CLOCK CYCLES DURING THE ACTIVE CLOCK CYCLES OF A 32-CYCLE DATA FRAME
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- DEFINE THE D FF'S
-  SREG_DFF : process(SCA_CLK_OUT, SPI_CLR, N_TX_32BIT_SREG, N_I_SCA_DAT_IN)
+  SREG_DFF : process(SCA_CLK_OUT, SPI_CLR)
   begin
     if SPI_CLR = '1' then  -- AN EXTERNAL STATE MACHINE FORCES SYNCHRONIZATION OF THE SPI 
       RX_32BIT_SREG <= (others => '0');
-      TX_32BIT_SREG <= N_TX_32BIT_SREG;
+      TX_32BIT_SREG <= SPI_TX_WORD;
       CLK_FCNT      <= 0;               -- FIRST TRANSITION GOES TO 1
-
-      I_SCA_DAT_IN <= N_I_SCA_DAT_IN;
+      N_I_SCA_DAT_IN  <= TX_32BIT_SREG(30);   
+      I_SCA_DAT_IN <= TX_32BIT_SREG(30);
 
     elsif RISING_EDGE(SCA_CLK_OUT) then
       RX_32BIT_SREG <= N_RX_32BIT_SREG;
       
-    elsif FALLING_EDGE(SCA_CLK_OUT) then
-      TX_32BIT_SREG <= N_TX_32BIT_SREG;
-      CLK_FCNT      <= N_CLK_FCNT;
+      -- THIS COUNTS THE FRAME BITS
+      if CLK_FCNT = 32 then
+        N_CLK_FCNT <= 0;  -- NORMAL COUNT OP IS 1 THRU 32,WHERE 0 IS A HOLD / INIT VAL
+      elsif CLK_FCNT_EN = '1' then  -- THIS COUNTS THE SERIAL FRAME CLOCK CYCLES WHEN ENABLED
+        N_CLK_FCNT <= CLK_FCNT + 1;
+      else
+        N_CLK_FCNT <= CLK_FCNT;
+      end if;
 
-      I_SCA_DAT_IN <= N_I_SCA_DAT_IN;
 
-    end if;
-
-  end process;
-
--- DEFINE D FF INPUTS THAT OPERATE DIRECTLY OFF THE SPI CLOCK HERE
-  SREG_DFFI : process(RX_32BIT_SREG, SCA_DAT_OUT, CLK_FCNT, CLK_FCNT_EN, TX_32BIT_REG, TX_32BIT_SREG)
-  begin
-    -- THIS IS THE RX PATH
-    N_RX_32BIT_SREG(31 downto 0) <= RX_32BIT_SREG(30 downto 0) & SCA_DAT_OUT;  -- THESE ARE THE D FF INPUTS FOR THE SHIFT REGISTER 
-                                        -- SCA SPI SENDS MSb FIRST TO THE FPGA
-
-    -- THIS COUNTS THE FRAME BITS
-    if CLK_FCNT = 32 then
-      N_CLK_FCNT <= 0;  -- NORMAL COUNT OP IS 1 THRU 32,WHERE 0 IS A HOLD / INIT VAL
-    elsif CLK_FCNT_EN = '1' then  -- THIS COUNTS THE SERIAL FRAME CLOCK CYCLES WHEN ENABLED
-      N_CLK_FCNT <= CLK_FCNT + 1;
-    else
-      N_CLK_FCNT <= CLK_FCNT;
-    end if;
-
---    N_I_SCA_DAT_IN <= TX_32BIT_SREG(31);  -- FPGA SPI SENDS MSb OUT FIRST TO SCA
-
-    N_TX_32BIT_SREG <= TX_32BIT_SREG;   -- DEFAULT ASSIGNMENT
-
-    if CLK_FCNT = 0 then
-        N_TX_32BIT_SREG <= TX_32BIT_REG;  -- *** SAMPLE EXTERAL DATA TO BE TRANSMITTED HERE ***
+      if CLK_FCNT = 0 then
         N_I_SCA_DAT_IN  <= TX_32BIT_SREG(30);  -- FPGA SPI SENDS MSb OUT FIRST TO SCA
-    elsif CLK_FCNT < 31 then
-      N_I_SCA_DAT_IN <= TX_32BIT_SREG(30-CLK_FCNT);
-    elsif CLK_FCNT = 31 then
-      N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);
-    else
-      N_I_SCA_DAT_IN <= TX_32BIT_SREG(31);
-    end if;
-    
-      
---    case CLK_FCNT is
---      when 0 =>
---        N_TX_32BIT_SREG <= TX_32BIT_REG;  -- *** SAMPLE EXTERAL DATA TO BE TRANSMITTED HERE ***
---        N_I_SCA_DAT_IN  <= TX_32BIT_REG(31);  -- FPGA SPI SENDS MSb OUT FIRST TO SCA
---      when 1 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(30);
---      when 2 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(29);
---      when 3 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(28);
---      when 4 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(27);
---      when 5 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(26);
---      when 6 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(25);
---      when 7 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(24);
---      when 8 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(23);
---      when 9 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(22);
---      when 10 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(21);
---      when 11 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(20);
---      when 12 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(19);
---      when 13 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(18);
---      when 14 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(17);
---      when 15 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(16);
---      when 16 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(15);
---      when 17 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(14);
---      when 18 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(13);
---      when 19 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(12);
---      when 20 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(11);
---      when 21 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(10);
---      when 22 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(9);
---      when 23 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(8);
---      when 24 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(7);
---      when 25 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(6);
---      when 26 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(5);
---      when 27 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(4);
---      when 28 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(3);
---      when 29 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(2);
---      when 30 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(1);
---      when 31 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);
---      when 32 =>
---        N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);  -- Holds the last bit for a while
---
---    end case;
+      elsif CLK_FCNT < 31 then
+        N_I_SCA_DAT_IN <= TX_32BIT_SREG(30-CLK_FCNT);
+      elsif CLK_FCNT = 31 then
+        N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);
+      else
+        N_I_SCA_DAT_IN <= TX_32BIT_SREG(31);
+      end if;
 
+    elsif FALLING_EDGE(SCA_CLK_OUT) then
+      CLK_FCNT      <= N_CLK_FCNT;
+      I_SCA_DAT_IN <= N_I_SCA_DAT_IN;
+      -- THIS IS THE RX PATH
+      N_RX_32BIT_SREG(31 downto 0) <= RX_32BIT_SREG(30 downto 0) & SCA_DAT_OUT;  -- THESE ARE THE D FF INPUTS FOR THE SHIFT REGISTER 
+    end if;
 
   end process;
 
@@ -232,7 +148,7 @@ begin
     if MASTER_RST_B = '0' then
       SPI_SM        <= INIT;
       CLK_FCNT_EN   <= '0';
-      SPI_CLR       <= '0';
+      SPI_CLR       <= '1';
       I_SPI_RX_STRB <= '0';
       I_SPI_RX_WORD <= (others => '0');
 
@@ -244,7 +160,6 @@ begin
 
       NULLCLK_CNT <= 0;
 
-      TX_32BIT_REG <= SPI_TX_WORD;
 
     elsif RISING_EDGE(CLK5M_OSC) then
       SPI_SM        <= N_SPI_SM;
@@ -261,7 +176,6 @@ begin
 
       NULLCLK_CNT <= N_NULLCLK_CNT;
 
-      TX_32BIT_REG <= N_TX_32BIT_REG;
 
     end if;
   end process;
@@ -273,8 +187,7 @@ begin
 --  CLOCK BOUNDARY CROSSING IS INHERENTLY SYNCHRONOUS FOR THE CONTROL SIGNALS ONCE THE STATE MACHINE IS SYNCHRONIZED TO THE SPI FRAME
 --  HOWEVER, DOUBLE REGISTERS ARE USED TO SAMPLE THE CLK_FCNT AS WELL AS THE SPI CLOCK
 
-  SPI : process(SPI_SM, CLK_FCNT_2C, SCA_CLK_OUT_2C, RX_32BIT_SREG, NULLCLK_CNT, I_SPI_RX_WORD, CLK_FCNT_EN, SPI_CLR, SPI_TX_WORD, TX_32BIT_REG,
-                STATE_ID)
+  SPI : process(SPI_SM, CLK_FCNT_2C, SCA_CLK_OUT_2C, RX_32BIT_SREG, NULLCLK_CNT, I_SPI_RX_WORD, CLK_FCNT_EN, SPI_CLR, SPI_TX_WORD, STATE_ID)
   begin
 
     -- DEFAULT ASSIGNMENTS THAT GET OVER-WRITTEN BELOW AS NEEDED:
@@ -283,7 +196,6 @@ begin
     N_SPI_CLR       <= SPI_CLR;
     N_CLK_FCNT_EN   <= CLK_FCNT_EN;
     N_I_SPI_RX_WORD <= I_SPI_RX_WORD;
-    N_TX_32BIT_REG  <= TX_32BIT_REG;
 
     case SPI_SM is
 
@@ -340,8 +252,6 @@ begin
           N_SPI_SM <= DET_FRAME_DONE;
         end if;
 
-        N_TX_32BIT_REG <= SPI_TX_WORD;  -- COPY THE DATA WORD TO BE TRANSMITTED DURING NEXT FRAME INTO A REGISTER
-
         STATE_ID <= "0100";
 
       when PROCESS_FRAME =>
@@ -368,7 +278,7 @@ begin
   SCA_DAT_IN <= I_SCA_DAT_IN;
   P_STATE_ID <= STATE_ID;
 
-  P_TX_32BIT_REG <= TX_32BIT_REG;
+  P_TX_32BIT_REG <= TX_32BIT_SREG;
 
   clk_fcnt_out <= std_logic_vector(to_unsigned(clk_fcnt_2c, 5));
 

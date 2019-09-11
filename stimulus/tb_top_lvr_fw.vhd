@@ -171,7 +171,7 @@ begin
     end if;
   end process Divide_Frequency;
   
-  sca_data_reg <= x"DCFEB123" when (sca_reset_out = '0') else
+  sca_data_reg <= x"DCFEB124" when (sca_reset_out = '0') else
                 sca_data_reg(30 downto 0) & sca_data_reg(31) when falling_edge(sca_clk_out) else
                 sca_data_reg;
 

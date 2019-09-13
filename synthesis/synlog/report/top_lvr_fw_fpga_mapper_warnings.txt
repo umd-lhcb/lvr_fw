@@ -1,13 +1,36 @@
-@W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Register bit RET_STATE[0] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
-@W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Register bit RET_STATE[1] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
-@W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Register bit RET_STATE[2] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
-@W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Register bit RET_STATE[3] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
-@W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Register bit RET_STATE[7] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
-@W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Register bit RET_STATE[8] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
-@W: MO197 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing FSM register SEQUENCER_STATE[0] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.
-@W: MO197 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing FSM register SEQUENCER_STATE[1] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.
-@W: MO197 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing FSM register SEQUENCER_STATE[2] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.
-@W: BN132 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance CONTROL34.CH_ACTIVE_STAT because it is equivalent to instance CONTROL12.CH_ACTIVE_STAT. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:2:131:3|Removing sequential instance CONTROL78.CH_ACTIVE_STAT because it is equivalent to instance CONTROL56.CH_ACTIVE_STAT. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[0] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[1] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[2] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[3] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[4] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[5] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[6] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[7] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[16] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[17] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[18] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[19] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[20] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[21] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[22] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[23] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[24] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[25] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[26] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[27] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[28] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[29] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[30] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[31] is reduced to a combinational gate by constant propagation.
+@W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Register bit RET_STATE[0] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Register bit RET_STATE[1] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Register bit RET_STATE[2] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Register bit RET_STATE[3] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Register bit RET_STATE[7] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Register bit RET_STATE[8] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MO197 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Removing FSM register SEQUENCER_STATE[0] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.
+@W: MO197 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Removing FSM register SEQUENCER_STATE[1] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.
+@W: MO197 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Removing FSM register SEQUENCER_STATE[2] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.
+@W: MT420 |Found inferred clock spi_slave|SPI_CLR_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:spi_slave_pm.SPI_CLR"
 @W: MT420 |Found inferred clock spi_slave|I_SPI_RX_STRB_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:spi_slave_pm.I_SPI_RX_STRB"
 @W: MT420 |Found inferred clock CCC_Glob_3xBuff|GLB_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:GLOB_BUFF.GLB"

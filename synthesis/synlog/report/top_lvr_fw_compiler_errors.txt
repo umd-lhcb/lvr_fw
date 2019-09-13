@@ -1,4 +1,2 @@
-@E: CD125 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":153:10:153:25|Reference to unknown attribute definition syn_radhardlevel
-@E: CD424 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":153:49:153:50|Expecting architecture identifier
-@E: Parse errors encountered - exiting
+@E: CD648 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":787:22:787:32|Expression does not match type std_ulogic
 

@@ -1,0 +1,50 @@
+********************************************************************
+                            I/O Bank Report
+********************************************************************
+  
+Product: Designer
+Release: v11.9 SP2
+Version: 11.9.2.1
+Date: Fri Sep 13 12:57:51 2019
+Design Name: top_lvr_fw  Family: ProASIC3  Die: A3PN250  Package: 100 VQFP
+
+
+I/O Function:
+
+    Type                                  | w/o register  | w/ register  | w/ DDR register
+    --------------------------------------|---------------|--------------|----------------
+    Input I/O                             | 18            | 0            | 0
+    Output I/O                            | 46            | 0            | 0
+    Bidirectional I/O                     | 0             | 0            | 0
+    Differential Input I/O Pairs          | 0             | 0            | 0
+    Differential Output I/O Pairs         | 0             | 0            | 0
+
+I/O Technology:
+
+                                    |   Voltages    |             I/Os
+    --------------------------------|-------|-------|-------|--------|--------------
+    I/O Standard(s)                 | Vcci  | Vref  | Input | Output | Bidirectional
+    --------------------------------|-------|-------|-------|--------|--------------
+    LVCMOS33                        | 3.30v | N/A   | 2     | 29     | 0
+    LVCMOS15                        | 1.50v | N/A   | 16    | 17     | 0
+
+I/O Bank Resource Usage:
+
+          |   Voltages    | Single I/Os  | Diff I/O Pairs |        Vref I/Os
+          |-------|-------|------|-------|-------|--------|------|-------|----------
+          | Vcci  | Vref  | Used | Total | Used  | Total  | Used | Total | Vref Pins
+    ------|-------|-------|------|-------|-------|--------|------|-------|----------
+    Bank0 | 3.30v | N/A   | 19   | 20    | 0     | 0      | N/A  | N/A   | N/A
+    Bank1 | 3.30v | N/A   | 12   | 14    | 0     | 0      | N/A  | N/A   | N/A
+    Bank2 | 1.50v | N/A   | 16   | 17    | 0     | 0      | N/A  | N/A   | N/A
+    Bank3 | 1.50v | N/A   | 17   | 17    | 0     | 0      | N/A  | N/A   | N/A
+
+I/O Voltage Usage:
+
+       Voltages    |     I/Os
+    -------|-------|------|-------
+     Vcci  | Vref  | Used | Total
+    -------|-------|------|-------
+     1.50v | N/A   | 33   | 34
+     3.30v | N/A   | 31   | 34
+

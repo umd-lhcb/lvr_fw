@@ -78,6 +78,9 @@ architecture behavioral of TB_TOP_LVR_FW is
   signal FUSE_34_OK : std_logic_vector(0 downto 0);
 
   component TOP_LVR_FW
+  generic (
+    SIM_MODE_EN : integer range 0 to 1 := 0  -- Set to 1 by test bench in simulation 
+    );  
     -- ports
     port(
       -- Inputs
@@ -171,7 +174,7 @@ begin
     end if;
   end process Divide_Frequency;
   
-  sca_data_reg <= x"DCFEB124" when (sca_reset_out = '0') else
+  sca_data_reg <= x"12345678" when (sca_reset_out = '0') else
                 sca_data_reg(30 downto 0) & sca_data_reg(31) when falling_edge(sca_clk_out) else
                 sca_data_reg;
 
@@ -245,6 +248,8 @@ begin
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   -- Instantiate Unit Under Test:  TOP_LVR_FW
   TOP_LVR_FW_0 : TOP_LVR_FW
+    generic map(
+      SIM_MODE_EN => 1)
     -- port map
     port map(
       -- Inputs
@@ -255,7 +260,7 @@ begin
       FPGA_FUSE_5_6_OK => "0",
       FPGA_FUSE_7_8_OK => "0",
       TEMP_OK          => TEMP_OK,
-      MODE_DCYC_NORMB  => '1',
+      MODE_DCYC_NORMB  => '0',
       MODE_WDT_EN      => '0',
       MODE_DIAG_NORMB  => '0',
       CH1_2_MS_CFG_EN  => '0',

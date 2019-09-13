@@ -37,7 +37,7 @@ entity SLOW_PULSE_EN_GEN is
     CLK_5M_GL    : in std_logic;  -- FPGA MASTER CLOCK--ASSUMED TO BE 5 MHZ
     MASTER_RST_B : in std_logic;        -- ACTIVE LOW RESET
     CNT_EN       : in std_logic;        -- ACTIVE HIGH COUNT ENABLE
-    SIM_25KX     : in std_logic;  -- SPECIAL SIM MODE--SPEEDS UP BY 25,000 TIMES (250 MSEC=10USEC)
+    SIM_25KX     : in integer;  -- SPECIAL SIM MODE--SPEEDS UP BY 25,000 TIMES (250 MSEC=10USEC)
 
     MS250_CLK_EN : out std_logic  -- OUTPUT PULSE SIGNIFIES 250 MSEC INTERVAL--SUITABLE FOR USE AS A CLOCK ENABLE.
     );
@@ -89,7 +89,7 @@ begin
 
   begin
 
-    if SIM_25KX = '1' then              -- USE SIM_25KX TO SELECT EITHER:
+    if SIM_25KX = 1 then              -- USE SIM_25KX TO SELECT EITHER:
       TERM_CNT_VAL := SIM_CNT;          -- THE SPECIAL SIM MODE TERMINAL COUNT
     else                                -- OR
       TERM_CNT_VAL := MS250_CNT;        -- THE NORMAL OP MODE TERMINAL COUNT

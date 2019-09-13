@@ -1,9 +1,9 @@
-@P:  Worst Slack : 7.278
-@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Frequency : 78.6 MHz
+@P:  Worst Slack : 0.575
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Frequency : 53.1 MHz
 @P:  CCC_Glob_3xBuff|GLB_inferred_clock - Requested Frequency : 50.0 MHz
-@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Period : 12.722
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Period : 18.850
 @P:  CCC_Glob_3xBuff|GLB_inferred_clock - Requested Period : 20.000
-@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Slack : 7.278
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Slack : 0.575
 @P:  CLK40MHZ_OSC - Estimated Frequency : 238.1 MHz
 @P:  CLK40MHZ_OSC - Requested Frequency : 40.0 MHz
 @P:  CLK40MHZ_OSC - Estimated Period : 4.200
@@ -24,18 +24,23 @@
 @P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Estimated Period : NA
 @P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Requested Period : 20.000
 @P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Slack : NA
-@P:  Total Area : 1543.0
+@P:  spi_slave|SPI_CLR_inferred_clock - Estimated Frequency : NA
+@P:  spi_slave|SPI_CLR_inferred_clock - Requested Frequency : 50.0 MHz
+@P:  spi_slave|SPI_CLR_inferred_clock - Estimated Period : NA
+@P:  spi_slave|SPI_CLR_inferred_clock - Requested Period : 20.000
+@P:  spi_slave|SPI_CLR_inferred_clock - Slack : NA
+@P:  Total Area : 1312.0
+@P:  Total Area : 44.0
+@P:  Total Area : 44.0
 @P:  Total Area : 46.0
 @P:  Total Area : 44.0
 @P:  Total Area : 44.0
-@P:  Total Area : 44.0
-@P:  Total Area : 45.0
 @P:  Total Area : 80.0
-@P:  Total Area : 181.0
-@P:  Total Area : 183.0
-@P:  Total Area : 181.0
-@P:  Total Area : 194.0
-@P:  Total Area : 443.0
+@P:  Total Area : 192.0
+@P:  Total Area : 192.0
+@P:  Total Area : 192.0
+@P:  Total Area : 206.0
+@P:  Total Area : 188.0
 @P:  Total Area : 1.0
-@P:  Total Area : 1543.0
+@P:  Total Area : 1312.0
 @P:  CPU Time : 0h:00m:03s

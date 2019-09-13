@@ -51,6 +51,9 @@ use proasic3.all;
 --use synplify.attributes.all;
 
 entity top_lvr_fw is
+  generic (
+    SIM_MODE_EN : integer range 0 to 1 := 0  -- Set to 1 by test bench in simulation 
+    );  
   port (
     CLK40MHZ_OSC : in std_logic;        -- pin 57, EXTERNAL 3.3V 40 MHZ CLOCK 
     POR_FPGA     : in std_logic;  -- pin 93, ACTIVE LOW RESET --DEDICATED RC TIME CONSTANT---NEEDS SCHMITT-TRIGGER!
@@ -105,17 +108,17 @@ entity top_lvr_fw is
     POR_OUT_TO_SCA : out std_logic;  -- pin 6, RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
 
     -- SPI DEBUG signals
-    db_sca_dat_out     : out std_logic;  
-    db_sca_clk_out     : out std_logic;  
-    db_clk5mhz     : out std_logic;  
-    db_spi_strobe     : out std_logic;  
-    db_spi_state0     : out std_logic;  
-    db_spi_state1     : out std_logic;  
-    db_spi_state2     : out std_logic;  
-    db_spi_cnt0     : out std_logic;  
-    db_spi_cnt1     : out std_logic;  
-    db_spi_cnt2     : out std_logic;  
-    
+    db_sca_dat_out : out std_logic;
+    db_sca_clk_out : out std_logic;
+    db_clk5mhz     : out std_logic;
+    db_spi_strobe  : out std_logic;
+    db_spi_state0  : out std_logic;
+    db_spi_state1  : out std_logic;
+    db_spi_state2  : out std_logic;
+    db_spi_cnt0    : out std_logic;
+    db_spi_cnt1    : out std_logic;
+    db_spi_cnt2    : out std_logic;
+
 
 -- CHANNEL ENABLES
     P_CH_MREG_EN : out std_logic_vector(7 downto 0);  -- pins {62, 65, 71, 76, 80, 83, 92, 86} CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
@@ -187,10 +190,10 @@ architecture RTL of top_lvr_fw is
   end component;
 
   component clkbuf
-    port ( pad  : in std_logic; y : out std_logic );
+    port (pad : in std_logic; y : out std_logic);
   end component;
 
-  
+
   -- SPI interface with TCM
   component spi_slave is
     port (
@@ -206,7 +209,7 @@ architecture RTL of top_lvr_fw is
       SPI_RX_STRB : out std_logic;  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
 
       P_TX_32BIT_REG : out std_logic_vector(31 downto 0);
-    clk_fcnt_out : out std_logic_vector(4 downto 0);
+      clk_fcnt_out   : out std_logic_vector(4 downto 0);
       P_STATE_ID     : out std_logic_vector(3 downto 0)
 
       );
@@ -227,7 +230,7 @@ architecture RTL of top_lvr_fw is
       V_IN_OK   : in std_logic;  -- UNDER-VOLTAGE LOCKOUT:  V_IN ABOVE THRESHOLD WHEN ='1'
       TEMP_OK   : in std_logic;  -- '1' MEANS THE TEMPERATURE IS BELOW THE MAX VALUE
 
-      SIM_MODE_EN : in std_logic;  -- '1' IS SPECIAL SIM MODE WITH REDUCED INTERVAL TIMEOUTS
+      SIM_MODE_EN : in integer;  -- '1' IS SPECIAL SIM MODE WITH REDUCED INTERVAL TIMEOUTS
 
 -- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!  
       CHA_B_MS_CFG_EN : in std_logic;  -- ADJACENT CHANNELS A AND B IN THE SAME FUSE GROUP
@@ -246,7 +249,7 @@ architecture RTL of top_lvr_fw is
       CLK_5M_GL    : in std_logic;  -- FPGA MASTER CLOCK--ASSUMED TO BE 5 MHZ
       MASTER_RST_B : in std_logic;      -- ACTIVE LOW RESET
       CNT_EN       : in std_logic;      -- ACTIVE HIGH COUNT ENABLE
-      SIM_25KX     : in std_logic;  -- SPECIAL SIM MODE--SPEEDS UP BY 25,000 TIMES (0.25SEC=10USEC)
+      SIM_25KX     : in integer;  -- SPECIAL SIM MODE--SPEEDS UP BY 25,000 TIMES (0.25SEC=10USEC)
 
       MS250_CLK_EN : out std_logic  -- OUTPUT PULSE SIGNIFIES 1 SEC INTERVAL--SUITABLE FOR USE AS A CLOCK ENABLE.
       );
@@ -254,30 +257,30 @@ architecture RTL of top_lvr_fw is
 
 
 -- ccc config as 3 global buffers
-	component CCC_Glob_3xBuff is
+  component CCC_Glob_3xBuff is
 
-    port( 
-			POWERDOWN : in    std_logic;
-			  CLKA      : in    std_logic;
-			  LOCK      : out   std_logic;
-			  GLA       : out   std_logic;
-			  GLB       : out   std_logic;
-			  GLC       : out   std_logic;
-			  SDIN      : in    std_logic;
-			  SCLK      : in    std_logic;
-			  SSHIFT    : in    std_logic;
-			  SUPDATE   : in    std_logic;
-			  MODE      : in    std_logic;
-			  SDOUT     : out   std_logic;
-			  CLKB      : in    std_logic;
-			  CLKC      : in    std_logic
-        );
-	end component;
+    port(
+      POWERDOWN : in  std_logic;
+      CLKA      : in  std_logic;
+      LOCK      : out std_logic;
+      GLA       : out std_logic;
+      GLB       : out std_logic;
+      GLC       : out std_logic;
+      SDIN      : in  std_logic;
+      SCLK      : in  std_logic;
+      SSHIFT    : in  std_logic;
+      SUPDATE   : in  std_logic;
+      MODE      : in  std_logic;
+      SDOUT     : out std_logic;
+      CLKB      : in  std_logic;
+      CLKC      : in  std_logic
+      );
+  end component;
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- DEFINE INTERNAL SIGNALS
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  signal GB_CLK40MHZ_OSC	: STD_LOGIC;  -- GLOBAL CLOCK BUFFER
-  SIGNAL GB_SPI_RST_B       : STD_LOGIC;  -- GLOBAL COMBINED INTERNAL FPGA RESET
+  signal GB_CLK40MHZ_OSC : std_logic;   -- GLOBAL CLOCK BUFFER
+  signal GB_SPI_RST_B    : std_logic;   -- GLOBAL COMBINED INTERNAL FPGA RESET
 
   signal MASTER_RST_B   : std_logic;    -- POR_FPGA SYNC'D TO THE 40 MHZ CLOCK
   signal DEL0_DEV_RST_B : std_logic;  -- SYNC FF FOR FOR GENERATING THE MASTER_RST_B
@@ -288,7 +291,6 @@ architecture RTL of top_lvr_fw is
   signal SIGOUT_VOP_UVL : std_logic;  -- FINAL SIGNAL OUT AFTER FILTER AND HYSTERISIS APPLIED
 
   signal SLOW_PLS_STB                     : std_logic;  -- THIS IS A PULSE THAT IS ONE 5MHZ CLOCK PERIOD WIDE AT 0.25SEC RATE
-  constant SIM_MODE_EN                    : std_logic := '0';  -- SPECIAL SIM MODE REDUCES TERMINAL COUNT FOR SLOW_PLS_STB INTERVAL TIMEOUT
   signal DC50_TEST_STRB, N_DC50_TEST_STRB : std_logic;  -- THIS IS A 50% DUTY CYCLE 2 HZ SIGNAL VERSION OF SLOW_PLS_STB
 
   constant UPPER_HYS_THRESH : std_logic_vector(7 downto 0) := "01001100";  -- UPPER HYSTERISIS THRESHOLD = 76 COUNTS OF 255 (ACTUALLY 240 WITH TRUNCATION EFFECTS)
@@ -328,16 +330,17 @@ architecture RTL of top_lvr_fw is
   signal FILTD_TEMP_OK                                          : std_logic;  -- FILTERED VERSION OF THE TEMP_OK STATUS
   signal UVL_OK_CH1A2, UVL_OK_CH3A4, UVL_OK_CH5A6, UVL_OK_CH7A8 : std_logic;  -- UVL FOR THE 4 CHANNEL PAIRS 
 
+  signal active_channels                : std_logic_vector(7 downto 0); ---Active LVR channels
 
   -- SPI variables
-  signal SPI_TX_WORD        : std_logic_vector(31 downto 0) := x"dcb02019";  -- 32 BIT SERIAL WORD TO BE TRANSMITTED
-  signal SPI_RX_WORD        : std_logic_vector(31 downto 0);  -- RECEIVED SERIAL FRAME
-  signal SPI_RX_STRB        : std_logic;  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
-  signal SPI_P_TX_32BIT_REG : std_logic_vector(31 downto 0);
-  signal SPI_P_STATE_ID     : std_logic_vector(3 downto 0);
-  signal clk_fcnt_out     : std_logic_vector(4 downto 0);
+  signal SPI_TX_WORD                : std_logic_vector(31 downto 0) := x"dcb02019";  -- 32 BIT SERIAL WORD TO BE TRANSMITTED
+  signal SPI_RX_WORD                : std_logic_vector(31 downto 0);  -- RECEIVED SERIAL FRAME
+  signal SPI_RX_STRB                : std_logic;  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
+  signal SPI_P_TX_32BIT_REG         : std_logic_vector(31 downto 0);
+  signal SPI_P_STATE_ID             : std_logic_vector(3 downto 0);
+  signal clk_fcnt_out               : std_logic_vector(4 downto 0);
   signal sca_clk_out_buf, spi_rst_b : std_logic;
-  
+
 -- DEBUG
   signal IIR_OVT_FILT   : std_logic_vector(7 downto 0);
   signal IIR_UVL12_FILT : std_logic_vector(7 downto 0);
@@ -349,35 +352,35 @@ architecture RTL of top_lvr_fw is
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 begin
 
-GLOB_BUFF:CCC_Glob_3xBuff
+  GLOB_BUFF : CCC_Glob_3xBuff
 
-    port MAP( 
-				POWERDOWN => '0',
-				CLKA      => CLK40MHZ_OSC,
-				LOCK      => OPEN,
-				GLA       => GB_CLK40MHZ_OSC,
-				GLB       => sca_clk_out_buf,
-				GLC       => GB_SPI_RST_B,
-				SDIN      => '0',
-				SCLK      => '0',
-				SSHIFT    => '0',
-				SUPDATE   => '0',
-				MODE      => '0',
-				SDOUT     => OPEN,
-				CLKB      => SCA_CLK_OUT,
-				CLKC      => spi_rst_b
-			);
+    port map(
+      POWERDOWN => '0',
+      CLKA      => CLK40MHZ_OSC,
+      LOCK      => open,
+      GLA       => GB_CLK40MHZ_OSC,
+      GLB       => sca_clk_out_buf,
+      GLC       => GB_SPI_RST_B,
+      SDIN      => '0',
+      SCLK      => '0',
+      SSHIFT    => '0',
+      SUPDATE   => '0',
+      MODE      => '0',
+      SDOUT     => open,
+      CLKB      => SCA_CLK_OUT,
+      CLKC      => spi_rst_b
+      );
 
 
 
 
   spi_rst_b <= SCA_RESET_OUT and MASTER_RST_B;
-  
+
   -- SPI
   spi_slave_pm : spi_slave
     port map (
       CLK5M_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
-      MASTER_RST_B => GB_SPI_RST_B,    -- INTERNAL ACTIVE LOW RESET
+      MASTER_RST_B => GB_SPI_RST_B,     -- INTERNAL ACTIVE LOW RESET
 
       SCA_CLK_OUT => SCA_CLK_OUT_buf,  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
       SCA_DAT_OUT => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
@@ -388,26 +391,39 @@ GLOB_BUFF:CCC_Glob_3xBuff
       SPI_RX_STRB => SPI_RX_STRB,  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
 
       P_TX_32BIT_REG => SPI_P_TX_32BIT_REG,
-    clk_fcnt_out => clk_fcnt_out,       
+      clk_fcnt_out   => clk_fcnt_out,
       P_STATE_ID     => SPI_P_STATE_ID
       );
 
   db_spi_cnt0 <= clk_fcnt_out(0);
   db_spi_cnt1 <= clk_fcnt_out(1);
   db_spi_cnt2 <= clk_fcnt_out(2);
-  spi_tx_word <= x"dcb02019" when GB_SPI_RST_B = '0' else
-                 spi_rx_word when falling_edge(spi_rx_strb) else
-                 spi_tx_word;
+  spi_tx_word <= x"1234" & active_channels & x"00";
+--  spi_tx_word <= x"dcb02019" when GB_SPI_RST_B = '0' else
+  --               spi_rx_word when falling_edge(spi_rx_strb) else
+    --             spi_tx_word;
+
+-- Setting register to control active channels when the received is a write
+-- (28th bit equal to 1)
+  SET_ACTIVE_CHANNELS : process(SPI_RX_STRB, master_rst_b)
+  begin
+    if master_rst_b = '0' then
+      active_channels <= x"00";
+    elsif falling_edge(SPI_RX_STRB) and spi_rx_word(28) = '1' then
+      active_channels(7 downto 0) <= spi_rx_word(15 downto 8);
+    end if;
+  end process set_active_channels;
+
 
   -- DEBUG SPI signals
   db_sca_dat_out <= sca_dat_out;
   db_sca_clk_out <= sca_clk_out_buf;
-  db_clk5mhz <= clk_5m_gl;
-  db_spi_strobe <= spi_rx_strb;
-  db_spi_state0 <= spi_p_state_id(0);
-  db_spi_state1 <= spi_p_state_id(1);
-  db_spi_state2 <= spi_p_state_id(2);
-  
+  db_clk5mhz     <= clk_5m_gl;
+  db_spi_strobe  <= spi_rx_strb;
+  db_spi_state0  <= spi_p_state_id(0);
+  db_spi_state1  <= spi_p_state_id(1);
+  db_spi_state2  <= spi_p_state_id(2);
+
 
 -- THIS PROCESS SYNCHRONIZES THE EXTERNAL POR_FPGA SIGNAL TO THE 40 MHZ CLOCK
 -- HOWEVER, THE GENERATED 5 MHZ CLOCK IS SYNCHRONOUSLY STARTED BY RELEASE OF THE MASTER_RST_B
@@ -593,13 +609,13 @@ GLOB_BUFF:CCC_Glob_3xBuff
   begin
 
     if VAL_MAN_EN_CH_8TO5 = '1' then
-      N_REGISTER_CH_CMD_CH(7 downto 4) <= "1111";
+      N_REGISTER_CH_CMD_CH(7 downto 4) <= "1111" and active_channels(7 downto 4);
     else
       N_REGISTER_CH_CMD_CH(7 downto 4) <= "0000";
     end if;
 
     if VAL_MAN_EN_CH_4TO1 = '1' then
-      N_REGISTER_CH_CMD_CH(3 downto 0) <= "1111";
+      N_REGISTER_CH_CMD_CH(3 downto 0) <= "1111" and active_channels(3 downto 0);
     else
       N_REGISTER_CH_CMD_CH(3 downto 0) <= "0000";
     end if;
@@ -636,7 +652,7 @@ GLOB_BUFF:CCC_Glob_3xBuff
 
         end if;
 
-      when others =>  NULL;
+      when others => null;
     end case;
 
   end process LDCCNT;

@@ -29,18 +29,18 @@
 @P:  spi_slave|SPI_CLR_inferred_clock - Estimated Period : NA
 @P:  spi_slave|SPI_CLR_inferred_clock - Requested Period : 20.000
 @P:  spi_slave|SPI_CLR_inferred_clock - Slack : NA
-@P:  Total Area : 1312.0
-@P:  Total Area : 44.0
-@P:  Total Area : 44.0
+@P:  Total Area : 1398.0
 @P:  Total Area : 46.0
 @P:  Total Area : 44.0
 @P:  Total Area : 44.0
+@P:  Total Area : 44.0
+@P:  Total Area : 44.0
 @P:  Total Area : 80.0
-@P:  Total Area : 192.0
-@P:  Total Area : 192.0
-@P:  Total Area : 192.0
-@P:  Total Area : 206.0
+@P:  Total Area : 213.0
+@P:  Total Area : 213.0
+@P:  Total Area : 213.0
+@P:  Total Area : 229.0
 @P:  Total Area : 188.0
 @P:  Total Area : 1.0
-@P:  Total Area : 1312.0
+@P:  Total Area : 1398.0
 @P:  CPU Time : 0h:00m:03s

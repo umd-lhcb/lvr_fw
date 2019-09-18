@@ -54,8 +54,9 @@ architecture behavioral of TB_TOP_LVR_FW is
   signal clk312khz : std_logic := '0';
   signal counter_clk312khz : integer := 0;
   signal sca_data_reg, sca_data_reg_in : std_logic_vector(31 downto 0) := x"12345678";
+  signal sca_data_reg2 : std_logic_vector(31 downto 0) := x"1234F078";
 
-  signal SCA_CLK_OUT, sca_clk_mask      : std_logic;
+  signal SCA_CLK_OUT, sca_clk_mask, sca_dat_out_mask      : std_logic;
   signal SCA_RESET_OUT    : std_logic;
   signal SCA_DAT_OUT      : std_logic;
   signal SCA_DAT_IN       : std_logic;
@@ -174,18 +175,24 @@ begin
     end if;
   end process Divide_Frequency;
   
+
   sca_data_reg <= x"12345678" when (sca_reset_out = '0') else
                 sca_data_reg(30 downto 0) & sca_data_reg(31) when falling_edge(sca_clk_out) else
                 sca_data_reg;
+
+  sca_data_reg2 <= x"1234F078" when (sca_reset_out = '0') else
+                sca_data_reg2(30 downto 0) & sca_data_reg2(31) when falling_edge(sca_clk_out) else
+                sca_data_reg2;
 
   sca_data_reg_in <= x"abababab" when (sca_reset_out = '0') else
                 sca_data_reg_in(30 downto 0) & sca_dat_in when rising_edge(sca_clk_out) else
                 sca_data_reg_in;
 
-  SCA_CLK_mask <= '0', '1' after 32.5 us, '0' after 135 us, '1' after 141 us, '0' after 243.5 us, '1' after 251 us, '0' after 352 us;
+  SCA_CLK_mask <= '0', '1' after 32.5 us, '0' after 135 us, '1' after 141 us, '0' after 243.5 us, '1' after 251 us, '0' after 352 us, '1' after 4001 us, '0' after 4102.5 us, '1' after 4201 us, '0' after 4302.5 us;
   SCA_CLK_OUT   <= sca_clk_mask and clk312khz;
   SCA_RESET_OUT <= '1', '0' after 10 us, '1' after 20 us;
-  SCA_DAT_OUT   <= sca_data_reg(31);
+  SCA_DAT_OUT   <= sca_data_reg(31) when sca_dat_out_mask = '1' else sca_data_reg2(31);
+  SCA_DAT_OUT_mask   <= '1', '0' after 4000 us, '1' after 4200 us;
 
   
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -257,8 +264,8 @@ begin
       POR_FPGA         => NSYSRESET,
       FPGA_FUSE_1_2_OK => FUSE_12_OK,
       FPGA_FUSE_3_4_OK => FUSE_34_OK,
-      FPGA_FUSE_5_6_OK => "0",
-      FPGA_FUSE_7_8_OK => "0",
+      FPGA_FUSE_5_6_OK => "1",
+      FPGA_FUSE_7_8_OK => "1",
       TEMP_OK          => TEMP_OK,
       MODE_DCYC_NORMB  => '0',
       MODE_WDT_EN      => '0',

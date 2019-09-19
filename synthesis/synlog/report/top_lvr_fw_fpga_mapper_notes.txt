@@ -32,7 +32,7 @@
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[28] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[29] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[30] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: MO231 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
+@N: MO231 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance RX_32BIT_SREG[31:0] (in view: work.spi_slave(rtl)) of type view:PrimLib.dff(prim) because it does not drive other instances.
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\slow_pulseen_gen.vhd":73:4:73:5|Found counter in view:work.SLOW_PULSE_EN_GEN(rtl) instance CNT_VAL[20:0] 
 @N: MF176 |Default generator successful 

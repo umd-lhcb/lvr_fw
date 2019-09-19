@@ -65,7 +65,7 @@ architecture RTL of spi_slave is
   attribute syn_preserve of RX_32BIT_SREG   : signal is true;
   attribute syn_preserve of N_RX_32BIT_SREG : signal is true;
 
-  signal TX_32BIT_SREG, N_TX_32BIT_SREG : std_logic_vector(31 downto 0);  -- 32 BIT SHIFT REGISTER DEDICATED FOR ACTIVE SPI TRANSMIT
+  signal TX_32BIT_SREG : std_logic_vector(31 downto 0);  -- 32 BIT SHIFT REGISTER DEDICATED FOR ACTIVE SPI TRANSMIT
 
   signal CLK_FCNT, N_CLK_FCNT     : integer range 0 to 32;  -- SPI FRAME COUNTER
   signal CLK_FCNT_1C, CLK_FCNT_2C : integer range 0 to 32;  -- USED FOR CLOCK BOUNDARY CROSSING
@@ -110,10 +110,8 @@ begin
       -- THIS COUNTS THE FRAME BITS
       if CLK_FCNT = 32 then
         N_CLK_FCNT <= 0;  -- NORMAL COUNT OP IS 1 THRU 32,WHERE 0 IS A HOLD / INIT VAL
-      elsif CLK_FCNT_EN = '1' then  -- THIS COUNTS THE SERIAL FRAME CLOCK CYCLES WHEN ENABLED
-        N_CLK_FCNT <= CLK_FCNT + 1;
       else
-        N_CLK_FCNT <= CLK_FCNT;
+        N_CLK_FCNT <= CLK_FCNT + 1;
       end if;
 
 

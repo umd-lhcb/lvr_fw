@@ -3,7 +3,7 @@
 #OS: Windows 8 6.2
 #Hostname: DESKTOP-PLJUDQE
 
-# Thu Sep 19 12:30:48 2019
+# Thu Sep 19 13:52:53 2019
 
 #Implementation: synthesis
 
@@ -25,7 +25,7 @@ File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\Slow_PulseEn_Gen.vhd changed - recompilin
 File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd changed - recompiling
 File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd changed - recompiling
 VHDL syntax check successful!
-File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":53:7:53:16|Synthesizing work.top_lvr_fw.rtl.
 @W: CG296 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":408:24:408:30|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
@@ -45,12 +45,12 @@ Post processing for work.main_sequencer_new.rtl
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":131:4:131:5|Pruning unused register N_PREV_M_CH_EN_2(1 downto 0). Make sure that there are no unused intermediate registers.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":37:7:37:15|Synthesizing work.spi_slave.rtl.
 @N: CD231 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":81:21:81:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
-@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":143:44:143:54|Signal spi_tx_word in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":263:6:263:19|OTHERS clause is not synthesized.
-@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":188:118:188:128|Signal spi_tx_word in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":68:24:68:38|Signal n_tx_32bit_sreg is undriven. Either assign the signal a value or remove the signal declaration.
+@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":141:44:141:54|Signal spi_tx_word in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":261:6:261:19|OTHERS clause is not synthesized.
+@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":186:118:186:128|Signal spi_tx_word in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
 Post processing for work.spi_slave.rtl
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Pruning unused register SPI_CLR_3. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Pruning unused register SPI_CLR_3. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Pruning unused register CLK_FCNT_EN_3. Make sure that there are no unused intermediate registers.
 @A: CL282 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Feedback mux created for signal N_CLK_FCNT[5:0]. It is possible a set/reset assignment for this is signal missing. To improve timing and area, specify a set/reset value.
 @W: CL116 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Input data for signal N_CLK_FCNT(5 downto 0) contains references to signal edges. An asynchronous reset may be missing from the sensitivity list.
 @W: CL116 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Input data for signal RX_32BIT_SREG(31 downto 0) contains references to signal edges. An asynchronous reset may be missing from the sensitivity list.
@@ -76,15 +76,14 @@ Post processing for work.top_lvr_fw.rtl
 @W: CL113 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":410:4:410:5|Feedback mux created for signal active_channels[7:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
 @W: CL279 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Pruning register bits 5 to 1 of CLK_FCNT(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Pruning unused register N_I_SCA_DAT_IN. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Pruning unused register CLK_FCNT_EN. Make sure that there are no unused intermediate registers.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Pruning unused register N_CLK_FCNT(5 downto 0). Make sure that there are no unused intermediate registers.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Pruning unused register N_RX_32BIT_SREG(31 downto 0). Make sure that there are no unused intermediate registers.
 @N: CL189 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Register bit CLK_FCNT(0) is always 0.
-@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Pruning register bits 5 to 1 of CLK_FCNT_1C(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL190 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Optimizing register bit CLK_FCNT_1C(0) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Pruning register bits 5 to 1 of CLK_FCNT_2C(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Pruning unused register CLK_FCNT_1C(0). Make sure that there are no unused intermediate registers.
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Trying to extract state machine for register SPI_SM.
+@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Pruning register bits 5 to 1 of CLK_FCNT_1C(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL190 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Optimizing register bit CLK_FCNT_1C(0) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Pruning register bits 5 to 1 of CLK_FCNT_2C(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Pruning unused register CLK_FCNT_1C(0). Make sure that there are no unused intermediate registers.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Trying to extract state machine for register SPI_SM.
 Extracted state machine for register SPI_SM
 State machine has 6 reachable states with original encodings of:
    000001
@@ -93,8 +92,8 @@ State machine has 6 reachable states with original encodings of:
    001000
    010000
    100000
-@W: CL190 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Optimizing register bit CLK_FCNT_2C(0) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Pruning unused register CLK_FCNT_2C(0). Make sure that there are no unused intermediate registers.
+@W: CL190 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Optimizing register bit CLK_FCNT_2C(0) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Pruning unused register CLK_FCNT_2C(0). Make sure that there are no unused intermediate registers.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":43:4:43:14|Input SCA_DAT_OUT is unused.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":131:4:131:5|Trying to extract state machine for register SEQUENCER_STATE.
 Extracted state machine for register SEQUENCER_STATE
@@ -131,7 +130,7 @@ At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memor
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Sep 19 12:30:49 2019
+# Thu Sep 19 13:52:54 2019
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -142,7 +141,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Sep 19 12:30:49 2019
+# Thu Sep 19 13:52:54 2019
 
 ###########################################################]
 @END
@@ -152,7 +151,7 @@ At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Sep 19 12:30:49 2019
+# Thu Sep 19 13:52:55 2019
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -164,10 +163,10 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Sep 19 12:30:51 2019
+# Thu Sep 19 13:52:56 2019
 
 ###########################################################]
-# Thu Sep 19 12:30:52 2019
+# Thu Sep 19 13:52:57 2019
 
 Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -209,7 +208,7 @@ top_lvr_fw|db_clk5mhz_inferred_clock       50.0 MHz      20.000        inferred 
 =================================================================================================================
 
 @W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Found inferred clock spi_slave|I_SPI_RX_STRB_inferred_clock which controls 73 sequential elements including spi_slave_pm.RX_32BIT_SREG[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
-@W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Found inferred clock top_lvr_fw|db_clk5mhz_inferred_clock which controls 341 sequential elements including spi_slave_pm.SPI_SM[0:5]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Found inferred clock top_lvr_fw|db_clk5mhz_inferred_clock which controls 341 sequential elements including spi_slave_pm.SPI_SM[0:5]. This clock has no specified timing constraint which may adversely impact design performance. 
 
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw.sap.
@@ -339,10 +338,10 @@ Pre-mapping successful!
 At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 26MB peak: 113MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Thu Sep 19 12:30:53 2019
+# Thu Sep 19 13:52:58 2019
 
 ###########################################################]
-# Thu Sep 19 12:30:55 2019
+# Thu Sep 19 13:52:59 2019
 
 Synopsys Microsemi Technology Mapper, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -401,7 +400,7 @@ Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[28] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[29] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[30] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: MO231 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
+@N: MO231 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
 Encoding state machine SPI_SM[0:5] (in view: work.spi_slave(rtl))
 original code -> new code
    000001 -> 000001
@@ -410,7 +409,7 @@ original code -> new code
    001000 -> 001000
    010000 -> 010000
    100000 -> 100000
-@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Sequential instance spi_slave_pm.SPI_SM[0] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Sequential instance spi_slave_pm.SPI_SM[0] is reduced to a combinational gate by constant propagation.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance RX_32BIT_SREG[31:0] (in view: work.spi_slave(rtl)) of type view:PrimLib.dff(prim) because it does not drive other instances.
 Encoding state machine SEQUENCER_STATE[0:9] (in view: work.MAIN_SEQUENCER_NEW(rtl))
 original code -> new code
@@ -444,16 +443,16 @@ original code -> new code
 
 Starting factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 111MB peak: 112MB)
 
-@W: BN132 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Removing sequential instance spi_slave_pm.I_SPI_RX_STRB because it is equivalent to instance spi_slave_pm.SPI_SM[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Removing sequential instance spi_slave_pm.I_SPI_RX_STRB because it is equivalent to instance spi_slave_pm.SPI_SM[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 Auto Dissolve of spi_slave_pm (inst of view:work.spi_slave(rtl))
 
-Finished factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 113MB peak: 114MB)
+Finished factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 113MB peak: 114MB)
 
 
-Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 113MB peak: 114MB)
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 113MB peak: 114MB)
 
 
-Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 113MB peak: 114MB)
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 113MB peak: 114MB)
 
 
 Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 119MB)
@@ -490,7 +489,7 @@ CONTROL12.SEQUENCER_STATE_ns_o3_i_o2[5] / Y     48
 @N: FP130 |Promoting Net db_clk5mhz_c on CLKINT  db_clk5mhz_inferred_clock 
 @N: FP130 |Promoting Net MASTER_RST_B on CLKINT  I_53 
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 121MB peak: 122MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 121MB peak: 122MB)
 
 Replicating Combinational Instance CONTROL12.SEQUENCER_STATE_ns_o3_i_o2[5], fanout 48 segments 2
 Replicating Combinational Instance CONTROL34.SEQUENCER_STATE_ns_o3_i_o2[5], fanout 48 segments 2
@@ -502,7 +501,7 @@ Added 4 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 4 Combinational Cells via replication
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 121MB peak: 122MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 121MB peak: 122MB)
 
 
 
@@ -533,7 +532,7 @@ Clock Tree ID     Driving Element                   Drive Element Type     Fanou
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 118MB peak: 122MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 118MB peak: 122MB)
 
 Writing Analyst data base Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\synwork\top_lvr_fw_m.srm
 
@@ -554,7 +553,7 @@ Start final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:0
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Thu Sep 19 12:30:58 2019
+# Timing Report written on Thu Sep 19 13:53:03 2019
 #
 
 
@@ -964,6 +963,6 @@ Mapper successful!
 At Mapper Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 27MB peak: 122MB)
 
 Process took 0h:00m:03s realtime, 0h:00m:03s cputime
-# Thu Sep 19 12:30:59 2019
+# Thu Sep 19 13:53:03 2019
 
 ###########################################################]

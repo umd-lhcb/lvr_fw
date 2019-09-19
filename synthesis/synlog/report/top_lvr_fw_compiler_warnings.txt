@@ -5,10 +5,10 @@
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(3) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":131:4:131:5|Pruning unused register N_PREV_M_CH_EN_2(1 downto 0). Make sure that there are no unused intermediate registers.
-@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":143:44:143:54|Signal spi_tx_word in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":188:118:188:128|Signal spi_tx_word in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":68:24:68:38|Signal n_tx_32bit_sreg is undriven. Either assign the signal a value or remove the signal declaration.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Pruning unused register SPI_CLR_3. Make sure that there are no unused intermediate registers.
+@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":141:44:141:54|Signal spi_tx_word in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":186:118:186:128|Signal spi_tx_word in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Pruning unused register SPI_CLR_3. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Pruning unused register CLK_FCNT_EN_3. Make sure that there are no unused intermediate registers.
 @W: CL116 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Input data for signal N_CLK_FCNT(5 downto 0) contains references to signal edges. An asynchronous reset may be missing from the sensitivity list.
 @W: CL116 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Input data for signal RX_32BIT_SREG(31 downto 0) contains references to signal edges. An asynchronous reset may be missing from the sensitivity list.
 @W: CL116 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Input data for signal CLK_FCNT(5 downto 0) contains references to signal edges. An asynchronous reset may be missing from the sensitivity list.
@@ -21,13 +21,12 @@
 @W: CL113 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":410:4:410:5|Feedback mux created for signal active_channels[7:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
 @W: CL279 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Pruning register bits 5 to 1 of CLK_FCNT(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Pruning unused register N_I_SCA_DAT_IN. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Pruning unused register CLK_FCNT_EN. Make sure that there are no unused intermediate registers.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Pruning unused register N_CLK_FCNT(5 downto 0). Make sure that there are no unused intermediate registers.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Pruning unused register N_RX_32BIT_SREG(31 downto 0). Make sure that there are no unused intermediate registers.
-@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Pruning register bits 5 to 1 of CLK_FCNT_1C(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL190 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Optimizing register bit CLK_FCNT_1C(0) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Pruning register bits 5 to 1 of CLK_FCNT_2C(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Pruning unused register CLK_FCNT_1C(0). Make sure that there are no unused intermediate registers.
-@W: CL190 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Optimizing register bit CLK_FCNT_2C(0) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Pruning unused register CLK_FCNT_2C(0). Make sure that there are no unused intermediate registers.
+@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Pruning register bits 5 to 1 of CLK_FCNT_1C(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL190 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Optimizing register bit CLK_FCNT_1C(0) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL279 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Pruning register bits 5 to 1 of CLK_FCNT_2C(5 downto 0). If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Pruning unused register CLK_FCNT_1C(0). Make sure that there are no unused intermediate registers.
+@W: CL190 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Optimizing register bit CLK_FCNT_2C(0) to a constant 0. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Pruning unused register CLK_FCNT_2C(0). Make sure that there are no unused intermediate registers.
 

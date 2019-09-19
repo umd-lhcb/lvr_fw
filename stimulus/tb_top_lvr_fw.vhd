@@ -124,7 +124,7 @@ architecture behavioral of TB_TOP_LVR_FW is
       P_CH_VOSG_EN       : out std_logic_vector(7 downto 0);
       PWR_OK_LED         : out std_logic;
       STATUS_LED         : out std_logic;
-      BUF5M_J11_15_TCONN : out std_logic;
+      --BUF5M_J11_15_TCONN : out std_logic;
       J11_17_TCONN       : out std_logic;
       J11_19_TCONN       : out std_logic;
       J11_21_TCONN       : out std_logic;
@@ -299,7 +299,7 @@ begin
       P_CH_VOSG_EN       => CH_VOSG_EN,
       PWR_OK_LED         => open,
       STATUS_LED         => CH_ACTIVE_STAT,
-      BUF5M_J11_15_TCONN => open,
+      --BUF5M_J11_15_TCONN => open,
       J11_17_TCONN       => MAINSEQ_STATE(0),
       J11_19_TCONN       => MAINSEQ_STATE(1),
       J11_21_TCONN       => MAINSEQ_STATE(2),

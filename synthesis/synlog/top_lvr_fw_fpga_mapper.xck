@@ -1,4 +1,4 @@
 CKID0001:@|S:spi_slave_pm.I_SCA_DAT_IN_RNO@|E:spi_slave_pm.I_SCA_DAT_IN@|F:@syn_sample_clock_path==CKID0001@|M:ClockId0001 
-CKID0002:@|S:spi_slave_pm.SPI_SM[5]@|E:active_channels[0]@|F:@syn_sample_clock_path1==CKID0002@|M:ClockId0002 
-CKID0003:@|S:CLK_5M_GL_keep@|E:DTYCYC_EN@|F:@syn_sample_clock_path==CKID0003@|M:ClockId0003 
-CKID0004:@|S:CLK40MHZ_OSC@|E:CLK_5M_GL@|F:@syn_sample_clock_path==CKID0004@|M:ClockId0004 
+CKID0002:@|S:CLK_5M_GL@|E:DTYCYC_EN@|F:@syn_sample_clock_path==CKID0002@|M:ClockId0002 
+CKID0003:@|S:spi_slave_pm.SPI_SM[5]@|E:active_channels[0]@|F:@syn_sample_clock_path1==CKID0003@|M:ClockId0003 
+CKID0004:@|S:CLK40MHZ_OSC@|E:CLK_5M_GL@|F:@syn_sample_clock_path1==CKID0004@|M:ClockId0004 

@@ -1,1 +1,3 @@
 @W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Found inferred clock spi_slave|I_SPI_RX_STRB_inferred_clock which controls 73 sequential elements including spi_slave_pm.RX_32BIT_SREG[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Found inferred clock top_lvr_fw|db_clk5mhz_inferred_clock which controls 341 sequential elements including spi_slave_pm.SPI_SM[0:5]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MF511 |Found issues with constraints. Please check constraint checker report "Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw_cck.rpt" .

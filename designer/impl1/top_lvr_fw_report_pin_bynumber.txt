@@ -1,5 +1,5 @@
 *****************************************************************
-Pin Report - Date: Thu Sep 19 11:59:45 2019 Pinchecksum: NOT-AVAILABLE
+Pin Report - Date: Thu Sep 19 12:32:13 2019 UNCOMPLETED LAYOUT
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
@@ -14,7 +14,7 @@ Number |Port                |Function      |State       |I/O Std  |Output Drive 
 2       SCA_DAT_OUT          GAA2/IO67RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 3       SCA_DAT_IN           IO66RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
 4       J11_19_TCONN         GAB2/IO65RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
-5       BUF5M_J11_15_TCONN   IO64RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
+5                            IO64RSB3       Unassigned
 6       db_spi_strobe        GAC2/IO63RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
 7       db_spi_state1        IO62RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
 8       db_spi_state0        IO61RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---

@@ -1,7 +1,7 @@
 # Synopsys Constraint Checker, version mapact, Build 2172R, built Oct 30 2017
 # Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
 
-# Written on Thu Sep 19 11:54:06 2019
+# Written on Thu Sep 19 12:30:53 2019
 
 
 ##### DESIGN INFO #######################################################
@@ -14,7 +14,7 @@ Constraint File(s):      "Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw_syn
 
 ##### SUMMARY ############################################################
 
-Found 0 issues in 0 out of 5 constraints
+Found 2 issues in 2 out of 5 constraints
 
 
 ##### DETAILS ############################################################
@@ -27,12 +27,12 @@ Clock Relationships
 Starting                                   Ending                                     |     rise to rise     |     fall to fall     |     rise to fall     |     fall to rise                     
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CLK40MHZ_OSC                               CLK40MHZ_OSC                               |     25.000           |     No paths         |     No paths         |     No paths                         
-CLK40MHZ_OSC                               CLK_5M_GL                                  |     25.000           |     No paths         |     No paths         |     No paths                         
 CLK40MHZ_OSC                               spi_slave|I_SPI_RX_STRB_inferred_clock     |     No paths         |     No paths         |     Diff grp         |     No paths                         
-CLK_5M_GL                                  CLK_5M_GL                                  |     200.000          |     No paths         |     No paths         |     No paths                         
-CLK_5M_GL                                  spi_slave|I_SPI_RX_STRB_inferred_clock     |     No paths         |     No paths         |     Diff grp         |     No paths                         
-spi_slave|I_SPI_RX_STRB_inferred_clock     CLK_5M_GL                                  |     No paths         |     No paths         |     No paths         |     Diff grp                         
+CLK40MHZ_OSC                               top_lvr_fw|db_clk5mhz_inferred_clock       |     Diff grp         |     No paths         |     No paths         |     No paths                         
 spi_slave|I_SPI_RX_STRB_inferred_clock     spi_slave|I_SPI_RX_STRB_inferred_clock     |     No paths         |     20.000           |     No paths         |     No paths                         
+spi_slave|I_SPI_RX_STRB_inferred_clock     top_lvr_fw|db_clk5mhz_inferred_clock       |     No paths         |     No paths         |     No paths         |     Diff grp                         
+top_lvr_fw|db_clk5mhz_inferred_clock       spi_slave|I_SPI_RX_STRB_inferred_clock     |     No paths         |     No paths         |     Diff grp         |     No paths                         
+top_lvr_fw|db_clk5mhz_inferred_clock       top_lvr_fw|db_clk5mhz_inferred_clock       |     20.000           |     No paths         |     No paths         |     No paths                         
 =================================================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
@@ -109,21 +109,23 @@ p:db_sca_clk_out
 p:db_sca_dat_out
 p:db_spi_cnt0
 p:db_spi_cnt1
+p:db_spi_cnt2
 p:db_spi_state0
 p:db_spi_state1
+p:db_spi_state2
 
 
 Inapplicable constraints
 ************************
 
-(none)
-
+create_clock n:CLK_5M_GL -period 200 -add
+	@E:"z:/windows/lvr_fw/lvr_fw_sep2/synthesis/top_lvr_fw_syn.fdc":19:0:19:0|object "n:CLK_5M_GL" does not exist
 
 Applicable constraints with issues
 **********************************
 
-(none)
-
+set_clock_groups -derive -asynchronous -name MainClkGrp -group {c:CLK40MHZ_OSC c:CLK_5M_GL}
+	@W:"z:/windows/lvr_fw/lvr_fw_sep2/synthesis/top_lvr_fw_syn.fdc":22:0:22:0|object "c:CLK_5M_GL" does not exist
 
 Constraints with matching wildcard expressions
 **********************************************

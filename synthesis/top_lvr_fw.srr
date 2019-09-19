@@ -3,7 +3,7 @@
 #OS: Windows 8 6.2
 #Hostname: DESKTOP-PLJUDQE
 
-# Thu Sep 19 11:54:00 2019
+# Thu Sep 19 12:30:48 2019
 
 #Implementation: synthesis
 
@@ -25,7 +25,7 @@ File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\Slow_PulseEn_Gen.vhd changed - recompilin
 File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd changed - recompiling
 File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd changed - recompiling
 VHDL syntax check successful!
-File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":53:7:53:16|Synthesizing work.top_lvr_fw.rtl.
 @W: CG296 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":408:24:408:30|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
@@ -131,7 +131,7 @@ At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memor
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Sep 19 11:54:01 2019
+# Thu Sep 19 12:30:49 2019
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -142,17 +142,17 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Sep 19 11:54:02 2019
+# Thu Sep 19 12:30:49 2019
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 3MB peak: 4MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 3MB peak: 4MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Sep 19 11:54:02 2019
+# Thu Sep 19 12:30:49 2019
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -164,10 +164,10 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Sep 19 11:54:04 2019
+# Thu Sep 19 12:30:51 2019
 
 ###########################################################]
-# Thu Sep 19 11:54:04 2019
+# Thu Sep 19 12:30:52 2019
 
 Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -203,12 +203,13 @@ Start                                      Requested     Requested     Clock    
 Clock                                      Frequency     Period        Type         Group                   Load 
 -----------------------------------------------------------------------------------------------------------------
 CLK40MHZ_OSC                               40.0 MHz      25.000        declared     MainClkGrp              5    
-CLK_5M_GL                                  5.0 MHz       200.000       declared     MainClkGrp              342  
 SCA_CLK_OUT                                1.0 MHz       1000.000      declared     Spi_MClkGrp             0    
 spi_slave|I_SPI_RX_STRB_inferred_clock     50.0 MHz      20.000        inferred     Inferred_clkgroup_0     73   
+top_lvr_fw|db_clk5mhz_inferred_clock       50.0 MHz      20.000        inferred     Inferred_clkgroup_1     341  
 =================================================================================================================
 
 @W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Found inferred clock spi_slave|I_SPI_RX_STRB_inferred_clock which controls 73 sequential elements including spi_slave_pm.RX_32BIT_SREG[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Found inferred clock top_lvr_fw|db_clk5mhz_inferred_clock which controls 341 sequential elements including spi_slave_pm.SPI_SM[0:5]. This clock has no specified timing constraint which may adversely impact design performance. 
 
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw.sap.
@@ -329,6 +330,7 @@ original code -> new code
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[30] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
 None
 None
+@W: MF511 |Found issues with constraints. Please check constraint checker report "Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw_cck.rpt" .
 
 Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 112MB peak: 113MB)
 
@@ -337,10 +339,10 @@ Pre-mapping successful!
 At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 26MB peak: 113MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Thu Sep 19 11:54:06 2019
+# Thu Sep 19 12:30:53 2019
 
 ###########################################################]
-# Thu Sep 19 11:54:07 2019
+# Thu Sep 19 12:30:55 2019
 
 Synopsys Microsemi Technology Mapper, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -410,7 +412,6 @@ original code -> new code
    100000 -> 100000
 @W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Sequential instance spi_slave_pm.SPI_SM[0] is reduced to a combinational gate by constant propagation.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance RX_32BIT_SREG[31:0] (in view: work.spi_slave(rtl)) of type view:PrimLib.dff(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Removing sequential instance SPI_SM[1] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 Encoding state machine SEQUENCER_STATE[0:9] (in view: work.MAIN_SEQUENCER_NEW(rtl))
 original code -> new code
    0000000001 -> 0000000001
@@ -446,13 +447,13 @@ Starting factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; M
 @W: BN132 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Removing sequential instance spi_slave_pm.I_SPI_RX_STRB because it is equivalent to instance spi_slave_pm.SPI_SM[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 Auto Dissolve of spi_slave_pm (inst of view:work.spi_slave(rtl))
 
-Finished factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 113MB peak: 114MB)
+Finished factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 113MB peak: 114MB)
 
 
-Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 113MB peak: 114MB)
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 113MB peak: 114MB)
 
 
-Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 113MB peak: 114MB)
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 113MB peak: 114MB)
 
 
 Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 119MB)
@@ -464,13 +465,13 @@ Starting Early Timing Optimization (Real Time elapsed 0h:00m:02s; CPU Time elaps
 Finished Early Timing Optimization (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 119MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 119MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 119MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 116MB peak: 119MB)
+Finished preparing to map (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 116MB peak: 119MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 122MB peak: 123MB)
+Finished technology mapping (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 121MB peak: 122MB)
 
 
 High Fanout Net Report
@@ -478,22 +479,22 @@ High Fanout Net Report
 
 Driver Instance / Pin Name                      Fanout, notes                   
 --------------------------------------------------------------------------------
-GLOB_BUFF.Core / GLC                            44 : 44 asynchronous set/reset  
+GLOB_BUFF.Core / GLC                            45 : 45 asynchronous set/reset  
 MASTER_RST_B / Q                                266 : 265 asynchronous set/reset
 CONTROL78.SEQUENCER_STATE_ns_o3_i_o2[5] / Y     48                              
-CONTROL56.SEQUENCER_STATE_ns_o3_i_o2[5] / Y     48                              
+CONTROL56.SEQUENCER_STATE_ns_o3_i_o2[5] / Y     46                              
 CONTROL34.SEQUENCER_STATE_ns_o3_i_o2[5] / Y     48                              
 CONTROL12.SEQUENCER_STATE_ns_o3_i_o2[5] / Y     48                              
 ================================================================================
 
-@N: FP130 |Promoting Net CLK_5M_GL_c_c on CLKINT  CLK_5M_GL_keep 
+@N: FP130 |Promoting Net db_clk5mhz_c on CLKINT  db_clk5mhz_inferred_clock 
 @N: FP130 |Promoting Net MASTER_RST_B on CLKINT  I_53 
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 122MB peak: 123MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 121MB peak: 122MB)
 
 Replicating Combinational Instance CONTROL12.SEQUENCER_STATE_ns_o3_i_o2[5], fanout 48 segments 2
 Replicating Combinational Instance CONTROL34.SEQUENCER_STATE_ns_o3_i_o2[5], fanout 48 segments 2
-Replicating Combinational Instance CONTROL56.SEQUENCER_STATE_ns_o3_i_o2[5], fanout 48 segments 2
+Replicating Combinational Instance CONTROL56.SEQUENCER_STATE_ns_o3_i_o2[5], fanout 46 segments 2
 Replicating Combinational Instance CONTROL78.SEQUENCER_STATE_ns_o3_i_o2[5], fanout 48 segments 2
 
 Added 0 Buffers
@@ -501,7 +502,7 @@ Added 4 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 4 Combinational Cells via replication
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 122MB peak: 123MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 121MB peak: 122MB)
 
 
 
@@ -511,49 +512,49 @@ Finished restoring hierarchy (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:
 #### START OF CLOCK OPTIMIZATION REPORT #####[
 
 Clock optimization not enabled
-2 non-gated/non-generated clock tree(s) driving 302 clock pin(s) of sequential element(s)
-2 gated/generated clock tree(s) driving 10 clock pin(s) of sequential element(s)
-0 instances converted, 10 sequential instances remain driven by gated/generated clocks
+1 non-gated/non-generated clock tree(s) driving 5 clock pin(s) of sequential element(s)
+3 gated/generated clock tree(s) driving 308 clock pin(s) of sequential element(s)
+0 instances converted, 308 sequential instances remain driven by gated/generated clocks
 
-=============================== Non-Gated/Non-Generated Clocks ================================
-Clock Tree ID     Driving Element     Drive Element Type             Fanout     Sample Instance
------------------------------------------------------------------------------------------------
-@K:CKID0003       CLK_5M_GL_keep      clock definition on CLKINT     297        DTYCYC_EN      
-@K:CKID0004       CLK40MHZ_OSC        clock definition on port       5          CLK_5M_GL      
-===============================================================================================
+============================== Non-Gated/Non-Generated Clocks ===============================
+Clock Tree ID     Driving Element     Drive Element Type           Fanout     Sample Instance
+---------------------------------------------------------------------------------------------
+@K:CKID0004       CLK40MHZ_OSC        clock definition on port     5          CLK_5M_GL      
+=============================================================================================
 ================================================================================== Gated/Generated Clocks ==================================================================================
 Clock Tree ID     Driving Element                   Drive Element Type     Fanout     Sample Instance               Explanation                                                             
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 @K:CKID0001       spi_slave_pm.I_SCA_DAT_IN_RNO     OR2B                   1          spi_slave_pm.I_SCA_DAT_IN     Clock conversion disabled                                               
-@K:CKID0002       spi_slave_pm.SPI_SM[5]            DFN1P0                 9          active_channels[0]            No generated or derived clock directive on output of sequential instance
+@K:CKID0002       CLK_5M_GL                         DFN1C0                 298        DTYCYC_EN                     No generated or derived clock directive on output of sequential instance
+@K:CKID0003       spi_slave_pm.SPI_SM[5]            DFN1P0                 9          active_channels[0]            No generated or derived clock directive on output of sequential instance
 ============================================================================================================================================================================================
 
 
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 119MB peak: 123MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 118MB peak: 122MB)
 
 Writing Analyst data base Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\synwork\top_lvr_fw_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 120MB peak: 123MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 119MB peak: 122MB)
 
 Writing EDIF Netlist and constraint files
 L-2016.09M-SP1-5
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 121MB peak: 123MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 120MB peak: 122MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 120MB peak: 123MB)
+Start final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 122MB)
 
 @N: MT615 |Found clock CLK40MHZ_OSC with period 25.00ns 
 @N: MT615 |Found clock SCA_CLK_OUT with period 1000.00ns 
-@N: MT615 |Found clock CLK_5M_GL with period 200.00ns 
+@W: MT420 |Found inferred clock top_lvr_fw|db_clk5mhz_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:db_clk5mhz"
 @W: MT420 |Found inferred clock spi_slave|I_SPI_RX_STRB_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:spi_slave_pm.I_SPI_RX_STRB"
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Thu Sep 19 11:54:11 2019
+# Timing Report written on Thu Sep 19 12:30:58 2019
 #
 
 
@@ -576,17 +577,18 @@ Performance Summary
 *******************
 
 
-Worst slack in design: 18.452
+Worst slack in design: 2.440
 
-                                           Requested     Estimated     Requested     Estimated                 Clock        Clock              
-Starting Clock                             Frequency     Frequency     Period        Period        Slack       Type         Group              
------------------------------------------------------------------------------------------------------------------------------------------------
-CLK40MHZ_OSC                               40.0 MHz      238.1 MHz     25.000        4.200         20.799      declared     MainClkGrp         
-CLK_5M_GL                                  5.0 MHz       56.9 MHz      200.000       17.560        182.440     declared     MainClkGrp         
-SCA_CLK_OUT                                1.0 MHz       NA            1000.000      NA            NA          declared     Spi_MClkGrp        
-spi_slave|I_SPI_RX_STRB_inferred_clock     50.0 MHz      645.8 MHz     20.000        1.548         18.452      inferred     Inferred_clkgroup_0
-===============================================================================================================================================
+                                           Requested     Estimated     Requested     Estimated                Clock        Clock              
+Starting Clock                             Frequency     Frequency     Period        Period        Slack      Type         Group              
+----------------------------------------------------------------------------------------------------------------------------------------------
+CLK40MHZ_OSC                               40.0 MHz      296.4 MHz     25.000        3.373         21.627     declared     MainClkGrp         
+SCA_CLK_OUT                                1.0 MHz       NA            1000.000      NA            NA         declared     Spi_MClkGrp        
+spi_slave|I_SPI_RX_STRB_inferred_clock     50.0 MHz      645.8 MHz     20.000        1.548         18.452     inferred     Inferred_clkgroup_0
+top_lvr_fw|db_clk5mhz_inferred_clock       50.0 MHz      56.9 MHz      20.000        17.560        2.440      inferred     Inferred_clkgroup_1
+==============================================================================================================================================
 @N: MT582 |Estimated period and frequency not reported for given clock unless the clock has at least one timing path which is not a false or a max delay path and that does not have excessive slack
+@W: MT511 :"z:/windows/lvr_fw/lvr_fw_sep2/synthesis/top_lvr_fw_syn.fdc":19:0:19:0|Clock source n:CLK_5M_GL not found in netlist: create_clock n:CLK_5M_GL -period 200 -add
 
 
 
@@ -595,16 +597,16 @@ spi_slave|I_SPI_RX_STRB_inferred_clock     50.0 MHz      645.8 MHz     20.000   
 Clock Relationships
 *******************
 
-Clocks                                                                          |    rise  to  rise     |    fall  to  fall    |    rise  to  fall   |    fall  to  rise 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Starting                                Ending                                  |  constraint  slack    |  constraint  slack   |  constraint  slack  |  constraint  slack
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CLK40MHZ_OSC                            CLK40MHZ_OSC                            |  25.000      20.800   |  No paths    -       |  No paths    -      |  No paths    -    
-CLK_5M_GL                               CLK_5M_GL                               |  200.000     182.440  |  No paths    -       |  No paths    -      |  No paths    -    
-CLK_5M_GL                               spi_slave|I_SPI_RX_STRB_inferred_clock  |  No paths    -        |  No paths    -       |  Diff grp    -      |  No paths    -    
-spi_slave|I_SPI_RX_STRB_inferred_clock  CLK_5M_GL                               |  No paths    -        |  No paths    -       |  No paths    -      |  Diff grp    -    
-spi_slave|I_SPI_RX_STRB_inferred_clock  spi_slave|I_SPI_RX_STRB_inferred_clock  |  No paths    -        |  20.000      18.452  |  No paths    -      |  No paths    -    
-=========================================================================================================================================================================
+Clocks                                                                          |    rise  to  rise    |    fall  to  fall    |    rise  to  fall   |    fall  to  rise 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Starting                                Ending                                  |  constraint  slack   |  constraint  slack   |  constraint  slack  |  constraint  slack
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CLK40MHZ_OSC                            CLK40MHZ_OSC                            |  25.000      21.627  |  No paths    -       |  No paths    -      |  No paths    -    
+spi_slave|I_SPI_RX_STRB_inferred_clock  spi_slave|I_SPI_RX_STRB_inferred_clock  |  No paths    -       |  20.000      18.452  |  No paths    -      |  No paths    -    
+spi_slave|I_SPI_RX_STRB_inferred_clock  top_lvr_fw|db_clk5mhz_inferred_clock    |  No paths    -       |  No paths    -       |  No paths    -      |  Diff grp    -    
+top_lvr_fw|db_clk5mhz_inferred_clock    spi_slave|I_SPI_RX_STRB_inferred_clock  |  No paths    -       |  No paths    -       |  Diff grp    -      |  No paths    -    
+top_lvr_fw|db_clk5mhz_inferred_clock    top_lvr_fw|db_clk5mhz_inferred_clock    |  20.000      2.440   |  No paths    -       |  No paths    -      |  No paths    -    
+========================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
 
@@ -626,29 +628,29 @@ Detailed Report for Clock: CLK40MHZ_OSC
 Starting Points with Worst Slack
 ********************************
 
-                   Starting                                                 Arrival           
-Instance           Reference        Type         Pin     Net                Time        Slack 
-                   Clock                                                                      
-----------------------------------------------------------------------------------------------
-CLK_5M_GL          CLK40MHZ_OSC     DFN1E1C0     Q       CLK_5M_GL_i        0.737       20.799
-REFCNT[0]          CLK40MHZ_OSC     DFN1C0       Q       REFCNT[0]          0.737       22.012
-REFCNT[1]          CLK40MHZ_OSC     DFN1C0       Q       REFCNT[1]          0.737       22.080
-DEL0_DEV_RST_B     CLK40MHZ_OSC     DFN1C0       Q       DEL0_DEV_RST_B     0.737       23.368
-==============================================================================================
+                   Starting                                               Arrival           
+Instance           Reference        Type       Pin     Net                Time        Slack 
+                   Clock                                                                    
+--------------------------------------------------------------------------------------------
+REFCNT[0]          CLK40MHZ_OSC     DFN1C0     Q       REFCNT[0]          0.737       21.627
+REFCNT[1]          CLK40MHZ_OSC     DFN1C0     Q       REFCNT[1]          0.737       22.073
+CLK_5M_GL          CLK40MHZ_OSC     DFN1C0     Q       db_clk5mhz_i       0.737       22.529
+DEL0_DEV_RST_B     CLK40MHZ_OSC     DFN1C0     Q       DEL0_DEV_RST_B     0.737       23.368
+============================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                 Starting                                                        Required           
-Instance         Reference        Type         Pin     Net                       Time         Slack 
-                 Clock                                                                              
-----------------------------------------------------------------------------------------------------
-CLK_5M_GL        CLK40MHZ_OSC     DFN1E1C0     E       GEN_5M_CLK\.n_refcnt9     24.392       22.012
-REFCNT[1]        CLK40MHZ_OSC     DFN1C0       D       SUM1                      24.461       22.080
-REFCNT[0]        CLK40MHZ_OSC     DFN1C0       D       REFCNT_i[0]               24.461       22.089
-MASTER_RST_B     CLK40MHZ_OSC     DFN1C0       D       DEL0_DEV_RST_B            24.427       23.368
-====================================================================================================
+                 Starting                                               Required           
+Instance         Reference        Type       Pin     Net                Time         Slack 
+                 Clock                                                                     
+-------------------------------------------------------------------------------------------
+CLK_5M_GL        CLK40MHZ_OSC     DFN1C0     D       CLK_5M_GL_RNO      24.461       21.627
+REFCNT[1]        CLK40MHZ_OSC     DFN1C0     D       SUM1               24.461       22.080
+REFCNT[0]        CLK40MHZ_OSC     DFN1C0     D       REFCNT_i[0]        24.461       22.089
+MASTER_RST_B     CLK40MHZ_OSC     DFN1C0     D       DEL0_DEV_RST_B     24.427       23.368
+===========================================================================================
 
 
 
@@ -662,37 +664,34 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         24.461
 
-    - Propagation time:                      3.662
+    - Propagation time:                      2.835
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 20.800
+    = Slack (non-critical) :                 21.627
 
-    Number of logic level(s):                2
-    Starting point:                          CLK_5M_GL / Q
+    Number of logic level(s):                1
+    Starting point:                          REFCNT[0] / Q
     Ending point:                            CLK_5M_GL / D
     The start point is clocked by            CLK40MHZ_OSC [rising] on pin CLK
     The end   point is clocked by            CLK40MHZ_OSC [rising] on pin CLK
 
-Instance / Net                   Pin      Pin               Arrival     No. of    
-Name                Type         Name     Dir     Delay     Time        Fan Out(s)
-----------------------------------------------------------------------------------
-CLK_5M_GL           DFN1E1C0     Q        Out     0.737     0.737       -         
-CLK_5M_GL_i         Net          -        -       0.322     -           1         
-CLK_5M_GL_keep      CLKINT       A        In      -         1.058       -         
-CLK_5M_GL_keep      CLKINT       Y        Out     0.174     1.232       -         
-CLK_5M_GL_c_c       Net          -        -       1.601     -           300       
-CLK_5M_GL_RNO       INV          A        In      -         2.833       -         
-CLK_5M_GL_RNO       INV          Y        Out     0.507     3.340       -         
-CLK_5M_GL_c_c_i     Net          -        -       0.322     -           1         
-CLK_5M_GL           DFN1E1C0     D        In      -         3.662       -         
-==================================================================================
-Total path delay (propagation time + setup) of 4.200 is 1.957(46.6%) logic and 2.244(53.4%) route.
+Instance / Net                Pin      Pin               Arrival     No. of    
+Name               Type       Name     Dir     Delay     Time        Fan Out(s)
+-------------------------------------------------------------------------------
+REFCNT[0]          DFN1C0     Q        Out     0.737     0.737       -         
+REFCNT[0]          Net        -        -       0.806     -           3         
+CLK_5M_GL_RNO      AX1C       B        In      -         1.543       -         
+CLK_5M_GL_RNO      AX1C       Y        Out     0.970     2.513       -         
+CLK_5M_GL_RNO      Net        -        -       0.322     -           1         
+CLK_5M_GL          DFN1C0     D        In      -         2.835       -         
+===============================================================================
+Total path delay (propagation time + setup) of 3.373 is 2.245(66.6%) logic and 1.128(33.4%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
 
 
 ====================================
-Detailed Report for Clock: CLK_5M_GL
+Detailed Report for Clock: spi_slave|I_SPI_RX_STRB_inferred_clock
 ====================================
 
 
@@ -700,41 +699,23 @@ Detailed Report for Clock: CLK_5M_GL
 Starting Points with Worst Slack
 ********************************
 
-                                 Starting                                                Arrival            
-Instance                         Reference     Type       Pin     Net                    Time        Slack  
-                                 Clock                                                                      
-------------------------------------------------------------------------------------------------------------
-TX_PROMPT.CNT_VAL[0]             CLK_5M_GL     DFN1C0     Q       CNT_VAL[0]             0.737       182.440
-TX_PROMPT.CNT_VAL[1]             CLK_5M_GL     DFN1C0     Q       CNT_VAL[1]             0.737       182.960
-TX_PROMPT.CNT_VAL[2]             CLK_5M_GL     DFN1C0     Q       CNT_VAL[2]             0.737       183.203
-CONTROL78.SEQUENCER_STATE[3]     CLK_5M_GL     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       183.582
-CONTROL34.SEQUENCER_STATE[3]     CLK_5M_GL     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       183.582
-CONTROL56.SEQUENCER_STATE[3]     CLK_5M_GL     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       183.582
-CONTROL12.SEQUENCER_STATE[3]     CLK_5M_GL     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       183.582
-CONTROL78.SEQUENCER_STATE[4]     CLK_5M_GL     DFN1C0     Q       SEQUENCER_STATE[4]     0.737       183.961
-CONTROL34.SEQUENCER_STATE[4]     CLK_5M_GL     DFN1C0     Q       SEQUENCER_STATE[4]     0.737       183.961
-CONTROL12.SEQUENCER_STATE[4]     CLK_5M_GL     DFN1C0     Q       SEQUENCER_STATE[4]     0.737       183.961
-============================================================================================================
+                    Starting                                                                          Arrival           
+Instance            Reference                                  Type       Pin     Net                 Time        Slack 
+                    Clock                                                                                               
+------------------------------------------------------------------------------------------------------------------------
+SPI_TX_WORD[31]     spi_slave|I_SPI_RX_STRB_inferred_clock     DFN0P0     Q       SPI_TX_WORD[31]     0.653       18.452
+========================================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                           Starting                                            Required            
-Instance                   Reference     Type       Pin     Net                Time         Slack  
-                           Clock                                                                   
----------------------------------------------------------------------------------------------------
-TX_PROMPT.CNT_VAL[20]      CLK_5M_GL     DFN1C0     D       CNT_VAL_n20        199.461      182.440
-TX_PROMPT.CNT_VAL[19]      CLK_5M_GL     DFN1C0     D       CNT_VAL_n19        199.427      182.724
-CONTROL78.DEL_CNTR[13]     CLK_5M_GL     DFN1P0     D       N_DEL_CNTR[13]     199.461      183.582
-CONTROL12.DEL_CNTR[13]     CLK_5M_GL     DFN1P0     D       N_DEL_CNTR[13]     199.461      183.582
-CONTROL56.DEL_CNTR[13]     CLK_5M_GL     DFN1P0     D       N_DEL_CNTR[13]     199.461      183.582
-CONTROL34.DEL_CNTR[13]     CLK_5M_GL     DFN1P0     D       N_DEL_CNTR[13]     199.461      183.582
-CONTROL12.DEL_CNTR[14]     CLK_5M_GL     DFN1P0     D       N_DEL_CNTR[14]     199.461      183.582
-CONTROL78.DEL_CNTR[14]     CLK_5M_GL     DFN1P0     D       N_DEL_CNTR[14]     199.461      183.582
-CONTROL56.DEL_CNTR[14]     CLK_5M_GL     DFN1P0     D       N_DEL_CNTR[14]     199.461      183.582
-CONTROL34.DEL_CNTR[14]     CLK_5M_GL     DFN1P0     D       N_DEL_CNTR[14]     199.461      183.582
-===================================================================================================
+                              Starting                                                                        Required           
+Instance                      Reference                                  Type     Pin     Net                 Time         Slack 
+                              Clock                                                                                              
+---------------------------------------------------------------------------------------------------------------------------------
+spi_slave_pm.I_SCA_DAT_IN     spi_slave|I_SPI_RX_STRB_inferred_clock     DFN1     D       SPI_TX_WORD[31]     19.427       18.452
+=================================================================================================================================
 
 
 
@@ -743,20 +724,100 @@ Worst Path Information
 
 
 Path information for path number 1: 
-      Requested Period:                      200.000
+      Requested Period:                      20.000
+    - Setup time:                            0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         19.427
+
+    - Propagation time:                      0.975
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 18.452
+
+    Number of logic level(s):                0
+    Starting point:                          SPI_TX_WORD[31] / Q
+    Ending point:                            spi_slave_pm.I_SCA_DAT_IN / D
+    The start point is clocked by            spi_slave|I_SPI_RX_STRB_inferred_clock [falling] on pin CLK
+    The end   point is clocked by            spi_slave|I_SPI_RX_STRB_inferred_clock [falling] on pin CLK
+
+Instance / Net                           Pin      Pin               Arrival     No. of    
+Name                          Type       Name     Dir     Delay     Time        Fan Out(s)
+------------------------------------------------------------------------------------------
+SPI_TX_WORD[31]               DFN0P0     Q        Out     0.653     0.653       -         
+SPI_TX_WORD[31]               Net        -        -       0.322     -           1         
+spi_slave_pm.I_SCA_DAT_IN     DFN1       D        In      -         0.975       -         
+==========================================================================================
+Total path delay (propagation time + setup) of 1.548 is 1.227(79.2%) logic and 0.322(20.8%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+
+====================================
+Detailed Report for Clock: top_lvr_fw|db_clk5mhz_inferred_clock
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                 Starting                                                                           Arrival          
+Instance                         Reference                                Type       Pin     Net                    Time        Slack
+                                 Clock                                                                                               
+-------------------------------------------------------------------------------------------------------------------------------------
+TX_PROMPT.CNT_VAL[0]             top_lvr_fw|db_clk5mhz_inferred_clock     DFN1C0     Q       CNT_VAL[0]             0.737       2.440
+TX_PROMPT.CNT_VAL[1]             top_lvr_fw|db_clk5mhz_inferred_clock     DFN1C0     Q       CNT_VAL[1]             0.737       2.960
+TX_PROMPT.CNT_VAL[2]             top_lvr_fw|db_clk5mhz_inferred_clock     DFN1C0     Q       CNT_VAL[2]             0.737       3.203
+CONTROL78.SEQUENCER_STATE[3]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       3.582
+CONTROL34.SEQUENCER_STATE[3]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       3.582
+CONTROL12.SEQUENCER_STATE[3]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       3.582
+CONTROL56.SEQUENCER_STATE[3]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[3]     0.737       3.612
+CONTROL78.SEQUENCER_STATE[4]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[4]     0.737       3.961
+CONTROL34.SEQUENCER_STATE[4]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[4]     0.737       3.961
+CONTROL12.SEQUENCER_STATE[4]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1C0     Q       SEQUENCER_STATE[4]     0.737       3.961
+=====================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                           Starting                                                                       Required          
+Instance                   Reference                                Type       Pin     Net                Time         Slack
+                           Clock                                                                                            
+----------------------------------------------------------------------------------------------------------------------------
+TX_PROMPT.CNT_VAL[20]      top_lvr_fw|db_clk5mhz_inferred_clock     DFN1C0     D       CNT_VAL_n20        19.461       2.440
+TX_PROMPT.CNT_VAL[19]      top_lvr_fw|db_clk5mhz_inferred_clock     DFN1C0     D       CNT_VAL_n19        19.427       2.724
+CONTROL78.DEL_CNTR[13]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1P0     D       N_DEL_CNTR[13]     19.461       3.582
+CONTROL12.DEL_CNTR[13]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1P0     D       N_DEL_CNTR[13]     19.461       3.582
+CONTROL34.DEL_CNTR[13]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1P0     D       N_DEL_CNTR[13]     19.461       3.582
+CONTROL12.DEL_CNTR[14]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1P0     D       N_DEL_CNTR[14]     19.461       3.582
+CONTROL78.DEL_CNTR[14]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1P0     D       N_DEL_CNTR[14]     19.461       3.582
+CONTROL34.DEL_CNTR[14]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1P0     D       N_DEL_CNTR[14]     19.461       3.582
+CONTROL56.DEL_CNTR[13]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1P0     D       N_DEL_CNTR[13]     19.461       3.612
+CONTROL56.DEL_CNTR[14]     top_lvr_fw|db_clk5mhz_inferred_clock     DFN1P0     D       N_DEL_CNTR[14]     19.461       3.612
+============================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      20.000
     - Setup time:                            0.539
     + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         199.461
+    = Required time:                         19.461
 
     - Propagation time:                      17.021
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 182.440
+    = Slack (critical) :                     2.440
 
     Number of logic level(s):                13
     Starting point:                          TX_PROMPT.CNT_VAL[0] / Q
     Ending point:                            TX_PROMPT.CNT_VAL[20] / D
-    The start point is clocked by            CLK_5M_GL [rising] on pin CLK
-    The end   point is clocked by            CLK_5M_GL [rising] on pin CLK
+    The start point is clocked by            top_lvr_fw|db_clk5mhz_inferred_clock [rising] on pin CLK
+    The end   point is clocked by            top_lvr_fw|db_clk5mhz_inferred_clock [rising] on pin CLK
 
 Instance / Net                                Pin      Pin               Arrival     No. of    
 Name                               Type       Name     Dir     Delay     Time        Fan Out(s)
@@ -809,77 +870,15 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 
 
 
-
-====================================
-Detailed Report for Clock: spi_slave|I_SPI_RX_STRB_inferred_clock
-====================================
-
-
-
-Starting Points with Worst Slack
-********************************
-
-                    Starting                                                                          Arrival           
-Instance            Reference                                  Type       Pin     Net                 Time        Slack 
-                    Clock                                                                                               
-------------------------------------------------------------------------------------------------------------------------
-SPI_TX_WORD[31]     spi_slave|I_SPI_RX_STRB_inferred_clock     DFN0P0     Q       SPI_TX_WORD[31]     0.653       18.452
-========================================================================================================================
-
-
-Ending Points with Worst Slack
-******************************
-
-                              Starting                                                                        Required           
-Instance                      Reference                                  Type     Pin     Net                 Time         Slack 
-                              Clock                                                                                              
----------------------------------------------------------------------------------------------------------------------------------
-spi_slave_pm.I_SCA_DAT_IN     spi_slave|I_SPI_RX_STRB_inferred_clock     DFN1     D       SPI_TX_WORD[31]     19.427       18.452
-=================================================================================================================================
-
-
-
-Worst Path Information
-***********************
-
-
-Path information for path number 1: 
-      Requested Period:                      20.000
-    - Setup time:                            0.573
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         19.427
-
-    - Propagation time:                      0.975
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     18.452
-
-    Number of logic level(s):                0
-    Starting point:                          SPI_TX_WORD[31] / Q
-    Ending point:                            spi_slave_pm.I_SCA_DAT_IN / D
-    The start point is clocked by            spi_slave|I_SPI_RX_STRB_inferred_clock [falling] on pin CLK
-    The end   point is clocked by            spi_slave|I_SPI_RX_STRB_inferred_clock [falling] on pin CLK
-
-Instance / Net                           Pin      Pin               Arrival     No. of    
-Name                          Type       Name     Dir     Delay     Time        Fan Out(s)
-------------------------------------------------------------------------------------------
-SPI_TX_WORD[31]               DFN0P0     Q        Out     0.653     0.653       -         
-SPI_TX_WORD[31]               Net        -        -       0.322     -           1         
-spi_slave_pm.I_SCA_DAT_IN     DFN1       D        In      -         0.975       -         
-==========================================================================================
-Total path delay (propagation time + setup) of 1.548 is 1.227(79.2%) logic and 0.322(20.8%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
-
 ##### END OF TIMING REPORT #####]
 
 Timing exceptions that could not be applied
 None
 
-Finished final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 120MB peak: 123MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 122MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 120MB peak: 123MB)
+Finished timing report (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 119MB peak: 122MB)
 
 --------------------------------------------------------------------------------
 Target Part: A3PN250_VQFP100_STD
@@ -887,48 +886,48 @@ Report for cell top_lvr_fw.rtl
   Core Cell usage:
               cell count     area count*area
               AND2    88      1.0       88.0
-               AO1   111      1.0      111.0
+               AO1   112      1.0      112.0
               AO13     5      1.0        5.0
               AO18    25      1.0       25.0
-              AO1A    20      1.0       20.0
+              AO1A    21      1.0       21.0
               AO1B     4      1.0        4.0
-              AO1C     5      1.0        5.0
+              AO1C     4      1.0        4.0
               AOI1     8      1.0        8.0
              AOI1B     6      1.0        6.0
                AX1     5      1.0        5.0
-              AX1C     7      1.0        7.0
+              AX1C     8      1.0        8.0
               AX1D     1      1.0        1.0
               AX1E     2      1.0        2.0
             CLKINT     2      0.0        0.0
                GND    13      0.0        0.0
-               INV     3      1.0        3.0
+               INV     2      1.0        2.0
               MAJ3     5      1.0        5.0
               MX2C     1      1.0        1.0
               NOR2    42      1.0       42.0
-             NOR2A    67      1.0       67.0
-             NOR2B    55      1.0       55.0
-              NOR3    25      1.0       25.0
+             NOR2A    68      1.0       68.0
+             NOR2B    54      1.0       54.0
+              NOR3    29      1.0       29.0
              NOR3A    22      1.0       22.0
-             NOR3B    14      1.0       14.0
-             NOR3C    37      1.0       37.0
-               OA1     4      1.0        4.0
-              OA1A     5      1.0        5.0
-              OA1B     9      1.0        9.0
-              OA1C    24      1.0       24.0
+             NOR3B    15      1.0       15.0
+             NOR3C    36      1.0       36.0
+               OA1     3      1.0        3.0
+              OA1A     6      1.0        6.0
+              OA1B     8      1.0        8.0
+              OA1C    20      1.0       20.0
               OAI1     5      1.0        5.0
                OR2    17      1.0       17.0
-              OR2A     8      1.0        8.0
+              OR2A     9      1.0        9.0
               OR2B     7      1.0        7.0
-               OR3    18      1.0       18.0
+               OR3    16      1.0       16.0
               OR3B    60      1.0       60.0
             PLLINT     2      0.0        0.0
                VCC    13      0.0        0.0
               XA1A     5      1.0        5.0
-              XA1B    14      1.0       14.0
+              XA1B    15      1.0       15.0
              XNOR2     3      1.0        3.0
              XNOR3    30      1.0       30.0
               XO1A     1      1.0        1.0
-              XOR2   199      1.0      199.0
+              XOR2   198      1.0      198.0
               XOR3     5      1.0        5.0
 
 
@@ -936,10 +935,10 @@ Report for cell top_lvr_fw.rtl
           DFN0E1C0     8      1.0        8.0
             DFN0P0     1      1.0        1.0
               DFN1     1      1.0        1.0
-            DFN1C0   179      1.0      179.0
+            DFN1C0   181      1.0      181.0
           DFN1E0C0    37      1.0       37.0
           DFN1E0P0     3      1.0        3.0
-          DFN1E1C0     7      1.0        7.0
+          DFN1E1C0     6      1.0        6.0
             DFN1P0    75      1.0       75.0
             DYNCCC     1      0.0        0.0
                    -----          ----------
@@ -949,22 +948,22 @@ Report for cell top_lvr_fw.rtl
   IO Cell usage:
               cell count
              INBUF    18
-            OUTBUF    44
+            OUTBUF    45
                    -----
-             TOTAL    62
+             TOTAL    63
 
 
 Core Cells         : 1284 of 6144 (21%)
-IO Cells           : 62
+IO Cells           : 63
 
   RAM/ROM Usage Summary
 Block Rams : 0 of 8 (0%)
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 27MB peak: 123MB)
+At Mapper Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 27MB peak: 122MB)
 
-Process took 0h:00m:04s realtime, 0h:00m:03s cputime
-# Thu Sep 19 11:54:11 2019
+Process took 0h:00m:03s realtime, 0h:00m:03s cputime
+# Thu Sep 19 12:30:59 2019
 
 ###########################################################]

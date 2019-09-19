@@ -1,3 +1,4 @@
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Sequential instance spi_slave_pm.SPI_SM[0] is reduced to a combinational gate by constant propagation.
 @W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Register bit RET_STATE[0] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
 @W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Register bit RET_STATE[1] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
 @W: MO160 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Register bit RET_STATE[2] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
@@ -7,6 +8,5 @@
 @W: MO197 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Removing FSM register SEQUENCER_STATE[0] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.
 @W: MO197 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Removing FSM register SEQUENCER_STATE[1] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.
 @W: MO197 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Removing FSM register SEQUENCER_STATE[2] (in view view:work.MAIN_SEQUENCER_NEW(rtl)) because its output is a constant.
-@W: MT420 |Found inferred clock spi_slave|SPI_CLR_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:spi_slave_pm.SPI_CLR"
+@W: BN132 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Removing sequential instance spi_slave_pm.I_SPI_RX_STRB because it is equivalent to instance spi_slave_pm.SPI_SM[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 @W: MT420 |Found inferred clock spi_slave|I_SPI_RX_STRB_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:spi_slave_pm.I_SPI_RX_STRB"
-@W: MT420 |Found inferred clock CCC_Glob_3xBuff|GLB_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:GLOB_BUFF.GLB"

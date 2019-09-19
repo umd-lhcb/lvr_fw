@@ -11,13 +11,15 @@
 @N: CD231 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":99:21:99:22|Using onehot encoding for type seq_sm_states. For example, enumeration init is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":37:7:37:15|Synthesizing work.spi_slave.rtl.
 @N: CD231 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":81:21:81:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
-@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":265:6:265:19|OTHERS clause is not synthesized.
+@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":263:6:263:19|OTHERS clause is not synthesized.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd":8:7:8:21|Synthesizing work.ccc_glob_3xbuff.def_arch.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":3690:10:3690:15|Synthesizing proasic3.dynccc.syn_black_box.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":2722:10:2722:12|Synthesizing proasic3.vcc.syn_black_box.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":1782:10:1782:12|Synthesizing proasic3.gnd.syn_black_box.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":407:10:407:15|Synthesizing proasic3.pllint.syn_black_box.
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Trying to extract state machine for register SPI_SM.
+@N: CL189 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Register bit CLK_FCNT(0) is always 0.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":146:4:146:5|Trying to extract state machine for register SPI_SM.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":43:4:43:14|Input SCA_DAT_OUT is unused.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":131:4:131:5|Trying to extract state machine for register SEQUENCER_STATE.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":61:4:61:16|Input CMND_WORD_STB is unused.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":85:4:85:5|Trying to extract state machine for register THRESH_VAL.

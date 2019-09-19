@@ -15,12 +15,6 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <data tcl_name="slack">Slack</data>
 </row>
 <row>
-<data>CCC_Glob_3xBuff|GLB_inferred_clock</data>
-<data>50.0 MHz</data>
-<data>44.6 MHz</data>
-<data>-1.218</data>
-</row>
-<row>
 <data>CLK40MHZ_OSC</data>
 <data>40.0 MHz</data>
 <data>238.1 MHz</data>
@@ -41,13 +35,7 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <row>
 <data>spi_slave|I_SPI_RX_STRB_inferred_clock</data>
 <data>50.0 MHz</data>
-<data>NA</data>
-<data>NA</data>
-</row>
-<row>
-<data>spi_slave|SPI_CLR_inferred_clock</data>
-<data>50.0 MHz</data>
-<data>NA</data>
-<data>NA</data>
+<data>645.8 MHz</data>
+<data>18.452</data>
 </row>
 </report_table>

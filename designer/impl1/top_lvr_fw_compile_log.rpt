@@ -2,9 +2,18 @@ Microsemi Libero Software
 Version: 11.9.2.1
 Release: v11.9 SP2
 
-Info: The design top_lvr_fw.adb was last modified by software version 11.9.2.1.
-Opened an existing Libero design top_lvr_fw.adb.
+
+ Netlist Reading Time = 1.0 seconds
+Imported the file:
+   Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw.edn
+
+The Import command succeeded ( 00:00:03 )
+Info: The design Z:\windows\lvr_fw\lvr_fw_sep2\designer\impl1\top_lvr_fw.adb was last modified
+      by software version 11.9.2.1.
+Opened an existing Libero design Z:\windows\lvr_fw\lvr_fw_sep2\designer\impl1\top_lvr_fw.adb.
 'BA_NAME' set to 'top_lvr_fw_ba'
+'KEEP_EXISTING_PHYSICAL_CONSTRAINTS' set to '1'
+'SDC_IMPORT_MERGE' set to '1'
 'IDE_DESIGNERVIEW_NAME' set to 'Impl1'
 'IDE_DESIGNERVIEW_COUNT' set to '1'
 'IDE_DESIGNERVIEW_REV0' set to 'Impl1'
@@ -12,11 +21,11 @@ Opened an existing Libero design top_lvr_fw.adb.
 'IDE_DESIGNERVIEW_ROOTDIR' set to 'Z:\windows\lvr_fw\lvr_fw_sep2\designer'
 'IDE_DESIGNERVIEW_LASTREV' set to '1'
 
- Netlist Reading Time = 1.0 seconds
-Imported the file:
-   Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw.edn
-
-The Import command succeeded ( 00:00:02 )
+The Execute Script command succeeded ( 00:00:00 )
+Warning: You changed the output filename from
+         'Z:\windows\lvr_fw\lvr_fw_sep2\designer\impl1\top_lvr_fw' to
+         'Z:\windows\lvr_fw\lvr_fw_sep2\fw_files\v1-23_lvr_fw'. This may impact Libero. Do you
+         wish to continue? [YES]
 =====================================================================
 Parameters used to run compile:
 ===============================
@@ -74,13 +83,13 @@ Netlist Optimization Report
 ===========================
 
 Optimized macros:
-  - Dangling net drivers:   0
+  - Dangling net drivers:   22
   - Buffers:                2
   - Inverters:              1
   - Tieoff:                 0
-  - Logic combining:        71
+  - Logic combining:        69
 
-    Total macros optimized  74
+    Total macros optimized  94
 Warning: CMP800: Global Output GLA of PLL instance 'GLOB_BUFF/Core' is floating. This will waste
          one global resource.
 
@@ -96,9 +105,9 @@ There were 0 error(s) and 0 warning(s).
 Compile report:
 ===============
 
-    CORE                       Used:   1438  Total:   6144   (23.40%)
+    CORE                       Used:   1192  Total:   6144   (19.40%)
     IO (W/ clocks)             Used:     62  Total:     68   (91.18%)
-    GLOBAL (Chip+Quadrant)     Used:      6  Total:     18   (33.33%)
+    GLOBAL (Chip+Quadrant)     Used:      5  Total:     18   (27.78%)
     PLL                        Used:      1  Total:      1   (100.00%)
     RAM/FIFO                   Used:      0  Total:      8   (0.00%)
     Low Static ICC             Used:      0  Total:      1   (0.00%)
@@ -109,7 +118,7 @@ Global Information:
 
     Type            | Used   | Total
     ----------------|--------|--------------
-    Chip global     | 6      | 6  (100.00%)*
+    Chip global     | 5      | 6  (83.33%)*
     Quadrant global | 0      | 12 (0.00%)
 
     (*) Chip globals may be assigned to Quadrant globals using the Multi-View Navigator (MVN)
@@ -120,8 +129,8 @@ Core Information:
 
     Type    | Instances    | Core tiles
     --------|--------------|-----------
-    COMB    | 962          | 962
-    SEQ     | 470          | 476
+    COMB    | 902          | 902
+    SEQ     | 290          | 290
 
 I/O Function:
 
@@ -156,27 +165,22 @@ Net information report:
 The following nets have been assigned to a chip global resource:
     Fanout  Type          Name
     --------------------------
-    318     CLK_NET       Net   : CLK_5M_GL_c_c
+    278     CLK_NET       Net   : CLK_5M_GL_c_c
                           Driver: CLK_5M_GL_keep
                           Source: NETLIST
     266     SET/RESET_NET Net   : MASTER_RST_B
                           Driver: MASTER_RST_B_RNI5KT3
                           Source: NETLIST
-    110     INT_NET       Net   : spi_slave_pm/SPI_CLR
-                          Driver: spi_slave_pm/SPI_CLR_RNIS247
-                          Source: NETLIST
-    93      SET/RESET_NET Net   : GB_SPI_RST_B
+    22      SET/RESET_NET Net   : GB_SPI_RST_B
                           Driver: GLOB_BUFF/Core
                           Source: ESSENTIAL
-    82      CLK_NET       Net   : GLB
+    3       INT_NET       Net   : db_sca_clk_out_c
                           Driver: GLOB_BUFF/Core
                           Source: ESSENTIAL
 
 High fanout nets in the post compile netlist:
     Fanout  Type          Name
     --------------------------
-    41      CLK_NET       Net   : I_SPI_RX_STRB
-                          Driver: spi_slave_pm/I_SPI_RX_STRB
     24      INT_NET       Net   : CONTROL56/N_466_0
                           Driver: CONTROL56/SEQUENCER_STATE_RNI1A75[4]
     24      INT_NET       Net   : CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
@@ -195,12 +199,12 @@ High fanout nets in the post compile netlist:
                           Driver: CONTROL78/SEQUENCER_STATE_RNI96G6_0[4]
     22      INT_NET       Net   : TX_PROMPT/un9_cnt_val
                           Driver: TX_PROMPT/CNT_VAL_RNI8TCI1[20]
+    21      INT_NET       Net   : CONTROL56/N_85
+                          Driver: CONTROL56/SEQUENCER_STATE_RNIP6R7[7]
 
 Nets that are candidates for clock assignment and the resulting fanout:
     Fanout  Type          Name
     --------------------------
-    41      CLK_NET       Net   : I_SPI_RX_STRB
-                          Driver: spi_slave_pm/I_SPI_RX_STRB
     24      INT_NET       Net   : CONTROL56/N_466_0
                           Driver: CONTROL56/SEQUENCER_STATE_RNI1A75[4]
     24      INT_NET       Net   : CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
@@ -219,19 +223,73 @@ Nets that are candidates for clock assignment and the resulting fanout:
                           Driver: CONTROL78/SEQUENCER_STATE_RNI96G6_0[4]
     22      INT_NET       Net   : TX_PROMPT/un9_cnt_val
                           Driver: TX_PROMPT/CNT_VAL_RNI8TCI1[20]
+    21      INT_NET       Net   : CONTROL56/N_85
+                          Driver: CONTROL56/SEQUENCER_STATE_RNIP6R7[7]
 
 The Compile command succeeded ( 00:00:02 )
-Wrote status report to file: top_lvr_fw_compile_report.txt
+***** Layout Variables *********************************************
 
-The Report command succeeded ( 00:00:00 )
-Wrote pin report to file: top_lvr_fw_report_pin_byname.txt
+Mode: TIMING_DRIVEN
+Power-driven Layout: OFF
+Incremental Placement: OFF
+Incremental Route: OFF
+
+
+
+Running I/O Bank Assigner.
+
+I/O Bank Assigner completed successfully.
+ 
+
+Planning global net placement...
+
+
+Global net placement completed successfully.
+
+                        o - o - o - o - o - o
+
+Timing-driven Placer Started: Thu Sep 19 11:55:19 2019
+
+Placer Finished: Thu Sep 19 11:55:28 2019
+Total Placer CPU Time:     00:00:09
+
+                        o - o - o - o - o - o
+
+
+Timing-driven Router 
+Design: top_lvr_fw                      Started: Thu Sep 19 11:57:27 2019
+
+ 
+Iterative improvement...
+
+Timing-driven Router completed successfully.
+
+Design: top_lvr_fw                      
+Finished: Thu Sep 19 11:57:37 2019
+Total CPU Time:     00:00:09            Total Elapsed Time: 00:00:10
+Total Memory Usage: 178.7 Mbytes
+                        o - o - o - o - o - o
+
+Loading the Timing data for the design.
+Finished loading the Timing data.
+
+The Layout command succeeded ( 00:02:25 )
+
+The Export-map command succeeded ( 00:00:08 )
+Wrote to the file: Z:\windows\lvr_fw\lvr_fw_sep2\fw_files\v1-23_lvr_fw.stp
+CHECKSUM: 22FD
+
+The Generate programming file command succeeded ( 00:02:38 )
+Design saved to file Z:\windows\lvr_fw\lvr_fw_sep2\designer\impl1\top_lvr_fw.adb.
+Wrote pin report to file:
+Z:\windows\lvr_fw\lvr_fw_sep2\designer\impl1\top_lvr_fw_report_pin_byname.txt
 
 The Report command succeeded ( 00:00:01 )
-Wrote pin report to file: top_lvr_fw_report_pin_bynumber.txt
+Wrote pin report to file:
+Z:\windows\lvr_fw\lvr_fw_sep2\designer\impl1\top_lvr_fw_report_pin_bynumber.txt
 
-The Report command succeeded ( 00:00:00 )
-Design saved to file Z:\windows\lvr_fw\lvr_fw_sep2\designer\impl1\top_lvr_fw.adb.
+The Report command succeeded ( 00:00:01 )
 
-The Execute Script command succeeded ( 00:00:07 )
+The Execute Script command succeeded ( 00:00:02 )
 Design closed.
 

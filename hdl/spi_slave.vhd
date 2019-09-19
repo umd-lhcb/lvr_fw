@@ -96,14 +96,14 @@ begin
 -- DEFINE THE FRAME COUNT WHICH COUNTS CLOCK CYCLES DURING THE ACTIVE CLOCK CYCLES OF A 32-CYCLE DATA FRAME
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- DEFINE THE D FF'S
-  SREG_DFF : process(SCA_CLK_OUT, SPI_CLR)
+  SREG_DFF : process(SCA_CLK_OUT, I_SPI_RX_STRB)
   begin
-    if SPI_CLR = '1' then  -- AN EXTERNAL STATE MACHINE FORCES SYNCHRONIZATION OF THE SPI 
+    if falling_edge(I_SPI_RX_STRB) then  -- AN EXTERNAL STATE MACHINE FORCES SYNCHRONIZATION OF THE SPI 
       RX_32BIT_SREG <= (others => '0');
       TX_32BIT_SREG <= SPI_TX_WORD;
       CLK_FCNT      <= 0;               -- FIRST TRANSITION GOES TO 1
-      N_I_SCA_DAT_IN  <= TX_32BIT_SREG(30);   
-      I_SCA_DAT_IN <= TX_32BIT_SREG(30);
+      N_I_SCA_DAT_IN  <= spi_tx_word(31);   
+      I_SCA_DAT_IN <= spi_tx_word(31);
 
     elsif RISING_EDGE(SCA_CLK_OUT) then
       
@@ -117,9 +117,7 @@ begin
       end if;
 
 
-      if CLK_FCNT = 0 then
-        N_I_SCA_DAT_IN  <= TX_32BIT_SREG(30);  -- FPGA SPI SENDS MSb OUT FIRST TO SCA
-      elsif CLK_FCNT < 31 then
+      if CLK_FCNT < 31 then
         N_I_SCA_DAT_IN <= TX_32BIT_SREG(30-CLK_FCNT);
       elsif CLK_FCNT = 31 then
         N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);
@@ -149,7 +147,7 @@ begin
       SPI_SM        <= INIT;
       CLK_FCNT_EN   <= '0';
       SPI_CLR       <= '1';
-      I_SPI_RX_STRB <= '0';
+      I_SPI_RX_STRB <= '1';
       I_SPI_RX_WORD <= (others => '0');
 
       CLK_FCNT_1C <= 0;

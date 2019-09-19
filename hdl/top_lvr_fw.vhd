@@ -114,10 +114,10 @@ entity top_lvr_fw is
     db_spi_strobe  : out std_logic;
     db_spi_state0  : out std_logic;
     db_spi_state1  : out std_logic;
-    db_spi_state2  : out std_logic;
+    --db_spi_state2  : out std_logic;
     db_spi_cnt0    : out std_logic;
     db_spi_cnt1    : out std_logic;
-    db_spi_cnt2    : out std_logic;
+    --db_spi_cnt2    : out std_logic;
 
 
 -- CHANNEL ENABLES
@@ -397,11 +397,11 @@ begin
 
   db_spi_cnt0 <= clk_fcnt_out(0);
   db_spi_cnt1 <= clk_fcnt_out(1);
-  db_spi_cnt2 <= clk_fcnt_out(2);
-  spi_tx_word <= x"1234" & active_channels & x"00";
---  spi_tx_word <= x"dcb02019" when GB_SPI_RST_B = '0' else
-  --               spi_rx_word when falling_edge(spi_rx_strb) else
-    --             spi_tx_word;
+  --db_spi_cnt2 <= clk_fcnt_out(2);
+  --spi_tx_word <= x"1234" & active_channels & x"00";
+  spi_tx_word <= x"dcb02019" when GB_SPI_RST_B = '0' else
+                 spi_rx_word when falling_edge(spi_rx_strb) else
+                 spi_tx_word;
 
 -- Setting register to control active channels when the received is a write
 -- (28th bit equal to 1)
@@ -422,7 +422,7 @@ begin
   db_spi_strobe  <= spi_rx_strb;
   db_spi_state0  <= spi_p_state_id(0);
   db_spi_state1  <= spi_p_state_id(1);
-  db_spi_state2  <= spi_p_state_id(2);
+  --db_spi_state2  <= spi_p_state_id(2);
 
 
 -- THIS PROCESS SYNCHRONIZES THE EXTERNAL POR_FPGA SIGNAL TO THE 40 MHZ CLOCK

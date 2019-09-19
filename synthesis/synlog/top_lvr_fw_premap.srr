@@ -1,4 +1,4 @@
-# Wed Sep 18 10:01:58 2019
+# Thu Sep 19 07:38:24 2019
 
 Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -36,11 +36,11 @@ CCC_Glob_3xBuff|GLB_inferred_clock         50.0 MHz      20.000        inferred 
 CLK40MHZ_OSC                               40.0 MHz      25.000        declared     MainClkGrp              5    
 CLK_5M_GL                                  5.0 MHz       200.000       declared     MainClkGrp              356  
 SCA_CLK_OUT                                1.0 MHz       1000.000      declared     Spi_MClkGrp             0    
-spi_slave|I_SPI_RX_STRB_inferred_clock     50.0 MHz      20.000        inferred     Inferred_clkgroup_0     8    
+spi_slave|I_SPI_RX_STRB_inferred_clock     50.0 MHz      20.000        inferred     Inferred_clkgroup_0     40   
 spi_slave|SPI_CLR_inferred_clock           50.0 MHz      20.000        inferred     Inferred_clkgroup_2     70   
 =================================================================================================================
 
-@W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":410:4:410:5|Found inferred clock spi_slave|I_SPI_RX_STRB_inferred_clock which controls 8 sequential elements including active_channels[7:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":410:4:410:5|Found inferred clock spi_slave|I_SPI_RX_STRB_inferred_clock which controls 40 sequential elements including active_channels[7:0]. This clock has no specified timing constraint which may adversely impact design performance. 
 @W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Found inferred clock CCC_Glob_3xBuff|GLB_inferred_clock which controls 79 sequential elements including spi_slave_pm.I_SCA_DAT_IN. This clock has no specified timing constraint which may adversely impact design performance. 
 @W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Found inferred clock spi_slave|SPI_CLR_inferred_clock which controls 70 sequential elements including spi_slave_pm.N_CLK_FCNT[5:0]. This clock has no specified timing constraint which may adversely impact design performance. 
 
@@ -130,45 +130,16 @@ original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[0] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[1] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[2] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[3] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[4] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[5] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[6] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[7] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[16] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[17] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[18] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[19] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[20] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[21] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[22] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[23] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[24] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[25] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[26] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[27] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[29] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[30] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":148:4:148:5|Removing sequential instance I_SPI_RX_WORD[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance RX_32BIT_SREG[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance N_RX_32BIT_SREG[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance RX_32BIT_SREG[30] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance N_RX_32BIT_SREG[30] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance RX_32BIT_SREG[29] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance N_RX_32BIT_SREG[29] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
 None
 None
 
-Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 112MB peak: 113MB)
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 112MB peak: 113MB)
 
 Pre-mapping successful!
 
 At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 26MB peak: 113MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Wed Sep 18 10:01:59 2019
+# Thu Sep 19 07:38:25 2019
 
 ###########################################################]

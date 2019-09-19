@@ -1,2 +1,4 @@
-@E: CD648 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":787:22:787:32|Expression does not match type std_ulogic
+@E: CD213 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":400:2:400:12|Undefined identifier
+@E: CD213 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":425:2:425:14|Undefined identifier
+@E: Parse errors encountered - exiting
 

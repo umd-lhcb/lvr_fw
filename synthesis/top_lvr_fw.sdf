@@ -149,68 +149,6 @@
 
     (PATHCONSTRAINT spi_slave_pm/CLK_FCNT\[5\]/CLK  spi_slave_pm/CLK_FCNT\[5\]/Q  spi_slave_pm/un1_CLK_FCNT_0_I_26/A  spi_slave_pm/un1_CLK_FCNT_0_I_26/Y  spi_slave_pm/N_CLK_FCNT_RNO\[5\]/C  spi_slave_pm/N_CLK_FCNT_RNO\[5\]/Y  spi_slave_pm/N_CLK_FCNT\[5\]/D  	(9.5:9.5:9.5) )
 
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[0\]/CLK  spi_slave_pm/RX_32BIT_SREG\[0\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[1\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[1\]/CLK  spi_slave_pm/RX_32BIT_SREG\[1\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[2\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[2\]/CLK  spi_slave_pm/RX_32BIT_SREG\[2\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[3\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[3\]/CLK  spi_slave_pm/RX_32BIT_SREG\[3\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[4\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[4\]/CLK  spi_slave_pm/RX_32BIT_SREG\[4\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[5\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[5\]/CLK  spi_slave_pm/RX_32BIT_SREG\[5\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[6\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[6\]/CLK  spi_slave_pm/RX_32BIT_SREG\[6\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[7\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[7\]/CLK  spi_slave_pm/RX_32BIT_SREG\[7\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[8\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[8\]/CLK  spi_slave_pm/RX_32BIT_SREG\[8\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[9\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[9\]/CLK  spi_slave_pm/RX_32BIT_SREG\[9\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[10\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[10\]/CLK  spi_slave_pm/RX_32BIT_SREG\[10\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[11\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[11\]/CLK  spi_slave_pm/RX_32BIT_SREG\[11\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[12\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[12\]/CLK  spi_slave_pm/RX_32BIT_SREG\[12\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[13\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[13\]/CLK  spi_slave_pm/RX_32BIT_SREG\[13\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[14\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[14\]/CLK  spi_slave_pm/RX_32BIT_SREG\[14\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[15\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[15\]/CLK  spi_slave_pm/RX_32BIT_SREG\[15\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[16\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[16\]/CLK  spi_slave_pm/RX_32BIT_SREG\[16\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[17\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[17\]/CLK  spi_slave_pm/RX_32BIT_SREG\[17\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[18\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[18\]/CLK  spi_slave_pm/RX_32BIT_SREG\[18\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[19\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[19\]/CLK  spi_slave_pm/RX_32BIT_SREG\[19\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[20\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[20\]/CLK  spi_slave_pm/RX_32BIT_SREG\[20\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[21\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[21\]/CLK  spi_slave_pm/RX_32BIT_SREG\[21\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[22\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[22\]/CLK  spi_slave_pm/RX_32BIT_SREG\[22\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[23\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[23\]/CLK  spi_slave_pm/RX_32BIT_SREG\[23\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[24\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[24\]/CLK  spi_slave_pm/RX_32BIT_SREG\[24\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[25\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[25\]/CLK  spi_slave_pm/RX_32BIT_SREG\[25\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[26\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[26\]/CLK  spi_slave_pm/RX_32BIT_SREG\[26\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[27\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[27\]/CLK  spi_slave_pm/RX_32BIT_SREG\[27\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[28\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[28\]/CLK  spi_slave_pm/RX_32BIT_SREG\[28\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[29\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[29\]/CLK  spi_slave_pm/RX_32BIT_SREG\[29\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[30\]/D  	(9.3:9.3:9.3) )
-
-    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[30\]/CLK  spi_slave_pm/RX_32BIT_SREG\[30\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[31\]/D  	(9.3:9.3:9.3) )
-
     (PATHCONSTRAINT spi_slave_pm/N_CLK_FCNT\[0\]/CLK  spi_slave_pm/N_CLK_FCNT\[0\]/Q  spi_slave_pm/CLK_FCNT\[0\]/D  	(9.3:9.3:9.3) )
 
     (PATHCONSTRAINT spi_slave_pm/N_CLK_FCNT\[1\]/CLK  spi_slave_pm/N_CLK_FCNT\[1\]/Q  spi_slave_pm/CLK_FCNT\[1\]/D  	(9.3:9.3:9.3) )
@@ -223,69 +161,131 @@
 
     (PATHCONSTRAINT spi_slave_pm/N_CLK_FCNT\[5\]/CLK  spi_slave_pm/N_CLK_FCNT\[5\]/Q  spi_slave_pm/CLK_FCNT\[5\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[0\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[0\]/Q  spi_slave_pm/RX_32BIT_SREG\[0\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[0\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[0\]/Q  spi_slave_pm/RX_32BIT_SREG\[0\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[1\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[1\]/Q  spi_slave_pm/RX_32BIT_SREG\[1\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[1\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[1\]/Q  spi_slave_pm/RX_32BIT_SREG\[1\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[2\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[2\]/Q  spi_slave_pm/RX_32BIT_SREG\[2\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[2\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[2\]/Q  spi_slave_pm/RX_32BIT_SREG\[2\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[3\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[3\]/Q  spi_slave_pm/RX_32BIT_SREG\[3\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[3\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[3\]/Q  spi_slave_pm/RX_32BIT_SREG\[3\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[4\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[4\]/Q  spi_slave_pm/RX_32BIT_SREG\[4\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[4\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[4\]/Q  spi_slave_pm/RX_32BIT_SREG\[4\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[5\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[5\]/Q  spi_slave_pm/RX_32BIT_SREG\[5\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[5\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[5\]/Q  spi_slave_pm/RX_32BIT_SREG\[5\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[6\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[6\]/Q  spi_slave_pm/RX_32BIT_SREG\[6\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[6\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[6\]/Q  spi_slave_pm/RX_32BIT_SREG\[6\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[7\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[7\]/Q  spi_slave_pm/RX_32BIT_SREG\[7\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[7\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[7\]/Q  spi_slave_pm/RX_32BIT_SREG\[7\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[8\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[8\]/Q  spi_slave_pm/RX_32BIT_SREG\[8\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[8\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[8\]/Q  spi_slave_pm/RX_32BIT_SREG\[8\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[9\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[9\]/Q  spi_slave_pm/RX_32BIT_SREG\[9\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[9\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[9\]/Q  spi_slave_pm/RX_32BIT_SREG\[9\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[10\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[10\]/Q  spi_slave_pm/RX_32BIT_SREG\[10\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[10\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[10\]/Q  spi_slave_pm/RX_32BIT_SREG\[10\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[11\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[11\]/Q  spi_slave_pm/RX_32BIT_SREG\[11\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[11\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[11\]/Q  spi_slave_pm/RX_32BIT_SREG\[11\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[12\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[12\]/Q  spi_slave_pm/RX_32BIT_SREG\[12\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[12\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[12\]/Q  spi_slave_pm/RX_32BIT_SREG\[12\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[13\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[13\]/Q  spi_slave_pm/RX_32BIT_SREG\[13\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[13\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[13\]/Q  spi_slave_pm/RX_32BIT_SREG\[13\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[14\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[14\]/Q  spi_slave_pm/RX_32BIT_SREG\[14\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[14\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[14\]/Q  spi_slave_pm/RX_32BIT_SREG\[14\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[15\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[15\]/Q  spi_slave_pm/RX_32BIT_SREG\[15\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[15\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[15\]/Q  spi_slave_pm/RX_32BIT_SREG\[15\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[16\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[16\]/Q  spi_slave_pm/RX_32BIT_SREG\[16\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[16\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[16\]/Q  spi_slave_pm/RX_32BIT_SREG\[16\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[17\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[17\]/Q  spi_slave_pm/RX_32BIT_SREG\[17\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[17\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[17\]/Q  spi_slave_pm/RX_32BIT_SREG\[17\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[18\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[18\]/Q  spi_slave_pm/RX_32BIT_SREG\[18\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[18\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[18\]/Q  spi_slave_pm/RX_32BIT_SREG\[18\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[19\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[19\]/Q  spi_slave_pm/RX_32BIT_SREG\[19\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[19\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[19\]/Q  spi_slave_pm/RX_32BIT_SREG\[19\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[20\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[20\]/Q  spi_slave_pm/RX_32BIT_SREG\[20\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[20\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[20\]/Q  spi_slave_pm/RX_32BIT_SREG\[20\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[21\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[21\]/Q  spi_slave_pm/RX_32BIT_SREG\[21\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[21\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[21\]/Q  spi_slave_pm/RX_32BIT_SREG\[21\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[22\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[22\]/Q  spi_slave_pm/RX_32BIT_SREG\[22\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[22\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[22\]/Q  spi_slave_pm/RX_32BIT_SREG\[22\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[23\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[23\]/Q  spi_slave_pm/RX_32BIT_SREG\[23\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[23\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[23\]/Q  spi_slave_pm/RX_32BIT_SREG\[23\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[24\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[24\]/Q  spi_slave_pm/RX_32BIT_SREG\[24\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[24\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[24\]/Q  spi_slave_pm/RX_32BIT_SREG\[24\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[25\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[25\]/Q  spi_slave_pm/RX_32BIT_SREG\[25\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[25\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[25\]/Q  spi_slave_pm/RX_32BIT_SREG\[25\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[26\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[26\]/Q  spi_slave_pm/RX_32BIT_SREG\[26\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[26\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[26\]/Q  spi_slave_pm/RX_32BIT_SREG\[26\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[27\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[27\]/Q  spi_slave_pm/RX_32BIT_SREG\[27\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[27\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[27\]/Q  spi_slave_pm/RX_32BIT_SREG\[27\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[28\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[28\]/Q  spi_slave_pm/RX_32BIT_SREG\[28\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[28\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[28\]/Q  spi_slave_pm/RX_32BIT_SREG\[28\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[29\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[29\]/Q  spi_slave_pm/RX_32BIT_SREG\[29\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[29\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[29\]/Q  spi_slave_pm/RX_32BIT_SREG\[29\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[30\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[30\]/Q  spi_slave_pm/RX_32BIT_SREG\[30\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[30\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[30\]/Q  spi_slave_pm/RX_32BIT_SREG\[30\]/D  	(9.3:9.3:9.3) )
 
-    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[31\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[31\]/Q  spi_slave_pm/RX_32BIT_SREG\[31\]/D  	(9.5:9.5:9.5) )
+    (PATHCONSTRAINT spi_slave_pm/N_RX_32BIT_SREG\[31\]/CLK  spi_slave_pm/N_RX_32BIT_SREG\[31\]/Q  spi_slave_pm/RX_32BIT_SREG\[31\]/D  	(9.3:9.3:9.3) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[0\]/CLK  spi_slave_pm/RX_32BIT_SREG\[0\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[1\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[1\]/CLK  spi_slave_pm/RX_32BIT_SREG\[1\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[2\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[2\]/CLK  spi_slave_pm/RX_32BIT_SREG\[2\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[3\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[3\]/CLK  spi_slave_pm/RX_32BIT_SREG\[3\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[4\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[4\]/CLK  spi_slave_pm/RX_32BIT_SREG\[4\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[5\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[5\]/CLK  spi_slave_pm/RX_32BIT_SREG\[5\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[6\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[6\]/CLK  spi_slave_pm/RX_32BIT_SREG\[6\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[7\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[7\]/CLK  spi_slave_pm/RX_32BIT_SREG\[7\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[8\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[8\]/CLK  spi_slave_pm/RX_32BIT_SREG\[8\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[9\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[9\]/CLK  spi_slave_pm/RX_32BIT_SREG\[9\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[10\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[10\]/CLK  spi_slave_pm/RX_32BIT_SREG\[10\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[11\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[11\]/CLK  spi_slave_pm/RX_32BIT_SREG\[11\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[12\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[12\]/CLK  spi_slave_pm/RX_32BIT_SREG\[12\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[13\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[13\]/CLK  spi_slave_pm/RX_32BIT_SREG\[13\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[14\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[14\]/CLK  spi_slave_pm/RX_32BIT_SREG\[14\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[15\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[15\]/CLK  spi_slave_pm/RX_32BIT_SREG\[15\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[16\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[16\]/CLK  spi_slave_pm/RX_32BIT_SREG\[16\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[17\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[17\]/CLK  spi_slave_pm/RX_32BIT_SREG\[17\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[18\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[18\]/CLK  spi_slave_pm/RX_32BIT_SREG\[18\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[19\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[19\]/CLK  spi_slave_pm/RX_32BIT_SREG\[19\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[20\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[20\]/CLK  spi_slave_pm/RX_32BIT_SREG\[20\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[21\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[21\]/CLK  spi_slave_pm/RX_32BIT_SREG\[21\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[22\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[22\]/CLK  spi_slave_pm/RX_32BIT_SREG\[22\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[23\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[23\]/CLK  spi_slave_pm/RX_32BIT_SREG\[23\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[24\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[24\]/CLK  spi_slave_pm/RX_32BIT_SREG\[24\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[25\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[25\]/CLK  spi_slave_pm/RX_32BIT_SREG\[25\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[26\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[26\]/CLK  spi_slave_pm/RX_32BIT_SREG\[26\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[27\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[27\]/CLK  spi_slave_pm/RX_32BIT_SREG\[27\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[28\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[28\]/CLK  spi_slave_pm/RX_32BIT_SREG\[28\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[29\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[29\]/CLK  spi_slave_pm/RX_32BIT_SREG\[29\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[30\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[30\]/CLK  spi_slave_pm/RX_32BIT_SREG\[30\]/Q  spi_slave_pm/N_RX_32BIT_SREG\[31\]/D  	(9.5:9.5:9.5) )
 
     (PATHCONSTRAINT CLK_5M_GL/CLK  CLK_5M_GL/Q  CLK_5M_GL_keep/A  CLK_5M_GL_keep/Y  CLK_5M_GL_RNO/A  CLK_5M_GL_RNO/Y  CLK_5M_GL/D  	(24.5:24.5:24.5) )
 
@@ -4515,6 +4515,60 @@
 
     (PATHCONSTRAINT spi_slave_pm/SPI_SM\[3\]/CLK  spi_slave_pm/SPI_SM\[3\]/Q  spi_slave_pm/SPI_SM_RNIBFCD\[2\]/A  spi_slave_pm/SPI_SM_RNIBFCD\[2\]/Y  	(200.0:200.0:200.0) )
 
+    (PATHCONSTRAINT UVL_34FUSE/SIGOUT/CLK  UVL_34FUSE/SIGOUT/Q  PWR_OK_LED_pad_RNO_0/A  PWR_OK_LED_pad_RNO_0/Y  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL34/CH_IAUX_EN\[0\]/CLK  CONTROL34/CH_IAUX_EN\[0\]/Q  P_CH_IAUX_EN_pad\[2\]/D  P_CH_IAUX_EN_pad\[2\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL12/CH_IAUX_EN\[0\]/CLK  CONTROL12/CH_IAUX_EN\[0\]/Q  P_CH_IAUX_EN_pad\[0\]/D  P_CH_IAUX_EN_pad\[0\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL34/CH_VOSG_EN\[0\]/CLK  CONTROL34/CH_VOSG_EN\[0\]/Q  P_CH_VOSG_EN_pad\[2\]/D  P_CH_VOSG_EN_pad\[2\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL12/CH_VOSG_EN\[0\]/CLK  CONTROL12/CH_VOSG_EN\[0\]/Q  P_CH_VOSG_EN_pad\[0\]/D  P_CH_VOSG_EN_pad\[0\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL56/CH_MREG_EN\[1\]/CLK  CONTROL56/CH_MREG_EN\[1\]/Q  P_CH_MREG_EN_pad\[5\]/D  P_CH_MREG_EN_pad\[5\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL34/CH_IAUX_EN\[1\]/CLK  CONTROL34/CH_IAUX_EN\[1\]/Q  P_CH_IAUX_EN_pad\[3\]/D  P_CH_IAUX_EN_pad\[3\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL12/CH_IAUX_EN\[1\]/CLK  CONTROL12/CH_IAUX_EN\[1\]/Q  P_CH_IAUX_EN_pad\[1\]/D  P_CH_IAUX_EN_pad\[1\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL56/CH_VOSG_EN\[1\]/CLK  CONTROL56/CH_VOSG_EN\[1\]/Q  P_CH_VOSG_EN_pad\[5\]/D  P_CH_VOSG_EN_pad\[5\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL34/CH_VOSG_EN\[1\]/CLK  CONTROL34/CH_VOSG_EN\[1\]/Q  P_CH_VOSG_EN_pad\[3\]/D  P_CH_VOSG_EN_pad\[3\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL12/CH_VOSG_EN\[1\]/CLK  CONTROL12/CH_VOSG_EN\[1\]/Q  P_CH_VOSG_EN_pad\[1\]/D  P_CH_VOSG_EN_pad\[1\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL34/CH_MREG_EN\[0\]/CLK  CONTROL34/CH_MREG_EN\[0\]/Q  P_CH_MREG_EN_pad\[2\]/D  P_CH_MREG_EN_pad\[2\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL12/CH_MREG_EN\[0\]/CLK  CONTROL12/CH_MREG_EN\[0\]/Q  P_CH_MREG_EN_pad\[0\]/D  P_CH_MREG_EN_pad\[0\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL56/CH_MREG_EN\[0\]/CLK  CONTROL56/CH_MREG_EN\[0\]/Q  P_CH_MREG_EN_pad\[4\]/D  P_CH_MREG_EN_pad\[4\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL78/CH_MREG_EN\[1\]/CLK  CONTROL78/CH_MREG_EN\[1\]/Q  P_CH_MREG_EN_pad\[7\]/D  P_CH_MREG_EN_pad\[7\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL56/CH_VOSG_EN\[0\]/CLK  CONTROL56/CH_VOSG_EN\[0\]/Q  P_CH_VOSG_EN_pad\[4\]/D  P_CH_VOSG_EN_pad\[4\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL78/CH_VOSG_EN\[1\]/CLK  CONTROL78/CH_VOSG_EN\[1\]/Q  P_CH_VOSG_EN_pad\[7\]/D  P_CH_VOSG_EN_pad\[7\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL56/CH_IAUX_EN\[1\]/CLK  CONTROL56/CH_IAUX_EN\[1\]/Q  P_CH_IAUX_EN_pad\[5\]/D  P_CH_IAUX_EN_pad\[5\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL34/CH_MREG_EN\[1\]/CLK  CONTROL34/CH_MREG_EN\[1\]/Q  P_CH_MREG_EN_pad\[3\]/D  P_CH_MREG_EN_pad\[3\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL12/CH_MREG_EN\[1\]/CLK  CONTROL12/CH_MREG_EN\[1\]/Q  P_CH_MREG_EN_pad\[1\]/D  P_CH_MREG_EN_pad\[1\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL78/CH_MREG_EN\[0\]/CLK  CONTROL78/CH_MREG_EN\[0\]/Q  P_CH_MREG_EN_pad\[6\]/D  P_CH_MREG_EN_pad\[6\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL78/CH_VOSG_EN\[0\]/CLK  CONTROL78/CH_VOSG_EN\[0\]/Q  P_CH_VOSG_EN_pad\[6\]/D  P_CH_VOSG_EN_pad\[6\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL56/CH_IAUX_EN\[0\]/CLK  CONTROL56/CH_IAUX_EN\[0\]/Q  P_CH_IAUX_EN_pad\[4\]/D  P_CH_IAUX_EN_pad\[4\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL78/CH_IAUX_EN\[1\]/CLK  CONTROL78/CH_IAUX_EN\[1\]/Q  P_CH_IAUX_EN_pad\[7\]/D  P_CH_IAUX_EN_pad\[7\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT CONTROL78/CH_IAUX_EN\[0\]/CLK  CONTROL78/CH_IAUX_EN\[0\]/Q  P_CH_IAUX_EN_pad\[6\]/D  P_CH_IAUX_EN_pad\[6\]/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[1\]/CLK  spi_slave_pm/CLK_FCNT_2C\[1\]/Q  db_spi_cnt1_pad/D  db_spi_cnt1_pad/PAD  	(200.0:200.0:200.0) )
+
+    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[0\]/CLK  spi_slave_pm/CLK_FCNT_2C\[0\]/Q  db_spi_cnt0_pad/D  db_spi_cnt0_pad/PAD  	(200.0:200.0:200.0) )
+
     (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[0\]/CLK  spi_slave_pm/RX_32BIT_SREG\[0\]/Q  spi_slave_pm/I_SPI_RX_WORD\[0\]/D  	(99999.5:99999.5:99999.5) )
 
     (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[1\]/CLK  spi_slave_pm/RX_32BIT_SREG\[1\]/Q  spi_slave_pm/I_SPI_RX_WORD\[1\]/D  	(99999.5:99999.5:99999.5) )
@@ -4576,60 +4630,6 @@
     (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[29\]/CLK  spi_slave_pm/RX_32BIT_SREG\[29\]/Q  spi_slave_pm/I_SPI_RX_WORD\[29\]/D  	(99999.5:99999.5:99999.5) )
 
     (PATHCONSTRAINT spi_slave_pm/RX_32BIT_SREG\[30\]/CLK  spi_slave_pm/RX_32BIT_SREG\[30\]/Q  spi_slave_pm/I_SPI_RX_WORD\[30\]/D  	(99999.5:99999.5:99999.5) )
-
-    (PATHCONSTRAINT UVL_34FUSE/SIGOUT/CLK  UVL_34FUSE/SIGOUT/Q  PWR_OK_LED_pad_RNO_0/A  PWR_OK_LED_pad_RNO_0/Y  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL34/CH_IAUX_EN\[0\]/CLK  CONTROL34/CH_IAUX_EN\[0\]/Q  P_CH_IAUX_EN_pad\[2\]/D  P_CH_IAUX_EN_pad\[2\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL12/CH_IAUX_EN\[0\]/CLK  CONTROL12/CH_IAUX_EN\[0\]/Q  P_CH_IAUX_EN_pad\[0\]/D  P_CH_IAUX_EN_pad\[0\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL34/CH_VOSG_EN\[0\]/CLK  CONTROL34/CH_VOSG_EN\[0\]/Q  P_CH_VOSG_EN_pad\[2\]/D  P_CH_VOSG_EN_pad\[2\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL12/CH_VOSG_EN\[0\]/CLK  CONTROL12/CH_VOSG_EN\[0\]/Q  P_CH_VOSG_EN_pad\[0\]/D  P_CH_VOSG_EN_pad\[0\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL56/CH_MREG_EN\[1\]/CLK  CONTROL56/CH_MREG_EN\[1\]/Q  P_CH_MREG_EN_pad\[5\]/D  P_CH_MREG_EN_pad\[5\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL34/CH_IAUX_EN\[1\]/CLK  CONTROL34/CH_IAUX_EN\[1\]/Q  P_CH_IAUX_EN_pad\[3\]/D  P_CH_IAUX_EN_pad\[3\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL12/CH_IAUX_EN\[1\]/CLK  CONTROL12/CH_IAUX_EN\[1\]/Q  P_CH_IAUX_EN_pad\[1\]/D  P_CH_IAUX_EN_pad\[1\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL56/CH_VOSG_EN\[1\]/CLK  CONTROL56/CH_VOSG_EN\[1\]/Q  P_CH_VOSG_EN_pad\[5\]/D  P_CH_VOSG_EN_pad\[5\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL34/CH_VOSG_EN\[1\]/CLK  CONTROL34/CH_VOSG_EN\[1\]/Q  P_CH_VOSG_EN_pad\[3\]/D  P_CH_VOSG_EN_pad\[3\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL12/CH_VOSG_EN\[1\]/CLK  CONTROL12/CH_VOSG_EN\[1\]/Q  P_CH_VOSG_EN_pad\[1\]/D  P_CH_VOSG_EN_pad\[1\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL34/CH_MREG_EN\[0\]/CLK  CONTROL34/CH_MREG_EN\[0\]/Q  P_CH_MREG_EN_pad\[2\]/D  P_CH_MREG_EN_pad\[2\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL12/CH_MREG_EN\[0\]/CLK  CONTROL12/CH_MREG_EN\[0\]/Q  P_CH_MREG_EN_pad\[0\]/D  P_CH_MREG_EN_pad\[0\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL56/CH_MREG_EN\[0\]/CLK  CONTROL56/CH_MREG_EN\[0\]/Q  P_CH_MREG_EN_pad\[4\]/D  P_CH_MREG_EN_pad\[4\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL78/CH_MREG_EN\[1\]/CLK  CONTROL78/CH_MREG_EN\[1\]/Q  P_CH_MREG_EN_pad\[7\]/D  P_CH_MREG_EN_pad\[7\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL56/CH_VOSG_EN\[0\]/CLK  CONTROL56/CH_VOSG_EN\[0\]/Q  P_CH_VOSG_EN_pad\[4\]/D  P_CH_VOSG_EN_pad\[4\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL78/CH_VOSG_EN\[1\]/CLK  CONTROL78/CH_VOSG_EN\[1\]/Q  P_CH_VOSG_EN_pad\[7\]/D  P_CH_VOSG_EN_pad\[7\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL56/CH_IAUX_EN\[1\]/CLK  CONTROL56/CH_IAUX_EN\[1\]/Q  P_CH_IAUX_EN_pad\[5\]/D  P_CH_IAUX_EN_pad\[5\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL34/CH_MREG_EN\[1\]/CLK  CONTROL34/CH_MREG_EN\[1\]/Q  P_CH_MREG_EN_pad\[3\]/D  P_CH_MREG_EN_pad\[3\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL12/CH_MREG_EN\[1\]/CLK  CONTROL12/CH_MREG_EN\[1\]/Q  P_CH_MREG_EN_pad\[1\]/D  P_CH_MREG_EN_pad\[1\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL78/CH_MREG_EN\[0\]/CLK  CONTROL78/CH_MREG_EN\[0\]/Q  P_CH_MREG_EN_pad\[6\]/D  P_CH_MREG_EN_pad\[6\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL78/CH_VOSG_EN\[0\]/CLK  CONTROL78/CH_VOSG_EN\[0\]/Q  P_CH_VOSG_EN_pad\[6\]/D  P_CH_VOSG_EN_pad\[6\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL56/CH_IAUX_EN\[0\]/CLK  CONTROL56/CH_IAUX_EN\[0\]/Q  P_CH_IAUX_EN_pad\[4\]/D  P_CH_IAUX_EN_pad\[4\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL78/CH_IAUX_EN\[1\]/CLK  CONTROL78/CH_IAUX_EN\[1\]/Q  P_CH_IAUX_EN_pad\[7\]/D  P_CH_IAUX_EN_pad\[7\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT CONTROL78/CH_IAUX_EN\[0\]/CLK  CONTROL78/CH_IAUX_EN\[0\]/Q  P_CH_IAUX_EN_pad\[6\]/D  P_CH_IAUX_EN_pad\[6\]/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[1\]/CLK  spi_slave_pm/CLK_FCNT_2C\[1\]/Q  db_spi_cnt1_pad/D  db_spi_cnt1_pad/PAD  	(200.0:200.0:200.0) )
-
-    (PATHCONSTRAINT spi_slave_pm/CLK_FCNT_2C\[0\]/CLK  spi_slave_pm/CLK_FCNT_2C\[0\]/Q  db_spi_cnt0_pad/D  db_spi_cnt0_pad/PAD  	(200.0:200.0:200.0) )
 
     (PATHCONSTRAINT UVL_78FUSE/SIGOUT/CLK  UVL_78FUSE/SIGOUT/Q  PWR_OK_LED_pad_RNO/B  PWR_OK_LED_pad_RNO/Y  	(200.0:200.0:200.0) )
 

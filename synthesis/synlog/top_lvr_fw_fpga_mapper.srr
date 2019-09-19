@@ -1,4 +1,4 @@
-# Thu Sep 19 07:38:26 2019
+# Thu Sep 19 08:59:22 2019
 
 Synopsys Microsemi Technology Mapper, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -65,34 +65,34 @@ original code -> new code
 @N: MF176 |Default generator successful 
 @N: MF176 |Default generator successful 
 
-Starting factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 112MB peak: 112MB)
+Starting factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 112MB peak: 112MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 114MB peak: 115MB)
+Finished factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 114MB peak: 115MB)
 
 
-Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 113MB peak: 115MB)
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 113MB peak: 115MB)
 
 
-Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 113MB peak: 115MB)
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 113MB peak: 115MB)
 
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 117MB peak: 119MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 119MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 117MB peak: 119MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 119MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 117MB peak: 119MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 119MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 117MB peak: 119MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 119MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 117MB peak: 119MB)
+Finished preparing to map (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 117MB peak: 119MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 120MB peak: 122MB)
+Finished technology mapping (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 120MB peak: 122MB)
 
 
 High Fanout Net Report
@@ -113,7 +113,7 @@ spi_slave_pm.SPI_SM[0] / Q                      36
 @N: FP130 |Promoting Net MASTER_RST_B on CLKINT  I_59 
 @N: FP130 |Promoting Net spi_slave_pm.SPI_CLR on CLKINT  spi_slave_pm.SPI_CLR_inferred_clock 
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 122MB peak: 124MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 122MB peak: 124MB)
 
 Replicating Sequential Instance spi_slave_pm.SPI_SM[0], fanout 36 segments 2
 Replicating Combinational Instance CONTROL12.SEQUENCER_STATE_ns_o3_i_o2[5], fanout 48 segments 2
@@ -126,7 +126,7 @@ Added 5 Cells via replication
 	Added 1 Sequential Cells via replication
 	Added 4 Combinational Cells via replication
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 122MB peak: 124MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 122MB peak: 124MB)
 
 
 
@@ -149,7 +149,7 @@ Clock Tree ID     Driving Element     Drive Element Type             Fanout     
 =================================================================================== Gated/Generated Clocks ====================================================================================
 Clock Tree ID     Driving Element                Drive Element Type     Fanout     Sample Instance                     Explanation                                                             
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       GLOB_BUFF.Core                 DYNCCC                 78         spi_slave_pm.CLK_FCNT[5]            No generated or derived clock directive on output of sequential instance
+@K:CKID0001       GLOB_BUFF.Core                 DYNCCC                 78         spi_slave_pm.RX_32BIT_SREG[31]      No generated or derived clock directive on output of sequential instance
 @K:CKID0002       spi_slave_pm.I_SPI_RX_STRB     DFN1C0                 40         active_channels[0]                  No generated or derived clock directive on output of sequential instance
 @K:CKID0003       spi_slave_pm.SPI_CLR           DFN1E0P0               32         spi_slave_pm.P_TX_32BIT_REG[10]     No generated or derived clock directive on output of sequential instance
 ===============================================================================================================================================================================================
@@ -158,19 +158,19 @@ Clock Tree ID     Driving Element                Drive Element Type     Fanout  
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 120MB peak: 124MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 120MB peak: 124MB)
 
 Writing Analyst data base Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\synwork\top_lvr_fw_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 121MB peak: 124MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 121MB peak: 124MB)
 
 Writing EDIF Netlist and constraint files
 L-2016.09M-SP1-5
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 121MB peak: 124MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 121MB peak: 124MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 121MB peak: 124MB)
+Start final timing analysis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 121MB peak: 124MB)
 
 @N: MT615 |Found clock CLK40MHZ_OSC with period 25.00ns 
 @N: MT615 |Found clock SCA_CLK_OUT with period 1000.00ns 
@@ -181,7 +181,7 @@ Start final timing analysis (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:0
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Thu Sep 19 07:38:32 2019
+# Timing Report written on Thu Sep 19 08:59:27 2019
 #
 
 
@@ -232,10 +232,10 @@ Starting                                Ending                                  
 CLK40MHZ_OSC                            CLK40MHZ_OSC                            |  25.000      20.800   |  No paths    -      |  No paths    -      |  No paths    -     
 CLK_5M_GL                               CLK_5M_GL                               |  200.000     182.440  |  No paths    -      |  No paths    -      |  No paths    -     
 CLK_5M_GL                               spi_slave|I_SPI_RX_STRB_inferred_clock  |  No paths    -        |  No paths    -      |  Diff grp    -      |  No paths    -     
-CLK_5M_GL                               CCC_Glob_3xBuff|GLB_inferred_clock      |  Diff grp    -        |  No paths    -      |  Diff grp    -      |  No paths    -     
+CLK_5M_GL                               CCC_Glob_3xBuff|GLB_inferred_clock      |  Diff grp    -        |  No paths    -      |  No paths    -      |  No paths    -     
 spi_slave|I_SPI_RX_STRB_inferred_clock  CLK_5M_GL                               |  No paths    -        |  No paths    -      |  No paths    -      |  Diff grp    -     
 spi_slave|I_SPI_RX_STRB_inferred_clock  spi_slave|SPI_CLR_inferred_clock        |  No paths    -        |  No paths    -      |  No paths    -      |  Diff grp    -     
-CCC_Glob_3xBuff|GLB_inferred_clock      CLK_5M_GL                               |  Diff grp    -        |  No paths    -      |  No paths    -      |  Diff grp    -     
+CCC_Glob_3xBuff|GLB_inferred_clock      CLK_5M_GL                               |  No paths    -        |  No paths    -      |  No paths    -      |  Diff grp    -     
 CCC_Glob_3xBuff|GLB_inferred_clock      CCC_Glob_3xBuff|GLB_inferred_clock      |  No paths    -        |  No paths    -      |  10.000      5.302  |  10.000      -1.218
 spi_slave|SPI_CLR_inferred_clock        CCC_Glob_3xBuff|GLB_inferred_clock      |  Diff grp    -        |  No paths    -      |  No paths    -      |  No paths    -     
 =========================================================================================================================================================================
@@ -260,41 +260,41 @@ Detailed Report for Clock: CCC_Glob_3xBuff|GLB_inferred_clock
 Starting Points with Worst Slack
 ********************************
 
-                                  Starting                                                                         Arrival           
-Instance                          Reference                              Type         Pin     Net                  Time        Slack 
-                                  Clock                                                                                              
--------------------------------------------------------------------------------------------------------------------------------------
-spi_slave_pm.CLK_FCNT[0]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       Q       CLK_FCNT[0]          0.653       -1.218
-spi_slave_pm.CLK_FCNT[4]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       Q       CLK_FCNT[4]          0.653       -0.017
-spi_slave_pm.CLK_FCNT[3]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       Q       CLK_FCNT[3]          0.653       0.004 
-spi_slave_pm.CLK_FCNT[2]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       Q       CLK_FCNT[2]          0.653       0.256 
-spi_slave_pm.CLK_FCNT[1]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       Q       CLK_FCNT[1]          0.653       2.237 
-spi_slave_pm.CLK_FCNT[5]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       Q       CLK_FCNT[5]          0.653       2.475 
-spi_slave_pm.N_I_SCA_DAT_IN       CCC_Glob_3xBuff|GLB_inferred_clock     DFN1P1C1     Q       N_I_SCA_DAT_IN       1.677       5.302 
-spi_slave_pm.RX_32BIT_SREG[0]     CCC_Glob_3xBuff|GLB_inferred_clock     DFN1C1       Q       RX_32BIT_SREG[0]     0.737       8.165 
-spi_slave_pm.RX_32BIT_SREG[1]     CCC_Glob_3xBuff|GLB_inferred_clock     DFN1C1       Q       RX_32BIT_SREG[1]     0.737       8.165 
-spi_slave_pm.RX_32BIT_SREG[2]     CCC_Glob_3xBuff|GLB_inferred_clock     DFN1C1       Q       RX_32BIT_SREG[2]     0.737       8.165 
-=====================================================================================================================================
+                                Starting                                                                       Arrival           
+Instance                        Reference                              Type         Pin     Net                Time        Slack 
+                                Clock                                                                                            
+---------------------------------------------------------------------------------------------------------------------------------
+spi_slave_pm.CLK_FCNT[0]        CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       Q       CLK_FCNT[0]        0.653       -1.218
+spi_slave_pm.CLK_FCNT[4]        CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       Q       CLK_FCNT[4]        0.653       -0.017
+spi_slave_pm.CLK_FCNT[3]        CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       Q       CLK_FCNT[3]        0.653       0.004 
+spi_slave_pm.CLK_FCNT[2]        CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       Q       CLK_FCNT[2]        0.653       0.256 
+spi_slave_pm.CLK_FCNT[1]        CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       Q       CLK_FCNT[1]        0.653       2.237 
+spi_slave_pm.CLK_FCNT[5]        CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       Q       CLK_FCNT[5]        0.653       2.475 
+spi_slave_pm.N_I_SCA_DAT_IN     CCC_Glob_3xBuff|GLB_inferred_clock     DFN1P1C1     Q       N_I_SCA_DAT_IN     1.677       5.302 
+spi_slave_pm.N_CLK_FCNT[0]      CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       Q       N_CLK_FCNT[0]      0.737       8.229 
+spi_slave_pm.N_CLK_FCNT[1]      CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       Q       N_CLK_FCNT[1]      0.737       8.229 
+spi_slave_pm.N_CLK_FCNT[2]      CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       Q       N_CLK_FCNT[2]      0.737       8.229 
+=================================================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                                    Starting                                                                         Required           
-Instance                            Reference                              Type         Pin     Net                  Time         Slack 
-                                    Clock                                                                                               
-----------------------------------------------------------------------------------------------------------------------------------------
-spi_slave_pm.N_I_SCA_DAT_IN         CCC_Glob_3xBuff|GLB_inferred_clock     DFN1P1C1     D       N_29                 7.301        -1.218
-spi_slave_pm.N_CLK_FCNT[5]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       D       N_41                 9.461        0.610 
-spi_slave_pm.N_CLK_FCNT[4]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       D       N_31                 9.461        1.446 
-spi_slave_pm.N_CLK_FCNT[3]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       D       N_33                 9.461        1.510 
-spi_slave_pm.N_CLK_FCNT[2]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       D       N_35                 9.461        2.346 
-spi_slave_pm.N_CLK_FCNT[0]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       D       N_39                 9.427        3.179 
-spi_slave_pm.N_CLK_FCNT[1]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       D       N_37                 9.427        3.179 
-spi_slave_pm.I_SCA_DAT_IN           CCC_Glob_3xBuff|GLB_inferred_clock     DFN0P1C1     D       N_I_SCA_DAT_IN       7.301        5.302 
-spi_slave_pm.N_RX_32BIT_SREG[1]     CCC_Glob_3xBuff|GLB_inferred_clock     DFN0E0       D       RX_32BIT_SREG[0]     9.287        8.165 
-spi_slave_pm.N_RX_32BIT_SREG[2]     CCC_Glob_3xBuff|GLB_inferred_clock     DFN0E0       D       RX_32BIT_SREG[1]     9.287        8.165 
-========================================================================================================================================
+                                Starting                                                                       Required           
+Instance                        Reference                              Type         Pin     Net                Time         Slack 
+                                Clock                                                                                             
+----------------------------------------------------------------------------------------------------------------------------------
+spi_slave_pm.N_I_SCA_DAT_IN     CCC_Glob_3xBuff|GLB_inferred_clock     DFN1P1C1     D       N_29               7.301        -1.218
+spi_slave_pm.N_CLK_FCNT[5]      CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       D       N_41               9.461        0.610 
+spi_slave_pm.N_CLK_FCNT[4]      CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       D       N_31               9.461        1.446 
+spi_slave_pm.N_CLK_FCNT[3]      CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       D       N_33               9.461        1.510 
+spi_slave_pm.N_CLK_FCNT[2]      CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       D       N_35               9.461        2.346 
+spi_slave_pm.N_CLK_FCNT[0]      CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       D       N_39               9.427        3.179 
+spi_slave_pm.N_CLK_FCNT[1]      CCC_Glob_3xBuff|GLB_inferred_clock     DFN1E0       D       N_37               9.427        3.179 
+spi_slave_pm.I_SCA_DAT_IN       CCC_Glob_3xBuff|GLB_inferred_clock     DFN0P1C1     D       N_I_SCA_DAT_IN     7.301        5.302 
+spi_slave_pm.CLK_FCNT[0]        CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       D       N_CLK_FCNT[0]      9.287        8.229 
+spi_slave_pm.CLK_FCNT[1]        CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1       D       N_CLK_FCNT[1]      9.287        8.229 
+==================================================================================================================================
 
 
 
@@ -726,10 +726,10 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 Timing exceptions that could not be applied
 None
 
-Finished final timing analysis (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 121MB peak: 124MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 121MB peak: 124MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 121MB peak: 124MB)
+Finished timing report (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 121MB peak: 124MB)
 
 --------------------------------------------------------------------------------
 Target Part: A3PN250_VQFP100_STD
@@ -790,14 +790,12 @@ Report for cell top_lvr_fw.rtl
 
             DFI1C0     2      1.0        2.0
             DFN0C0    20      1.0       20.0
-            DFN0C1     6      1.0        6.0
-            DFN0E0    32      1.0       32.0
+            DFN0C1    38      1.0       38.0
           DFN0E1C0     8      1.0        8.0
             DFN0P0    12      1.0       12.0
           DFN0P1C1     1      1.0        1.0
             DFN1C0   162      1.0      162.0
-            DFN1C1    32      1.0       32.0
-            DFN1E0     6      1.0        6.0
+            DFN1E0    38      1.0       38.0
           DFN1E0C0    37      1.0       37.0
           DFN1E0P0     4      1.0        4.0
           DFN1E1C0    40      1.0       40.0
@@ -825,9 +823,9 @@ Block Rams : 0 of 8 (0%)
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 27MB peak: 124MB)
+At Mapper Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 27MB peak: 124MB)
 
-Process took 0h:00m:05s realtime, 0h:00m:04s cputime
-# Thu Sep 19 07:38:32 2019
+Process took 0h:00m:04s realtime, 0h:00m:03s cputime
+# Thu Sep 19 08:59:27 2019
 
 ###########################################################]

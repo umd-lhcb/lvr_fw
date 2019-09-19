@@ -106,7 +106,6 @@ begin
       I_SCA_DAT_IN <= TX_32BIT_SREG(30);
 
     elsif RISING_EDGE(SCA_CLK_OUT) then
-      RX_32BIT_SREG <= N_RX_32BIT_SREG;
       
       -- THIS COUNTS THE FRAME BITS
       if CLK_FCNT = 32 then
@@ -127,12 +126,13 @@ begin
       else
         N_I_SCA_DAT_IN <= TX_32BIT_SREG(31);
       end if;
+      -- THIS IS THE RX PATH
+      N_RX_32BIT_SREG(31 downto 0) <= RX_32BIT_SREG(30 downto 0) & SCA_DAT_OUT;  -- THESE ARE THE D FF INPUTS FOR THE SHIFT REGISTER 
 
     elsif FALLING_EDGE(SCA_CLK_OUT) then
       CLK_FCNT      <= N_CLK_FCNT;
       I_SCA_DAT_IN <= N_I_SCA_DAT_IN;
-      -- THIS IS THE RX PATH
-      N_RX_32BIT_SREG(31 downto 0) <= RX_32BIT_SREG(30 downto 0) & SCA_DAT_OUT;  -- THESE ARE THE D FF INPUTS FOR THE SHIFT REGISTER 
+      RX_32BIT_SREG <= N_RX_32BIT_SREG;
     end if;
 
   end process;

@@ -16,7 +16,7 @@ File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\Slow_PulseEn_Gen.vhd changed - recompilin
 File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd changed - recompiling
 File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd changed - recompiling
 VHDL syntax check successful!
-File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":53:7:53:16|Synthesizing work.top_lvr_fw.rtl.
 @W: CG296 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":408:24:408:30|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
@@ -105,7 +105,7 @@ At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memor
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Sep 19 07:38:21 2019
+# Thu Sep 19 08:59:17 2019
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -116,7 +116,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Sep 19 07:38:21 2019
+# Thu Sep 19 08:59:17 2019
 
 ###########################################################]
 @END
@@ -126,6 +126,6 @@ At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu Sep 19 07:38:21 2019
+# Thu Sep 19 08:59:17 2019
 
 ###########################################################]

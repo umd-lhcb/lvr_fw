@@ -55,6 +55,7 @@ static void transfer(int fd)
 	uint8_t tx[] = {
 		0x00, 0x00, 0x00, 0x00, 
 	};
+        int ntotal = 0, ngood = 0;
 	uint8_t rx[ARRAY_SIZE(tx)] = {0, };
 	struct spi_ioc_transfer tr = {
 		.tx_buf = (unsigned long)tx,
@@ -65,33 +66,27 @@ static void transfer(int fd)
 		.bits_per_word = bits,
 	};
 
-	while(1==1)
-	{
-		puts("enter message:");
+	while(1==1){ 
+		puts("Enter SPI command to be sent:");
 		scanf("%2x%2x%2x%2x", &tx[0],&tx[1],&tx[2],&tx[3]);
-		printf("OK. Sending: ");
-		for (ret =0; ret < ARRAY_SIZE(tx); ret++)
-		{
-			printf("%.2X ", tx[ret]);
-		}
+		puts("Enter number of repetitions:");
+		scanf("%d", &ntotal);
+                
+		printf("Thanks! Sending %2x%2x%2x%2x to the LVR %d times",&tx[0],&tx[1],&tx[2],&tx[3],&ntotal);
 		puts("");
 		printf("...");
+		ngood = 0;
 		ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
-		if (ret < 1)
-		pabort("can't send spi message");
-		puts("...");
-
-		
-		printf("device returned: ");
-		for (ret =0; ret < ARRAY_SIZE(tx); ret++)
-		{
-			printf("%.2X ", rx[ret]);
-		}
-		puts("\n\n");
-
-
-		sleep(2);
-	}
+		if (ret < 1) pabort("can't send spi message");
+		for(ret=0; ret < ntotal; ret++){
+			ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
+			if (ret < 1) pabort("can't send spi message");
+			printf("Doing repetition %d...", &ret);
+			if(tx[0] == rx[0] && tx[0] == rx[0] && tx[0] == rx[0] && tx[0] == rx[0]) ngood++;
+			sleep(0.01);
+		} // for ntotal
+		printf("Read the same SPI message %d times out of %d commands", &ngood, &ntotal);
+	} // while
 }
 
 static void print_usage(const char *prog)

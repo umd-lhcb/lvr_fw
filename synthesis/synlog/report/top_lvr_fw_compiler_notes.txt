@@ -1,36 +1,34 @@
 @N|Running in 64-bit mode
 @N|Running in 64-bit mode
 @N: CD720 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
-@N:"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":53:7:53:16|Top entity is set to top_lvr_fw.
+@N:"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":53:7:53:16|Top entity is set to top_lvr_fw.
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":53:7:53:16|Synthesizing work.top_lvr_fw.rtl.
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
-@N: CD233 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":73:23:73:24|Using sequential encoding for type threshold_state.
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\Slow_PulseEn_Gen.vhd":35:7:35:23|Synthesizing work.slow_pulse_en_gen.rtl.
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":55:7:55:24|Synthesizing work.main_sequencer_new.rtl.
-@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":99:21:99:22|Using onehot encoding for type seq_sm_states. For example, enumeration init is mapped to "1000000000".
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":37:7:37:15|Synthesizing work.spi_slave.rtl.
-@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":81:21:81:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
-@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":261:6:261:19|OTHERS clause is not synthesized.
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_sep2\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd":8:7:8:21|Synthesizing work.ccc_glob_3xbuff.def_arch.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":53:7:53:16|Synthesizing work.top_lvr_fw.rtl.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
+@N: CD233 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:23:73:24|Using sequential encoding for type threshold_state.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\Slow_PulseEn_Gen.vhd":35:7:35:23|Synthesizing work.slow_pulse_en_gen.rtl.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":55:7:55:24|Synthesizing work.main_sequencer_new.rtl.
+@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":99:21:99:22|Using onehot encoding for type seq_sm_states. For example, enumeration init is mapped to "1000000000".
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":37:7:37:15|Synthesizing work.spi_slave.rtl.
+@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":81:21:81:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
+@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":260:6:260:19|OTHERS clause is not synthesized.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd":8:7:8:21|Synthesizing work.ccc_glob_3xbuff.def_arch.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":3690:10:3690:15|Synthesizing proasic3.dynccc.syn_black_box.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":2722:10:2722:12|Synthesizing proasic3.vcc.syn_black_box.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":1782:10:1782:12|Synthesizing proasic3.gnd.syn_black_box.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":407:10:407:15|Synthesizing proasic3.pllint.syn_black_box.
-@N: CL189 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Register bit CLK_FCNT(0) is always 0.
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Trying to extract state machine for register SPI_SM.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":43:4:43:14|Input SCA_DAT_OUT is unused.
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":131:4:131:5|Trying to extract state machine for register SEQUENCER_STATE.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\MAIN_SEQUENCER_NEW.vhd":61:4:61:16|Input CMND_WORD_STB is unused.
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\IIR_FILT.vhd":85:4:85:5|Trying to extract state machine for register THRESH_VAL.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":75:4:75:14|Input MODE_WDT_EN is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":77:4:77:18|Input MODE_DIAG_NORMB is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":91:4:91:19|Input TEMP_FAILSAFE_EN is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":95:4:95:10|Input RX_FPGA is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":101:4:101:11|Input ADDR_SEL is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":137:4:137:11|Input UNUSED_1 is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":138:4:138:11|Input UNUSED_2 is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":139:4:139:15|Input J11_25_TCONN is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":140:4:140:15|Input J11_27_TCONN is unused.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Trying to extract state machine for register SPI_SM.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":131:4:131:5|Trying to extract state machine for register SEQUENCER_STATE.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":61:4:61:16|Input CMND_WORD_STB is unused.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|Trying to extract state machine for register THRESH_VAL.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":75:4:75:14|Input MODE_WDT_EN is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":77:4:77:18|Input MODE_DIAG_NORMB is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":91:4:91:19|Input TEMP_FAILSAFE_EN is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":95:4:95:10|Input RX_FPGA is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":101:4:101:11|Input ADDR_SEL is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":137:4:137:11|Input UNUSED_1 is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":138:4:138:11|Input UNUSED_2 is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":139:4:139:15|Input J11_25_TCONN is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":140:4:140:15|Input J11_27_TCONN is unused.
 @N|Running in 64-bit mode
 

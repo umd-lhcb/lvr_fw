@@ -6,22 +6,23 @@
 #### START OF CLOCK OPTIMIZATION REPORT #####[
 
 Clock optimization not enabled
-1 non-gated/non-generated clock tree(s) driving 5 clock pin(s) of sequential element(s)
-3 gated/generated clock tree(s) driving 308 clock pin(s) of sequential element(s)
-0 instances converted, 308 sequential instances remain driven by gated/generated clocks
+2 non-gated/non-generated clock tree(s) driving 320 clock pin(s) of sequential element(s)
+3 gated/generated clock tree(s) driving 149 clock pin(s) of sequential element(s)
+0 instances converted, 149 sequential instances remain driven by gated/generated clocks
 
-============================== Non-Gated/Non-Generated Clocks ===============================
-Clock Tree ID     Driving Element     Drive Element Type           Fanout     Sample Instance
----------------------------------------------------------------------------------------------
-@K:CKID0004       CLK40MHZ_OSC        clock definition on port     5          CLK_5M_GL      
-=============================================================================================
-================================================================================== Gated/Generated Clocks ==================================================================================
-Clock Tree ID     Driving Element                   Drive Element Type     Fanout     Sample Instance               Explanation                                                             
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       spi_slave_pm.I_SCA_DAT_IN_RNO     OR2B                   1          spi_slave_pm.I_SCA_DAT_IN     Clock conversion disabled                                               
-@K:CKID0002       CLK_5M_GL                         DFN1C0                 298        DTYCYC_EN                     No generated or derived clock directive on output of sequential instance
-@K:CKID0003       spi_slave_pm.SPI_SM[5]            DFN1P0                 9          active_channels[0]            No generated or derived clock directive on output of sequential instance
-============================================================================================================================================================================================
+=============================== Non-Gated/Non-Generated Clocks ================================
+Clock Tree ID     Driving Element     Drive Element Type             Fanout     Sample Instance
+-----------------------------------------------------------------------------------------------
+@K:CKID0004       CLK_5M_GL_keep      clock definition on CLKINT     315        DTYCYC_EN      
+@K:CKID0005       CLK40MHZ_OSC        clock definition on port       5          CLK_5M_GL      
+===============================================================================================
+=================================================================================== Gated/Generated Clocks ====================================================================================
+Clock Tree ID     Driving Element                Drive Element Type     Fanout     Sample Instance                     Explanation                                                             
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@K:CKID0001       GLOB_BUFF.Core                 DYNCCC                 77         spi_slave_pm.RX_32BIT_SREG[31]      No generated or derived clock directive on output of sequential instance
+@K:CKID0002       spi_slave_pm.I_SPI_RX_STRB     DFN1C0                 40         active_channels[0]                  No generated or derived clock directive on output of sequential instance
+@K:CKID0003       spi_slave_pm.SPI_CLR           DFN1E0P0               32         spi_slave_pm.P_TX_32BIT_REG[10]     No generated or derived clock directive on output of sequential instance
+===============================================================================================================================================================================================
 
 
 ##### END OF CLOCK OPTIMIZATION REPORT ######]

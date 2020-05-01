@@ -30,7 +30,7 @@ KEY VendorTechnology_VCCI_1.8_VOLTR "COM"
 KEY VendorTechnology_VCCI_2.5_VOLTR "COM"
 KEY VendorTechnology_VCCI_3.3_VOLTR "COM"
 KEY VendorTechnology_VOLTR "COM"
-KEY ProjectLocation "Z:\windows\lvr_fw\lvr_fw_sep2"
+KEY ProjectLocation "Z:\windows\lvr_fw\lvr_fw_2020"
 KEY ProjectDescription "tEST RUN OF lIBERO"
 KEY Pa4PeripheralNewSeq "GOOD"
 KEY SimulationType "VHDL"
@@ -43,133 +43,133 @@ ENDLIST
 LIST FileManager
 VALUE "<project>\component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf,actgen_cxf"
 STATE="utd"
-TIME="1567444948"
+TIME="1586831425"
 SIZE="437"
 ENDFILE
 VALUE "<project>\constraint\top_lvr_fw.pdc,pdc"
 STATE="utd"
-TIME="1567444988"
+TIME="1586831426"
 SIZE="7030"
 ENDFILE
 VALUE "<project>\designer\impl1\IIR_FILT.ide_des,ide_des"
 STATE="utd"
-TIME="1567444952"
+TIME="1586831425"
 SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="ood"
-TIME="1567626882"
-SIZE="1176064"
+TIME="1586831874"
+SIZE="1377280"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1567626882"
-SIZE="1039"
+TIME="1586831943"
+SIZE="1034"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
 STATE="ood"
-TIME="1567444952"
+TIME="1586831425"
 SIZE="129700"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
 STATE="utd"
-TIME="1567626842"
-SIZE="10301"
+TIME="1586831830"
+SIZE="10311"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
 STATE="utd"
-TIME="1567444952"
-SIZE="2670"
+TIME="1586831425"
+SIZE="1975"
+ENDFILE
+VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
+STATE="utd"
+TIME="1586987689"
+SIZE="1207"
 ENDFILE
 VALUE "<project>\hdl\IIR_FILT.vhd,hdl"
 STATE="utd"
-TIME="1567444952"
+TIME="1586831425"
 SIZE="7360"
 ENDFILE
 VALUE "<project>\hdl\MAIN_SEQUENCER_NEW.vhd,hdl"
 STATE="utd"
-TIME="1567444952"
-SIZE="18743"
+TIME="1586831425"
+SIZE="20138"
 ENDFILE
 VALUE "<project>\hdl\Slow_PulseEn_Gen.vhd,hdl"
 STATE="utd"
-TIME="1567444952"
-SIZE="4679"
+TIME="1586831425"
+SIZE="4675"
 ENDFILE
 VALUE "<project>\hdl\spi_slave.vhd,hdl"
 STATE="utd"
-TIME="1568232087"
-SIZE="14568"
+TIME="1586984776"
+SIZE="11221"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1568232097"
-SIZE="44858"
+TIME="1586831732"
+SIZE="45510"
 ENDFILE
 VALUE "<project>\simulation\run.do,do"
 STATE="utd"
-TIME="1567444946"
-SIZE="929"
+TIME="1587005910"
+SIZE="1025"
 ENDFILE
 VALUE "<project>\simulation\wave.do,do"
 STATE="utd"
-TIME="1567444946"
-SIZE="6288"
+TIME="1586831425"
+SIZE="17994"
 ENDFILE
 VALUE "<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.cxf,actgen_cxf"
 STATE="utd"
-TIME="1567451184"
+TIME="1586831425"
 SIZE="3026"
 ENDFILE
 VALUE "<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.gen,gen"
 STATE="utd"
-TIME="1567451182"
+TIME="1586831425"
 SIZE="775"
 PARENT="<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.cxf"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.log,log"
 STATE="utd"
-TIME="1567451184"
+TIME="1586831425"
 SIZE="4529"
 PARENT="<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.cxf"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd,hdl"
 STATE="utd"
-TIME="1567451184"
+TIME="1586831425"
 SIZE="8845"
 PARENT="<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.cxf"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\stimulus\tb_top_lvr_fw.vhd,tb_hdl"
 STATE="utd"
-TIME="1567444946"
-SIZE="9339"
-ENDFILE
-VALUE "<project>\synthesis\synwork\layer0.so,so"
-STATE="utd"
-TIME="1568226795"
-SIZE="159"
+TIME="1586984656"
+SIZE="9980"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="ood"
-TIME="1568231900"
-SIZE="1396456"
+TIME="1586831817"
+SIZE="739008"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
-TIME="1568231900"
+TIME="1586831817"
 SIZE="219"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="ood"
-TIME="1568231900"
+TIME="1586831816"
 SIZE="605"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
 STATE="utd"
-TIME="1568231901"
+TIME="1586831819"
 SIZE="2171"
 ENDFILE
 ENDLIST
@@ -206,7 +206,7 @@ LIST SimulationOptions
 UseAutomaticDoFile=true
 IncludeWaveDo=true
 Type=max
-RunTime=400us
+RunTime=5ms
 Resolution=1ps
 VsimOpt=
 EntityName=TB_TOP_LVR_FW
@@ -268,8 +268,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -277,7 +277,7 @@ NAME="ModelSim ME"
 FUNCTION="Simulation"
 TOOL="ModelSim"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\Modelsim\win32acoem\modelsim.exe"
-PARAM=" -l TB_TOP_LVR_FW_presynth_simulation.log "
+PARAM=""
 BATCH=0
 LICENSE=""
 IS32BIT="1"

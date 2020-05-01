@@ -1,4 +1,4 @@
-# Thu Sep 19 13:52:57 2019
+# Wed Apr 29 17:59:46 2020
 
 Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -6,22 +6,21 @@ Product Version L-2016.09M-SP1-5
 
 Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 99MB)
 
-Reading constraint file: Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw_syn.fdc
-@L: Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw_scck.rpt 
-Printing clock  summary report in "Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw_scck.rpt" file 
+Reading constraint file: Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw_syn.fdc
+@L: Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw_scck.rpt 
+Printing clock  summary report in "Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw_scck.rpt" file 
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 
-Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 102MB)
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 102MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
 
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance TX_32BIT_SREG[31:0] (in view: work.spi_slave(rtl)) of type view:PrimLib.dff(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_3(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_2(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_1(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\main_sequencer_new.vhd":131:4:131:5|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_0(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":131:4:131:5|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_3(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":131:4:131:5|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_2(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":131:4:131:5|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_1(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":131:4:131:5|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_0(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 
 Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
 
@@ -33,17 +32,20 @@ Clock Summary
 Start                                      Requested     Requested     Clock        Clock                   Clock
 Clock                                      Frequency     Period        Type         Group                   Load 
 -----------------------------------------------------------------------------------------------------------------
+CCC_Glob_3xBuff|GLB_inferred_clock         50.0 MHz      20.000        inferred     Inferred_clkgroup_1     78   
 CLK40MHZ_OSC                               40.0 MHz      25.000        declared     MainClkGrp              5    
+CLK_5M_GL                                  5.0 MHz       200.000       declared     MainClkGrp              356  
 SCA_CLK_OUT                                1.0 MHz       1000.000      declared     Spi_MClkGrp             0    
-spi_slave|I_SPI_RX_STRB_inferred_clock     50.0 MHz      20.000        inferred     Inferred_clkgroup_0     73   
-top_lvr_fw|db_clk5mhz_inferred_clock       50.0 MHz      20.000        inferred     Inferred_clkgroup_1     341  
+spi_slave|I_SPI_RX_STRB_inferred_clock     50.0 MHz      20.000        inferred     Inferred_clkgroup_0     40   
+spi_slave|SPI_CLR_inferred_clock           50.0 MHz      20.000        inferred     Inferred_clkgroup_2     70   
 =================================================================================================================
 
-@W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":101:4:101:5|Found inferred clock spi_slave|I_SPI_RX_STRB_inferred_clock which controls 73 sequential elements including spi_slave_pm.RX_32BIT_SREG[31:0]. This clock has no specified timing constraint which may adversely impact design performance. 
-@W: MT530 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\spi_slave.vhd":144:4:144:5|Found inferred clock top_lvr_fw|db_clk5mhz_inferred_clock which controls 341 sequential elements including spi_slave_pm.SPI_SM[0:5]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":410:4:410:5|Found inferred clock spi_slave|I_SPI_RX_STRB_inferred_clock which controls 40 sequential elements including active_channels[7:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Found inferred clock CCC_Glob_3xBuff|GLB_inferred_clock which controls 78 sequential elements including spi_slave_pm.N_CLK_FCNT[5:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Found inferred clock spi_slave|SPI_CLR_inferred_clock which controls 70 sequential elements including spi_slave_pm.N_CLK_FCNT[5:0]. This clock has no specified timing constraint which may adversely impact design performance. 
 
 Finished Pre Mapping Phase.
-@N: BN225 |Writing default property annotation file Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw.sap.
+@N: BN225 |Writing default property annotation file Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw.sap.
 
 Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
 
@@ -128,40 +130,8 @@ original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[0] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[1] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[2] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[3] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[4] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[5] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[6] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[7] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[8] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[9] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[10] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[11] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[12] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[13] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[14] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[15] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[16] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[17] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[18] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[19] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[20] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[21] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[22] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[23] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[24] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[25] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[26] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[27] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[28] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[29] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":402:2:402:12|Removing sequential instance SPI_TX_WORD[30] (in view: work.top_lvr_fw(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
 None
 None
-@W: MF511 |Found issues with constraints. Please check constraint checker report "Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw_cck.rpt" .
 
 Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 112MB peak: 113MB)
 
@@ -170,6 +140,6 @@ Pre-mapping successful!
 At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 26MB peak: 113MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Thu Sep 19 13:52:58 2019
+# Wed Apr 29 17:59:48 2020
 
 ###########################################################]

@@ -114,10 +114,10 @@ entity top_lvr_fw is
     db_spi_strobe  : out std_logic;
     db_spi_state0  : out std_logic;
     db_spi_state1  : out std_logic;
-    db_spi_state2  : out std_logic;
+    --db_spi_state2  : out std_logic;
     db_spi_cnt0    : out std_logic;
     db_spi_cnt1    : out std_logic;
-    db_spi_cnt2    : out std_logic;
+    --db_spi_cnt2    : out std_logic;
 
 
 -- CHANNEL ENABLES
@@ -131,7 +131,7 @@ entity top_lvr_fw is
     STATUS_LED : out std_logic;  -- pin 77,     STEADY=UVL'S OK, SINGLE BLINK=SEU AND/OR WDT
 
 -- DIAGNOSTIC & TEST I/O
-    --BUF5M_J11_15_TCONN : out std_logic;  -- PIN 35, (SCHEMA ALIAS= CS2_SEL_EN) 5 MHZ CLOCK BUFFER
+    BUF5M_J11_15_TCONN : out std_logic;  -- PIN 35, (SCHEMA ALIAS= CS2_SEL_EN) 5 MHZ CLOCK BUFFER
 
 -- UNUSED FPGA I/O BEING TIED TO SPECIFIED SAFE STATE
     UNUSED_1     : in  std_logic;  -- PIN 59, 3V3 BANK, NOT ROUTED FOR USE, BUT HAS 3V3 PULLUP PRESENT
@@ -397,7 +397,7 @@ begin
 
   db_spi_cnt0 <= clk_fcnt_out(0);
   db_spi_cnt1 <= clk_fcnt_out(1);
-  db_spi_cnt2 <= clk_fcnt_out(2);
+  --db_spi_cnt2 <= clk_fcnt_out(2);
   --spi_tx_word <= x"1234" & active_channels & x"00";
   spi_tx_word <= x"dcb02019" when GB_SPI_RST_B = '0' else
                  spi_rx_word when falling_edge(spi_rx_strb) else
@@ -422,7 +422,7 @@ begin
   db_spi_strobe  <= spi_rx_strb;
   db_spi_state0  <= spi_p_state_id(0);
   db_spi_state1  <= spi_p_state_id(1);
-  db_spi_state2  <= spi_p_state_id(2);
+  --db_spi_state2  <= spi_p_state_id(2);
 
 
 -- THIS PROCESS SYNCHRONIZES THE EXTERNAL POR_FPGA SIGNAL TO THE 40 MHZ CLOCK
@@ -865,7 +865,7 @@ begin
 
 -- ASSIGN INTERNAL SIGNALS TOP EXTERNAL PORTS
   --POR_OUT_TO_SCA     <= MASTER_RST_B;   -- COPY OF INTERNAL FPGA RESET
-  --BUF5M_J11_15_TCONN <= CLK_5M_GL;      -- COPY OF INTERNAL 5MHZ CLOCK
+  BUF5M_J11_15_TCONN <= CLK_5M_GL;      -- COPY OF INTERNAL 5MHZ CLOCK
 
   P_CH_MREG_EN <= CH_MREG_EN;  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
   P_CH_IAUX_EN <= CH_IAUX_EN;  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH

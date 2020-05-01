@@ -17,7 +17,7 @@
 --      SCA_DAT_OUT             :       DATA INPUT TO THE FPGA FROM THE SCA MASTER
 --
 -- Targeted device: <Family::ProASIC3> <Die::A3PN250> <Package::100 VQFP>
--- Author: Tom O'Bannon
+-- Authors: Tom O'Bannon, Manuel Franco Sevilla
 --
 --------------------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ architecture RTL of spi_slave is
   attribute syn_preserve of RX_32BIT_SREG   : signal is true;
   attribute syn_preserve of N_RX_32BIT_SREG : signal is true;
 
-  signal TX_32BIT_SREG : std_logic_vector(31 downto 0);  -- 32 BIT SHIFT REGISTER DEDICATED FOR ACTIVE SPI TRANSMIT
+  signal TX_32BIT_SREG, N_TX_32BIT_SREG : std_logic_vector(31 downto 0);  -- 32 BIT SHIFT REGISTER DEDICATED FOR ACTIVE SPI TRANSMIT
 
   signal CLK_FCNT, N_CLK_FCNT     : integer range 0 to 32;  -- SPI FRAME COUNTER
   signal CLK_FCNT_1C, CLK_FCNT_2C : integer range 0 to 32;  -- USED FOR CLOCK BOUNDARY CROSSING
@@ -96,38 +96,37 @@ begin
 -- DEFINE THE FRAME COUNT WHICH COUNTS CLOCK CYCLES DURING THE ACTIVE CLOCK CYCLES OF A 32-CYCLE DATA FRAME
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- DEFINE THE D FF'S
-  SREG_DFF : process(SCA_CLK_OUT, I_SPI_RX_STRB)
+  SREG_DFF : process(SCA_CLK_OUT, SPI_CLR)
   begin
-    if falling_edge(I_SPI_RX_STRB) then  -- AN EXTERNAL STATE MACHINE FORCES SYNCHRONIZATION OF THE SPI 
+    if SPI_CLR = '1' then  -- AN EXTERNAL STATE MACHINE FORCES SYNCHRONIZATION OF THE SPI 
       RX_32BIT_SREG <= (others => '0');
       TX_32BIT_SREG <= SPI_TX_WORD;
       CLK_FCNT      <= 0;               -- FIRST TRANSITION GOES TO 1
-      N_I_SCA_DAT_IN  <= spi_tx_word(31);   
-      I_SCA_DAT_IN <= spi_tx_word(31);
+      N_I_SCA_DAT_IN  <= TX_32BIT_SREG(30);   
+      I_SCA_DAT_IN <= SPI_TX_WORD(31);
 
     elsif RISING_EDGE(SCA_CLK_OUT) then
       
       -- THIS COUNTS THE FRAME BITS
       if CLK_FCNT = 32 then
         N_CLK_FCNT <= 0;  -- NORMAL COUNT OP IS 1 THRU 32,WHERE 0 IS A HOLD / INIT VAL
-      else
+      elsif CLK_FCNT_EN = '1' then  -- THIS COUNTS THE SERIAL FRAME CLOCK CYCLES WHEN ENABLED
         N_CLK_FCNT <= CLK_FCNT + 1;
-      end if;
-
-
-      if CLK_FCNT < 31 then
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(30-CLK_FCNT);
-      elsif CLK_FCNT = 31 then
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(0);
       else
-        N_I_SCA_DAT_IN <= TX_32BIT_SREG(31);
+        N_CLK_FCNT <= CLK_FCNT;
       end if;
-      -- THIS IS THE RX PATH
+
+
+     -- THIS IS THE RX PATH
       N_RX_32BIT_SREG(31 downto 0) <= RX_32BIT_SREG(30 downto 0) & SCA_DAT_OUT;  -- THESE ARE THE D FF INPUTS FOR THE SHIFT REGISTER 
 
     elsif FALLING_EDGE(SCA_CLK_OUT) then
       CLK_FCNT      <= N_CLK_FCNT;
-      I_SCA_DAT_IN <= N_I_SCA_DAT_IN;
+      if N_CLK_FCNT <= 31 then
+        I_SCA_DAT_IN <= TX_32BIT_SREG(31-N_CLK_FCNT);
+      else
+        I_SCA_DAT_IN <= TX_32BIT_SREG(31);
+      end if;
       RX_32BIT_SREG <= N_RX_32BIT_SREG;
     end if;
 
@@ -145,7 +144,7 @@ begin
       SPI_SM        <= INIT;
       CLK_FCNT_EN   <= '0';
       SPI_CLR       <= '1';
-      I_SPI_RX_STRB <= '1';
+      I_SPI_RX_STRB <= '0';
       I_SPI_RX_WORD <= (others => '0');
 
       CLK_FCNT_1C <= 0;

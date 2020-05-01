@@ -2,5 +2,5 @@
 <SynplifyOutput>
 	<result>Success</result>
 	<design>top_lvr_fw</design>
-	<target_edif>Z:\windows\lvr_fw\lvr_fw_sep2\synthesis\top_lvr_fw.edn</target_edif>
+	<target_edif>Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw.edn</target_edif>
 </SynplifyOutput>

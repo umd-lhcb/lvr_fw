@@ -32,16 +32,16 @@ Global net placement completed successfully.
 
                         o - o - o - o - o - o
 
-Timing-driven Placer Started: Wed Apr 29 18:00:11 2020
+Timing-driven Placer Started: Thu May 21 21:49:08 2020
 
-Placer Finished: Wed Apr 29 18:00:23 2020
-Total Placer CPU Time:     00:00:12
+Placer Finished: Thu May 21 21:49:19 2020
+Total Placer CPU Time:     00:00:11
 
                         o - o - o - o - o - o
 
 
 Timing-driven Router 
-Design: top_lvr_fw                      Started: Wed Apr 29 18:00:26 2020
+Design: top_lvr_fw                      Started: Thu May 21 21:49:22 2020
 
  
 Iterative improvement...
@@ -49,15 +49,15 @@ Iterative improvement...
 Timing-driven Router completed successfully.
 
 Design: top_lvr_fw                      
-Finished: Wed Apr 29 18:00:44 2020
-Total CPU Time:     00:00:16            Total Elapsed Time: 00:00:18
-Total Memory Usage: 181.1 Mbytes
+Finished: Thu May 21 21:49:37 2020
+Total CPU Time:     00:00:13            Total Elapsed Time: 00:00:15
+Total Memory Usage: 180.5 Mbytes
                         o - o - o - o - o - o
 
 Loading the Timing data for the design.
 Finished loading the Timing data.
 
-The Layout command succeeded ( 00:00:38 )
+The Layout command succeeded ( 00:00:34 )
 Wrote status report to file: top_lvr_fw_place_and_route_report.txt
 
 The Report command succeeded ( 00:00:00 )
@@ -78,6 +78,6 @@ Wrote pin report to file: top_lvr_fw_report_pin_bynumber.txt
 The Report command succeeded ( 00:00:01 )
 Design saved to file Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw.adb.
 
-The Execute Script command succeeded ( 00:00:42 )
+The Execute Script command succeeded ( 00:00:38 )
 Design closed.
 

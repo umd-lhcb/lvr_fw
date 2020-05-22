@@ -8,7 +8,7 @@
 --              <REV B // APR  8, 2019  MAJOR UPDATE THAT TURNS THIS INTO A 2 CHANNEL MODULE THAT MATCHES THE FUSE GROUPING.
 --                                                              (EACH FUSE GROUP HAS 2 CHANNELS)
 
--- Description: THIS MOUDULE IS THE MAIN CONTROL SEQUENCER FOR A PAIR OF CHANNELS
+-- Description: THIS MODULE IS THE MAIN CONTROL SEQUENCER FOR A PAIR OF CHANNELS
 
 --              
 --                              THE SEQUENCER WAITS FOR STDBY_OFFB_B=1 BEFORE PROCEEDING:
@@ -29,11 +29,11 @@
 --                                                      * REG_CH_CMD_EN SET ALL DESIRED CHANNELS
 --                                                      * INITIATE A GLOBAL TRIGGER EVENT.  
 
---                                      THE SEQUENCER THEN SEQUENTIALLY ENABLES EACH CHANNEL FROM FROM LSB TO MSB ORDER.  
---                                      EACH CHANNEL ENABLE REQUIRES 3 DELAY STEPS THAT ARE EACH 2^^32 X 200 NS = 6.5536 MSEC (19.66MSEC)
+--                                      The sequencer then sequentially enables each channel from from LSB to MSB order.  
+--                                      Each channel enable requires 3 delay steps that are each 2^15 x 200 ns = 6.5536 msec (19.66msec)
 
 -- Targeted device: <Family::ProASIC3> <Die::A3PN125> <Package::100 VQFP>
--- Author: TOM O'BANNON
+-- Authors: TOM O'BANNON, MANUEL FRANCO SEVILLA, PHOEBE HAMILTON
 --
 --------------------------------------------------------------------------------
 
@@ -315,12 +315,12 @@ begin
           N_CH_VOSG_EN(0) <= not(REG_CH_CMD_EN(0) and DTYCYC_EN);  -- TURN OFF THE MASTER CH VOS_GEN OP AMP (IF ENABLED) TO TURN ON THE OUTPUT VOLTAGE .... 
           N_CH_VOSG_EN(1) <= '1';  -- ... BUT KEEP SLAVE CH VOS_GEN OP AMP ENABLED.
         else                            -- 2 SEPARATE MASTER CHANNELS HERE
-          N_CH_VOSG_EN(0) <= '0';  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
-          N_CH_VOSG_EN(1) <= '0';  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
-          N_CH_IAUX_EN(0) <= REG_CH_CMD_EN(0) and DTYCYC_EN;  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
-          N_CH_IAUX_EN(1) <= REG_CH_CMD_EN(1) and DTYCYC_EN;  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
           N_CH_MREG_EN(0) <= REG_CH_CMD_EN(0) and DTYCYC_EN;  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
           N_CH_MREG_EN(1) <= REG_CH_CMD_EN(1) and DTYCYC_EN;  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
+          N_CH_IAUX_EN(0) <= REG_CH_CMD_EN(0) and DTYCYC_EN;  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
+          N_CH_IAUX_EN(1) <= REG_CH_CMD_EN(1) and DTYCYC_EN;  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
+          N_CH_VOSG_EN(0) <= '0';  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
+          N_CH_VOSG_EN(1) <= '0';  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
         end if;
 
         N_SEQ_STEPVAL <= "0101";        -- SEND PRESENT SEQUENCE STEP

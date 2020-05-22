@@ -176,7 +176,7 @@ begin
   end process Divide_Frequency;
   
 
-  sca_data_reg <= x"52345678" when (sca_reset_out = '0') else
+  sca_data_reg <= x"12345678" when (sca_reset_out = '0') else
                 sca_data_reg(30 downto 0) & sca_data_reg(31) when falling_edge(sca_clk_out) else
                 sca_data_reg;
 
@@ -191,7 +191,7 @@ begin
   SCA_CLK_mask <= '0', '1' after 32.5 us, '0' after 135 us, '1' after 141 us, '0' after 243.5 us, '1' after 251 us, '0' after 352 us, '1' after 4001 us, '0' after 4102.5 us, '1' after 4201 us, '0' after 4302.5 us;
   SCA_CLK_OUT   <= sca_clk_mask and clk312khz;
   SCA_RESET_OUT <= '1', '0' after 10 us, '1' after 20 us;
-  SCA_DAT_OUT   <= sca_data_reg(31) when sca_dat_out_mask = '1' else sca_data_reg(31);
+  SCA_DAT_OUT   <= sca_data_reg(31) when sca_dat_out_mask = '1' else sca_data_reg2(31);
   SCA_DAT_OUT_mask   <= '1', '0' after 4000 us, '1' after 4200 us;
 
   

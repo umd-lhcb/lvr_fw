@@ -39,13 +39,13 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <data>NA</data>
 </row>
 <row>
-<data>spi_slave|I_SPI_RX_STRB_inferred_clock</data>
+<data>spi_slave|i_spi_rx_strb_inferred_clock</data>
 <data>50.0 MHz</data>
 <data>NA</data>
 <data>NA</data>
 </row>
 <row>
-<data>spi_slave|SPI_CLR_inferred_clock</data>
+<data>spi_slave|spi_clr_inferred_clock</data>
 <data>50.0 MHz</data>
 <data>NA</data>
 <data>NA</data>

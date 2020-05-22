@@ -1,4 +1,2 @@
-@E: CD213 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":400:2:400:12|Undefined identifier
-@E: CD213 :"Z:\windows\lvr_fw\lvr_fw_sep2\hdl\top_lvr_fw.vhd":425:2:425:14|Undefined identifier
-@E: Parse errors encountered - exiting
+@E: CD326 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":380:2:380:13|Port clk5mhz_osc of entity work.spi_slave is unconnected. If a port needs to remain unconnected, use the keyword open.
 

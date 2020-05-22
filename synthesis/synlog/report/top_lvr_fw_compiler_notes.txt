@@ -17,7 +17,7 @@
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":2722:10:2722:12|Synthesizing proasic3.vcc.syn_black_box.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":1782:10:1782:12|Synthesizing proasic3.gnd.syn_black_box.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":407:10:407:15|Synthesizing proasic3.pllint.syn_black_box.
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Trying to extract state machine for register SPI_SM.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Trying to extract state machine for register spi_sm.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":131:4:131:5|Trying to extract state machine for register SEQUENCER_STATE.
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":61:4:61:16|Input CMND_WORD_STB is unused.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|Trying to extract state machine for register THRESH_VAL.

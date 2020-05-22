@@ -19,28 +19,28 @@
 @P:  SCA_CLK_OUT - Estimated Period : NA
 @P:  SCA_CLK_OUT - Requested Period : 1000.000
 @P:  SCA_CLK_OUT - Slack : NA
-@P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Estimated Frequency : NA
-@P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Requested Frequency : 50.0 MHz
-@P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Estimated Period : NA
-@P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Requested Period : 20.000
-@P:  spi_slave|I_SPI_RX_STRB_inferred_clock - Slack : NA
-@P:  spi_slave|SPI_CLR_inferred_clock - Estimated Frequency : NA
-@P:  spi_slave|SPI_CLR_inferred_clock - Requested Frequency : 50.0 MHz
-@P:  spi_slave|SPI_CLR_inferred_clock - Estimated Period : NA
-@P:  spi_slave|SPI_CLR_inferred_clock - Requested Period : 20.000
-@P:  spi_slave|SPI_CLR_inferred_clock - Slack : NA
-@P:  Total Area : 1495.0
+@P:  spi_slave|i_spi_rx_strb_inferred_clock - Estimated Frequency : NA
+@P:  spi_slave|i_spi_rx_strb_inferred_clock - Requested Frequency : 50.0 MHz
+@P:  spi_slave|i_spi_rx_strb_inferred_clock - Estimated Period : NA
+@P:  spi_slave|i_spi_rx_strb_inferred_clock - Requested Period : 20.000
+@P:  spi_slave|i_spi_rx_strb_inferred_clock - Slack : NA
+@P:  spi_slave|spi_clr_inferred_clock - Estimated Frequency : NA
+@P:  spi_slave|spi_clr_inferred_clock - Requested Frequency : 50.0 MHz
+@P:  spi_slave|spi_clr_inferred_clock - Estimated Period : NA
+@P:  spi_slave|spi_clr_inferred_clock - Requested Period : 20.000
+@P:  spi_slave|spi_clr_inferred_clock - Slack : NA
+@P:  Total Area : 1440.0
 @P:  Total Area : 44.0
-@P:  Total Area : 46.0
+@P:  Total Area : 44.0
 @P:  Total Area : 44.0
 @P:  Total Area : 44.0
 @P:  Total Area : 44.0
 @P:  Total Area : 80.0
+@P:  Total Area : 214.0
+@P:  Total Area : 217.0
 @P:  Total Area : 213.0
-@P:  Total Area : 213.0
-@P:  Total Area : 213.0
-@P:  Total Area : 213.0
-@P:  Total Area : 246.0
+@P:  Total Area : 228.0
+@P:  Total Area : 206.0
 @P:  Total Area : 1.0
-@P:  Total Area : 1495.0
-@P:  CPU Time : 0h:00m:03s
+@P:  Total Area : 1440.0
+@P:  CPU Time : 0h:00m:02s

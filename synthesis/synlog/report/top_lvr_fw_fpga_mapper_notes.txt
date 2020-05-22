@@ -1,13 +1,34 @@
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
-@N: MO231 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":478:4:478:5|Found counter in view:work.top_lvr_fw(rtl) instance DTYCYC_CNT[4:0] 
-@N: MO231 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Found counter in view:work.spi_slave(rtl) instance NULLCLK_CNT[4:0] 
+@N: MO231 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":489:4:489:5|Found counter in view:work.top_lvr_fw(rtl) instance DTYCYC_CNT[4:0] 
+@N: MO231 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Found counter in view:work.spi_slave(rtl) instance nullclk_cnt[4:0] 
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[16] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[17] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[18] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[19] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[20] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[21] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[22] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[23] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[24] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[25] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[26] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[27] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[29] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[30] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance rx_32bit_sreg[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance n_rx_32bit_sreg[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance rx_32bit_sreg[30] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance n_rx_32bit_sreg[30] (in view: work.spi_slave(rtl)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance rx_32bit_sreg[29] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance n_rx_32bit_sreg[29] (in view: work.spi_slave(rtl)) of type view:PrimLib.dff(prim) because it does not drive other instances.
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\slow_pulseen_gen.vhd":73:4:73:5|Found counter in view:work.SLOW_PULSE_EN_GEN(rtl) instance CNT_VAL[20:0] 
 @N: MF176 |Default generator successful 
 @N: MF176 |Default generator successful 
 @N: FP130 |Promoting Net CLK_5M_GL_c_c on CLKINT  CLK_5M_GL_keep 
-@N: FP130 |Promoting Net MASTER_RST_B on CLKINT  I_59 
-@N: FP130 |Promoting Net spi_slave_pm.SPI_CLR on CLKINT  spi_slave_pm.SPI_CLR_inferred_clock 
+@N: FP130 |Promoting Net MASTER_RST_B on CLKINT  I_67 
+@N: FP130 |Promoting Net spi_slave_pm.spi_clr on CLKINT  spi_slave_pm.spi_clr_inferred_clock 
 @N: MT615 |Found clock CLK40MHZ_OSC with period 25.00ns 
 @N: MT615 |Found clock SCA_CLK_OUT with period 1000.00ns 
 @N: MT615 |Found clock CLK_5M_GL with period 200.00ns 

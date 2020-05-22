@@ -78,9 +78,9 @@ Optimized macros:
   - Buffers:                2
   - Inverters:              1
   - Tieoff:                 0
-  - Logic combining:        74
+  - Logic combining:        72
 
-    Total macros optimized  77
+    Total macros optimized  75
 Warning: CMP800: Global Output GLA of PLL instance 'GLOB_BUFF/Core' is floating. This will waste
          one global resource.
 
@@ -96,7 +96,7 @@ There were 0 error(s) and 0 warning(s).
 Compile report:
 ===============
 
-    CORE                       Used:   1423  Total:   6144   (23.16%)
+    CORE                       Used:   1367  Total:   6144   (22.25%)
     IO (W/ clocks)             Used:     62  Total:     68   (91.18%)
     GLOBAL (Chip+Quadrant)     Used:      6  Total:     18   (33.33%)
     PLL                        Used:      1  Total:      1   (100.00%)
@@ -120,8 +120,8 @@ Core Information:
 
     Type    | Instances    | Core tiles
     --------|--------------|-----------
-    COMB    | 951          | 951
-    SEQ     | 469          | 472
+    COMB    | 960          | 960
+    SEQ     | 407          | 407
 
 I/O Function:
 
@@ -156,69 +156,69 @@ Net information report:
 The following nets have been assigned to a chip global resource:
     Fanout  Type          Name
     --------------------------
-    318     CLK_NET       Net   : CLK_5M_GL_c_c
+    302     CLK_NET       Net   : CLK_5M_GL_c_c
                           Driver: CLK_5M_GL_keep
                           Source: NETLIST
-    266     SET/RESET_NET Net   : MASTER_RST_B
+    274     SET/RESET_NET Net   : MASTER_RST_B
                           Driver: MASTER_RST_B_RNI5KT3
                           Source: NETLIST
-    110     INT_NET       Net   : spi_slave_pm/SPI_CLR
-                          Driver: spi_slave_pm/SPI_CLR_RNIS247
+    87      INT_NET       Net   : spi_slave_pm/spi_clr
+                          Driver: spi_slave_pm/spi_clr_RNIS8M7
                           Source: NETLIST
-    93      SET/RESET_NET Net   : GB_SPI_RST_B
+    73      CLK_NET       Net   : GLB
                           Driver: GLOB_BUFF/Core
                           Source: ESSENTIAL
-    80      CLK_NET       Net   : GLB
+    45      SET/RESET_NET Net   : GB_SPI_RST_B
                           Driver: GLOB_BUFF/Core
                           Source: ESSENTIAL
 
 High fanout nets in the post compile netlist:
     Fanout  Type          Name
     --------------------------
-    41      CLK_NET       Net   : I_SPI_RX_STRB
-                          Driver: spi_slave_pm/I_SPI_RX_STRB
-    24      INT_NET       Net   : CONTROL56/N_466_0
-                          Driver: CONTROL56/SEQUENCER_STATE_RNI1A75[4]
-    24      INT_NET       Net   : CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
-                          Driver: CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
-    24      INT_NET       Net   : CONTROL34/N_466_0
-                          Driver: CONTROL34/SEQUENCER_STATE_RNIPDU3[4]
-    24      INT_NET       Net   : CONTROL34/SEQUENCER_STATE_RNIPDU3_0[4]
-                          Driver: CONTROL34/SEQUENCER_STATE_RNIPDU3_0[4]
     24      INT_NET       Net   : CONTROL12/N_466_0
                           Driver: CONTROL12/SEQUENCER_STATE_RNIHHL2[4]
     24      INT_NET       Net   : CONTROL12/SEQUENCER_STATE_RNIHHL2_0[4]
                           Driver: CONTROL12/SEQUENCER_STATE_RNIHHL2_0[4]
-    23      INT_NET       Net   : CONTROL78/N_466_0
+    24      INT_NET       Net   : CONTROL78/N_466_0
                           Driver: CONTROL78/SEQUENCER_STATE_RNI96G6[4]
-    23      INT_NET       Net   : CONTROL78/SEQUENCER_STATE_RNI96G6_0[4]
+    24      INT_NET       Net   : CONTROL78/SEQUENCER_STATE_RNI96G6_0[4]
                           Driver: CONTROL78/SEQUENCER_STATE_RNI96G6_0[4]
+    23      INT_NET       Net   : CONTROL56/N_466_0
+                          Driver: CONTROL56/SEQUENCER_STATE_RNI1A75[4]
+    23      INT_NET       Net   : CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
+                          Driver: CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
+    23      INT_NET       Net   : CONTROL34/N_466_0
+                          Driver: CONTROL34/SEQUENCER_STATE_RNIPDU3[4]
+    23      INT_NET       Net   : CONTROL34/SEQUENCER_STATE_RNIPDU3_0[4]
+                          Driver: CONTROL34/SEQUENCER_STATE_RNIPDU3_0[4]
     22      INT_NET       Net   : TX_PROMPT/un9_cnt_val
                           Driver: TX_PROMPT/CNT_VAL_RNI8TCI1[20]
+    21      INT_NET       Net   : spi_slave_pm/spi_sm[0]
+                          Driver: spi_slave_pm/spi_sm[0]
 
 Nets that are candidates for clock assignment and the resulting fanout:
     Fanout  Type          Name
     --------------------------
-    41      CLK_NET       Net   : I_SPI_RX_STRB
-                          Driver: spi_slave_pm/I_SPI_RX_STRB
-    24      INT_NET       Net   : CONTROL56/N_466_0
-                          Driver: CONTROL56/SEQUENCER_STATE_RNI1A75[4]
-    24      INT_NET       Net   : CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
-                          Driver: CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
-    24      INT_NET       Net   : CONTROL34/N_466_0
-                          Driver: CONTROL34/SEQUENCER_STATE_RNIPDU3[4]
-    24      INT_NET       Net   : CONTROL34/SEQUENCER_STATE_RNIPDU3_0[4]
-                          Driver: CONTROL34/SEQUENCER_STATE_RNIPDU3_0[4]
     24      INT_NET       Net   : CONTROL12/N_466_0
                           Driver: CONTROL12/SEQUENCER_STATE_RNIHHL2[4]
     24      INT_NET       Net   : CONTROL12/SEQUENCER_STATE_RNIHHL2_0[4]
                           Driver: CONTROL12/SEQUENCER_STATE_RNIHHL2_0[4]
-    23      INT_NET       Net   : CONTROL78/N_466_0
+    24      INT_NET       Net   : CONTROL78/N_466_0
                           Driver: CONTROL78/SEQUENCER_STATE_RNI96G6[4]
-    23      INT_NET       Net   : CONTROL78/SEQUENCER_STATE_RNI96G6_0[4]
+    24      INT_NET       Net   : CONTROL78/SEQUENCER_STATE_RNI96G6_0[4]
                           Driver: CONTROL78/SEQUENCER_STATE_RNI96G6_0[4]
+    23      INT_NET       Net   : CONTROL56/N_466_0
+                          Driver: CONTROL56/SEQUENCER_STATE_RNI1A75[4]
+    23      INT_NET       Net   : CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
+                          Driver: CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
+    23      INT_NET       Net   : CONTROL34/N_466_0
+                          Driver: CONTROL34/SEQUENCER_STATE_RNIPDU3[4]
+    23      INT_NET       Net   : CONTROL34/SEQUENCER_STATE_RNIPDU3_0[4]
+                          Driver: CONTROL34/SEQUENCER_STATE_RNIPDU3_0[4]
     22      INT_NET       Net   : TX_PROMPT/un9_cnt_val
                           Driver: TX_PROMPT/CNT_VAL_RNI8TCI1[20]
+    21      INT_NET       Net   : spi_slave_pm/spi_sm[0]
+                          Driver: spi_slave_pm/spi_sm[0]
 
 The Compile command succeeded ( 00:00:01 )
 Wrote status report to file: top_lvr_fw_compile_report.txt

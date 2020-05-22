@@ -197,12 +197,12 @@ architecture RTL of top_lvr_fw is
   -- SPI interface with TCM
   component spi_slave is
     port (
-      CLK5M_OSC    : in std_logic;      -- INTERNAL GENERATED 5 MHZ CLOCK 
+      CLK5MHZ_OSC    : in std_logic;      -- INTERNAL GENERATED 5 MHZ CLOCK 
       MASTER_RST_B : in std_logic;      -- INTERNAL ACTIVE LOW RESET
 
-      SCA_CLK_OUT : in  std_logic;  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
-      SCA_DAT_OUT : in  std_logic;  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
-      SCA_DAT_IN  : out std_logic;  -- SERIAL DATA OUTPUT FROM THE FPGA TO THE SCA MASTER
+      SPI_CLK   : in  std_logic;  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
+      SPI_MOSI  : in  std_logic;  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
+      SPI_MISO  : out std_logic;  -- SERIAL DATA OUTPUT FROM THE FPGA TO THE SCA MASTER
 
       SPI_TX_WORD : in  std_logic_vector(31 downto 0);  -- 32 BIT SERIAL WORD TO BE TRANSMITTED
       SPI_RX_WORD : out std_logic_vector(31 downto 0);  -- RECEIVED SERIAL FRAME
@@ -330,7 +330,8 @@ architecture RTL of top_lvr_fw is
   signal FILTD_TEMP_OK                                          : std_logic;  -- FILTERED VERSION OF THE TEMP_OK STATUS
   signal UVL_OK_CH1A2, UVL_OK_CH3A4, UVL_OK_CH5A6, UVL_OK_CH7A8 : std_logic;  -- UVL FOR THE 4 CHANNEL PAIRS 
 
-  signal active_channels                : std_logic_vector(7 downto 0); ---Active LVR channels
+  signal active_channels, standby_channels     : std_logic_vector(7 downto 0); ---Active LVR channels
+  signal active_slave_constraint, standby_slave_constraint : std_logic_vector(7 downto 0); --Constraints on slave channels
 
   -- SPI variables
   signal SPI_TX_WORD                : std_logic_vector(31 downto 0) := x"dcb02019";  -- 32 BIT SERIAL WORD TO BE TRANSMITTED
@@ -379,12 +380,12 @@ begin
   -- SPI
   spi_slave_pm : spi_slave
     port map (
-      CLK5M_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
+      CLK5MHZ_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
       MASTER_RST_B => GB_SPI_RST_B,     -- INTERNAL ACTIVE LOW RESET
 
-      SCA_CLK_OUT => SCA_CLK_OUT_buf,  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
-      SCA_DAT_OUT => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
-      SCA_DAT_IN  => SCA_DAT_IN,  -- SERIAL DATA OUTPUT FROM THE FPGA TO THE SCA MASTER
+      SPI_CLK   => SCA_CLK_OUT_buf,  -- CLOCK INPUT TO THE FPGA FROM THE SPI MASTER USED FOR BOTH TX AND RX
+      SPI_MOSI  => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SPI MASTER
+      SPI_MISO  => SCA_DAT_IN,  -- SERIAL DATA OUTPUT FROM THE FPGA TO THE SPI MASTER
 
       SPI_TX_WORD => SPI_TX_WORD,       -- 32 BIT SERIAL WORD TO BE TRANSMITTED
       SPI_RX_WORD => SPI_RX_WORD,       -- RECEIVED SERIAL FRAME
@@ -398,19 +399,29 @@ begin
   db_spi_cnt0 <= clk_fcnt_out(0);
   db_spi_cnt1 <= clk_fcnt_out(1);
   --db_spi_cnt2 <= clk_fcnt_out(2);
-  --spi_tx_word <= x"1234" & active_channels & x"00";
-  spi_tx_word <= x"dcb02019" when GB_SPI_RST_B = '0' else
-                 spi_rx_word when falling_edge(spi_rx_strb) else
-                 spi_tx_word;
+  spi_tx_word <= x"1234" & active_channels & standby_channels;
+  --spi_tx_word <= x"dcb02019" when GB_SPI_RST_B = '0' else
+  --               spi_rx_word when falling_edge(spi_rx_strb) else
+  --               spi_tx_word;
 
--- Setting register to control active channels when the received is a write
--- (28th bit equal to 1)
+-- Forcing the slave channels to have the same active/standby status as the master
+  active_slave_constraint(1 downto 0)  <= (CH1_2_MS_CFG_EN and spi_rx_word(8)) & '0';
+  active_slave_constraint(3 downto 2)  <= (CH3_4_MS_CFG_EN and spi_rx_word(10)) & '0';
+  active_slave_constraint(5 downto 4)  <= (CH5_6_MS_CFG_EN and spi_rx_word(12)) & '0';
+  active_slave_constraint(7 downto 6)  <= (CH7_8_MS_CFG_EN and spi_rx_word(14)) & '0';
+  standby_slave_constraint(1 downto 0) <= (CH1_2_MS_CFG_EN and spi_rx_word(0)) & '0';
+  standby_slave_constraint(3 downto 2) <= (CH3_4_MS_CFG_EN and spi_rx_word(2)) & '0';
+  standby_slave_constraint(5 downto 4) <= (CH5_6_MS_CFG_EN and spi_rx_word(4)) & '0';
+  standby_slave_constraint(7 downto 6) <= (CH7_8_MS_CFG_EN and spi_rx_word(6)) & '0';
+-- Setting register to control active channels when the received is a write (28th bit equal to 1)
   SET_ACTIVE_CHANNELS : process(SPI_RX_STRB, master_rst_b)
   begin
     if master_rst_b = '0' then
       active_channels <= x"00";
+      standby_channels <= x"00";
     elsif falling_edge(SPI_RX_STRB) and spi_rx_word(28) = '1' then
-      active_channels(7 downto 0) <= spi_rx_word(15 downto 8);
+      active_channels(7 downto 0) <= spi_rx_word(15 downto 8) or active_slave_constraint;
+      standby_channels(7 downto 0) <= spi_rx_word(7 downto 0) or standby_slave_constraint;
     end if;
   end process set_active_channels;
 
@@ -609,13 +620,13 @@ begin
   begin
 
     if VAL_MAN_EN_CH_8TO5 = '1' then
-      N_REGISTER_CH_CMD_CH(7 downto 4) <= "1111" and active_channels(7 downto 4);
+      N_REGISTER_CH_CMD_CH(7 downto 4) <= active_channels(7 downto 4);
     else
       N_REGISTER_CH_CMD_CH(7 downto 4) <= "0000";
     end if;
 
     if VAL_MAN_EN_CH_4TO1 = '1' then
-      N_REGISTER_CH_CMD_CH(3 downto 0) <= "1111" and active_channels(3 downto 0);
+      N_REGISTER_CH_CMD_CH(3 downto 0) <= active_channels(3 downto 0);
     else
       N_REGISTER_CH_CMD_CH(3 downto 0) <= "0000";
     end if;

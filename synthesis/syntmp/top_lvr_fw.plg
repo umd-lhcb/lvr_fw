@@ -1,9 +1,9 @@
-@P:  Worst Slack : -1.423
-@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Frequency : 43.8 MHz
+@P:  Worst Slack : -1.519
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Frequency : 43.4 MHz
 @P:  CCC_Glob_3xBuff|GLB_inferred_clock - Requested Frequency : 50.0 MHz
-@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Period : 22.846
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Period : 23.037
 @P:  CCC_Glob_3xBuff|GLB_inferred_clock - Requested Period : 20.000
-@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Slack : -1.423
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Slack : -1.519
 @P:  CLK40MHZ_OSC - Estimated Frequency : 238.1 MHz
 @P:  CLK40MHZ_OSC - Requested Frequency : 40.0 MHz
 @P:  CLK40MHZ_OSC - Estimated Period : 4.200
@@ -19,28 +19,28 @@
 @P:  SCA_CLK_OUT - Estimated Period : NA
 @P:  SCA_CLK_OUT - Requested Period : 1000.000
 @P:  SCA_CLK_OUT - Slack : NA
-@P:  spi_slave|i_spi_rx_strb_inferred_clock - Estimated Frequency : NA
+@P:  spi_slave|i_spi_rx_strb_inferred_clock - Estimated Frequency : 149.6 MHz
 @P:  spi_slave|i_spi_rx_strb_inferred_clock - Requested Frequency : 50.0 MHz
-@P:  spi_slave|i_spi_rx_strb_inferred_clock - Estimated Period : NA
+@P:  spi_slave|i_spi_rx_strb_inferred_clock - Estimated Period : 6.684
 @P:  spi_slave|i_spi_rx_strb_inferred_clock - Requested Period : 20.000
-@P:  spi_slave|i_spi_rx_strb_inferred_clock - Slack : NA
+@P:  spi_slave|i_spi_rx_strb_inferred_clock - Slack : 13.316
 @P:  spi_slave|spi_clr_inferred_clock - Estimated Frequency : NA
 @P:  spi_slave|spi_clr_inferred_clock - Requested Frequency : 50.0 MHz
 @P:  spi_slave|spi_clr_inferred_clock - Estimated Period : NA
 @P:  spi_slave|spi_clr_inferred_clock - Requested Period : 20.000
 @P:  spi_slave|spi_clr_inferred_clock - Slack : NA
-@P:  Total Area : 1440.0
+@P:  Total Area : 2165.0
 @P:  Total Area : 44.0
-@P:  Total Area : 44.0
+@P:  Total Area : 46.0
 @P:  Total Area : 44.0
 @P:  Total Area : 44.0
 @P:  Total Area : 44.0
 @P:  Total Area : 80.0
-@P:  Total Area : 214.0
-@P:  Total Area : 217.0
-@P:  Total Area : 213.0
-@P:  Total Area : 228.0
-@P:  Total Area : 206.0
+@P:  Total Area : 392.0
+@P:  Total Area : 391.0
+@P:  Total Area : 403.0
+@P:  Total Area : 416.0
+@P:  Total Area : 212.0
 @P:  Total Area : 1.0
-@P:  Total Area : 1440.0
-@P:  CPU Time : 0h:00m:02s
+@P:  Total Area : 2165.0
+@P:  CPU Time : 0h:00m:05s

@@ -5,7 +5,7 @@
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
-Date: Thu May 21 21:49:40 2020
+Date: Fri May 22 18:18:52 2020
 Design Name: top_lvr_fw  Family: ProASIC3  Die: A3PN250  Package: 100 VQFP
 Design State: Post-Layout
 
@@ -15,11 +15,11 @@ The following nets have been routed to a chip global resource:
     ----------------------
     45                Net   : GB_SPI_RST_B
                       Driver: GLOB_BUFF/Core/U_GLC
-    274               Net   : MASTER_RST_B
+    352               Net   : MASTER_RST_B
                       Driver: MASTER_RST_B_RNI5KT3/U_GL
     73                Net   : GLB
                       Driver: GLOB_BUFF/Core/U_GLB
-    302               Net   : CLK_5M_GL_c_c
+    392               Net   : CLK_5M_GL_c_c
                       Driver: CLK_5M_GL_keep/U_GL
     87                Net   : spi_slave_pm/spi_clr
                       Driver: spi_slave_pm/spi_clr_RNIS8M7/U_GL

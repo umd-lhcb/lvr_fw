@@ -221,19 +221,19 @@ architecture RTL of top_lvr_fw is
       MASTER_RST_B : in std_logic;  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
       CLK_5M_GL    : in std_logic;      -- MASTER 5 MHZ CLOCK
 
-      REG_CH_CMD_EN : in std_logic_vector(1 downto 0);  -- REGISTER CHANNEL COMMAND ENABLES (7...0)
-      CMND_WORD_STB : in std_logic;  -- SINGLE CLOCK PULSE STROBE INDICATES AN UPDATED COMMAND WORD
+      CHANNELS_READY : in std_logic_vector(1 downto 0);  -- Channels in a READY state (110 or 111)
+      CHANNELS_ON : in std_logic_vector(1 downto 0);  -- Channels ON (110)
 
-      STDBY_OFFB_B : in std_logic;  -- ENABLES THE V_OS OUTPUT FOR EVERY CHANNEL COMMANDED TO BE ENABLED.
+-- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!  
+      MASTER_SLAVE_PAIR : in std_logic;  -- ADJACENT CHANNELS A AND B IN THE SAME FUSE GROUP
+
+      CMND_WORD_STB : in std_logic;  -- [UNUSED] SINGLE CLOCK PULSE STROBE INDICATES AN UPDATED COMMAND WORD
 
       DTYCYC_EN : in std_logic;  -- '1' ENABLES A LOW DUTY CYCLE MODE TO LIMIT THERMAL LOADS FOR SPECIAL TESTS
       V_IN_OK   : in std_logic;  -- UNDER-VOLTAGE LOCKOUT:  V_IN ABOVE THRESHOLD WHEN ='1'
       TEMP_OK   : in std_logic;  -- '1' MEANS THE TEMPERATURE IS BELOW THE MAX VALUE
 
       SIM_MODE_EN : in integer;  -- '1' IS SPECIAL SIM MODE WITH REDUCED INTERVAL TIMEOUTS
-
--- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!  
-      CHA_B_MS_CFG_EN : in std_logic;  -- ADJACENT CHANNELS A AND B IN THE SAME FUSE GROUP
 
       P_CH_MREG_EN : out std_logic_vector(1 downto 0);  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
       P_CH_IAUX_EN : out std_logic_vector(1 downto 0);  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
@@ -288,8 +288,6 @@ architecture RTL of top_lvr_fw is
   signal CLK_5M_GL, N_CLK_5M_GL : std_logic;  -- GENERATED 5 MHZ CLOCK--MASTER CLOCK!!!!
   signal REFCNT, N_REFCNT       : integer range 0 to 3;  -- COUNTER USED TO GENERATE THE CLK_5M_GL
 
-  signal SIGOUT_VOP_UVL : std_logic;  -- FINAL SIGNAL OUT AFTER FILTER AND HYSTERISIS APPLIED
-
   signal SLOW_PLS_STB                     : std_logic;  -- THIS IS A PULSE THAT IS ONE 5MHZ CLOCK PERIOD WIDE AT 0.25SEC RATE
   signal DC50_TEST_STRB, N_DC50_TEST_STRB : std_logic;  -- THIS IS A 50% DUTY CYCLE 2 HZ SIGNAL VERSION OF SLOW_PLS_STB
 
@@ -320,7 +318,7 @@ architecture RTL of top_lvr_fw is
   signal N_VAL_STDBY_OFFB, VAL_STDBY_OFFB : std_logic;
 
 
-  signal N_REGISTER_CH_CMD_CH, REGISTER_CH_CMD_CH : std_logic_vector(7 downto 0);  -- REGISTER COMMAND FOR CHANNEL ENABLES
+  signal N_REGISTER_CH_CMD_CH, REGISTER_CH_CMD_CH : std_logic_vector(7 downto 0) := (others => '0');  -- REGISTER COMMAND FOR CHANNEL ENABLES
 
   signal SEQ_12STEPVAL : std_logic_vector(3 downto 0);  -- USED FOR DEBUG OF THE MAINSEQUENCER STATE MACHINE
   signal SEQ_34STEPVAL : std_logic_vector(3 downto 0);  -- USED FOR DEBUG OF THE MAINSEQUENCER STATE MACHINE
@@ -330,8 +328,10 @@ architecture RTL of top_lvr_fw is
   signal FILTD_TEMP_OK                                          : std_logic;  -- FILTERED VERSION OF THE TEMP_OK STATUS
   signal UVL_OK_CH1A2, UVL_OK_CH3A4, UVL_OK_CH5A6, UVL_OK_CH7A8 : std_logic;  -- UVL FOR THE 4 CHANNEL PAIRS 
 
-  signal active_channels, standby_channels     : std_logic_vector(7 downto 0); ---Active LVR channels
-  signal active_slave_constraint, standby_slave_constraint : std_logic_vector(7 downto 0); --Constraints on slave channels
+  signal channels_ready, channels_on     : std_logic_vector(8 downto 1) := (others => '0'); ---Active LVR channels
+  signal channels_to_be_ready, channels_to_be_on     : std_logic_vector(8 downto 1) := (others => '0'); --To be active LVR channels
+  signal active_switch_constraint : std_logic_vector(8 downto 1) := (others => '0'); --Constraints coming from external switch
+  signal channel_is_slave : std_logic_vector(8 downto 1) := (others => '0'); --Which channels are slaves (1,3,5,7 always master, so '0')
 
   -- SPI variables
   signal SPI_TX_WORD                : std_logic_vector(31 downto 0) := x"dcb02019";  -- 32 BIT SERIAL WORD TO BE TRANSMITTED
@@ -399,31 +399,39 @@ begin
   db_spi_cnt0 <= clk_fcnt_out(0);
   db_spi_cnt1 <= clk_fcnt_out(1);
   --db_spi_cnt2 <= clk_fcnt_out(2);
-  spi_tx_word <= x"1234" & active_channels & standby_channels;
+  spi_tx_word <= x"1234" & channels_ready & channels_on;
   --spi_tx_word <= x"dcb02019" when GB_SPI_RST_B = '0' else
   --               spi_rx_word when falling_edge(spi_rx_strb) else
   --               spi_tx_word;
 
--- Forcing the slave channels to have the same active/standby status as the master
-  active_slave_constraint(1 downto 0)  <= (CH1_2_MS_CFG_EN and spi_rx_word(8)) & '0';
-  active_slave_constraint(3 downto 2)  <= (CH3_4_MS_CFG_EN and spi_rx_word(10)) & '0';
-  active_slave_constraint(5 downto 4)  <= (CH5_6_MS_CFG_EN and spi_rx_word(12)) & '0';
-  active_slave_constraint(7 downto 6)  <= (CH7_8_MS_CFG_EN and spi_rx_word(14)) & '0';
-  standby_slave_constraint(1 downto 0) <= (CH1_2_MS_CFG_EN and spi_rx_word(0)) & '0';
-  standby_slave_constraint(3 downto 2) <= (CH3_4_MS_CFG_EN and spi_rx_word(2)) & '0';
-  standby_slave_constraint(5 downto 4) <= (CH5_6_MS_CFG_EN and spi_rx_word(4)) & '0';
-  standby_slave_constraint(7 downto 6) <= (CH7_8_MS_CFG_EN and spi_rx_word(6)) & '0';
+-- Constraint on groups of 4 channels turned off by switch
+  active_switch_constraint(4 downto 1) <= (others => VAL_MAN_EN_CH_4TO1);
+  active_switch_constraint(8 downto 5) <= (others => VAL_MAN_EN_CH_8TO5);
+-- Forcing the slave channels to have the same STANDBY/ON status as the master
+  channel_is_slave <= CH7_8_MS_CFG_EN & '0' & CH5_6_MS_CFG_EN & '0' & CH3_4_MS_CFG_EN & '0' & CH1_2_MS_CFG_EN & '0';
+  GEN_SLAVE_CONSTRAINTS : for index in 1 to 4 generate
+  begin
+    -- Indices for spi_rx_word go from 0 to 15, while the others go from 1 to 8
+    -- Slaves are assigned same value as their masters (index_slave - 1)
+    channels_to_be_ready(index*2-1) <= spi_rx_word(index*2+6) and active_switch_constraint(index*2-1);
+    channels_to_be_ready(index*2) <= spi_rx_word(index*2+7) and active_switch_constraint(index*2) when channel_is_slave(index*2) = '0' else
+                                     spi_rx_word(index*2+6) and active_switch_constraint(index*2-1);
+    channels_to_be_on(index*2-1) <= spi_rx_word(index*2-2) and channels_to_be_ready(index*2-1);
+    channels_to_be_on(index*2) <= spi_rx_word(index*2-1) and channels_to_be_ready(index*2) when channel_is_slave(index*2) = '0' else
+                                  spi_rx_word(index*2-2) and channels_to_be_ready(index*2-1);
+  end generate GEN_SLAVE_CONSTRAINTS;
+  
 -- Setting register to control active channels when the received is a write (28th bit equal to 1)
-  SET_ACTIVE_CHANNELS : process(SPI_RX_STRB, master_rst_b)
+  SET_CHANNELS_READY : process(SPI_RX_STRB, master_rst_b)
   begin
     if master_rst_b = '0' then
-      active_channels <= x"00";
-      standby_channels <= x"00";
+      channels_ready <= active_switch_constraint;
+      channels_on <= active_switch_constraint;
     elsif falling_edge(SPI_RX_STRB) and spi_rx_word(28) = '1' then
-      active_channels(7 downto 0) <= spi_rx_word(15 downto 8) or active_slave_constraint;
-      standby_channels(7 downto 0) <= spi_rx_word(7 downto 0) or standby_slave_constraint;
+      channels_ready <= channels_to_be_ready;
+      channels_on <= channels_to_be_on;
     end if;
-  end process set_active_channels;
+  end process set_channels_ready;
 
 
   -- DEBUG SPI signals
@@ -613,28 +621,6 @@ begin
   end process DEBOUNCE;
 
 
--- MUX IN THE MANUAL VERSUS 
--- SERIAL CONTROL VERSUS
--- LOW DUTY CYCLE SPECIAL TEST OPERATION SIGNALS
-  CTRLMUX : process(VAL_MAN_EN_CH_8TO5, VAL_MAN_EN_CH_4TO1, active_channels)
-  begin
-
-    if VAL_MAN_EN_CH_8TO5 = '1' then
-      N_REGISTER_CH_CMD_CH(7 downto 4) <= active_channels(7 downto 4);
-    else
-      N_REGISTER_CH_CMD_CH(7 downto 4) <= "0000";
-    end if;
-
-    if VAL_MAN_EN_CH_4TO1 = '1' then
-      N_REGISTER_CH_CMD_CH(3 downto 0) <= active_channels(3 downto 0);
-    else
-      N_REGISTER_CH_CMD_CH(3 downto 0) <= "0000";
-    end if;
-
-    SIGOUT_VOP_UVL <= '0';              -- TEMP--NOT USING THIS YET!
-
-  end process CTRLMUX;
-
 -- LOW DUTY CYCLE COUNTER FOR SPECIAL TESTS: GENERATES DTYCYC_EN
   LDCCNT : process(MODE_DCYC_NORMB, DTYCYC_CNT, SLOW_PLS_STB, DTYCYC_EN)
   begin
@@ -680,19 +666,19 @@ begin
       MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
       CLK_5M_GL    => CLK_5M_GL,        -- MASTER 5 MHZ CLOCK
 
-      REG_CH_CMD_EN => REGISTER_CH_CMD_CH(1 downto 0),  -- REGISTER CHANNEL COMMAND ENABLES (7...0)
-      CMND_WORD_STB => SLOW_PLS_STB,  -- SINGLE CLOCK PULSE STROBE INDICATES CHECK FOR AN UPDATED EN COMMAND WORD
+      CHANNELS_READY => channels_ready(2 downto 1),  -- Channels in a READY state (110 or 111)
+      CHANNELS_ON => channels_on(2 downto 1),  -- Channels ON (110)
 
-      STDBY_OFFB_B => STDBY_OFFB_B,  -- ENABLES THE V_OS OUTPUT FOR EVERY CHANNEL COMMANDED TO BE ENABLED.
+-- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
+      MASTER_SLAVE_PAIR => channel_is_slave(2),  -- pin 21, BIT 0:    CH1_2_MS_CFG_EN = CHANNELS 1 & 2
+
+      CMND_WORD_STB => SLOW_PLS_STB,  -- [UNUSED] SINGLE CLOCK PULSE STROBE INDICATES CHECK FOR AN UPDATED EN COMMAND WORD
 
       DTYCYC_EN => DTYCYC_EN,  -- '1' ENABLES A LOW DUTY CYCLE MODE TO LIMIT THERMAL LOADS FOR SPECIAL TESTS
       V_IN_OK   => UVL_OK_CH1A2,  -- UNDER-VOLTAGE LOCKOUT:  V_IN ABOVE THRESHOLD WHEN ='1'
       TEMP_OK   => FILTD_TEMP_OK,  -- '1'= TEMPERATURE IS BELOW MAX ALLOWED
 
       SIM_MODE_EN => SIM_MODE_EN,  -- '1' IS SPECIAL SIM MODE WITH REDUCED TIMEOUTS.....
-
--- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
-      CHA_B_MS_CFG_EN => CH1_2_MS_CFG_EN,  -- pin 21, BIT 0:    CH1_2_MS_CFG_EN = CHANNELS 1 & 2
 
       P_CH_MREG_EN => CH_MREG_EN(1 downto 0),  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
       P_CH_IAUX_EN => CH_IAUX_EN(1 downto 0),  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
@@ -709,19 +695,19 @@ begin
       MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
       CLK_5M_GL    => CLK_5M_GL,        -- MASTER 5 MHZ CLOCK
 
-      REG_CH_CMD_EN => REGISTER_CH_CMD_CH(3 downto 2),  -- REGISTER CHANNEL COMMAND ENABLES (7...0)
-      CMND_WORD_STB => SLOW_PLS_STB,  -- SINGLE CLOCK PULSE STROBE INDICATES CHECK FOR AN UPDATED EN COMMAND WORD
+      CHANNELS_READY => channels_ready(4 downto 3),  -- Channels in a READY state (110 or 111)
+      CHANNELS_ON => channels_on(4 downto 3),  -- Channels ON (110)
 
-      STDBY_OFFB_B => STDBY_OFFB_B,  -- ENABLES THE V_OS OUTPUT FOR EVERY CHANNEL COMMANDED TO BE ENABLED.
+-- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
+      MASTER_SLAVE_PAIR => channel_is_slave(4),  -- pin 20, BIT 1:    CH3_4_MS_CFG_EN = CHANNELS 3 & 4
+
+      CMND_WORD_STB => SLOW_PLS_STB,  -- [UNUSED] SINGLE CLOCK PULSE STROBE INDICATES CHECK FOR AN UPDATED EN COMMAND WORD
 
       DTYCYC_EN => DTYCYC_EN,  -- '1' ENABLES A LOW DUTY CYCLE MODE TO LIMIT THERMAL LOADS FOR SPECIAL TESTS
       V_IN_OK   => UVL_OK_CH3A4,  -- UNDER-VOLTAGE LOCKOUT:  V_IN ABOVE THRESHOLD WHEN ='1'
       TEMP_OK   => FILTD_TEMP_OK,  -- '1'= TEMPERATURE IS BELOW MAX ALLOWED
 
       SIM_MODE_EN => SIM_MODE_EN,  -- '1' IS SPECIAL SIM MODE WITH REDUCED TIMEOUTS.....
-
--- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
-      CHA_B_MS_CFG_EN => CH3_4_MS_CFG_EN,  -- pin 20, BIT 1:    CH3_4_MS_CFG_EN = CHANNELS 3 & 4
 
       P_CH_MREG_EN => CH_MREG_EN(3 downto 2),  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
       P_CH_IAUX_EN => CH_IAUX_EN(3 downto 2),  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
@@ -737,20 +723,19 @@ begin
       MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
       CLK_5M_GL    => CLK_5M_GL,        -- MASTER 5 MHZ CLOCK
 
-      REG_CH_CMD_EN => REGISTER_CH_CMD_CH(5 downto 4),  -- REGISTER CHANNEL COMMAND ENABLES (7...0)
-      CMND_WORD_STB => SLOW_PLS_STB,  -- SINGLE CLOCK PULSE STROBE INDICATES CHECK FOR AN UPDATED EN COMMAND WORD
+      CHANNELS_READY => channels_ready(6 downto 5),  -- Channels in a READY state (110 or 111)
+      CHANNELS_ON => channels_on(6 downto 5),  -- Channels ON (110)
 
-      STDBY_OFFB_B => STDBY_OFFB_B,  -- ENABLES THE V_OS OUTPUT FOR EVERY CHANNEL COMMANDED TO BE ENABLED.
+-- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
+      MASTER_SLAVE_PAIR => channel_is_slave(6),  -- pin 19, BIT 2:    CH5_6_MS_CFG_EN = CHANNELS 5 & 6
+
+      CMND_WORD_STB => SLOW_PLS_STB,  -- [UNUSED] SINGLE CLOCK PULSE STROBE INDICATES CHECK FOR AN UPDATED EN COMMAND WORD
 
       DTYCYC_EN => DTYCYC_EN,  -- '1' ENABLES A LOW DUTY CYCLE MODE TO LIMIT THERMAL LOADS FOR SPECIAL TESTS
       V_IN_OK   => UVL_OK_CH5A6,  -- UNDER-VOLTAGE LOCKOUT:  V_IN ABOVE THRESHOLD WHEN ='1'
       TEMP_OK   => FILTD_TEMP_OK,  -- '1'= TEMPERATURE IS BELOW MAX ALLOWED
 
       SIM_MODE_EN => SIM_MODE_EN,  -- '1' IS SPECIAL SIM MODE WITH REDUCED TIMEOUTS.....
-
--- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
-      CHA_B_MS_CFG_EN => CH5_6_MS_CFG_EN,  -- pin 19, BIT 2:    CH5_6_MS_CFG_EN = CHANNELS 5 & 6
-
 
       P_CH_MREG_EN => CH_MREG_EN(5 downto 4),  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
       P_CH_IAUX_EN => CH_IAUX_EN(5 downto 4),  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
@@ -766,19 +751,19 @@ begin
       MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
       CLK_5M_GL    => CLK_5M_GL,        -- MASTER 5 MHZ CLOCK
 
-      REG_CH_CMD_EN => REGISTER_CH_CMD_CH(7 downto 6),  -- REGISTER CHANNEL COMMAND ENABLES (7...0)
-      CMND_WORD_STB => SLOW_PLS_STB,  -- SINGLE CLOCK PULSE STROBE INDICATES CHECK FOR AN UPDATED EN COMMAND WORD
+      CHANNELS_READY => channels_ready(8 downto 7),  -- Channels in a READY state (110 or 111)
+      CHANNELS_ON => channels_on(8 downto 7),  -- Channels ON (110)
 
-      STDBY_OFFB_B => STDBY_OFFB_B,  -- ENABLES THE V_OS OUTPUT FOR EVERY CHANNEL COMMANDED TO BE ENABLED.
+  -- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
+      MASTER_SLAVE_PAIR => channel_is_slave(8),  -- pin 16, BIT 3:    CH7_8_MS_CFG_EN = CHANNELS 7 & 8
+
+      CMND_WORD_STB => SLOW_PLS_STB,  -- [UNUSED] SINGLE CLOCK PULSE STROBE INDICATES CHECK FOR AN UPDATED EN COMMAND WORD
 
       DTYCYC_EN => DTYCYC_EN,  -- '1' ENABLES A LOW DUTY CYCLE MODE TO LIMIT THERMAL LOADS FOR SPECIAL TESTS
       V_IN_OK   => UVL_OK_CH7A8,  -- UNDER-VOLTAGE LOCKOUT:  V_IN ABOVE THRESHOLD WHEN ='1'
       TEMP_OK   => FILTD_TEMP_OK,  -- '1'= TEMPERATURE IS BELOW MAX ALLOWED
 
       SIM_MODE_EN => SIM_MODE_EN,  -- '1' IS SPECIAL SIM MODE WITH REDUCED TIMEOUTS.....
-
--- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
-      CHA_B_MS_CFG_EN => CH7_8_MS_CFG_EN,  -- pin 16, BIT 3:    CH7_8_MS_CFG_EN = CHANNELS 7 & 8
 
       P_CH_MREG_EN => CH_MREG_EN(7 downto 6),  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
       P_CH_IAUX_EN => CH_IAUX_EN(7 downto 6),  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH

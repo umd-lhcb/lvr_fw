@@ -1,13 +1,13 @@
 ***************************************************************************
                                Status Report
-                          Thu May 21 21:49:00 2020 ***************************************************************************
+                          Fri May 22 18:17:57 2020 ***************************************************************************
 
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
 File Name: Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw.adb
 Design Name: top_lvr_fw  Design State: compile
-Last Saved: Wed Apr 29 18:00:49 2020
+Last Saved: Thu May 21 21:49:42 2020
 
 ***** Device Data **************************************************
 
@@ -22,7 +22,7 @@ Voltage Range:   COM
 
 ***** Import Variables *********************************************
 
-Source File(s) Imported on Thu May 21 21:48:56 2020:
+Source File(s) Imported on Fri May 22 18:17:53 2020:
         Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw.edn
 
 
@@ -84,6 +84,7 @@ Warning: CMP201: Net GLOB_BUFF/Core_YC drives no load.
 Warning: Top level port MODE_WDT_EN is not connected to any IO pad
 Warning: Top level port MODE_DIAG_NORMB is not connected to any IO pad
 Warning: Top level port TEMP_FAILSAFE_EN is not connected to any IO pad
+Warning: Top level port STDBY_OFFB is not connected to any IO pad
 Warning: Top level port RX_FPGA is not connected to any IO pad
 Warning: Top level port ADDR_SEL<4> is not connected to any IO pad
 Warning: Top level port ADDR_SEL<3> is not connected to any IO pad
@@ -103,13 +104,13 @@ Optimized macros:
   - Buffers:                2
   - Inverters:              1
   - Tieoff:                 0
-  - Logic combining:        72
+  - Logic combining:        135
 
-    Total macros optimized  75
+    Total macros optimized  138
 Warning: CMP800: Global Output GLA of PLL instance 'GLOB_BUFF/Core' is floating. This will waste
          one global resource.
 
-There were 0 error(s) and 18 warning(s) in this design.
+There were 0 error(s) and 19 warning(s) in this design.
 =====================================================================
 
 Reading previous post-compile physical placement constraints.
@@ -121,8 +122,8 @@ There were 0 error(s) and 0 warning(s).
 Compile report:
 ===============
 
-    CORE                       Used:   1367  Total:   6144   (22.25%)
-    IO (W/ clocks)             Used:     62  Total:     68   (91.18%)
+    CORE                       Used:   2077  Total:   6144   (33.81%)
+    IO (W/ clocks)             Used:     61  Total:     68   (89.71%)
     GLOBAL (Chip+Quadrant)     Used:      6  Total:     18   (33.33%)
     PLL                        Used:      1  Total:      1   (100.00%)
     RAM/FIFO                   Used:      0  Total:      8   (0.00%)
@@ -145,14 +146,14 @@ Core Information:
 
     Type    | Instances    | Core tiles
     --------|--------------|-----------
-    COMB    | 960          | 960
-    SEQ     | 407          | 407
+    COMB    | 1532         | 1532
+    SEQ     | 497          | 545
 
 I/O Function:
 
     Type                                  | w/o register  | w/ register  | w/ DDR register
     --------------------------------------|---------------|--------------|----------------
-    Input I/O                             | 18            | 0            | 0
+    Input I/O                             | 17            | 0            | 0
     Output I/O                            | 44            | 0            | 0
     Bidirectional I/O                     | 0             | 0            | 0
     Differential Input I/O Pairs          | 0             | 0            | 0
@@ -165,12 +166,12 @@ I/O Technology:
     I/O Standard(s)                 | Vcci  | Vref  | Input | Output | Bidirectional
     --------------------------------|-------|-------|-------|--------|--------------
     LVCMOS33                        | 3.30v | N/A   | 2     | 30     | 0
-    LVCMOS15                        | 1.50v | N/A   | 16    | 14     | 0
+    LVCMOS15                        | 1.50v | N/A   | 15    | 14     | 0
 
 I/O Placement:
 
-    Locked  :  55 ( 88.71% )
-    Placed  :   7 ( 11.29% )
+    Locked  :  54 ( 88.52% )
+    Placed  :   7 ( 11.48% )
     UnPlaced:   0
 
 Warning: Only some I/Os are locked
@@ -181,10 +182,10 @@ Net information report:
 The following nets have been assigned to a chip global resource:
     Fanout  Type          Name
     --------------------------
-    302     CLK_NET       Net   : CLK_5M_GL_c_c
+    392     CLK_NET       Net   : CLK_5M_GL_c_c
                           Driver: CLK_5M_GL_keep
                           Source: NETLIST
-    274     SET/RESET_NET Net   : MASTER_RST_B
+    352     SET/RESET_NET Net   : MASTER_RST_B
                           Driver: MASTER_RST_B_RNI5KT3
                           Source: NETLIST
     87      INT_NET       Net   : spi_slave_pm/spi_clr
@@ -200,49 +201,49 @@ The following nets have been assigned to a chip global resource:
 High fanout nets in the post compile netlist:
     Fanout  Type          Name
     --------------------------
-    24      INT_NET       Net   : CONTROL12/N_466_0
-                          Driver: CONTROL12/SEQUENCER_STATE_RNIHHL2[4]
-    24      INT_NET       Net   : CONTROL12/SEQUENCER_STATE_RNIHHL2_0[4]
-                          Driver: CONTROL12/SEQUENCER_STATE_RNIHHL2_0[4]
-    24      INT_NET       Net   : CONTROL78/N_466_0
-                          Driver: CONTROL78/SEQUENCER_STATE_RNI96G6[4]
-    24      INT_NET       Net   : CONTROL78/SEQUENCER_STATE_RNI96G6_0[4]
-                          Driver: CONTROL78/SEQUENCER_STATE_RNI96G6_0[4]
-    23      INT_NET       Net   : CONTROL56/N_466_0
-                          Driver: CONTROL56/SEQUENCER_STATE_RNI1A75[4]
-    23      INT_NET       Net   : CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
-                          Driver: CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
-    23      INT_NET       Net   : CONTROL34/N_466_0
-                          Driver: CONTROL34/SEQUENCER_STATE_RNIPDU3[4]
-    23      INT_NET       Net   : CONTROL34/SEQUENCER_STATE_RNIPDU3_0[4]
-                          Driver: CONTROL34/SEQUENCER_STATE_RNIPDU3_0[4]
+    33      INT_NET       Net   : i_spi_rx_strb
+                          Driver: spi_slave_pm/i_spi_rx_strb
+    22      INT_NET       Net   : CONTROL78/N_327_0
+                          Driver: CONTROL78/sequencer_state1_RNIIG0B[0]
+    22      INT_NET       Net   : CONTROL78/N_460_0
+                          Driver: CONTROL78/sequencer_state0_RNIGCT9[0]
+    22      INT_NET       Net   : CONTROL34/N_327_0
+                          Driver: CONTROL34/sequencer_state1_RNI68RG[0]
+    22      INT_NET       Net   : CONTROL34/N_460_0
+                          Driver: CONTROL34/sequencer_state0_RNI44OF[0]
+    22      INT_NET       Net   : CONTROL12/N_327_0
+                          Driver: CONTROL12/sequencer_state1_RNI0KOB[0]
+    22      INT_NET       Net   : CONTROL12/N_460_0
+                          Driver: CONTROL12/sequencer_state0_RNIUFLA[0]
+    22      INT_NET       Net   : CONTROL56/N_327_0
+                          Driver: CONTROL56/sequencer_state1_RNICSTL[0]
+    22      INT_NET       Net   : CONTROL56/N_460_0
+                          Driver: CONTROL56/sequencer_state0_RNIAOQK[0]
     22      INT_NET       Net   : TX_PROMPT/un9_cnt_val
                           Driver: TX_PROMPT/CNT_VAL_RNI8TCI1[20]
-    21      INT_NET       Net   : spi_slave_pm/spi_sm[0]
-                          Driver: spi_slave_pm/spi_sm[0]
 
 Nets that are candidates for clock assignment and the resulting fanout:
     Fanout  Type          Name
     --------------------------
-    24      INT_NET       Net   : CONTROL12/N_466_0
-                          Driver: CONTROL12/SEQUENCER_STATE_RNIHHL2[4]
-    24      INT_NET       Net   : CONTROL12/SEQUENCER_STATE_RNIHHL2_0[4]
-                          Driver: CONTROL12/SEQUENCER_STATE_RNIHHL2_0[4]
-    24      INT_NET       Net   : CONTROL78/N_466_0
-                          Driver: CONTROL78/SEQUENCER_STATE_RNI96G6[4]
-    24      INT_NET       Net   : CONTROL78/SEQUENCER_STATE_RNI96G6_0[4]
-                          Driver: CONTROL78/SEQUENCER_STATE_RNI96G6_0[4]
-    23      INT_NET       Net   : CONTROL56/N_466_0
-                          Driver: CONTROL56/SEQUENCER_STATE_RNI1A75[4]
-    23      INT_NET       Net   : CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
-                          Driver: CONTROL56/SEQUENCER_STATE_RNI1A75_0[4]
-    23      INT_NET       Net   : CONTROL34/N_466_0
-                          Driver: CONTROL34/SEQUENCER_STATE_RNIPDU3[4]
-    23      INT_NET       Net   : CONTROL34/SEQUENCER_STATE_RNIPDU3_0[4]
-                          Driver: CONTROL34/SEQUENCER_STATE_RNIPDU3_0[4]
+    33      INT_NET       Net   : i_spi_rx_strb
+                          Driver: spi_slave_pm/i_spi_rx_strb
+    22      INT_NET       Net   : CONTROL78/N_327_0
+                          Driver: CONTROL78/sequencer_state1_RNIIG0B[0]
+    22      INT_NET       Net   : CONTROL78/N_460_0
+                          Driver: CONTROL78/sequencer_state0_RNIGCT9[0]
+    22      INT_NET       Net   : CONTROL34/N_327_0
+                          Driver: CONTROL34/sequencer_state1_RNI68RG[0]
+    22      INT_NET       Net   : CONTROL34/N_460_0
+                          Driver: CONTROL34/sequencer_state0_RNI44OF[0]
+    22      INT_NET       Net   : CONTROL12/N_327_0
+                          Driver: CONTROL12/sequencer_state1_RNI0KOB[0]
+    22      INT_NET       Net   : CONTROL12/N_460_0
+                          Driver: CONTROL12/sequencer_state0_RNIUFLA[0]
+    22      INT_NET       Net   : CONTROL56/N_327_0
+                          Driver: CONTROL56/sequencer_state1_RNICSTL[0]
+    22      INT_NET       Net   : CONTROL56/N_460_0
+                          Driver: CONTROL56/sequencer_state0_RNIAOQK[0]
     22      INT_NET       Net   : TX_PROMPT/un9_cnt_val
                           Driver: TX_PROMPT/CNT_VAL_RNI8TCI1[20]
-    21      INT_NET       Net   : spi_slave_pm/spi_sm[0]
-                          Driver: spi_slave_pm/spi_sm[0]
 
 

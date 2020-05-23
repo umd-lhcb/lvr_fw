@@ -1,4 +1,4 @@
-# Thu May 21 21:48:45 2020
+# Fri May 22 18:17:33 2020
 
 Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -17,12 +17,12 @@ Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s
 
 Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
 
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":131:4:131:5|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_3(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":131:4:131:5|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_2(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":131:4:131:5|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_1(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":131:4:131:5|Removing sequential instance SEQ_STEPVAL[3:0] (in view: work.MAIN_SEQUENCER_NEW_0(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":122:4:122:5|Removing sequential instance seq_stepval0[3:0] (in view: work.main_sequencer_new_3(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":122:4:122:5|Removing sequential instance seq_stepval0[3:0] (in view: work.main_sequencer_new_2(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":122:4:122:5|Removing sequential instance seq_stepval0[3:0] (in view: work.main_sequencer_new_1(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":122:4:122:5|Removing sequential instance seq_stepval0[3:0] (in view: work.main_sequencer_new_0(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
 
 
 
@@ -34,20 +34,20 @@ Clock                                      Frequency     Period        Type     
 -----------------------------------------------------------------------------------------------------------------
 CCC_Glob_3xBuff|GLB_inferred_clock         50.0 MHz      20.000        inferred     Inferred_clkgroup_1     78   
 CLK40MHZ_OSC                               40.0 MHz      25.000        declared     MainClkGrp              5    
-CLK_5M_GL                                  5.0 MHz       200.000       declared     MainClkGrp              356  
+CLK_5M_GL                                  5.0 MHz       200.000       declared     MainClkGrp              410  
 SCA_CLK_OUT                                1.0 MHz       1000.000      declared     Spi_MClkGrp             0    
 spi_slave|i_spi_rx_strb_inferred_clock     50.0 MHz      20.000        inferred     Inferred_clkgroup_0     16   
 spi_slave|spi_clr_inferred_clock           50.0 MHz      20.000        inferred     Inferred_clkgroup_2     70   
 =================================================================================================================
 
-@W: MT530 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":419:4:419:5|Found inferred clock spi_slave|i_spi_rx_strb_inferred_clock which controls 16 sequential elements including standby_channels[7:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":331:91:331:91|Found inferred clock spi_slave|i_spi_rx_strb_inferred_clock which controls 16 sequential elements including channels_on[8:5]. This clock has no specified timing constraint which may adversely impact design performance. 
 @W: MT530 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Found inferred clock CCC_Glob_3xBuff|GLB_inferred_clock which controls 78 sequential elements including spi_slave_pm.n_clk_fcnt[5:0]. This clock has no specified timing constraint which may adversely impact design performance. 
 @W: MT530 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Found inferred clock spi_slave|spi_clr_inferred_clock which controls 70 sequential elements including spi_slave_pm.n_clk_fcnt[5:0]. This clock has no specified timing constraint which may adversely impact design performance. 
 
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 109MB peak: 110MB)
 
 Encoding state machine spi_sm[0:5] (in view: work.spi_slave(rtl))
 original code -> new code
@@ -57,54 +57,70 @@ original code -> new code
    001000 -> 001000
    010000 -> 010000
    100000 -> 100000
-Encoding state machine SEQUENCER_STATE[0:9] (in view: work.MAIN_SEQUENCER_NEW_3(rtl))
+Encoding state machine sequencer_state1[0:5] (in view: work.main_sequencer_new_3(rtl))
 original code -> new code
-   0000000001 -> 0000000001
-   0000000010 -> 0000000010
-   0000000100 -> 0000000100
-   0000001000 -> 0000001000
-   0000010000 -> 0000010000
-   0000100000 -> 0000100000
-   0001000000 -> 0001000000
-   0010000000 -> 0010000000
-   0100000000 -> 0100000000
-   1000000000 -> 1000000000
-Encoding state machine SEQUENCER_STATE[0:9] (in view: work.MAIN_SEQUENCER_NEW_2(rtl))
+   000001 -> 000001
+   000010 -> 000010
+   000100 -> 000100
+   001000 -> 001000
+   010000 -> 010000
+   100000 -> 100000
+Encoding state machine sequencer_state0[0:5] (in view: work.main_sequencer_new_3(rtl))
 original code -> new code
-   0000000001 -> 0000000001
-   0000000010 -> 0000000010
-   0000000100 -> 0000000100
-   0000001000 -> 0000001000
-   0000010000 -> 0000010000
-   0000100000 -> 0000100000
-   0001000000 -> 0001000000
-   0010000000 -> 0010000000
-   0100000000 -> 0100000000
-   1000000000 -> 1000000000
-Encoding state machine SEQUENCER_STATE[0:9] (in view: work.MAIN_SEQUENCER_NEW_1(rtl))
+   000001 -> 000001
+   000010 -> 000010
+   000100 -> 000100
+   001000 -> 001000
+   010000 -> 010000
+   100000 -> 100000
+Encoding state machine sequencer_state1[0:5] (in view: work.main_sequencer_new_2(rtl))
 original code -> new code
-   0000000001 -> 0000000001
-   0000000010 -> 0000000010
-   0000000100 -> 0000000100
-   0000001000 -> 0000001000
-   0000010000 -> 0000010000
-   0000100000 -> 0000100000
-   0001000000 -> 0001000000
-   0010000000 -> 0010000000
-   0100000000 -> 0100000000
-   1000000000 -> 1000000000
-Encoding state machine SEQUENCER_STATE[0:9] (in view: work.MAIN_SEQUENCER_NEW_0(rtl))
+   000001 -> 000001
+   000010 -> 000010
+   000100 -> 000100
+   001000 -> 001000
+   010000 -> 010000
+   100000 -> 100000
+Encoding state machine sequencer_state0[0:5] (in view: work.main_sequencer_new_2(rtl))
 original code -> new code
-   0000000001 -> 0000000001
-   0000000010 -> 0000000010
-   0000000100 -> 0000000100
-   0000001000 -> 0000001000
-   0000010000 -> 0000010000
-   0000100000 -> 0000100000
-   0001000000 -> 0001000000
-   0010000000 -> 0010000000
-   0100000000 -> 0100000000
-   1000000000 -> 1000000000
+   000001 -> 000001
+   000010 -> 000010
+   000100 -> 000100
+   001000 -> 001000
+   010000 -> 010000
+   100000 -> 100000
+Encoding state machine sequencer_state1[0:5] (in view: work.main_sequencer_new_1(rtl))
+original code -> new code
+   000001 -> 000001
+   000010 -> 000010
+   000100 -> 000100
+   001000 -> 001000
+   010000 -> 010000
+   100000 -> 100000
+Encoding state machine sequencer_state0[0:5] (in view: work.main_sequencer_new_1(rtl))
+original code -> new code
+   000001 -> 000001
+   000010 -> 000010
+   000100 -> 000100
+   001000 -> 001000
+   010000 -> 010000
+   100000 -> 100000
+Encoding state machine sequencer_state1[0:5] (in view: work.main_sequencer_new_0(rtl))
+original code -> new code
+   000001 -> 000001
+   000010 -> 000010
+   000100 -> 000100
+   001000 -> 001000
+   010000 -> 010000
+   100000 -> 100000
+Encoding state machine sequencer_state0[0:5] (in view: work.main_sequencer_new_0(rtl))
+original code -> new code
+   000001 -> 000001
+   000010 -> 000010
+   000100 -> 000100
+   001000 -> 001000
+   010000 -> 010000
+   100000 -> 100000
 Encoding state machine THRESH_VAL[0:2] (in view: work.IIR_FILT_4(rtl))
 original code -> new code
    00 -> 00
@@ -154,13 +170,13 @@ original code -> new code
 None
 None
 
-Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 112MB peak: 113MB)
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 111MB peak: 112MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 26MB peak: 113MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 27MB peak: 112MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Thu May 21 21:48:46 2020
+# Fri May 22 18:17:35 2020
 
 ###########################################################]

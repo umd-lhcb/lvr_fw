@@ -1,379 +1,392 @@
 --------------------------------------------------------------------------------
--- Company: UNIVERSITY OF MARYLAND
+-- Company: University of Maryland
 --
--- File: MAIN_SEQUENCER_NEW.vhd
--- File history:
---      <Rev - // Mar 30, 2017  INITIAL basis for the design that was tested for SEU performance at CERN CHARM
---              <Rev A // Feb 26, 2019  MAJOR UPDATE FOR GEN 3 LVR config
---              <REV B // APR  8, 2019  MAJOR UPDATE THAT TURNS THIS INTO A 2 CHANNEL MODULE THAT MATCHES THE FUSE GROUPING.
---                                                              (EACH FUSE GROUP HAS 2 CHANNELS)
+-- file: main_sequencer_new.vhd
+-- file history:
+--      <rev - // mar 30, 2017  initial basis for the design that was tested for seu performance at cern charm
+--              <rev a // feb 26, 2019  major update for gen 3 lvr config
+--              <rev b // apr  8, 2019  major update that turns this into a 2 channel module that matches the fuse grouping.
+--                                                              (each fuse group has 2 channels)
 
--- Description: THIS MODULE IS THE MAIN CONTROL SEQUENCER FOR A PAIR OF CHANNELS
+-- description: this module is the main control sequencer for a pair of channels
 
 --              
---                              THE SEQUENCER WAITS FOR STDBY_OFFB_B=1 BEFORE PROCEEDING:
---                              IF ABOVE TRUE, THEN THE NEW MASTER CHANNEL ENABLE BYTE IS LATCHED.
+--                              the sequencer waits for stdby_offb_b=1 before proceeding:
+--                              if above true, then the new master channel enable byte is latched.
 -- 
---                              THE REQUIRED TURN SEQUENCE IS AS FOLLOWS.  THE UPDATES ARE INITIATED BY THE CMND_WORD_STB PULSE.  
---                              SET THE STDBY_OFFB_B BIT AND REG_CH_CMD_EN BITS ACCORDING TO THE DESIRED TURN SEQUENCE:
+--                              the required turn sequence is as follows.  the updates are initiated by the cmnd_word_stb pulse.  
+--                              set the stdby_offb_b bit and CHANNELS_READY bits according to the desired turn sequence:
 
---                                      OPTION 1) GROUP TURN ON WHEN:
---                                                      * ARM_MODE= '1' (FORCES WAIT FOR GLOBAL TRIGGER EVENT)
---                                                      * STDBY_OFFB_B BIT = '1' OR '0', DEPENDING UPON DESIRED TIMING OF THE V_OS OUTPUT STEP
---                                                      * SET ALL DESIRED CHANNELS TO BE ENABLED VIA REG_CH_CMD_EN 
---                                                      * INITIATE A GLOBAL TRIGGER EVENT.  
+--                                      option 1) group turn on when:
+--                                                      * arm_mode= '1' (forces wait for global trigger event)
+--                                                      * stdby_offb_b bit = '1' or '0', depending upon desired timing of the v_os output step
+--                                                      * set all desired channels to be enabled via CHANNELS_READY 
+--                                                      * initiate a global trigger event.  
 
---                                      OPTION 2) INDIVIDUAL AND IMMEDIATE CHANNEL TURN ON WHEN:
---                                                      * ARM_MODE= '0' (ENABLES CHANNELS TO BE IMMEDIATELY ENABLED)
---                                                      * STDBY_OFFB_B BIT = '1' OR '0', DEPENDING UPON DESIRED TIMING OF THE V_OS OUTPUT STEP
---                                                      * REG_CH_CMD_EN SET ALL DESIRED CHANNELS
---                                                      * INITIATE A GLOBAL TRIGGER EVENT.  
+--                                      option 2) individual and immediate channel turn on when:
+--                                                      * arm_mode= '0' (enables channels to be immediately enabled)
+--                                                      * stdby_offb_b bit = '1' or '0', depending upon desired timing of the v_os output step
+--                                                      * CHANNELS_READY set all desired channels
+--                                                      * initiate a global trigger event.  
 
---                                      The sequencer then sequentially enables each channel from from LSB to MSB order.  
---                                      Each channel enable requires 3 delay steps that are each 2^15 x 200 ns = 6.5536 msec (19.66msec)
+--                                      the sequencer then sequentially enables each channel from from lsb to msb order.  
+--                                      each channel enable requires 3 delay steps that are each 2^15 x 200 ns = 6.5536 msec (19.66msec)
 
 -- Targeted device: <Family::ProASIC3> <Die::A3PN125> <Package::100 VQFP>
--- Authors: TOM O'BANNON, MANUEL FRANCO SEVILLA, PHOEBE HAMILTON
+-- Authors: Tom O'bannon, Manuel Franco Sevilla, Phoebe Hamilton
 --
 --------------------------------------------------------------------------------
 
-library IEEE;
+library ieee;
 
-use IEEE.std_logic_1164.all;
-use IEEE.STD_LOGIC_ARITH.all;
-use IEEE.STD_LOGIC_UNSIGNED.all;
-use IEEE.STD_LOGIC_MISC.all;
---USE IEEE.NUMERIC_STD.ALL;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_misc.all;
+--use ieee.numeric_std.all;
 
 library proasic3;
 use proasic3.all;
 
--- NOTE:  THE SYNPLIFY LIBRARY NEEDS TO BE COMMENTED OUT FOR MODELSIM PRESYNTH SIMS SINCE MODELSIM DOES NOT RECOGNIZE IT
+-- note:  the synplify library needs to be commented out for modelsim presynth sims since modelsim does not recognize it
 --library synplify;
 --use synplify.attributes.all;
 
-entity MAIN_SEQUENCER_NEW is
+entity main_sequencer_new is
   port (
-    MASTER_RST_B : in std_logic;  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-    CLK_5M_GL    : in std_logic;        -- MASTER 5 MHZ CLOCK
+    MASTER_RST_B : in std_logic;  -- reset with async assert, but synchronized to the 40 mhz clock edge
+    CLK_5M_GL    : in std_logic;        -- master 5 mhz clock
 
-    REG_CH_CMD_EN : in std_logic_vector(1 downto 0);  -- REGISTER CHANNEL COMMAND ENABLES
-    CMND_WORD_STB : in std_logic;  -- SINGLE CLOCK PULSE STROBE INDICATES AN UPDATED COMMAND WORD
+    CHANNELS_READY : in std_logic_vector(1 downto 0);  -- channels in a ready state (110 or 111)
+    CHANNELS_ON    : in std_logic_vector(1 downto 0);  -- channels on (110)
 
-    STDBY_OFFB_B : in std_logic;  -- '1' = FORCED V_OS OUTPUT ENABLED, '0' = NORMAL V_OS TIMING STEP
+-- the master-slave config determines the enable for the v_os op ampl!
+    MASTER_SLAVE_PAIR : in std_logic;  -- pin 21, bit 0:  MASTER_SLAVE_PAIR = adjacent channels a & 
 
-    DTYCYC_EN : in std_logic;  -- '1' ENABLES A LOW DUTY CYCLE MODE TO LIMIT THERMAL LOADS FOR SPECIAL TESTS
-    V_IN_OK   : in std_logic;  -- UNDER-VOLTAGE LOCKOUT:  V_IN ABOVE THRESHOLD WHEN ='1'
-    TEMP_OK   : in std_logic;  -- '1' MEANS THE TEMPERATURE IS BELOW THE MAX VALUE
+    cmnd_word_stb : in std_logic;  -- [unused] single clock pulse strobe indicates an updated command word
 
-    SIM_MODE_EN : in integer;  -- '1' IS SPECIAL SIM MODE WITH REDUCED TIMEOUT INTERVALS
+    DTYCYC_EN : in std_logic;  -- '1' enables a low duty cycle mode to limit thermal loads for special tests
+    V_IN_OK   : in std_logic;  -- under-voltage lockout:  v_in above threshold when ='1'
+    TEMP_OK   : in std_logic;  -- '1' means the temperature is below the max value
 
--- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
-    CHA_B_MS_CFG_EN : in std_logic;  -- pin 21, BIT 0:  CHA_B_MS_CFG_EN = ADJACENT CHANNELS A & 
+    SIM_MODE_EN : in integer;  -- '1' is special sim mode with reduced timeout intervals
 
-    P_CH_MREG_EN : out std_logic_vector(1 downto 0);  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
-    P_CH_IAUX_EN : out std_logic_vector(1 downto 0);  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
-    P_CH_VOSG_EN : out std_logic_vector(1 downto 0);  -- CHANNEL ENABLE SIGNAL: VOS_GEN REGULATOR IC, ACTIVE HIGH
+    P_CH_MREG_EN : out std_logic_vector(1 downto 0);  -- channel enable signal: main regulator ic, active high
+    P_CH_IAUX_EN : out std_logic_vector(1 downto 0);  -- channel enable signal: iaux regulator ic, active high
+    P_CH_VOSG_EN : out std_logic_vector(1 downto 0);  -- channel enable signal: vos_gen regulator ic, active high
 
-    P_SEQ_STEPVAL : out std_logic_vector(3 downto 0)  -- INDICATES PRESENT SEQUENCE STEP
+    P_SEQ_STEPVAL : out std_logic_vector(3 downto 0)  -- indicates present sequence step
     );
-end MAIN_SEQUENCER_NEW;
+end main_sequencer_new;
 
-architecture RTL of MAIN_SEQUENCER_NEW is
+architecture rtl of main_sequencer_new is
 
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
---ATTRIBUTE SYN_RADHARDLEVEL OF RTL : ARCHITECTURE IS "TMR";
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+--attribute syn_radhardlevel of rtl : architecture is "tmr";
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- DEFINE INTERNAL SIGNALS
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
--- DEFINE THE STATES FOR THE MACHINE STATE MANAGEING THE ACTIVE HYSTERISIS THRESHOLD
-  type SEQ_SM_STATES is (
-    INIT, WAIT_STEP,
-    CH_1ST_STEP, CH_2ND_STEP, CH_3RD_STEP, STANDBY_HOLD, OPERATE_HOLD, SEQ_DONE, HOLD_AT_UVL, CHK_IF_UVL_CLEAR
-    );
-  signal SEQUENCER_STATE, N_SEQUENCER_STATE : SEQ_SM_STATES;
-  signal RET_STATE, N_RET_STATE             : SEQ_SM_STATES;
-
-  signal N_PREV_M_CH_EN, PREV_M_CH_EN : std_logic_vector(1 downto 0);  -- COPY THE CHANNEL ENABLE UPDATE TO 'NEW
-
-  signal N_CH_MREG_EN, CH_MREG_EN : std_logic_vector(1 downto 0);  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
-  signal N_CH_IAUX_EN, CH_IAUX_EN : std_logic_vector(1 downto 0);  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
-  signal N_CH_VOSG_EN, CH_VOSG_EN : std_logic_vector(1 downto 0);  -- CHANNEL ENABLE SIGNAL: VOS_GEN REGULATOR IC, ACTIVE HIGH
-
-  signal N_CH_ACTIVE_STAT, CH_ACTIVE_STAT : std_logic;
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  signal N_DEL_CNTR, DEL_CNTR             : integer range 0 to (2**15) - 1;  -- DELAY INTERVAL COUNTER
-  signal DEL_CNT_VAL                      : integer range 0 to (2**15) - 1;  -- MAX DELAY COUNTER RELOAD VALUE
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-  signal N_SEQ_STEPVAL, SEQ_STEPVAL : std_logic_vector(3 downto 0);  -- PuLSE INDICATES SEQUENCE WAS COMPLETED
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- define internal signals
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-- define the states for the machine state manageing the active hysteresis threshold
+  type seq_sm_states is (INIT, WAIT_STEP, CH_1ST_STEP, CH_2ND_STEP, CH_3RD_STEP,  OPERATE_HOLD);
+  signal sequencer_state0, n_sequencer_state0 : seq_sm_states;
+  signal ret_state0, n_ret_state0             : seq_sm_states;
+  signal sequencer_state1, n_sequencer_state1 : seq_sm_states;
+  signal ret_state1, n_ret_state1             : seq_sm_states;
+
+  signal ch_out0, ch_out1     : std_logic_vector(2 downto 0);  -- Channel outputs [MREG, IAUX, VOS]
+  signal n_ch_out0, n_ch_out1 : std_logic_vector(2 downto 0);  -- Channel outputs [MREG, IAUX, VOS]
+
+  signal n_del_cntr0, del_cntr0 : integer range 0 to (2**15) - 1;  -- delay interval counter
+  signal n_del_cntr1, del_cntr1 : integer range 0 to (2**15) - 1;  -- delay interval counter
+  signal del_cnt_val            : integer range 0 to (2**15) - 1;  -- max delay counter reload value
+
+  signal n_seq_stepval0, seq_stepval0 : std_logic_vector(3 downto 0);  -- pulse indicates sequence was completed
+  signal n_seq_stepval1, seq_stepval1 : std_logic_vector(3 downto 0);  -- pulse indicates sequence was completed
 
 begin
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- DEFINE ALL REGISTERS USED WITH THE 5 MHZ CLOCK
-  REG5M : process(CLK_5M_GL, MASTER_RST_B, DEL_CNT_VAL)
+-- define all registers used with the 5 mhz clock
+  reg5m : process(CLK_5M_GL, MASTER_RST_B, del_cnt_val)
   begin
     if MASTER_RST_B = '0' then
-      SEQUENCER_STATE <= INIT;
-      PREV_M_CH_EN    <= (others => '0');  -- DEFAULT CASE IS NO CHANNELS ENABLED
-      CH_MREG_EN      <= (others => '0');  -- DEFAULT CASE IS OFF
-      CH_IAUX_EN      <= (others => '0');  -- DEFAULT CASE IS OFF
-      CH_VOSG_EN      <= (others => '0');  -- DEFAULT CASE IS OFF
-      RET_STATE       <= INIT;
-      DEL_CNTR        <= DEL_CNT_VAL;
-      SEQ_STEPVAL     <= "0000";
-      CH_ACTIVE_STAT  <= '0';
+      sequencer_state0 <= INIT;
+      sequencer_state1 <= INIT;
+      ch_out0          <= (others => '0');  -- default case is off
+      ch_out1          <= (others => '0');  -- default case is off
+      ret_state0       <= init;
+      ret_state1       <= init;
+      del_cntr0        <= del_cnt_val;
+      del_cntr1        <= del_cnt_val;
+      seq_stepval0     <= "0000";
+      seq_stepval1     <= "0000";
 
     elsif (CLK_5M_GL'event and CLK_5M_GL = '1') then
-      SEQUENCER_STATE <= N_SEQUENCER_STATE;
-      N_PREV_M_CH_EN <= PREV_M_CH_EN;  -- THIS IS A COPY OF THE NEWEST EXTERNAL COMMAND (REG_CH_CMD_EN)
-      PREV_M_CH_EN    <= REG_CH_CMD_EN;
-      CH_MREG_EN      <= N_CH_MREG_EN;
-      CH_IAUX_EN      <= N_CH_IAUX_EN;
-      CH_VOSG_EN      <= N_CH_VOSG_EN;
-      RET_STATE       <= N_RET_STATE;
-      DEL_CNTR        <= N_DEL_CNTR;
-      SEQ_STEPVAL     <= N_SEQ_STEPVAL;
-      CH_ACTIVE_STAT  <= N_CH_ACTIVE_STAT;
+      sequencer_state0 <= n_sequencer_state0;
+      sequencer_state1 <= n_sequencer_state1;
+      ch_out0          <= n_ch_out0;
+      ch_out1          <= n_ch_out1;
+      ret_state0       <= n_ret_state0;
+      ret_state1       <= n_ret_state1;
+      del_cntr0        <= n_del_cntr0;
+      del_cntr1        <= n_del_cntr1;
+      seq_stepval0     <= n_seq_stepval0;
+      seq_stepval1     <= n_seq_stepval1;
 
     end if;
 
   end process;
 
+-- mux for special sim mode which has shorter timeout intervals
+  del_cnt_val <= (2**5) - 1 when SIM_MODE_EN = 1 else (2**15) - 1;
+
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- INSTANTIATE THE MAIN SEQUENCER AND CONTROL MODULE
-  MAIN_SEQUENCER : process(SIM_MODE_EN, DTYCYC_EN, SEQ_STEPVAL,
-                           SEQUENCER_STATE, RET_STATE, DEL_CNTR, CH_VOSG_EN, CH_IAUX_EN, CH_MREG_EN,
-                           CHA_B_MS_CFG_EN, V_IN_OK, TEMP_OK,
-                           REG_CH_CMD_EN, PREV_M_CH_EN, STDBY_OFFB_B, CH_ACTIVE_STAT
-                           )
-
-
+-- instantiate the main sequencer and control module
+  main_sequencer : process(sequencer_state0, sequencer_state1, V_IN_OK, TEMP_OK, CHANNELS_READY, CHANNELS_ON, del_cntr0, del_cntr1,
+                           ret_state0, ret_state1, DTYCYC_EN)
   begin
-    -- DEFAULT ASSIGNMENTS GET OVERRIDEN BELOW AS NEEDED
+    -- default assignments get overriden below as needed
+    n_ch_out0      <= ch_out0;
+    n_ret_state0   <= ret_state0;
+    n_del_cntr0    <= del_cntr0;
+    n_seq_stepval0 <= seq_stepval0;
 
-    N_CH_MREG_EN <= CH_MREG_EN;
-    N_CH_IAUX_EN <= CH_IAUX_EN;
-    N_CH_VOSG_EN <= CH_VOSG_EN;
-    N_RET_STATE  <= RET_STATE;
-    N_DEL_CNTR   <= DEL_CNTR;
+    case sequencer_state0 is
+      when INIT =>
+        n_ch_out0   <= "000";           -- keep disabled 
+        n_del_cntr0 <= del_cnt_val;     -- initialize the delay counter
 
-    N_SEQ_STEPVAL <= SEQ_STEPVAL;
-
-
-    -- MUX FOR SPECIAL SIM MODE WHICH HAS SHORTER TIMEOUT INTERVALS
-
-    if SIM_MODE_EN = 1 then
-      DEL_CNT_VAL <= (2**5) - 1;  -- MAX DELAY COUNTER RELOAD VALUE FOR SPECIAL SIM MODE
-    else
-      DEL_CNT_VAL <= (2**15) - 1;  -- MAX DELAY COUNTER RELOAD VALUE FOR NORMAL OPERATING MODE
-    end if;
-
--- TEST FOR AN ACTIVE CHANNEL:
---      *UVL NEEDS TO BE SATISFIED ALONG WITH AT LEAST ONE CHANNEL ENABLE.
-    if (REG_CH_CMD_EN(0) = '1' or REG_CH_CMD_EN(1) = '1') then
-      N_CH_ACTIVE_STAT <= '1';
-    else
-      N_CH_ACTIVE_STAT <= '0';
-    end if;
-
-
--- THIS IS A VERY SIMPLIFIED VERSION THAT ONLY HANDLES THE FOLLOWING CONOP SEQUENCE:
-    -- 1) FIRST, SET THE MASTER_SLAVE CH GROUP DIP SWITCHES ACCORDING TO THE WIRED CHANNEL CONFIGS!!!!!!
-    -- 2) THEN, TOGGLE STNDBY_OFFB DIP SWITCH FROM "0" TO "1" TO TRANSITION ALL CHANNELS FROM FULL OFF TO STANDBY STATE, WAITING WITH THE OUTPUTS AT VOS
-    -- 3) NEXT, ENABLE CHANNEL OUTPUTS 8-TO-5 AND/OR 4-TO-1 WITH ASSOCIATED DIP SWITCH TOGGLE
-
-    case SEQUENCER_STATE is
-
-      when INIT =>                      -- 
-
-        N_CH_MREG_EN <= "00";           -- KEEP DISABLED 
-        N_CH_IAUX_EN <= "00";           -- KEEP DISABLED 
-        N_CH_VOSG_EN <= "00";           -- KEEP DISABLED
-
-        if (STDBY_OFFB_B = '1') then  -- TRANSITION TO THE STANDBY STATE WHEN EANBLED
-          N_SEQUENCER_STATE <= CH_1ST_STEP;
+        if (CHANNELS_READY(0) = '1') then  -- transition to the standby state when eanbled
+          n_sequencer_state0 <= CH_1ST_STEP;
         else
-          N_SEQUENCER_STATE <= INIT;    -- WAIT HERE UNTIL STANDBY IS REQUESTED
+          n_sequencer_state0 <= INIT;   -- wait here until standby is requested
         end if;
 
-        N_DEL_CNTR <= DEL_CNT_VAL;      -- INITIALIZE THE DELAY COUNTER
+        n_seq_stepval0 <= "0000";       -- send present sequence step
 
-        N_SEQ_STEPVAL <= "0000";        -- SEND PRESENT SEQUENCE STEP
-
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- V_OS GENERATOR SIGNAL.  (IE THIS IS ONLY THE V_OS OP AMP AND NOT THE CHANNEL OUTPUT)
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-      when CH_1ST_STEP =>  -- ENABLE THE VOS GENERATOR SIGNAL FOR THE SPECIFIED CHANNEL ID'S
-                                   -- 
-        N_CH_MREG_EN <= "00";           -- KEEP DISABLED 
-        N_CH_IAUX_EN <= "00";           -- KEEP DISABLED 
-        N_CH_VOSG_EN <= "11";           -- ENABLE THE V_OS GEN SIGNALS
-
-        N_SEQUENCER_STATE <= WAIT_STEP;  -- GO AND WAIT FOR THE CIRCUITS HIT STEADY STATE
-        N_RET_STATE       <= CH_2ND_STEP;  -- THEN GO TO THE 2ND SEQUENCE STEP, ONCE WAIT IS COMPLETE
-        N_DEL_CNTR        <= DEL_CNT_VAL;  -- RE-INITIALIZE THE DELAY COUNTER BEFORE USING IT
-
-        N_SEQ_STEPVAL <= "0001";        -- SEND PRESENT SEQUENCE STEP
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- I_AUX CIRCUIT ENABLE
+-- v_os generator signal.  (ie this is only the v_os op amp and not the channel output)
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-      when CH_2ND_STEP =>  -- ENABLE THE IAUX SIGNAL FOR THE SPECIFIED CHANNEL ID'S
+      when CH_1ST_STEP =>  -- enable the vos generator signal for the specified channel id's
+        n_ch_out0 <= "001";             --  enable the v_os gen signals
 
-        N_CH_MREG_EN <= "00";           -- KEEP DISABLED 
-        N_CH_IAUX_EN <= "11";           -- ENABLE ALL ACTIVE CHANNELS
-        N_CH_VOSG_EN <= "11";  -- KEEP THE V_OS GEN SIGNAL ENABLED IF CHANNEL IS ENABLED
+        n_sequencer_state0 <= WAIT_STEP;  -- go and wait for the circuits hit steady state
+        n_ret_state0       <= CH_2ND_STEP;  -- then go to the 2nd sequence step, once wait is complete
+        n_del_cntr0        <= del_cnt_val;  -- re-initialize the delay counter before using it
 
-        N_SEQUENCER_STATE <= WAIT_STEP;  -- GO AND WAIT FOR THE CIRCUITS HIT STEADY STATE
-        N_RET_STATE       <= CH_3RD_STEP;  -- THEN HOLD AT THE STANDBY STATE SEQUENCE STEP, ONCE WAIT IS COMPLETE
-        N_DEL_CNTR        <= DEL_CNT_VAL;  -- RE-INITIALIZE THE DELAY COUNTER BEFORE USING IT
-
-        N_SEQ_STEPVAL <= "0010";        -- SEND PRESENT SEQUENCE STEP
+        n_seq_stepval0 <= "0001";       -- send present sequence step
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- MREG CIRCUIT ENABLE
+-- i_aux circuit enable
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-      when CH_3RD_STEP =>  -- ENABLE THE MREG SIGNAL FOR THE SPECIFIED CHANNEL ID'S
+      when CH_2ND_STEP =>  -- enable the iaux signal for the specified channel id's
+        n_ch_out0 <= "011";  --  enable all active channels, keep the v_os gen signal enabled if channel is enabled
 
-        N_CH_MREG_EN <= "11";           -- KEEP DISABLED 
-        N_CH_IAUX_EN <= "11";           -- ENABLE ALL ACTIVE CHANNELS
-        N_CH_VOSG_EN <= "11";  -- KEEP THE V_OS GEN SIGNAL ENABLED IF CHANNEL IS ENABLED
+        n_sequencer_state0 <= WAIT_STEP;  -- go and wait for the circuits hit steady state
+        n_ret_state0       <= CH_3RD_STEP;  -- then hold at the standby state sequence step, once wait is complete
+        n_del_cntr0        <= del_cnt_val;  -- re-initialize the delay counter before using it
 
-        N_SEQUENCER_STATE <= WAIT_STEP;  -- GO AND WAIT FOR THE CIRCUITS HIT STEADY STATE
-        N_RET_STATE       <= STANDBY_HOLD;  -- THEN HOLD AT THE STANDBY STATE SEQUENCE STEP, ONCE WAIT IS COMPLETE
-        N_DEL_CNTR        <= DEL_CNT_VAL;  -- RE-INITIALIZE THE DELAY COUNTER BEFORE USING IT
-
-        N_SEQ_STEPVAL <= "0011";        -- SEND PRESENT SEQUENCE STEP
+        n_seq_stepval0 <= "0010";       -- send present sequence step
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- STANDBY HOLD STATE
+-- mreg circuit enable
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-      when STANDBY_HOLD =>              -- HOLD HERE WHILE IN STANDBY
+      when CH_3RD_STEP =>  -- enable the mreg signal for the specified channel id's
+        n_ch_out0 <= "111";  --  enable all active channels, keep the v_os gen signal enabled if channel is enabled
 
-        if (STDBY_OFFB_B = '1' and CH_ACTIVE_STAT = '0') then  -- HOLD HERE WHILE IN STANDBY
-          N_SEQUENCER_STATE <= STANDBY_HOLD;
+        n_sequencer_state0 <= WAIT_STEP;  -- go and wait for the circuits hit steady state
+        n_ret_state0       <= OPERATE_HOLD;  -- then hold at the standby state sequence step, once wait is complete
+        n_del_cntr0        <= del_cnt_val;  -- re-initialize the delay counter before using it
 
-        elsif (STDBY_OFFB_B = '1' and CH_ACTIVE_STAT = '1') then  -- GO TO OPERATE HOLD OIF THERE IS NOW AN ACTIVE CHANNEL COMMAND
-          N_SEQUENCER_STATE <= OPERATE_HOLD;
+        n_seq_stepval0 <= "0011";       -- send present sequence step
 
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- operate hold state
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      when OPERATE_HOLD =>              -- stay here for operate mode
+        n_ch_out0 <= "11" & not (CHANNELS_ON(0) and DTYCYC_EN);  --  Turn on or keep in standby
+
+        if (CHANNELS_READY(0) = '0') then  -- go back to init if no channel is not ready
+          n_sequencer_state0 <= INIT;
         else
-          N_SEQUENCER_STATE <= INIT;  -- GO BACK TO INIT IF STDBY_OFFB = '0' !!!!
-
+          n_sequencer_state0 <= OPERATE_HOLD;
         end if;
 
-        N_CH_MREG_EN <= "11";           -- KEEP VOS_GEN ENABLED 
-        N_CH_IAUX_EN <= "11";           -- ENABLE ALL ACTIVE CHANNELS
-        N_CH_VOSG_EN <= "11";  -- KEEP THE V_OS GEN SIGNAL ENABLED IF CHANNEL IS ENABLED
-
-        N_SEQ_STEPVAL <= "0100";        -- SEND PRESENT SEQUENCE STEP
+        n_seq_stepval0 <= "0101";       -- send present sequence step
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- OPERATE HOLD STATE
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-      when OPERATE_HOLD =>              -- STAY HERE FOR OPERATE MODE
-
-        if (STDBY_OFFB_B = '1' and CH_ACTIVE_STAT = '0') then  -- GO BACK TO STANDBY WHEN ALL CHANNELS COMMANDED OFF
-          N_SEQUENCER_STATE <= STANDBY_HOLD;
-
-        --elsif (STDBY_OFFB_B = '1' and CH_ACTIVE_STAT = '1') then  -- STAY IN OPERATE HOLD IF THERE IS AT LEAST 1 ACTIVE CHANNEL COMMAND
-        elsif (STDBY_OFFB_B = '1' and ((REG_CH_CMD_EN = prev_m_ch_en)
-               or (CH_MREG_EN = "11" and CH_IAUX_EN = "11" and CH_VOSG_EN = "11"))) then 
-          N_SEQUENCER_STATE <= OPERATE_HOLD;
-
-        else
-          N_SEQUENCER_STATE <= INIT;  -- GO BACK TO INIT IF STDBY_OFFB = '0' !!!!
-
-        end if;
-
-
-        -- VOS_GEN OP AMP ENABLES CONTROLS THE ACTUAL CHANNEL OUTPUT FUNCTION!
-        if CHA_B_MS_CFG_EN = '1' then   -- MASTER IS INDEX 0, SLAVE IS INDEX 1
-          N_CH_MREG_EN <= "11";           -- KEEP ENABLED 
-          N_CH_IAUX_EN <= "11";           -- ENABLE ALL ACTIVE CHANNELS
-          N_CH_VOSG_EN(0) <= not(REG_CH_CMD_EN(0) and DTYCYC_EN);  -- TURN OFF THE MASTER CH VOS_GEN OP AMP (IF ENABLED) TO TURN ON THE OUTPUT VOLTAGE .... 
-          N_CH_VOSG_EN(1) <= '1';  -- ... BUT KEEP SLAVE CH VOS_GEN OP AMP ENABLED.
-        else                            -- 2 SEPARATE MASTER CHANNELS HERE
-          N_CH_MREG_EN(0) <= REG_CH_CMD_EN(0) and DTYCYC_EN;  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
-          N_CH_MREG_EN(1) <= REG_CH_CMD_EN(1) and DTYCYC_EN;  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
-          N_CH_IAUX_EN(0) <= REG_CH_CMD_EN(0) and DTYCYC_EN;  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
-          N_CH_IAUX_EN(1) <= REG_CH_CMD_EN(1) and DTYCYC_EN;  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
-          N_CH_VOSG_EN(0) <= '0';  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
-          N_CH_VOSG_EN(1) <= '0';  -- SO, TURN OFF THE MASTER CH VOS_GEN OP AMP IF CHANNEL COMMANDED TO BE ON
-        end if;
-
-        N_SEQ_STEPVAL <= "0101";        -- SEND PRESENT SEQUENCE STEP
-
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- WAIT STATE--IS REUSED STATE MACHINE SEQMENT, SO ALWAYS REQUIRES A STATE MACHINE RETURN STATE WHEN DONE
+-- wait state--is reused state machine seqment, so always requires a state machine return state when done
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
       when WAIT_STEP =>
-        if DEL_CNTR = 0 then  -- PROCEED ONCE DELAY COUNTER IS FINISHED
-          N_DEL_CNTR        <= DEL_CNT_VAL;  -- RE-INITIALIZE THE DELAY COUNTER
-          N_SEQUENCER_STATE <= RET_STATE;  -- THIS MUST BE SUPPLIED FROM THE PREVIOUS STATE MACHINE STEP!
+        if (CHANNELS_READY(0) = '0') then  -- go back to init if no channel is not ready
+          n_sequencer_state0 <= INIT;
+        elsif del_cntr0 = 0 then  -- proceed once delay counter is finished
+          n_del_cntr0        <= del_cnt_val;  -- re-initialize the delay counter
+          n_sequencer_state0 <= ret_state0;  -- this must be supplied from the previous state machine step!
         else
-          N_DEL_CNTR        <= DEL_CNTR - 1;  -- DECREMENT THE DELAY COUNTER
-          N_SEQUENCER_STATE <= WAIT_STEP;  -- WAIT HERE UNTIL THE TIEMOUT INTERVAL IS COMPLETE.                         
+          n_del_cntr0        <= del_cntr0 - 1;  -- decrement the delay counter
+          n_sequencer_state0 <= WAIT_STEP;  -- wait here until the tiemout interval is complete.                         
         end if;
 
-        N_SEQ_STEPVAL <= "1111";        -- SEND PRESENT SEQUENCE STEP
-
+        n_seq_stepval0 <= "1111";       -- send present sequence step
 
 
       when others =>
-        N_SEQUENCER_STATE <= INIT;
+        n_sequencer_state0 <= INIT;
+
+    end case;
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- FSM FOR CHANNEL 1
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    
+    -- default assignments get overriden below as needed
+    n_ch_out1      <= ch_out1;
+    n_ret_state1   <= ret_state1;
+    n_del_cntr1    <= del_cntr1;
+    n_seq_stepval1 <= seq_stepval1;
+
+    case sequencer_state1 is
+      when INIT =>
+        n_ch_out1   <= "000";           -- keep disabled 
+        n_del_cntr1 <= del_cnt_val;     -- initialize the delay counter
+
+        if (CHANNELS_READY(1) = '1') then  -- transition to the standby state when eanbled
+          n_sequencer_state1 <= CH_1ST_STEP;
+        else
+          n_sequencer_state1 <= INIT;   -- wait here until standby is requested
+        end if;
+
+        n_seq_stepval1 <= "0000";       -- send present sequence step
+
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- v_os generator signal.  (ie this is only the v_os op amp and not the channel output)
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      when CH_1ST_STEP =>  -- enable the vos generator signal for the specified channel id's
+        n_ch_out1 <= "001";             --  enable the v_os gen signals
+
+        n_sequencer_state1 <= WAIT_STEP;  -- go and wait for the circuits hit steady state
+        n_ret_state1       <= CH_2ND_STEP;  -- then go to the 2nd sequence step, once wait is complete
+        n_del_cntr1        <= del_cnt_val;  -- re-initialize the delay counter before using it
+
+        n_seq_stepval1 <= "0001";       -- send present sequence step
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- i_aux circuit enable
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      when CH_2ND_STEP =>  -- enable the iaux signal for the specified channel id's
+        n_ch_out1 <= "011";  --  enable all active channels, keep the v_os gen signal enabled if channel is enabled
+
+        n_sequencer_state1 <= WAIT_STEP;  -- go and wait for the circuits hit steady state
+        n_ret_state1       <= CH_3RD_STEP;  -- then hold at the standby state sequence step, once wait is complete
+        n_del_cntr1        <= del_cnt_val;  -- re-initialize the delay counter before using it
+
+        n_seq_stepval1 <= "0010";       -- send present sequence step
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- mreg circuit enable
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      when CH_3RD_STEP =>  -- enable the mreg signal for the specified channel id's
+        n_ch_out1 <= "111";  --  enable all active channels, keep the v_os gen signal enabled if channel is enabled
+
+        n_sequencer_state1 <= WAIT_STEP;  -- go and wait for the circuits hit steady state
+        n_ret_state1       <= OPERATE_HOLD;  -- then hold at the standby state sequence step, once wait is complete
+        n_del_cntr1        <= del_cnt_val;  -- re-initialize the delay counter before using it
+
+        n_seq_stepval1 <= "0011";       -- send present sequence step
+
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- operate hold state
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      when OPERATE_HOLD =>              -- stay here for operate mode
+        n_ch_out1 <= "11" & not (CHANNELS_ON(1) and DTYCYC_EN);  --  Turn on or keep in standby
+
+        if (CHANNELS_READY(1) = '0') then  -- go back to init if no channel is not ready
+          n_sequencer_state1 <= INIT;
+        else
+          n_sequencer_state1 <= OPERATE_HOLD;
+        end if;
+
+        n_seq_stepval1 <= "0101";       -- send present sequence step
+
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- wait state--is reused state machine seqment, so always requires a state machine return state when done
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+      when WAIT_STEP =>
+        if (CHANNELS_READY(1) = '0') then  -- go back to init if no channel is not ready
+          n_sequencer_state1 <= INIT;
+        elsif del_cntr1 = 0 then  -- proceed once delay counter is finished
+          n_del_cntr1        <= del_cnt_val;  -- re-initialize the delay counter
+          n_sequencer_state1 <= ret_state1;  -- this must be supplied from the previous state machine step!
+        else
+          n_del_cntr1        <= del_cntr1 - 1;  -- decrement the delay counter
+          n_sequencer_state1 <= WAIT_STEP;  -- wait here until the tiemout interval is complete.                         
+        end if;
+
+        n_seq_stepval1 <= "1111";       -- send present sequence step
+
+
+      when others =>
+        n_sequencer_state1 <= INIT;
 
     end case;
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++
--- THIS IS THE UNDER-VOLTAGE LOCKOUT HANDLER.
--- THESE STATEMENTS OVERRIDE THE ONES ABOVE.            
-    if (V_IN_OK = '0' or TEMP_OK = '0') then  -- V_IN_OK MUST BE ='1' TO BE ABOVE THE MIN V INPUT THRESHOLD!
-
-      N_SEQUENCER_STATE <= INIT;
-
-      N_CH_MREG_EN <= "00";             -- DISABLE ALL CHANNELS IMMEDIATELY
-      N_CH_IAUX_EN <= "00";
-      N_CH_VOSG_EN <= "00";
-
+-- this is the under-voltage lockout handler.
+-- these statements override the ones above.            
+    if (V_IN_OK = '0' or TEMP_OK = '0') then  -- v_in_ok must be ='1' to be above the min v input threshold!
+      n_sequencer_state0 <= INIT;
+      n_ch_out0          <= "000";      -- disable all channels immediately
+      n_sequencer_state1 <= INIT;
+      n_ch_out1          <= "000";      -- disable all channels immediately
     end if;
-
-
 --++++++++++++++++++++++++++++++++++++++++++++++++++++                  
 
 
-  end process MAIN_SEQUENCER;
+  end process main_sequencer;
+
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- ASSIGN INTERNAL SIGNALS TO EXTERNAL PORTS
+-- Assign internal signals to external ports for master (channel 0)
+  P_CH_MREG_EN(0) <= ch_out0(2);
+  P_CH_IAUX_EN(0) <= ch_out0(1);
+  P_CH_VOSG_EN(0) <= ch_out0(0);
 
-  P_CH_MREG_EN <= CH_MREG_EN;
-  P_CH_IAUX_EN <= CH_IAUX_EN;
-  P_CH_VOSG_EN <= CH_VOSG_EN;
+-- Assign internal signals to external ports for master or slave (channel 1)
+  P_CH_MREG_EN(1) <= ch_out1(2) when MASTER_SLAVE_PAIR = '0' else ch_out0(2);
+  P_CH_IAUX_EN(1) <= ch_out1(1) when MASTER_SLAVE_PAIR = '0' else ch_out0(1);
+-- The slave's VOS follows the master's IAUX
+  P_CH_VOSG_EN(1) <= ch_out1(0) when MASTER_SLAVE_PAIR = '0' else
+                     ch_out0(0) when ch_out0 /= "110" else
+                     '1';
 
-  P_SEQ_STEPVAL <= SEQ_STEPVAL;
 
-end RTL;
+  P_SEQ_STEPVAL <= seq_stepval0;
+
+end rtl;

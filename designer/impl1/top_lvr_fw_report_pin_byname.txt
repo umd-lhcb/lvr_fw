@@ -1,5 +1,5 @@
 *****************************************************************
-Pin Report - Date: Thu May 21 21:49:41 2020 Pinchecksum: NOT-AVAILABLE
+Pin Report - Date: Fri May 22 18:18:53 2020 Pinchecksum: NOT-AVAILABLE
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
@@ -28,10 +28,10 @@ FPGA_FUSE_1_2_OK[0]  42   Yes    IO37RSB2       LVCMOS15  ---                ---
 FPGA_FUSE_3_4_OK[0]  41   Yes    IO38RSB2       LVCMOS15  ---                ---   None           ---               No           No             No
 FPGA_FUSE_5_6_OK[0]  40   Yes    IO39RSB2       LVCMOS15  ---                ---   None           ---               No           No             No
 FPGA_FUSE_7_8_OK[0]  36   Yes    IO40RSB2       LVCMOS15  ---                ---   None           ---               No           No             No
-J11_17_TCONN         45   No     GDA2/IO34RSB2  LVCMOS15  2                  High  None           35                No           No             ---
-J11_19_TCONN         23   No     GEA0/IO51RSB3  LVCMOS15  2                  High  None           35                No           No             ---
-J11_21_TCONN         29   No     IO47RSB2       LVCMOS15  2                  High  None           35                No           No             ---
-J11_23_TCONN         27   No     GEB2/IO49RSB2  LVCMOS15  2                  High  None           35                No           No             ---
+J11_17_TCONN         30   No     IO46RSB2       LVCMOS15  2                  High  None           35                No           No             ---
+J11_19_TCONN         28   No     GEC2/IO48RSB2  LVCMOS15  2                  High  None           35                No           No             ---
+J11_21_TCONN         4    No     GAB2/IO65RSB3  LVCMOS15  2                  High  None           35                No           No             ---
+J11_23_TCONN         10   No     GFB1/IO60RSB3  LVCMOS15  2                  High  None           35                No           No             ---
 MAN_EN_CH_4TO1       15   Yes    GFA1/IO58RSB3  LVCMOS15  ---                ---   None           ---               No           No             No
 MAN_EN_CH_8TO5       13   Yes    GFA0/IO57RSB3  LVCMOS15  ---                ---   None           ---               No           No             No
 MODE_DCYC_NORMB      31   Yes    IO45RSB2       LVCMOS15  ---                ---   None           ---               No           No             No
@@ -60,7 +60,7 @@ P_CH_VOSG_EN[5]      69   Yes    IO24RSB1       LVCMOS33  8                  Hig
 P_CH_VOSG_EN[6]      63   Yes    GCA0/IO28RSB1  LVCMOS33  8                  High  None           35                No           No             ---
 P_CH_VOSG_EN[7]      60   Yes    IO30RSB1       LVCMOS33  8                  High  None           35                No           No             ---
 POR_FPGA             93   Yes    GAC1/IO05RSB0  LVCMOS33  ---                ---   None           ---               No           No             No
-POR_OUT_TO_SCA       26   No     GEA2/IO50RSB2  LVCMOS15  2                  High  None           35                No           No             ---
+POR_OUT_TO_SCA       45   No     GDA2/IO34RSB2  LVCMOS15  2                  High  None           35                No           No             ---
 PRI_RX_EN_BAR        96   Yes    GAB0/IO02RSB0  LVCMOS33  8                  High  None           35                No           No             ---
 PRI_TX_EN            94   Yes    GAC0/IO04RSB0  LVCMOS33  8                  High  None           35                No           No             ---
 PWR_OK_LED           95   Yes    GAB1/IO03RSB0  LVCMOS33  8                  High  None           35                No           No             ---
@@ -69,6 +69,5 @@ SCA_DAT_IN           3    Yes    IO66RSB3       LVCMOS15  2                  Hig
 SCA_DAT_OUT          2    Yes    GAA2/IO67RSB3  LVCMOS15  ---                ---   None           ---               No           No             No
 SCA_RESET_OUT        34   Yes    IO42RSB2       LVCMOS15  ---                ---   Up             ---               No           No             No
 STATUS_LED           77   Yes    GBA0/IO18RSB0  LVCMOS33  8                  High  None           35                No           No             ---
-STDBY_OFFB           10   Yes    GFB1/IO60RSB3  LVCMOS15  ---                ---   None           ---               No           No             No
 TEMP_OK[0]           43   Yes    GDC2/IO36RSB2  LVCMOS15  ---                ---   None           ---               No           No             No
 TX_FPGA              98   Yes    GAA0/IO00RSB0  LVCMOS33  8                  High  None           35                No           No             ---

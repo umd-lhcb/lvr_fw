@@ -176,11 +176,11 @@ begin
   end process Divide_Frequency;
   
 
-  sca_data_reg <= x"12345678" when (sca_reset_out = '0') else
+  sca_data_reg <= x"1234C8FF" when (sca_reset_out = '0') else
                 sca_data_reg(30 downto 0) & sca_data_reg(31) when falling_edge(sca_clk_out) else
                 sca_data_reg;
 
-  sca_data_reg2 <= x"1234F078" when (sca_reset_out = '0') else
+  sca_data_reg2 <= x"1234F4C4" when (sca_reset_out = '0') else
                 sca_data_reg2(30 downto 0) & sca_data_reg2(31) when falling_edge(sca_clk_out) else
                 sca_data_reg2;
 
@@ -262,8 +262,10 @@ begin
       -- Inputs
       CLK40MHZ_OSC       => CLK40MHZ,
       POR_FPGA         => NSYSRESET,
-      FPGA_FUSE_1_2_OK => FUSE_12_OK,
-      FPGA_FUSE_3_4_OK => FUSE_34_OK,
+      --FPGA_FUSE_1_2_OK => FUSE_12_OK,
+      --FPGA_FUSE_3_4_OK => FUSE_34_OK,
+      FPGA_FUSE_1_2_OK => "1",
+      FPGA_FUSE_3_4_OK => "1",
       FPGA_FUSE_5_6_OK => "1",
       FPGA_FUSE_7_8_OK => "1",
       TEMP_OK          => TEMP_OK,
@@ -274,8 +276,8 @@ begin
       CH3_4_MS_CFG_EN  => '1',
       CH5_6_MS_CFG_EN  => '0',
       CH7_8_MS_CFG_EN  => '0',
-      MAN_EN_CH_4TO1   => CH_ENABLE,
-      MAN_EN_CH_8TO5   => CH_ENABLE,
+      MAN_EN_CH_4TO1   => '1',
+      MAN_EN_CH_8TO5   => '1',
       TEMP_FAILSAFE_EN => '0',
       STDBY_OFFB       => STDBY_OFFB,
       RX_FPGA          => '0',

@@ -1,2 +1,3 @@
-@E: CD326 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":380:2:380:13|Port clk5mhz_osc of entity work.spi_slave is unconnected. If a port needs to remain unconnected, use the keyword open.
+@E: CD255 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":423:68:423:68|No identifier "spi_rx_wor" in scope
+@E: Parse errors encountered - exiting
 

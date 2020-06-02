@@ -1,7 +1,7 @@
 # Synopsys Constraint Checker, version mapact, Build 2172R, built Oct 30 2017
 # Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
 
-# Written on Fri May 22 18:17:35 2020
+# Written on Tue Jun 02 18:10:28 2020
 
 
 ##### DESIGN INFO #######################################################
@@ -33,10 +33,9 @@ CLK_5M_GL                                  CLK_5M_GL                            
 CLK_5M_GL                                  spi_slave|i_spi_rx_strb_inferred_clock     |     No paths         |     No paths         |     Diff grp         |     No paths                         
 CLK_5M_GL                                  CCC_Glob_3xBuff|GLB_inferred_clock         |     Diff grp         |     No paths         |     Diff grp         |     No paths                         
 spi_slave|i_spi_rx_strb_inferred_clock     CLK_5M_GL                                  |     No paths         |     No paths         |     No paths         |     Diff grp                         
-spi_slave|i_spi_rx_strb_inferred_clock     spi_slave|spi_clr_inferred_clock           |     No paths         |     No paths         |     No paths         |     Diff grp                         
-CCC_Glob_3xBuff|GLB_inferred_clock         CLK_5M_GL                                  |     No paths         |     No paths         |     No paths         |     Diff grp                         
-CCC_Glob_3xBuff|GLB_inferred_clock         CCC_Glob_3xBuff|GLB_inferred_clock         |     No paths         |     No paths         |     10.000           |     10.000                           
-spi_slave|spi_clr_inferred_clock           CCC_Glob_3xBuff|GLB_inferred_clock         |     No paths         |     Diff grp         |     No paths         |     No paths                         
+spi_slave|i_spi_rx_strb_inferred_clock     CCC_Glob_3xBuff|GLB_inferred_clock         |     No paths         |     No paths         |     No paths         |     Diff grp                         
+CCC_Glob_3xBuff|GLB_inferred_clock         CLK_5M_GL                                  |     Diff grp         |     No paths         |     No paths         |     Diff grp                         
+CCC_Glob_3xBuff|GLB_inferred_clock         CCC_Glob_3xBuff|GLB_inferred_clock         |     No paths         |     20.000           |     10.000           |     10.000                           
 =================================================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.

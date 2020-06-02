@@ -65,12 +65,12 @@ architecture rtl of spi_slave is
   attribute syn_preserve of rx_32bit_sreg   : signal is true;
   attribute syn_preserve of n_rx_32bit_sreg : signal is true;
 
-  signal tx_32bit_sreg, n_tx_32bit_sreg : std_logic_vector(31 downto 0);  -- 32 bit shift register dedicated for active spi transmit
+  signal tx_32bit_sreg : std_logic_vector(31 downto 0);  -- 32 bit shift register dedicated for active spi transmit
 
-  signal clk_fcnt, n_clk_fcnt     : integer range 0 to 32;  -- spi frame counter
+  signal clk_fcnt, n_clk_fcnt     : integer range 0 to 32 := 32;  -- spi frame counter
   signal clk_fcnt_1c, clk_fcnt_2c : integer range 0 to 32;  -- used for clock boundary crossing
 
-  signal i_spi_miso, n_i_spi_miso : std_logic;  -- internal signal for sca tx serial data line
+  signal i_spi_miso : std_logic;  -- internal signal for sca tx serial data line
 
   signal spi_clr, n_spi_clr             : std_logic;  -- signal used to clear spi regsiters
   signal clk_fcnt_en, n_clk_fcnt_en     : std_logic;  -- enable for the frame counter
@@ -96,15 +96,23 @@ begin
 -- define the frame count which counts clock cycles during the active clock cycles of a 32-cycle data frame
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- define the d ff's
-  sreg_dff : process(SPI_CLK, spi_clr)
+  sreg_dff : process(CLK5MHZ_OSC, SPI_CLK, spi_clr)
   begin
     if spi_clr = '1' then  -- an external state machine forces synchronization of the spi 
       rx_32bit_sreg <= (others => '0');
       tx_32bit_sreg <= SPI_TX_WORD;
       clk_fcnt      <= 0;               -- first transition goes to 1
-      n_i_spi_miso  <= tx_32bit_sreg(30);   
       i_spi_miso <= SPI_TX_WORD(31);
+      n_clk_fcnt <= 32;  -- normal count op is 1 thru 32,where 0 is a hold / init val
+      n_rx_32bit_sreg <= SPI_TX_WORD;
 
+    elsif rising_edge(CLK5MHZ_OSC) then
+      -- Updating the first bit of the MISO until the first rising edge of the SPI command
+      if clk_fcnt = 0 and n_clk_fcnt = 32 then
+        tx_32bit_sreg <= SPI_TX_WORD;
+        i_spi_miso <= SPI_TX_WORD(31);
+      end if;  
+      rx_32bit_sreg <= rx_32bit_sreg;
     elsif rising_edge(SPI_CLK) then
       
       -- this counts the frame bits
@@ -116,9 +124,9 @@ begin
         n_clk_fcnt <= clk_fcnt;
       end if;
 
-
      -- this is the rx path
       n_rx_32bit_sreg(31 downto 0) <= rx_32bit_sreg(30 downto 0) & SPI_MOSI;  -- these are the d ff inputs for the shift register 
+      rx_32bit_sreg <= rx_32bit_sreg;
 
     elsif falling_edge(SPI_CLK) then
       clk_fcnt      <= n_clk_fcnt;
@@ -137,7 +145,7 @@ begin
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- define the registers that operate from the 5 mhz clock
 
-  reg_5m : process(CLK5MHZ_OSC, MASTER_RST_B, SPI_TX_WORD)
+  reg_5m : process(CLK5MHZ_OSC, MASTER_RST_B)
   begin
 
     if MASTER_RST_B = '0' then

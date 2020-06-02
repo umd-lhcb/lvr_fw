@@ -318,8 +318,6 @@ architecture RTL of top_lvr_fw is
   signal N_VAL_STDBY_OFFB, VAL_STDBY_OFFB : std_logic;
 
 
-  signal N_REGISTER_CH_CMD_CH, REGISTER_CH_CMD_CH : std_logic_vector(7 downto 0) := (others => '0');  -- REGISTER COMMAND FOR CHANNEL ENABLES
-
   signal SEQ_12STEPVAL : std_logic_vector(3 downto 0);  -- USED FOR DEBUG OF THE MAINSEQUENCER STATE MACHINE
   signal SEQ_34STEPVAL : std_logic_vector(3 downto 0);  -- USED FOR DEBUG OF THE MAINSEQUENCER STATE MACHINE
   signal SEQ_56STEPVAL : std_logic_vector(3 downto 0);  -- USED FOR DEBUG OF THE MAINSEQUENCER STATE MACHINE
@@ -422,7 +420,7 @@ begin
   end generate GEN_SLAVE_CONSTRAINTS;
   
 -- Setting register to control active channels when the received is a write (28th bit equal to 1)
-  SET_CHANNELS_READY : process(SPI_RX_STRB, master_rst_b)
+  SET_CHANNELS_READY : process(SPI_RX_STRB, master_rst_b, spi_rx_word)
   begin
     if master_rst_b = '0' then
       channels_ready <= active_switch_constraint;
@@ -512,8 +510,6 @@ begin
 
       VAL_STDBY_OFFB <= '0';
 
-      REGISTER_CH_CMD_CH <= "00000000";  -- REGISTER COMMAND FOR CHANNEL ENABLES
-
       DTYCYC_CNT <= DTYCYC_TIME;  -- DUTY CYCLE INTERVAL COUNTER FOR SPECIAL TEST
       DTYCYC_EN  <= '0';  -- LOCAL SIGNAL USED THE LOW DUTY CYCLE SPECIAL TEST MODE
 
@@ -535,7 +531,6 @@ begin
 
       VAL_STDBY_OFFB <= N_VAL_STDBY_OFFB;
 
-      REGISTER_CH_CMD_CH <= N_REGISTER_CH_CMD_CH;
 
       DTYCYC_CNT <= N_DTYCYC_CNT;
       DTYCYC_EN  <= N_DTYCYC_EN;

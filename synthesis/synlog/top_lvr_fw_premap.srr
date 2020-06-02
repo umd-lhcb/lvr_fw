@@ -1,4 +1,4 @@
-# Fri May 22 18:17:33 2020
+# Tue Jun 02 18:10:27 2020
 
 Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -17,12 +17,44 @@ Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s
 
 Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
 
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[0] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[1] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[2] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[3] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[4] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[5] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[6] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[7] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[8] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[9] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[10] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[11] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[12] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[13] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[14] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[15] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[16] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[17] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[18] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[19] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[20] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[21] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[22] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[23] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[24] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[25] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[26] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[27] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[28] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffs(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[29] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[30] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance tx_32bit_sreg[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":122:4:122:5|Removing sequential instance seq_stepval0[3:0] (in view: work.main_sequencer_new_3(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":122:4:122:5|Removing sequential instance seq_stepval0[3:0] (in view: work.main_sequencer_new_2(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":122:4:122:5|Removing sequential instance seq_stepval0[3:0] (in view: work.main_sequencer_new_1(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":122:4:122:5|Removing sequential instance seq_stepval0[3:0] (in view: work.main_sequencer_new_0(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
 
 
 
@@ -34,20 +66,18 @@ Clock                                      Frequency     Period        Type     
 -----------------------------------------------------------------------------------------------------------------
 CCC_Glob_3xBuff|GLB_inferred_clock         50.0 MHz      20.000        inferred     Inferred_clkgroup_1     78   
 CLK40MHZ_OSC                               40.0 MHz      25.000        declared     MainClkGrp              5    
-CLK_5M_GL                                  5.0 MHz       200.000       declared     MainClkGrp              410  
+CLK_5M_GL                                  5.0 MHz       200.000       declared     MainClkGrp              411  
 SCA_CLK_OUT                                1.0 MHz       1000.000      declared     Spi_MClkGrp             0    
 spi_slave|i_spi_rx_strb_inferred_clock     50.0 MHz      20.000        inferred     Inferred_clkgroup_0     16   
-spi_slave|spi_clr_inferred_clock           50.0 MHz      20.000        inferred     Inferred_clkgroup_2     70   
 =================================================================================================================
 
-@W: MT530 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":331:91:331:91|Found inferred clock spi_slave|i_spi_rx_strb_inferred_clock which controls 16 sequential elements including channels_on[8:5]. This clock has no specified timing constraint which may adversely impact design performance. 
-@W: MT530 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Found inferred clock CCC_Glob_3xBuff|GLB_inferred_clock which controls 78 sequential elements including spi_slave_pm.n_clk_fcnt[5:0]. This clock has no specified timing constraint which may adversely impact design performance. 
-@W: MT530 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Found inferred clock spi_slave|spi_clr_inferred_clock which controls 70 sequential elements including spi_slave_pm.n_clk_fcnt[5:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":329:91:329:91|Found inferred clock spi_slave|i_spi_rx_strb_inferred_clock which controls 16 sequential elements including channels_on[8:5]. This clock has no specified timing constraint which may adversely impact design performance. 
+@W: MT530 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Found inferred clock CCC_Glob_3xBuff|GLB_inferred_clock which controls 78 sequential elements including spi_slave_pm.n_clk_fcnt[5:0]. This clock has no specified timing constraint which may adversely impact design performance. 
 
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 109MB peak: 110MB)
+Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 109MB peak: 110MB)
 
 Encoding state machine spi_sm[0:5] (in view: work.spi_slave(rtl))
 original code -> new code
@@ -146,37 +176,37 @@ original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[16] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[17] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[18] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[19] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[20] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[21] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[22] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[23] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[24] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[25] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[26] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[27] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[29] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[30] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":143:4:143:5|Removing sequential instance i_spi_rx_word[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[16] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[17] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[18] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[19] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[20] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[21] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[22] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[23] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[24] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[25] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[26] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[27] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[29] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[30] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Removing sequential instance i_spi_rx_word[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffre(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance rx_32bit_sreg[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance n_rx_32bit_sreg[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Removing sequential instance n_rx_32bit_sreg[31] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance rx_32bit_sreg[30] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance n_rx_32bit_sreg[30] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Removing sequential instance n_rx_32bit_sreg[30] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance rx_32bit_sreg[29] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
-@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Removing sequential instance n_rx_32bit_sreg[29] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffe(prim) because it does not drive other instances.
+@N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Removing sequential instance n_rx_32bit_sreg[29] (in view: work.spi_slave(rtl)) of type view:PrimLib.dffrs(prim) because it does not drive other instances.
 None
 None
 
-Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 111MB peak: 112MB)
+Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 111MB peak: 112MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 27MB peak: 112MB)
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 27MB peak: 112MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Fri May 22 18:17:35 2020
+# Tue Jun 02 18:10:28 2020
 
 ###########################################################]

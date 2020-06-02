@@ -2,6 +2,7 @@
 Report for cell top_lvr_fw.rtl
                                           Cell usage:
                                cell       count     area    count*area
+                               AX1D         1       1.0        1.0
                     CCC_Glob_3xBuff         1       1.0        1.0
                              CLKINT         2       0.0        0.0
                            DFN0P1C1        16       1.0       16.0
@@ -17,21 +18,27 @@ Report for cell top_lvr_fw.rtl
                        IIR_FILT_4_3         1      44.0       44.0
                               INBUF        17       0.0        0.0
                                 INV         2       1.0        2.0
-                                MX2         8       1.0        8.0
-                               NOR2         1       1.0        1.0
-                              NOR2A         1       1.0        1.0
+                                MX2         6       1.0        6.0
+                               NOR2         4       1.0        4.0
+                              NOR2A         2       1.0        2.0
                               NOR2B         2       1.0        2.0
+                              NOR3C         2       1.0        2.0
+                                OR2         2       1.0        2.0
+                               OR2A         2       1.0        2.0
+                                OR3         1       1.0        1.0
                              OUTBUF        44       0.0        0.0
                   SLOW_PULSE_EN_GEN         1      80.0       80.0
                                 VCC         1       0.0        0.0
-                               XOR2         1       1.0        1.0
-               main_sequencer_new_3         1     416.0      416.0
-             main_sequencer_new_3_0         1     403.0      403.0
-             main_sequencer_new_3_1         1     391.0      391.0
-             main_sequencer_new_3_2         1     392.0      392.0
-                          spi_slave         1     212.0      212.0
+                              XNOR2         1       1.0        1.0
+                               XO1A         1       1.0        1.0
+                               XOR2         2       1.0        2.0
+               main_sequencer_new_3         1     403.0      403.0
+             main_sequencer_new_3_0         1     399.0      399.0
+             main_sequencer_new_3_1         1     390.0      390.0
+             main_sequencer_new_3_2         1     389.0      389.0
+                          spi_slave         1     206.0      206.0
                             
-                         TOTAL            125               2165.0
+                         TOTAL            138               2151.0
 ----------------------------------------------------------------------
 Report for cell IIR_FILT_4_3.netlist
   Original Cell name IIR_FILT_4
@@ -208,8 +215,8 @@ Report for cell main_sequencer_new_3_2.netlist
      Instance path:  CONTROL78
                                           Cell usage:
                                cell       count     area    count*area
-                               AND2        46       1.0       46.0
-                                AO1        47       1.0       47.0
+                               AND2        44       1.0       44.0
+                                AO1        48       1.0       48.0
                                AO1A         6       1.0        6.0
                                AO1C         2       1.0        2.0
                                AOI1         2       1.0        2.0
@@ -219,26 +226,26 @@ Report for cell main_sequencer_new_3_2.netlist
                                 GND         1       0.0        0.0
                                 MX2         2       1.0        2.0
                                MX2C         2       1.0        2.0
-                               NOR2        18       1.0       18.0
-                              NOR2A        18       1.0       18.0
-                              NOR2B        13       1.0       13.0
+                               NOR2        19       1.0       19.0
+                              NOR2A        17       1.0       17.0
+                              NOR2B         6       1.0        6.0
                                NOR3         8       1.0        8.0
-                              NOR3A        11       1.0       11.0
-                              NOR3B         7       1.0        7.0
-                              NOR3C         4       1.0        4.0
+                              NOR3A        10       1.0       10.0
+                              NOR3B         9       1.0        9.0
+                              NOR3C         8       1.0        8.0
                                 OA1         2       1.0        2.0
                                OA1A         4       1.0        4.0
-                               OA1B         3       1.0        3.0
-                               OA1C         4       1.0        4.0
+                               OA1B         2       1.0        2.0
+                               OA1C         5       1.0        5.0
                                OAI1         2       1.0        2.0
-                                OR2        23       1.0       23.0
+                                OR2        38       1.0       38.0
                                OR2B         3       1.0        3.0
-                                OR3        17       1.0       17.0
+                                OR3         2       1.0        2.0
                                 VCC         1       0.0        0.0
                                 XA1         2       1.0        2.0
                                XOR2        86       1.0       86.0
                             
-                         TOTAL            394                392.0
+                         TOTAL            391                389.0
 ----------------------------------------------------------------------
 Report for cell main_sequencer_new_3_1.netlist
   Original Cell name main_sequencer_new_3
@@ -256,13 +263,50 @@ Report for cell main_sequencer_new_3_1.netlist
                                 GND         1       0.0        0.0
                                 MX2         2       1.0        2.0
                                MX2C         2       1.0        2.0
-                               NOR2        19       1.0       19.0
-                              NOR2A        17       1.0       17.0
+                               NOR2        18       1.0       18.0
+                              NOR2A        16       1.0       16.0
                               NOR2B        14       1.0       14.0
                                NOR3         8       1.0        8.0
-                              NOR3A        10       1.0       10.0
+                              NOR3A        11       1.0       11.0
                               NOR3B         9       1.0        9.0
                               NOR3C         4       1.0        4.0
+                                OA1         2       1.0        2.0
+                               OA1A         4       1.0        4.0
+                               OA1B         3       1.0        3.0
+                               OA1C         4       1.0        4.0
+                               OAI1         2       1.0        2.0
+                                OR2         8       1.0        8.0
+                               OR2B         3       1.0        3.0
+                                OR3        32       1.0       32.0
+                                VCC         1       0.0        0.0
+                                XA1         2       1.0        2.0
+                               XOR2        86       1.0       86.0
+                            
+                         TOTAL            392                390.0
+----------------------------------------------------------------------
+Report for cell main_sequencer_new_3_0.netlist
+  Original Cell name main_sequencer_new_3
+     Instance path:  CONTROL34
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2        45       1.0       45.0
+                                AO1        47       1.0       47.0
+                               AO1A         5       1.0        5.0
+                               AO1C         2       1.0        2.0
+                               AOI1         2       1.0        2.0
+                             DFN1C0        18       1.0       18.0
+                           DFN1E0C0         6       1.0        6.0
+                             DFN1P0        36       1.0       36.0
+                                GND         1       0.0        0.0
+                                MX2         8       1.0        8.0
+                               MX2C         2       1.0        2.0
+                               NOR2        19       1.0       19.0
+                              NOR2A        18       1.0       18.0
+                              NOR2B        11       1.0       11.0
+                               NOR3         8       1.0        8.0
+                              NOR3A        10       1.0       10.0
+                              NOR3B         8       1.0        8.0
+                              NOR3C         8       1.0        8.0
                                 OA1         2       1.0        2.0
                                OA1A         4       1.0        4.0
                                OA1B         2       1.0        2.0
@@ -275,48 +319,7 @@ Report for cell main_sequencer_new_3_1.netlist
                                 XA1         2       1.0        2.0
                                XOR2        86       1.0       86.0
                             
-                         TOTAL            393                391.0
-----------------------------------------------------------------------
-Report for cell main_sequencer_new_3_0.netlist
-  Original Cell name main_sequencer_new_3
-     Instance path:  CONTROL34
-                                          Cell usage:
-                               cell       count     area    count*area
-                               AND2        44       1.0       44.0
-                                AO1        48       1.0       48.0
-                               AO1A         8       1.0        8.0
-                               AO1C         2       1.0        2.0
-                               AOI1         2       1.0        2.0
-                               AX1D         1       1.0        1.0
-                             DFN1C0        18       1.0       18.0
-                           DFN1E0C0         6       1.0        6.0
-                             DFN1P0        36       1.0       36.0
-                                GND         1       0.0        0.0
-                                MX2         2       1.0        2.0
-                               MX2C         2       1.0        2.0
-                               NOR2        21       1.0       21.0
-                              NOR2A        15       1.0       15.0
-                              NOR2B        12       1.0       12.0
-                               NOR3         8       1.0        8.0
-                              NOR3A        11       1.0       11.0
-                              NOR3B         9       1.0        9.0
-                              NOR3C         6       1.0        6.0
-                                OA1         2       1.0        2.0
-                               OA1A         4       1.0        4.0
-                               OA1B         3       1.0        3.0
-                               OA1C         4       1.0        4.0
-                               OAI1         2       1.0        2.0
-                                OR2        10       1.0       10.0
-                               OR2A         2       1.0        2.0
-                               OR2B         3       1.0        3.0
-                                OR3        31       1.0       31.0
-                                VCC         1       0.0        0.0
-                                XA1         2       1.0        2.0
-                              XNOR2         1       1.0        1.0
-                               XO1A         1       1.0        1.0
-                               XOR2        87       1.0       87.0
-                            
-                         TOTAL            405                403.0
+                         TOTAL            401                399.0
 ----------------------------------------------------------------------
 Report for cell main_sequencer_new_3.netlist
   Original Cell name main_sequencer_new
@@ -324,25 +327,25 @@ Report for cell main_sequencer_new_3.netlist
                                           Cell usage:
                                cell       count     area    count*area
                                AND2        44       1.0       44.0
-                                AO1        49       1.0       49.0
-                               AO1A         5       1.0        5.0
+                                AO1        47       1.0       47.0
+                               AO1A         7       1.0        7.0
                                AO1C         2       1.0        2.0
                                AOI1         2       1.0        2.0
                              DFN1C0        18       1.0       18.0
                            DFN1E0C0         6       1.0        6.0
                              DFN1P0        36       1.0       36.0
                                 GND         1       0.0        0.0
-                                MX2        18       1.0       18.0
+                                MX2         8       1.0        8.0
                                MX2C         2       1.0        2.0
                                NOR2        20       1.0       20.0
-                              NOR2A        20       1.0       20.0
+                              NOR2A        17       1.0       17.0
                               NOR2B        17       1.0       17.0
                                NOR3         8       1.0        8.0
                               NOR3A        10       1.0       10.0
                               NOR3B         9       1.0        9.0
-                              NOR3C         6       1.0        6.0
+                              NOR3C         4       1.0        4.0
                                 OA1         2       1.0        2.0
-                               OA1A         2       1.0        2.0
+                               OA1A         4       1.0        4.0
                                OA1B         2       1.0        2.0
                                OA1C         5       1.0        5.0
                                OAI1         2       1.0        2.0
@@ -353,37 +356,38 @@ Report for cell main_sequencer_new_3.netlist
                                 XA1         2       1.0        2.0
                                XOR2        86       1.0       86.0
                             
-                         TOTAL            418                416.0
+                         TOTAL            405                403.0
 ----------------------------------------------------------------------
 Report for cell spi_slave.netlist
      Instance path:  spi_slave_pm
                                           Cell usage:
                                cell       count     area    count*area
                                AND2         2       1.0        2.0
-                                AO1         2       1.0        2.0
+                                AO1         1       1.0        1.0
+                               AO1D         1       1.0        1.0
                                AOI1         1       1.0        1.0
-                              AOI1B         2       1.0        2.0
+                              AOI1B         6       1.0        6.0
                                AX1A         1       1.0        1.0
                              CLKINT         1       0.0        0.0
                              DFI1C0         2       1.0        2.0
-                             DFN0C1        36       1.0       36.0
+                             DFN0C1        35       1.0       35.0
                              DFN1C0        16       1.0       16.0
-                             DFN1E0        35       1.0       35.0
+                             DFN1C1         5       1.0        5.0
                            DFN1E0C0         5       1.0        5.0
                            DFN1E0P0         1       1.0        1.0
                            DFN1E1C0        18       1.0       18.0
                              DFN1P0         3       1.0        3.0
-                               DLN1        16       1.0       16.0
+                             DFN1P1         1       1.0        1.0
+                           DFN1P1C1        29       1.0       29.0
                                 GND         1       0.0        0.0
-                                MX2        15       1.0       15.0
-                               MX2A         1       1.0        1.0
+                                MX2         6       1.0        6.0
                                NOR2         3       1.0        3.0
-                              NOR2A         6       1.0        6.0
-                              NOR2B        22       1.0       22.0
+                              NOR2A        20       1.0       20.0
+                              NOR2B        27       1.0       27.0
                                NOR3         2       1.0        2.0
-                              NOR3B         2       1.0        2.0
-                                OR2         4       1.0        4.0
-                               OR2A         6       1.0        6.0
+                              NOR3B         3       1.0        3.0
+                               OA1A         2       1.0        2.0
+                                OR2         5       1.0        5.0
                                 OR3         2       1.0        2.0
                                OR3C         1       1.0        1.0
                                 VCC         1       0.0        0.0
@@ -391,7 +395,7 @@ Report for cell spi_slave.netlist
                                XA1A         1       1.0        1.0
                                XOR2         6       1.0        6.0
                             
-                         TOTAL            215                212.0
+                         TOTAL            209                206.0
 ----------------------------------------------------------------------
 Report for cell CCC_Glob_3xBuff.netlist
      Instance path:  GLOB_BUFF

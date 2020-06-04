@@ -4,38 +4,38 @@
 @P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Period : 16.621
 @P:  CCC_Glob_3xBuff|GLB_inferred_clock - Requested Period : 20.000
 @P:  CCC_Glob_3xBuff|GLB_inferred_clock - Slack : 1.690
-@P:  CLK40MHZ_OSC - Estimated Frequency : 238.1 MHz
-@P:  CLK40MHZ_OSC - Requested Frequency : 40.0 MHz
-@P:  CLK40MHZ_OSC - Estimated Period : 4.200
-@P:  CLK40MHZ_OSC - Requested Period : 25.000
-@P:  CLK40MHZ_OSC - Slack : 20.799
-@P:  CLK_5M_GL - Estimated Frequency : 56.9 MHz
-@P:  CLK_5M_GL - Requested Frequency : 5.0 MHz
-@P:  CLK_5M_GL - Estimated Period : 17.560
-@P:  CLK_5M_GL - Requested Period : 200.000
-@P:  CLK_5M_GL - Slack : 182.440
-@P:  SCA_CLK_OUT - Estimated Frequency : NA
-@P:  SCA_CLK_OUT - Requested Frequency : 1.0 MHz
-@P:  SCA_CLK_OUT - Estimated Period : NA
-@P:  SCA_CLK_OUT - Requested Period : 1000.000
-@P:  SCA_CLK_OUT - Slack : NA
-@P:  spi_slave|i_spi_rx_strb_inferred_clock - Estimated Frequency : 148.9 MHz
+@P:  sca_clk_out - Estimated Frequency : NA
+@P:  sca_clk_out - Requested Frequency : 1.0 MHz
+@P:  sca_clk_out - Estimated Period : NA
+@P:  sca_clk_out - Requested Period : 1000.000
+@P:  sca_clk_out - Slack : NA
+@P:  spi_slave|i_spi_rx_strb_inferred_clock - Estimated Frequency : 148.1 MHz
 @P:  spi_slave|i_spi_rx_strb_inferred_clock - Requested Frequency : 50.0 MHz
-@P:  spi_slave|i_spi_rx_strb_inferred_clock - Estimated Period : 6.714
+@P:  spi_slave|i_spi_rx_strb_inferred_clock - Estimated Period : 6.754
 @P:  spi_slave|i_spi_rx_strb_inferred_clock - Requested Period : 20.000
-@P:  spi_slave|i_spi_rx_strb_inferred_clock - Slack : 13.286
-@P:  Total Area : 2151.0
-@P:  Total Area : 44.0
-@P:  Total Area : 46.0
-@P:  Total Area : 44.0
-@P:  Total Area : 44.0
+@P:  spi_slave|i_spi_rx_strb_inferred_clock - Slack : 13.246
+@P:  top_lvr_fw|CLK40M_OSC - Estimated Frequency : 296.4 MHz
+@P:  top_lvr_fw|CLK40M_OSC - Requested Frequency : 50.0 MHz
+@P:  top_lvr_fw|CLK40M_OSC - Estimated Period : 3.373
+@P:  top_lvr_fw|CLK40M_OSC - Requested Period : 20.000
+@P:  top_lvr_fw|CLK40M_OSC - Slack : 16.627
+@P:  top_lvr_fw|db_clk5mhz_inferred_clock - Estimated Frequency : 56.9 MHz
+@P:  top_lvr_fw|db_clk5mhz_inferred_clock - Requested Frequency : 50.0 MHz
+@P:  top_lvr_fw|db_clk5mhz_inferred_clock - Estimated Period : 17.560
+@P:  top_lvr_fw|db_clk5mhz_inferred_clock - Requested Period : 20.000
+@P:  top_lvr_fw|db_clk5mhz_inferred_clock - Slack : 2.440
+@P:  Total Area : 2222.0
 @P:  Total Area : 44.0
 @P:  Total Area : 80.0
-@P:  Total Area : 389.0
-@P:  Total Area : 390.0
-@P:  Total Area : 399.0
-@P:  Total Area : 403.0
-@P:  Total Area : 206.0
+@P:  Total Area : 47.0
+@P:  Total Area : 44.0
+@P:  Total Area : 45.0
+@P:  Total Area : 46.0
+@P:  Total Area : 388.0
+@P:  Total Area : 402.0
+@P:  Total Area : 388.0
+@P:  Total Area : 406.0
+@P:  Total Area : 226.0
 @P:  Total Area : 1.0
-@P:  Total Area : 2151.0
-@P:  CPU Time : 0h:00m:03s
+@P:  Total Area : 2222.0
+@P:  CPU Time : 0h:00m:04s

@@ -1,3 +1,2 @@
-@E: CD255 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":423:68:423:68|No identifier "spi_rx_wor" in scope
-@E: Parse errors encountered - exiting
+@E: CD752 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":534:19:534:38|Index 5 is out of range: [4 downto 1]
 

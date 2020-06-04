@@ -66,14 +66,12 @@ entity main_sequencer_new is
     cmnd_word_stb : in std_logic;  -- [unused] single clock pulse strobe indicates an updated command word
 
     DTYCYC_EN : in std_logic;  -- '1' enables a low duty cycle mode to limit thermal loads for special tests
-    V_IN_OK   : in std_logic;  -- under-voltage lockout:  v_in above threshold when ='1'
-    TEMP_OK   : in std_logic;  -- '1' means the temperature is below the max value
 
     SIM_MODE_EN : in integer;  -- '1' is special sim mode with reduced timeout intervals
 
-    P_CH_MREG_EN : out std_logic_vector(1 downto 0);  -- channel enable signal: main regulator ic, active high
-    P_CH_IAUX_EN : out std_logic_vector(1 downto 0);  -- channel enable signal: iaux regulator ic, active high
-    P_CH_VOSG_EN : out std_logic_vector(1 downto 0);  -- channel enable signal: vos_gen regulator ic, active high
+    OUT_CHANNEL_MREG : out std_logic_vector(1 downto 0);  -- channel enable signal: main regulator ic, active high
+    OUT_CHANNEL_IAUX : out std_logic_vector(1 downto 0);  -- channel enable signal: iaux regulator ic, active high
+    OUT_CHANNEL_VOSG : out std_logic_vector(1 downto 0);  -- channel enable signal: vos_gen regulator ic, active high
 
     P_SEQ_STEPVAL : out std_logic_vector(3 downto 0)  -- indicates present sequence step
     );
@@ -153,7 +151,7 @@ begin
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- instantiate the main sequencer and control module
-  main_sequencer : process(sequencer_state0, sequencer_state1, V_IN_OK, TEMP_OK, CHANNELS_READY, CHANNELS_ON, del_cntr0, del_cntr1,
+  main_sequencer : process(sequencer_state0, sequencer_state1, CHANNELS_READY, CHANNELS_ON, del_cntr0, del_cntr1,
                            ret_state0, ret_state1, DTYCYC_EN)
   begin
     -- default assignments get overriden below as needed
@@ -269,7 +267,7 @@ begin
         n_ch_out1   <= "000";           -- keep disabled 
         n_del_cntr1 <= del_cnt_val;     -- initialize the delay counter
 
-        if (CHANNELS_READY(1) = '1') then  -- transition to the standby state when eanbled
+        if (CHANNELS_READY(1) = '1') then  -- transition to the standby state when enabled
           n_sequencer_state1 <= CH_1ST_STEP;
         else
           n_sequencer_state1 <= INIT;   -- wait here until standby is requested
@@ -356,33 +354,21 @@ begin
 
     end case;
 
---++++++++++++++++++++++++++++++++++++++++++++++++++++
--- this is the under-voltage lockout handler.
--- these statements override the ones above.            
-    if (V_IN_OK = '0' or TEMP_OK = '0') then  -- v_in_ok must be ='1' to be above the min v input threshold!
-      n_sequencer_state0 <= INIT;
-      n_ch_out0          <= "000";      -- disable all channels immediately
-      n_sequencer_state1 <= INIT;
-      n_ch_out1          <= "000";      -- disable all channels immediately
-    end if;
---++++++++++++++++++++++++++++++++++++++++++++++++++++                  
-
-
   end process main_sequencer;
 
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Assign internal signals to external ports for master (channel 0)
-  P_CH_MREG_EN(0) <= ch_out0(2);
-  P_CH_IAUX_EN(0) <= ch_out0(1);
-  P_CH_VOSG_EN(0) <= ch_out0(0);
+  OUT_CHANNEL_MREG(0) <= ch_out0(2);
+  OUT_CHANNEL_IAUX(0) <= ch_out0(1);
+  OUT_CHANNEL_VOSG(0) <= ch_out0(0);
 
 -- Assign internal signals to external ports for master or slave (channel 1)
-  P_CH_MREG_EN(1) <= ch_out1(2) when MASTER_SLAVE_PAIR = '0' else ch_out0(2);
-  P_CH_IAUX_EN(1) <= ch_out1(1) when MASTER_SLAVE_PAIR = '0' else ch_out0(1);
+  OUT_CHANNEL_MREG(1) <= ch_out1(2) when MASTER_SLAVE_PAIR = '0' else ch_out0(2);
+  OUT_CHANNEL_IAUX(1) <= ch_out1(1) when MASTER_SLAVE_PAIR = '0' else ch_out0(1);
 -- The slave's VOS follows the master's IAUX
-  P_CH_VOSG_EN(1) <= ch_out1(0) when MASTER_SLAVE_PAIR = '0' else
+  OUT_CHANNEL_VOSG(1) <= ch_out1(0) when MASTER_SLAVE_PAIR = '0' else
                      ch_out0(0) when ch_out0 /= "110" else
                      '1';
 

@@ -1,190 +1,111 @@
 --------------------------------------------------------------------------------
--- Company: UNIVERSITY OF MARYLAND
---
--- File: TOP_LV_REGUL_CNTL.vhd
--- File history:
---      REV - // JAN 7, 2019  INITIAL UPDATE
---              REV A // APR 8, 2019  INCCLUDES FAILSAFE UPDATES
---
--- Description: LV REGULATOR SERIAL CONTROL INTERFACE
---      FUNCTIONS:
---                      1) UNDER-VOLTAGE LOCKOUT FAILSAFE--CHECK EACH OF 4 FUSES
---                                              A) REQUIRES THAT EACH FUSE SECTION TREATED AS SEPARATE INDEPENDENT CONTROL CENTERS
---                                      2) BOARD OVER-TEMPERATURE FAILSAFE CHECK
---                                              A) LATCHED CONDITION FOR ENTIRE BOARD
---                      3) SPI SERIAL COMM
---                      4) REGULATOR CHANNEL SEQUENCE CONTROLS
+-- Description: LV regulator serial control interface
+--      functions:
+--                      1) under-voltage lockout failsafe--check each of 4 fuses
+--                                              a) requires that each fuse section treated as separate independent control centers
+--                                      2) board over-temperature failsafe check
+--                                              a) latched condition for entire board
+--                      3) spi serial comm
+--                      4) regulator channel sequence controls
 
---              THERE ARE 2 SERIAL COMM OPTIONS:
---                      (A) SINGLE GBT-SCA SPI SLAVE WHEN ADDR_SEL(4:0)= 1F HEX
---                                      NOTE THAT THIS SPI PORT OPERATES AS A SHIFT REGISTER DRIVEN BY THE GBT-SCA SPI CLOCK.  
---                                      A CLOCK BOUNDARY CROSSING IS INITIATED ONCE THE SPI CLOCK STOPS
+--                      (a) single gbt-sca spi slave when addr_sel(4:0)= 1f hex
+--                                      note that this spi port operates as a shift register driven by the gbt-sca spi clock.  
+--                                      a clock boundary crossing is initiated once the spi clock stops
 
---                      (B) DAISY CHAINED RS-485 ASYNC SERIAL INTERFACE (LEGACY INTERFACE NOT IMPLEMENTED)
 
 --
--- Targeted device: <Family::ProASIC3N> <Die::A3PN250> <Package::100 VQFP>
--- Author: TOM O'BANNON
---
--- ////////////////////////////////////////////////////////////////////////////////////
--- ////////////////////////////////////////////////////////////////////////////////////
--- CAUTION:  SIM_MODE CONSTANT NEEDS TO BE MANUALLY UPDATED!!!!!
---                              (A) SLOW_PULSE_EN_GEN HAS A SPECIAL SIM INPUT OPTION
---                              (B) MAIN_SEQUENCER_NEW CONSTANT DEL_CNT_VAL CAN BE CHANGED TO SPEED SIM
--- ////////////////////////////////////////////////////////////////////////////////////
--- ////////////////////////////////////////////////////////////////////////////////////
+-- Targeted device: <family::ProASIC3> <die::A3PN250> <package::100 VQFP>
+-- Authors: Tom O'Bannon, Manuel Franco Sevilla
 --------------------------------------------------------------------------------
 
-library IEEE;
+library ieee;
 
-use IEEE.std_logic_1164.all;
-use IEEE.STD_LOGIC_ARITH.all;
-use IEEE.STD_LOGIC_UNSIGNED.all;
-use IEEE.STD_LOGIC_MISC.all;
---USE IEEE.NUMERIC_STD.ALL;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_misc.all;
+--use ieee.numeric_std.all;
 
 library proasic3;
 use proasic3.all;
 
--- NOTE:  THE SYNPLIFY LIBRARY NEEDS TO BE COMMENTED OUT FOR MODELSIM PRESYNTH SIMS SINCE MODELSIM DOES NOT RECOGNIZE IT
+-- note:  the synplify library needs to be commented out for modelsim presynth sims since modelsim does not recognize it
 --library synplify;
 --use synplify.attributes.all;
 
 entity top_lvr_fw is
   generic (
-    SIM_MODE_EN : integer range 0 to 1 := 0  -- Set to 1 by test bench in simulation 
-    );  
+    SIM_MODE_EN : integer range 0 to 1 := 0              -- set to 1 by test bench in simulation 
+    );
   port (
-    CLK40MHZ_OSC : in std_logic;        -- pin 57, EXTERNAL 3.3V 40 MHZ CLOCK 
-    POR_FPGA     : in std_logic;  -- pin 93, ACTIVE LOW RESET --DEDICATED RC TIME CONSTANT---NEEDS SCHMITT-TRIGGER!
+    CLK40M_OSC       : in std_logic;                     -- pin 57, external 3.3v 40 mhz clock 
+    IN_POWERON_RST_B : in std_logic;                     -- pin 93, active low reset --dedicated rc time constant---needs schmitt-trigger!
+    IN_INVOLTAGE_OK  : in std_logic_vector(4 downto 1);  -- pins 36, 40-42: under-voltage lockout failsafe ('1'= above threshold)
+    IN_TEMP_OK       : in std_logic;                     -- pin 43: over-temperature failsafe'0'= above the over-temp threshold
 
--- UNDER-VOLTAGE LOCKOUT AND FUSE STATUS DETECTION      
-    FPGA_FUSE_1_2_OK : in std_logic_vector(0 downto 0);  -- pin 42, UNDER-VOLTAGE LOCKOUT FAILSAFE INPUT ('1'= INPUT FUSED RAIL FOR CH1&2 ABOVE THRESHOLD)
-    FPGA_FUSE_3_4_OK : in std_logic_vector(0 downto 0);  -- pin 41, UNDER-VOLTAGE LOCKOUT FAILSAFE INPUT ('1'= INPUT FUSED RAIL FOR CH3&4 ABOVE THRESHOLD)
-    FPGA_FUSE_5_6_OK : in std_logic_vector(0 downto 0);  -- pin 40, UNDER-VOLTAGE LOCKOUT FAILSAFE INPUT ('1'= INPUT FUSED RAIL FOR CH5&6 ABOVE THRESHOLD)
-    FPGA_FUSE_7_8_OK : in std_logic_vector(0 downto 0);  -- pin 36, UNDER-VOLTAGE LOCKOUT FAILSAFE INPUT ('1'= INPUT FUSED RAIL FOR CH7&8 ABOVE THRESHOLD)
+-------------------------- DIP SWITCHES --------------------------    
+    SW2_SW5_CHANNEL_ON : in std_logic_vector(8 downto 1);  -- pins 27, 26, 23, 22, 15, 13, 11, 10: channels that can be turned on
+    SW3_DUTYCYCLE_MODE : in std_logic;                     -- pin 31: '1' = special test low duty cycle mode
+    sw3_free_pins      : in std_logic_vector(4 downto 2);  -- pins 30, 29, 28
+    SW4_SLAVE_PAIRS    : in std_logic_vector(4 downto 1);  -- pins 21, 20, 19, 16: switch defining slave/master pairs
 
--- OVER-TEMPERATURE FAILSAFE
-    TEMP_OK : in std_logic_vector(0 downto 0);  -- pin 43, BOARD TEMPERATURE FAILSAFE OK ('0'= ABOVE THE OVER-TEMP THRESHOLD--ie fault)
+-------------------------- SPI INTERFACE --------------------------    
+    sca_clk_out   : in  std_logic;      -- pin 35, spi clock from the spi master
+    sca_reset_out : in  std_logic;      -- pin 34, optional reset from the spi master
+    sca_dat_in    : out std_logic;      -- pin 3, serial data from fpga to the spi master
+    sca_dat_out   : in  std_logic;      -- pin 2, serial data to the fpga from the spi master
 
--- DIP SWITCH INPUTS
-
-    -- OPERATION AND FAILSAFE MODES: DIP SW SETTINGS
-    MODE_DCYC_NORMB : in std_logic;  -- pin 31, SCHEMA MODE 0   '1' = SPECIAL TEST LOW DUTY CYCLE MODE
-    --                                             '0' = NORMAL OP WITH STAGGERED ENABLE SEQUENCES (19.6608 MS PER CHANNEL)
-    MODE_WDT_EN     : in std_logic;  -- pin 30, SCHEMA MODE 1       '1' = WATCH DOG TIMER ENABLED
-    --                                                 '0' = WATCH DOG TIMER DISABLED
-    MODE_DIAG_NORMB : in std_logic;  -- pin 29, SCHEMA MODE 2   '1' = DISABLE FRAME ERROR CHECKING
-    --                                                     '0' = NORMAL OPERATION FRAME ERROR CHECK ENABLED
-    -- MASTER-SLAVE CHANNEL GROUP ENABLES: DIP SW SETTINGS
-    -- '0' = DISABLED STATE WHERE SPECIFIED CHANNELS TREATED INDEPENDENTLY      
-    -- '1' = ENABLED STATE WHERE SPECIFIED CHANNELS ARE TREATED AS A MASTER-SLAVE PAIR  
-    CH1_2_MS_CFG_EN : in std_logic;  -- pin 21, BIT 0:  CH1_2_MS_CFG_EN = CHANNELS 1 & 2
-    CH3_4_MS_CFG_EN : in std_logic;  -- pin 20, BIT 1:  CH3_4_MS_CFG_EN = CHANNELS 3 & 4
-    CH5_6_MS_CFG_EN : in std_logic;  -- pin 19, BIT 2:  CH5_6_MS_CFG_EN = CHANNELS 5 & 6
-    CH7_8_MS_CFG_EN : in std_logic;  -- pin 16, BIT 3:  CH7_8_MS_CFG_EN = CHANNELS 7 & 8
-
-    -- MANUAL CHANNEL GROUP ENABLES FOR STAND-ALONE TESTS:  DIP SW SETTINGS
-    MAN_EN_CH_4TO1 : in std_logic;  -- pin 15, (Schema was CH5_6_W_STDBY_E) NCHANNELS 5 & 6 TREATED AS REDUNDANT PAIR WHNE ='1'
-    MAN_EN_CH_8TO5 : in std_logic;  -- pin 13, (Schema was CH7_8_W_STDBY_EN) CHANNELS 7 & 8 TREATED AS REDUNDANT PAIR WHNE ='1'
-
-    TEMP_FAILSAFE_EN : in std_logic;  -- pin 11, '1' = TEMPERATURE FAILSAFE IS ENABLED
-    STDBY_OFFB       : in std_logic;  -- PIN 10, '0'=ALL CHANNELS OFF, '1'= STANDBY AT V_OS OUT--READY TO OPERATE
-
--- RS-485               
-    RX_FPGA : in  std_logic;            -- pin 97, RS_485 SERIAL RX STREAM
-    TX_FPGA : out std_logic;            -- pin 98, RS_485 SERIAL TX STREAM
-
-    PRI_RX_EN_BAR : out std_logic;  -- pin 96, ENABLE FOR THE RX OUTPUT--SHOULD BE STUCK AT '0'
-    PRI_TX_EN     : out std_logic;      -- pin 94, ENABLE FOR THE TX OUTPUT--
-
-    ADDR_SEL : in std_logic_vector(4 downto 0);  -- pins {28, 27, 26, 23, 22} DIP SW FOR MODULE ADDRESS--THIS IS ONLY NEEDED FOR THE DAISY-CHAINED RS-485 INTERFACE
-
--- GBT-SCA SPI
-    SCA_CLK_OUT    : in  std_logic;  -- pin 35, SPI CLOCK FROM THE SPI MASTER
-    SCA_RESET_OUT  : in  std_logic;  -- pin 34, OPTIONAL RESET FROM THE SPI MASTER
-    SCA_DAT_IN     : out std_logic;  -- pin 3, SERIAL DATA FROM FPGA TO THE SPI MASTER
-    SCA_DAT_OUT    : in  std_logic;  -- pin 2, SERIAL DATA TO THE FPGA FROM THE SPI MASTER
-    POR_OUT_TO_SCA : out std_logic;  -- pin 6, RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-
-    -- SPI DEBUG signals
+    -- spi debug signals
     db_sca_dat_out : out std_logic;
     db_sca_clk_out : out std_logic;
     db_clk5mhz     : out std_logic;
     db_spi_strobe  : out std_logic;
-    db_spi_state0  : out std_logic;
-    db_spi_state1  : out std_logic;
-    --db_spi_state2  : out std_logic;
-    db_spi_cnt0    : out std_logic;
-    db_spi_cnt1    : out std_logic;
-    --db_spi_cnt2    : out std_logic;
+    db_spi_state   : out std_logic_vector(2 downto 0);
+    db_spi_cnt     : out std_logic_vector(1 downto 0);
 
+-------------------------- CHANNEL ENABLES --------------------------    
+    OUT_CHANNEL_MREG : out std_logic_vector(8 downto 1);  -- pins {62, 65, 71, 76, 80, 83, 92, 86} main regulator ic, active high
+    OUT_CHANNEL_IAUX : out std_logic_vector(8 downto 1);  -- pins {61, 64, 70, 73, 79, 82, 85, 90} iaux regulator ic, active high
+    OUT_CHANNEL_VOSG : out std_logic_vector(8 downto 1);  -- pins {60, 63, 69, 72, 78, 81, 84, 91} vos_gen regulator ic, active high
 
--- CHANNEL ENABLES
-    P_CH_MREG_EN : out std_logic_vector(7 downto 0);  -- pins {62, 65, 71, 76, 80, 83, 92, 86} CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
-    P_CH_IAUX_EN : out std_logic_vector(7 downto 0);  -- pins {61, 64, 70, 73, 79, 82, 85, 90} CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
-    P_CH_VOSG_EN : out std_logic_vector(7 downto 0);  -- pins {60, 63, 69, 72, 78, 81, 84, 91} CHANNEL ENABLE SIGNAL: VOS_GEN REGULATOR IC, ACTIVE HIGH
+-------------------------- MONITOR AND STATUS --------------------------    
+    PWR_OK_LED : out std_logic;         -- pin 95,     status yellow led indicating at least one channel is active
+    STATUS_LED : out std_logic          -- pin 77,     steady=uvl's ok, single blink=seu and/or wdt
 
--- MONITOR AND STATUS SIGNALS
-    PWR_OK_LED : out std_logic;  -- pin 95,     STATUS YELLOW LED INDICATING AT LEAST ONE CHANNEL IS ACTIVE
-    --                         SINGLE BLINK - CHANNEL ENABLE / DISABLE EVENT
-    STATUS_LED : out std_logic;  -- pin 77,     STEADY=UVL'S OK, SINGLE BLINK=SEU AND/OR WDT
-
--- DIAGNOSTIC & TEST I/O
-    BUF5M_J11_15_TCONN : out std_logic;  -- PIN 35, (SCHEMA ALIAS= CS2_SEL_EN) 5 MHZ CLOCK BUFFER
-
--- UNUSED FPGA I/O BEING TIED TO SPECIFIED SAFE STATE
-    UNUSED_1     : in  std_logic;  -- PIN 59, 3V3 BANK, NOT ROUTED FOR USE, BUT HAS 3V3 PULLUP PRESENT
-    UNUSED_2     : in  std_logic;  -- PIN 58, 3V3 BANK, NOT ROUTED FOR USE, BUT HAS GND PULLDN PRESENT
-    J11_25_TCONN : in  std_logic;       -- pin 45, (SCHEMA ALIAS= SCLK_BUS)
-    J11_27_TCONN : in  std_logic;       -- pin 44, (SCHEMA ALIAS= SDAT_BUS)
-    J11_17_TCONN : out std_logic;  -- PIN 32, (SCHEMA ALIAS= CS3_SEL_EN) UNUSED I/O PIN
-    J11_19_TCONN : out std_logic;  -- PIN 8,  (SCHEMA ALIAS= CS4_SEL_EN) UNUSED I/O PIN
-    J11_21_TCONN : out std_logic;  -- PIN 7,  (SCHEMA ALIAS= CS5_SEL_EN) UNUSED I/O PIN
-    J11_23_TCONN : out std_logic  -- PIN 5,  (SCHEMA ALIAS= CS6_SEL_EN) UNUSED I/O PIN
     );
 
 end top_lvr_fw;
 
-architecture RTL of top_lvr_fw is
+architecture rtl of top_lvr_fw is
 
 
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
---attribute SYN_RADHARDLEVEL of RTL : architecture is "TMR";
---attribute SYN_HIER of RTL         : architecture is "FIRM";
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--attribute syn_radhardlevel of rtl : architecture is "tmr";
+--attribute syn_hier of rtl         : architecture is "firm";
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- notes:  !!!!!        specific i/o features (eg hysterisis ) need to be assigned in the constraints file  !!!!
+--                 !!!!!        the syn_encoding for each of the state machines needs to have a "safe, original" fsm encoding 
+  --- specified in the synth constraint file     !!!!!!!
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- NOTES:  !!!!!        SPECIFIC I/O FEATURES (EG HYSTERISIS ) NEED TO BE ASSIGNED IN THE CONSTRAINTS FILE  !!!!
---                 !!!!!        THE SYN_ENCODING FOR EACH OF THE STATE MACHINES NEEDS TO HAVE A "SAFE, ORIGINAL" fsm ENCODING SEPECIFIED IN THE SYNTH CONSTRAINT FILE     !!!!!!!
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- DEFINE COMPONENTS
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
--- IIR FILTER WITH SEVERAL USES:
---              (1) THE RS-485 SERIAL RECEIVE SIGNAL (ONLY--NOT USED FOR THE GBT-SCA SPI SLAVE PORT)            FILTERED RESULT:  FILTD_RS485RX
---              (2) TEMP_OK                                                                                                                                                                     FILTERED RESULT:  FILTD_TEMP_OK
---              (3) FPGA_FUSE_X_Y_OK (4 FILTERS FOR 4 SIGNALS)                                                                                          FILTERED RESULTS: UVL_OK_CH1A2, UVL_OK_CH3A4, UVL_OK_CH5A6, UVL_OK_CH7A8
-  component IIR_FILT is
+-- iir filter with several uses:
+--              (2) IN_TEMP_OK       filtered result:  filtd_temp_ok
+--              (3) IN_INVOLTAGE_OK (4 filters for 4 signals)                                                                                  
+  component iir_filt is
     port (
-      MASTER_RST_B : in std_logic;  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    : in std_logic;
+      master_rst_b : in std_logic;      -- reset with async assert, but synchronized to the 40 mhz clock edge
+      clk_5m_gl    : in std_logic;
 
-      SIG_IN       : in  std_logic_vector(0 downto 0);  -- INPUT SIGNAL TO BE FILTERED
-      THRESH_UPPER : in  std_logic_vector(7 downto 0);  -- UPPER HYSTERISIS THRESHOLD (IE RISING SIGNAL THRESHOLD)
-      THRESH_LOWER : in  std_logic_vector(7 downto 0);  -- LOWER HYSTERISIS THRESHOLD (IE FALLING SIGNAL THRESHOLD)
-      FILT_SIGOUT  : out std_logic_vector(7 downto 0);  -- RESULTING SIGNAL FILTER VALUE 
-      P_SIGOUT     : out std_logic  -- FINAL SIGNAL BIT VALUE AFTER THE FILTER FUNCTION AND HYSTERISIS HAVE BEEN APPLIED
+      sig_in       : in  std_logic;                     -- input signal to be filtered
+      thresh_upper : in  std_logic_vector(8 downto 1);  -- upper hysterisis threshold (ie rising signal threshold)
+      thresh_lower : in  std_logic_vector(8 downto 1);  -- lower hysterisis threshold (ie falling signal threshold)
+      filt_sigout  : out std_logic_vector(8 downto 1);  -- resulting signal filter value 
+      p_sigout     : out std_logic                      -- final signal bit value after the filter function and hysterisis have been applied
 
       );
   end component;
@@ -194,346 +115,310 @@ architecture RTL of top_lvr_fw is
   end component;
 
 
-  -- SPI interface with TCM
+  -- spi interface with tcm
   component spi_slave is
     port (
-      CLK5MHZ_OSC    : in std_logic;      -- INTERNAL GENERATED 5 MHZ CLOCK 
-      MASTER_RST_B : in std_logic;      -- INTERNAL ACTIVE LOW RESET
+      clk5mhz_osc  : in std_logic;      -- internal generated 5 mhz clock 
+      master_rst_b : in std_logic;      -- internal active low reset
 
-      SPI_CLK   : in  std_logic;  -- CLOCK INPUT TO THE FPGA FROM THE SCA MASTER USED FOR BOTH TX AND RX
-      SPI_MOSI  : in  std_logic;  -- SERIAL DATA INPUT TO THE FPGA FROM THE SCA MASTER
-      SPI_MISO  : out std_logic;  -- SERIAL DATA OUTPUT FROM THE FPGA TO THE SCA MASTER
+      spi_clk  : in  std_logic;         -- clock input to the fpga from the sca master used for both tx and rx
+      spi_mosi : in  std_logic;         -- serial data input to the fpga from the sca master
+      spi_miso : out std_logic;         -- serial data output from the fpga to the sca master
 
-      SPI_TX_WORD : in  std_logic_vector(31 downto 0);  -- 32 BIT SERIAL WORD TO BE TRANSMITTED
-      SPI_RX_WORD : out std_logic_vector(31 downto 0);  -- RECEIVED SERIAL FRAME
-      SPI_RX_STRB : out std_logic;  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
+      spi_tx_word : in  std_logic_vector(31 downto 0);  -- 32 bit serial word to be transmitted
+      spi_rx_word : out std_logic_vector(31 downto 0);  -- received serial frame
+      spi_rx_strb : out std_logic;                      -- single 5mhz clock pulse signifies a new serial frame is available.
 
-      P_TX_32BIT_REG : out std_logic_vector(31 downto 0);
+      p_tx_32bit_reg : out std_logic_vector(31 downto 0);
       clk_fcnt_out   : out std_logic_vector(4 downto 0);
-      P_STATE_ID     : out std_logic_vector(3 downto 0)
+      p_state_id     : out std_logic_vector(3 downto 0)
 
       );
   end component;
 
--- MAIN COMMUNICATION AND SEQUENCER MOPDULE
-  component MAIN_SEQUENCER_NEW is
+-- main communication and sequencer mopdule
+  component main_sequencer_new is
     port (
-      MASTER_RST_B : in std_logic;  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    : in std_logic;      -- MASTER 5 MHZ CLOCK
+      master_rst_b : in std_logic;      -- reset with async assert, but synchronized to the 40 mhz clock edge
+      clk_5m_gl    : in std_logic;      -- master 5 mhz clock
 
-      CHANNELS_READY : in std_logic_vector(1 downto 0);  -- Channels in a READY state (110 or 111)
-      CHANNELS_ON : in std_logic_vector(1 downto 0);  -- Channels ON (110)
+      channels_ready : in std_logic_vector(1 downto 0);  -- channels in a ready state (110 or 111)
+      channels_on    : in std_logic_vector(1 downto 0);  -- channels on (110)
 
--- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!  
-      MASTER_SLAVE_PAIR : in std_logic;  -- ADJACENT CHANNELS A AND B IN THE SAME FUSE GROUP
+-- the master-slave config determines the enable for the v_os op ampl!  
+      master_slave_pair : in std_logic;  -- adjacent channels a and b in the same fuse group
 
-      CMND_WORD_STB : in std_logic;  -- [UNUSED] SINGLE CLOCK PULSE STROBE INDICATES AN UPDATED COMMAND WORD
+      cmnd_word_stb : in std_logic;     -- [unused] single clock pulse strobe indicates an updated command word
 
-      DTYCYC_EN : in std_logic;  -- '1' ENABLES A LOW DUTY CYCLE MODE TO LIMIT THERMAL LOADS FOR SPECIAL TESTS
-      V_IN_OK   : in std_logic;  -- UNDER-VOLTAGE LOCKOUT:  V_IN ABOVE THRESHOLD WHEN ='1'
-      TEMP_OK   : in std_logic;  -- '1' MEANS THE TEMPERATURE IS BELOW THE MAX VALUE
+      dtycyc_en : in std_logic;         -- '1' enables a low duty cycle mode to limit thermal loads for special tests
 
-      SIM_MODE_EN : in integer;  -- '1' IS SPECIAL SIM MODE WITH REDUCED INTERVAL TIMEOUTS
+      sim_mode_en : in integer;         -- '1' is special sim mode with reduced interval timeouts
 
-      P_CH_MREG_EN : out std_logic_vector(1 downto 0);  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
-      P_CH_IAUX_EN : out std_logic_vector(1 downto 0);  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
-      P_CH_VOSG_EN : out std_logic_vector(1 downto 0);  -- CHANNEL ENABLE SIGNAL: VOS_GEN REGULATOR IC, ACTIVE HIGH
+      OUT_CHANNEL_MREG : out std_logic_vector(1 downto 0);  -- channel enable signal: main regulator ic, active high
+      OUT_CHANNEL_IAUX : out std_logic_vector(1 downto 0);  -- channel enable signal: iaux regulator ic, active high
+      OUT_CHANNEL_VOSG : out std_logic_vector(1 downto 0);  -- channel enable signal: vos_gen regulator ic, active high
 
-      P_SEQ_STEPVAL : out std_logic_vector(3 downto 0)  -- INDICATES PRESENT SEQUENCE STEP
+      p_seq_stepval : out std_logic_vector(3 downto 0)  -- indicates present sequence step
       );
   end component;
 
---===========SPECIAL TEST COMPONENTS:==============
-  component SLOW_PULSE_EN_GEN is
+--===========special test components:==============
+  component slow_pulse_en_gen is
     port (
-      CLK_5M_GL    : in std_logic;  -- FPGA MASTER CLOCK--ASSUMED TO BE 5 MHZ
-      MASTER_RST_B : in std_logic;      -- ACTIVE LOW RESET
-      CNT_EN       : in std_logic;      -- ACTIVE HIGH COUNT ENABLE
-      SIM_25KX     : in integer;  -- SPECIAL SIM MODE--SPEEDS UP BY 25,000 TIMES (0.25SEC=10USEC)
+      clk_5m_gl    : in std_logic;      -- fpga master clock--assumed to be 5 mhz
+      master_rst_b : in std_logic;      -- active low reset
+      cnt_en       : in std_logic;      -- active high count enable
+      sim_25kx     : in integer;        -- special sim mode--speeds up by 25,000 times (0.25sec=10usec)
 
-      MS250_CLK_EN : out std_logic  -- OUTPUT PULSE SIGNIFIES 1 SEC INTERVAL--SUITABLE FOR USE AS A CLOCK ENABLE.
+      ms250_clk_en : out std_logic      -- output pulse signifies 1 sec interval--suitable for use as a clock enable.
       );
   end component;
 
 
 -- ccc config as 3 global buffers
-  component CCC_Glob_3xBuff is
+  component ccc_glob_3xbuff is
 
     port(
-      POWERDOWN : in  std_logic;
-      CLKA      : in  std_logic;
-      LOCK      : out std_logic;
-      GLA       : out std_logic;
-      GLB       : out std_logic;
-      GLC       : out std_logic;
-      SDIN      : in  std_logic;
-      SCLK      : in  std_logic;
-      SSHIFT    : in  std_logic;
-      SUPDATE   : in  std_logic;
-      MODE      : in  std_logic;
-      SDOUT     : out std_logic;
-      CLKB      : in  std_logic;
-      CLKC      : in  std_logic
+      powerdown : in  std_logic;
+      clka      : in  std_logic;
+      lock      : out std_logic;
+      gla       : out std_logic;
+      glb       : out std_logic;
+      glc       : out std_logic;
+      sdin      : in  std_logic;
+      sclk      : in  std_logic;
+      sshift    : in  std_logic;
+      supdate   : in  std_logic;
+      mode      : in  std_logic;
+      sdout     : out std_logic;
+      clkb      : in  std_logic;
+      clkc      : in  std_logic
       );
   end component;
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- DEFINE INTERNAL SIGNALS
+-- define internal signals
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  signal GB_CLK40MHZ_OSC : std_logic;   -- GLOBAL CLOCK BUFFER
-  signal GB_SPI_RST_B    : std_logic;   -- GLOBAL COMBINED INTERNAL FPGA RESET
+  signal gb_clk40mhz_osc : std_logic;   -- global clock buffer
+  signal gb_spi_rst_b    : std_logic;   -- global combined internal fpga reset
 
-  signal MASTER_RST_B   : std_logic;    -- POR_FPGA SYNC'D TO THE 40 MHZ CLOCK
-  signal DEL0_DEV_RST_B : std_logic;  -- SYNC FF FOR FOR GENERATING THE MASTER_RST_B
+  signal master_rst_b   : std_logic;    -- IN_POWERON_RST_B sync'd to the 40 mhz clock
+  signal del0_dev_rst_b : std_logic;    -- sync ff for for generating the master_rst_b
 
-  signal CLK_5M_GL, N_CLK_5M_GL : std_logic;  -- GENERATED 5 MHZ CLOCK--MASTER CLOCK!!!!
-  signal REFCNT, N_REFCNT       : integer range 0 to 3;  -- COUNTER USED TO GENERATE THE CLK_5M_GL
+  signal clk_5m_gl, n_clk_5m_gl : std_logic;             -- generated 5 mhz clock--master clock!!!!
+  signal refcnt, n_refcnt       : integer range 0 to 3;  -- counter used to generate the clk_5m_gl
 
-  signal SLOW_PLS_STB                     : std_logic;  -- THIS IS A PULSE THAT IS ONE 5MHZ CLOCK PERIOD WIDE AT 0.25SEC RATE
-  signal DC50_TEST_STRB, N_DC50_TEST_STRB : std_logic;  -- THIS IS A 50% DUTY CYCLE 2 HZ SIGNAL VERSION OF SLOW_PLS_STB
+  signal slow_pls_stb                     : std_logic;  -- this is a pulse that is one 5mhz clock period wide at 0.25sec rate
+  signal dc50_test_strb, n_dc50_test_strb : std_logic;  -- this is a 50% duty cycle 2 hz signal version of slow_pls_stb
 
-  constant UPPER_HYS_THRESH : std_logic_vector(7 downto 0) := "01001100";  -- UPPER HYSTERISIS THRESHOLD = 76 COUNTS OF 255 (ACTUALLY 240 WITH TRUNCATION EFFECTS)
-  constant LOWER_HYS_THRESH : std_logic_vector(7 downto 0) := "00101100";  -- UPPER HYSTERISIS THRESHOLD =  44 COUNTS OF 255 (ACTUALLY 240 WITH TRUNCATION EFFECTS)
+  signal ch_mreg_en : std_logic_vector(8 downto 1);  -- channel enable signal: main regulator ic, active high
+  signal ch_iaux_en : std_logic_vector(8 downto 1);  -- channel enable signal: iaux regulator ic, active high
+  signal ch_vosg_en : std_logic_vector(8 downto 1);  -- channel enable signal: vos_gen regulator ic, active high
 
-  signal CH_MREG_EN : std_logic_vector(7 downto 0);  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
-  signal CH_IAUX_EN : std_logic_vector(7 downto 0);  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
-  signal CH_VOSG_EN : std_logic_vector(7 downto 0);  -- CHANNEL ENABLE SIGNAL: VOS_GEN REGULATOR IC, ACTIVE HIGH
+-- these signals are used to debounce the dip switches used for manual tests (SW2_SW5_CHANNEL_ON)
+  signal n_sw2_sw5_channel_on_a, sw2_sw5_channel_on_a         : std_logic_vector(8 downto 1);
+  signal n_sw2_sw5_channel_on_b, sw2_sw5_channel_on_b         : std_logic_vector(8 downto 1);
+-- these are the debounced versions of the dip switches
+  signal n_active_switch_constraint, active_switch_constraint : std_logic_vector(8 downto 1);  --constraints coming from external switch
 
--- THESE SIGNALS ARE USED TO DEBOUNCE THE DIP SWITCHES USED FOR MANUAL TESTS (MAN_EN_CH_4TO1, MAN_EN_CH_8TO5, and STDBY_OFFB_B)
-  signal N_MAN_EN_CH_4TO1_A, MAN_EN_CH_4TO1_A : std_logic;
-  signal N_MAN_EN_CH_4TO1_B, MAN_EN_CH_4TO1_B : std_logic;
-  signal N_MAN_EN_CH_8TO5_A, MAN_EN_CH_8TO5_A : std_logic;
-  signal N_MAN_EN_CH_8TO5_B, MAN_EN_CH_8TO5_B : std_logic;
+  signal n_dtycyc_cnt, dtycyc_cnt : integer range 0 to (2**5)-1;        -- duty cycle counter
+  constant dtycyc_time            : integer range 0 to (2**5)-1 := 19;  -- duty cycle counter timeout interval (20 * 0.250 sec)~5%
+  signal n_dtycyc_en, dtycyc_en   : std_logic;                          -- local enable used for the special test low duty cycle op mode
 
-  signal N_STDBY_OFFB_A, STDBY_OFFB_A : std_logic;
-  signal N_STDBY_OFFB_B, STDBY_OFFB_B : std_logic;
+  signal filtd_temp_ok : std_logic;     -- filtered version of the IN_TEMP_OK status
 
-  signal N_DTYCYC_CNT, DTYCYC_CNT : integer range 0 to (2**5)-1;  -- DUTY CYCLE COUNTER
-  constant DTYCYC_TIME            : integer range 0 to (2**5)-1 := 19;  -- DUTY CYCLE COUNTER TIMEOUT INTERVAL (20 * 0.250 SEC)~5%
-  signal N_DTYCYC_EN, DTYCYC_EN   : std_logic;  -- LOCAL ENABLE USED FOR THE SPECIAL TEST LOW DUTY CYCLE OP MODE
+  signal channels_ready, channels_on             : std_logic_vector(8 downto 1) := (others => '0');  ---active lvr channels
+  signal channels_to_be_ready, channels_to_be_on : std_logic_vector(8 downto 1) := (others => '0');  --to be active lvr channels
+  signal channel_is_slave                        : std_logic_vector(8 downto 1) := (others => '0');  --which channels are slaves (1,3,5,7 always master, so '0')
+  signal channel_involtage_ok                    : std_logic_vector(4 downto 1) := (others => '0');  --which channels have ok input voltage
 
--- THESE ARE THE DEBOUNCED VERSIONS OF THE DIP SWITCHES
-  signal N_VAL_MAN_EN_CH_4TO1, VAL_MAN_EN_CH_4TO1 : std_logic;
-  signal N_VAL_MAN_EN_CH_8TO5, VAL_MAN_EN_CH_8TO5 : std_logic;
+  signal dutycycle_mode : std_logic;
 
-  signal N_VAL_STDBY_OFFB, VAL_STDBY_OFFB : std_logic;
-
-
-  signal SEQ_12STEPVAL : std_logic_vector(3 downto 0);  -- USED FOR DEBUG OF THE MAINSEQUENCER STATE MACHINE
-  signal SEQ_34STEPVAL : std_logic_vector(3 downto 0);  -- USED FOR DEBUG OF THE MAINSEQUENCER STATE MACHINE
-  signal SEQ_56STEPVAL : std_logic_vector(3 downto 0);  -- USED FOR DEBUG OF THE MAINSEQUENCER STATE MACHINE
-  signal SEQ_78STEPVAL : std_logic_vector(3 downto 0);  -- USED FOR DEBUG OF THE MAINSEQUENCER STATE MACHINE
-
-  signal FILTD_TEMP_OK                                          : std_logic;  -- FILTERED VERSION OF THE TEMP_OK STATUS
-  signal UVL_OK_CH1A2, UVL_OK_CH3A4, UVL_OK_CH5A6, UVL_OK_CH7A8 : std_logic;  -- UVL FOR THE 4 CHANNEL PAIRS 
-
-  signal channels_ready, channels_on     : std_logic_vector(8 downto 1) := (others => '0'); ---Active LVR channels
-  signal channels_to_be_ready, channels_to_be_on     : std_logic_vector(8 downto 1) := (others => '0'); --To be active LVR channels
-  signal active_switch_constraint : std_logic_vector(8 downto 1) := (others => '0'); --Constraints coming from external switch
-  signal channel_is_slave : std_logic_vector(8 downto 1) := (others => '0'); --Which channels are slaves (1,3,5,7 always master, so '0')
-
-  -- SPI variables
-  signal SPI_TX_WORD                : std_logic_vector(31 downto 0) := x"dcb02019";  -- 32 BIT SERIAL WORD TO BE TRANSMITTED
-  signal SPI_RX_WORD                : std_logic_vector(31 downto 0);  -- RECEIVED SERIAL FRAME
-  signal SPI_RX_STRB                : std_logic;  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
-  signal SPI_P_TX_32BIT_REG         : std_logic_vector(31 downto 0);
-  signal SPI_P_STATE_ID             : std_logic_vector(3 downto 0);
+  -- spi variables
+  signal spi_tx_word                : std_logic_vector(31 downto 0) := x"dcb02019";  -- 32 bit serial word to be transmitted
+  signal spi_rx_word                : std_logic_vector(31 downto 0);                 -- received serial frame
+  signal spi_rx_strb                : std_logic;  -- single 5mhz clock pulse signifies a new serial frame is available.
+  signal spi_p_tx_32bit_reg         : std_logic_vector(31 downto 0);
+  signal spi_p_state_id             : std_logic_vector(3 downto 0);
   signal clk_fcnt_out               : std_logic_vector(4 downto 0);
   signal sca_clk_out_buf, spi_rst_b : std_logic;
 
--- DEBUG
-  signal IIR_OVT_FILT   : std_logic_vector(7 downto 0);
-  signal IIR_UVL12_FILT : std_logic_vector(7 downto 0);
-  signal IIR_UVL34_FILT : std_logic_vector(7 downto 0);
-  signal IIR_UVL56_FILT : std_logic_vector(7 downto 0);
-  signal IIR_UVL78_FILT : std_logic_vector(7 downto 0);
+-- debug
+  signal iir_ovt_filt   : std_logic_vector(8 downto 1);
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 begin
 
-  GLOB_BUFF : CCC_Glob_3xBuff
+  glob_buff : ccc_glob_3xbuff
 
     port map(
-      POWERDOWN => '0',
-      CLKA      => CLK40MHZ_OSC,
-      LOCK      => open,
-      GLA       => GB_CLK40MHZ_OSC,
-      GLB       => sca_clk_out_buf,
-      GLC       => GB_SPI_RST_B,
-      SDIN      => '0',
-      SCLK      => '0',
-      SSHIFT    => '0',
-      SUPDATE   => '0',
-      MODE      => '0',
-      SDOUT     => open,
-      CLKB      => SCA_CLK_OUT,
-      CLKC      => spi_rst_b
+      powerdown => '0',
+      clka      => CLK40M_OSC,
+      lock      => open,
+      gla       => gb_clk40mhz_osc,
+      glb       => sca_clk_out_buf,
+      glc       => gb_spi_rst_b,
+      sdin      => '0',
+      sclk      => '0',
+      sshift    => '0',
+      supdate   => '0',
+      mode      => '0',
+      sdout     => open,
+      clkb      => sca_clk_out,
+      clkc      => spi_rst_b
       );
 
+  spi_rst_b <= sca_reset_out and master_rst_b;
 
-
-
-  spi_rst_b <= SCA_RESET_OUT and MASTER_RST_B;
-
-  -- SPI
+  -- spi
   spi_slave_pm : spi_slave
     port map (
-      CLK5MHZ_OSC    => CLK_5M_GL,        -- INTERNAL GENERATED 5 MHZ CLOCK 
-      MASTER_RST_B => GB_SPI_RST_B,     -- INTERNAL ACTIVE LOW RESET
+      clk5mhz_osc  => clk_5m_gl,        -- internal generated 5 mhz clock 
+      master_rst_b => gb_spi_rst_b,     -- internal active low reset
 
-      SPI_CLK   => SCA_CLK_OUT_buf,  -- CLOCK INPUT TO THE FPGA FROM THE SPI MASTER USED FOR BOTH TX AND RX
-      SPI_MOSI  => SCA_DAT_OUT,  -- SERIAL DATA INPUT TO THE FPGA FROM THE SPI MASTER
-      SPI_MISO  => SCA_DAT_IN,  -- SERIAL DATA OUTPUT FROM THE FPGA TO THE SPI MASTER
+      spi_clk  => sca_clk_out_buf,      -- clock input to the fpga from the spi master used for both tx and rx
+      spi_mosi => sca_dat_out,          -- serial data input to the fpga from the spi master
+      spi_miso => sca_dat_in,           -- serial data output from the fpga to the spi master
 
-      SPI_TX_WORD => SPI_TX_WORD,       -- 32 BIT SERIAL WORD TO BE TRANSMITTED
-      SPI_RX_WORD => SPI_RX_WORD,       -- RECEIVED SERIAL FRAME
-      SPI_RX_STRB => SPI_RX_STRB,  -- SINGLE 5MHZ CLOCK PULSE SIGNIFIES A NEW SERIAL FRAME IS AVAILABLE.
+      spi_tx_word => spi_tx_word,       -- 32 bit serial word to be transmitted
+      spi_rx_word => spi_rx_word,       -- received serial frame
+      spi_rx_strb => spi_rx_strb,       -- single 5mhz clock pulse signifies a new serial frame is available.
 
-      P_TX_32BIT_REG => SPI_P_TX_32BIT_REG,
+      p_tx_32bit_reg => spi_p_tx_32bit_reg,
       clk_fcnt_out   => clk_fcnt_out,
-      P_STATE_ID     => SPI_P_STATE_ID
+      p_state_id     => spi_p_state_id
       );
 
-  db_spi_cnt0 <= clk_fcnt_out(0);
-  db_spi_cnt1 <= clk_fcnt_out(1);
-  --db_spi_cnt2 <= clk_fcnt_out(2);
-  spi_tx_word <= x"1234" & channels_ready & channels_on;
-  --spi_tx_word <= x"dcb02019" when GB_SPI_RST_B = '0' else
+  db_spi_cnt <= clk_fcnt_out(1 downto 0);
+
+  -- spi word to be transmitted
+  spi_tx_word(30 downto 0) <= "000000" & dutycycle_mode &
+                              "000" & not filtd_temp_ok & not channel_involtage_ok &
+                              channels_ready & channels_on;
+  spi_tx_word(31) <= xor_reduce(spi_tx_word(30 downto 0));  -- parity bit
+
+  --spi_tx_word <= x"dcb02019" when gb_spi_rst_b = '0' else
   --               spi_rx_word when falling_edge(spi_rx_strb) else
   --               spi_tx_word;
 
--- Constraint on groups of 4 channels turned off by switch
-  active_switch_constraint(4 downto 1) <= (others => VAL_MAN_EN_CH_4TO1);
-  active_switch_constraint(8 downto 5) <= (others => VAL_MAN_EN_CH_8TO5);
--- Forcing the slave channels to have the same STANDBY/ON status as the master
-  channel_is_slave <= CH7_8_MS_CFG_EN & '0' & CH5_6_MS_CFG_EN & '0' & CH3_4_MS_CFG_EN & '0' & CH1_2_MS_CFG_EN & '0';
-  GEN_SLAVE_CONSTRAINTS : for index in 1 to 4 generate
+-- forcing the slave channels to have the same standby/on status as the master
+  gen_slave_constraints : for index in 1 to 4 generate
   begin
-    -- Indices for spi_rx_word go from 0 to 15, while the others go from 1 to 8
-    -- Slaves are assigned same value as their masters (index_slave - 1)
-    channels_to_be_ready(index*2-1) <= spi_rx_word(index*2+6) and active_switch_constraint(index*2-1);
-    channels_to_be_ready(index*2) <= spi_rx_word(index*2+7) and active_switch_constraint(index*2) when channel_is_slave(index*2) = '0' else
-                                     spi_rx_word(index*2+6) and active_switch_constraint(index*2-1);
+    -- indices for spi_rx_word go from 0 to 15, while the others go from 1 to 8
+    -- slaves are assigned same value as their masters (index_slave - 1)
+    channels_to_be_ready(index*2-1) <= spi_rx_word(index*2+6) and active_switch_constraint(index*2-1)
+                                       and filtd_temp_ok and channel_involtage_ok(index);
+    
+    channels_to_be_ready(index*2)   <= spi_rx_word(index*2+7) and active_switch_constraint(index*2)
+                                       and filtd_temp_ok and channel_involtage_ok(index) when channel_is_slave(index*2) = '0' else
+                                       spi_rx_word(index*2+6) and active_switch_constraint(index*2-1)
+                                       and filtd_temp_ok and channel_involtage_ok(index);
+    
     channels_to_be_on(index*2-1) <= spi_rx_word(index*2-2) and channels_to_be_ready(index*2-1);
-    channels_to_be_on(index*2) <= spi_rx_word(index*2-1) and channels_to_be_ready(index*2) when channel_is_slave(index*2) = '0' else
-                                  spi_rx_word(index*2-2) and channels_to_be_ready(index*2-1);
-  end generate GEN_SLAVE_CONSTRAINTS;
-  
--- Setting register to control active channels when the received is a write (28th bit equal to 1)
-  SET_CHANNELS_READY : process(SPI_RX_STRB, master_rst_b, spi_rx_word)
+    
+    channels_to_be_on(index*2)   <= spi_rx_word(index*2-1) and channels_to_be_ready(index*2) when channel_is_slave(index*2) = '0' else
+                                    spi_rx_word(index*2-2) and channels_to_be_ready(index*2-1);
+    -- converting the 4 pairs to the 8-bit vector
+    channel_is_slave(index*2 downto index*2-1) <= SW4_SLAVE_PAIRS(index) & '0';
+  end generate gen_slave_constraints;
+
+-- setting register to control active channels when the received is a write (28th bit equal to 1)
+  set_channels_ready : process(spi_rx_strb, master_rst_b, spi_rx_word)
   begin
     if master_rst_b = '0' then
       channels_ready <= active_switch_constraint;
-      channels_on <= active_switch_constraint;
-    elsif falling_edge(SPI_RX_STRB) and spi_rx_word(28) = '1' then
+      channels_on    <= active_switch_constraint;
+      dutycycle_mode <= SW3_DUTYCYCLE_MODE;
+    elsif falling_edge(spi_rx_strb) and spi_rx_word(28) = '1' then
       channels_ready <= channels_to_be_ready;
-      channels_on <= channels_to_be_on;
+      channels_on    <= channels_to_be_on;
+      dutycycle_mode <= SW3_DUTYCYCLE_MODE or spi_rx_word(24);
     end if;
   end process set_channels_ready;
 
 
-  -- DEBUG SPI signals
+  -- debug spi signals
   db_sca_dat_out <= sca_dat_out;
   db_sca_clk_out <= sca_clk_out_buf;
   db_clk5mhz     <= clk_5m_gl;
   db_spi_strobe  <= spi_rx_strb;
-  db_spi_state0  <= spi_p_state_id(0);
-  db_spi_state1  <= spi_p_state_id(1);
-  --db_spi_state2  <= spi_p_state_id(2);
+  db_spi_state   <= spi_p_state_id(2 downto 0);
 
 
--- THIS PROCESS SYNCHRONIZES THE EXTERNAL POR_FPGA SIGNAL TO THE 40 MHZ CLOCK
--- HOWEVER, THE GENERATED 5 MHZ CLOCK IS SYNCHRONOUSLY STARTED BY RELEASE OF THE MASTER_RST_B
-  SYNC_DEV_RST_B : process(POR_FPGA, CLK40MHZ_OSC)
+
+-- this process synchronizes the external IN_POWERON_RST_B signal to the 40 mhz clock
+-- however, the generated 5 mhz clock is synchronously started by release of the master_rst_b
+  sync_dev_rst_b : process(IN_POWERON_RST_B, CLK40M_OSC)
   begin
-    if POR_FPGA = '0' then
-      DEL0_DEV_RST_B <= '0';
-      MASTER_RST_B   <= '0';
+    if IN_POWERON_RST_B = '0' then
+      del0_dev_rst_b <= '0';
+      master_rst_b   <= '0';
 
-    elsif (CLK40MHZ_OSC'event and CLK40MHZ_OSC = '1') then
-      DEL0_DEV_RST_B <= POR_FPGA;
-      MASTER_RST_B   <= DEL0_DEV_RST_B;
+    elsif (CLK40M_OSC'event and CLK40M_OSC = '1') then
+      del0_dev_rst_b <= IN_POWERON_RST_B;
+      master_rst_b   <= del0_dev_rst_b;
 
     end if;
 
-  end process SYNC_DEV_RST_B;
+  end process sync_dev_rst_b;
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- REGISTERS USED TO GENERATE A 5 MHZ CLOCK (DIV-BY-4 FOLLOWED BY DIV-BY-2)
-  GENCLKREG : process(MASTER_RST_B, CLK40MHZ_OSC)
+-- registers used to generate a 5 mhz clock (div-by-4 followed by div-by-2)
+  genclkreg : process(master_rst_b, CLK40M_OSC)
   begin
-    if MASTER_RST_B = '0' then
-      CLK_5M_GL <= '0';
-      REFCNT    <= 0;
+    if master_rst_b = '0' then
+      clk_5m_gl <= '0';
+      refcnt    <= 0;
 
-    elsif (CLK40MHZ_OSC'event and CLK40MHZ_OSC = '1') then
-      CLK_5M_GL <= N_CLK_5M_GL;
-      REFCNT    <= N_REFCNT;
+    elsif (CLK40M_OSC'event and CLK40M_OSC = '1') then
+      clk_5m_gl <= n_clk_5m_gl;
+      refcnt    <= n_refcnt;
 
     end if;
 
-  end process GENCLKREG;
+  end process genclkreg;
 
--- PROCESS TO GENERATE THE 5 MHZ CLOCK
-  GEN_5M_CLK : process(REFCNT, CLK_5M_GL)
+-- process to generate the 5 mhz clock
+  gen_5m_clk : process(refcnt, clk_5m_gl)
   begin
-    if REFCNT > 2 then
-      N_REFCNT    <= 0;
-      N_CLK_5M_GL <= not(CLK_5M_GL);
+    if refcnt > 2 then
+      n_refcnt    <= 0;
+      n_clk_5m_gl <= not(clk_5m_gl);
 
     else
-      N_REFCNT    <= REFCNT + 1;
-      N_CLK_5M_GL <= CLK_5M_GL;
+      n_refcnt    <= refcnt + 1;
+      n_clk_5m_gl <= clk_5m_gl;
     end if;
   end process;
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- DEFINE ALL REGISTERS THAT USE THE 5 MHZ CLOCK
-  REG5M : process(CLK_5M_GL, MASTER_RST_B)
+-- define all registers that use the 5 mhz clock
+  reg5m : process(clk_5m_gl, master_rst_b)
   begin
-    if MASTER_RST_B = '0' then          -- FF OUTPUTS
+    if master_rst_b = '0' then          -- ff outputs
 
-      DC50_TEST_STRB <= '0';
+      dc50_test_strb <= '0';
 
-      MAN_EN_CH_4TO1_A <= '0';
-      MAN_EN_CH_4TO1_B <= '0';
+      sw2_sw5_channel_on_a <= (others => '0');
+      sw2_sw5_channel_on_b <= (others => '0');
 
-      MAN_EN_CH_8TO5_A <= '0';
-      MAN_EN_CH_8TO5_B <= '0';
+      active_switch_constraint <= (others => '0');
 
-      VAL_MAN_EN_CH_4TO1 <= '0';
-      VAL_MAN_EN_CH_8TO5 <= '0';
+      dtycyc_cnt <= dtycyc_time;        -- duty cycle interval counter for special test
+      dtycyc_en  <= '0';                -- local signal used the low duty cycle special test mode
 
-      STDBY_OFFB_A <= '0';
-      STDBY_OFFB_B <= '0';
+    elsif (clk_5m_gl'event and clk_5m_gl = '1') then  -- corresponding ff inputs
 
-      VAL_STDBY_OFFB <= '0';
+      dc50_test_strb <= n_dc50_test_strb;
 
-      DTYCYC_CNT <= DTYCYC_TIME;  -- DUTY CYCLE INTERVAL COUNTER FOR SPECIAL TEST
-      DTYCYC_EN  <= '0';  -- LOCAL SIGNAL USED THE LOW DUTY CYCLE SPECIAL TEST MODE
+      sw2_sw5_channel_on_a <= n_sw2_sw5_channel_on_a;
+      sw2_sw5_channel_on_b <= n_sw2_sw5_channel_on_b;
 
-    elsif (CLK_5M_GL'event and CLK_5M_GL = '1') then  -- CORRESPONDING FF INPUTS
+      active_switch_constraint <= n_active_switch_constraint;
 
-      DC50_TEST_STRB <= N_DC50_TEST_STRB;
-
-      MAN_EN_CH_4TO1_A <= N_MAN_EN_CH_4TO1_A;
-      MAN_EN_CH_4TO1_B <= N_MAN_EN_CH_4TO1_B;
-
-      MAN_EN_CH_8TO5_A <= N_MAN_EN_CH_8TO5_A;
-      MAN_EN_CH_8TO5_B <= N_MAN_EN_CH_8TO5_B;
-
-      VAL_MAN_EN_CH_4TO1 <= N_VAL_MAN_EN_CH_4TO1;
-      VAL_MAN_EN_CH_8TO5 <= N_VAL_MAN_EN_CH_8TO5;
-
-      STDBY_OFFB_A <= N_STDBY_OFFB_A;
-      STDBY_OFFB_B <= N_STDBY_OFFB_B;
-
-      VAL_STDBY_OFFB <= N_VAL_STDBY_OFFB;
-
-
-      DTYCYC_CNT <= N_DTYCYC_CNT;
-      DTYCYC_EN  <= N_DTYCYC_EN;
+      dtycyc_cnt <= n_dtycyc_cnt;
+      dtycyc_en  <= n_dtycyc_en;
 
     end if;
 
@@ -542,310 +427,155 @@ begin
 -- --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- -- placeholder
--- -- PROCESS THAT WAITS FOR >35 '0' BITS FOLLOWED BY 2 START BITS IN THE FILTERED RS485 RX LINE AND THEN GENERATES 36 CLOCK CYCLES 
+-- -- process that waits for >35 '0' bits followed by 2 start bits in the filtered rs485 rx line and then generates 36 clock cycles 
 
 
 
 -- --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- -- placeholder
--- -- PROCESS THAT PERFORMS THE MUX SELECTION OF EITHER THE RS485 OR THE SPI POR CLOCK AND SERIAL DATA SOURCES 
+-- -- process that performs the mux selection of either the rs485 or the spi por clock and serial data sources 
 
 
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- For Local stand-alone test
+-- for local stand-alone test
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- DEBOUNCE THE DIP SWITCHES
--- PRIMARY OUTPUTS FOR THIS PROCESS ARE 3 DEBOUNCED DIP SWITCH SIGNALS USED FOR MANUAL CHANNEL ENABLE:
---      1) VAL_MAN_EN_CH_4TO1
---      2) VAL_MAN_EN_CH_8TO5
---      3) VAL_STDBY_OFFB
-  DEBOUNCE : process(MAN_EN_CH_4TO1, MAN_EN_CH_4TO1_A, MAN_EN_CH_4TO1_B,
-                     MAN_EN_CH_8TO5, MAN_EN_CH_8TO5_A, MAN_EN_CH_8TO5_B,
-                     STDBY_OFFB, STDBY_OFFB_A, STDBY_OFFB_B,
-                     SLOW_PLS_STB, DC50_TEST_STRB
+-- debounce the dip switches
+-- primary outputs for this process are 3 debounced dip switch signals used for manual channel enable:
+--      1) active_switch_constraint
+  debounce : process(SW2_SW5_CHANNEL_ON, sw2_sw5_channel_on_a, sw2_sw5_channel_on_b,
+                     slow_pls_stb, dc50_test_strb
                      )
   begin
 
-    -- THIS IS THE DEBOUNCE SAMPLING.
-    if SLOW_PLS_STB = '1' then  -- TEST STROBE IS A SINGLE 5MHZ CLOCK PERIOD THAT OCCURS EVERY 250MSEC
-      N_DC50_TEST_STRB <= not(DC50_TEST_STRB);  -- CREATE A 50% DUTY CYCLE VERSION 
+    -- this is the debounce sampling.
+    if slow_pls_stb = '1' then                  -- test strobe is a single 5mhz clock period that occurs every 250msec
+      n_dc50_test_strb <= not(dc50_test_strb);  -- create a 50% duty cycle version 
 
-      N_MAN_EN_CH_4TO1_A <= MAN_EN_CH_4TO1;  -- SAMPLE THE DIP SWITCHES AT 250 MSEC INTERVALS VIA A 2 DEEP PIPELINE FOR DEBOUNCE
-      N_MAN_EN_CH_4TO1_B <= MAN_EN_CH_4TO1_A;
-
-      N_MAN_EN_CH_8TO5_A <= MAN_EN_CH_8TO5;
-      N_MAN_EN_CH_8TO5_B <= MAN_EN_CH_8TO5_A;
-
-      N_STDBY_OFFB_A <= STDBY_OFFB;
-      N_STDBY_OFFB_B <= STDBY_OFFB_A;
+      n_sw2_sw5_channel_on_a <= SW2_SW5_CHANNEL_ON;  -- sample the dip switches at 250 msec intervals via a 2 deep pipeline for debounce
+      n_sw2_sw5_channel_on_b <= sw2_sw5_channel_on_a;
     else
-      N_DC50_TEST_STRB <= DC50_TEST_STRB;
+      n_dc50_test_strb <= dc50_test_strb;
 
-      N_MAN_EN_CH_4TO1_A <= MAN_EN_CH_4TO1_A;  -- REMEMBER THE LAST SAMPLE IF NOT A SAMPLE UPDATE
-      N_MAN_EN_CH_4TO1_B <= MAN_EN_CH_4TO1_B;
-
-      N_MAN_EN_CH_8TO5_A <= MAN_EN_CH_8TO5_A;
-      N_MAN_EN_CH_8TO5_B <= MAN_EN_CH_8TO5_B;
-
-      N_STDBY_OFFB_A <= STDBY_OFFB_A;
-      N_STDBY_OFFB_B <= STDBY_OFFB_B;
+      n_sw2_sw5_channel_on_a <= sw2_sw5_channel_on_a;  -- remember the last sample if not a sample update
+      n_sw2_sw5_channel_on_b <= sw2_sw5_channel_on_b;
     end if;
 
-    -- 
-    if (MAN_EN_CH_4TO1 and MAN_EN_CH_4TO1_A and MAN_EN_CH_4TO1_B) = '1' then  -- THIS IS THE MANUAL DIP SWITCH ENABLE FOR CHANNELS 1 TO 4
-      N_VAL_MAN_EN_CH_4TO1 <= '1';
-    else
-      N_VAL_MAN_EN_CH_4TO1 <= '0';
-    end if;
+    for index in sw2_sw5_channel_on'low to sw2_sw5_channel_on'high loop
+      if (sw2_sw5_channel_on(index) and sw2_sw5_channel_on_a(index) and sw2_sw5_channel_on_b(index)) = '1' then
+        n_active_switch_constraint(index) <= '1';
+      else
+        n_active_switch_constraint(index) <= '0';
+      end if;
+    end loop;
 
-    if (MAN_EN_CH_8TO5 and MAN_EN_CH_8TO5_A and MAN_EN_CH_8TO5_B) = '1' then  -- THIS IS THE MANUAL DIP SWITCH ENABLE FOR CHANNELS 5 TO 8
-      N_VAL_MAN_EN_CH_8TO5 <= '1';
-    else
-      N_VAL_MAN_EN_CH_8TO5 <= '0';
-    end if;
-
-    if (STDBY_OFFB and STDBY_OFFB_A and STDBY_OFFB_B) = '1' then  -- THIS IS THE MANUAL DIP SWITCH FOR THE STANDBY / OFF SIGNAL
-      N_VAL_STDBY_OFFB <= '1';
-    else
-      N_VAL_STDBY_OFFB <= '0';
-    end if;
-
-  end process DEBOUNCE;
+  end process debounce;
 
 
--- LOW DUTY CYCLE COUNTER FOR SPECIAL TESTS: GENERATES DTYCYC_EN
-  LDCCNT : process(MODE_DCYC_NORMB, DTYCYC_CNT, SLOW_PLS_STB, DTYCYC_EN)
+-- low duty cycle counter for special tests: generates dtycyc_en
+  ldccnt : process(dutycycle_mode, dtycyc_cnt, slow_pls_stb, dtycyc_en)
   begin
 
-    case MODE_DCYC_NORMB is
+    case dutycycle_mode is
 
-      when '0' =>  -- NORMAL OP MODE, SO LOW CYCLE FUNCTION IS INACTIVED                                                                        
-        N_DTYCYC_CNT <= DTYCYC_TIME;
-        N_DTYCYC_EN  <= '1';  -- THIS BIT ONLY ACTIVE FOR SPECIAL TEST MODE WITH THE LOW DUTY CYCLE
-      -- BIT STUCK AT '1' LEAVES DOWNSTREAM SIGNALS IN CONTINUOS OP MODE
-      when '1' =>  -- SPECIAL TEST LOW DUTY CYCLE MODE IS ACTIVE
+      when '0' =>  -- normal op mode, so low cycle function is inactived                                                                        
+        n_dtycyc_cnt <= dtycyc_time;
+        n_dtycyc_en  <= '1';            -- this bit only active for special test mode with the low duty cycle
+      -- bit stuck at '1' leaves downstream signals in continuos op mode
+      when '1' =>                       -- special test low duty cycle mode is active
 
-        if SLOW_PLS_STB = '1' then  -- ONLY UPDATE WHEN THIS STROBE IS PULSED (1 CLOCK CYCLE STROBE)
-          if DTYCYC_CNT = 0 then        -- LOW DUTY CYCLE MODE IS SELECTED
-            N_DTYCYC_CNT <= DTYCYC_TIME;  -- RELOAD COUNTER ON 0 COUNT
-            N_DTYCYC_EN  <= '1';  -- THIS BIT ONLY ACTIVE FOR SPECIAL TEST MODE WITH THE LOW DUTY CYCLE FOR 250 MSEC
+        if slow_pls_stb = '1' then        -- only update when this strobe is pulsed (1 clock cycle strobe)
+          if dtycyc_cnt = 0 then          -- low duty cycle mode is selected
+            n_dtycyc_cnt <= dtycyc_time;  -- reload counter on 0 count
+            n_dtycyc_en  <= '1';          -- this bit only active for special test mode with the low duty cycle for 250 msec
           else
-            N_DTYCYC_CNT <= DTYCYC_CNT - 1;
-            N_DTYCYC_EN  <= '0';  -- THIS BIT ONLY ACTIVE FOR SPECIAL TEST MODE WITH THE LOW DUTY CYCLE FOR 250 MSEC
+            n_dtycyc_cnt <= dtycyc_cnt - 1;
+            n_dtycyc_en  <= '0';          -- this bit only active for special test mode with the low duty cycle for 250 msec
           end if;
 
-        else                            -- KEEP SIGNAL STATES UNCHANGED
+        else                            -- keep signal states unchanged
 
-          N_DTYCYC_CNT <= DTYCYC_CNT;
-          N_DTYCYC_EN  <= DTYCYC_EN;
+          n_dtycyc_cnt <= dtycyc_cnt;
+          n_dtycyc_en  <= dtycyc_en;
 
         end if;
 
       when others => null;
     end case;
 
-  end process LDCCNT;
+  end process ldccnt;
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- INSTANTIATE THE SEQUENCER MODULES
+-- instantiate the sequencer modules
+  gen_channel_seqs : for index in 1 to 4 generate
+  begin
+    channel_seq: main_sequencer_new
+      port map (
+        master_rst_b => master_rst_b,     -- reset with async assert, but synchronized to the 40 mhz clock edge
+        clk_5m_gl    => clk_5m_gl,        -- master 5 mhz clock
 
---------------------------------
--- CHANNELS 1 & 2
---------------------------------
-  CONTROL12 : MAIN_SEQUENCER_NEW
+        channels_ready => channels_ready(index*2 downto index*2-1),  -- channels in a ready state (110 or 111)
+        channels_on    => channels_on(index*2 downto index*2-1),     -- channels on (110)
+        master_slave_pair => channel_is_slave(index*2),  
+
+        cmnd_word_stb => slow_pls_stb,    -- [unused] single clock pulse strobe indicates check for an updated en command word
+
+        dtycyc_en => dtycyc_en,                -- '1' enables a low duty cycle mode to limit thermal loads for special tests
+
+        sim_mode_en => SIM_MODE_EN,       -- '1' is special sim mode with reduced timeouts.....
+
+        OUT_CHANNEL_MREG => ch_mreg_en(index*2 downto index*2-1),  -- channel enable signal: main regulator ic, active high
+        OUT_CHANNEL_IAUX => ch_iaux_en(index*2 downto index*2-1),  -- channel enable signal: iaux regulator ic, active high
+        OUT_CHANNEL_VOSG => ch_vosg_en(index*2 downto index*2-1),  -- channel enable signal: vos_gen regulator ic, active high
+
+        p_seq_stepval => open    -- debug:  indicates present sequence step
+        );
+
+    uvl_fuse : iir_filt
+      port map (
+        master_rst_b => master_rst_b,     -- reset with async assert, but synchronized to the 40 mhz clock edge
+        clk_5m_gl    => clk_5m_gl,        -- fpga master clock--assumed to be 5 mhz
+
+        sig_in       => IN_INVOLTAGE_OK(index),      -- '1'= input voltage is above the min threshold (input signal to be filtered)
+        thresh_upper => "01110111",              -- (125dec is maxfiltval)upper hysterisis threshold (ie rising signal threshold)
+        thresh_lower => "00001000",              -- lower hysterisis threshold (ie falling signal threshold)
+        filt_sigout  => open,          -- resulting signal filter value 
+        p_sigout     => channel_involtage_ok(index)  -- final signal bit value after the filter function and hysterisis have been applied
+        );
+    
+  end generate gen_channel_seqs;
+
+  
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-- instantiate a 4 hz pulse generator used for special test to strb the tx function             
+  tx_prompt : slow_pulse_en_gen
     port map (
-      MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    => CLK_5M_GL,        -- MASTER 5 MHZ CLOCK
+      clk_5m_gl    => clk_5m_gl,        -- fpga master clock--assumed to be 5 mhz
+      master_rst_b => master_rst_b,     -- active low reset
+      cnt_en       => '1',              -- active high count enable
+      sim_25kx     => SIM_MODE_EN,      -- special sim mode--speeds up  (1sec=1000usec)
 
-      CHANNELS_READY => channels_ready(2 downto 1),  -- Channels in a READY state (110 or 111)
-      CHANNELS_ON => channels_on(2 downto 1),  -- Channels ON (110)
-
--- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
-      MASTER_SLAVE_PAIR => channel_is_slave(2),  -- pin 21, BIT 0:    CH1_2_MS_CFG_EN = CHANNELS 1 & 2
-
-      CMND_WORD_STB => SLOW_PLS_STB,  -- [UNUSED] SINGLE CLOCK PULSE STROBE INDICATES CHECK FOR AN UPDATED EN COMMAND WORD
-
-      DTYCYC_EN => DTYCYC_EN,  -- '1' ENABLES A LOW DUTY CYCLE MODE TO LIMIT THERMAL LOADS FOR SPECIAL TESTS
-      V_IN_OK   => UVL_OK_CH1A2,  -- UNDER-VOLTAGE LOCKOUT:  V_IN ABOVE THRESHOLD WHEN ='1'
-      TEMP_OK   => FILTD_TEMP_OK,  -- '1'= TEMPERATURE IS BELOW MAX ALLOWED
-
-      SIM_MODE_EN => SIM_MODE_EN,  -- '1' IS SPECIAL SIM MODE WITH REDUCED TIMEOUTS.....
-
-      P_CH_MREG_EN => CH_MREG_EN(1 downto 0),  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
-      P_CH_IAUX_EN => CH_IAUX_EN(1 downto 0),  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
-      P_CH_VOSG_EN => CH_VOSG_EN(1 downto 0),  -- CHANNEL ENABLE SIGNAL: VOS_GEN REGULATOR IC, ACTIVE HIGH
-
-      P_SEQ_STEPVAL => SEQ_12STEPVAL  -- DEBUG:  INDICATES PRESENT SEQUENCE STEP
-      );
-
---------------------------------
--- CHANNELS 3 & 4
---------------------------------
-  CONTROL34 : MAIN_SEQUENCER_NEW
-    port map (
-      MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    => CLK_5M_GL,        -- MASTER 5 MHZ CLOCK
-
-      CHANNELS_READY => channels_ready(4 downto 3),  -- Channels in a READY state (110 or 111)
-      CHANNELS_ON => channels_on(4 downto 3),  -- Channels ON (110)
-
--- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
-      MASTER_SLAVE_PAIR => channel_is_slave(4),  -- pin 20, BIT 1:    CH3_4_MS_CFG_EN = CHANNELS 3 & 4
-
-      CMND_WORD_STB => SLOW_PLS_STB,  -- [UNUSED] SINGLE CLOCK PULSE STROBE INDICATES CHECK FOR AN UPDATED EN COMMAND WORD
-
-      DTYCYC_EN => DTYCYC_EN,  -- '1' ENABLES A LOW DUTY CYCLE MODE TO LIMIT THERMAL LOADS FOR SPECIAL TESTS
-      V_IN_OK   => UVL_OK_CH3A4,  -- UNDER-VOLTAGE LOCKOUT:  V_IN ABOVE THRESHOLD WHEN ='1'
-      TEMP_OK   => FILTD_TEMP_OK,  -- '1'= TEMPERATURE IS BELOW MAX ALLOWED
-
-      SIM_MODE_EN => SIM_MODE_EN,  -- '1' IS SPECIAL SIM MODE WITH REDUCED TIMEOUTS.....
-
-      P_CH_MREG_EN => CH_MREG_EN(3 downto 2),  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
-      P_CH_IAUX_EN => CH_IAUX_EN(3 downto 2),  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
-      P_CH_VOSG_EN => CH_VOSG_EN(3 downto 2),  -- CHANNEL ENABLE SIGNAL: VOS_GEN REGULATOR IC, ACTIVE HIGH
-
-      P_SEQ_STEPVAL => SEQ_34STEPVAL  -- DEBUG:  INDICATES PRESENT SEQUENCE STEP
-      );
---------------------------------
--- CHANNELS 5 & 6
---------------------------------
-  CONTROL56 : MAIN_SEQUENCER_NEW
-    port map (
-      MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    => CLK_5M_GL,        -- MASTER 5 MHZ CLOCK
-
-      CHANNELS_READY => channels_ready(6 downto 5),  -- Channels in a READY state (110 or 111)
-      CHANNELS_ON => channels_on(6 downto 5),  -- Channels ON (110)
-
--- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
-      MASTER_SLAVE_PAIR => channel_is_slave(6),  -- pin 19, BIT 2:    CH5_6_MS_CFG_EN = CHANNELS 5 & 6
-
-      CMND_WORD_STB => SLOW_PLS_STB,  -- [UNUSED] SINGLE CLOCK PULSE STROBE INDICATES CHECK FOR AN UPDATED EN COMMAND WORD
-
-      DTYCYC_EN => DTYCYC_EN,  -- '1' ENABLES A LOW DUTY CYCLE MODE TO LIMIT THERMAL LOADS FOR SPECIAL TESTS
-      V_IN_OK   => UVL_OK_CH5A6,  -- UNDER-VOLTAGE LOCKOUT:  V_IN ABOVE THRESHOLD WHEN ='1'
-      TEMP_OK   => FILTD_TEMP_OK,  -- '1'= TEMPERATURE IS BELOW MAX ALLOWED
-
-      SIM_MODE_EN => SIM_MODE_EN,  -- '1' IS SPECIAL SIM MODE WITH REDUCED TIMEOUTS.....
-
-      P_CH_MREG_EN => CH_MREG_EN(5 downto 4),  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
-      P_CH_IAUX_EN => CH_IAUX_EN(5 downto 4),  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
-      P_CH_VOSG_EN => CH_VOSG_EN(5 downto 4),  -- CHANNEL ENABLE SIGNAL: VOS_GEN REGULATOR IC, ACTIVE HIGH
-
-      P_SEQ_STEPVAL => SEQ_56STEPVAL  -- DEBUG:  INDICATES PRESENT SEQUENCE STEP
-      );
---------------------------------
--- CHANNELS 7 & 8
---------------------------------
-  CONTROL78 : MAIN_SEQUENCER_NEW
-    port map (
-      MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    => CLK_5M_GL,        -- MASTER 5 MHZ CLOCK
-
-      CHANNELS_READY => channels_ready(8 downto 7),  -- Channels in a READY state (110 or 111)
-      CHANNELS_ON => channels_on(8 downto 7),  -- Channels ON (110)
-
-  -- THE MASTER-SLAVE CONFIG DETERMINES THE ENABLE FOR THE V_OS OP AMPL!
-      MASTER_SLAVE_PAIR => channel_is_slave(8),  -- pin 16, BIT 3:    CH7_8_MS_CFG_EN = CHANNELS 7 & 8
-
-      CMND_WORD_STB => SLOW_PLS_STB,  -- [UNUSED] SINGLE CLOCK PULSE STROBE INDICATES CHECK FOR AN UPDATED EN COMMAND WORD
-
-      DTYCYC_EN => DTYCYC_EN,  -- '1' ENABLES A LOW DUTY CYCLE MODE TO LIMIT THERMAL LOADS FOR SPECIAL TESTS
-      V_IN_OK   => UVL_OK_CH7A8,  -- UNDER-VOLTAGE LOCKOUT:  V_IN ABOVE THRESHOLD WHEN ='1'
-      TEMP_OK   => FILTD_TEMP_OK,  -- '1'= TEMPERATURE IS BELOW MAX ALLOWED
-
-      SIM_MODE_EN => SIM_MODE_EN,  -- '1' IS SPECIAL SIM MODE WITH REDUCED TIMEOUTS.....
-
-      P_CH_MREG_EN => CH_MREG_EN(7 downto 6),  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
-      P_CH_IAUX_EN => CH_IAUX_EN(7 downto 6),  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
-      P_CH_VOSG_EN => CH_VOSG_EN(7 downto 6),  -- CHANNEL ENABLE SIGNAL: VOS_GEN REGULATOR IC, ACTIVE HIGH
-
-      P_SEQ_STEPVAL => SEQ_78STEPVAL  -- DEBUG:  INDICATES PRESENT SEQUENCE STEP
+      ms250_clk_en => slow_pls_stb      -- output pulse signifies 0.250 sec interval--suitable for use as a clock enable.
       );
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- INSTANTIATE A 4 HZ PULSE GENERATOR USED FOR SPECIAL TEST TO STRB THE TX FUNCTION             
-  TX_PROMPT : SLOW_PULSE_EN_GEN
+-- instantiate the failsafe filter components
+
+  ovt_fs : iir_filt
     port map (
-      CLK_5M_GL    => CLK_5M_GL,    -- FPGA MASTER CLOCK--ASSUMED TO BE 5 MHZ
-      MASTER_RST_B => MASTER_RST_B,     -- ACTIVE LOW RESET
-      CNT_EN       => '1',              -- ACTIVE HIGH COUNT ENABLE
-      SIM_25KX     => SIM_MODE_EN,  -- SPECIAL SIM MODE--SPEEDS UP  (1SEC=1000USEC)
+      master_rst_b => master_rst_b,     -- reset with async assert, but synchronized to the 40 mhz clock edge
+      clk_5m_gl    => clk_5m_gl,        -- fpga master clock--assumed to be 5 mhz
 
-      MS250_CLK_EN => SLOW_PLS_STB  -- OUTPUT PULSE SIGNIFIES 0.250 SEC INTERVAL--SUITABLE FOR USE AS A CLOCK ENABLE.
-      );
-
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- INSTANTIATE THE FAILSAFE FILTER COMPONENTS
-
-  OVT_FS : IIR_FILT
-    port map (
-      MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    => CLK_5M_GL,     -- FPGA MASTER CLOCK--ASSUMED TO BE 5 MHZ
-
-      SIG_IN       => TEMP_OK,  -- '1'= TEMPERATURE IS BELOW MAX THRESHOLD (INPUT SIGNAL TO BE FILTERED)
-      THRESH_UPPER => "01110111",  -- (125dec is maxfiltval) UPPER HYSTERISIS THRESHOLD (IE RISING SIGNAL THRESHOLD)
-      THRESH_LOWER => "00001000",  -- LOWER HYSTERISIS THRESHOLD (IE FALLING SIGNAL THRESHOLD)
-      FILT_SIGOUT  => IIR_OVT_FILT,     -- RESULTING SIGNAL FILTER VALUE 
-      P_SIGOUT     => FILTD_TEMP_OK  -- FINAL SIGNAL BIT VALUE AFTER THE FILTER FUNCTION AND HYSTERISIS HAVE BEEN APPLIED
-      );
-
-
-  UVL_12FUSE : IIR_FILT
-    port map (
-      MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    => CLK_5M_GL,     -- FPGA MASTER CLOCK--ASSUMED TO BE 5 MHZ
-
-      SIG_IN       => FPGA_FUSE_1_2_OK,  -- '1'= INPUT VOLTAGE IS ABOVE THE MIN THRESHOLD (INPUT SIGNAL TO BE FILTERED)
-      THRESH_UPPER => "01110111",  -- (125dec is maxfiltval)UPPER HYSTERISIS THRESHOLD (IE RISING SIGNAL THRESHOLD)
-      THRESH_LOWER => "00001000",  -- LOWER HYSTERISIS THRESHOLD (IE FALLING SIGNAL THRESHOLD)
-      FILT_SIGOUT  => IIR_UVL12_FILT,   -- RESULTING SIGNAL FILTER VALUE 
-      P_SIGOUT     => UVL_OK_CH1A2  -- FINAL SIGNAL BIT VALUE AFTER THE FILTER FUNCTION AND HYSTERISIS HAVE BEEN APPLIED
-      );
-
-
-  UVL_34FUSE : IIR_FILT
-    port map (
-      MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    => CLK_5M_GL,     -- FPGA MASTER CLOCK--ASSUMED TO BE 5 MHZ
-
-      SIG_IN       => FPGA_FUSE_3_4_OK,  -- '1'= INPUT VOLTAGE IS ABOVE THE MIN THRESHOLD (INPUT SIGNAL TO BE FILTERED)
-      THRESH_UPPER => "01110111",  -- (125dec is maxfiltval)UPPER HYSTERISIS THRESHOLD (IE RISING SIGNAL THRESHOLD)
-      THRESH_LOWER => "00001000",  -- LOWER HYSTERISIS THRESHOLD (IE FALLING SIGNAL THRESHOLD)
-      FILT_SIGOUT  => IIR_UVL34_FILT,   -- RESULTING SIGNAL FILTER VALUE 
-      P_SIGOUT     => UVL_OK_CH3A4  -- FINAL SIGNAL BIT VALUE AFTER THE FILTER FUNCTION AND HYSTERISIS HAVE BEEN APPLIED
-      );
-
-
-  UVL_56FUSE : IIR_FILT
-    port map (
-      MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    => CLK_5M_GL,     -- FPGA MASTER CLOCK--ASSUMED TO BE 5 MHZ
-
-      SIG_IN       => FPGA_FUSE_5_6_OK,  -- '1'= INPUT VOLTAGE IS ABOVE THE MIN THRESHOLD (INPUT SIGNAL TO BE FILTERED)
-      THRESH_UPPER => "01110111",  -- (125dec is maxfiltval)UPPER HYSTERISIS THRESHOLD (IE RISING SIGNAL THRESHOLD)
-      THRESH_LOWER => "00001000",  -- LOWER HYSTERISIS THRESHOLD (IE FALLING SIGNAL THRESHOLD)
-      FILT_SIGOUT  => IIR_UVL56_FILT,   -- RESULTING SIGNAL FILTER VALUE 
-      P_SIGOUT     => UVL_OK_CH5A6  -- FINAL SIGNAL BIT VALUE AFTER THE FILTER FUNCTION AND HYSTERISIS HAVE BEEN APPLIED
-      );
-
-
-  UVL_78FUSE : IIR_FILT
-    port map (
-      MASTER_RST_B => MASTER_RST_B,  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
-      CLK_5M_GL    => CLK_5M_GL,     -- FPGA MASTER CLOCK--ASSUMED TO BE 5 MHZ
-
-      SIG_IN       => FPGA_FUSE_7_8_OK,  -- '1'= INPUT VOLTAGE IS ABOVE THE MIN THRESHOLD (INPUT SIGNAL TO BE FILTERED)
-      THRESH_UPPER => "01110111",  -- (125dec is maxfiltval)UPPER HYSTERISIS THRESHOLD (IE RISING SIGNAL THRESHOLD)
-      THRESH_LOWER => "00001000",  -- LOWER HYSTERISIS THRESHOLD (IE FALLING SIGNAL THRESHOLD)
-      FILT_SIGOUT  => IIR_UVL78_FILT,   -- RESULTING SIGNAL FILTER VALUE 
-      P_SIGOUT     => UVL_OK_CH7A8  -- FINAL SIGNAL BIT VALUE AFTER THE FILTER FUNCTION AND HYSTERISIS HAVE BEEN APPLIED
+      sig_in       => IN_TEMP_OK,       -- '1'= temperature is below max threshold (input signal to be filtered)
+      thresh_upper => "01110111",       -- (125dec is maxfiltval) upper hysterisis threshold (ie rising signal threshold)
+      thresh_lower => "00001000",       -- lower hysterisis threshold (ie falling signal threshold)
+      filt_sigout  => iir_ovt_filt,     -- resulting signal filter value 
+      p_sigout     => filtd_temp_ok     -- final signal bit value after the filter function and hysterisis have been applied
       );
 
 
@@ -854,28 +584,13 @@ begin
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
--- ASSIGN INTERNAL SIGNALS TOP EXTERNAL PORTS
-  --POR_OUT_TO_SCA     <= MASTER_RST_B;   -- COPY OF INTERNAL FPGA RESET
-  BUF5M_J11_15_TCONN <= CLK_5M_GL;      -- COPY OF INTERNAL 5MHZ CLOCK
+-- assign internal signals top external ports
+  OUT_CHANNEL_MREG <= ch_mreg_en;       -- channel enable signal: main regulator ic, active high
+  OUT_CHANNEL_IAUX <= ch_iaux_en;       -- channel enable signal: iaux regulator ic, active high
+  OUT_CHANNEL_VOSG <= ch_vosg_en;       -- channel enable signal: vos_gen regulator ic, active high
 
-  P_CH_MREG_EN <= CH_MREG_EN;  -- CHANNEL ENABLE SIGNAL: MAIN REGULATOR IC, ACTIVE HIGH
-  P_CH_IAUX_EN <= CH_IAUX_EN;  -- CHANNEL ENABLE SIGNAL: IAUX REGULATOR IC, ACTIVE HIGH
-  P_CH_VOSG_EN <= CH_VOSG_EN;  -- CHANNEL ENABLE SIGNAL: VOS_GEN REGULATOR IC, ACTIVE HIGH
+-- led lights when signal is low
+  PWR_OK_LED <= or_reduce(channel_involtage_ok);  -- at least one fused voltage is above v min
+  STATUS_LED <= filtd_temp_ok;                    -- temperature is below the max.
 
--- UNUSED PINS
-  J11_17_TCONN <= '0';  -- PIN 32, (SCHEMA ALIAS= CS3_SEL_EN) UNUSED I/O PIN
-  J11_19_TCONN <= '0';  -- PIN 8,  (SCHEMA ALIAS= CS4_SEL_EN) UNUSED I/O PIN
-  J11_21_TCONN <= '0';  -- PIN 7,  (SCHEMA ALIAS= CS5_SEL_EN) UNUSED I/O PIN
-  J11_23_TCONN <= '1';  -- PIN 5,  (SCHEMA ALIAS= CS6_SEL_EN) UNUSED I/O PIN
-
-  TX_FPGA       <= DTYCYC_EN;           -- '0';  using this as a temp probe pin
-  PRI_RX_EN_BAR <= '0';
-  PRI_TX_EN     <= '1';                 -- CAN BE USED AS A TEST STROBE TRIGGER
---  SCA_DAT_IN    <= SLOW_PLS_STB;        -- '0';  using this as a temp probe pin
-
--- temp assignments!
--- LED LIGHTS WHEN SIGNAL IS LOW
-  PWR_OK_LED <= UVL_OK_CH1A2 or UVL_OK_CH3A4 or UVL_OK_CH5A6 or UVL_OK_CH7A8;  -- AT LEAST ONE FUSED VOLTAGE IS ABOVE V MIN
-  STATUS_LED <= FILTD_TEMP_OK;          -- TEMPERATURE IS BELOW THE MAX.
-
-end RTL;
+end rtl;

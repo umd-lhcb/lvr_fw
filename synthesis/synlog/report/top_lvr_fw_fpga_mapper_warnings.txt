@@ -1,3 +1,6 @@
-@W: MO160 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Register bit i_spi_miso (in view view:work.spi_slave(rtl)) is always 0. To keep the instance, apply syn_preserve=1 on the instance.
+@W: MT420 |Found inferred clock top_lvr_fw|CLK40M_OSC with period 20.00ns. Please declare a user-defined clock on object "p:CLK40M_OSC"
+@W: MT420 |Found inferred clock top_lvr_fw|db_clk5mhz_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:db_clk5mhz"
 @W: MT420 |Found inferred clock spi_slave|i_spi_rx_strb_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:spi_slave_pm.i_spi_rx_strb"
-@W: MT420 |Found inferred clock CCC_Glob_3xBuff|GLB_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:GLOB_BUFF.GLB"
+@W: MT420 |Found inferred clock CCC_Glob_3xBuff|GLB_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:glob_buff.GLB"
+@W: MT511 :"z:/windows/lvr_fw/lvr_fw_2020/synthesis/top_lvr_fw_syn.fdc":18:0:18:0|Clock source p:CLK40MHZ_OSC not found in netlist: create_clock p:CLK40MHZ_OSC -period 25 -add
+@W: MT511 :"z:/windows/lvr_fw/lvr_fw_2020/synthesis/top_lvr_fw_syn.fdc":19:0:19:0|Clock source n:CLK_5M_GL not found in netlist: create_clock n:CLK_5M_GL -period 200 -add

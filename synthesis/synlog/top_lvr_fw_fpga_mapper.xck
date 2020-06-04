@@ -1,4 +1,5 @@
-CKID0001:@|S:GLOB_BUFF.Core@|E:spi_slave_pm.rx_32bit_sreg[28]@|F:@syn_sample_clock_path==CKID0001@|M:ClockId0001 
-CKID0002:@|S:spi_slave_pm.i_spi_rx_strb@|E:channels_on[1]@|F:@syn_sample_clock_path==CKID0002@|M:ClockId0002 
-CKID0003:@|S:CLK_5M_GL_keep@|E:DTYCYC_EN@|F:@syn_sample_clock_path==CKID0003@|M:ClockId0003 
-CKID0004:@|S:CLK40MHZ_OSC@|E:CLK_5M_GL@|F:@syn_sample_clock_path==CKID0004@|M:ClockId0004 
+CKID0001:@|S:clk_5m_gl@|E:sw2_sw5_channel_on_a[1]@|F:@syn_sample_clock_path==CKID0001@|M:ClockId0001 
+CKID0002:@|S:glob_buff.Core@|E:spi_slave_pm.clk_fcnt[5]@|F:@syn_sample_clock_path==CKID0002@|M:ClockId0002 
+CKID0003:@|S:spi_slave_pm.i_spi_rx_strb@|E:channels_on[1]@|F:@syn_sample_clock_path==CKID0003@|M:ClockId0003 
+CKID0004:@|S:spi_slave_pm.i_spi_miso_RNO@|E:spi_slave_pm.i_spi_miso@|F:@syn_sample_clock_path==CKID0004@|M:ClockId0004 
+CKID0005:@|S:CLK40M_OSC@|E:clk_5m_gl@|F:@syn_sample_clock_path1==CKID0005@|M:ClockId0005 

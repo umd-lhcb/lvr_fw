@@ -1,44 +1,12 @@
-----------------------------------------------------------------------
--- Created by Microsemi SmartDesign Wed Feb 27 10:40:46 2019
--- Testbench Template
--- This is a basic testbench that instantiates your design with basic 
--- clock and reset pins connected.  If your design has special
--- clock/reset or testbench driver requirements then you should 
--- copy this file and modify it. 
-----------------------------------------------------------------------
-
---------------------------------------------------------------------------------
--- Company: <Name>
---
--- File: TB_TOP_LVR_FW.vhd
--- File history:
---      <Revision number>: <Date>: <Comments>
---      <Revision number>: <Date>: <Comments>
---      <Revision number>: <Date>: <Comments>
---
--- Description: 
---
--- <Description here>
---
--- Targeted device: <Family::ProASIC3> <Die::A3P250> <Package::100 VQFP>
--- Author: <Name>
---
---------------------------------------------------------------------------------
-
-
 library ieee;
 use ieee.std_logic_1164.all;
 use IEEE.STD_LOGIC_ARITH.all;
 use IEEE.STD_LOGIC_UNSIGNED.all;
 use IEEE.STD_LOGIC_MISC.all;
-USE IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.all;
 
 library proasic3;
 use proasic3.all;
-
---library synplify;
---use synplify.attributes.all;
-
 
 entity TB_TOP_LVR_FW is
 end TB_TOP_LVR_FW;
@@ -46,91 +14,72 @@ end TB_TOP_LVR_FW;
 architecture behavioral of TB_TOP_LVR_FW is
 
   constant CLK40MHZ_PERIOD : time := 25 ns;  -- 40MHZ
+  constant SPI_PERIOD : time := 3.2 us;  -- 312.5 kHZ
 
-  signal CLK40MHZ    : std_logic := '0';
+  signal CLK40MHZ  : std_logic := '0';
   signal NSYSRESET : std_logic := '0';
 
   -- SPI signals
-  signal clk312khz : std_logic := '0';
-  signal counter_clk312khz : integer := 0;
+  signal clk312khz                     : std_logic                     := '0';
   signal sca_data_reg, sca_data_reg_in : std_logic_vector(31 downto 0) := x"12345678";
-  signal sca_data_reg2 : std_logic_vector(31 downto 0) := x"1234F078";
+  signal sca_data_reg2                 : std_logic_vector(31 downto 0) := x"1234F078";
 
-  signal SCA_CLK_OUT, sca_clk_mask, sca_dat_out_mask      : std_logic;
-  signal SCA_RESET_OUT    : std_logic;
-  signal SCA_DAT_OUT      : std_logic;
-  signal SCA_DAT_IN       : std_logic;
+  signal SCA_CLK_OUT, sca_clk_mask, sca_dat_out_mask : std_logic;
+  signal SCA_RESET_OUT                               : std_logic;
+  signal SCA_DAT_OUT                                 : std_logic;
+  signal SCA_DAT_IN                                  : std_logic;
 
-  signal CH_MREG_EN : std_logic_vector(7 downto 0);
-  signal CH_IAUX_EN : std_logic_vector(7 downto 0);
-  signal CH_VOSG_EN : std_logic_vector(7 downto 0);
+  signal CH_MREG_EN : std_logic_vector(8 downto 1);
+  signal CH_IAUX_EN : std_logic_vector(8 downto 1);
+  signal CH_VOSG_EN : std_logic_vector(8 downto 1);
 
-  signal TEMPSIMPROBE : std_logic;
+  signal IN_TEMP_OK    : std_logic;
 
-  signal CH_ENABLE : std_logic;
-
-  signal CH_ACTIVE_STAT : std_logic;
-  signal STDBY_OFFB     : std_logic;
-
-  signal MAINSEQ_STATE : std_logic_vector(3 downto 0);
-
-  signal TEMP_OK    : std_logic_vector(0 downto 0);
-  signal FUSE_12_OK : std_logic_vector(0 downto 0);
-  signal FUSE_34_OK : std_logic_vector(0 downto 0);
+  signal IN_INVOLTAGE_OK     : std_logic_vector(4 downto 1);
+  signal SW3_DUTYCYCLE_MODE  : std_logic;
+  signal SW4_SLAVE_PAIRS     : std_logic_vector(4 downto 1);
+  signal SW2_SW5_CHANNEL_ON  : std_logic_vector(8 downto 1);
+  
 
   component TOP_LVR_FW
-  generic (
-    SIM_MODE_EN : integer range 0 to 1 := 0  -- Set to 1 by test bench in simulation 
-    );  
+    generic (
+      SIM_MODE_EN : integer range 0 to 1 := 0              -- Set to 1 by test bench in simulation 
+      );
     -- ports
     port(
-      -- Inputs
-      CLK40MHZ_OSC       : in std_logic;
-      POR_FPGA         : in std_logic;
-      FPGA_FUSE_1_2_OK : in std_logic_vector(0 downto 0);
-      FPGA_FUSE_3_4_OK : in std_logic_vector(0 downto 0);
-      FPGA_FUSE_5_6_OK : in std_logic_vector(0 downto 0);
-      FPGA_FUSE_7_8_OK : in std_logic_vector(0 downto 0);
-      TEMP_OK          : in std_logic_vector(0 downto 0);
-      MODE_DCYC_NORMB  : in std_logic;
-      MODE_WDT_EN      : in std_logic;
-      MODE_DIAG_NORMB  : in std_logic;
-      CH1_2_MS_CFG_EN  : in std_logic;
-      CH3_4_MS_CFG_EN  : in std_logic;
-      CH5_6_MS_CFG_EN  : in std_logic;
-      CH7_8_MS_CFG_EN  : in std_logic;
-      MAN_EN_CH_4TO1   : in std_logic;
-      MAN_EN_CH_8TO5   : in std_logic;
-      TEMP_FAILSAFE_EN : in std_logic;
-      STDBY_OFFB       : in std_logic;
-      RX_FPGA          : in std_logic;
-      ADDR_SEL         : in std_logic_vector(4 downto 0);
-      SCA_CLK_OUT      : in std_logic;
-      SCA_RESET_OUT    : in std_logic;
-      SCA_DAT_OUT      : in std_logic;
-      UNUSED_1         : in std_logic;
-      UNUSED_2         : in std_logic;
-      J11_25_TCONN     : in std_logic;
-      J11_27_TCONN     : in std_logic;
+      CLK40M_OSC       : in std_logic;                     -- pin 57, external 3.3v 40 mhz clock 
+      IN_POWERON_RST_B : in std_logic;                     -- pin 93, active low reset --dedicated rc time constant---needs schmitt-trigger!
+      IN_INVOLTAGE_OK  : in std_logic_vector(4 downto 1);  -- pins 36, 40-42: under-voltage lockout failsafe ('1'= above threshold)
+      IN_TEMP_OK       : in std_logic;                     -- pin 43: over-temperature failsafe'0'= above the over-temp threshold
 
-      -- Outputs
-      TX_FPGA            : out std_logic;
-      PRI_RX_EN_BAR      : out std_logic;
-      PRI_TX_EN          : out std_logic;
-      SCA_DAT_IN         : out std_logic;
-      POR_OUT_TO_SCA     : out std_logic;
-      P_CH_MREG_EN       : out std_logic_vector(7 downto 0);
-      P_CH_IAUX_EN       : out std_logic_vector(7 downto 0);
-      P_CH_VOSG_EN       : out std_logic_vector(7 downto 0);
-      PWR_OK_LED         : out std_logic;
-      STATUS_LED         : out std_logic;
-      BUF5M_J11_15_TCONN : out std_logic;
-      J11_17_TCONN       : out std_logic;
-      J11_19_TCONN       : out std_logic;
-      J11_21_TCONN       : out std_logic;
-      J11_23_TCONN       : out std_logic
+-------------------------- DIP SWITCHES --------------------------    
+      SW2_SW5_CHANNEL_ON : in std_logic_vector(8 downto 1);  -- pins 27, 26, 23, 22, 15, 13, 11, 10: channels that can be turned on
+      SW3_DUTYCYCLE_MODE : in std_logic;                     -- pin 31: '1' = special test low duty cycle mode
+      sw3_free_pins      : in std_logic_vector(4 downto 2);  -- pins 30, 29, 28
+      SW4_SLAVE_PAIRS    : in std_logic_vector(4 downto 1);  -- pins 21, 20, 19, 16: switch defining slave/master pairs
 
-      -- Inouts
+-------------------------- SPI INTERFACE --------------------------    
+      sca_clk_out   : in  std_logic;    -- pin 35, spi clock from the spi master
+      sca_reset_out : in  std_logic;    -- pin 34, optional reset from the spi master
+      sca_dat_in    : out std_logic;    -- pin 3, serial data from fpga to the spi master
+      sca_dat_out   : in  std_logic;    -- pin 2, serial data to the fpga from the spi master
+
+      -- spi debug signals
+      db_sca_dat_out : out std_logic;
+      db_sca_clk_out : out std_logic;
+      db_clk5mhz     : out std_logic;
+      db_spi_strobe  : out std_logic;
+      db_spi_state   : out std_logic_vector(2 downto 0);
+      db_spi_cnt     : out std_logic_vector(1 downto 0);
+
+-------------------------- CHANNEL ENABLES --------------------------    
+      OUT_CHANNEL_MREG : out std_logic_vector(8 downto 1);  -- pins {62, 65, 71, 76, 80, 83, 92, 86} main regulator ic, active high
+      OUT_CHANNEL_IAUX : out std_logic_vector(8 downto 1);  -- pins {61, 64, 70, 73, 79, 82, 85, 90} iaux regulator ic, active high
+      OUT_CHANNEL_VOSG : out std_logic_vector(8 downto 1);  -- pins {60, 63, 69, 72, 78, 81, 84, 91} vos_gen regulator ic, active high
+
+-------------------------- MONITOR AND STATUS --------------------------    
+      PWR_OK_LED : out std_logic;       -- pin 95,     status yellow led indicating at least one channel is active
+      STATUS_LED : out std_logic        -- pin 77,     steady=uvl's ok, single blink=seu and/or wdt
 
       );
   end component;
@@ -157,98 +106,83 @@ begin
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   -- Clock Driver
   CLK40MHZ <= not CLK40MHZ after (CLK40MHZ_PERIOD / 2.0);
+  CLK312KHZ <= not CLK312KHZ after (SPI_PERIOD / 2.0);
 
-  
-  Divide_Frequency : process(clk40mhz)
-  begin
-    if clk40mhz'event and clk40mhz = '1' then
-      if counter_clk312khz = 64 then
-        counter_clk312khz <= 1;
-        if clk312khz = '1' then
-          clk312khz <= '0';
-        else
-          clk312khz <= '1';
-        end if;
-      else
-        counter_clk312khz <= counter_clk312khz + 1;
-      end if;
-    end if;
-  end process Divide_Frequency;
-  
 
-  sca_data_reg <= x"1234C8FF" when (sca_reset_out = '0') else
-                sca_data_reg(30 downto 0) & sca_data_reg(31) when falling_edge(sca_clk_out) else
-                sca_data_reg;
+  sca_data_reg <= x"1100C9F9" when (sca_reset_out = '0') else
+                  sca_data_reg(30 downto 0) & sca_data_reg(31) when falling_edge(sca_clk_out) else
+                  sca_data_reg;
 
-  sca_data_reg2 <= x"1234F4C4" when (sca_reset_out = '0') else
-                sca_data_reg2(30 downto 0) & sca_data_reg2(31) when falling_edge(sca_clk_out) else
-                sca_data_reg2;
+  sca_data_reg2 <= x"1000F2C2" when (sca_reset_out = '0') else
+                   sca_data_reg2(30 downto 0) & sca_data_reg2(31) when falling_edge(sca_clk_out) else
+                   sca_data_reg2;
 
   sca_data_reg_in <= x"abababab" when (sca_reset_out = '0') else
-                sca_data_reg_in(30 downto 0) & sca_dat_in when rising_edge(sca_clk_out) else
-                sca_data_reg_in;
+                     sca_data_reg_in(30 downto 0) & sca_dat_in when rising_edge(sca_clk_out) else
+                     sca_data_reg_in;
 
-  SCA_CLK_mask <= '0', '1' after 32.5 us, '0' after 135 us, '1' after 141 us, '0' after 243.5 us, '1' after 251 us, '0' after 352 us, '1' after 4001 us, '0' after 4102.5 us, '1' after 4199 us, '0' after 4301.5 us;
-  SCA_CLK_OUT   <= sca_clk_mask and clk312khz;
-  SCA_RESET_OUT <= '1', '0' after 10 us, '1' after 20 us;
-  SCA_DAT_OUT   <= sca_data_reg(31) when sca_dat_out_mask = '1' else sca_data_reg2(31);
-  SCA_DAT_OUT_mask   <= '1', '0' after 4000 us, '1' after 4200 us;
+  SCA_CLK_OUT      <= sca_clk_mask and clk312khz;
+  SCA_DAT_OUT      <= sca_data_reg(31) when sca_dat_out_mask = '1' else sca_data_reg2(31);
 
-  
+
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- GENERATE AN INPUT SIGNAL TO TRIGGER A CHANNEL ENABLE EVENT
-
   process
   begin
 
+    IN_TEMP_OK    <= '1';
+    IN_INVOLTAGE_OK    <= "1111";
 
-    CH_ENABLE  <= '0';
-    STDBY_OFFB <= '0';
+    SW3_DUTYCYCLE_MODE <= '0';
+    SW4_SLAVE_PAIRS    <= "0001";
+    SW2_SW5_CHANNEL_ON <= x"FF";
+    SCA_CLK_mask     <= '0';
+    
+    SCA_DAT_OUT_mask <= '1';
+    SCA_RESET_OUT    <= '1';
+    wait for SPI_PERIOD*5;  
 
-    TEMP_OK    <= "0";
-    FUSE_12_OK <= "0";
-    FUSE_34_OK <= "0";
+    SCA_RESET_OUT    <= '0';
+    wait for SPI_PERIOD*5;  
 
-    wait for (CLK40MHZ_PERIOD * 20000);   -- 0.5 MSEC
-    STDBY_OFFB <= '1';
+    SCA_RESET_OUT    <= '1';
+    wait for SPI_PERIOD*15;  
 
-    wait for (CLK40MHZ_PERIOD * 20000);   -- SET TEMP = OK
-    TEMP_OK    <= "1";
-    FUSE_12_OK <= "0";
-    FUSE_34_OK <= "0";
+    SCA_CLK_mask     <= '1';  ------- SPI command
+    wait for SPI_PERIOD*32;
+    
+    SCA_CLK_mask     <= '0';
+    IN_INVOLTAGE_OK    <= "1010";
+    wait for 16 us;  
 
-    wait for (CLK40MHZ_PERIOD * 20000);  -- SET TEMP = OK & ONE OF THE INPUTS TO BE ABOVE UVL MIN
-    TEMP_OK    <= "1";
-    FUSE_12_OK <= "1";
-    FUSE_34_OK <= "0";
-    CH_ENABLE  <= '1';
+    SCA_CLK_mask     <= '1';  ------- SPI command
+    wait for SPI_PERIOD*32;
 
-    wait for (CLK40MHZ_PERIOD * 20000);   --
-    TEMP_OK    <= "1";
-    FUSE_12_OK <= "1";
-    FUSE_34_OK <= "1";
+    IN_INVOLTAGE_OK    <= "1111";
+    SCA_CLK_mask     <= '0';
+    IN_TEMP_OK    <= '0';
+    wait for 17.5 us;  
 
-    wait for (CLK40MHZ_PERIOD * 20000);   --
-    TEMP_OK    <= "0";
-    FUSE_12_OK <= "1";
-    FUSE_34_OK <= "1";
+    SCA_CLK_mask     <= '1';  ------- SPI command
+    wait for SPI_PERIOD*32;
 
-    wait for (CLK40MHZ_PERIOD * 20000);   --
-    TEMP_OK    <= "0";
-    FUSE_12_OK <= "1";
-    FUSE_34_OK <= "1";
+    IN_TEMP_OK    <= '1';
+    SCA_CLK_mask     <= '0';
+    wait for SPI_PERIOD*500;
 
-    wait for (CLK40MHZ_PERIOD * 20000);   --
-    TEMP_OK    <= "1";
-    FUSE_12_OK <= "1";
-    FUSE_34_OK <= "1";
 
-    wait for (CLK40MHZ_PERIOD * 20000);   --
-    CH_ENABLE <= '1';
+    SCA_DAT_OUT_mask <= '0';
+    SCA_CLK_mask     <= '1';  ------- SPI command
+    wait for SPI_PERIOD*32;
 
-    wait for (CLK40MHZ_PERIOD * 20000);   --
-    CH_ENABLE <= '1';
+    SCA_CLK_mask     <= '0';
+    wait for SPI_PERIOD*50;
+    
+    SCA_DAT_OUT_mask <= '1';
+    SCA_CLK_mask     <= '1';  ------- SPI command
+    wait for SPI_PERIOD*32;
 
+    SCA_CLK_mask     <= '0';
     wait;
 
   end process;
@@ -260,54 +194,27 @@ begin
     -- port map
     port map(
       -- Inputs
-      CLK40MHZ_OSC       => CLK40MHZ,
-      POR_FPGA         => NSYSRESET,
-      --FPGA_FUSE_1_2_OK => FUSE_12_OK,
-      --FPGA_FUSE_3_4_OK => FUSE_34_OK,
-      FPGA_FUSE_1_2_OK => "1",
-      FPGA_FUSE_3_4_OK => "1",
-      FPGA_FUSE_5_6_OK => "1",
-      FPGA_FUSE_7_8_OK => "1",
-      TEMP_OK          => TEMP_OK,
-      MODE_DCYC_NORMB  => '0',
-      MODE_WDT_EN      => '0',
-      MODE_DIAG_NORMB  => '0',
-      CH1_2_MS_CFG_EN  => '0',
-      CH3_4_MS_CFG_EN  => '1',
-      CH5_6_MS_CFG_EN  => '0',
-      CH7_8_MS_CFG_EN  => '0',
-      MAN_EN_CH_4TO1   => '1',
-      MAN_EN_CH_8TO5   => '1',
-      TEMP_FAILSAFE_EN => '0',
-      STDBY_OFFB       => STDBY_OFFB,
-      RX_FPGA          => '0',
-      ADDR_SEL         => (others => '0'),
-      SCA_CLK_OUT      => SCA_CLK_OUT,
-      SCA_RESET_OUT    => SCA_RESET_OUT,
-      SCA_DAT_OUT      => SCA_DAT_OUT,
-      UNUSED_1         => '0',
-      UNUSED_2         => '0',
-      J11_25_TCONN     => '0',
-      J11_27_TCONN     => '0',
+      CLK40M_OSC         => CLK40MHZ,
+      IN_POWERON_RST_B   => NSYSRESET,
+      IN_INVOLTAGE_OK    => IN_INVOLTAGE_OK,
+      IN_TEMP_OK         => IN_TEMP_OK,
+      SW3_DUTYCYCLE_MODE => SW3_DUTYCYCLE_MODE,
+      SW4_SLAVE_PAIRS    => SW4_SLAVE_PAIRS,
+      SW2_SW5_CHANNEL_ON => SW2_SW5_CHANNEL_ON,
+      sw3_free_pins => "000",
+
+      SCA_CLK_OUT   => SCA_CLK_OUT,
+      SCA_RESET_OUT => SCA_RESET_OUT,
+      SCA_DAT_OUT   => SCA_DAT_OUT,
 
       -- Outputs
-      TX_FPGA            => TEMPSIMPROBE,
-      PRI_RX_EN_BAR      => open,
-      PRI_TX_EN          => open,
-      SCA_DAT_IN         => SCA_DAT_IN,
-      POR_OUT_TO_SCA     => open,
-      P_CH_MREG_EN       => CH_MREG_EN,
-      P_CH_IAUX_EN       => CH_IAUX_EN,
-      P_CH_VOSG_EN       => CH_VOSG_EN,
-      PWR_OK_LED         => open,
-      STATUS_LED         => CH_ACTIVE_STAT,
-      BUF5M_J11_15_TCONN => open,
-      J11_17_TCONN       => MAINSEQ_STATE(0),
-      J11_19_TCONN       => MAINSEQ_STATE(1),
-      J11_21_TCONN       => MAINSEQ_STATE(2),
-      J11_23_TCONN       => MAINSEQ_STATE(3)
+      SCA_DAT_IN       => SCA_DAT_IN,
+      OUT_CHANNEL_MREG => CH_MREG_EN,
+      OUT_CHANNEL_IAUX => CH_IAUX_EN,
+      OUT_CHANNEL_VOSG => CH_VOSG_EN,
 
-      -- Inouts
+      PWR_OK_LED         => open,
+      STATUS_LED         => open
 
       );
 

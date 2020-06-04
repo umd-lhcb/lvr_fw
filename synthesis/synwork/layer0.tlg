@@ -1,7 +1,12 @@
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":53:7:53:16|Synthesizing work.top_lvr_fw.rtl.
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":423:23:423:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":426:24:426:47|Referenced variable active_switch_constraint is not in sensitivity list.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":36:7:36:16|Synthesizing work.top_lvr_fw.rtl.
+@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":327:23:327:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":332:24:332:41|Referenced variable sw3_dutycycle_mode is not in sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":330:24:330:47|Referenced variable active_switch_constraint is not in sensitivity list.
+@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":229:9:229:21|Signal seq_12stepval is undriven. Either assign the signal a value or remove the signal declaration.
+@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":230:9:230:21|Signal seq_34stepval is undriven. Either assign the signal a value or remove the signal declaration.
+@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":231:9:231:21|Signal seq_56stepval is undriven. Either assign the signal a value or remove the signal declaration.
+@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":232:9:232:21|Signal seq_78stepval is undriven. Either assign the signal a value or remove the signal declaration.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
 @N: CD233 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:23:73:24|Using sequential encoding for type threshold_state.
 Post processing for work.iir_filt.rtl
@@ -52,13 +57,10 @@ Post processing for proasic3.gnd.syn_black_box
 Post processing for proasic3.pllint.syn_black_box
 Post processing for work.ccc_glob_3xbuff.def_arch
 Post processing for work.top_lvr_fw.rtl
-@W: CL240 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":108:4:108:17|Signal POR_OUT_TO_SCA is floating; a simulation mismatch is possible.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":495:4:495:5|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":495:4:495:5|Pruning unused register STDBY_OFFB_B_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":495:4:495:5|Pruning unused register STDBY_OFFB_A_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":495:4:495:5|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
-@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":425:4:425:5|Feedback mux created for signal channels_ready[8:1]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
-@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":329:91:329:91|Feedback mux created for signal channels_on[8:1]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":400:4:400:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
+@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":329:4:329:5|Feedback mux created for signal channels_ready[8:1]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
+@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":236:99:236:99|Feedback mux created for signal channels_on[8:1]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
+@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":236:99:236:99|Feedback mux created for signal dutycycle_mode. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Trying to extract state machine for register spi_sm.
 Extracted state machine for register spi_sm
 State machine has 6 reachable states with original encodings of:
@@ -93,13 +95,4 @@ State machine has 3 reachable states with original encodings of:
    00
    01
    10
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":75:4:75:14|Input MODE_WDT_EN is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":77:4:77:18|Input MODE_DIAG_NORMB is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":91:4:91:19|Input TEMP_FAILSAFE_EN is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":92:4:92:13|Input STDBY_OFFB is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":95:4:95:10|Input RX_FPGA is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":101:4:101:11|Input ADDR_SEL is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":137:4:137:11|Input UNUSED_1 is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":138:4:138:11|Input UNUSED_2 is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":139:4:139:15|Input J11_25_TCONN is unused.
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":140:4:140:15|Input J11_27_TCONN is unused.
+@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":49:4:49:16|Input sw3_free_pins is unused.

@@ -128,7 +128,7 @@ begin
       n_rx_32bit_sreg(31 downto 0) <= rx_32bit_sreg(30 downto 0) & SPI_MOSI;  -- these are the d ff inputs for the shift register 
       rx_32bit_sreg <= rx_32bit_sreg;
 
-    elsif falling_edge(SPI_CLK) then
+    elsif falling_edge(SPI_CLK) and clk_fcnt_en = '1' then
       clk_fcnt      <= n_clk_fcnt;
       if n_clk_fcnt <= 31 then
         i_spi_miso <= tx_32bit_sreg(31-n_clk_fcnt);

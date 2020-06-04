@@ -1,7 +1,7 @@
 # Synopsys Constraint Checker, version mapact, Build 2172R, built Oct 30 2017
 # Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
 
-# Written on Tue Jun 02 18:10:28 2020
+# Written on Wed Jun 03 21:56:02 2020
 
 
 ##### DESIGN INFO #######################################################
@@ -14,7 +14,7 @@ Constraint File(s):      "Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw_syn
 
 ##### SUMMARY ############################################################
 
-Found 0 issues in 0 out of 5 constraints
+Found 5 issues in 4 out of 5 constraints
 
 
 ##### DETAILS ############################################################
@@ -26,15 +26,15 @@ Clock Relationships
 
 Starting                                   Ending                                     |     rise to rise     |     fall to fall     |     rise to fall     |     fall to rise                     
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CLK40MHZ_OSC                               CLK40MHZ_OSC                               |     25.000           |     No paths         |     No paths         |     No paths                         
-CLK40MHZ_OSC                               CLK_5M_GL                                  |     25.000           |     No paths         |     No paths         |     No paths                         
-CLK40MHZ_OSC                               spi_slave|i_spi_rx_strb_inferred_clock     |     No paths         |     No paths         |     Diff grp         |     No paths                         
-CLK_5M_GL                                  CLK_5M_GL                                  |     200.000          |     No paths         |     No paths         |     No paths                         
-CLK_5M_GL                                  spi_slave|i_spi_rx_strb_inferred_clock     |     No paths         |     No paths         |     Diff grp         |     No paths                         
-CLK_5M_GL                                  CCC_Glob_3xBuff|GLB_inferred_clock         |     Diff grp         |     No paths         |     Diff grp         |     No paths                         
-spi_slave|i_spi_rx_strb_inferred_clock     CLK_5M_GL                                  |     No paths         |     No paths         |     No paths         |     Diff grp                         
-spi_slave|i_spi_rx_strb_inferred_clock     CCC_Glob_3xBuff|GLB_inferred_clock         |     No paths         |     No paths         |     No paths         |     Diff grp                         
-CCC_Glob_3xBuff|GLB_inferred_clock         CLK_5M_GL                                  |     Diff grp         |     No paths         |     No paths         |     Diff grp                         
+top_lvr_fw|CLK40M_OSC                      top_lvr_fw|CLK40M_OSC                      |     20.000           |     No paths         |     No paths         |     No paths                         
+top_lvr_fw|CLK40M_OSC                      top_lvr_fw|db_clk5mhz_inferred_clock       |     Diff grp         |     No paths         |     No paths         |     No paths                         
+top_lvr_fw|CLK40M_OSC                      spi_slave|i_spi_rx_strb_inferred_clock     |     No paths         |     No paths         |     Diff grp         |     No paths                         
+top_lvr_fw|db_clk5mhz_inferred_clock       top_lvr_fw|db_clk5mhz_inferred_clock       |     20.000           |     No paths         |     No paths         |     No paths                         
+top_lvr_fw|db_clk5mhz_inferred_clock       spi_slave|i_spi_rx_strb_inferred_clock     |     No paths         |     No paths         |     Diff grp         |     No paths                         
+top_lvr_fw|db_clk5mhz_inferred_clock       CCC_Glob_3xBuff|GLB_inferred_clock         |     Diff grp         |     No paths         |     Diff grp         |     No paths                         
+spi_slave|i_spi_rx_strb_inferred_clock     top_lvr_fw|db_clk5mhz_inferred_clock       |     No paths         |     No paths         |     No paths         |     Diff grp                         
+spi_slave|i_spi_rx_strb_inferred_clock     CCC_Glob_3xBuff|GLB_inferred_clock         |     No paths         |     Diff grp         |     No paths         |     Diff grp                         
+CCC_Glob_3xBuff|GLB_inferred_clock         top_lvr_fw|db_clk5mhz_inferred_clock       |     Diff grp         |     No paths         |     No paths         |     Diff grp                         
 CCC_Glob_3xBuff|GLB_inferred_clock         CCC_Glob_3xBuff|GLB_inferred_clock         |     No paths         |     20.000           |     10.000           |     10.000                           
 =================================================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
@@ -44,82 +44,77 @@ CCC_Glob_3xBuff|GLB_inferred_clock         CCC_Glob_3xBuff|GLB_inferred_clock   
 Unconstrained Start/End Points
 ******************************
 
-p:ADDR_SEL[0]
-p:ADDR_SEL[1]
-p:ADDR_SEL[2]
-p:ADDR_SEL[3]
-p:ADDR_SEL[4]
-p:CH1_2_MS_CFG_EN
-p:CH3_4_MS_CFG_EN
-p:CH5_6_MS_CFG_EN
-p:CH7_8_MS_CFG_EN
-p:FPGA_FUSE_1_2_OK[0]
-p:FPGA_FUSE_3_4_OK[0]
-p:FPGA_FUSE_5_6_OK[0]
-p:FPGA_FUSE_7_8_OK[0]
-p:J11_17_TCONN
-p:J11_19_TCONN
-p:J11_21_TCONN
-p:J11_23_TCONN
-p:J11_25_TCONN
-p:J11_27_TCONN
-p:MAN_EN_CH_4TO1
-p:MAN_EN_CH_8TO5
-p:MODE_DCYC_NORMB
-p:MODE_DIAG_NORMB
-p:MODE_WDT_EN
-p:POR_FPGA
-p:POR_OUT_TO_SCA
-p:PRI_RX_EN_BAR
-p:PRI_TX_EN
+p:IN_INVOLTAGE_OK[1]
+p:IN_INVOLTAGE_OK[2]
+p:IN_INVOLTAGE_OK[3]
+p:IN_INVOLTAGE_OK[4]
+p:IN_POWERON_RST_B
+p:IN_TEMP_OK
+p:OUT_CHANNEL_IAUX[1]
+p:OUT_CHANNEL_IAUX[2]
+p:OUT_CHANNEL_IAUX[3]
+p:OUT_CHANNEL_IAUX[4]
+p:OUT_CHANNEL_IAUX[5]
+p:OUT_CHANNEL_IAUX[6]
+p:OUT_CHANNEL_IAUX[7]
+p:OUT_CHANNEL_IAUX[8]
+p:OUT_CHANNEL_MREG[1]
+p:OUT_CHANNEL_MREG[2]
+p:OUT_CHANNEL_MREG[3]
+p:OUT_CHANNEL_MREG[4]
+p:OUT_CHANNEL_MREG[5]
+p:OUT_CHANNEL_MREG[6]
+p:OUT_CHANNEL_MREG[7]
+p:OUT_CHANNEL_MREG[8]
+p:OUT_CHANNEL_VOSG[1]
+p:OUT_CHANNEL_VOSG[2]
+p:OUT_CHANNEL_VOSG[3]
+p:OUT_CHANNEL_VOSG[4]
+p:OUT_CHANNEL_VOSG[5]
+p:OUT_CHANNEL_VOSG[6]
+p:OUT_CHANNEL_VOSG[7]
+p:OUT_CHANNEL_VOSG[8]
 p:PWR_OK_LED
-p:P_CH_IAUX_EN[0]
-p:P_CH_IAUX_EN[1]
-p:P_CH_IAUX_EN[2]
-p:P_CH_IAUX_EN[3]
-p:P_CH_IAUX_EN[4]
-p:P_CH_IAUX_EN[5]
-p:P_CH_IAUX_EN[6]
-p:P_CH_IAUX_EN[7]
-p:P_CH_MREG_EN[0]
-p:P_CH_MREG_EN[1]
-p:P_CH_MREG_EN[2]
-p:P_CH_MREG_EN[3]
-p:P_CH_MREG_EN[4]
-p:P_CH_MREG_EN[5]
-p:P_CH_MREG_EN[6]
-p:P_CH_MREG_EN[7]
-p:P_CH_VOSG_EN[0]
-p:P_CH_VOSG_EN[1]
-p:P_CH_VOSG_EN[2]
-p:P_CH_VOSG_EN[3]
-p:P_CH_VOSG_EN[4]
-p:P_CH_VOSG_EN[5]
-p:P_CH_VOSG_EN[6]
-p:P_CH_VOSG_EN[7]
-p:RX_FPGA
-p:SCA_DAT_IN
-p:SCA_DAT_OUT
-p:SCA_RESET_OUT
 p:STATUS_LED
-p:STDBY_OFFB
-p:TEMP_FAILSAFE_EN
-p:TEMP_OK[0]
-p:TX_FPGA
-p:UNUSED_1
-p:UNUSED_2
+p:SW2_SW5_CHANNEL_ON[1]
+p:SW2_SW5_CHANNEL_ON[2]
+p:SW2_SW5_CHANNEL_ON[3]
+p:SW2_SW5_CHANNEL_ON[4]
+p:SW2_SW5_CHANNEL_ON[5]
+p:SW2_SW5_CHANNEL_ON[6]
+p:SW2_SW5_CHANNEL_ON[7]
+p:SW2_SW5_CHANNEL_ON[8]
+p:SW3_DUTYCYCLE_MODE
+p:SW4_SLAVE_PAIRS[1]
+p:SW4_SLAVE_PAIRS[2]
+p:SW4_SLAVE_PAIRS[3]
+p:SW4_SLAVE_PAIRS[4]
 p:db_sca_dat_out
-p:db_spi_cnt0
-p:db_spi_cnt1
-p:db_spi_state0
-p:db_spi_state1
+p:db_spi_cnt[0]
+p:db_spi_cnt[1]
+p:db_spi_state[0]
+p:db_spi_state[1]
+p:db_spi_state[2]
+p:sca_dat_in
+p:sca_dat_out
+p:sca_reset_out
+p:sw3_free_pins[2]
+p:sw3_free_pins[3]
+p:sw3_free_pins[4]
 
 
 Inapplicable constraints
 ************************
 
-(none)
-
+create_clock n:CLK_5M_GL -period 200 -add
+	@E:"z:/windows/lvr_fw/lvr_fw_2020/synthesis/top_lvr_fw_syn.fdc":19:0:19:0|object "n:CLK_5M_GL" does not exist
+create_clock p:CLK40MHZ_OSC -period 25 -add
+	@E:"z:/windows/lvr_fw/lvr_fw_2020/synthesis/top_lvr_fw_syn.fdc":18:0:18:0|object "p:CLK40MHZ_OSC" does not exist
+set_clock_groups -derive -asynchronous -name MainClkGrp -group {c:CLK40MHZ_OSC c:CLK_5M_GL}
+	@E:"z:/windows/lvr_fw/lvr_fw_2020/synthesis/top_lvr_fw_syn.fdc":22:0:22:0|object "c:CLK40MHZ_OSC" does not exist
+	@E:"z:/windows/lvr_fw/lvr_fw_2020/synthesis/top_lvr_fw_syn.fdc":22:0:22:0|object "c:CLK_5M_GL" does not exist
+set_clock_groups -derive -asynchronous -name Spi_MClkGrp -group c:SCA_CLK_OUT
+	@E:"z:/windows/lvr_fw/lvr_fw_2020/synthesis/top_lvr_fw_syn.fdc":23:0:23:0|object "c:SCA_CLK_OUT" does not exist
 
 Applicable constraints with issues
 **********************************

@@ -1,5 +1,10 @@
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":423:23:423:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":426:24:426:47|Referenced variable active_switch_constraint is not in sensitivity list.
+@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":327:23:327:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":332:24:332:41|Referenced variable sw3_dutycycle_mode is not in sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":330:24:330:47|Referenced variable active_switch_constraint is not in sensitivity list.
+@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":229:9:229:21|Signal seq_12stepval is undriven. Either assign the signal a value or remove the signal declaration.
+@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":230:9:230:21|Signal seq_34stepval is undriven. Either assign the signal a value or remove the signal declaration.
+@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":231:9:231:21|Signal seq_56stepval is undriven. Either assign the signal a value or remove the signal declaration.
+@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":232:9:232:21|Signal seq_78stepval is undriven. Either assign the signal a value or remove the signal declaration.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(0) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(1) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
@@ -23,11 +28,8 @@
 @W: CL116 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Input data for signal n_rx_32bit_sreg(31 downto 0) contains references to signal edges. An asynchronous reset may be missing from the sensitivity list.
 @W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Feedback mux created for signal n_clk_fcnt[5:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
 @W: CL116 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Input data for signal n_clk_fcnt(5 downto 0) contains references to signal edges. An asynchronous reset may be missing from the sensitivity list.
-@W: CL240 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":108:4:108:17|Signal POR_OUT_TO_SCA is floating; a simulation mismatch is possible.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":495:4:495:5|Pruning unused register VAL_STDBY_OFFB_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":495:4:495:5|Pruning unused register STDBY_OFFB_B_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":495:4:495:5|Pruning unused register STDBY_OFFB_A_2. Make sure that there are no unused intermediate registers.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":495:4:495:5|Pruning unused register DC50_TEST_STRB_2. Make sure that there are no unused intermediate registers.
-@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":425:4:425:5|Feedback mux created for signal channels_ready[8:1]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
-@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":329:91:329:91|Feedback mux created for signal channels_on[8:1]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":400:4:400:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
+@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":329:4:329:5|Feedback mux created for signal channels_ready[8:1]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
+@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":236:99:236:99|Feedback mux created for signal channels_on[8:1]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
+@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":236:99:236:99|Feedback mux created for signal dutycycle_mode. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
 

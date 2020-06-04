@@ -34,10 +34,10 @@ entity IIR_FILT is
     MASTER_RST_B : in std_logic;  -- RESET WITH ASYNC ASSERT, BUT SYNCHRONIZED TO THE 40 MHZ CLOCK EDGE
     CLK_5M_GL    : in std_logic;
 
-    SIG_IN       : in  std_logic_vector(0 downto 0);  -- !!!!! ASSUME THIS SIGNAL IS ALREADY SYNCHRONIZED TO THE 5 MHZ CLOCK !!!!!!!!!
-    THRESH_UPPER : in  std_logic_vector(7 downto 0);  -- UPPER HYSTERISIS THRESHOLD (IE RISING SIGNAL THRESHOLD)
-    THRESH_LOWER : in  std_logic_vector(7 downto 0);  -- LOWER HYSTERISIS THRESHOLD (IE FALLING SIGNAL THRESHOLD)
-    FILT_SIGOUT  : out std_logic_vector(7 downto 0);  -- SIGNAL NUMERIC VALUE FROM THE FILTER FUNCTION 
+    SIG_IN       : in  std_logic;  -- !!!!! ASSUME THIS SIGNAL IS ALREADY SYNCHRONIZED TO THE 5 MHZ CLOCK !!!!!!!!!
+    THRESH_UPPER : in  std_logic_vector(8 downto 1);  -- UPPER HYSTERISIS THRESHOLD (IE RISING SIGNAL THRESHOLD)
+    THRESH_LOWER : in  std_logic_vector(8 downto 1);  -- LOWER HYSTERISIS THRESHOLD (IE FALLING SIGNAL THRESHOLD)
+    FILT_SIGOUT  : out std_logic_vector(8 downto 1);  -- SIGNAL NUMERIC VALUE FROM THE FILTER FUNCTION 
 
     P_SIGOUT : out std_logic  -- FINAL SIGNAL BIT VALUE AFTER THE FILTER FUNCTION AND HYSTERISIS HAVE BEEN APPLIED
     );
@@ -66,7 +66,7 @@ architecture RTL of IIR_FILT is
 -- DEFINE INTERNAL SIGNALS
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-  signal N_SIG_IN_DEL, SIG_IN_DEL : std_logic_vector(0 downto 0);  -- STORE A DELAYED VERSION OF THE INPUT SIGNAL
+  signal N_SIG_IN_DEL, SIG_IN_DEL : std_logic;  -- STORE A DELAYED VERSION OF THE INPUT SIGNAL
   signal SUM_IN_A, N_SUM_IN_A     : integer range 0 to 32;  -- MULTIPLY SUM OF INPUT LOGIC BIT AND DELAYED VERSION BY DECIMAL 16
   signal FILT_OUT, N_FILT_OUT     : integer range 0 to 255;  -- UPPER 8 MSB'S OF THE FILTER CALC
 
@@ -83,7 +83,7 @@ begin
   REG5M : process(CLK_5M_GL, MASTER_RST_B)
   begin
     if MASTER_RST_B = '0' then
-      SIG_IN_DEL <= "0";
+      SIG_IN_DEL <= '0';
       SUM_IN_A   <= 0;
       FILT_OUT   <= 0;
       THRESH_VAL <= INIT;

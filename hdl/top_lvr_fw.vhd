@@ -44,10 +44,10 @@ entity top_lvr_fw is
     IN_TEMP_OK       : in std_logic;                     -- pin 43: over-temperature failsafe'0'= above the over-temp threshold
 
 -------------------------- DIP SWITCHES --------------------------    
-    SW2_SW5_CHANNEL_ON : in std_logic_vector(8 downto 1);  -- pins 27, 26, 23, 22, 15, 13, 11, 10: channels that can be turned on
-    SW3_DUTYCYCLE_MODE : in std_logic;                     -- pin 31: '1' = special test low duty cycle mode
-    sw3_free_pins      : in std_logic_vector(4 downto 2);  -- pins 30, 29, 28
-    SW4_SLAVE_PAIRS    : in std_logic_vector(4 downto 1);  -- pins 21, 20, 19, 16: switch defining slave/master pairs
+    SW2_SW5_CHANNEL_ON_BAR : in std_logic_vector(8 downto 1);  -- pins 27, 26, 23, 22, 15, 13, 11, 10: channels that can be turned on
+    SW3_DUTYCYCLE_MODE_BAR : in std_logic;                     -- pin 31: '1' = special test low duty cycle mode
+    SW3_DEFAULT_TURNON_BAR : in std_logic;                     -- pin 30: '1' = channels turn on by default
+    SW4_SLAVE_PAIRS_BAR    : in std_logic_vector(4 downto 1);  -- pins 21, 20, 19, 16: switch defining slave/master pairs
 
 -------------------------- SPI INTERFACE --------------------------    
     sca_clk_out   : in  std_logic;      -- pin 35, spi clock from the spi master
@@ -214,11 +214,12 @@ architecture rtl of top_lvr_fw is
   signal ch_iaux_en : std_logic_vector(8 downto 1);  -- channel enable signal: iaux regulator ic, active high
   signal ch_vosg_en : std_logic_vector(8 downto 1);  -- channel enable signal: vos_gen regulator ic, active high
 
--- these signals are used to debounce the dip switches used for manual tests (SW2_SW5_CHANNEL_ON)
+-- these signals are used to debounce the dip switches used for manual tests (SW2_SW5_CHANNEL_ON_BAR)
   signal n_sw2_sw5_channel_on_a, sw2_sw5_channel_on_a         : std_logic_vector(8 downto 1);
   signal n_sw2_sw5_channel_on_b, sw2_sw5_channel_on_b         : std_logic_vector(8 downto 1);
 -- these are the debounced versions of the dip switches
-  signal n_active_switch_constraint, active_switch_constraint : std_logic_vector(8 downto 1);  --constraints coming from external switch
+  signal n_active_switch_constraints, active_switch_constraints : std_logic_vector(8 downto 1);  --constraints coming from external switch
+  signal total_channel_constraints : std_logic_vector(8 downto 1);  --constraints coming from external switch, temperature, and undervoltage
 
   signal n_dtycyc_cnt, dtycyc_cnt : integer range 0 to (2**5)-1;        -- duty cycle counter
   constant dtycyc_time            : integer range 0 to (2**5)-1 := 19;  -- duty cycle counter timeout interval (20 * 0.250 sec)~5%
@@ -228,6 +229,7 @@ architecture rtl of top_lvr_fw is
 
   signal channels_ready, channels_on             : std_logic_vector(8 downto 1) := (others => '0');  ---active lvr channels
   signal channels_to_be_ready, channels_to_be_on : std_logic_vector(8 downto 1) := (others => '0');  --to be active lvr channels
+  signal channels_desired_ready, channels_desired_on : std_logic_vector(8 downto 1) := (others => '0');  --to be active lvr channels
   signal channel_is_slave                        : std_logic_vector(8 downto 1) := (others => '0');  --which channels are slaves (1,3,5,7 always master, so '0')
   signal channel_involtage_ok                    : std_logic_vector(4 downto 1) := (others => '0');  --which channels have ok input voltage
 
@@ -241,7 +243,9 @@ architecture rtl of top_lvr_fw is
   signal spi_p_state_id             : std_logic_vector(3 downto 0);
   signal clk_fcnt_out               : std_logic_vector(4 downto 0);
   signal sca_clk_out_buf, spi_rst_b : std_logic;
+  signal read_fpga_params : std_logic := '0';
 
+  constant fw_version : std_logic_vector(11 downto 0) := x"200";
 -- debug
   signal iir_ovt_filt   : std_logic_vector(8 downto 1);
 
@@ -291,11 +295,21 @@ begin
 
   db_spi_cnt <= clk_fcnt_out(1 downto 0);
 
+  -- Constraints coming from external switch, temperature, and undervoltage
+  gen_total_constraints : for index in 1 to 4 generate
+  begin
+    total_channel_constraints(index*2 downto index*2-1) <= active_switch_constraints(index*2 downto index*2-1)
+                                                           and filtd_temp_ok & filtd_temp_ok
+                                                           and channel_involtage_ok(index);
+  end generate gen_total_constraints;
+  
+  channels_ready <= channels_desired_ready and total_channel_constraints;
+  channels_on    <= channels_desired_on and total_channel_constraints;
+    
   -- spi word to be transmitted
-  spi_tx_word(30 downto 0) <= "000000" & dutycycle_mode &
-                              "000" & not filtd_temp_ok & not channel_involtage_ok &
-                              channels_ready & channels_on;
-  spi_tx_word(31) <= xor_reduce(spi_tx_word(30 downto 0));  -- parity bit
+  spi_tx_word <= xor_reduce(spi_tx_word(30 downto 0)) & "00000" & not filtd_temp_ok & dutycycle_mode  & not SW4_SLAVE_PAIRS_BAR & not channel_involtage_ok &
+                 channels_ready & channels_on when read_fpga_params = '0' else
+                 x"00" & active_switch_constraints & x"0" & fw_version;
 
   --spi_tx_word <= x"dcb02019" when gb_spi_rst_b = '0' else
   --               spi_rx_word when falling_edge(spi_rx_strb) else
@@ -306,33 +320,38 @@ begin
   begin
     -- indices for spi_rx_word go from 0 to 15, while the others go from 1 to 8
     -- slaves are assigned same value as their masters (index_slave - 1)
-    channels_to_be_ready(index*2-1) <= spi_rx_word(index*2+6) and active_switch_constraint(index*2-1)
-                                       and filtd_temp_ok and channel_involtage_ok(index);
+    channels_to_be_ready(index*2-1) <= spi_rx_word(index*2+6);
     
-    channels_to_be_ready(index*2)   <= spi_rx_word(index*2+7) and active_switch_constraint(index*2)
-                                       and filtd_temp_ok and channel_involtage_ok(index) when channel_is_slave(index*2) = '0' else
-                                       spi_rx_word(index*2+6) and active_switch_constraint(index*2-1)
-                                       and filtd_temp_ok and channel_involtage_ok(index);
+    channels_to_be_ready(index*2)   <= spi_rx_word(index*2+7) when channel_is_slave(index*2) = '0' else
+                                       spi_rx_word(index*2+6);
     
     channels_to_be_on(index*2-1) <= spi_rx_word(index*2-2) and channels_to_be_ready(index*2-1);
     
     channels_to_be_on(index*2)   <= spi_rx_word(index*2-1) and channels_to_be_ready(index*2) when channel_is_slave(index*2) = '0' else
                                     spi_rx_word(index*2-2) and channels_to_be_ready(index*2-1);
     -- converting the 4 pairs to the 8-bit vector
-    channel_is_slave(index*2 downto index*2-1) <= SW4_SLAVE_PAIRS(index) & '0';
+    channel_is_slave(index*2 downto index*2-1) <= not SW4_SLAVE_PAIRS_BAR(index) & '0';
   end generate gen_slave_constraints;
 
 -- setting register to control active channels when the received is a write (28th bit equal to 1)
   set_channels_ready : process(spi_rx_strb, master_rst_b, spi_rx_word)
   begin
     if master_rst_b = '0' then
-      channels_ready <= active_switch_constraint;
-      channels_on    <= active_switch_constraint;
-      dutycycle_mode <= SW3_DUTYCYCLE_MODE;
-    elsif falling_edge(spi_rx_strb) and spi_rx_word(28) = '1' then
-      channels_ready <= channels_to_be_ready;
-      channels_on    <= channels_to_be_on;
-      dutycycle_mode <= SW3_DUTYCYCLE_MODE or spi_rx_word(24);
+      channels_desired_ready <= (others => not SW3_DEFAULT_TURNON_BAR); 
+      channels_desired_on    <= (others => not SW3_DEFAULT_TURNON_BAR); 
+      dutycycle_mode <= not SW3_DUTYCYCLE_MODE_BAR;
+      read_fpga_params <= '0';
+    elsif falling_edge(spi_rx_strb) then
+      if spi_rx_word(30 downto 28) = "111" then
+        channels_desired_ready <= channels_to_be_ready;
+        channels_desired_on    <= channels_to_be_on;
+        dutycycle_mode <= not SW3_DUTYCYCLE_MODE_BAR or spi_rx_word(24);
+      end if; 
+      if spi_rx_word(30 downto 28) = "001" then
+        read_fpga_params <= '1';
+      else
+        read_fpga_params <= '0';
+      end if; 
     end if;
   end process set_channels_ready;
 
@@ -403,7 +422,7 @@ begin
       sw2_sw5_channel_on_a <= (others => '0');
       sw2_sw5_channel_on_b <= (others => '0');
 
-      active_switch_constraint <= (others => '0');
+      active_switch_constraints <= (others => '0');
 
       dtycyc_cnt <= dtycyc_time;        -- duty cycle interval counter for special test
       dtycyc_en  <= '0';                -- local signal used the low duty cycle special test mode
@@ -415,7 +434,7 @@ begin
       sw2_sw5_channel_on_a <= n_sw2_sw5_channel_on_a;
       sw2_sw5_channel_on_b <= n_sw2_sw5_channel_on_b;
 
-      active_switch_constraint <= n_active_switch_constraint;
+      active_switch_constraints <= n_active_switch_constraints;
 
       dtycyc_cnt <= n_dtycyc_cnt;
       dtycyc_en  <= n_dtycyc_en;
@@ -444,8 +463,8 @@ begin
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- debounce the dip switches
 -- primary outputs for this process are 3 debounced dip switch signals used for manual channel enable:
---      1) active_switch_constraint
-  debounce : process(SW2_SW5_CHANNEL_ON, sw2_sw5_channel_on_a, sw2_sw5_channel_on_b,
+--      1) active_switch_constraints
+  debounce : process(SW2_SW5_CHANNEL_ON_BAR, sw2_sw5_channel_on_a, sw2_sw5_channel_on_b,
                      slow_pls_stb, dc50_test_strb
                      )
   begin
@@ -454,7 +473,7 @@ begin
     if slow_pls_stb = '1' then                  -- test strobe is a single 5mhz clock period that occurs every 250msec
       n_dc50_test_strb <= not(dc50_test_strb);  -- create a 50% duty cycle version 
 
-      n_sw2_sw5_channel_on_a <= SW2_SW5_CHANNEL_ON;  -- sample the dip switches at 250 msec intervals via a 2 deep pipeline for debounce
+      n_sw2_sw5_channel_on_a <= not SW2_SW5_CHANNEL_ON_BAR;  -- sample the dip switches at 250 msec intervals via a 2 deep pipeline for debounce
       n_sw2_sw5_channel_on_b <= sw2_sw5_channel_on_a;
     else
       n_dc50_test_strb <= dc50_test_strb;
@@ -463,11 +482,11 @@ begin
       n_sw2_sw5_channel_on_b <= sw2_sw5_channel_on_b;
     end if;
 
-    for index in sw2_sw5_channel_on'low to sw2_sw5_channel_on'high loop
-      if (sw2_sw5_channel_on(index) and sw2_sw5_channel_on_a(index) and sw2_sw5_channel_on_b(index)) = '1' then
-        n_active_switch_constraint(index) <= '1';
+    for index in SW2_SW5_CHANNEL_ON_BAR'low to SW2_SW5_CHANNEL_ON_BAR'high loop
+      if (not SW2_SW5_CHANNEL_ON_BAR(index) and sw2_sw5_channel_on_a(index) and sw2_sw5_channel_on_b(index)) = '1' then
+        n_active_switch_constraints(index) <= '1';
       else
-        n_active_switch_constraint(index) <= '0';
+        n_active_switch_constraints(index) <= '0';
       end if;
     end loop;
 

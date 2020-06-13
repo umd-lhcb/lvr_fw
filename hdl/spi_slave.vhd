@@ -106,13 +106,12 @@ begin
       n_clk_fcnt <= 32;  -- normal count op is 1 thru 32,where 0 is a hold / init val
       n_rx_32bit_sreg <= SPI_TX_WORD;
 
-    elsif rising_edge(CLK5MHZ_OSC) then
-      -- Updating the first bit of the MISO until the first rising edge of the SPI command
-      if clk_fcnt = 0 and n_clk_fcnt = 32 then
-        tx_32bit_sreg <= SPI_TX_WORD;
-        i_spi_miso <= SPI_TX_WORD(31);
-      end if;  
-      rx_32bit_sreg <= rx_32bit_sreg;
+    -- elsif rising_edge(CLK5MHZ_OSC) then
+    --   -- Updating the first bit of the MISO until the first rising edge of the SPI command
+    --   if clk_fcnt = 0 and n_clk_fcnt = 32 then
+    --     tx_32bit_sreg <= SPI_TX_WORD;
+    --     i_spi_miso <= SPI_TX_WORD(31);
+    --   end if;  
     elsif rising_edge(SPI_CLK) then
       
       -- this counts the frame bits

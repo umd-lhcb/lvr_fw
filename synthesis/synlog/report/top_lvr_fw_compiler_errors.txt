@@ -1,2 +1,2 @@
-@E: CD752 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":534:19:534:38|Index 5 is out of range: [4 downto 1]
+@E: CL126 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Asynchronous load of non-constant data for i_spi_miso is not supported
 

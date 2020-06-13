@@ -16,16 +16,11 @@ File Z:\windows\lvr_fw\lvr_fw_2020\hdl\Slow_PulseEn_Gen.vhd changed - recompilin
 File Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd changed - recompiling
 File Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd changed - recompiling
 VHDL syntax check successful!
-File Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":36:7:36:16|Synthesizing work.top_lvr_fw.rtl.
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":327:23:327:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":332:24:332:41|Referenced variable sw3_dutycycle_mode is not in sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":330:24:330:47|Referenced variable active_switch_constraint is not in sensitivity list.
-@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":229:9:229:21|Signal seq_12stepval is undriven. Either assign the signal a value or remove the signal declaration.
-@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":230:9:230:21|Signal seq_34stepval is undriven. Either assign the signal a value or remove the signal declaration.
-@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":231:9:231:21|Signal seq_56stepval is undriven. Either assign the signal a value or remove the signal declaration.
-@W: CD638 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":232:9:232:21|Signal seq_78stepval is undriven. Either assign the signal a value or remove the signal declaration.
+@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":337:23:337:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":340:47:340:68|Referenced variable sw3_default_turnon_bar is not in sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":342:28:342:49|Referenced variable sw3_dutycycle_mode_bar is not in sensitivity list.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
 @N: CD233 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:23:73:24|Using sequential encoding for type threshold_state.
 Post processing for work.iir_filt.rtl
@@ -36,35 +31,30 @@ Post processing for work.iir_filt.rtl
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\Slow_PulseEn_Gen.vhd":35:7:35:23|Synthesizing work.slow_pulse_en_gen.rtl.
 Post processing for work.slow_pulse_en_gen.rtl
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":55:7:55:24|Synthesizing work.main_sequencer_new.rtl.
-@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":99:21:99:22|Using onehot encoding for type seq_sm_states. For example, enumeration init is mapped to "100000".
-@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":252:6:252:19|OTHERS clause is not synthesized.
-@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":354:6:354:19|OTHERS clause is not synthesized.
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":156:19:156:25|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":265:22:265:33|Referenced variable seq_stepval1 is not in sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":163:22:163:33|Referenced variable seq_stepval0 is not in sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":168:23:168:33|Referenced variable del_cnt_val is not in sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":262:22:262:28|Referenced variable ch_out1 is not in sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":160:22:160:28|Referenced variable ch_out0 is not in sensitivity list.
+@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":97:21:97:22|Using onehot encoding for type seq_sm_states. For example, enumeration init is mapped to "100000".
+@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":250:6:250:19|OTHERS clause is not synthesized.
+@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":352:6:352:19|OTHERS clause is not synthesized.
+@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":154:19:154:25|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":263:22:263:33|Referenced variable seq_stepval1 is not in sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":161:22:161:33|Referenced variable seq_stepval0 is not in sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":166:23:166:33|Referenced variable del_cnt_val is not in sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":260:22:260:28|Referenced variable ch_out1 is not in sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":158:22:158:28|Referenced variable ch_out0 is not in sensitivity list.
 Post processing for work.main_sequencer_new.rtl
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":122:4:122:5|Pruning unused register seq_stepval1_2(3 downto 0). Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":120:4:120:5|Pruning unused register seq_stepval1_2(3 downto 0). Make sure that there are no unused intermediate registers.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":37:7:37:15|Synthesizing work.spi_slave.rtl.
 @N: CD231 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":81:21:81:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
-@N: CD364 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":115:6:115:18|Removing redundant assignment.
-@N: CD364 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":129:6:129:18|Removing redundant assignment.
+@N: CD364 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":128:6:128:18|Removing redundant assignment.
+@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":99:21:99:31|Signal clk5mhz_osc in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
 @W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":99:13:99:19|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":103:23:103:33|Referenced variable spi_tx_word is not in sensitivity list.
-@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":268:6:268:19|OTHERS clause is not synthesized.
-@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":193:114:193:124|Signal spi_tx_word in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":267:6:267:19|OTHERS clause is not synthesized.
+@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":192:114:192:124|Signal spi_tx_word in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
 Post processing for work.spi_slave.rtl
 @W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Feedback mux created for signal rx_32bit_sreg[31:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
-@W: CL116 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Input data for signal rx_32bit_sreg(31 downto 0) contains references to signal edges. An asynchronous reset may be missing from the sensitivity list.
 @W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Feedback mux created for signal clk_fcnt[5:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
-@W: CL116 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Input data for signal clk_fcnt(5 downto 0) contains references to signal edges. An asynchronous reset may be missing from the sensitivity list.
-@W: CL116 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Input data for signal i_spi_miso contains references to signal edges. An asynchronous reset may be missing from the sensitivity list.
-@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Feedback mux created for signal n_rx_32bit_sreg[31:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
-@W: CL116 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Input data for signal n_rx_32bit_sreg(31 downto 0) contains references to signal edges. An asynchronous reset may be missing from the sensitivity list.
-@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Feedback mux created for signal n_clk_fcnt[5:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
-@W: CL116 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Input data for signal n_clk_fcnt(5 downto 0) contains references to signal edges. An asynchronous reset may be missing from the sensitivity list.
+@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":70:62:70:63|Feedback mux created for signal i_spi_miso. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
+@W: CL117 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":101:4:101:5|Latch generated from process for signal tx_32bit_sreg(31 downto 0); possible missing assignment in an if or case statement.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd":8:7:8:21|Synthesizing work.ccc_glob_3xbuff.def_arch.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":3690:10:3690:15|Synthesizing proasic3.dynccc.syn_black_box.
 Post processing for proasic3.dynccc.syn_black_box
@@ -76,11 +66,8 @@ Post processing for proasic3.gnd.syn_black_box
 Post processing for proasic3.pllint.syn_black_box
 Post processing for work.ccc_glob_3xbuff.def_arch
 Post processing for work.top_lvr_fw.rtl
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":400:4:400:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
-@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":329:4:329:5|Feedback mux created for signal channels_ready[8:1]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
-@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":236:99:236:99|Feedback mux created for signal channels_on[8:1]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
-@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":236:99:236:99|Feedback mux created for signal dutycycle_mode. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":151:4:151:5|Trying to extract state machine for register spi_sm.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":418:4:418:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":150:4:150:5|Trying to extract state machine for register spi_sm.
 Extracted state machine for register spi_sm
 State machine has 6 reachable states with original encodings of:
    000001
@@ -89,7 +76,7 @@ State machine has 6 reachable states with original encodings of:
    001000
    010000
    100000
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":122:4:122:5|Trying to extract state machine for register sequencer_state1.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":120:4:120:5|Trying to extract state machine for register sequencer_state1.
 Extracted state machine for register sequencer_state1
 State machine has 6 reachable states with original encodings of:
    000001
@@ -98,7 +85,7 @@ State machine has 6 reachable states with original encodings of:
    001000
    010000
    100000
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":122:4:122:5|Trying to extract state machine for register sequencer_state0.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":120:4:120:5|Trying to extract state machine for register sequencer_state0.
 Extracted state machine for register sequencer_state0
 State machine has 6 reachable states with original encodings of:
    000001
@@ -114,14 +101,13 @@ State machine has 3 reachable states with original encodings of:
    00
    01
    10
-@N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":49:4:49:16|Input sw3_free_pins is unused.
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 78MB peak: 80MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 77MB peak: 79MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Wed Jun 03 21:55:58 2020
+# Fri Jun 12 22:49:44 2020
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -132,16 +118,16 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Wed Jun 03 21:55:59 2020
+# Fri Jun 12 22:49:45 2020
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 3MB peak: 4MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 3MB peak: 4MB)
 
-Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+Process took 0h:00m:02s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Wed Jun 03 21:55:59 2020
+# Fri Jun 12 22:49:45 2020
 
 ###########################################################]

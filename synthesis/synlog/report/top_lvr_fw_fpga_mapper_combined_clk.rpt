@@ -7,22 +7,22 @@
 
 Clock optimization not enabled
 1 non-gated/non-generated clock tree(s) driving 5 clock pin(s) of sequential element(s)
-4 gated/generated clock tree(s) driving 496 clock pin(s) of sequential element(s)
-0 instances converted, 496 sequential instances remain driven by gated/generated clocks
+4 gated/generated clock tree(s) driving 532 clock pin(s) of sequential element(s)
+0 instances converted, 532 sequential instances remain driven by gated/generated clocks
 
 =========================== Non-Gated/Non-Generated Clocks ============================
 Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance
 ---------------------------------------------------------------------------------------
 @K:CKID0005       CLK40M_OSC          port                   5          clk_5m_gl      
 =======================================================================================
-================================================================================ Gated/Generated Clocks =================================================================================
-Clock Tree ID     Driving Element                 Drive Element Type     Fanout     Sample Instance              Explanation                                                             
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       clk_5m_gl                       DFN1C0                 408        sw2_sw5_channel_on_a[1]      No generated or derived clock directive on output of sequential instance
-@K:CKID0002       glob_buff.Core                  DYNCCC                 70         spi_slave_pm.clk_fcnt[5]     No generated or derived clock directive on output of sequential instance
-@K:CKID0003       spi_slave_pm.i_spi_rx_strb      DFN1C0                 17         channels_on[1]               No generated or derived clock directive on output of sequential instance
-@K:CKID0004       spi_slave_pm.i_spi_miso_RNO     OR2A                   1          spi_slave_pm.i_spi_miso      Multiple clocks on instance from nets GLB, db_clk5mhz_c                 
-=========================================================================================================================================================================================
+=================================================================================== Gated/Generated Clocks ====================================================================================
+Clock Tree ID     Driving Element                Drive Element Type     Fanout     Sample Instance                     Explanation                                                             
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@K:CKID0001       clk_5m_gl                      DFN1C0                 411        sw2_sw5_channel_on_a[1]             No generated or derived clock directive on output of sequential instance
+@K:CKID0002       glob_buff.Core                 DYNCCC                 75         spi_slave_pm.n_clk_fcnt[5]          No generated or derived clock directive on output of sequential instance
+@K:CKID0003       spi_slave_pm.spi_clr           DFN1E0P0               27         spi_slave_pm.P_TX_32BIT_REG[10]     No generated or derived clock directive on output of sequential instance
+@K:CKID0004       spi_slave_pm.i_spi_rx_strb     DFN1C0                 19         read_fpga_params_0                  No generated or derived clock directive on output of sequential instance
+===============================================================================================================================================================================================
 
 
 ##### END OF CLOCK OPTIMIZATION REPORT ######]

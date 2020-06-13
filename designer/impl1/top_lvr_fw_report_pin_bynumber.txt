@@ -1,5 +1,5 @@
 *****************************************************************
-Pin Report - Date: Wed Jun 03 19:50:20 2020 UNCOMPLETED LAYOUT
+Pin Report - Date: Wed Jun 10 18:17:53 2020 Pinchecksum: NOT-AVAILABLE
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
@@ -8,105 +8,105 @@ Family: ProASIC3
 Die: A3PN250
 Package: 100 VQFP
 *****************************************************************
-Number |Port                  |Function      |State       |I/O Std  |Output Drive (mA) |Slew |Resistor Pull |Output Load (pF) |Use I/O Reg |Hot Swappable |Schmitt Trigger |
--------|----------------------|--------------|------------|---------|------------------|-----|--------------|-----------------|------------|--------------|----------------|
-1                              GND            Reserved
-2       sca_dat_out            GAA2/IO67RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-3       sca_dat_in             IO66RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
-4       db_clk5mhz             GAB2/IO65RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
-5       db_spi_cnt[1]          IO64RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
-6       db_spi_strobe          GAC2/IO63RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
-7       db_spi_cnt[0]          IO62RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
-8       db_spi_state[2]        IO61RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
-9                              GND            Reserved
-10      SW2_SW5_CHANNEL_ON[8]  GFB1/IO60RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-11      SW2_SW5_CHANNEL_ON[7]  GFB0/IO59RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-12                             VCOMPLF        Reserved
-13      SW2_SW5_CHANNEL_ON[6]  GFA0/IO57RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-14                             VCCPLF         Reserved
-15      SW2_SW5_CHANNEL_ON[5]  GFA1/IO58RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-16      SW4_SLAVE_PAIRS[4]     GFA2/IO56RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-17                             VCC            Reserved
-18                             VCCIB3         Reserved
-19      SW4_SLAVE_PAIRS[3]     GFC2/IO55RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-20      SW4_SLAVE_PAIRS[2]     GEC1/IO54RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-21      SW4_SLAVE_PAIRS[1]     GEC0/IO53RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-22      SW2_SW5_CHANNEL_ON[4]  GEA1/IO52RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-23      SW2_SW5_CHANNEL_ON[3]  GEA0/IO51RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-24                             VMV3           Reserved
-25                             GNDQ           Reserved
-26      SW2_SW5_CHANNEL_ON[2]  GEA2/IO50RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-27      SW2_SW5_CHANNEL_ON[1]  GEB2/IO49RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-28                             GEC2/IO48RSB2  Special
-29                             IO47RSB2       Unassigned
-30                             IO46RSB2       Unassigned
-31      SW3_DUTYCYCLE_MODE     IO45RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
-32      db_spi_state[1]        IO44RSB2       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
-33      db_spi_state[0]        IO43RSB2       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
-34      sca_reset_out          IO42RSB2       Fixed        LVCMOS15  ---                ---   Up             ---               No           No             No
-35      sca_clk_out            IO41RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
-36      IN_INVOLTAGE_OK[4]     IO40RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
-37                             VCC            Reserved
-38                             GND            Reserved
-39                             VCCIB2         Reserved
-40      IN_INVOLTAGE_OK[3]     IO39RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
-41      IN_INVOLTAGE_OK[2]     IO38RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
-42      IN_INVOLTAGE_OK[1]     IO37RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
-43      IN_TEMP_OK             GDC2/IO36RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-44      db_sca_clk_out         GDB2/IO35RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
-45      db_sca_dat_out         GDA2/IO34RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
-46                             GNDQ           Reserved
-47                             TCK            Reserved
-48                             TDI            Reserved
-49                             TMS            Reserved
-50                             VMV2           Reserved
-51                             GND            Reserved
-52                             VPUMP          Reserved
-53                             Not Bonded     Unconnected
-54                             TDO            Reserved
-55                             TRST           Reserved
-56                             VJTAG          Reserved
-57      CLK40M_OSC             GDA1/IO33RSB1  Special      LVCMOS33  ---                ---   None           ---               No           No             No
-58                             GDC0/IO32RSB1  Special
-59                             GDC1/IO31RSB1  Special
-60      OUT_CHANNEL_VOSG[8]    IO30RSB1       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
-61      OUT_CHANNEL_IAUX[8]    GCB2/IO29RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
-62      OUT_CHANNEL_MREG[8]    GCA1/IO27RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
-63      OUT_CHANNEL_VOSG[7]    GCA0/IO28RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
-64      OUT_CHANNEL_IAUX[7]    GCC0/IO26RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
-65      OUT_CHANNEL_MREG[7]    GCC1/IO25RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
-66                             VCCIB1         Reserved
-67                             GND            Reserved
-68                             VCC            Reserved
-69      OUT_CHANNEL_VOSG[6]    IO24RSB1       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
-70      OUT_CHANNEL_IAUX[6]    GBC2/IO23RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
-71      OUT_CHANNEL_MREG[6]    GBB2/IO22RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
-72      OUT_CHANNEL_VOSG[5]    IO21RSB1       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
-73      OUT_CHANNEL_IAUX[5]    GBA2/IO20RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
-74                             VMV1           Reserved
-75                             GNDQ           Reserved
-76      OUT_CHANNEL_MREG[5]    GBA1/IO19RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
-77      STATUS_LED             GBA0/IO18RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
-78      OUT_CHANNEL_VOSG[4]    GBB1/IO17RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
-79      OUT_CHANNEL_IAUX[4]    GBB0/IO16RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
-80      OUT_CHANNEL_MREG[4]    GBC1/IO15RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
-81      OUT_CHANNEL_VOSG[3]    GBC0/IO14RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
-82      OUT_CHANNEL_IAUX[3]    IO13RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
-83      OUT_CHANNEL_MREG[3]    IO12RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
-84      OUT_CHANNEL_VOSG[2]    IO11RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
-85      OUT_CHANNEL_IAUX[2]    IO10RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
-86      OUT_CHANNEL_MREG[1]    IO09RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
-87                             VCCIB0         Reserved
-88                             GND            Reserved
-89                             VCC            Reserved
-90      OUT_CHANNEL_IAUX[1]    IO08RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
-91      OUT_CHANNEL_VOSG[1]    IO07RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
-92      OUT_CHANNEL_MREG[2]    IO06RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
-93      IN_POWERON_RST_B       GAC1/IO05RSB0  Special      LVCMOS33  ---                ---   None           ---               No           No             No
-94                             GAC0/IO04RSB0  Special
-95      PWR_OK_LED             GAB1/IO03RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
-96                             GAB0/IO02RSB0  Special
-97                             GAA1/IO01RSB0  Special
-98                             GAA0/IO00RSB0  Special
-99                             GNDQ           Reserved
-100                            VMV0           Reserved
+Number |Port                      |Function      |State       |I/O Std  |Output Drive (mA) |Slew |Resistor Pull |Output Load (pF) |Use I/O Reg |Hot Swappable |Schmitt Trigger |
+-------|--------------------------|--------------|------------|---------|------------------|-----|--------------|-----------------|------------|--------------|----------------|
+1                                  GND            Reserved
+2       sca_dat_out                GAA2/IO67RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+3       sca_dat_in                 IO66RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
+4       db_clk5mhz                 GAB2/IO65RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
+5       db_spi_cnt[1]              IO64RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
+6       db_spi_strobe              GAC2/IO63RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
+7       db_spi_cnt[0]              IO62RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
+8       db_spi_state[2]            IO61RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
+9                                  GND            Reserved
+10      SW2_SW5_CHANNEL_ON_BAR[1]  GFB1/IO60RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+11      SW2_SW5_CHANNEL_ON_BAR[2]  GFB0/IO59RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+12                                 VCOMPLF        Reserved
+13      SW2_SW5_CHANNEL_ON_BAR[3]  GFA0/IO57RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+14                                 VCCPLF         Reserved
+15      SW2_SW5_CHANNEL_ON_BAR[4]  GFA1/IO58RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+16      SW4_SLAVE_PAIRS_BAR[1]     GFA2/IO56RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+17                                 VCC            Reserved
+18                                 VCCIB3         Reserved
+19      SW4_SLAVE_PAIRS_BAR[2]     GFC2/IO55RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+20      SW4_SLAVE_PAIRS_BAR[3]     GEC1/IO54RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+21      SW4_SLAVE_PAIRS_BAR[4]     GEC0/IO53RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+22      SW2_SW5_CHANNEL_ON_BAR[5]  GEA1/IO52RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+23      SW2_SW5_CHANNEL_ON_BAR[6]  GEA0/IO51RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+24                                 VMV3           Reserved
+25                                 GNDQ           Reserved
+26      SW2_SW5_CHANNEL_ON_BAR[7]  GEA2/IO50RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+27      SW2_SW5_CHANNEL_ON_BAR[8]  GEB2/IO49RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+28                                 GEC2/IO48RSB2  Special
+29                                 IO47RSB2       Unassigned
+30      SW3_DEFAULT_TURNON_BAR     IO46RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
+31      SW3_DUTYCYCLE_MODE_BAR     IO45RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
+32      db_spi_state[1]            IO44RSB2       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
+33      db_spi_state[0]            IO43RSB2       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
+34      sca_reset_out              IO42RSB2       Fixed        LVCMOS15  ---                ---   Up             ---               No           No             No
+35      sca_clk_out                IO41RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
+36      IN_INVOLTAGE_OK[4]         IO40RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
+37                                 VCC            Reserved
+38                                 GND            Reserved
+39                                 VCCIB2         Reserved
+40      IN_INVOLTAGE_OK[3]         IO39RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
+41      IN_INVOLTAGE_OK[2]         IO38RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
+42      IN_INVOLTAGE_OK[1]         IO37RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
+43      IN_TEMP_OK                 GDC2/IO36RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+44      db_sca_clk_out             GDB2/IO35RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
+45      db_sca_dat_out             GDA2/IO34RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
+46                                 GNDQ           Reserved
+47                                 TCK            Reserved
+48                                 TDI            Reserved
+49                                 TMS            Reserved
+50                                 VMV2           Reserved
+51                                 GND            Reserved
+52                                 VPUMP          Reserved
+53                                 Not Bonded     Unconnected
+54                                 TDO            Reserved
+55                                 TRST           Reserved
+56                                 VJTAG          Reserved
+57      CLK40M_OSC                 GDA1/IO33RSB1  Special      LVCMOS33  ---                ---   None           ---               No           No             No
+58                                 GDC0/IO32RSB1  Special
+59                                 GDC1/IO31RSB1  Special
+60      OUT_CHANNEL_VOSG[8]        IO30RSB1       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
+61      OUT_CHANNEL_IAUX[8]        GCB2/IO29RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
+62      OUT_CHANNEL_MREG[8]        GCA1/IO27RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
+63      OUT_CHANNEL_VOSG[7]        GCA0/IO28RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
+64      OUT_CHANNEL_IAUX[7]        GCC0/IO26RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
+65      OUT_CHANNEL_MREG[7]        GCC1/IO25RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
+66                                 VCCIB1         Reserved
+67                                 GND            Reserved
+68                                 VCC            Reserved
+69      OUT_CHANNEL_VOSG[6]        IO24RSB1       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
+70      OUT_CHANNEL_IAUX[6]        GBC2/IO23RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
+71      OUT_CHANNEL_MREG[6]        GBB2/IO22RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
+72      OUT_CHANNEL_VOSG[5]        IO21RSB1       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
+73      OUT_CHANNEL_IAUX[5]        GBA2/IO20RSB1  Special      LVCMOS33  8                  High  None           35                No           No             ---
+74                                 VMV1           Reserved
+75                                 GNDQ           Reserved
+76      OUT_CHANNEL_MREG[5]        GBA1/IO19RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
+77      STATUS_LED                 GBA0/IO18RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
+78      OUT_CHANNEL_VOSG[4]        GBB1/IO17RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
+79      OUT_CHANNEL_IAUX[4]        GBB0/IO16RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
+80      OUT_CHANNEL_MREG[4]        GBC1/IO15RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
+81      OUT_CHANNEL_VOSG[3]        GBC0/IO14RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
+82      OUT_CHANNEL_IAUX[3]        IO13RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
+83      OUT_CHANNEL_MREG[3]        IO12RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
+84      OUT_CHANNEL_VOSG[2]        IO11RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
+85      OUT_CHANNEL_IAUX[2]        IO10RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
+86      OUT_CHANNEL_MREG[1]        IO09RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
+87                                 VCCIB0         Reserved
+88                                 GND            Reserved
+89                                 VCC            Reserved
+90      OUT_CHANNEL_IAUX[1]        IO08RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
+91      OUT_CHANNEL_VOSG[1]        IO07RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
+92      OUT_CHANNEL_MREG[2]        IO06RSB0       Fixed        LVCMOS33  8                  High  None           35                No           No             ---
+93      IN_POWERON_RST_B           GAC1/IO05RSB0  Special      LVCMOS33  ---                ---   None           ---               No           No             No
+94                                 GAC0/IO04RSB0  Special
+95      PWR_OK_LED                 GAB1/IO03RSB0  Special      LVCMOS33  8                  High  None           35                No           No             ---
+96                                 GAB0/IO02RSB0  Special
+97                                 GAA1/IO01RSB0  Special
+98                                 GAA0/IO00RSB0  Special
+99                                 GNDQ           Reserved
+100                                VMV0           Reserved

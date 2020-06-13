@@ -67,12 +67,13 @@ architecture rtl of spi_slave is
 
   signal tx_32bit_sreg : std_logic_vector(31 downto 0);  -- 32 bit shift register dedicated for active spi transmit
 
-  signal clk_fcnt, n_clk_fcnt     : integer range 0 to 32 := 32;  -- spi frame counter
+  signal clk_fcnt, half_clk_fcnt     : integer range 0 to 32 := 32;  -- spi frame counter
   signal clk_fcnt_1c, clk_fcnt_2c : integer range 0 to 32;  -- used for clock boundary crossing
 
   signal i_spi_miso : std_logic;  -- internal signal for sca tx serial data line
 
-  signal spi_clr, n_spi_clr             : std_logic;  -- signal used to clear spi regsiters
+  signal spi_clr, n_spi_clr             : std_logic;  -- signal used to clear spi registers
+  signal spi_freeze            : std_logic;  -- signal used to freeze spi registers
   signal clk_fcnt_en, n_clk_fcnt_en     : std_logic;  -- enable for the frame counter
   signal i_spi_rx_strb, n_i_spi_rx_strb : std_logic;  -- single clock pulse strobe indicates new spi word received
   signal i_spi_rx_word, n_i_spi_rx_word : std_logic_vector(31 downto 0) := x"abcdef12";  -- internal 32 bit shift register dedicated for active spi receive
@@ -96,31 +97,23 @@ begin
 -- define the frame count which counts clock cycles during the active clock cycles of a 32-cycle data frame
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- define the d ff's
-  sreg_dff : process(CLK5MHZ_OSC, SPI_CLK, spi_clr)
+  spi_counters : process(SPI_CLK, spi_clr, clk_fcnt_en)
   begin
     if spi_clr = '1' then  -- an external state machine forces synchronization of the spi 
       rx_32bit_sreg <= (others => '0');
-      tx_32bit_sreg <= SPI_TX_WORD;
       clk_fcnt      <= 0;               -- first transition goes to 1
-      i_spi_miso <= SPI_TX_WORD(31);
-      n_clk_fcnt <= 32;  -- normal count op is 1 thru 32,where 0 is a hold / init val
+      half_clk_fcnt <= 32;  -- normal count op is 1 thru 32,where 0 is a hold / init val
       n_rx_32bit_sreg <= SPI_TX_WORD;
 
-    -- elsif rising_edge(CLK5MHZ_OSC) then
-    --   -- Updating the first bit of the MISO until the first rising edge of the SPI command
-    --   if clk_fcnt = 0 and n_clk_fcnt = 32 then
-    --     tx_32bit_sreg <= SPI_TX_WORD;
-    --     i_spi_miso <= SPI_TX_WORD(31);
-    --   end if;  
     elsif rising_edge(SPI_CLK) then
       
       -- this counts the frame bits
       if clk_fcnt = 32 then
-        n_clk_fcnt <= 0;  -- normal count op is 1 thru 32,where 0 is a hold / init val
+        half_clk_fcnt <= 0;  -- normal count op is 1 thru 32,where 0 is a hold / init val
       elsif clk_fcnt_en = '1' then  -- this counts the serial frame clock cycles when enabled
-        n_clk_fcnt <= clk_fcnt + 1;
+        half_clk_fcnt <= clk_fcnt + 1;
       else
-        n_clk_fcnt <= clk_fcnt;
+        half_clk_fcnt <= clk_fcnt;
       end if;
 
      -- this is the rx path
@@ -128,13 +121,30 @@ begin
       rx_32bit_sreg <= rx_32bit_sreg;
 
     elsif falling_edge(SPI_CLK) and clk_fcnt_en = '1' then
-      clk_fcnt      <= n_clk_fcnt;
-      if n_clk_fcnt <= 31 then
-        i_spi_miso <= tx_32bit_sreg(31-n_clk_fcnt);
+      clk_fcnt      <= half_clk_fcnt;
+      rx_32bit_sreg <= n_rx_32bit_sreg;
+    end if;
+
+  end process;
+
+  sreg_dff : process(SPI_CLK, spi_freeze, clk_fcnt_en)
+  begin
+    if spi_freeze = '1' then  -- an external state machine forces synchronization of the spi 
+      tx_32bit_sreg <= SPI_TX_WORD;
+      i_spi_miso <= SPI_TX_WORD(31);
+
+    -- elsif rising_edge(CLK5MHZ_OSC) then
+    --   -- Updating the first bit of the MISO until the first rising edge of the SPI command
+    --   if clk_fcnt = 0 and half_clk_fcnt = 32 then
+    --     tx_32bit_sreg <= SPI_TX_WORD;
+    --     i_spi_miso <= SPI_TX_WORD(31);
+    --   end if;  
+    elsif falling_edge(SPI_CLK) and clk_fcnt_en = '1' then
+      if half_clk_fcnt <= 31 then
+        i_spi_miso <= tx_32bit_sreg(31-half_clk_fcnt);
       else
         i_spi_miso <= tx_32bit_sreg(31);
       end if;
-      rx_32bit_sreg <= n_rx_32bit_sreg;
     end if;
 
   end process;
@@ -198,6 +208,7 @@ begin
     n_spi_clr       <= spi_clr;
     n_clk_fcnt_en   <= clk_fcnt_en;
     n_i_spi_rx_word <= i_spi_rx_word;
+    spi_freeze <= '0';
 
     case spi_sm is
 
@@ -241,10 +252,15 @@ begin
 
 
       when pipeline_delay =>  -- need a pipeline delay to account for the clock boundary crossing registers
-        n_spi_sm <= det_frame_done;
+        if half_clk_fcnt = 1 then
+          n_spi_sm <= det_frame_done;
+        else
+          n_spi_sm <= pipeline_delay;
+        end if;
 
         state_id <= "0011";
-
+        spi_freeze <= '1';
+        
       when det_frame_done =>  -- wait here until 32 spi clock periods have been detected.
 
 

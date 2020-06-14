@@ -1,5 +1,5 @@
 *****************************************************************
-Pin Report - Date: Wed Jun 10 18:17:53 2020 Pinchecksum: NOT-AVAILABLE
+Pin Report - Date: Sun Jun 14 11:03:00 2020 Pinchecksum: NOT-AVAILABLE
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
@@ -13,36 +13,36 @@ Number |Port                      |Function      |State       |I/O Std  |Output 
 1                                  GND            Reserved
 2       sca_dat_out                GAA2/IO67RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 3       sca_dat_in                 IO66RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
-4       db_clk5mhz                 GAB2/IO65RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
-5       db_spi_cnt[1]              IO64RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
-6       db_spi_strobe              GAC2/IO63RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
-7       db_spi_cnt[0]              IO62RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
-8       db_spi_state[2]            IO61RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
+4                                  GAB2/IO65RSB3  Special
+5       J11_DEBUG[4]               IO64RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
+6       J11_DEBUG[7]               GAC2/IO63RSB3  Special      LVCMOS15  2                  High  None           35                No           No             ---
+7       J11_DEBUG[3]               IO62RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
+8       J11_DEBUG[2]               IO61RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
 9                                  GND            Reserved
-10      SW2_SW5_CHANNEL_ON_BAR[1]  GFB1/IO60RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-11      SW2_SW5_CHANNEL_ON_BAR[2]  GFB0/IO59RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+10                                 GFB1/IO60RSB3  Special
+11                                 GFB0/IO59RSB3  Special
 12                                 VCOMPLF        Reserved
-13      SW2_SW5_CHANNEL_ON_BAR[3]  GFA0/IO57RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+13      SW5_DUTYCYCLE_MODE_BAR     GFA0/IO57RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 14                                 VCCPLF         Reserved
-15      SW2_SW5_CHANNEL_ON_BAR[4]  GFA1/IO58RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-16      SW4_SLAVE_PAIRS_BAR[1]     GFA2/IO56RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+15      SW5_DEFAULT_TURNON_BAR     GFA1/IO58RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+16      SW4_SLAVE_PAIRS_BAR[4]     GFA2/IO56RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 17                                 VCC            Reserved
 18                                 VCCIB3         Reserved
-19      SW4_SLAVE_PAIRS_BAR[2]     GFC2/IO55RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-20      SW4_SLAVE_PAIRS_BAR[3]     GEC1/IO54RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-21      SW4_SLAVE_PAIRS_BAR[4]     GEC0/IO53RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-22      SW2_SW5_CHANNEL_ON_BAR[5]  GEA1/IO52RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-23      SW2_SW5_CHANNEL_ON_BAR[6]  GEA0/IO51RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+19      SW4_SLAVE_PAIRS_BAR[3]     GFC2/IO55RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+20      SW4_SLAVE_PAIRS_BAR[2]     GEC1/IO54RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+21      SW4_SLAVE_PAIRS_BAR[1]     GEC0/IO53RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+22      SW2_SW3_CHANNEL_ON_BAR[8]  GEA1/IO52RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+23      SW2_SW3_CHANNEL_ON_BAR[7]  GEA0/IO51RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 24                                 VMV3           Reserved
 25                                 GNDQ           Reserved
-26      SW2_SW5_CHANNEL_ON_BAR[7]  GEA2/IO50RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-27      SW2_SW5_CHANNEL_ON_BAR[8]  GEB2/IO49RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-28                                 GEC2/IO48RSB2  Special
-29                                 IO47RSB2       Unassigned
-30      SW3_DEFAULT_TURNON_BAR     IO46RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
-31      SW3_DUTYCYCLE_MODE_BAR     IO45RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
-32      db_spi_state[1]            IO44RSB2       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
-33      db_spi_state[0]            IO43RSB2       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
+26      SW2_SW3_CHANNEL_ON_BAR[6]  GEA2/IO50RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+27      SW2_SW3_CHANNEL_ON_BAR[5]  GEB2/IO49RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+28      SW2_SW3_CHANNEL_ON_BAR[4]  GEC2/IO48RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+29      SW2_SW3_CHANNEL_ON_BAR[3]  IO47RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
+30      SW2_SW3_CHANNEL_ON_BAR[2]  IO46RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
+31      SW2_SW3_CHANNEL_ON_BAR[1]  IO45RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
+32      J11_DEBUG[1]               IO44RSB2       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
+33      J11_DEBUG[0]               IO43RSB2       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
 34      sca_reset_out              IO42RSB2       Fixed        LVCMOS15  ---                ---   Up             ---               No           No             No
 35      sca_clk_out                IO41RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
 36      IN_INVOLTAGE_OK[4]         IO40RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
@@ -53,8 +53,8 @@ Number |Port                      |Function      |State       |I/O Std  |Output 
 41      IN_INVOLTAGE_OK[2]         IO38RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
 42      IN_INVOLTAGE_OK[1]         IO37RSB2       Fixed        LVCMOS15  ---                ---   None           ---               No           No             No
 43      IN_TEMP_OK                 GDC2/IO36RSB2  Special      LVCMOS15  ---                ---   None           ---               No           No             No
-44      db_sca_clk_out             GDB2/IO35RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
-45      db_sca_dat_out             GDA2/IO34RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
+44      J11_DEBUG[5]               GDB2/IO35RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
+45      J11_DEBUG[6]               GDA2/IO34RSB2  Special      LVCMOS15  2                  High  None           35                No           No             ---
 46                                 GNDQ           Reserved
 47                                 TCK            Reserved
 48                                 TDI            Reserved

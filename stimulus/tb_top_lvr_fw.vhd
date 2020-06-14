@@ -65,13 +65,8 @@ architecture behavioral of TB_TOP_LVR_FW is
       sca_dat_in    : out std_logic;    -- pin 3, serial data from fpga to the spi master
       sca_dat_out   : in  std_logic;    -- pin 2, serial data to the fpga from the spi master
 
-      -- spi debug signals
-      db_sca_dat_out : out std_logic;
-      db_sca_clk_out : out std_logic;
-      db_clk5mhz     : out std_logic;
-      db_spi_strobe  : out std_logic;
-      db_spi_state   : out std_logic_vector(2 downto 0);
-      db_spi_cnt     : out std_logic_vector(1 downto 0);
+-------------------------- DEBUG to J11 CONNECTOR  --------------------------    
+      J11_DEBUG     : out std_logic_vector(7 downto 0);
 
 -------------------------- CHANNEL ENABLES --------------------------    
       OUT_CHANNEL_MREG : out std_logic_vector(8 downto 1);  -- pins {62, 65, 71, 76, 80, 83, 92, 86} main regulator ic, active high

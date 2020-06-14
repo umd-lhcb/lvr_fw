@@ -79,7 +79,7 @@ architecture rtl of spi_slave is
   signal i_spi_rx_word, n_i_spi_rx_word : std_logic_vector(31 downto 0) := x"abcdef12";  -- internal 32 bit shift register dedicated for active spi receive
 
   -- define the states for the machine state managing the spi port
-  type spi_sm_states is (init, det_nullclk, en_det_frame1cnt, pipeline_delay, det_frame_done, process_frame);
+  type spi_sm_states is (INIT, DET_NULLCLK, ENABLE_FRAMECNT, WAIT_FOR_FRAME, RECEIVING_FRAME, PROCESS_FRAME);
   signal spi_sm, n_spi_sm : spi_sm_states;
 
   signal spi_clk_1c, spi_clk_2c : std_logic;  -- used for clock boundary crossing
@@ -102,14 +102,14 @@ begin
     if spi_clr = '1' then  -- an external state machine forces synchronization of the spi 
       rx_32bit_sreg <= (others => '0');
       clk_fcnt      <= 0;               -- first transition goes to 1
-      half_clk_fcnt <= 32;  -- normal count op is 1 thru 32,where 0 is a hold / init val
+      half_clk_fcnt <= 32;  -- normal count op is 1 thru 32,where 0 is a hold / INIT val
       n_rx_32bit_sreg <= SPI_TX_WORD;
 
     elsif rising_edge(SPI_CLK) then
       
       -- this counts the frame bits
       if clk_fcnt = 32 then
-        half_clk_fcnt <= 0;  -- normal count op is 1 thru 32,where 0 is a hold / init val
+        half_clk_fcnt <= 0;  -- normal count op is 1 thru 32,where 0 is a hold / INIT val
       elsif clk_fcnt_en = '1' then  -- this counts the serial frame clock cycles when enabled
         half_clk_fcnt <= clk_fcnt + 1;
       else
@@ -129,7 +129,7 @@ begin
 
   sreg_dff : process(SPI_CLK, spi_freeze, clk_fcnt_en)
   begin
-    if spi_freeze = '1' then  -- an external state machine forces synchronization of the spi 
+    if spi_freeze = '0' then  -- an external state machine forces synchronization of the spi 
       tx_32bit_sreg <= SPI_TX_WORD;
       i_spi_miso <= SPI_TX_WORD(31);
 
@@ -158,7 +158,7 @@ begin
   begin
 
     if MASTER_RST_B = '0' then
-      spi_sm        <= init;
+      spi_sm        <= INIT;
       clk_fcnt_en   <= '0';
       spi_clr       <= '1';
       i_spi_rx_strb <= '0';
@@ -208,80 +208,80 @@ begin
     n_spi_clr       <= spi_clr;
     n_clk_fcnt_en   <= clk_fcnt_en;
     n_i_spi_rx_word <= i_spi_rx_word;
-    spi_freeze <= '0';
+    spi_freeze <= '1';
 
     case spi_sm is
 
-      when init =>
+      when INIT =>
 
         n_clk_fcnt_en <= '0';           -- disable the frame counter
 
-        n_spi_sm <= det_nullclk;  -- go wait for detection of a null clock condition to synch the spi frame
+        n_spi_sm <= DET_NULLCLK;  -- go wait for detection of a null clock condition to synch the spi frame
 
         n_nullclk_cnt <= 0;             -- initialize the null clock counter
 
         state_id <= "0000";
 
-      when det_nullclk =>  -- wait here until the spi clock is null for at leasty 3/4 spi clock period
+      when DET_NULLCLK =>  -- wait here until the spi clock is null for at leasty 3/4 spi clock period
         n_clk_fcnt_en <= '0';           -- disable to the frame counter
 
         if nullclk_cnt > 17 then  -- one spi clock period count while high is 5mhz/312khz/2 = ~ 8 counts
           n_spi_clr     <= '1';  -- send out a clear to initialize the frame counter and spi input data register
           n_nullclk_cnt <= 0;           -- if null clock, then clear the cnt
-          n_spi_sm      <= en_det_frame1cnt;  -- and go wait for the next frame to be completed
+          n_spi_sm      <= ENABLE_FRAMECNT;  -- and go wait for the next frame to be completed
 
         elsif spi_clk_2c = '0' then  -- only count during the logic low portion of the spi clock signal
           n_nullclk_cnt <= nullclk_cnt + 1;
-          n_spi_sm      <= det_nullclk;  -- stay here until null detected
+          n_spi_sm      <= DET_NULLCLK;  -- stay here until null detected
 
         else
           n_nullclk_cnt <= 0;  -- only get here if the spi clock is active
-          n_spi_sm      <= det_nullclk;  -- stay here until null detected
+          n_spi_sm      <= DET_NULLCLK;  -- stay here until null detected
 
         end if;
 
         state_id <= "0001";
 
 
-      when en_det_frame1cnt =>  -- enable the det frame cnt
+      when ENABLE_FRAMECNT =>  -- enable the det frame cnt
         n_spi_clr     <= '0';           -- disable the spi_clr
         n_clk_fcnt_en <= '1';           -- enable the frame counter
-        n_spi_sm      <= pipeline_delay;  -- go wait one more clock cycle to allow for the clock boundary crossing
+        n_spi_sm      <= WAIT_FOR_FRAME;  -- go wait one more clock cycle to allow for the clock boundary crossing
 
         state_id <= "0010";
 
 
-      when pipeline_delay =>  -- need a pipeline delay to account for the clock boundary crossing registers
+      when WAIT_FOR_FRAME =>  -- Waits for beginning of SPI command, then freezes the SPI TX word
         if half_clk_fcnt = 1 then
-          n_spi_sm <= det_frame_done;
+          n_spi_sm <= RECEIVING_FRAME;
         else
-          n_spi_sm <= pipeline_delay;
+          n_spi_sm <= WAIT_FOR_FRAME;
         end if;
 
         state_id <= "0011";
-        spi_freeze <= '1';
+        spi_freeze <= '0';
         
-      when det_frame_done =>  -- wait here until 32 spi clock periods have been detected.
+      when RECEIVING_FRAME =>  -- wait here until 32 spi clock periods have been detected.
 
 
         if clk_fcnt_2c = 32 then
-          n_spi_sm <= process_frame;
+          n_spi_sm <= PROCESS_FRAME;
         else
-          n_spi_sm <= det_frame_done;
+          n_spi_sm <= RECEIVING_FRAME;
         end if;
 
         state_id <= "0100";
 
-      when process_frame =>
+      when PROCESS_FRAME =>
         n_i_spi_rx_word <= rx_32bit_sreg;  -- send out a copy the received serial 32 bit word
         n_i_spi_rx_strb <= '1';  -- single clock pulse strobe indicates new frame ready
-        n_spi_sm        <= init;
+        n_spi_sm        <= INIT;
 
         state_id <= "0101";
 
 
       when others =>
-        n_spi_sm <= init;
+        n_spi_sm <= INIT;
 
         state_id <= "0110";
 

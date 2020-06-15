@@ -1,7 +1,6 @@
-@W: MO129 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":132:4:132:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[27] is reduced to a combinational gate by constant propagation.
-@W: MO129 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":132:4:132:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[28] is reduced to a combinational gate by constant propagation.
-@W: MO129 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":132:4:132:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[29] is reduced to a combinational gate by constant propagation.
-@W: MO129 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":132:4:132:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[30] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":138:4:138:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[28] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":138:4:138:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[29] is reduced to a combinational gate by constant propagation.
+@W: MO129 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":138:4:138:5|Sequential instance spi_slave_pm.P_TX_32BIT_REG[30] is reduced to a combinational gate by constant propagation.
 @W: MT420 |Found inferred clock top_lvr_fw|CLK40M_OSC with period 20.00ns. Please declare a user-defined clock on object "p:CLK40M_OSC"
 @W: MT420 |Found inferred clock spi_slave|spi_sm_inferred_clock[2] with period 20.00ns. Please declare a user-defined clock on object "n:spi_slave_pm.spi_sm[2]"
 @W: MT420 |Found inferred clock spi_slave|i_spi_rx_strb_inferred_clock with period 20.00ns. Please declare a user-defined clock on object "n:spi_slave_pm.i_spi_rx_strb"

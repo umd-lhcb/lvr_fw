@@ -1,6 +1,6 @@
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":333:23:333:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":338:32:338:53|Referenced variable sw5_dutycycle_mode_bar is not in sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":336:47:336:68|Referenced variable sw5_default_turnon_bar is not in sensitivity list.
+@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":337:23:337:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":340:47:340:68|Referenced variable sw5_default_turnon_bar is not in sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":342:32:342:53|Referenced variable sw5_dutycycle_mode_bar is not in sensitivity list.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(0) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(1) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
@@ -12,16 +12,16 @@
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":260:22:260:28|Referenced variable ch_out1 is not in sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":158:22:158:28|Referenced variable ch_out0 is not in sensitivity list.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":120:4:120:5|Pruning unused register seq_stepval1_2(3 downto 0). Make sure that there are no unused intermediate registers.
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":100:17:100:23|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":106:25:106:35|Referenced variable spi_tx_word is not in sensitivity list.
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":130:13:130:19|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":133:23:133:33|Referenced variable spi_tx_word is not in sensitivity list.
-@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":202:114:202:124|Signal spi_tx_word in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":202:8:202:14|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":255:11:255:23|Referenced variable half_clk_fcnt is not in sensitivity list.
-@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":102:4:102:5|Feedback mux created for signal rx_32bit_sreg[31:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
-@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":102:4:102:5|Feedback mux created for signal clk_fcnt[5:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
-@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":132:4:132:5|Feedback mux created for signal i_spi_miso. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
-@W: CL117 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":132:4:132:5|Latch generated from process for signal tx_32bit_sreg(31 downto 0); possible missing assignment in an if or case statement.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":421:4:421:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
+@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":106:17:106:23|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":112:25:112:35|Referenced variable spi_tx_word is not in sensitivity list.
+@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":136:13:136:19|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":139:23:139:33|Referenced variable spi_tx_word is not in sensitivity list.
+@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":210:114:210:124|Signal spi_tx_word in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
+@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":210:8:210:14|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":271:11:271:23|Referenced variable half_clk_fcnt is not in sensitivity list.
+@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":108:4:108:5|Feedback mux created for signal rx_32bit_sreg[31:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
+@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":108:4:108:5|Feedback mux created for signal clk_fcnt[5:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
+@W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":138:4:138:5|Feedback mux created for signal i_spi_miso. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
+@W: CL117 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":138:4:138:5|Latch generated from process for signal tx_32bit_sreg(31 downto 0); possible missing assignment in an if or case statement.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":432:4:432:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
 

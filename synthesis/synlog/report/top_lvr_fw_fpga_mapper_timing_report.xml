@@ -17,14 +17,14 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <row>
 <data>CCC_Glob_3xBuff|GLB_inferred_clock</data>
 <data>50.0 MHz</data>
-<data>41.9 MHz</data>
-<data>-1.926</data>
+<data>41.5 MHz</data>
+<data>-2.054</data>
 </row>
 <row>
 <data>clk_5m_gl</data>
 <data>5.0 MHz</data>
-<data>48.3 MHz</data>
-<data>179.315</data>
+<data>48.5 MHz</data>
+<data>179.390</data>
 </row>
 <row>
 <data>sca_clk_out</data>

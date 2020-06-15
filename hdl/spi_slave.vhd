@@ -46,6 +46,7 @@ entity spi_slave is
     SPI_TX_WORD : in  std_logic_vector(31 downto 0);  -- 32 bit serial word to be transmitted
     SPI_RX_WORD : out std_logic_vector(31 downto 0);  -- received serial frame
     SPI_RX_STRB : out std_logic;  -- single 5mhz clock pulse signifies a new serial frame is available.
+    SPI_TIMEOUT_PULSE : out std_logic;  -- Pulse indicating previous command timed out
 
     P_TX_32BIT_REG : out std_logic_vector(31 downto 0);
     CLK_FCNT_OUT : out std_logic_vector(4 downto 0);
@@ -69,6 +70,11 @@ architecture rtl of spi_slave is
 
   signal clk_fcnt, half_clk_fcnt     : integer range 0 to 32 := 32;  -- spi frame counter
   signal clk_fcnt_1c, clk_fcnt_2c : integer range 0 to 32;  -- used for clock boundary crossing
+
+  signal timeout_cnt_en, timeout_cnt_clr : std_logic;
+  signal timeout_cnt : integer range 0 to 20000;  -- Counter for SPI timeout
+  constant timeout_max_cnt : integer := 16100; -- Timeout after 3.2 ms = 16,000 cycles of the 5 MHz = 32 cycles of the minimum 10 kHz SPI_CLK
+  --constant timeout_max_cnt : integer := 530; -- Timeout after 0.1024 ms = 32+ cycles of the minimum 312.5 kHz SPI_CLK for simulation
 
   signal i_spi_miso : std_logic;  -- internal signal for sca tx serial data line
 
@@ -133,12 +139,6 @@ begin
       tx_32bit_sreg <= SPI_TX_WORD;
       i_spi_miso <= SPI_TX_WORD(31);
 
-    -- elsif rising_edge(CLK5MHZ_OSC) then
-    --   -- Updating the first bit of the MISO until the first rising edge of the SPI command
-    --   if clk_fcnt = 0 and half_clk_fcnt = 32 then
-    --     tx_32bit_sreg <= SPI_TX_WORD;
-    --     i_spi_miso <= SPI_TX_WORD(31);
-    --   end if;  
     elsif falling_edge(SPI_CLK) and clk_fcnt_en = '1' then
       if half_clk_fcnt <= 31 then
         i_spi_miso <= tx_32bit_sreg(31-half_clk_fcnt);
@@ -171,6 +171,7 @@ begin
       spi_clk_2c <= '0';
 
       nullclk_cnt <= 0;
+      timeout_cnt <= 0;
 
 
     elsif rising_edge(CLK5MHZ_OSC) then
@@ -188,6 +189,13 @@ begin
 
       nullclk_cnt <= n_nullclk_cnt;
 
+      if timeout_cnt_clr then
+        timeout_cnt <= 0;
+      elsif timeout_cnt_en then
+        timeout_cnt <= timeout_cnt + 1;
+      else
+        timeout_cnt <= timeout_cnt;
+      end if;
 
     end if;
   end process;
@@ -199,7 +207,7 @@ begin
 --  clock boundary crossing is inherently synchronous for the control signals once the state machine is synchronized to the spi frame
 --  however, double registers are used to sample the clk_fcnt as well as the spi clock
 
-  spi : process(spi_sm, clk_fcnt_2c, spi_clk_2c, rx_32bit_sreg, nullclk_cnt, i_spi_rx_word, clk_fcnt_en, spi_clr, SPI_TX_WORD, state_id)
+  spi : process(spi_sm, clk_fcnt_2c, spi_clk_2c, rx_32bit_sreg, nullclk_cnt, i_spi_rx_word, clk_fcnt_en, spi_clr, SPI_TX_WORD, state_id, timeout_cnt)
   begin
 
     -- default assignments that get over-written below as needed:
@@ -209,21 +217,27 @@ begin
     n_clk_fcnt_en   <= clk_fcnt_en;
     n_i_spi_rx_word <= i_spi_rx_word;
     spi_freeze <= '1';
-
+    timeout_cnt_en <= '0';
+    timeout_cnt_clr <= '0';
+    SPI_TIMEOUT_PULSE <= '0';
+    
     case spi_sm is
 
       when INIT =>
-
         n_clk_fcnt_en <= '0';           -- disable the frame counter
-
         n_spi_sm <= DET_NULLCLK;  -- go wait for detection of a null clock condition to synch the spi frame
-
         n_nullclk_cnt <= 0;             -- initialize the null clock counter
+        if timeout_cnt > timeout_max_cnt then 
+          SPI_TIMEOUT_PULSE <= '1';
+        end if;          
 
         state_id <= "0000";
 
       when DET_NULLCLK =>  -- wait here until the spi clock is null for at leasty 3/4 spi clock period
         n_clk_fcnt_en <= '0';           -- disable to the frame counter
+        if timeout_cnt > timeout_max_cnt then 
+          SPI_TIMEOUT_PULSE <= '1';
+        end if;          
 
         if nullclk_cnt > 17 then  -- one spi clock period count while high is 5mhz/312khz/2 = ~ 8 counts
           n_spi_clr     <= '1';  -- send out a clear to initialize the frame counter and spi input data register
@@ -247,6 +261,8 @@ begin
         n_spi_clr     <= '0';           -- disable the spi_clr
         n_clk_fcnt_en <= '1';           -- enable the frame counter
         n_spi_sm      <= WAIT_FOR_FRAME;  -- go wait one more clock cycle to allow for the clock boundary crossing
+        timeout_cnt_clr <= '1';
+        timeout_cnt_en <= '0';
 
         state_id <= "0010";
 
@@ -262,11 +278,13 @@ begin
         spi_freeze <= '0';
         
       when RECEIVING_FRAME =>  -- wait here until 32 spi clock periods have been detected.
-
-
+        timeout_cnt_en <= '1';
         if clk_fcnt_2c = 32 then
           n_spi_sm <= PROCESS_FRAME;
-        else
+        elsif timeout_cnt > timeout_max_cnt then 
+          SPI_TIMEOUT_PULSE <= '1';
+          n_spi_sm <= PROCESS_FRAME;
+        else          
           n_spi_sm <= RECEIVING_FRAME;
         end if;
 
@@ -276,6 +294,9 @@ begin
         n_i_spi_rx_word <= rx_32bit_sreg;  -- send out a copy the received serial 32 bit word
         n_i_spi_rx_strb <= '1';  -- single clock pulse strobe indicates new frame ready
         n_spi_sm        <= INIT;
+        if timeout_cnt > timeout_max_cnt then 
+          SPI_TIMEOUT_PULSE <= '1';
+        end if;          
 
         state_id <= "0101";
 

@@ -82,7 +82,7 @@ architecture rtl of top_lvr_fw is
 
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--- notes:  !!!!!        specific i/o features (eg hysterisis ) need to be assigned in the constraints file  !!!!
+-- notes:  !!!!!        specific i/o features (eg hysteresis ) need to be assigned in the constraints file  !!!!
 --                 !!!!!        the syn_encoding for each of the state machines needs to have a "safe, original" fsm encoding 
   --- specified in the synth constraint file     !!!!!!!
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -123,6 +123,7 @@ architecture rtl of top_lvr_fw is
       spi_tx_word : in  std_logic_vector(31 downto 0);  -- 32 bit serial word to be transmitted
       spi_rx_word : out std_logic_vector(31 downto 0);  -- received serial frame
       spi_rx_strb : out std_logic;                      -- single 5mhz clock pulse signifies a new serial frame is available.
+      SPI_TIMEOUT_PULSE : out std_logic;  -- Pulse indicating previous command timed out
 
       p_tx_32bit_reg : out std_logic_vector(31 downto 0);
       clk_fcnt_out   : out std_logic_vector(4 downto 0);
@@ -234,6 +235,7 @@ architecture rtl of top_lvr_fw is
   signal spi_tx_word                : std_logic_vector(31 downto 0) := x"dcb02019";  -- 32 bit serial word to be transmitted
   signal spi_rx_word                : std_logic_vector(31 downto 0);                 -- received serial frame
   signal spi_rx_strb                : std_logic;  -- single 5mhz clock pulse signifies a new serial frame is available.
+  signal spi_timeout_pulse, spi_timeout                : std_logic := '0'; 
   signal spi_p_tx_32bit_reg         : std_logic_vector(31 downto 0);
   signal spi_p_state_id             : std_logic_vector(3 downto 0);
   signal clk_fcnt_out               : std_logic_vector(4 downto 0);
@@ -283,6 +285,8 @@ begin
       spi_rx_word => spi_rx_word,       -- received serial frame
       spi_rx_strb => spi_rx_strb,       -- single 5mhz clock pulse signifies a new serial frame is available.
 
+      spi_timeout_pulse => spi_timeout_pulse, -- Pulse indicating previous command timed out
+
       p_tx_32bit_reg => spi_p_tx_32bit_reg,
       clk_fcnt_out   => clk_fcnt_out,
       p_state_id     => spi_p_state_id
@@ -301,8 +305,8 @@ begin
   channels_on    <= channels_desired_on and total_channel_constraints;
   dutycycle_mode <= spi_dutycycle_mode or not SW5_DUTYCYCLE_MODE_BAR;
   -- spi word to be transmitted
-  spi_tx_word <= xor_reduce(spi_tx_word(30 downto 0)) & "0000" & bad_parity & not filtd_temp_ok & dutycycle_mode  & not SW4_SLAVE_PAIRS_BAR &
-                 not channel_involtage_ok &
+  spi_tx_word <= xor_reduce(spi_tx_word(30 downto 0)) & "000" & spi_timeout & bad_parity & not filtd_temp_ok & dutycycle_mode &
+                 not SW4_SLAVE_PAIRS_BAR & not channel_involtage_ok &
                  channels_ready & channels_on when read_fpga_params = '0' else
                  --x"00" & active_switch_constraints & x"0" & fw_version;
                  x"00" & not SW2_SW3_CHANNEL_ON_BAR & x"0" & fw_version;
@@ -337,23 +341,30 @@ begin
       channels_desired_on    <= (others => not SW5_DEFAULT_TURNON_BAR); 
       spi_dutycycle_mode <= not SW5_DUTYCYCLE_MODE_BAR;
       read_fpga_params <= '0';
+      spi_timeout <= '0';
+      bad_parity <= '0';
     elsif falling_edge(spi_rx_strb) then
-      if xor_reduce(spi_rx_word(30 downto 0)) = spi_rx_word(31) then
-        if spi_rx_word(30 downto 28) = "111" then
-          channels_desired_ready <= channels_to_be_ready;
-          channels_desired_on    <= channels_to_be_on;
-          spi_dutycycle_mode <= spi_rx_word(24);
+      if spi_timeout_pulse = '1' then
+        spi_timeout <= '1';
+      else
+        spi_timeout <= '0';
+        if xor_reduce(spi_rx_word(30 downto 0)) = spi_rx_word(31) then
+          if spi_rx_word(30 downto 28) = "111" then
+            channels_desired_ready <= channels_to_be_ready;
+            channels_desired_on    <= channels_to_be_on;
+            spi_dutycycle_mode <= spi_rx_word(24);
+          end if;
+          bad_parity <= '0';
+        else
+          bad_parity <= '1';
         end if;
-        bad_parity <= '0';
-      else
-        bad_parity <= '1';
-      end if;
       
-      if spi_rx_word(30 downto 28) = "001" then
-        read_fpga_params <= '1';
-      else
-        read_fpga_params <= '0';
-      end if; 
+        if spi_rx_word(30 downto 28) = "001" then
+          read_fpga_params <= '1';
+        else
+          read_fpga_params <= '0';
+        end if;
+      end if;
     end if;
   end process set_channels_ready;
 

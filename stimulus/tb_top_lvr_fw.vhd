@@ -110,7 +110,7 @@ begin
                   sca_data_reg(30 downto 0) & sca_data_reg(31) when falling_edge(sca_clk_out) else
                   sca_data_reg;
 
-  word2 <= "001" & x"000F2C2";
+  word2 <= "111" & x"000F2C2";
   sca_data_reg2 <= xor_reduce(word2) & word2 when (sca_reset_out = '0') else
                    sca_data_reg2(30 downto 0) & sca_data_reg2(31) when falling_edge(sca_clk_out) else
                    sca_data_reg2;
@@ -163,8 +163,15 @@ begin
     wait for 17.5 us;  
 
     SCA_CLK_mask     <= '1';  ------- SPI command
-    wait for SPI_PERIOD*32;
+    wait for SPI_PERIOD*32;  -- change to 30 for timeout
 
+    SCA_CLK_mask     <= '0';
+    wait for SPI_PERIOD*10;
+
+    SCA_RESET_OUT    <= '0';
+    wait for SPI_PERIOD;
+
+    SCA_RESET_OUT    <= '0'; -- change to 1 for timeout
     IN_TEMP_OK    <= '1';
     SCA_CLK_mask     <= '0';
     wait for SPI_PERIOD*500;

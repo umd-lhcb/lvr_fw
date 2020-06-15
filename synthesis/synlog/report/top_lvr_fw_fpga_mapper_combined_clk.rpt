@@ -6,22 +6,22 @@
 #### START OF CLOCK OPTIMIZATION REPORT #####[
 
 Clock optimization not enabled
-2 non-gated/non-generated clock tree(s) driving 429 clock pin(s) of sequential element(s)
-3 gated/generated clock tree(s) driving 125 clock pin(s) of sequential element(s)
-0 instances converted, 125 sequential instances remain driven by gated/generated clocks
+2 non-gated/non-generated clock tree(s) driving 444 clock pin(s) of sequential element(s)
+3 gated/generated clock tree(s) driving 127 clock pin(s) of sequential element(s)
+0 instances converted, 127 sequential instances remain driven by gated/generated clocks
 
 =================================== Non-Gated/Non-Generated Clocks ====================================
 Clock Tree ID     Driving Element     Drive Element Type             Fanout     Sample Instance        
 -------------------------------------------------------------------------------------------------------
 @K:CKID0004       CLK40M_OSC          port                           5          clk_5m_gl              
-@K:CKID0005       clk_5m_gl_keep      clock definition on CLKINT     424        sw2_sw5_channel_on_a[1]
+@K:CKID0005       clk_5m_gl_keep      clock definition on CLKINT     439        sw2_sw5_channel_on_a[1]
 =======================================================================================================
 =================================================================================== Gated/Generated Clocks ====================================================================================
 Clock Tree ID     Driving Element                Drive Element Type     Fanout     Sample Instance                     Explanation                                                             
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 @K:CKID0001       glob_buff.Core                 DYNCCC                 77         spi_slave_pm.half_clk_fcnt[5]       No generated or derived clock directive on output of sequential instance
-@K:CKID0002       spi_slave_pm.spi_sm[2]         DFN1C0                 28         spi_slave_pm.P_TX_32BIT_REG[10]     No generated or derived clock directive on output of sequential instance
-@K:CKID0003       spi_slave_pm.i_spi_rx_strb     DFN1C0                 20         read_fpga_params_0                  No generated or derived clock directive on output of sequential instance
+@K:CKID0002       spi_slave_pm.spi_sm[2]         DFN1C0                 29         spi_slave_pm.P_TX_32BIT_REG[10]     No generated or derived clock directive on output of sequential instance
+@K:CKID0003       spi_slave_pm.i_spi_rx_strb     DFN1C0                 21         read_fpga_params_0                  No generated or derived clock directive on output of sequential instance
 ===============================================================================================================================================================================================
 
 

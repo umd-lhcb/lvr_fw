@@ -12,9 +12,10 @@
 @N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":250:6:250:19|OTHERS clause is not synthesized.
 @N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":352:6:352:19|OTHERS clause is not synthesized.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":37:7:37:15|Synthesizing work.spi_slave.rtl.
-@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":82:21:82:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
-@N: CD364 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":121:6:121:18|Removing redundant assignment.
-@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":283:6:283:19|OTHERS clause is not synthesized.
+@N: CD231 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":88:21:88:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
+@N: CD364 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":127:6:127:18|Removing redundant assignment.
+@N: CD364 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":197:8:197:18|Removing redundant assignment.
+@N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":304:6:304:19|OTHERS clause is not synthesized.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd":8:7:8:21|Synthesizing work.ccc_glob_3xbuff.def_arch.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":3690:10:3690:15|Synthesizing proasic3.dynccc.syn_black_box.
 @N: CD630 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd":2722:10:2722:12|Synthesizing proasic3.vcc.syn_black_box.

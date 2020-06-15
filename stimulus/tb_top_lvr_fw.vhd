@@ -13,35 +13,6 @@ end TB_TOP_LVR_FW;
 
 architecture behavioral of TB_TOP_LVR_FW is
 
-  constant CLK40MHZ_PERIOD : time := 25 ns;  -- 40MHZ
-  constant SPI_PERIOD : time := 3.2 us;  -- 312.5 kHZ
-
-  signal CLK40MHZ  : std_logic := '0';
-  signal NSYSRESET : std_logic := '0';
-
-  -- SPI signals
-  signal clk312khz                     : std_logic                     := '0';
-  signal sca_data_reg, sca_data_reg_in : std_logic_vector(31 downto 0) := x"12345678";
-  signal sca_data_reg2                 : std_logic_vector(31 downto 0) := x"1234F078";
-
-  signal SCA_CLK_OUT, sca_clk_mask, sca_dat_out_mask : std_logic;
-  signal SCA_RESET_OUT                               : std_logic;
-  signal SCA_DAT_OUT                                 : std_logic;
-  signal SCA_DAT_IN                                  : std_logic;
-
-  signal CH_MREG_EN : std_logic_vector(8 downto 1);
-  signal CH_IAUX_EN : std_logic_vector(8 downto 1);
-  signal CH_VOSG_EN : std_logic_vector(8 downto 1);
-
-  signal IN_TEMP_OK    : std_logic;
-
-  signal IN_INVOLTAGE_OK     : std_logic_vector(4 downto 1);
-  signal SW3_DUTYCYCLE_MODE  : std_logic;
-  signal SW3_DEFAULT_TURNON  : std_logic;
-  signal SW4_SLAVE_PAIRS     : std_logic_vector(4 downto 1);
-  signal SW2_SW5_CHANNEL_ON  : std_logic_vector(8 downto 1);
-  
-
   component TOP_LVR_FW
     generic (
       SIM_MODE_EN : integer range 0 to 1 := 0              -- Set to 1 by test bench in simulation 
@@ -54,9 +25,9 @@ architecture behavioral of TB_TOP_LVR_FW is
       IN_TEMP_OK       : in std_logic;                     -- pin 43: over-temperature failsafe'0'= above the over-temp threshold
 
 -------------------------- DIP SWITCHES --------------------------    
-      SW2_SW5_CHANNEL_ON_BAR : in std_logic_vector(8 downto 1);  -- pins 27, 26, 23, 22, 15, 13, 11, 10: channels that can be turned on
-      SW3_DUTYCYCLE_MODE_BAR : in std_logic;                     -- pin 31: '1' = special test low duty cycle mode
-      SW3_DEFAULT_TURNON_BAR : in std_logic;                     -- pin 28: '1' = channels turn on by default
+      SW2_SW3_CHANNEL_ON_BAR : in std_logic_vector(8 downto 1);  -- pins 27, 26, 23, 22, 15, 13, 11, 10: channels that can be turned on
+      SW5_DUTYCYCLE_MODE_BAR : in std_logic;                     -- pin 31: '1' = special test low duty cycle mode
+      SW5_DEFAULT_TURNON_BAR : in std_logic;                     -- pin 28: '1' = channels turn on by default
       SW4_SLAVE_PAIRS_BAR    : in std_logic_vector(4 downto 1);  -- pins 21, 20, 19, 16: switch defining slave/master pairs
 
 -------------------------- SPI INTERFACE --------------------------    
@@ -79,6 +50,36 @@ architecture behavioral of TB_TOP_LVR_FW is
 
       );
   end component;
+
+  constant CLK40MHZ_PERIOD : time := 25 ns;  -- 40MHZ
+  constant SPI_PERIOD : time := 3.2 us;  -- 312.5 kHZ
+
+  signal CLK40MHZ  : std_logic := '0';
+  signal NSYSRESET : std_logic := '0';
+
+  -- SPI signals
+  signal clk312khz                     : std_logic                     := '0';
+  signal sca_data_reg, sca_data_reg_in : std_logic_vector(31 downto 0) := x"12345678";
+  signal sca_data_reg2                 : std_logic_vector(31 downto 0) := x"1234F078";
+  signal word1, word2 : std_logic_vector(30 downto 0);
+
+  signal SCA_CLK_OUT, sca_clk_mask, sca_dat_out_mask : std_logic;
+  signal SCA_RESET_OUT                               : std_logic;
+  signal SCA_DAT_OUT                                 : std_logic;
+  signal SCA_DAT_IN                                  : std_logic;
+
+  signal CH_MREG_EN : std_logic_vector(8 downto 1);
+  signal CH_IAUX_EN : std_logic_vector(8 downto 1);
+  signal CH_VOSG_EN : std_logic_vector(8 downto 1);
+
+  signal IN_TEMP_OK    : std_logic;
+
+  signal IN_INVOLTAGE_OK     : std_logic_vector(4 downto 1);
+  signal SW5_DUTYCYCLE_MODE  : std_logic;
+  signal SW5_DEFAULT_TURNON  : std_logic;
+  signal SW4_SLAVE_PAIRS     : std_logic_vector(4 downto 1);
+  signal SW2_SW3_CHANNEL_ON  : std_logic_vector(8 downto 1);
+  
 
 begin
 
@@ -104,12 +105,13 @@ begin
   CLK40MHZ <= not CLK40MHZ after (CLK40MHZ_PERIOD / 2.0);
   CLK312KHZ <= not CLK312KHZ after (SPI_PERIOD / 2.0);
 
-
-  sca_data_reg <= x"7000F3C1" when (sca_reset_out = '0') else
+  word1 <= "111" & x"000F3C1";
+  sca_data_reg <= not xor_reduce(word1) & word1 when (sca_reset_out = '0') else
                   sca_data_reg(30 downto 0) & sca_data_reg(31) when falling_edge(sca_clk_out) else
                   sca_data_reg;
 
-  sca_data_reg2 <= x"1000F2C2" when (sca_reset_out = '0') else
+  word2 <= "001" & x"000F2C2";
+  sca_data_reg2 <= xor_reduce(word2) & word2 when (sca_reset_out = '0') else
                    sca_data_reg2(30 downto 0) & sca_data_reg2(31) when falling_edge(sca_clk_out) else
                    sca_data_reg2;
 
@@ -129,10 +131,10 @@ begin
     IN_TEMP_OK    <= '1';
     IN_INVOLTAGE_OK    <= "1111";
 
-    SW3_DUTYCYCLE_MODE <= '0';
-    SW3_DEFAULT_TURNON <= '1';
+    SW5_DUTYCYCLE_MODE <= '0';
+    SW5_DEFAULT_TURNON <= '1';
     SW4_SLAVE_PAIRS    <= "0001";
-    SW2_SW5_CHANNEL_ON <= x"FF";
+    SW2_SW3_CHANNEL_ON <= x"FF";
     SCA_CLK_mask     <= '0';
     
     SCA_DAT_OUT_mask <= '1';
@@ -195,10 +197,10 @@ begin
       IN_POWERON_RST_B   => NSYSRESET,
       IN_INVOLTAGE_OK    => IN_INVOLTAGE_OK,
       IN_TEMP_OK         => IN_TEMP_OK,
-      SW3_DUTYCYCLE_MODE_BAR => not SW3_DUTYCYCLE_MODE,
+      SW5_DUTYCYCLE_MODE_BAR => not SW5_DUTYCYCLE_MODE,
       SW4_SLAVE_PAIRS_BAR    => not SW4_SLAVE_PAIRS,
-      SW2_SW5_CHANNEL_ON_BAR => not SW2_SW5_CHANNEL_ON,
-      SW3_DEFAULT_TURNON_BAR => not SW3_DEFAULT_TURNON,
+      SW2_SW3_CHANNEL_ON_BAR => not SW2_SW3_CHANNEL_ON,
+      SW5_DEFAULT_TURNON_BAR => not SW5_DEFAULT_TURNON,
 
       SCA_CLK_OUT   => SCA_CLK_OUT,
       SCA_RESET_OUT => SCA_RESET_OUT,

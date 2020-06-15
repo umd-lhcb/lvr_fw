@@ -1,6 +1,6 @@
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":332:23:332:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":337:32:337:53|Referenced variable sw5_dutycycle_mode_bar is not in sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":335:47:335:68|Referenced variable sw5_default_turnon_bar is not in sensitivity list.
+@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":333:23:333:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":338:32:338:53|Referenced variable sw5_dutycycle_mode_bar is not in sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":336:47:336:68|Referenced variable sw5_default_turnon_bar is not in sensitivity list.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(0) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(1) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
@@ -23,5 +23,5 @@
 @W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":102:4:102:5|Feedback mux created for signal clk_fcnt[5:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
 @W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":132:4:132:5|Feedback mux created for signal i_spi_miso. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
 @W: CL117 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":132:4:132:5|Latch generated from process for signal tx_32bit_sreg(31 downto 0); possible missing assignment in an if or case statement.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":414:4:414:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":421:4:421:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
 

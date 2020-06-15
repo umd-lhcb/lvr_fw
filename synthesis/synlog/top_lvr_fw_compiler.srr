@@ -8,12 +8,22 @@ Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys softwa
 
 @N: CD720 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
 @N:"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":36:7:36:16|Top entity is set to top_lvr_fw.
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\misc.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\Slow_PulseEn_Gen.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd changed - recompiling
 VHDL syntax check successful!
+
+Compiler output is up to date.  No re-compile necessary
+
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":36:7:36:16|Synthesizing work.top_lvr_fw.rtl.
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":332:23:332:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":337:32:337:53|Referenced variable sw5_dutycycle_mode_bar is not in sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":335:47:335:68|Referenced variable sw5_default_turnon_bar is not in sensitivity list.
+@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":333:23:333:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":338:32:338:53|Referenced variable sw5_dutycycle_mode_bar is not in sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":336:47:336:68|Referenced variable sw5_default_turnon_bar is not in sensitivity list.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
 @N: CD233 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:23:73:24|Using sequential encoding for type threshold_state.
 Post processing for work.iir_filt.rtl
@@ -62,7 +72,7 @@ Post processing for proasic3.gnd.syn_black_box
 Post processing for proasic3.pllint.syn_black_box
 Post processing for work.ccc_glob_3xbuff.def_arch
 Post processing for work.top_lvr_fw.rtl
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":414:4:414:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":421:4:421:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":160:4:160:5|Trying to extract state machine for register spi_sm.
 Extracted state machine for register spi_sm
 State machine has 6 reachable states with original encodings of:
@@ -98,12 +108,12 @@ State machine has 3 reachable states with original encodings of:
    01
    10
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 77MB peak: 79MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 72MB peak: 73MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sun Jun 14 11:58:28 2020
+# Sun Jun 14 20:55:00 2020
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -114,16 +124,16 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sun Jun 14 11:58:28 2020
+# Sun Jun 14 20:55:00 2020
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 3MB peak: 4MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 3MB peak: 4MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Sun Jun 14 11:58:29 2020
+# Sun Jun 14 20:55:00 2020
 
 ###########################################################]

@@ -238,9 +238,9 @@ architecture rtl of top_lvr_fw is
   signal spi_p_state_id             : std_logic_vector(3 downto 0);
   signal clk_fcnt_out               : std_logic_vector(4 downto 0);
   signal sca_clk_out_buf, spi_rst_b : std_logic;
-  signal read_fpga_params : std_logic := '0';
+  signal read_fpga_params, bad_parity : std_logic := '0';
 
-  constant fw_version : std_logic_vector(11 downto 0) := x"201";
+  constant fw_version : std_logic_vector(11 downto 0) := x"202";
 -- debug
   signal iir_ovt_filt   : std_logic_vector(8 downto 1);
 
@@ -301,7 +301,8 @@ begin
   channels_on    <= channels_desired_on and total_channel_constraints;
   dutycycle_mode <= spi_dutycycle_mode or not SW5_DUTYCYCLE_MODE_BAR;
   -- spi word to be transmitted
-  spi_tx_word <= xor_reduce(spi_tx_word(30 downto 0)) & "00000" & not filtd_temp_ok & dutycycle_mode  & not SW4_SLAVE_PAIRS_BAR & not channel_involtage_ok &
+  spi_tx_word <= xor_reduce(spi_tx_word(30 downto 0)) & "0000" & bad_parity & not filtd_temp_ok & dutycycle_mode  & not SW4_SLAVE_PAIRS_BAR &
+                 not channel_involtage_ok &
                  channels_ready & channels_on when read_fpga_params = '0' else
                  --x"00" & active_switch_constraints & x"0" & fw_version;
                  x"00" & not SW2_SW3_CHANNEL_ON_BAR & x"0" & fw_version;
@@ -337,11 +338,17 @@ begin
       spi_dutycycle_mode <= not SW5_DUTYCYCLE_MODE_BAR;
       read_fpga_params <= '0';
     elsif falling_edge(spi_rx_strb) then
-      if spi_rx_word(30 downto 28) = "111" then
-        channels_desired_ready <= channels_to_be_ready;
-        channels_desired_on    <= channels_to_be_on;
-        spi_dutycycle_mode <= spi_rx_word(24);
-      end if; 
+      if xor_reduce(spi_rx_word(30 downto 0)) = spi_rx_word(31) then
+        if spi_rx_word(30 downto 28) = "111" then
+          channels_desired_ready <= channels_to_be_ready;
+          channels_desired_on    <= channels_to_be_on;
+          spi_dutycycle_mode <= spi_rx_word(24);
+        end if;
+        bad_parity <= '0';
+      else
+        bad_parity <= '1';
+      end if;
+      
       if spi_rx_word(30 downto 28) = "001" then
         read_fpga_params <= '1';
       else

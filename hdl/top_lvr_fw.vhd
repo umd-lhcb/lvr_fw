@@ -240,7 +240,7 @@ architecture rtl of top_lvr_fw is
   signal sca_clk_out_buf, spi_rst_b : std_logic;
   signal read_fpga_params : std_logic := '0';
 
-  constant fw_version : std_logic_vector(11 downto 0) := x"200";
+  constant fw_version : std_logic_vector(11 downto 0) := x"201";
 -- debug
   signal iir_ovt_filt   : std_logic_vector(8 downto 1);
 

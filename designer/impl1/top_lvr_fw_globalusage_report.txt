@@ -1,0 +1,29 @@
+********************************************************************
+                            Global Usage Report
+********************************************************************
+  
+Product: Designer
+Release: v11.9 SP2
+Version: 11.9.2.1
+Date: Sun Jun 14 12:00:05 2020
+Design Name: top_lvr_fw  Family: ProASIC3  Die: A3PN250  Package: 100 VQFP
+Design State: Post-Layout
+
+The following nets have been routed to a chip global resource:
+
+    Fanout            Name
+    ----------------------
+    108               Net   : GLB
+                      Driver: glob_buff/Core/U_GLB
+    49                Net   : gb_spi_rst_b
+                      Driver: glob_buff/Core/U_GLC
+    412               Net   : clk_5m_gl
+                      Driver: clk_5m_gl_keep/U_GL
+    372               Net   : master_rst_b
+                      Driver: master_rst_b_RNI5UP7/U_GL
+    105               Net   : spi_slave_pm/spi_clr
+                      Driver: spi_slave_pm/spi_clr_RNIS8M7/U_GL
+
+
+
+

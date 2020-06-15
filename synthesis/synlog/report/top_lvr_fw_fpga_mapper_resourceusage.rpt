@@ -2,14 +2,15 @@ Target Part: A3PN250_VQFP100_STD
 Report for cell top_lvr_fw.rtl
   Core Cell usage:
               cell count     area count*area
-              AND2   178      1.0      178.0
-               AO1   194      1.0      194.0
+              AND2   181      1.0      181.0
+               AO1   190      1.0      190.0
               AO13     5      1.0        5.0
               AO18    25      1.0       25.0
-              AO1A    29      1.0       29.0
+              AO1A    32      1.0       32.0
+              AO1B     1      1.0        1.0
              AOI1B     8      1.0        8.0
                AX1     5      1.0        5.0
-              AX1C    10      1.0       10.0
+              AX1C     8      1.0        8.0
               AX1D     1      1.0        1.0
               AX1E     2      1.0        2.0
             CLKINT     3      0.0        0.0
@@ -20,32 +21,33 @@ Report for cell top_lvr_fw.rtl
               MX2A     4      1.0        4.0
               MX2B     8      1.0        8.0
               MX2C    28      1.0       28.0
-              NOR2   105      1.0      105.0
-             NOR2A    94      1.0       94.0
-             NOR2B   110      1.0      110.0
-              NOR3    32      1.0       32.0
-             NOR3A    23      1.0       23.0
-             NOR3B    54      1.0       54.0
+              NOR2   102      1.0      102.0
+             NOR2A    99      1.0       99.0
+             NOR2B   118      1.0      118.0
+              NOR3    35      1.0       35.0
+             NOR3A    24      1.0       24.0
+             NOR3B    43      1.0       43.0
              NOR3C    92      1.0       92.0
                OA1     2      1.0        2.0
-              OA1A    22      1.0       22.0
+              OA1A    25      1.0       25.0
               OA1B     6      1.0        6.0
               OA1C    12      1.0       12.0
               OAI1     5      1.0        5.0
-               OR2    50      1.0       50.0
-              OR2A     9      1.0        9.0
+               OR2    33      1.0       33.0
+              OR2A     1      1.0        1.0
               OR2B     2      1.0        2.0
-               OR3   111      1.0      111.0
-              OR3A     9      1.0        9.0
-              OR3B     4      1.0        4.0
+               OR3   128      1.0      128.0
+              OR3A     8      1.0        8.0
+              OR3B     7      1.0        7.0
             PLLINT     2      0.0        0.0
                VCC    13      0.0        0.0
+               XA1     1      1.0        1.0
               XA1A     5      1.0        5.0
-              XA1B     9      1.0        9.0
-             XNOR2     5      1.0        5.0
+              XA1B     8      1.0        8.0
+             XNOR2     4      1.0        4.0
              XNOR3    30      1.0       30.0
               XO1A     1      1.0        1.0
-              XOR2   378      1.0      378.0
+              XOR2   381      1.0      381.0
               XOR3    13      1.0       13.0
 
 
@@ -65,7 +67,7 @@ Report for cell top_lvr_fw.rtl
               DLN1    27      1.0       27.0
             DYNCCC     1      0.0        0.0
                    -----          ----------
-             TOTAL  2303              2271.0
+             TOTAL  2306              2274.0
 
 
   IO Cell usage:
@@ -76,7 +78,7 @@ Report for cell top_lvr_fw.rtl
              TOTAL    59
 
 
-Core Cells         : 2271 of 6144 (37%)
+Core Cells         : 2274 of 6144 (37%)
 IO Cells           : 59
 
   RAM/ROM Usage Summary

@@ -4,6 +4,7 @@ from cursesmenu.items import *
 import time
 import datetime
 import spidev
+import sys
 
 def main(stdscr):
     curses.noecho()
@@ -17,30 +18,143 @@ def main(stdscr):
     spi = spidev.SpiDev()
     spi.open(0,0)
     spi.max_speed_hz = 100000
-    menu = CursesMenu("Good "+greettime+". How can I help?")
-    menu_item = MenuItem("Item")
-    menu_test = FunctionItem("Get LVR FW Version (>2.02)", do_transaction, [stdscr,spi,0x90000000])
-    menu.append_item(menu_item)
+    
+    last_response = [0x00,0x00,0x00,0x00] 
+
+    menu = CursesMenu("LVR Butler", "Good "+greettime+". How can I help?")
+    menu_getStatus = FunctionItem("Get LVR Status Word", do_transaction, [stdscr, menu,spi,0x00000000])
+    menu_test = FunctionItem("Get LVR WORD2", do_transaction, [stdscr, menu,spi,0x90000000])
+    menu_decode = FunctionItem("Decode Last Response", do_decode, [stdscr,menu]) 
+    menu.append_item(menu_getStatus)
     menu.append_item(menu_test)
+    menu.append_item(menu_decode)
     menu.show()
 
+def do_decode(stdscr, menu):
+    data=menu.returned_value
+    if (data==None):
+        return
+    print(data, file=sys.stderr)
+    prevCMD = ""
+    cmdCode=(data[0] >> 4) & 0x8F
+    result=[]
+    if(cmdCode==7):
+        prevCMD="WRITE"
+    elif(cmdCode==1):
+        prevCMD="WORD2"
+    elif(cmdCode==0):
+        prevCMD="READ"
+    else:
+        prevCMD="UNKNOWN"
+    result.append("COMMAND: "+prevCMD)
+    status = ""
+    if(data[0] & 0x8 > 0):
+        status+="SPI TIMEOUT, "
+    if(data[0] & 0x4 > 0):
+        status+="PARITY ERROR, "
+    if(data[0] & 0x2 > 0):
+        status+="OVERTEMP, "
+    if(data[0] & 0x1 > 0):
+        status+="LOW DUTY CYCLE MODE, "
+    if(data[0] & 0xF == 0):
+        status="NORMAL"
+    result.append("STATUS: "+status)
 
-def do_transaction(stdscr,spi, spi_input):
-    stdscr.addstr(2,33,'-------------------------')
-    stdscr.addstr(3,33,'| Sending '+hex(spi_input))
-    stdscr.addch(3,58,'|')
-    stdscr.addch(4,58,'|')
-    stdscr.addch(5,58,'|')
-    stdscr.addch(4,33,'|')
-    stdscr.addch(5,33,'|')
-    stdscr.addstr(6,33,'-------------------------')
-    stdscr.refresh()
+    slave_channels=""
+    if(data[1] & 0x80 > 0):
+        slave_channels+="8, "
+    if(data[1] & 0x40 > 0):
+        slave_channels+="6, "
+    if(data[1] & 0x20 > 0):
+        slave_channels+="4, "
+    if(data[1] & 0x10 > 0):
+        slave_channels+="2, "
+    if(data[1] & 0xF0 == 0):
+        slave_channels="NONE"
+    result.append("SLAVES: "+slave_channels)
+
+    UVL_status=""
+    if(data[1] & 0x8 > 0):
+        UVL_status+="7/8 TRIPPED"
+    else:
+        UVL_status+="7/8 OKAY, "
+    if(data[1] & 0x4 > 0):
+        UVL_status+="5/6 TRIPPED, "
+    else:
+        UVL_status+="5/6 OKAY, "
+    if(data[1] & 0x2 > 0):
+        UVL_status+="3/4 TRIPPED, "
+    else:
+        UVL_status+="3/4 OKAY, "
+    if(data[1] & 0x1 > 0):
+        UVL_status+="1/2 TRIPPED"
+    else:
+        UVL_status+="1/2 OKAY"
+    result.append("UVL STATUS: "+UVL_status)
+
+    ch_rdy=""
+    if(data[2] & 0x01):
+        ch_rdy+="1, "
+    if(data[2] & 0x02):
+        ch_rdy+="2, "
+    if(data[2] & 0x04):
+        ch_rdy+="3, "
+    if(data[2] & 0x08):
+        ch_rdy+="4, "
+    if(data[2] & 0x10):
+        ch_rdy+="5, "
+    if(data[2] & 0x20):
+        ch_rdy+="6, "
+    if(data[2] & 0x40):
+        ch_rdy+="7, "
+    if(data[2] & 0x80):
+        ch_rdy+="8, "
+    if(data[2] & 0xFF==0):
+        ch_rdy="NONE"
+    result.append("CH READY: "+ch_rdy)
+
+
+    ch_on=""
+    if(data[2] & 0x01):
+        ch_on+="1, "
+    if(data[2] & 0x02):
+        ch_on+="2, "
+    if(data[2] & 0x04):
+        ch_on+="3, "
+    if(data[2] & 0x08):
+        ch_on+="4, "
+    if(data[2] & 0x10):
+        ch_on+="5, "
+    if(data[2] & 0x20):
+        ch_on+="6, "
+    if(data[2] & 0x40):
+        ch_on+="7, "
+    if(data[2] & 0x80):
+        ch_on+="8, "
+    if(data[2] & 0xFF==0):
+        ch_on="NONE"
+    result.append("CH ON: "+ch_on)
+
+
     
+    popup=SelectionMenu(result, "Decoding", format((data[3]+(data[2]<<8)+(data[1]<<16)+(data[0]<<24)),"#010x"))
+    popup.parent=menu
+    popup.show(True)
+    menu.resume()
 
+    return data
+
+
+def do_transaction(stdscr, menu,spi, spi_input):
+    menu.pause()
+    string1='Sent   '+format(spi_input,"#010x")
     r=write_spi(spi,spi_input)
-    stdscr.addstr(5,33,'| Received '+hex((r[3]+(r[2]<<8)+(r[1]<<16)+(r[0]<<24))))
-    stdscr.refresh()
-    stdscr.getkey()
+    string2='Received '+format((r[3]+(r[2]<<8)+(r[1]<<16)+(r[0]<<24)),"#010x")
+    popup = CursesMenu("SPI Communication", string1+"\t"+string2)
+    popup.parent = menu
+    popup.show(True)
+
+    return r
 
     
     

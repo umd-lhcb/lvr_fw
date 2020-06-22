@@ -1,5 +1,5 @@
 #defaultlanguage:vhdl
-#OPTIONS:"|-layerid|0|-orig_srs|Z:\\windows\\lvr_fw\\lvr_fw_2020\\synthesis\\synwork\\top_lvr_fw_comp.srs|-top|work.top_lvr_fw|-prodtype|synplify_pro|-nram|-fixsmult|-divnmod|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-vhdl2008|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
+#OPTIONS:"|-layerid|0|-orig_srs|Z:\\windows\\lvr_fw\\lvr_fw_2020\\synthesis\\synwork\\top_lvr_fw_comp.srs|-top|work.top_lvr_fw|-prodtype|synplify_pro|-nram|-fixsmult|-divnmod|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-vhdl2008|-ignore_undefined_lib|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\bin64\\c_vhdl.exe":1509044428
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\location.map":1509050436
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\std.vhd":1509043928
@@ -13,18 +13,22 @@
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd\\hyperents.vhd":1509043928
 #CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\smartgen\\CCC_Glob_3xBuff\\CCC_Glob_3xBuff.vhd":1586831425
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\proasic\\proasic3.vhd":1509041888
-#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\IIR_FILT.vhd":1591226123
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\crc6.vhd":1592772044
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\IIR_FILT.vhd":1592782034
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\misc.vhd":1509043928
-#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\MAIN_SEQUENCER_NEW.vhd":1591242162
-#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\Slow_PulseEn_Gen.vhd":1586831425
-#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\spi_slave.vhd":1592191290
-#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\top_lvr_fw.vhd":1592187136
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhdl_sim\\synplify.vhd":1509043928
+#CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd\\synattr.vhd":1509041926
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\MAIN_SEQUENCER_NEW.vhd":1592781997
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\Slow_PulseEn_Gen.vhd":1592782060
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\spi_slave.vhd":1592781979
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\top_lvr_fw.vhd":1592788687
 0 "Z:\windows\lvr_fw\lvr_fw_2020\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd" vhdl
-1 "Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd" vhdl
-2 "Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd" vhdl
-3 "Z:\windows\lvr_fw\lvr_fw_2020\hdl\Slow_PulseEn_Gen.vhd" vhdl
-4 "Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd" vhdl
-5 "Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd" vhdl
+1 "Z:\windows\lvr_fw\lvr_fw_2020\hdl\crc6.vhd" vhdl
+2 "Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd" vhdl
+3 "Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd" vhdl
+4 "Z:\windows\lvr_fw\lvr_fw_2020\hdl\Slow_PulseEn_Gen.vhd" vhdl
+5 "Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd" vhdl
+6 "Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd" vhdl
 
 # Dependency Lists (Uses list)
 0 -1
@@ -32,29 +36,33 @@
 2 -1
 3 -1
 4 -1
-5 0 4 2 1 3 
+5 -1
+6 0 5 1 3 2 4 
 
 # Dependency Lists (Users Of)
-0 5 
-1 5 
-2 5 
-3 5 
-4 5 
-5 -1
+0 6 
+1 6 
+2 6 
+3 6 
+4 6 
+5 6 
+6 -1
 
 # Design Unit to File Association
 arch work ccc_glob_3xbuff def_arch 0
 module work ccc_glob_3xbuff 0
-arch work iir_filt rtl 1
-module work iir_filt 1
-arch work main_sequencer_new rtl 2
-module work main_sequencer_new 2
-arch work slow_pulse_en_gen rtl 3
-module work slow_pulse_en_gen 3
-arch work spi_slave rtl 4
-module work spi_slave 4
-arch work top_lvr_fw rtl 5
-module work top_lvr_fw 5
+arch work crc6 crc6_arch 1
+module work crc6 1
+arch work iir_filt rtl 2
+module work iir_filt 2
+arch work main_sequencer_new rtl 3
+module work main_sequencer_new 3
+arch work slow_pulse_en_gen rtl 4
+module work slow_pulse_en_gen 4
+arch work spi_slave rtl 5
+module work spi_slave 5
+arch work top_lvr_fw rtl 6
+module work top_lvr_fw 6
 
 
 # Configuration files used

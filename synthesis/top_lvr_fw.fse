@@ -1,195 +1,195 @@
 
-fsm_encoding {1516041601} onehot
+fsm_encoding {1816041601} onehot
 
-fsm_state_encoding {1516041601} init {000001}
+fsm_state_encoding {1816041601} init {000001}
 
-fsm_state_encoding {1516041601} det_nullclk {000010}
+fsm_state_encoding {1816041601} det_nullclk {000010}
 
-fsm_state_encoding {1516041601} enable_framecnt {000100}
+fsm_state_encoding {1816041601} enable_framecnt {000100}
 
-fsm_state_encoding {1516041601} wait_for_frame {001000}
+fsm_state_encoding {1816041601} wait_for_frame {001000}
 
-fsm_state_encoding {1516041601} receiving_frame {010000}
+fsm_state_encoding {1816041601} receiving_frame {010000}
 
-fsm_state_encoding {1516041601} process_frame {100000}
+fsm_state_encoding {1816041601} process_frame {100000}
 
-fsm_registers {1516041601} {spi_sm[0]}  {spi_sm[1]}  {spi_sm[2]}  {spi_sm[3]}  {spi_sm[4]}  {spi_sm[5]} 
+fsm_registers {1816041601} {spi_sm[0]}  {spi_sm[1]}  {spi_sm[2]}  {spi_sm[3]}  {spi_sm[4]}  {spi_sm[5]} 
 
-fsm_encoding {1312041202} onehot
+fsm_encoding {1612041202} onehot
 
-fsm_state_encoding {1312041202} init {000001}
+fsm_state_encoding {1612041202} init {000001}
 
-fsm_state_encoding {1312041202} wait_step {000010}
+fsm_state_encoding {1612041202} wait_step {000010}
 
-fsm_state_encoding {1312041202} ch_1st_step {000100}
+fsm_state_encoding {1612041202} ch_1st_step {000100}
 
-fsm_state_encoding {1312041202} ch_2nd_step {001000}
+fsm_state_encoding {1612041202} ch_2nd_step {001000}
 
-fsm_state_encoding {1312041202} ch_3rd_step {010000}
+fsm_state_encoding {1612041202} ch_3rd_step {010000}
 
-fsm_state_encoding {1312041202} operate_hold {100000}
+fsm_state_encoding {1612041202} operate_hold {100000}
 
-fsm_registers {1312041202} {sequencer_state1[0]}  {sequencer_state1[1]}  {sequencer_state1[2]}  {sequencer_state1[3]}  {sequencer_state1[4]}  {sequencer_state1[5]} 
+fsm_registers {1612041202} {sequencer_state1[0]}  {sequencer_state1[1]}  {sequencer_state1[2]}  {sequencer_state1[3]}  {sequencer_state1[4]}  {sequencer_state1[5]} 
 
-fsm_encoding {1312041203} onehot
+fsm_encoding {1612041203} onehot
 
-fsm_state_encoding {1312041203} init {000001}
+fsm_state_encoding {1612041203} init {000001}
 
-fsm_state_encoding {1312041203} wait_step {000010}
+fsm_state_encoding {1612041203} wait_step {000010}
 
-fsm_state_encoding {1312041203} ch_1st_step {000100}
+fsm_state_encoding {1612041203} ch_1st_step {000100}
 
-fsm_state_encoding {1312041203} ch_2nd_step {001000}
+fsm_state_encoding {1612041203} ch_2nd_step {001000}
 
-fsm_state_encoding {1312041203} ch_3rd_step {010000}
+fsm_state_encoding {1612041203} ch_3rd_step {010000}
 
-fsm_state_encoding {1312041203} operate_hold {100000}
+fsm_state_encoding {1612041203} operate_hold {100000}
 
-fsm_registers {1312041203} {sequencer_state0[0]}  {sequencer_state0[1]}  {sequencer_state0[2]}  {sequencer_state0[3]}  {sequencer_state0[4]}  {sequencer_state0[5]} 
+fsm_registers {1612041203} {sequencer_state0[0]}  {sequencer_state0[1]}  {sequencer_state0[2]}  {sequencer_state0[3]}  {sequencer_state0[4]}  {sequencer_state0[5]} 
 
-fsm_encoding {11854854} sequential
+fsm_encoding {12734734} sequential
 
-fsm_state_encoding {11854854} init {00}
+fsm_state_encoding {12734734} init {00}
 
-fsm_state_encoding {11854854} rising {01}
+fsm_state_encoding {12734734} rising {01}
 
-fsm_state_encoding {11854854} falling {10}
+fsm_state_encoding {12734734} falling {10}
 
-fsm_registers {11854854} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+fsm_registers {12734734} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
 d_step {001000}
 
-fsm_state_encoding {1312041202} ch_3rd_step {010000}
+fsm_state_encoding {1612041202} ch_3rd_step {010000}
 
-fsm_state_encoding {1312041202} operate_hold {100000}
+fsm_state_encoding {1612041202} operate_hold {100000}
 
-fsm_registers {1312041202} {sequencer_state1[0]}  {sequencer_state1[1]}  {sequencer_state1[2]}  {sequencer_state1[3]}  {sequencer_state1[4]}  {sequencer_state1[5]} 
+fsm_registers {1612041202} {sequencer_state1[0]}  {sequencer_state1[1]}  {sequencer_state1[2]}  {sequencer_state1[3]}  {sequencer_state1[4]}  {sequencer_state1[5]} 
 
-fsm_encoding {1312041203} onehot
+fsm_encoding {1612041203} onehot
 
-fsm_state_encoding {1312041203} init {000001}
+fsm_state_encoding {1612041203} init {000001}
 
-fsm_state_encoding {1312041203} wait_step {000010}
+fsm_state_encoding {1612041203} wait_step {000010}
 
-fsm_state_encoding {1312041203} ch_1st_step {000100}
+fsm_state_encoding {1612041203} ch_1st_step {000100}
 
-fsm_state_encoding {1312041203} ch_2nd_step {001000}
+fsm_state_encoding {1612041203} ch_2nd_step {001000}
 
-fsm_state_encoding {1312041203} ch_3rd_step {010000}
+fsm_state_encoding {1612041203} ch_3rd_step {010000}
 
-fsm_state_encoding {1312041203} operate_hold {100000}
+fsm_state_encoding {1612041203} operate_hold {100000}
 
-fsm_registers {1312041203} {sequencer_state0[0]}  {sequencer_state0[1]}  {sequencer_state0[2]}  {sequencer_state0[3]}  {sequencer_state0[4]}  {sequencer_state0[5]} 
+fsm_registers {1612041203} {sequencer_state0[0]}  {sequencer_state0[1]}  {sequencer_state0[2]}  {sequencer_state0[3]}  {sequencer_state0[4]}  {sequencer_state0[5]} 
 
-fsm_encoding {1312041202} onehot
+fsm_encoding {1612041202} onehot
 
-fsm_state_encoding {1312041202} init {000001}
+fsm_state_encoding {1612041202} init {000001}
 
-fsm_state_encoding {1312041202} wait_step {000010}
+fsm_state_encoding {1612041202} wait_step {000010}
 
-fsm_state_encoding {1312041202} ch_1st_step {000100}
+fsm_state_encoding {1612041202} ch_1st_step {000100}
 
-fsm_state_encoding {1312041202} ch_2nd_step {001000}
+fsm_state_encoding {1612041202} ch_2nd_step {001000}
 
-fsm_state_encoding {1312041202} ch_3rd_step {010000}
+fsm_state_encoding {1612041202} ch_3rd_step {010000}
 
-fsm_state_encoding {1312041202} operate_hold {100000}
+fsm_state_encoding {1612041202} operate_hold {100000}
 
-fsm_registers {1312041202} {sequencer_state1[0]}  {sequencer_state1[1]}  {sequencer_state1[2]}  {sequencer_state1[3]}  {sequencer_state1[4]}  {sequencer_state1[5]} 
+fsm_registers {1612041202} {sequencer_state1[0]}  {sequencer_state1[1]}  {sequencer_state1[2]}  {sequencer_state1[3]}  {sequencer_state1[4]}  {sequencer_state1[5]} 
 
-fsm_encoding {1312041203} onehot
+fsm_encoding {1612041203} onehot
 
-fsm_state_encoding {1312041203} init {000001}
+fsm_state_encoding {1612041203} init {000001}
 
-fsm_state_encoding {1312041203} wait_step {000010}
+fsm_state_encoding {1612041203} wait_step {000010}
 
-fsm_state_encoding {1312041203} ch_1st_step {000100}
+fsm_state_encoding {1612041203} ch_1st_step {000100}
 
-fsm_state_encoding {1312041203} ch_2nd_step {001000}
+fsm_state_encoding {1612041203} ch_2nd_step {001000}
 
-fsm_state_encoding {1312041203} ch_3rd_step {010000}
+fsm_state_encoding {1612041203} ch_3rd_step {010000}
 
-fsm_state_encoding {1312041203} operate_hold {100000}
+fsm_state_encoding {1612041203} operate_hold {100000}
 
-fsm_registers {1312041203} {sequencer_state0[0]}  {sequencer_state0[1]}  {sequencer_state0[2]}  {sequencer_state0[3]}  {sequencer_state0[4]}  {sequencer_state0[5]} 
+fsm_registers {1612041203} {sequencer_state0[0]}  {sequencer_state0[1]}  {sequencer_state0[2]}  {sequencer_state0[3]}  {sequencer_state0[4]}  {sequencer_state0[5]} 
 
-fsm_encoding {1312041202} onehot
+fsm_encoding {1612041202} onehot
 
-fsm_state_encoding {1312041202} init {000001}
+fsm_state_encoding {1612041202} init {000001}
 
-fsm_state_encoding {1312041202} wait_step {000010}
+fsm_state_encoding {1612041202} wait_step {000010}
 
-fsm_state_encoding {1312041202} ch_1st_step {000100}
+fsm_state_encoding {1612041202} ch_1st_step {000100}
 
-fsm_state_encoding {1312041202} ch_2nd_step {001000}
+fsm_state_encoding {1612041202} ch_2nd_step {001000}
 
-fsm_state_encoding {1312041202} ch_3rd_step {010000}
+fsm_state_encoding {1612041202} ch_3rd_step {010000}
 
-fsm_state_encoding {1312041202} operate_hold {100000}
+fsm_state_encoding {1612041202} operate_hold {100000}
 
-fsm_registers {1312041202} {sequencer_state1[0]}  {sequencer_state1[1]}  {sequencer_state1[2]}  {sequencer_state1[3]}  {sequencer_state1[4]}  {sequencer_state1[5]} 
+fsm_registers {1612041202} {sequencer_state1[0]}  {sequencer_state1[1]}  {sequencer_state1[2]}  {sequencer_state1[3]}  {sequencer_state1[4]}  {sequencer_state1[5]} 
 
-fsm_encoding {1312041203} onehot
+fsm_encoding {1612041203} onehot
 
-fsm_state_encoding {1312041203} init {000001}
+fsm_state_encoding {1612041203} init {000001}
 
-fsm_state_encoding {1312041203} wait_step {000010}
+fsm_state_encoding {1612041203} wait_step {000010}
 
-fsm_state_encoding {1312041203} ch_1st_step {000100}
+fsm_state_encoding {1612041203} ch_1st_step {000100}
 
-fsm_state_encoding {1312041203} ch_2nd_step {001000}
+fsm_state_encoding {1612041203} ch_2nd_step {001000}
 
-fsm_state_encoding {1312041203} ch_3rd_step {010000}
+fsm_state_encoding {1612041203} ch_3rd_step {010000}
 
-fsm_state_encoding {1312041203} operate_hold {100000}
+fsm_state_encoding {1612041203} operate_hold {100000}
 
-fsm_registers {1312041203} {sequencer_state0[0]}  {sequencer_state0[1]}  {sequencer_state0[2]}  {sequencer_state0[3]}  {sequencer_state0[4]}  {sequencer_state0[5]} 
+fsm_registers {1612041203} {sequencer_state0[0]}  {sequencer_state0[1]}  {sequencer_state0[2]}  {sequencer_state0[3]}  {sequencer_state0[4]}  {sequencer_state0[5]} 
 
-fsm_encoding {11854854} sequential
+fsm_encoding {12734734} sequential
 
-fsm_state_encoding {11854854} init {00}
+fsm_state_encoding {12734734} init {00}
 
-fsm_state_encoding {11854854} rising {01}
+fsm_state_encoding {12734734} rising {01}
 
-fsm_state_encoding {11854854} falling {10}
+fsm_state_encoding {12734734} falling {10}
 
-fsm_registers {11854854} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+fsm_registers {12734734} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
 
-fsm_encoding {11854854} sequential
+fsm_encoding {12734734} sequential
 
-fsm_state_encoding {11854854} init {00}
+fsm_state_encoding {12734734} init {00}
 
-fsm_state_encoding {11854854} rising {01}
+fsm_state_encoding {12734734} rising {01}
 
-fsm_state_encoding {11854854} falling {10}
+fsm_state_encoding {12734734} falling {10}
 
-fsm_registers {11854854} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+fsm_registers {12734734} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
 
-fsm_encoding {11854854} sequential
+fsm_encoding {12734734} sequential
 
-fsm_state_encoding {11854854} init {00}
+fsm_state_encoding {12734734} init {00}
 
-fsm_state_encoding {11854854} rising {01}
+fsm_state_encoding {12734734} rising {01}
 
-fsm_state_encoding {11854854} falling {10}
+fsm_state_encoding {12734734} falling {10}
 
-fsm_registers {11854854} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+fsm_registers {12734734} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
 
-fsm_encoding {11854854} sequential
+fsm_encoding {12734734} sequential
 
-fsm_state_encoding {11854854} init {00}
+fsm_state_encoding {12734734} init {00}
 
-fsm_state_encoding {11854854} rising {01}
+fsm_state_encoding {12734734} rising {01}
 
-fsm_state_encoding {11854854} falling {10}
+fsm_state_encoding {12734734} falling {10}
 
-fsm_registers {11854854} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+fsm_registers {12734734} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
 
-fsm_encoding {11854854} sequential
+fsm_encoding {12734734} sequential
 
-fsm_state_encoding {11854854} init {00}
+fsm_state_encoding {12734734} init {00}
 
-fsm_state_encoding {11854854} rising {01}
+fsm_state_encoding {12734734} rising {01}
 
-fsm_state_encoding {11854854} falling {10}
+fsm_state_encoding {12734734} falling {10}
 
-fsm_registers {11854854} {THRESH_VAL[1]}  {THRESH_VAL[0]} 
+fsm_registers {12734734} {THRESH_VAL[1]}  {THRESH_VAL[0]} 

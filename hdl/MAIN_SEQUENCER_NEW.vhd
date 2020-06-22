@@ -49,8 +49,8 @@ library proasic3;
 use proasic3.all;
 
 -- note:  the synplify library needs to be commented out for modelsim presynth sims since modelsim does not recognize it
---library synplify;
---use synplify.attributes.all;
+library synplify;
+use synplify.attributes.all;
 
 entity main_sequencer_new is
   port (
@@ -83,7 +83,7 @@ architecture rtl of main_sequencer_new is
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
---attribute syn_radhardlevel of rtl : architecture is "tmr";
+attribute syn_radhardlevel of rtl : architecture is "tmr";
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

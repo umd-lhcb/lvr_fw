@@ -31,8 +31,8 @@ use ieee.numeric_std.all;
 
 library proasic3;
 use proasic3.all;
---library synplify;
---use synplify.attributes.all;
+library synplify;
+use synplify.attributes.all;
 
 entity spi_slave is
   port (
@@ -57,7 +57,7 @@ end spi_slave;
 
 architecture rtl of spi_slave is
 
-  --attribute syn_radhardlevel of rtl : architecture is "tmr";
+  attribute syn_radhardlevel of rtl : architecture is "tmr";
 
 
   signal rx_32bit_sreg, n_rx_32bit_sreg : std_logic_vector(31 downto 0);  -- 32 bit shift register dedicated for active spi receive

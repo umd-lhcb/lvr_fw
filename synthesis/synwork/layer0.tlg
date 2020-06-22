@@ -1,15 +1,12 @@
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
-@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":36:7:36:16|Synthesizing work.top_lvr_fw.rtl.
-@W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":337:23:337:29|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":340:47:340:68|Referenced variable sw5_default_turnon_bar is not in sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":342:32:342:53|Referenced variable sw5_dutycycle_mode_bar is not in sensitivity list.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":33:7:33:16|Synthesizing work.top_lvr_fw.rtl.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":32:7:32:14|Synthesizing work.iir_filt.rtl.
-@N: CD233 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:23:73:24|Using sequential encoding for type threshold_state.
+@N: CD233 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":61:23:61:24|Using sequential encoding for type threshold_state.
 Post processing for work.iir_filt.rtl
-@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(0) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(1) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
-@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|All reachable assignments to SUM_IN_A(3) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:4:73:5|All reachable assignments to SUM_IN_A(0) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:4:73:5|All reachable assignments to SUM_IN_A(1) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:4:73:5|All reachable assignments to SUM_IN_A(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
+@W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:4:73:5|All reachable assignments to SUM_IN_A(3) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\Slow_PulseEn_Gen.vhd":35:7:35:23|Synthesizing work.slow_pulse_en_gen.rtl.
 Post processing for work.slow_pulse_en_gen.rtl
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":55:7:55:24|Synthesizing work.main_sequencer_new.rtl.
@@ -17,13 +14,15 @@ Post processing for work.slow_pulse_en_gen.rtl
 @N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":250:6:250:19|OTHERS clause is not synthesized.
 @N: CD604 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":352:6:352:19|OTHERS clause is not synthesized.
 @W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":154:19:154:25|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":158:22:158:28|Referenced variable ch_out0 is not in sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":263:22:263:33|Referenced variable seq_stepval1 is not in sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":161:22:161:33|Referenced variable seq_stepval0 is not in sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":166:23:166:33|Referenced variable del_cnt_val is not in sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":260:22:260:28|Referenced variable ch_out1 is not in sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":158:22:158:28|Referenced variable ch_out0 is not in sensitivity list.
 Post processing for work.main_sequencer_new.rtl
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":120:4:120:5|Pruning unused register seq_stepval1_2(3 downto 0). Make sure that there are no unused intermediate registers.
+@N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\crc6.vhd":17:7:17:10|Synthesizing work.crc6.crc6_arch.
+Post processing for work.crc6.crc6_arch
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":37:7:37:15|Synthesizing work.spi_slave.rtl.
 @N: CD231 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":88:21:88:22|Using onehot encoding for type spi_sm_states. For example, enumeration init is mapped to "100000".
 @N: CD364 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":127:6:127:18|Removing redundant assignment.
@@ -52,7 +51,7 @@ Post processing for proasic3.gnd.syn_black_box
 Post processing for proasic3.pllint.syn_black_box
 Post processing for work.ccc_glob_3xbuff.def_arch
 Post processing for work.top_lvr_fw.rtl
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":432:4:432:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":444:4:444:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":160:4:160:5|Trying to extract state machine for register spi_sm.
 Extracted state machine for register spi_sm
 State machine has 6 reachable states with original encodings of:
@@ -81,7 +80,7 @@ State machine has 6 reachable states with original encodings of:
    010000
    100000
 @N: CL159 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":66:4:66:16|Input cmnd_word_stb is unused.
-@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":85:4:85:5|Trying to extract state machine for register THRESH_VAL.
+@N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:4:73:5|Trying to extract state machine for register THRESH_VAL.
 Extracted state machine for register THRESH_VAL
 State machine has 3 reachable states with original encodings of:
    00

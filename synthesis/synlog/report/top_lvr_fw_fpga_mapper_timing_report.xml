@@ -17,14 +17,14 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <row>
 <data>CCC_Glob_3xBuff|GLB_inferred_clock</data>
 <data>50.0 MHz</data>
-<data>41.5 MHz</data>
-<data>-2.054</data>
+<data>37.3 MHz</data>
+<data>-3.387</data>
 </row>
 <row>
 <data>clk_5m_gl</data>
 <data>5.0 MHz</data>
-<data>48.5 MHz</data>
-<data>179.390</data>
+<data>45.9 MHz</data>
+<data>178.229</data>
 </row>
 <row>
 <data>sca_clk_out</data>
@@ -35,8 +35,8 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <row>
 <data>spi_slave|i_spi_rx_strb_inferred_clock</data>
 <data>50.0 MHz</data>
-<data>160.5 MHz</data>
-<data>13.771</data>
+<data>130.9 MHz</data>
+<data>12.358</data>
 </row>
 <row>
 <data>spi_slave|spi_sm_inferred_clock[2]</data>
@@ -47,7 +47,7 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <row>
 <data>top_lvr_fw|CLK40M_OSC</data>
 <data>50.0 MHz</data>
-<data>238.1 MHz</data>
-<data>15.800</data>
+<data>167.3 MHz</data>
+<data>14.022</data>
 </row>
 </report_table>

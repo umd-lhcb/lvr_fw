@@ -1,18 +1,15 @@
 --------------------------------------------------------------------------------
 -- Description: LV regulator serial control interface
 --      functions:
---                      1) under-voltage lockout failsafe--check each of 4 fuses
---                                              a) requires that each fuse section treated as separate independent control centers
---                                      2) board over-temperature failsafe check
---                                              a) latched condition for entire board
---                      3) spi serial comm
---                      4) regulator channel sequence controls
-
---                      (a) single gbt-sca spi slave when addr_sel(4:0)= 1f hex
---                                      note that this spi port operates as a shift register driven by the gbt-sca spi clock.  
---                                      a clock boundary crossing is initiated once the spi clock stops
-
-
+--        1) under-voltage lockout failsafe--check each of 4 fuses
+--             a) requires that each fuse section treated as separate independent control centers
+--        2) board over-temperature failsafe check
+--             a) latched condition for entire board
+--        3) spi serial comm
+--        4) regulator channel sequence controls
+--            a) single gbt-sca spi slave when addr_sel(4:0)= 1f hex
+--            note that this spi port operates as a shift register driven by the gbt-sca spi clock.  
+--            a clock boundary crossing is initiated once the spi clock stops
 --
 -- Targeted device: <family::ProASIC3> <die::A3PN250> <package::100 VQFP>
 -- Authors: Tom O'Bannon, Manuel Franco Sevilla
@@ -30,8 +27,8 @@ library proasic3;
 use proasic3.all;
 
 -- note:  the synplify library needs to be commented out for modelsim presynth sims since modelsim does not recognize it
---library synplify;
---use synplify.attributes.all;
+library synplify;
+use synplify.attributes.all;
 
 entity top_lvr_fw is
   generic (
@@ -48,6 +45,8 @@ entity top_lvr_fw is
     SW4_SLAVE_PAIRS_BAR    : in std_logic_vector(4 downto 1);  -- pins 16, 19, 20, 21: switch defining slave/master pairs
     SW5_DEFAULT_TURNON_BAR : in std_logic;                     -- pin 15: '1' = channels turn on by default
     SW5_DUTYCYCLE_MODE_BAR : in std_logic;                     -- pin 13: '1' = special test low duty cycle mode
+    SW5_IGNORE_CRC_BAR     : in std_logic;                     -- pin 11: '1' = ignores CRC checking
+    SW5_PIN4_UNUSED        : in std_logic;                     -- pin 10: Unused
 
 -------------------------- SPI INTERFACE --------------------------    
     sca_clk_out   : in  std_logic;      -- pin 35, spi clock from the spi master
@@ -56,7 +55,7 @@ entity top_lvr_fw is
     sca_dat_out   : in  std_logic;      -- pin 2, serial data to the fpga from the spi master
 
 -------------------------- DEBUG to J11 CONNECTOR  --------------------------    
-    J11_DEBUG     : out std_logic_vector(7 downto 0);  -- pins {6, 45, 44, 5, 7, 8, 32, 33}
+    J11_DEBUG : out std_logic_vector(7 downto 0);  -- pins {6, 45, 44, 5, 7, 8, 32, 33}
 
 -------------------------- CHANNEL ENABLES --------------------------    
     OUT_CHANNEL_MREG : out std_logic_vector(8 downto 1);  -- pins {62, 65, 71, 76, 80, 83, 92, 86} main regulator ic, active high
@@ -76,7 +75,7 @@ architecture rtl of top_lvr_fw is
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
---attribute syn_radhardlevel of rtl : architecture is "tmr";
+attribute syn_radhardlevel of rtl : architecture is "tmr";
 --attribute syn_hier of rtl         : architecture is "firm";
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -109,6 +108,13 @@ architecture rtl of top_lvr_fw is
     port (pad : in std_logic; y : out std_logic);
   end component;
 
+--Calculator of 6-bit CRC with 0x67 polynomial: x^6 + x^5 + x^2 + x + 1
+  component crc6 is
+    port(
+      DATA : in  std_logic_vector(25 downto 0);
+      CRC  : out std_logic_vector(5 downto 0)
+      );
+  end component;
 
   -- spi interface with tcm
   component spi_slave is
@@ -120,10 +126,10 @@ architecture rtl of top_lvr_fw is
       spi_mosi : in  std_logic;         -- serial data input to the fpga from the sca master
       spi_miso : out std_logic;         -- serial data output from the fpga to the sca master
 
-      spi_tx_word : in  std_logic_vector(31 downto 0);  -- 32 bit serial word to be transmitted
-      spi_rx_word : out std_logic_vector(31 downto 0);  -- received serial frame
-      spi_rx_strb : out std_logic;                      -- single 5mhz clock pulse signifies a new serial frame is available.
-      SPI_TIMEOUT_PULSE : out std_logic;  -- Pulse indicating previous command timed out
+      spi_tx_word       : in  std_logic_vector(31 downto 0);  -- 32 bit serial word to be transmitted
+      spi_rx_word       : out std_logic_vector(31 downto 0);  -- received serial frame
+      spi_rx_strb       : out std_logic;                      -- single 5mhz clock pulse signifies a new serial frame is available.
+      SPI_TIMEOUT_PULSE : out std_logic;                      -- Pulse indicating previous command timed out
 
       p_tx_32bit_reg : out std_logic_vector(31 downto 0);
       clk_fcnt_out   : out std_logic_vector(4 downto 0);
@@ -211,11 +217,11 @@ architecture rtl of top_lvr_fw is
   signal ch_vosg_en : std_logic_vector(8 downto 1);  -- channel enable signal: vos_gen regulator ic, active high
 
 -- these signals are used to debounce the dip switches used for manual tests (SW2_SW3_CHANNEL_ON_BAR)
-  signal n_sw2_sw5_channel_on_a, sw2_sw5_channel_on_a         : std_logic_vector(8 downto 1);
-  signal n_sw2_sw5_channel_on_b, sw2_sw5_channel_on_b         : std_logic_vector(8 downto 1);
+  signal n_sw2_sw5_channel_on_a, sw2_sw5_channel_on_a           : std_logic_vector(8 downto 1);
+  signal n_sw2_sw5_channel_on_b, sw2_sw5_channel_on_b           : std_logic_vector(8 downto 1);
 -- these are the debounced versions of the dip switches
   signal n_active_switch_constraints, active_switch_constraints : std_logic_vector(8 downto 1);  --constraints coming from external switch
-  signal total_channel_constraints : std_logic_vector(8 downto 1);  --constraints coming from external switch, temperature, and undervoltage
+  signal total_channel_constraints                              : std_logic_vector(8 downto 1);  --constraints coming from external switch, temperature, and undervoltage
 
   signal n_dtycyc_cnt, dtycyc_cnt : integer range 0 to (2**5)-1;        -- duty cycle counter
   constant dtycyc_time            : integer range 0 to (2**5)-1 := 19;  -- duty cycle counter timeout interval (20 * 0.250 sec)~5%
@@ -223,28 +229,30 @@ architecture rtl of top_lvr_fw is
 
   signal filtd_temp_ok : std_logic;     -- filtered version of the IN_TEMP_OK status
 
-  signal channels_ready, channels_on             : std_logic_vector(8 downto 1) := (others => '0');  ---active lvr channels
-  signal channels_to_be_ready, channels_to_be_on : std_logic_vector(8 downto 1) := (others => '0');  --to be active lvr channels
+  signal channels_ready, channels_on                 : std_logic_vector(8 downto 1) := (others => '0');  ---active lvr channels
+  signal channels_to_be_ready, channels_to_be_on     : std_logic_vector(8 downto 1) := (others => '0');  --to be active lvr channels
   signal channels_desired_ready, channels_desired_on : std_logic_vector(8 downto 1) := (others => '0');  --to be active lvr channels
-  signal channel_is_slave                        : std_logic_vector(8 downto 1) := (others => '0');  --which channels are slaves (1,3,5,7 always master, so '0')
-  signal channel_involtage_ok                    : std_logic_vector(4 downto 1) := (others => '0');  --which channels have ok input voltage
+  signal channel_is_slave                            : std_logic_vector(8 downto 1) := (others => '0');  --which channels are slaves (1,3,5,7 always master, so '0')
+  signal channel_involtage_ok                        : std_logic_vector(4 downto 1) := (others => '0');  --which channels have ok input voltage
 
   signal dutycycle_mode, spi_dutycycle_mode : std_logic := '0';
 
   -- spi variables
-  signal spi_tx_word                : std_logic_vector(31 downto 0) := x"dcb02019";  -- 32 bit serial word to be transmitted
-  signal spi_rx_word                : std_logic_vector(31 downto 0);                 -- received serial frame
-  signal spi_rx_strb                : std_logic;  -- single 5mhz clock pulse signifies a new serial frame is available.
-  signal spi_timeout_pulse, spi_timeout                : std_logic := '0'; 
-  signal spi_p_tx_32bit_reg         : std_logic_vector(31 downto 0);
-  signal spi_p_state_id             : std_logic_vector(3 downto 0);
-  signal clk_fcnt_out               : std_logic_vector(4 downto 0);
-  signal sca_clk_out_buf, spi_rst_b : std_logic;
-  signal read_fpga_params, bad_parity : std_logic := '0';
+  signal spi_tx_word                    : std_logic_vector(31 downto 0) := x"dcb02019";  -- 32 bit serial word to be transmitted
+  signal spi_rx_word                    : std_logic_vector(31 downto 0);                 -- received serial frame
+  signal spi_rx_strb                    : std_logic;  -- single 5mhz clock pulse signifies a new serial frame is available.
+  signal spi_timeout_pulse, spi_timeout : std_logic                     := '0';
+  signal spi_p_tx_32bit_reg             : std_logic_vector(31 downto 0);
+  signal spi_p_state_id                 : std_logic_vector(3 downto 0);
+  signal clk_fcnt_out                   : std_logic_vector(4 downto 0);
+  signal sca_clk_out_buf, spi_rst_b     : std_logic;
+  signal bad_crc      : std_logic                     := '0';
+  signal tx_crc, rx_crc, spi_rx_crc     : std_logic_vector(5 downto 0);
+  signal spi_rx_command, spi_rx_command_reg                 : std_logic_vector(1 downto 0):="00";
 
-  constant fw_version : std_logic_vector(11 downto 0) := x"202";
+  constant fw_version : std_logic_vector(11 downto 0) := x"203";
 -- debug
-  signal iir_ovt_filt   : std_logic_vector(8 downto 1);
+  signal iir_ovt_filt : std_logic_vector(8 downto 1);
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -285,7 +293,7 @@ begin
       spi_rx_word => spi_rx_word,       -- received serial frame
       spi_rx_strb => spi_rx_strb,       -- single 5mhz clock pulse signifies a new serial frame is available.
 
-      spi_timeout_pulse => spi_timeout_pulse, -- Pulse indicating previous command timed out
+      spi_timeout_pulse => spi_timeout_pulse,  -- Pulse indicating previous command timed out
 
       p_tx_32bit_reg => spi_p_tx_32bit_reg,
       clk_fcnt_out   => clk_fcnt_out,
@@ -300,16 +308,19 @@ begin
                                                            and filtd_temp_ok & filtd_temp_ok
                                                            and channel_involtage_ok(index) & channel_involtage_ok(index);
   end generate gen_total_constraints;
-  
+
   channels_ready <= channels_desired_ready and total_channel_constraints;
   channels_on    <= channels_desired_on and total_channel_constraints;
   dutycycle_mode <= spi_dutycycle_mode or not SW5_DUTYCYCLE_MODE_BAR;
+
+  -- Calculation of TX CRC
+  txcrc_pm : crc6 port map(DATA => "00" & spi_tx_word(23 downto 0), CRC => tx_crc);
+  
   -- spi word to be transmitted
-  spi_tx_word <= xor_reduce(spi_tx_word(30 downto 0)) & "000" & spi_timeout & bad_parity & not filtd_temp_ok & dutycycle_mode &
-                 not SW4_SLAVE_PAIRS_BAR & not channel_involtage_ok &
-                 channels_ready & channels_on when read_fpga_params = '0' else
-                 --x"00" & active_switch_constraints & x"0" & fw_version;
-                 x"00" & not SW2_SW3_CHANNEL_ON_BAR & x"0" & fw_version;
+  spi_tx_word <= "00" & tx_crc & spi_timeout & bad_crc & not filtd_temp_ok & dutycycle_mode &
+                 not channel_involtage_ok & channels_ready & channels_on when spi_rx_command_reg = "00" or spi_rx_command_reg = "11" else
+                 "00" & tx_crc & active_switch_constraints & not SW4_SLAVE_PAIRS_BAR & fw_version when spi_rx_command_reg = "01" else
+                 "00" & tx_crc & x"00000" &  not SW5_PIN4_UNUSED & not SW5_IGNORE_CRC_BAR & not SW5_DUTYCYCLE_MODE_BAR & not SW5_DEFAULT_TURNON_BAR;
 
   --spi_tx_word <= x"dcb02019" when gb_spi_rst_b = '0' else
   --               spi_rx_word when falling_edge(spi_rx_strb) else
@@ -321,62 +332,63 @@ begin
     -- indices for spi_rx_word go from 0 to 15, while the others go from 1 to 8
     -- slaves are assigned same value as their masters (index_slave - 1)
     channels_to_be_ready(index*2-1) <= spi_rx_word(index*2+6);
-    
-    channels_to_be_ready(index*2)   <= spi_rx_word(index*2+7) when channel_is_slave(index*2) = '0' else
-                                       spi_rx_word(index*2+6);
-    
+
+    channels_to_be_ready(index*2) <= spi_rx_word(index*2+7) when channel_is_slave(index*2) = '0' else
+                                     spi_rx_word(index*2+6);
+
     channels_to_be_on(index*2-1) <= spi_rx_word(index*2-2) and channels_to_be_ready(index*2-1);
-    
-    channels_to_be_on(index*2)   <= spi_rx_word(index*2-1) and channels_to_be_ready(index*2) when channel_is_slave(index*2) = '0' else
-                                    spi_rx_word(index*2-2) and channels_to_be_ready(index*2-1);
+
+    channels_to_be_on(index*2) <= spi_rx_word(index*2-1) and channels_to_be_ready(index*2) when channel_is_slave(index*2) = '0' else
+                                  spi_rx_word(index*2-2) and channels_to_be_ready(index*2-1);
     -- converting the 4 pairs to the 8-bit vector
     channel_is_slave(index*2 downto index*2-1) <= not SW4_SLAVE_PAIRS_BAR(index) & '0';
   end generate gen_slave_constraints;
 
+  -- Parsing of SPI RX word
+  spi_rx_command <= spi_rx_word(31 downto 30);
+  spi_rx_crc <= spi_rx_word(29 downto 24);
+  rxcrc_pm : crc6 port map(DATA => spi_rx_command & spi_rx_word(23 downto 0), CRC => rx_crc);
+  
 -- setting register to control active channels when the received is a write (28th bit equal to 1)
-  set_channels_ready : process(spi_rx_strb, master_rst_b, spi_rx_word)
+  set_channels_ready : process(spi_rx_strb, master_rst_b, spi_rx_word, SW5_DEFAULT_TURNON_BAR, SW5_DUTYCYCLE_MODE_BAR)
   begin
     if master_rst_b = '0' then
-      channels_desired_ready <= (others => not SW5_DEFAULT_TURNON_BAR); 
-      channels_desired_on    <= (others => not SW5_DEFAULT_TURNON_BAR); 
-      spi_dutycycle_mode <= not SW5_DUTYCYCLE_MODE_BAR;
-      read_fpga_params <= '0';
-      spi_timeout <= '0';
-      bad_parity <= '0';
+      channels_desired_ready <= (others => not SW5_DEFAULT_TURNON_BAR);
+      channels_desired_on    <= (others => not SW5_DEFAULT_TURNON_BAR);
+      spi_dutycycle_mode     <= not SW5_DUTYCYCLE_MODE_BAR;
+      spi_rx_command_reg     <= "00";
+      spi_timeout            <= '0';
+      bad_crc             <= '0';
+      
     elsif falling_edge(spi_rx_strb) then
+      bad_crc <= '0'; -- Bad CRC gets cleared by default
       if spi_timeout_pulse = '1' then
         spi_timeout <= '1';
       else
         spi_timeout <= '0';
-        if xor_reduce(spi_rx_word(30 downto 0)) = spi_rx_word(31) then
-          if spi_rx_word(30 downto 28) = "111" then
+        spi_rx_command_reg  <= spi_rx_command;
+        if spi_rx_command = "11" then
+          if spi_rx_crc = rx_crc or SW5_IGNORE_CRC_BAR = '0' then
             channels_desired_ready <= channels_to_be_ready;
             channels_desired_on    <= channels_to_be_on;
-            spi_dutycycle_mode <= spi_rx_word(24);
-          end if;
-          bad_parity <= '0';
-        else
-          bad_parity <= '1';
-        end if;
-      
-        if spi_rx_word(30 downto 28) = "001" then
-          read_fpga_params <= '1';
-        else
-          read_fpga_params <= '0';
-        end if;
-      end if;
-    end if;
+            spi_dutycycle_mode     <= spi_rx_word(20);
+          else
+            bad_crc <= '1';
+          end if; -- if bad CRC
+        end if; -- if it is a Write command
+      end if; -- if spi_timeout_pulse = '1'
+    end if; -- if master_rst_b = '0'
   end process set_channels_ready;
 
 
   -- Debug signals sent to J11 connector
   J11_DEBUG(1 downto 0) <= SW4_SLAVE_PAIRS_BAR(2 downto 1);
-  J11_DEBUG(2) <= SW2_SW3_CHANNEL_ON_BAR(2);
-  J11_DEBUG(3) <= SW2_SW3_CHANNEL_ON_BAR(6);
-  J11_DEBUG(4) <= SW5_DUTYCYCLE_MODE_BAR;
-  J11_DEBUG(5) <= SW5_DEFAULT_TURNON_BAR;
-  J11_DEBUG(6) <= SW2_SW3_CHANNEL_ON_BAR(1);
-  J11_DEBUG(7) <= SW2_SW3_CHANNEL_ON_BAR(5);
+  J11_DEBUG(2)          <= SW2_SW3_CHANNEL_ON_BAR(2);
+  J11_DEBUG(3)          <= SW2_SW3_CHANNEL_ON_BAR(6);
+  J11_DEBUG(4)          <= SW5_DUTYCYCLE_MODE_BAR;
+  J11_DEBUG(5)          <= SW5_DEFAULT_TURNON_BAR;
+  J11_DEBUG(6)          <= SW2_SW3_CHANNEL_ON_BAR(1);
+  J11_DEBUG(7)          <= SW2_SW3_CHANNEL_ON_BAR(5);
 
 
 -- this process synchronizes the external IN_POWERON_RST_B signal to the 40 mhz clock
@@ -545,43 +557,43 @@ begin
 -- instantiate the sequencer modules
   gen_channel_seqs : for index in 1 to 4 generate
   begin
-    channel_seq: main_sequencer_new
+    channel_seq : main_sequencer_new
       port map (
-        master_rst_b => master_rst_b,     -- reset with async assert, but synchronized to the 40 mhz clock edge
-        clk_5m_gl    => clk_5m_gl,        -- master 5 mhz clock
+        master_rst_b => master_rst_b,   -- reset with async assert, but synchronized to the 40 mhz clock edge
+        clk_5m_gl    => clk_5m_gl,      -- master 5 mhz clock
 
-        channels_ready => channels_ready(index*2 downto index*2-1),  -- channels in a ready state (110 or 111)
-        channels_on    => channels_on(index*2 downto index*2-1),     -- channels on (110)
-        master_slave_pair => channel_is_slave(index*2),  
+        channels_ready    => channels_ready(index*2 downto index*2-1),  -- channels in a ready state (110 or 111)
+        channels_on       => channels_on(index*2 downto index*2-1),     -- channels on (110)
+        master_slave_pair => channel_is_slave(index*2),
 
-        cmnd_word_stb => slow_pls_stb,    -- [unused] single clock pulse strobe indicates check for an updated en command word
+        cmnd_word_stb => slow_pls_stb,  -- [unused] single clock pulse strobe indicates check for an updated en command word
 
-        dtycyc_en => dtycyc_en,                -- '1' enables a low duty cycle mode to limit thermal loads for special tests
+        dtycyc_en => dtycyc_en,         -- '1' enables a low duty cycle mode to limit thermal loads for special tests
 
-        sim_mode_en => SIM_MODE_EN,       -- '1' is special sim mode with reduced timeouts.....
+        sim_mode_en => SIM_MODE_EN,     -- '1' is special sim mode with reduced timeouts.....
 
         OUT_CHANNEL_MREG => ch_mreg_en(index*2 downto index*2-1),  -- channel enable signal: main regulator ic, active high
         OUT_CHANNEL_IAUX => ch_iaux_en(index*2 downto index*2-1),  -- channel enable signal: iaux regulator ic, active high
         OUT_CHANNEL_VOSG => ch_vosg_en(index*2 downto index*2-1),  -- channel enable signal: vos_gen regulator ic, active high
 
-        p_seq_stepval => open    -- debug:  indicates present sequence step
+        p_seq_stepval => open           -- debug:  indicates present sequence step
         );
 
     uvl_fuse : iir_filt
       port map (
-        master_rst_b => master_rst_b,     -- reset with async assert, but synchronized to the 40 mhz clock edge
-        clk_5m_gl    => clk_5m_gl,        -- fpga master clock--assumed to be 5 mhz
+        master_rst_b => master_rst_b,   -- reset with async assert, but synchronized to the 40 mhz clock edge
+        clk_5m_gl    => clk_5m_gl,      -- fpga master clock--assumed to be 5 mhz
 
         sig_in       => IN_INVOLTAGE_OK(index),      -- '1'= input voltage is above the min threshold (input signal to be filtered)
-        thresh_upper => "01110111",              -- (125dec is maxfiltval)upper hysterisis threshold (ie rising signal threshold)
-        thresh_lower => "00001000",              -- lower hysterisis threshold (ie falling signal threshold)
-        filt_sigout  => open,          -- resulting signal filter value 
+        thresh_upper => "01110111",                  -- (125dec is maxfiltval)upper hysterisis threshold (ie rising signal threshold)
+        thresh_lower => "00001000",                  -- lower hysterisis threshold (ie falling signal threshold)
+        filt_sigout  => open,                        -- resulting signal filter value 
         p_sigout     => channel_involtage_ok(index)  -- final signal bit value after the filter function and hysterisis have been applied
         );
-    
+
   end generate gen_channel_seqs;
 
-  
+
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- instantiate a 4 hz pulse generator used for special test to strb the tx function             

@@ -25,10 +25,12 @@ architecture behavioral of TB_TOP_LVR_FW is
       IN_TEMP_OK       : in std_logic;                     -- pin 43: over-temperature failsafe'0'= above the over-temp threshold
 
 -------------------------- DIP SWITCHES --------------------------    
-      SW2_SW3_CHANNEL_ON_BAR : in std_logic_vector(8 downto 1);  -- pins 27, 26, 23, 22, 15, 13, 11, 10: channels that can be turned on
-      SW5_DUTYCYCLE_MODE_BAR : in std_logic;                     -- pin 31: '1' = special test low duty cycle mode
-      SW5_DEFAULT_TURNON_BAR : in std_logic;                     -- pin 28: '1' = channels turn on by default
-      SW4_SLAVE_PAIRS_BAR    : in std_logic_vector(4 downto 1);  -- pins 21, 20, 19, 16: switch defining slave/master pairs
+      SW2_SW3_CHANNEL_ON_BAR : in std_logic_vector(8 downto 1);  -- pins 22, 23, 26, 27, 28, 29, 30, 31: channels that can be turned on
+      SW4_SLAVE_PAIRS_BAR    : in std_logic_vector(4 downto 1);  -- pins 16, 19, 20, 21: switch defining slave/master pairs
+      SW5_DEFAULT_TURNON_BAR : in std_logic;                     -- pin 15: '1' = channels turn on by default
+      SW5_DUTYCYCLE_MODE_BAR : in std_logic;                     -- pin 13: '1' = special test low duty cycle mode
+      SW5_IGNORE_CRC_BAR     : in std_logic;                     -- pin 11: '1' = ignores CRC checking
+      SW5_PIN4_UNUSED        : in std_logic;                     -- pin 10: Unused
 
 -------------------------- SPI INTERFACE --------------------------    
       sca_clk_out   : in  std_logic;    -- pin 35, spi clock from the spi master
@@ -105,13 +107,13 @@ begin
   CLK40MHZ <= not CLK40MHZ after (CLK40MHZ_PERIOD / 2.0);
   CLK312KHZ <= not CLK312KHZ after (SPI_PERIOD / 2.0);
 
-  word1 <= "111" & x"000F3C1";
-  sca_data_reg <= not xor_reduce(word1) & word1 when (sca_reset_out = '0') else
+-- Good CRC is "011011"
+  sca_data_reg <= "11" & "011011" & x"00F3C1" when (sca_reset_out = '0') else
                   sca_data_reg(30 downto 0) & sca_data_reg(31) when falling_edge(sca_clk_out) else
                   sca_data_reg;
-
-  word2 <= "111" & x"000F2C2";
-  sca_data_reg2 <= xor_reduce(word2) & word2 when (sca_reset_out = '0') else
+-- Good CRC is "11" & "101101" & x"00F300"
+  -- Good CRC is "11" & "101101" & x"00F300"
+  sca_data_reg2 <= "10" & "101101" & x"00F300" when (sca_reset_out = '0') else
                    sca_data_reg2(30 downto 0) & sca_data_reg2(31) when falling_edge(sca_clk_out) else
                    sca_data_reg2;
 
@@ -168,10 +170,10 @@ begin
     SCA_CLK_mask     <= '0';
     wait for SPI_PERIOD*10;
 
-    SCA_RESET_OUT    <= '0';
+    SCA_RESET_OUT    <= '1'; -- change to 0 for timeout
     wait for SPI_PERIOD;
 
-    SCA_RESET_OUT    <= '0'; -- change to 1 for timeout
+    SCA_RESET_OUT    <= '1';
     IN_TEMP_OK    <= '1';
     SCA_CLK_mask     <= '0';
     wait for SPI_PERIOD*500;
@@ -189,6 +191,12 @@ begin
     wait for SPI_PERIOD*32;
 
     SCA_CLK_mask     <= '0';
+    wait for SPI_PERIOD*100;
+
+    SW5_DUTYCYCLE_MODE <= '1';
+    wait for SPI_PERIOD*350;
+    
+    SW5_DUTYCYCLE_MODE <= '0';
     wait;
 
   end process;
@@ -204,10 +212,12 @@ begin
       IN_POWERON_RST_B   => NSYSRESET,
       IN_INVOLTAGE_OK    => IN_INVOLTAGE_OK,
       IN_TEMP_OK         => IN_TEMP_OK,
-      SW5_DUTYCYCLE_MODE_BAR => not SW5_DUTYCYCLE_MODE,
       SW4_SLAVE_PAIRS_BAR    => not SW4_SLAVE_PAIRS,
       SW2_SW3_CHANNEL_ON_BAR => not SW2_SW3_CHANNEL_ON,
       SW5_DEFAULT_TURNON_BAR => not SW5_DEFAULT_TURNON,
+      SW5_DUTYCYCLE_MODE_BAR => not SW5_DUTYCYCLE_MODE,
+      SW5_IGNORE_CRC_BAR => '1',
+      SW5_PIN4_UNUSED => '1',
 
       SCA_CLK_OUT   => SCA_CLK_OUT,
       SCA_RESET_OUT => SCA_RESET_OUT,

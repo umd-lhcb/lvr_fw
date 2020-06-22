@@ -1,5 +1,5 @@
 *****************************************************************
-Pin Report - Date: Sun Jun 14 23:24:15 2020 Pinchecksum: NOT-AVAILABLE
+Pin Report - Date: Sun Jun 21 21:28:12 2020 Pinchecksum: NOT-AVAILABLE
 Product: Designer
 Release: v11.9 SP2
 Version: 11.9.2.1
@@ -19,8 +19,8 @@ Number |Port                      |Function      |State       |I/O Std  |Output 
 7       J11_DEBUG[3]               IO62RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
 8       J11_DEBUG[2]               IO61RSB3       Fixed        LVCMOS15  2                  High  None           35                No           No             ---
 9                                  GND            Reserved
-10                                 GFB1/IO60RSB3  Special
-11                                 GFB0/IO59RSB3  Special
+10      SW5_PIN4_UNUSED            GFB1/IO60RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
+11      SW5_IGNORE_CRC_BAR         GFB0/IO59RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 12                                 VCOMPLF        Reserved
 13      SW5_DUTYCYCLE_MODE_BAR     GFA0/IO57RSB3  Special      LVCMOS15  ---                ---   None           ---               No           No             No
 14                                 VCCPLF         Reserved

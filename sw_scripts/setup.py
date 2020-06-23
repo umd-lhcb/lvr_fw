@@ -1,5 +1,5 @@
 from setuptools import setup, Extension
 
 setup(
-        ext_modules=[Extension('calc_crc',['calc_crc.C'],),]
+        ext_modules=[Extension('bare_crc',['bare_crc.C'],),]
 )

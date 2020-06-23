@@ -3,8 +3,23 @@ from cursesmenu import *
 from cursesmenu.items import *
 import time
 import datetime
-import spidev
 import sys
+import ctypes
+import pathlib
+import glob
+
+
+try: 
+    import spidev
+except Exception:
+    import spidevfake as spidev
+try:
+    libname = glob.glob('build/*/calc_crc*.so')[0]
+    c_lib = ctypes.CDLL(libname, mode=os.RTLD_LAZY)
+except Exception:
+    print("Unexpected Error:", sys.exc_info(), file=sys.stderr)
+    raise
+
 
 def main(stdscr):
     curses.noecho()
@@ -146,17 +161,48 @@ def do_decode(stdscr, menu):
 
 
 def do_transaction(stdscr, menu,spi, spi_input):
-    menu.pause()
+    spi_input = add_crc(spi_input)
     string1='Sent   '+format(spi_input,"#010x")
     r=write_spi(spi,spi_input)
-    string2='Received '+format((r[3]+(r[2]<<8)+(r[1]<<16)+(r[0]<<24)),"#010x")
+    catr=r[3]+(r[2]<<8)+(r[1]<<16)+(r[0]<<24)
+    string2='Received '+format(catr,"#010x")
+    if(crc_check(catr)):
+        string2=string2+" (crc OK)"
+    else:
+        string2=string2+" (bad crc)"
     popup = CursesMenu("SPI Communication", string1+"\t"+string2)
     popup.parent = menu
     popup.show(True)
 
     return r
 
+def crc_check(data):
+    datacrc=(data >> 24) & 0x3F
+    otherbits=0x00
+    otherbits=data & 0xFFFFFF
+    otherbits+=(data & 0xC0000000) >> 6
+
+    result=(mycrc(otherbits)==datacrc)
+    return result
+
+def add_crc(data):
+    otherbits=0x00
+    otherbits=data & 0xFFFFFF
+    otherbits+=(data & 0xC0000000) >> 6
+
+    datacrc=mycrc(otherbits)
+    datacrc=datacrc << 24
+    crcrange=0x34000000
+    data = data | crcrange
+    data = data & datacrc
+    return data
     
+def mycrc(otherbits,gen=0x67):
+    libname = pathlib.Path().absolute() / "calc_crc.so"
+    c_lib = ctypes.CDLL(libname)
+    c_lib.CRC.restype=ctypes.c_long
+    result = c_lib.CRC(ctypes.c_long(otherbits),ctypes.c_long(gen))
+    return result
     
 
 def write_spi(spi,spi_input):
@@ -168,9 +214,9 @@ def write_spi(spi,spi_input):
     return response
 
 
-
-try:
-    curses.wrapper(main)
-except KeyboardInterrupt:
-    pass
+if (__name__=="__main__"):
+    try:
+        curses.wrapper(main)
+    except KeyboardInterrupt:
+        pass
 

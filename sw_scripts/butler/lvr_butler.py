@@ -46,9 +46,26 @@ def main(stdscr):
     smenu_write=CursesMenu("Select Option", "What shall I change?")
     smenu_write.parent=menu
     smenu_togglelowDC=FunctionItem("Toggle Low Duty Cycle", bit_toggle, [stdscr,menu,spi,(0x00100000)]) 
+    smenu_allOff=FunctionItem("Set All OFF", do_transaction, [stdscr,menu,spi,(0xC0000000)]) 
+    smenu_allReady=FunctionItem("Set All READY", do_transaction, [stdscr,menu,spi,(0xC000FF00)]) 
+    smenu_allOn=FunctionItem("Set All ON", do_transaction, [stdscr,menu,spi,(0xC000FFFF)]) 
     smenu_write.append_item(smenu_togglelowDC)
+    smenu_write.append_item(smenu_allOff)
+    smenu_write.append_item(smenu_allReady)
+    smenu_write.append_item(smenu_allOn)
     menu_update=SubmenuItem("Modify Config", smenu_write)
-    
+
+    ssmenu_writesingle=CursesMenu("Select Channel")
+    ssmenu_writesingle.parent=smenu_write
+ 
+    ssmenu_ch=[]
+    for i in range(1,9,1):
+        ssmenu_ch.append(FunctionItem("CH"+str(i), bit_toggle, [stdscr,menu,spi,(0x101 << i-1)])) 
+        ssmenu_writesingle.append_item(ssmenu_ch[i-1])
+
+    smenu_writesingle=SubmenuItem("Toggle Single Channel On/Off", ssmenu_writesingle)
+
+    smenu_write.append_item(smenu_writesingle)
     menu.append_item(menu_getStatus)
     menu.append_item(menu_wordtwo)
     menu.append_item(menu_wordthree)
@@ -212,25 +229,17 @@ def crc_check(data):
 
 def add_crc(data):
     otherbits=0x00
-    print(hex(data),file=sys.stderr)
     otherbits=data & 0xFFFFFF
     topbits = data & 0xC0000000
     topbits = topbits >> 6
     otherbits = otherbits | topbits
-    #otherbits=otherbits+((data & 0xC0000000) >> 6)
-    print(hex(otherbits),file=sys.stderr)
 
     datacrc=mycrc(otherbits)
-    print("Got CRC "+hex(datacrc),file=sys.stderr)
     datacrc=datacrc << 24
     crcrange=0x3F000000
-    print(hex(data),file=sys.stderr)
     data = data | crcrange
-    print(hex(data),file=sys.stderr)
     data = data ^ crcrange
-    print(hex(data),file=sys.stderr)
     data = data | datacrc
-    print(hex(data),file=sys.stderr)
     return data
     
 def mycrc(otherbits,gen=0x67):

@@ -25,10 +25,10 @@ The currently available transactions are
 2) Get LVR WORD2 - Sends a read WORD2 command (prefix 01), displays the transaction, and saves the returned word (NOTE THAT NO DECODING FOR THIS CURRENTLY EXISTS)
 3) Get LVR WORD3 - Sends a read WORD3 command (prefix 10), displays the transaction, and saves the returned word (NOTE THAT NO DECODING FOR THIS CURRENTLY EXISTS)
 4) Modify Config
-  1) Toggle Low Duty Cycle - Reads the LVR current state, sends back a write command with the Low Duty Cycle bit flipped, and reads the LVR state again. (The final read is what is displayed and saved)
-  2) Set All OFF - Sends the LVR a write command with LSBs 0x0000 and then sends a read request to display and save the new state.
-  3) Set All READY - Sends the LVR a write command with LSBs 0xFF00 and then sends a read request to display and save the new state.
-  4) Set All ON - Sends the LVR a write command with LSBs 0xFFFF and then sends a read request to display and save the new state.
-  5) Toggle Single Channel On/Of - displays a submenu list of channels. After a channel is selected, the software reads the current LVR state, sends a write command with the READY and ON bits of the selected channel flipped, and reads the new state
+    1) Toggle Low Duty Cycle - Reads the LVR current state, sends back a write command with the Low Duty Cycle bit flipped, and reads the LVR state again. (The final read is what is displayed and saved)
+    2) Set All OFF - Sends the LVR a write command with LSBs 0x0000 and then sends a read request to display and save the new state.
+    3) Set All READY - Sends the LVR a write command with LSBs 0xFF00 and then sends a read request to display and save the new state.
+    4) Set All ON - Sends the LVR a write command with LSBs 0xFFFF and then sends a read request to display and save the new state.
+    5) Toggle Single Channel On/Of - displays a submenu list of channels. After a channel is selected, the software reads the current LVR state, sends a write command with the READY and ON bits of the selected channel flipped, and reads the new state
   NOTE if you are already in READY this may do funny things. Sorry.
 5) Decode last response - my attempt to list of human-readable information based on the last saved status from the LVR. It assumes a standard read/write (00 or 11 prefix) response, so using it after WORD2 or WORD3 commands will give gibberish

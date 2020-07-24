@@ -375,8 +375,8 @@ begin
 
 -- For fw 2.04 and later
 -- Assign internal signals to external ports for master or slave (channel 1)
-  OUT_CHANNEL_MREG(1) <= ch_out1(2) when MASTER_SLAVE_PAIR = '0' else ch_out0(2);
-  OUT_CHANNEL_IAUX(1) <= ch_out1(1) when MASTER_SLAVE_PAIR = '0' else ch_out0(1);
+  OUT_CHANNEL_MREG(1) <= ch_out1(2) when MASTER_SLAVE_PAIR = '0' else '1';
+  OUT_CHANNEL_IAUX(1) <= ch_out1(1) when MASTER_SLAVE_PAIR = '0' else '1';
   OUT_CHANNEL_VOSG(1) <= ch_out1(0) when MASTER_SLAVE_PAIR = '0' else '1';
 
 

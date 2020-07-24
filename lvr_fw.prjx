@@ -57,7 +57,7 @@ TIME="1586831425"
 SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
-STATE="ood"
+STATE="utd"
 TIME="1592789290"
 SIZE="4125696"
 ENDFILE
@@ -81,6 +81,11 @@ STATE="utd"
 TIME="1586831425"
 SIZE="1975"
 ENDFILE
+VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
+STATE="utd"
+TIME="1595627509"
+SIZE="2448"
+ENDFILE
 VALUE "<project>\hdl\crc6.vhd,hdl"
 STATE="utd"
 TIME="1592772044"
@@ -93,8 +98,8 @@ SIZE="6536"
 ENDFILE
 VALUE "<project>\hdl\MAIN_SEQUENCER_NEW.vhd,hdl"
 STATE="utd"
-TIME="1595627243"
-SIZE="20290"
+TIME="1595627336"
+SIZE="20276"
 ENDFILE
 VALUE "<project>\hdl\Slow_PulseEn_Gen.vhd,hdl"
 STATE="utd"
@@ -108,7 +113,7 @@ SIZE="12931"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1595625361"
+TIME="1595627351"
 SIZE="33185"
 ENDFILE
 VALUE "<project>\simulation\run.do,do"
@@ -153,9 +158,9 @@ TIME="1592781221"
 SIZE="8903"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
-STATE="ood"
-TIME="1595626208"
-SIZE="2017185"
+STATE="utd"
+TIME="1595627377"
+SIZE="2018172"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
@@ -163,8 +168,8 @@ TIME="1593112547"
 SIZE="219"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
-STATE="ood"
-TIME="1595626208"
+STATE="utd"
+TIME="1595627377"
 SIZE="612"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
@@ -183,7 +188,10 @@ VALUE "<project>\stimulus\tb_top_lvr_fw.vhd,tb_hdl"
 ENDLIST
 LIST ProjectState5.1
 LIST Impl1
+LiberoState=Post_Layout
 ideSTIMULUS=StateSuccess
+ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -192,6 +200,10 @@ ENDLIST
 Used_File_List
 ENDUsed_File_List
 ENDLIST
+ENDLIST
+LIST PinReports
+VALUE "<project>\designer\impl1\top_lvr_fw_report_pin_byname.txt,log"
+VALUE "<project>\designer\impl1\top_lvr_fw_report_pin_bynumber.txt,log"
 ENDLIST
 ENDLIST
 ENDLIST
@@ -304,7 +316,10 @@ ENDLIST
 LIST ProjectState5.1
 LIST "top_lvr_fw::work"
 LIST Impl1
+LiberoState=Post_Layout
 ideSTIMULUS=StateSuccess
+ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -328,7 +343,7 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Compile:top_lvr_fw_compile_log.rpt
+ReportsCurrentItem;Floorplan:top_lvr_fw_floorplan_log.rpt
 ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
@@ -350,9 +365,9 @@ LIST "top_lvr_fw::work","hdl\top_lvr_fw.vhd","FALSE","FALSE"
 SUBBLOCK "CCC_Glob_3xBuff::work","smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd","TRUE","FALSE"
 SUBBLOCK "crc6::work","hdl\crc6.vhd","FALSE","FALSE"
 SUBBLOCK "IIR_FILT::work","hdl\IIR_FILT.vhd","FALSE","FALSE"
+SUBBLOCK "main_sequencer_new::work","hdl\MAIN_SEQUENCER_NEW.vhd","FALSE","FALSE"
 SUBBLOCK "SLOW_PULSE_EN_GEN::work","hdl\Slow_PulseEn_Gen.vhd","FALSE","FALSE"
 SUBBLOCK "spi_slave::work","hdl\spi_slave.vhd","FALSE","FALSE"
-SUBBLOCK "main_sequencer_new::work","hdl\MAIN_SEQUENCER_NEW.vhd","FALSE","FALSE"
 ENDLIST
 LIST "TB_TOP_LVR_FW::work","stimulus\tb_top_lvr_fw.vhd","FALSE","TRUE"
 SUBBLOCK "top_lvr_fw::work","hdl\top_lvr_fw.vhd","FALSE","FALSE"

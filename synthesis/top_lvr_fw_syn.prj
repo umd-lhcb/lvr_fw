@@ -1,16 +1,16 @@
 #--  Synopsys, Inc.
 #--  Version L-2016.09M-SP1-5
 #--  Project file Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw_syn.prj
-#--  Written on Fri Jul 24 17:30:09 2020
+#--  Written on Fri Jul 24 17:49:38 2020
 
 
 #project files
 add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_2020/smartgen/CCC_Glob_3xBuff/CCC_Glob_3xBuff.vhd"
 add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_2020/hdl/crc6.vhd"
 add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_2020/hdl/IIR_FILT.vhd"
+add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_2020/hdl/MAIN_SEQUENCER_NEW.vhd"
 add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_2020/hdl/Slow_PulseEn_Gen.vhd"
 add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_2020/hdl/spi_slave.vhd"
-add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_2020/hdl/MAIN_SEQUENCER_NEW.vhd"
 add_file -vhdl -lib work "Z:/windows/lvr_fw/lvr_fw_2020/hdl/top_lvr_fw.vhd"
 add_file -fpga_constraint "top_lvr_fw_syn.fdc"
 

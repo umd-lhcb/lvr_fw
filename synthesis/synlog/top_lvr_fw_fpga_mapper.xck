@@ -1,5 +1,5 @@
 CKID0001:@|S:glob_buff.Core@|E:spi_slave_pm.half_clk_fcnt[5]@|F:@syn_sample_clock_path==CKID0001@|M:ClockId0001 
-CKID0002:@|S:spi_slave_pm.i_spi_rx_strb_maj@|E:spi_dutycycle_mode_tmr2@|F:@syn_sample_clock_path==CKID0002@|M:ClockId0002 
+CKID0002:@|S:spi_slave_pm.i_spi_rx_strb_maj@|E:channels_desired_on[1]@|F:@syn_sample_clock_path==CKID0002@|M:ClockId0002 
 CKID0003:@|S:spi_slave_pm.spi_sm_maj[2]@|E:spi_slave_pm.P_TX_32BIT_REG[10]@|F:@syn_sample_clock_path==CKID0003@|M:ClockId0003 
 CKID0004:@|S:CLK40M_OSC@|E:clk_5m_gl@|F:@syn_sample_clock_path==CKID0004@|M:ClockId0004 
 CKID0005:@|S:clk_5m_gl_keep@|E:dtycyc_cnt_tmr2[0]@|F:@syn_sample_clock_path==CKID0005@|M:ClockId0005 

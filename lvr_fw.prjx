@@ -58,13 +58,13 @@ SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="ood"
-TIME="1586831874"
-SIZE="1377280"
+TIME="1592789290"
+SIZE="4125696"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1586831943"
-SIZE="1034"
+TIME="1593112550"
+SIZE="1031"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
 STATE="ood"
@@ -73,53 +73,53 @@ SIZE="129700"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
 STATE="utd"
-TIME="1586831830"
-SIZE="10311"
+TIME="1595626154"
+SIZE="2842"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
 STATE="utd"
 TIME="1586831425"
 SIZE="1975"
 ENDFILE
-VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
+VALUE "<project>\hdl\crc6.vhd,hdl"
 STATE="utd"
-TIME="1586987689"
-SIZE="1207"
+TIME="1592772044"
+SIZE="1702"
 ENDFILE
 VALUE "<project>\hdl\IIR_FILT.vhd,hdl"
 STATE="utd"
-TIME="1586831425"
-SIZE="7360"
+TIME="1592782034"
+SIZE="6536"
 ENDFILE
 VALUE "<project>\hdl\MAIN_SEQUENCER_NEW.vhd,hdl"
 STATE="utd"
-TIME="1586831425"
-SIZE="20138"
+TIME="1595627243"
+SIZE="20290"
 ENDFILE
 VALUE "<project>\hdl\Slow_PulseEn_Gen.vhd,hdl"
 STATE="utd"
-TIME="1586831425"
-SIZE="4675"
+TIME="1592782060"
+SIZE="4165"
 ENDFILE
 VALUE "<project>\hdl\spi_slave.vhd,hdl"
 STATE="utd"
-TIME="1586984776"
-SIZE="11221"
+TIME="1592781979"
+SIZE="12931"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1586831732"
-SIZE="45510"
+TIME="1595625361"
+SIZE="33185"
 ENDFILE
 VALUE "<project>\simulation\run.do,do"
 STATE="utd"
-TIME="1587005910"
-SIZE="1025"
+TIME="1593111594"
+SIZE="1093"
 ENDFILE
 VALUE "<project>\simulation\wave.do,do"
 STATE="utd"
-TIME="1586831425"
-SIZE="17994"
+TIME="1592775956"
+SIZE="17661"
 ENDFILE
 VALUE "<project>\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.cxf,actgen_cxf"
 STATE="utd"
@@ -149,28 +149,28 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\stimulus\tb_top_lvr_fw.vhd,tb_hdl"
 STATE="utd"
-TIME="1586984656"
-SIZE="9980"
+TIME="1592781221"
+SIZE="8903"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="ood"
-TIME="1586831817"
-SIZE="739008"
+TIME="1595626208"
+SIZE="2017185"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
-TIME="1586831817"
+TIME="1593112547"
 SIZE="219"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="ood"
-TIME="1586831816"
-SIZE="605"
+TIME="1595626208"
+SIZE="612"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
 STATE="utd"
-TIME="1586831819"
-SIZE="2171"
+TIME="1593112548"
+SIZE="2242"
 ENDFILE
 ENDLIST
 LIST UsedFile
@@ -268,8 +268,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM=""
-BATCH=0
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -327,17 +327,20 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-StartPage;StartPage;0
-ACTIVEVIEW;StartPage
+Reports;Reports;0
+ReportsCurrentItem;Compile:top_lvr_fw_compile_log.rpt
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "CCC_Glob_3xBuff::work","smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd","TRUE","FALSE"
+ENDLIST
+LIST "crc6::work","hdl\crc6.vhd","FALSE","FALSE"
 ENDLIST
 LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"
 ENDLIST
 LIST "IIR_FILT::work","hdl\IIR_FILT.vhd","FALSE","FALSE"
 ENDLIST
-LIST "MAIN_SEQUENCER_NEW::work","hdl\MAIN_SEQUENCER_NEW.vhd","FALSE","FALSE"
+LIST "main_sequencer_new::work","hdl\MAIN_SEQUENCER_NEW.vhd","FALSE","FALSE"
 ENDLIST
 LIST "SLOW_PULSE_EN_GEN::work","hdl\Slow_PulseEn_Gen.vhd","FALSE","FALSE"
 ENDLIST
@@ -345,10 +348,11 @@ LIST "spi_slave::work","hdl\spi_slave.vhd","FALSE","FALSE"
 ENDLIST
 LIST "top_lvr_fw::work","hdl\top_lvr_fw.vhd","FALSE","FALSE"
 SUBBLOCK "CCC_Glob_3xBuff::work","smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd","TRUE","FALSE"
+SUBBLOCK "crc6::work","hdl\crc6.vhd","FALSE","FALSE"
 SUBBLOCK "IIR_FILT::work","hdl\IIR_FILT.vhd","FALSE","FALSE"
-SUBBLOCK "MAIN_SEQUENCER_NEW::work","hdl\MAIN_SEQUENCER_NEW.vhd","FALSE","FALSE"
 SUBBLOCK "SLOW_PULSE_EN_GEN::work","hdl\Slow_PulseEn_Gen.vhd","FALSE","FALSE"
 SUBBLOCK "spi_slave::work","hdl\spi_slave.vhd","FALSE","FALSE"
+SUBBLOCK "main_sequencer_new::work","hdl\MAIN_SEQUENCER_NEW.vhd","FALSE","FALSE"
 ENDLIST
 LIST "TB_TOP_LVR_FW::work","stimulus\tb_top_lvr_fw.vhd","FALSE","TRUE"
 SUBBLOCK "top_lvr_fw::work","hdl\top_lvr_fw.vhd","FALSE","FALSE"

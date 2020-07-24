@@ -250,7 +250,7 @@ attribute syn_radhardlevel of rtl : architecture is "tmr";
   signal tx_crc, rx_crc, spi_rx_crc     : std_logic_vector(5 downto 0);
   signal spi_rx_command, spi_rx_command_reg                 : std_logic_vector(1 downto 0):="00";
 
-  constant fw_version : std_logic_vector(11 downto 0) := x"203";
+  constant fw_version : std_logic_vector(11 downto 0) := x"E00";
 -- debug
   signal iir_ovt_filt : std_logic_vector(8 downto 1);
 
@@ -355,7 +355,7 @@ begin
     if master_rst_b = '0' then
       channels_desired_ready <= (others => not SW5_DEFAULT_TURNON_BAR);
       channels_desired_on    <= (others => not SW5_DEFAULT_TURNON_BAR);
-      spi_dutycycle_mode     <= not SW5_DUTYCYCLE_MODE_BAR;
+      spi_dutycycle_mode     <= '0';
       spi_rx_command_reg     <= "00";
       spi_timeout            <= '0';
       bad_crc             <= '0';

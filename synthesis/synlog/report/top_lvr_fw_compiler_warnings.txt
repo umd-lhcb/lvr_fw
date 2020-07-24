@@ -1,13 +1,14 @@
+@W: CD434 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":353:95:353:116|Signal sw5_dutycycle_mode_bar in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:4:73:5|All reachable assignments to SUM_IN_A(0) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:4:73:5|All reachable assignments to SUM_IN_A(1) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:4:73:5|All reachable assignments to SUM_IN_A(2) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CL111 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd":73:4:73:5|All reachable assignments to SUM_IN_A(3) are '0'; removing register. To preserve a constant register, use the syn_preserve attribute.
 @W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":154:19:154:25|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
-@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":158:22:158:28|Referenced variable ch_out0 is not in sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":263:22:263:33|Referenced variable seq_stepval1 is not in sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":161:22:161:33|Referenced variable seq_stepval0 is not in sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":166:23:166:33|Referenced variable del_cnt_val is not in sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":260:22:260:28|Referenced variable ch_out1 is not in sensitivity list.
+@W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":158:22:158:28|Referenced variable ch_out0 is not in sensitivity list.
 @W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd":120:4:120:5|Pruning unused register seq_stepval1_2(3 downto 0). Make sure that there are no unused intermediate registers.
 @W: CG296 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":106:17:106:23|Incomplete sensitivity list; assuming completeness. Make sure all referenced variables in message CG290 are included in the sensitivity list.
 @W: CG290 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":112:25:112:35|Referenced variable spi_tx_word is not in sensitivity list.

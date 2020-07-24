@@ -29,20 +29,20 @@
 @P:  top_lvr_fw|CLK40M_OSC - Estimated Period : 5.978
 @P:  top_lvr_fw|CLK40M_OSC - Requested Period : 20.000
 @P:  top_lvr_fw|CLK40M_OSC - Slack : 14.022
-@P:  Total Area : 4194.0
+@P:  Total Area : 4178.0
 @P:  Total Area : 87.0
 @P:  Total Area : 146.0
-@P:  Total Area : 87.0
-@P:  Total Area : 87.0
-@P:  Total Area : 91.0
 @P:  Total Area : 89.0
-@P:  Total Area : 560.0
-@P:  Total Area : 559.0
-@P:  Total Area : 561.0
-@P:  Total Area : 561.0
+@P:  Total Area : 89.0
+@P:  Total Area : 89.0
+@P:  Total Area : 89.0
+@P:  Total Area : 556.0
+@P:  Total Area : 558.0
+@P:  Total Area : 557.0
+@P:  Total Area : 557.0
 @P:  Total Area : 7.0
-@P:  Total Area : 37.0
-@P:  Total Area : 1093.0
+@P:  Total Area : 78.0
+@P:  Total Area : 1047.0
 @P:  Total Area : 1.0
-@P:  Total Area : 4194.0
-@P:  CPU Time : 0h:00m:06s
+@P:  Total Area : 4178.0
+@P:  CPU Time : 0h:00m:04s

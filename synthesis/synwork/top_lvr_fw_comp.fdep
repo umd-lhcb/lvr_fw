@@ -17,16 +17,16 @@
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd2008\\misc.vhd":1509043928
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhdl_sim\\synplify.vhd":1509043928
 #CUR:"C:\\Microsemi\\Libero_SoC_v11.9\\SynplifyPro\\lib\\vhd\\synattr.vhd":1509041926
-#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\MAIN_SEQUENCER_NEW.vhd":1592781997
 #CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\Slow_PulseEn_Gen.vhd":1592782060
 #CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\spi_slave.vhd":1592781979
-#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\top_lvr_fw.vhd":1592788687
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\MAIN_SEQUENCER_NEW.vhd":1595625344
+#CUR:"Z:\\windows\\lvr_fw\\lvr_fw_2020\\hdl\\top_lvr_fw.vhd":1595625361
 0			"Z:\windows\lvr_fw\lvr_fw_2020\smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd" vhdl
 1			"Z:\windows\lvr_fw\lvr_fw_2020\hdl\crc6.vhd" vhdl
 2			"Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd" vhdl
-3			"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd" vhdl
-4			"Z:\windows\lvr_fw\lvr_fw_2020\hdl\Slow_PulseEn_Gen.vhd" vhdl
-5			"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd" vhdl
+3			"Z:\windows\lvr_fw\lvr_fw_2020\hdl\Slow_PulseEn_Gen.vhd" vhdl
+4			"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd" vhdl
+5			"Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd" vhdl
 6			"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd" vhdl
 #Dependency Lists(Uses List)
 0 -1
@@ -35,7 +35,7 @@
 3 -1
 4 -1
 5 -1
-6 4 2 3 1 5 0
+6 3 2 5 1 4 0
 #Dependency Lists(Users Of)
 0 6
 1 6
@@ -47,12 +47,12 @@
 #Design Unit to File Association
 module work top_lvr_fw 6
 arch work top_lvr_fw rtl 6
-module work spi_slave 5
-arch work spi_slave rtl 5
-module work slow_pulse_en_gen 4
-arch work slow_pulse_en_gen rtl 4
-module work main_sequencer_new 3
-arch work main_sequencer_new rtl 3
+module work main_sequencer_new 5
+arch work main_sequencer_new rtl 5
+module work spi_slave 4
+arch work spi_slave rtl 4
+module work slow_pulse_en_gen 3
+arch work slow_pulse_en_gen rtl 3
 module work iir_filt 2
 arch work iir_filt rtl 2
 module work crc6 1

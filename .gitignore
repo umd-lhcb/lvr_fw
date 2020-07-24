@@ -12,3 +12,8 @@ simulation/
 *~
 *#
 *.tmp
+
+### Compilation ###
+*.d
+*.so
+*.pcm

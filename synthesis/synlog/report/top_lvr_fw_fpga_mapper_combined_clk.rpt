@@ -20,7 +20,7 @@ Clock Tree ID     Driving Element     Drive Element Type             Fanout     
 Clock Tree ID     Driving Element                    Drive Element Type     Fanout     Sample Instance                     Explanation                                                             
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 @K:CKID0001       glob_buff.Core                     DYNCCC                 231        spi_slave_pm.half_clk_fcnt[5]       No generated or derived clock directive on output of sequential instance
-@K:CKID0002       spi_slave_pm.i_spi_rx_strb_maj     MAJ3                   63         spi_dutycycle_mode_tmr2             No clocks found on inputs                                               
+@K:CKID0002       spi_slave_pm.i_spi_rx_strb_maj     MAJ3                   63         channels_desired_on[1]              No clocks found on inputs                                               
 @K:CKID0003       spi_slave_pm.spi_sm_maj[2]         MAJ3                   30         spi_slave_pm.P_TX_32BIT_REG[10]     No clocks found on inputs                                               
 ===================================================================================================================================================================================================
 

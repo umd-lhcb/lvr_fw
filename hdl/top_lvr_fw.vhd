@@ -204,7 +204,7 @@ attribute syn_radhardlevel of rtl : architecture is "tmr";
   signal gb_spi_rst_b    : std_logic;   -- global combined internal fpga reset
 
   signal master_rst_b   : std_logic;    -- IN_POWERON_RST_B sync'd to the 40 mhz clock
-  signal del0_dev_rst_b : std_logic;    -- sync ff for for generating the master_rst_b
+  signal del0_dev_rst_b : std_logic;    -- sync ff for generating the master_rst_b
 
   signal clk_5m_gl, n_clk_5m_gl : std_logic;             -- generated 5 mhz clock--master clock!!!!
   signal refcnt, n_refcnt       : integer range 0 to 3;  -- counter used to generate the clk_5m_gl
@@ -250,7 +250,7 @@ attribute syn_radhardlevel of rtl : architecture is "tmr";
   signal tx_crc, rx_crc, spi_rx_crc     : std_logic_vector(5 downto 0);
   signal spi_rx_command, spi_rx_command_reg                 : std_logic_vector(1 downto 0):="00";
 
-  constant fw_version : std_logic_vector(11 downto 0) := x"204";
+  constant fw_version : std_logic_vector(11 downto 0) := x"205";
 -- debug
   signal iir_ovt_filt : std_logic_vector(8 downto 1);
 
@@ -629,10 +629,12 @@ begin
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
--- assign internal signals top external ports
-  OUT_CHANNEL_MREG <= ch_mreg_en;       -- channel enable signal: main regulator ic, active high
-  OUT_CHANNEL_IAUX <= ch_iaux_en;       -- channel enable signal: iaux regulator ic, active high
-  OUT_CHANNEL_VOSG <= ch_vosg_en;       -- channel enable signal: vos_gen regulator ic, active high
+-- assign internal signals top external ports, ANDing with UVL to avoid problems with slaves on boot up
+  gen_outputs : for index in 1 to 4 generate
+    OUT_CHANNEL_MREG(index*2 downto index*2-1) <= ch_mreg_en(index*2 downto index*2-1) and channel_involtage_ok(index) & channel_involtage_ok(index);
+    OUT_CHANNEL_IAUX(index*2 downto index*2-1) <= ch_iaux_en(index*2 downto index*2-1) and channel_involtage_ok(index) & channel_involtage_ok(index);
+    OUT_CHANNEL_VOSG(index*2 downto index*2-1) <= ch_vosg_en(index*2 downto index*2-1) and channel_involtage_ok(index) & channel_involtage_ok(index);
+  end generate gen_outputs;
 
 -- led lights when signal is low
   PWR_OK_LED <= or_reduce(channel_involtage_ok);  -- at least one fused voltage is above v min

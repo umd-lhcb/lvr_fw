@@ -18,24 +18,24 @@ Opened an existing Libero design Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\to
 The Execute Script command succeeded ( 00:00:00 )
 Warning: You changed the output filename from
          'Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw' to
-         'Z:\windows\lvr_fw\lvr_fw_2020\fw_files\v2-04_lvr_fw'. This may impact Libero. Do you
+         'Z:\windows\lvr_fw\lvr_fw_2020\fw_files\v2-05_lvr_fw'. This may impact Libero. Do you
          wish to continue? [YES]
 
-The Export-map command succeeded ( 00:00:10 )
-Wrote to the file: Z:\windows\lvr_fw\lvr_fw_2020\fw_files\v2-04_lvr_fw.stp
-CHECKSUM: 7D82
+The Export-map command succeeded ( 00:00:23 )
+Wrote to the file: Z:\windows\lvr_fw\lvr_fw_2020\fw_files\v2-05_lvr_fw.stp
+CHECKSUM: 1231
 
-The Generate programming file command succeeded ( 00:00:12 )
+The Generate programming file command succeeded ( 00:00:28 )
 Design saved to file Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw.adb.
 Wrote pin report to file:
 Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw_report_pin_byname.txt
 
-The Report command succeeded ( 00:00:00 )
+The Report command succeeded ( 00:00:01 )
 Wrote pin report to file:
 Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw_report_pin_bynumber.txt
 
 The Report command succeeded ( 00:00:01 )
 
-The Execute Script command succeeded ( 00:00:01 )
+The Execute Script command succeeded ( 00:00:02 )
 Design closed.
 

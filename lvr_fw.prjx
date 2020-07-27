@@ -83,7 +83,7 @@ SIZE="1975"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1595627509"
+TIME="1595881655"
 SIZE="2448"
 ENDFILE
 VALUE "<project>\hdl\crc6.vhd,hdl"
@@ -113,8 +113,8 @@ SIZE="12931"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1595627351"
-SIZE="33185"
+TIME="1595880335"
+SIZE="33470"
 ENDFILE
 VALUE "<project>\simulation\run.do,do"
 STATE="utd"
@@ -159,8 +159,8 @@ SIZE="8903"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
-TIME="1595627377"
-SIZE="2018172"
+TIME="1595880998"
+SIZE="2008304"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
@@ -169,7 +169,7 @@ SIZE="219"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1595627377"
+TIME="1595880993"
 SIZE="612"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
@@ -343,7 +343,7 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Floorplan:top_lvr_fw_floorplan_log.rpt
+ReportsCurrentItem;Place and Route:top_lvr_fw_placeroute_log.rpt
 ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList

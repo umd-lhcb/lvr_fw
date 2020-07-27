@@ -3,54 +3,56 @@ Report for cell top_lvr_fw.rtl
   Core Cell usage:
               cell count     area count*area
               AND2   178      1.0      178.0
-               AO1   196      1.0      196.0
+               AO1   193      1.0      193.0
               AO13     6      1.0        6.0
-              AO18    25      1.0       25.0
+              AO18    26      1.0       26.0
               AO1A    26      1.0       26.0
+              AO1B     1      1.0        1.0
+              AO1D     1      1.0        1.0
              AOI1B     9      1.0        9.0
                AX1     5      1.0        5.0
+              AX1A     2      1.0        2.0
               AX1C     7      1.0        7.0
-              AXO5     1      1.0        1.0
+              AXO6     1      1.0        1.0
              AXOI7     1      1.0        1.0
             CLKINT     3      0.0        0.0
                GND    15      0.0        0.0
                INV     1      1.0        1.0
               MAJ3   547      1.0      547.0
-               MX2   150      1.0      150.0
-              MX2A    39      1.0       39.0
+               MX2   153      1.0      153.0
+              MX2A    34      1.0       34.0
               MX2B    19      1.0       19.0
               MX2C    16      1.0       16.0
-              NOR2   125      1.0      125.0
-             NOR2A   109      1.0      109.0
-             NOR2B   129      1.0      129.0
-              NOR3    40      1.0       40.0
-             NOR3A    25      1.0       25.0
+              NOR2   120      1.0      120.0
+             NOR2A    98      1.0       98.0
+             NOR2B   124      1.0      124.0
+              NOR3    41      1.0       41.0
+             NOR3A    28      1.0       28.0
              NOR3B    33      1.0       33.0
-             NOR3C    87      1.0       87.0
-               OA1     4      1.0        4.0
-              OA1A    45      1.0       45.0
-              OA1B     7      1.0        7.0
-              OA1C     6      1.0        6.0
+             NOR3C    96      1.0       96.0
+               OA1     3      1.0        3.0
+              OA1A    44      1.0       44.0
+              OA1B     6      1.0        6.0
+              OA1C     8      1.0        8.0
               OAI1     5      1.0        5.0
                OR2    18      1.0       18.0
-              OR2A    17      1.0       17.0
+              OR2A    18      1.0       18.0
               OR2B     5      1.0        5.0
                OR3   122      1.0      122.0
-              OR3A     6      1.0        6.0
-              OR3B     7      1.0        7.0
+              OR3A     9      1.0        9.0
+              OR3B     8      1.0        8.0
             PLLINT     2      0.0        0.0
                VCC    15      0.0        0.0
-               XA1     6      1.0        6.0
-              XA1A     6      1.0        6.0
-              XA1B     9      1.0        9.0
-              XA1C     6      1.0        6.0
+              XA1A     5      1.0        5.0
+              XA1B    11      1.0       11.0
+              XA1C     7      1.0        7.0
               XAI1     1      1.0        1.0
-             XAI1A     3      1.0        3.0
+             XAI1A     2      1.0        2.0
              XNOR3    30      1.0       30.0
                XO1    10      1.0       10.0
               XO1A     1      1.0        1.0
-              XOR2   407      1.0      407.0
-              XOR3    47      1.0       47.0
+              XOR2   419      1.0      419.0
+              XOR3    42      1.0       42.0
 
 
             DFN0C0    15      1.0       15.0
@@ -64,7 +66,7 @@ Report for cell top_lvr_fw.rtl
               DLN1    30      1.0       30.0
             DYNCCC     1      0.0        0.0
                    -----          ----------
-             TOTAL  4228              4192.0
+             TOTAL  4226              4190.0
 
 
   IO Cell usage:
@@ -75,7 +77,7 @@ Report for cell top_lvr_fw.rtl
              TOTAL    61
 
 
-Core Cells         : 4192 of 6144 (68%)
+Core Cells         : 4190 of 6144 (68%)
 IO Cells           : 61
 
   RAM/ROM Usage Summary

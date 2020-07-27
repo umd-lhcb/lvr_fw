@@ -250,7 +250,7 @@ attribute syn_radhardlevel of rtl : architecture is "tmr";
   signal tx_crc, rx_crc, spi_rx_crc     : std_logic_vector(5 downto 0);
   signal spi_rx_command, spi_rx_command_reg                 : std_logic_vector(1 downto 0):="00";
 
-  constant fw_version : std_logic_vector(11 downto 0) := x"205";
+  constant fw_version : std_logic_vector(11 downto 0) := x"206";
 -- debug
   signal iir_ovt_filt : std_logic_vector(8 downto 1);
 
@@ -633,7 +633,7 @@ begin
   gen_outputs : for index in 1 to 4 generate
     OUT_CHANNEL_MREG(index*2 downto index*2-1) <= ch_mreg_en(index*2 downto index*2-1) and channel_involtage_ok(index) & channel_involtage_ok(index);
     OUT_CHANNEL_IAUX(index*2 downto index*2-1) <= ch_iaux_en(index*2 downto index*2-1) and channel_involtage_ok(index) & channel_involtage_ok(index);
-    OUT_CHANNEL_VOSG(index*2 downto index*2-1) <= ch_vosg_en(index*2 downto index*2-1) and channel_involtage_ok(index) & channel_involtage_ok(index);
+    OUT_CHANNEL_VOSG(index*2 downto index*2-1) <= ch_vosg_en(index*2 downto index*2-1);
   end generate gen_outputs;
 
 -- led lights when signal is low

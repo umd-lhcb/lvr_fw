@@ -12,11 +12,11 @@ Opened an existing Libero design top_lvr_fw.adb.
 'IDE_DESIGNERVIEW_ROOTDIR' set to 'Z:\windows\lvr_fw\lvr_fw_2020\designer'
 'IDE_DESIGNERVIEW_LASTREV' set to '1'
 
- Netlist Reading Time = 1.0 seconds
+ Netlist Reading Time = 2.0 seconds
 Imported the file:
    Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw.edn
 
-The Import command succeeded ( 00:00:07 )
+The Import command succeeded ( 00:00:11 )
 =====================================================================
 Parameters used to run compile:
 ===============================
@@ -65,9 +65,9 @@ Optimized macros:
   - Buffers:                2
   - Inverters:              0
   - Tieoff:                 0
-  - Logic combining:        123
+  - Logic combining:        134
 
-    Total macros optimized  125
+    Total macros optimized  136
 Warning: CMP800: Global Output GLA of PLL instance 'glob_buff/Core' is floating. This will waste
          one global resource.
 
@@ -83,7 +83,7 @@ There were 0 error(s) and 0 warning(s).
 Compile report:
 ===============
 
-    CORE                       Used:   4499  Total:   6144   (73.23%)
+    CORE                       Used:   4493  Total:   6144   (73.13%)
     IO (W/ clocks)             Used:     61  Total:     68   (89.71%)
     GLOBAL (Chip+Quadrant)     Used:      6  Total:     18   (33.33%)
     PLL                        Used:      1  Total:      1   (100.00%)
@@ -107,7 +107,7 @@ Core Information:
 
     Type    | Instances    | Core tiles
     --------|--------------|-----------
-    COMB    | 2417         | 2417
+    COMB    | 2411         | 2411
     SEQ     | 1650         | 2082
 
 I/O Function:
@@ -162,65 +162,63 @@ High fanout nets in the post compile netlist:
     --------------------------
     111     INT_NET       Net   : i_spi_rx_strb
                           Driver: spi_slave_pm/i_spi_rx_strb_maj
-    48      INT_NET       Net   : m39
-                          Driver: spi_slave_pm/m39
-    48      INT_NET       Net   : m38_0
-                          Driver: spi_slave_pm/m38_0
+    48      INT_NET       Net   : un1_master_rst_b_1
+                          Driver: gen_channel_seqs.4.channel_seq/un1_master_rst_b_1
+    48      INT_NET       Net   : un1_sw5_default_turnon_bar_1
+                          Driver: gen_channel_seqs.4.channel_seq/un1_sw5_default_turnon_bar_1
     48      INT_NET       Net   : un1_sw5_default_turnon_bar_1_0
-                          Driver: spi_slave_pm/m38_0_0
+                          Driver: gen_channel_seqs.4.channel_seq/un1_sw5_default_turnon_bar_1_0
     48      INT_NET       Net   : un1_master_rst_b_1_0
-                          Driver: spi_slave_pm/m39_0
+                          Driver: gen_channel_seqs.4.channel_seq/un1_master_rst_b_1_0
     36      CLK_NET       Net   : spi_slave_pm/spi_sm[2]
                           Driver: spi_slave_pm/spi_sm_maj[2]
     24      INT_NET       Net   : tx_prompt/un9_cnt_val
                           Driver: tx_prompt/CNT_VAL_maj_RNIBMM35_0[20]
-    23      INT_NET       Net   : N_47
-                          Driver: spi_slave_pm/m13
     22      INT_NET       Net   : gen_channel_seqs.2.channel_seq/N_276_0
-                          Driver:
-gen_channel_seqs.2.channel_seq/sequencer_state1_maj_RNI3K5U_0[0]
+                          Driver: gen_channel_seqs.2.channel_seq/sequencer_state1_maj_RNI3K5U[0]
     22      INT_NET       Net   : gen_channel_seqs.2.channel_seq/N_380_0
+                          Driver: gen_channel_seqs.2.channel_seq/sequencer_state0_maj_RNI0BGQ[0]
+    22      INT_NET       Net   : gen_channel_seqs.3.channel_seq/N_276_0
                           Driver:
-gen_channel_seqs.2.channel_seq/sequencer_state0_maj_RNI0BGQ_0[0]
+gen_channel_seqs.3.channel_seq/sequencer_state1_maj_RNI9GRV_0[0]
 
 Nets that are candidates for clock assignment and the resulting fanout:
     Fanout  Type          Name
     --------------------------
     111     INT_NET       Net   : i_spi_rx_strb
                           Driver: spi_slave_pm/i_spi_rx_strb_maj
-    48      INT_NET       Net   : m39
-                          Driver: spi_slave_pm/m39
-    48      INT_NET       Net   : m38_0
-                          Driver: spi_slave_pm/m38_0
+    48      INT_NET       Net   : un1_master_rst_b_1
+                          Driver: gen_channel_seqs.4.channel_seq/un1_master_rst_b_1
+    48      INT_NET       Net   : un1_sw5_default_turnon_bar_1
+                          Driver: gen_channel_seqs.4.channel_seq/un1_sw5_default_turnon_bar_1
     48      INT_NET       Net   : un1_sw5_default_turnon_bar_1_0
-                          Driver: spi_slave_pm/m38_0_0
+                          Driver: gen_channel_seqs.4.channel_seq/un1_sw5_default_turnon_bar_1_0
     48      INT_NET       Net   : un1_master_rst_b_1_0
-                          Driver: spi_slave_pm/m39_0
+                          Driver: gen_channel_seqs.4.channel_seq/un1_master_rst_b_1_0
     36      CLK_NET       Net   : spi_slave_pm/spi_sm[2]
                           Driver: spi_slave_pm/spi_sm_maj[2]
     24      INT_NET       Net   : tx_prompt/un9_cnt_val
                           Driver: tx_prompt/CNT_VAL_maj_RNIBMM35_0[20]
-    23      INT_NET       Net   : N_47
-                          Driver: spi_slave_pm/m13
     22      INT_NET       Net   : gen_channel_seqs.2.channel_seq/N_276_0
-                          Driver:
-gen_channel_seqs.2.channel_seq/sequencer_state1_maj_RNI3K5U_0[0]
+                          Driver: gen_channel_seqs.2.channel_seq/sequencer_state1_maj_RNI3K5U[0]
     22      INT_NET       Net   : gen_channel_seqs.2.channel_seq/N_380_0
+                          Driver: gen_channel_seqs.2.channel_seq/sequencer_state0_maj_RNI0BGQ[0]
+    22      INT_NET       Net   : gen_channel_seqs.3.channel_seq/N_276_0
                           Driver:
-gen_channel_seqs.2.channel_seq/sequencer_state0_maj_RNI0BGQ_0[0]
+gen_channel_seqs.3.channel_seq/sequencer_state1_maj_RNI9GRV_0[0]
 
-The Compile command succeeded ( 00:00:06 )
+The Compile command succeeded ( 00:00:15 )
 Wrote status report to file: top_lvr_fw_compile_report.txt
 
 The Report command succeeded ( 00:00:00 )
 Wrote pin report to file: top_lvr_fw_report_pin_byname.txt
 
-The Report command succeeded ( 00:00:02 )
+The Report command succeeded ( 00:00:03 )
 Wrote pin report to file: top_lvr_fw_report_pin_bynumber.txt
 
-The Report command succeeded ( 00:00:00 )
+The Report command succeeded ( 00:00:01 )
 Design saved to file Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw.adb.
 
-The Execute Script command succeeded ( 00:00:20 )
+The Execute Script command succeeded ( 00:00:39 )
 Design closed.
 

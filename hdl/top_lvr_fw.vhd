@@ -250,7 +250,7 @@ attribute syn_radhardlevel of rtl : architecture is "tmr";
   signal tx_crc, rx_crc, spi_rx_crc     : std_logic_vector(5 downto 0);
   signal spi_rx_command, spi_rx_command_reg                 : std_logic_vector(1 downto 0):="00";
 
-  constant fw_version : std_logic_vector(11 downto 0) := x"206";
+  constant fw_version : std_logic_vector(11 downto 0) := x"e01";
 -- debug
   signal iir_ovt_filt : std_logic_vector(8 downto 1);
 

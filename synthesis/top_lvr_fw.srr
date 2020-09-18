@@ -3,7 +3,7 @@
 #OS: Windows 8 6.2
 #Hostname: DESKTOP-PLJUDQE
 
-# Mon Jul 27 17:00:24 2020
+# Fri Sep 18 08:51:26 2020
 
 #Implementation: synthesis
 
@@ -17,7 +17,18 @@ Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys softwa
 
 @N: CD720 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
 @N:"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":33:7:33:16|Top entity is set to top_lvr_fw.
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\crc6.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\misc.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhdl_sim\synplify.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd\synattr.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\Slow_PulseEn_Gen.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd changed - recompiling
 VHDL syntax check successful!
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":33:7:33:16|Synthesizing work.top_lvr_fw.rtl.
 @W: CD434 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":353:95:353:116|Signal sw5_dutycycle_mode_bar in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
@@ -108,33 +119,12 @@ State machine has 3 reachable states with original encodings of:
    01
    10
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 79MB peak: 80MB)
-
-Process took 0h:00m:03s realtime, 0h:00m:02s cputime
-
-Process completed successfully.
-# Mon Jul 27 17:00:28 2020
-
-###########################################################]
-Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
-@N|Running in 64-bit mode
-
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 68MB peak: 69MB)
-
-Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-
-Process completed successfully.
-# Mon Jul 27 17:00:29 2020
-
-###########################################################]
-@END
-
-At c_hdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 3MB peak: 4MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 79MB peak: 80MB)
 
 Process took 0h:00m:04s realtime, 0h:00m:03s cputime
 
 Process completed successfully.
-# Mon Jul 27 17:00:29 2020
+# Fri Sep 18 08:51:31 2020
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -145,18 +135,38 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 27 17:00:31 2020
+# Fri Sep 18 08:51:32 2020
 
 ###########################################################]
-Pre-mapping Report
+@END
 
-# Mon Jul 27 17:00:33 2020
+At c_hdl Exit (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 3MB peak: 4MB)
+
+Process took 0h:00m:05s realtime, 0h:00m:04s cputime
+
+Process completed successfully.
+# Fri Sep 18 08:51:32 2020
+
+###########################################################]
+Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
+@N|Running in 64-bit mode
+File Z:\windows\lvr_fw\lvr_fw_2020\synthesis\synwork\top_lvr_fw_comp.srs changed - recompiling
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 68MB peak: 69MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri Sep 18 08:51:36 2020
+
+###########################################################]
+# Fri Sep 18 08:51:37 2020
 
 Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
 Product Version L-2016.09M-SP1-5
 
-Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 99MB)
+Mapper Startup Complete (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 98MB peak: 99MB)
 
 Reading constraint file: Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw_syn.fdc
 @L: Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw_scck.rpt 
@@ -164,17 +174,17 @@ Printing clock  summary report in "Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_l
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 
-Design Input Complete (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 101MB peak: 103MB)
+Design Input Complete (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:01s; Memory used current: 101MB peak: 103MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 101MB peak: 103MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:01s; Memory used current: 101MB peak: 103MB)
 
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":120:4:120:5|Removing sequential instance seq_stepval0[3:0] (in view: work.main_sequencer_new_3(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":120:4:120:5|Removing sequential instance seq_stepval0[3:0] (in view: work.main_sequencer_new_2(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":120:4:120:5|Removing sequential instance seq_stepval0[3:0] (in view: work.main_sequencer_new_1(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 @N: BN362 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\main_sequencer_new.vhd":120:4:120:5|Removing sequential instance seq_stepval0[3:0] (in view: work.main_sequencer_new_0(rtl)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
 
-Finished netlist restructuring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 109MB peak: 110MB)
+Finished netlist restructuring (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:02s; Memory used current: 109MB peak: 110MB)
 
 
 
@@ -200,7 +210,7 @@ top_lvr_fw|CLK40M_OSC                      50.0 MHz      20.000        inferred 
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 109MB peak: 110MB)
+Starting constraint checker (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:02s; Memory used current: 109MB peak: 110MB)
 
 Encoding state machine spi_sm[0:5] (in view: work.spi_slave(rtl))
 original code -> new code
@@ -303,19 +313,17 @@ None
 None
 @W: MF511 |Found issues with constraints. Please check constraint checker report "Z:\windows\lvr_fw\lvr_fw_2020\synthesis\top_lvr_fw_cck.rpt" .
 
-Finished constraint checker (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 111MB peak: 112MB)
+Finished constraint checker (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:03s; Memory used current: 111MB peak: 112MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 27MB peak: 112MB)
+At Mapper Exit (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:03s; Memory used current: 27MB peak: 112MB)
 
-Process took 0h:00m:04s realtime, 0h:00m:04s cputime
-# Mon Jul 27 17:00:37 2020
+Process took 0h:00m:05s realtime, 0h:00m:03s cputime
+# Fri Sep 18 08:51:42 2020
 
 ###########################################################]
-Map & Optimize Report
-
-# Mon Jul 27 17:00:39 2020
+# Fri Sep 18 08:51:44 2020
 
 Synopsys Microsemi Technology Mapper, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -380,70 +388,70 @@ original code -> new code
 @N: MF176 |Default generator successful 
 @N: MO231 :"z:\windows\lvr_fw\lvr_fw_2020\hdl\slow_pulseen_gen.vhd":69:4:69:5|Found counter in view:work.SLOW_PULSE_EN_GEN(rtl) instance CNT_VAL[20:0] 
 
-Starting factoring (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:08s; Memory used current: 112MB peak: 113MB)
+Starting factoring (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:04s; Memory used current: 112MB peak: 113MB)
 
 
-Finished factoring (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:09s; Memory used current: 116MB peak: 117MB)
+Finished factoring (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 116MB peak: 117MB)
 
 
-Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:09s; Memory used current: 116MB peak: 117MB)
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:05s; Memory used current: 116MB peak: 117MB)
 
 
-Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:12s; CPU Time elapsed 0h:00m:09s; Memory used current: 116MB peak: 117MB)
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:05s; Memory used current: 116MB peak: 117MB)
 
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:10s; Memory used current: 120MB peak: 123MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:06s; Memory used current: 120MB peak: 122MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:10s; Memory used current: 121MB peak: 123MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:06s; Memory used current: 121MB peak: 122MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:11s; Memory used current: 121MB peak: 123MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:06s; Memory used current: 121MB peak: 122MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:11s; Memory used current: 120MB peak: 123MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 120MB peak: 122MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:12s; Memory used current: 120MB peak: 123MB)
+Finished preparing to map (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 120MB peak: 122MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:15s; CPU Time elapsed 0h:00m:12s; Memory used current: 121MB peak: 124MB)
+Finished technology mapping (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 121MB peak: 124MB)
 
 
 High Fanout Net Report
 **********************
 
-Driver Instance / Pin Name                                         Fanout, notes                     
------------------------------------------------------------------------------------------------------
-spi_slave_pm.m39 / Y                                               48 : 48 asynchronous set/reset    
-spi_slave_pm.m38_0 / Y                                             48 : 48 asynchronous set/reset    
-glob_buff.Core / GLC                                               225 : 225 asynchronous set/reset  
-master_rst_b_maj / Y                                               1113 : 1110 asynchronous set/reset
-gen_channel_seqs.4.channel_seq.un1_sequencer_state1_7_0_a2 / Y     43                                
-gen_channel_seqs.4.channel_seq.un1_sequencer_state0_7_0_a2 / Y     43                                
-gen_channel_seqs.2.channel_seq.un1_sequencer_state1_7_0_a2 / Y     43                                
-gen_channel_seqs.2.channel_seq.un1_sequencer_state0_7_0_a2 / Y     43                                
-gen_channel_seqs.3.channel_seq.un1_sequencer_state1_7_0_a2 / Y     43                                
-gen_channel_seqs.3.channel_seq.un1_sequencer_state0_7_0_a2 / Y     43                                
-gen_channel_seqs.1.channel_seq.un1_sequencer_state1_7_0_a2 / Y     43                                
-gen_channel_seqs.1.channel_seq.un1_sequencer_state0_7_0_a2 / Y     43                                
-spi_slave_pm.spi_sm_maj[0] / Y                                     41                                
-spi_slave_pm.spi_clr_maj / Y                                       199 : 138 asynchronous set/reset  
-spi_slave_pm.clk_fcnt_en_maj / Y                                   41                                
-clk_5m_gl_maj / Y                                                  1313                              
-master_rst_b_maj / Y                                               1113 : 1110 asynchronous set/reset
-spi_slave_pm.spi_sm_maj[0] / Y                                     41                                
-spi_slave_pm.spi_sm_maj[2] / Y                                     36 : 3 asynchronous set/reset     
-spi_slave_pm.clk_fcnt_en_maj / Y                                   41                                
-spi_slave_pm.spi_clr_maj / Y                                       199 : 138 asynchronous set/reset  
-spi_slave_pm.i_spi_rx_strb_maj / Y                                 63                                
-=====================================================================================================
+Driver Instance / Pin Name                                          Fanout, notes                     
+------------------------------------------------------------------------------------------------------
+gen_channel_seqs.4.channel_seq.un1_master_rst_b_1 / Y               48 : 48 asynchronous set/reset    
+gen_channel_seqs.4.channel_seq.un1_sw5_default_turnon_bar_1 / Y     48 : 48 asynchronous set/reset    
+glob_buff.Core / GLC                                                225 : 225 asynchronous set/reset  
+master_rst_b_maj / Y                                                1113 : 1110 asynchronous set/reset
+gen_channel_seqs.4.channel_seq.un1_sequencer_state1_7_0_a2 / Y      43                                
+gen_channel_seqs.4.channel_seq.un1_sequencer_state0_7_0_a2 / Y      43                                
+gen_channel_seqs.2.channel_seq.un1_sequencer_state1_7_0_a2 / Y      43                                
+gen_channel_seqs.2.channel_seq.un1_sequencer_state0_7_0_a2 / Y      43                                
+gen_channel_seqs.3.channel_seq.un1_sequencer_state1_7_0_a2 / Y      43                                
+gen_channel_seqs.3.channel_seq.un1_sequencer_state0_7_0_a2 / Y      43                                
+gen_channel_seqs.1.channel_seq.un1_sequencer_state1_7_0_a2 / Y      43                                
+gen_channel_seqs.1.channel_seq.un1_sequencer_state0_7_0_a2 / Y      43                                
+spi_slave_pm.spi_sm_maj[0] / Y                                      41                                
+spi_slave_pm.spi_clr_maj / Y                                        199 : 138 asynchronous set/reset  
+spi_slave_pm.clk_fcnt_en_maj / Y                                    41                                
+clk_5m_gl_maj / Y                                                   1313                              
+master_rst_b_maj / Y                                                1113 : 1110 asynchronous set/reset
+spi_slave_pm.spi_sm_maj[0] / Y                                      41                                
+spi_slave_pm.spi_sm_maj[2] / Y                                      36 : 3 asynchronous set/reset     
+spi_slave_pm.clk_fcnt_en_maj / Y                                    41                                
+spi_slave_pm.spi_clr_maj / Y                                        199 : 138 asynchronous set/reset  
+spi_slave_pm.i_spi_rx_strb_maj / Y                                  63                                
+======================================================================================================
 
 @N: FP130 |Promoting Net clk_5m_gl on CLKINT  clk_5m_gl_keep 
-@N: FP130 |Promoting Net master_rst_b on CLKINT  I_89 
-@N: FP130 |Promoting Net spi_slave_pm.spi_clr on CLKINT  I_90 
+@N: FP130 |Promoting Net master_rst_b on CLKINT  I_90 
+@N: FP130 |Promoting Net spi_slave_pm.spi_clr on CLKINT  I_91 
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:16s; CPU Time elapsed 0h:00m:13s; Memory used current: 121MB peak: 124MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:08s; Memory used current: 121MB peak: 124MB)
 
 Replicating Combinational Instance spi_slave_pm.clk_fcnt_en_maj, fanout 41 segments 2
 Replicating Combinational Instance spi_slave_pm.spi_sm_maj[0], fanout 41 segments 2
@@ -455,15 +463,15 @@ Replicating Combinational Instance gen_channel_seqs.2.channel_seq.un1_sequencer_
 Replicating Combinational Instance gen_channel_seqs.2.channel_seq.un1_sequencer_state1_7_0_a2, fanout 43 segments 2
 Replicating Combinational Instance gen_channel_seqs.4.channel_seq.un1_sequencer_state0_7_0_a2, fanout 43 segments 2
 Replicating Combinational Instance gen_channel_seqs.4.channel_seq.un1_sequencer_state1_7_0_a2, fanout 43 segments 2
-Replicating Combinational Instance spi_slave_pm.m38_0, fanout 48 segments 2
-Replicating Combinational Instance spi_slave_pm.m39, fanout 48 segments 2
+Replicating Combinational Instance gen_channel_seqs.4.channel_seq.un1_sw5_default_turnon_bar_1, fanout 48 segments 2
+Replicating Combinational Instance gen_channel_seqs.4.channel_seq.un1_master_rst_b_1, fanout 48 segments 2
 
 Added 0 Buffers
 Added 12 Cells via replication
 	Added 0 Sequential Cells via replication
 	Added 12 Combinational Cells via replication
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:17s; CPU Time elapsed 0h:00m:13s; Memory used current: 122MB peak: 124MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:08s; Memory used current: 122MB peak: 124MB)
 
 
 
@@ -495,19 +503,19 @@ Clock Tree ID     Driving Element                    Drive Element Type     Fano
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:18s; CPU Time elapsed 0h:00m:14s; Memory used current: 116MB peak: 124MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:10s; CPU Time elapsed 0h:00m:08s; Memory used current: 116MB peak: 124MB)
 
 Writing Analyst data base Z:\windows\lvr_fw\lvr_fw_2020\synthesis\synwork\top_lvr_fw_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:20s; CPU Time elapsed 0h:00m:16s; Memory used current: 120MB peak: 124MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:11s; CPU Time elapsed 0h:00m:10s; Memory used current: 120MB peak: 124MB)
 
 Writing EDIF Netlist and constraint files
 L-2016.09M-SP1-5
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:22s; CPU Time elapsed 0h:00m:19s; Memory used current: 122MB peak: 124MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:13s; CPU Time elapsed 0h:00m:11s; Memory used current: 122MB peak: 124MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:20s; Memory used current: 120MB peak: 124MB)
+Start final timing analysis (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:11s; Memory used current: 120MB peak: 124MB)
 
 @W: MT420 |Found inferred clock top_lvr_fw|CLK40M_OSC with period 20.00ns. Please declare a user-defined clock on object "p:CLK40M_OSC"
 @N: MT615 |Found clock sca_clk_out with period 1000.00ns 
@@ -518,7 +526,7 @@ Start final timing analysis (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:0
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Mon Jul 27 17:01:03 2020
+# Timing Report written on Fri Sep 18 08:51:58 2020
 #
 
 
@@ -547,7 +555,7 @@ Worst slack in design: -3.387
 Starting Clock                             Frequency     Frequency     Period        Period        Slack       Type         Group              
 -----------------------------------------------------------------------------------------------------------------------------------------------
 CCC_Glob_3xBuff|GLB_inferred_clock         50.0 MHz      37.3 MHz      20.000        26.774        -3.387      inferred     Inferred_clkgroup_3
-clk_5m_gl                                  5.0 MHz       44.6 MHz      200.000       22.414        177.586     declared     default_clkgroup   
+clk_5m_gl                                  5.0 MHz       43.8 MHz      200.000       22.810        177.190     declared     default_clkgroup   
 sca_clk_out                                1.0 MHz       NA            1000.000      NA            NA          declared     default_clkgroup   
 spi_slave|i_spi_rx_strb_inferred_clock     50.0 MHz      130.9 MHz     20.000        7.642         12.358      inferred     Inferred_clkgroup_0
 spi_slave|spi_sm_inferred_clock[2]         50.0 MHz      NA            20.000        NA            NA          inferred     Inferred_clkgroup_2
@@ -567,7 +575,7 @@ Clocks                                                                          
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Starting                                Ending                                  |  constraint  slack    |  constraint  slack   |  constraint  slack   |  constraint  slack 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-clk_5m_gl                               clk_5m_gl                               |  200.000     177.586  |  No paths    -       |  No paths    -       |  No paths    -     
+clk_5m_gl                               clk_5m_gl                               |  200.000     177.190  |  No paths    -       |  No paths    -       |  No paths    -     
 clk_5m_gl                               spi_slave|i_spi_rx_strb_inferred_clock  |  No paths    -        |  No paths    -       |  Diff grp    -       |  No paths    -     
 clk_5m_gl                               spi_slave|spi_sm_inferred_clock[2]      |  Diff grp    -        |  No paths    -       |  No paths    -       |  No paths    -     
 clk_5m_gl                               CCC_Glob_3xBuff|GLB_inferred_clock      |  Diff grp    -        |  No paths    -       |  Diff grp    -       |  No paths    -     
@@ -610,7 +618,7 @@ spi_slave_pm.clk_fcnt_tmr2[3]     CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1 
 spi_slave_pm.clk_fcnt_tmr3[3]     CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1     Q       clk_fcnt_tmr3[3]     0.653       -3.138
 spi_slave_pm.clk_fcnt[4]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1     Q       clk_fcnt_0[4]        0.653       -2.980
 spi_slave_pm.clk_fcnt[3]          CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1     Q       clk_fcnt_0[3]        0.653       -2.841
-spi_slave_pm.clk_fcnt_tmr2[0]     CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1     Q       clk_fcnt_tmr2[0]     0.527       -2.436
+spi_slave_pm.clk_fcnt_tmr2[1]     CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1     Q       clk_fcnt_tmr2[1]     0.527       -2.436
 spi_slave_pm.clk_fcnt_tmr2[2]     CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1     Q       clk_fcnt_tmr2[2]     0.527       -2.417
 spi_slave_pm.clk_fcnt_tmr2[5]     CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1     Q       clk_fcnt_tmr2[5]     0.527       -2.400
 spi_slave_pm.clk_fcnt_tmr3[5]     CCC_Glob_3xBuff|GLB_inferred_clock     DFN0C1     Q       clk_fcnt_tmr3[5]     0.653       -2.332
@@ -942,16 +950,16 @@ Starting Points with Worst Slack
 Instance                                      Reference     Type       Pin     Net               Time        Slack  
                                               Clock                                                                 
 --------------------------------------------------------------------------------------------------------------------
-ovt_fs.SIGOUT_tmr2                            clk_5m_gl     DFN1C0     Q       SIGOUT_tmr2       0.737       177.586
-gen_channel_seqs\.2\.uvl_fuse.SIGOUT_tmr2     clk_5m_gl     DFN1C0     Q       SIGOUT_tmr2_2     0.737       177.611
-ovt_fs.SIGOUT_tmr3                            clk_5m_gl     DFN1C0     Q       SIGOUT_tmr3       0.737       177.612
-gen_channel_seqs\.2\.uvl_fuse.SIGOUT_tmr3     clk_5m_gl     DFN1C0     Q       SIGOUT_tmr3_2     0.737       177.637
-ovt_fs.SIGOUT                                 clk_5m_gl     DFN1C0     Q       SIGOUT            0.737       177.909
-gen_channel_seqs\.2\.uvl_fuse.SIGOUT          clk_5m_gl     DFN1C0     Q       SIGOUT_2          0.737       177.934
-gen_channel_seqs\.3\.uvl_fuse.SIGOUT_tmr2     clk_5m_gl     DFN1C0     Q       SIGOUT_tmr2_1     0.737       178.337
-gen_channel_seqs\.4\.uvl_fuse.SIGOUT_tmr2     clk_5m_gl     DFN1C0     Q       SIGOUT_tmr2_0     0.737       178.337
-gen_channel_seqs\.4\.uvl_fuse.SIGOUT_tmr3     clk_5m_gl     DFN1C0     Q       SIGOUT_tmr3_0     0.737       178.363
-gen_channel_seqs\.3\.uvl_fuse.SIGOUT_tmr3     clk_5m_gl     DFN1C0     Q       SIGOUT_tmr3_1     0.737       178.363
+gen_channel_seqs\.3\.uvl_fuse.SIGOUT_tmr2     clk_5m_gl     DFN1C0     Q       SIGOUT_tmr2_1     0.737       177.190
+gen_channel_seqs\.3\.uvl_fuse.SIGOUT_tmr3     clk_5m_gl     DFN1C0     Q       SIGOUT_tmr3_1     0.737       177.216
+ovt_fs.SIGOUT_tmr2                            clk_5m_gl     DFN1C0     Q       SIGOUT_tmr2       0.737       177.233
+ovt_fs.SIGOUT_tmr3                            clk_5m_gl     DFN1C0     Q       SIGOUT_tmr3       0.737       177.259
+gen_channel_seqs\.3\.uvl_fuse.SIGOUT          clk_5m_gl     DFN1C0     Q       SIGOUT_1          0.737       177.513
+ovt_fs.SIGOUT                                 clk_5m_gl     DFN1C0     Q       SIGOUT            0.737       177.557
+gen_channel_seqs\.1\.uvl_fuse.SIGOUT_tmr2     clk_5m_gl     DFN1C0     Q       SIGOUT_tmr2_3     0.737       178.187
+gen_channel_seqs\.4\.uvl_fuse.SIGOUT_tmr2     clk_5m_gl     DFN1C0     Q       SIGOUT_tmr2_0     0.737       178.194
+gen_channel_seqs\.1\.uvl_fuse.SIGOUT_tmr3     clk_5m_gl     DFN1C0     Q       SIGOUT_tmr3_3     0.737       178.213
+gen_channel_seqs\.4\.uvl_fuse.SIGOUT_tmr3     clk_5m_gl     DFN1C0     Q       SIGOUT_tmr3_0     0.737       178.220
 ====================================================================================================================
 
 
@@ -962,16 +970,16 @@ Ending Points with Worst Slack
 Instance                                                Reference     Type       Pin     Net                 Time         Slack  
                                                         Clock                                                                    
 ---------------------------------------------------------------------------------------------------------------------------------
-gen_channel_seqs\.2\.channel_seq.del_cntr1[13]          clk_5m_gl     DFN1P0     D       n_del_cntr1[13]     199.461      177.586
-gen_channel_seqs\.2\.channel_seq.del_cntr1[14]          clk_5m_gl     DFN1P0     D       n_del_cntr1[14]     199.461      177.586
-gen_channel_seqs\.2\.channel_seq.del_cntr1_tmr2[13]     clk_5m_gl     DFN1P0     D       n_del_cntr1[13]     199.461      177.586
-gen_channel_seqs\.2\.channel_seq.del_cntr1_tmr2[14]     clk_5m_gl     DFN1P0     D       n_del_cntr1[14]     199.461      177.586
-gen_channel_seqs\.2\.channel_seq.del_cntr1_tmr3[13]     clk_5m_gl     DFN1P0     D       n_del_cntr1[13]     199.461      177.586
-gen_channel_seqs\.2\.channel_seq.del_cntr1_tmr3[14]     clk_5m_gl     DFN1P0     D       n_del_cntr1[14]     199.461      177.586
-gen_channel_seqs\.2\.channel_seq.del_cntr0[13]          clk_5m_gl     DFN1P0     D       n_del_cntr0[13]     199.461      177.614
-gen_channel_seqs\.2\.channel_seq.del_cntr0[14]          clk_5m_gl     DFN1P0     D       n_del_cntr0[14]     199.461      177.614
-gen_channel_seqs\.2\.channel_seq.del_cntr0_tmr2[13]     clk_5m_gl     DFN1P0     D       n_del_cntr0[13]     199.461      177.614
-gen_channel_seqs\.2\.channel_seq.del_cntr0_tmr2[14]     clk_5m_gl     DFN1P0     D       n_del_cntr0[14]     199.461      177.614
+gen_channel_seqs\.3\.channel_seq.del_cntr0[13]          clk_5m_gl     DFN1P0     D       n_del_cntr0[13]     199.461      177.190
+gen_channel_seqs\.3\.channel_seq.del_cntr0[14]          clk_5m_gl     DFN1P0     D       n_del_cntr0[14]     199.461      177.190
+gen_channel_seqs\.3\.channel_seq.del_cntr0_tmr2[13]     clk_5m_gl     DFN1P0     D       n_del_cntr0[13]     199.461      177.190
+gen_channel_seqs\.3\.channel_seq.del_cntr0_tmr2[14]     clk_5m_gl     DFN1P0     D       n_del_cntr0[14]     199.461      177.190
+gen_channel_seqs\.3\.channel_seq.del_cntr0_tmr3[13]     clk_5m_gl     DFN1P0     D       n_del_cntr0[13]     199.461      177.190
+gen_channel_seqs\.3\.channel_seq.del_cntr0_tmr3[14]     clk_5m_gl     DFN1P0     D       n_del_cntr0[14]     199.461      177.190
+gen_channel_seqs\.3\.channel_seq.del_cntr1[13]          clk_5m_gl     DFN1P0     D       n_del_cntr1[13]     199.461      177.218
+gen_channel_seqs\.3\.channel_seq.del_cntr1[14]          clk_5m_gl     DFN1P0     D       n_del_cntr1[14]     199.461      177.218
+gen_channel_seqs\.3\.channel_seq.del_cntr1_tmr2[13]     clk_5m_gl     DFN1P0     D       n_del_cntr1[13]     199.461      177.218
+gen_channel_seqs\.3\.channel_seq.del_cntr1_tmr2[14]     clk_5m_gl     DFN1P0     D       n_del_cntr1[14]     199.461      177.218
 =================================================================================================================================
 
 
@@ -986,63 +994,63 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         199.461
 
-    - Propagation time:                      21.875
+    - Propagation time:                      22.271
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 177.586
+    = Slack (non-critical) :                 177.190
 
     Number of logic level(s):                13
-    Starting point:                          ovt_fs.SIGOUT_tmr2 / Q
-    Ending point:                            gen_channel_seqs\.2\.channel_seq.del_cntr1[13] / D
+    Starting point:                          gen_channel_seqs\.3\.uvl_fuse.SIGOUT_tmr2 / Q
+    Ending point:                            gen_channel_seqs\.3\.channel_seq.del_cntr0[13] / D
     The start point is clocked by            clk_5m_gl [rising] on pin CLK
     The end   point is clocked by            clk_5m_gl [rising] on pin CLK
 
-Instance / Net                                                                    Pin      Pin               Arrival     No. of    
-Name                                                                   Type       Name     Dir     Delay     Time        Fan Out(s)
------------------------------------------------------------------------------------------------------------------------------------
-ovt_fs.SIGOUT_tmr2                                                     DFN1C0     Q        Out     0.737     0.737       -         
-SIGOUT_tmr2                                                            Net        -        -       0.322     -           1         
-ovt_fs.SIGOUT_maj                                                      MAJ3       B        In      -         1.058       -         
-ovt_fs.SIGOUT_maj                                                      MAJ3       Y        Out     0.732     1.790       -         
-STATUS_LED_c                                                           Net        -        -       1.776     -           11        
-spi_slave_pm.m3_0                                                      NOR2B      A        In      -         3.566       -         
-spi_slave_pm.m3_0                                                      NOR2B      Y        Out     0.514     4.081       -         
-N_6_0                                                                  Net        -        -       0.386     -           2         
-spi_slave_pm.m90                                                       NOR2B      B        In      -         4.466       -         
-spi_slave_pm.m90                                                       NOR2B      Y        Out     0.627     5.094       -         
-N_91                                                                   Net        -        -       0.386     -           2         
-spi_slave_pm.m99                                                       NOR2B      B        In      -         5.480       -         
-spi_slave_pm.m99                                                       NOR2B      Y        Out     0.627     6.107       -         
-channels_ready[4]                                                      Net        -        -       1.639     -           8         
-gen_channel_seqs\.2\.channel_seq.sequencer_state1_maj_RNI3K5U_0[0]     NOR2A      A        In      -         7.746       -         
-gen_channel_seqs\.2\.channel_seq.sequencer_state1_maj_RNI3K5U_0[0]     NOR2A      Y        Out     0.627     8.373       -         
-N_276_0                                                                Net        -        -       2.409     -           22        
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_30                    XOR2       B        In      -         10.782      -         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_30                    XOR2       Y        Out     0.937     11.719      -         
-DWACT_ADD_CI_0_pog_array_0[0]                                          Net        -        -       0.322     -           1         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_64                    AO1        A        In      -         12.040      -         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_64                    AO1        Y        Out     0.520     12.560      -         
-DWACT_ADD_CI_0_g_array_1[0]                                            Net        -        -       0.806     -           3         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_77                    AO1        B        In      -         13.366      -         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_77                    AO1        Y        Out     0.567     13.933      -         
-DWACT_ADD_CI_0_g_array_2[0]                                            Net        -        -       1.184     -           4         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_83                    AO1        B        In      -         15.117      -         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_83                    AO1        Y        Out     0.567     15.683      -         
-DWACT_ADD_CI_0_g_array_3[0]                                            Net        -        -       1.184     -           4         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_81                    AO1        B        In      -         16.867      -         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_81                    AO1        Y        Out     0.567     17.433      -         
-DWACT_ADD_CI_0_g_array_10[0]                                           Net        -        -       0.806     -           3         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_65                    AO1        B        In      -         18.240      -         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_65                    AO1        Y        Out     0.567     18.806      -         
-DWACT_ADD_CI_0_g_array_12_5[0]                                         Net        -        -       0.322     -           1         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_60                    XOR2       B        In      -         19.128      -         
-gen_channel_seqs\.2\.channel_seq.un1_del_cntr1.I_60                    XOR2       Y        Out     0.937     20.064      -         
-I_60_3                                                                 Net        -        -       0.322     -           1         
-gen_channel_seqs\.2\.channel_seq.sequencer_state1_maj_RNIKPPE91[0]     OR3        C        In      -         20.386      -         
-gen_channel_seqs\.2\.channel_seq.sequencer_state1_maj_RNIKPPE91[0]     OR3        Y        Out     0.683     21.069      -         
-n_del_cntr1[13]                                                        Net        -        -       0.806     -           3         
-gen_channel_seqs\.2\.channel_seq.del_cntr1[13]                         DFN1P0     D        In      -         21.875      -         
-===================================================================================================================================
-Total path delay (propagation time + setup) of 22.414 is 9.746(43.5%) logic and 12.668(56.5%) route.
+Instance / Net                                                                     Pin      Pin               Arrival     No. of    
+Name                                                                    Type       Name     Dir     Delay     Time        Fan Out(s)
+------------------------------------------------------------------------------------------------------------------------------------
+gen_channel_seqs\.3\.uvl_fuse.SIGOUT_tmr2                               DFN1C0     Q        Out     0.737     0.737       -         
+SIGOUT_tmr2_1                                                           Net        -        -       0.322     -           1         
+gen_channel_seqs\.3\.uvl_fuse.SIGOUT_maj                                MAJ3       B        In      -         1.058       -         
+gen_channel_seqs\.3\.uvl_fuse.SIGOUT_maj                                MAJ3       Y        Out     0.732     1.790       -         
+channel_involtage_ok[3]                                                 Net        -        -       1.639     -           8         
+gen_channel_seqs\.4\.channel_seq.m62                                    NOR2B      B        In      -         3.429       -         
+gen_channel_seqs\.4\.channel_seq.m62                                    NOR2B      Y        Out     0.627     4.056       -         
+N_63                                                                    Net        -        -       0.386     -           2         
+gen_channel_seqs\.4\.channel_seq.m68                                    NOR2B      B        In      -         4.442       -         
+gen_channel_seqs\.4\.channel_seq.m68                                    NOR2B      Y        Out     0.627     5.069       -         
+N_69                                                                    Net        -        -       0.806     -           3         
+gen_channel_seqs\.4\.channel_seq.m69                                    NOR2B      B        In      -         5.876       -         
+gen_channel_seqs\.4\.channel_seq.m69                                    NOR2B      Y        Out     0.627     6.503       -         
+channels_ready[5]                                                       Net        -        -       1.639     -           8         
+gen_channel_seqs\.3\.channel_seq.sequencer_state0_maj_RNI676C1_0[0]     NOR2A      A        In      -         8.142       -         
+gen_channel_seqs\.3\.channel_seq.sequencer_state0_maj_RNI676C1_0[0]     NOR2A      Y        Out     0.627     8.770       -         
+N_380_0                                                                 Net        -        -       2.409     -           22        
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_30                     XOR2       B        In      -         11.179      -         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_30                     XOR2       Y        Out     0.937     12.115      -         
+DWACT_ADD_CI_0_pog_array_0_0[0]                                         Net        -        -       0.322     -           1         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_64                     AO1        A        In      -         12.437      -         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_64                     AO1        Y        Out     0.520     12.956      -         
+DWACT_ADD_CI_0_g_array_1_0[0]                                           Net        -        -       0.806     -           3         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_77                     AO1        B        In      -         13.763      -         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_77                     AO1        Y        Out     0.567     14.329      -         
+DWACT_ADD_CI_0_g_array_2_0[0]                                           Net        -        -       1.184     -           4         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_83                     AO1        B        In      -         15.513      -         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_83                     AO1        Y        Out     0.567     16.079      -         
+DWACT_ADD_CI_0_g_array_3_0[0]                                           Net        -        -       1.184     -           4         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_81                     AO1        B        In      -         17.263      -         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_81                     AO1        Y        Out     0.567     17.829      -         
+DWACT_ADD_CI_0_g_array_10_0[0]                                          Net        -        -       0.806     -           3         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_65                     AO1        B        In      -         18.636      -         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_65                     AO1        Y        Out     0.567     19.202      -         
+DWACT_ADD_CI_0_g_array_12_5_0[0]                                        Net        -        -       0.322     -           1         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_60                     XOR2       B        In      -         19.524      -         
+gen_channel_seqs\.3\.channel_seq.un1_del_cntr0.I_60                     XOR2       Y        Out     0.937     20.461      -         
+I_60_2                                                                  Net        -        -       0.322     -           1         
+gen_channel_seqs\.3\.channel_seq.sequencer_state0_maj_RNI0FHPO1[0]      OR3        C        In      -         20.782      -         
+gen_channel_seqs\.3\.channel_seq.sequencer_state0_maj_RNI0FHPO1[0]      OR3        Y        Out     0.683     21.465      -         
+n_del_cntr0[13]                                                         Net        -        -       0.806     -           3         
+gen_channel_seqs\.3\.channel_seq.del_cntr0[13]                          DFN1P0     D        In      -         22.271      -         
+====================================================================================================================================
+Total path delay (propagation time + setup) of 22.810 is 9.859(43.2%) logic and 12.951(56.8%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -1057,41 +1065,41 @@ Detailed Report for Clock: spi_slave|i_spi_rx_strb_inferred_clock
 Starting Points with Worst Slack
 ********************************
 
-                                   Starting                                                                                           Arrival           
-Instance                           Reference                                  Type         Pin     Net                                Time        Slack 
-                                   Clock                                                                                                                
---------------------------------------------------------------------------------------------------------------------------------------------------------
-channels_desired_on_tmr2[5]        spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr2[5]        1.456       12.358
-channels_desired_on_tmr2[6]        spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr2[6]        1.456       12.358
-channels_desired_on_tmr2[7]        spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr2[7]        1.456       12.358
-channels_desired_on_tmr2[8]        spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr2[8]        1.456       12.358
-channels_desired_ready_tmr2[1]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_ready_tmr2[1]     1.456       12.358
-channels_desired_on_tmr3[5]        spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr3[5]        1.456       12.619
-channels_desired_on_tmr3[6]        spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr3[6]        1.456       12.619
-channels_desired_on_tmr3[7]        spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr3[7]        1.456       12.619
-channels_desired_on_tmr3[8]        spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr3[8]        1.456       12.619
-channels_desired_ready_tmr3[1]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_ready_tmr3[1]     1.456       12.619
-========================================================================================================================================================
+                                Starting                                                                                        Arrival           
+Instance                        Reference                                  Type         Pin     Net                             Time        Slack 
+                                Clock                                                                                                             
+--------------------------------------------------------------------------------------------------------------------------------------------------
+channels_desired_on_tmr2[1]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr2[1]     1.456       12.358
+channels_desired_on_tmr2[3]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr2[3]     1.456       12.358
+channels_desired_on_tmr2[5]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr2[5]     1.456       12.358
+channels_desired_on_tmr2[6]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr2[6]     1.456       12.358
+channels_desired_on_tmr2[7]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr2[7]     1.456       12.358
+channels_desired_on_tmr2[8]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr2[8]     1.456       12.358
+channels_desired_on_tmr3[1]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr3[1]     1.456       12.619
+channels_desired_on_tmr3[3]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr3[3]     1.456       12.619
+channels_desired_on_tmr3[5]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr3[5]     1.456       12.619
+channels_desired_on_tmr3[6]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     Q       channels_desired_on_tmr3[6]     1.456       12.619
+==================================================================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                                Starting                                                                                           Required           
-Instance                        Reference                                  Type         Pin     Net                                Time         Slack 
-                                Clock                                                                                                                 
-------------------------------------------------------------------------------------------------------------------------------------------------------
-channels_desired_on[5]          spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       i_spi_rx_word_maj_RNIVP2FV[4]      17.301       12.358
-channels_desired_on[6]          spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       i_spi_rx_word_maj_RNIG4N301[5]     17.301       12.358
-channels_desired_on[7]          spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       i_spi_rx_word_maj_RNI503FV[6]      17.301       12.358
-channels_desired_on[8]          spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       channels_desired_on_0_0[8]         17.301       12.358
-channels_desired_on_tmr2[5]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       i_spi_rx_word_maj_RNIVP2FV[4]      17.301       12.358
-channels_desired_on_tmr2[6]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       i_spi_rx_word_maj_RNIG4N301[5]     17.301       12.358
-channels_desired_on_tmr2[7]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       i_spi_rx_word_maj_RNI503FV[6]      17.301       12.358
-channels_desired_on_tmr2[8]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       channels_desired_on_0_0[8]         17.301       12.358
-channels_desired_on_tmr3[5]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       i_spi_rx_word_maj_RNIVP2FV[4]      17.301       12.358
-channels_desired_on_tmr3[6]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       i_spi_rx_word_maj_RNIG4N301[5]     17.301       12.358
-======================================================================================================================================================
+                                Starting                                                                                       Required           
+Instance                        Reference                                  Type         Pin     Net                            Time         Slack 
+                                Clock                                                                                                             
+--------------------------------------------------------------------------------------------------------------------------------------------------
+channels_desired_on[1]          spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       channels_desired_on_0_0[1]     17.301       12.358
+channels_desired_on[3]          spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       channels_desired_on_0_0[3]     17.301       12.358
+channels_desired_on[5]          spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       channels_desired_on_0_0[5]     17.301       12.358
+channels_desired_on[6]          spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       channels_desired_on_0_0[6]     17.301       12.358
+channels_desired_on[7]          spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       channels_desired_on_0_0[7]     17.301       12.358
+channels_desired_on[8]          spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       channels_desired_on_0_0[8]     17.301       12.358
+channels_desired_on_tmr2[1]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       channels_desired_on_0_0[1]     17.301       12.358
+channels_desired_on_tmr2[3]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       channels_desired_on_0_0[3]     17.301       12.358
+channels_desired_on_tmr2[5]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       channels_desired_on_0_0[5]     17.301       12.358
+channels_desired_on_tmr2[6]     spi_slave|i_spi_rx_strb_inferred_clock     DFN0P1C1     D       channels_desired_on_0_0[6]     17.301       12.358
+==================================================================================================================================================
 
 
 
@@ -1110,24 +1118,24 @@ Path information for path number 1:
     = Slack (non-critical) :                 12.358
 
     Number of logic level(s):                2
-    Starting point:                          channels_desired_on_tmr2[5] / Q
-    Ending point:                            channels_desired_on[5] / D
+    Starting point:                          channels_desired_on_tmr2[1] / Q
+    Ending point:                            channels_desired_on[1] / D
     The start point is clocked by            spi_slave|i_spi_rx_strb_inferred_clock [falling] on pin CLK
     The end   point is clocked by            spi_slave|i_spi_rx_strb_inferred_clock [falling] on pin CLK
 
-Instance / Net                                              Pin      Pin               Arrival     No. of    
-Name                                           Type         Name     Dir     Delay     Time        Fan Out(s)
--------------------------------------------------------------------------------------------------------------
-channels_desired_on_tmr2[5]                    DFN0P1C1     Q        Out     1.456     1.456       -         
-channels_desired_on_tmr2[5]                    Net          -        -       0.322     -           1         
-channels_desired_on_maj[5]                     MAJ3         B        In      -         1.778       -         
-channels_desired_on_maj[5]                     MAJ3         Y        Out     0.984     2.762       -         
-channels_desired_on[5]                         Net          -        -       0.806     -           3         
-spi_slave_pm.i_spi_rx_word_maj_RNIVP2FV[4]     MX2          A        In      -         3.568       -         
-spi_slave_pm.i_spi_rx_word_maj_RNIVP2FV[4]     MX2          Y        Out     0.568     4.136       -         
-i_spi_rx_word_maj_RNIVP2FV[4]                  Net          -        -       0.806     -           3         
-channels_desired_on[5]                         DFN0P1C1     D        In      -         4.943       -         
-=============================================================================================================
+Instance / Net                                                             Pin      Pin               Arrival     No. of    
+Name                                                          Type         Name     Dir     Delay     Time        Fan Out(s)
+----------------------------------------------------------------------------------------------------------------------------
+channels_desired_on_tmr2[1]                                   DFN0P1C1     Q        Out     1.456     1.456       -         
+channels_desired_on_tmr2[1]                                   Net          -        -       0.322     -           1         
+channels_desired_on_maj[1]                                    MAJ3         B        In      -         1.778       -         
+channels_desired_on_maj[1]                                    MAJ3         Y        Out     0.984     2.762       -         
+channels_desired_on[1]                                        Net          -        -       0.806     -           3         
+gen_channel_seqs\.4\.channel_seq.channels_desired_on_0[1]     MX2          A        In      -         3.568       -         
+gen_channel_seqs\.4\.channel_seq.channels_desired_on_0[1]     MX2          Y        Out     0.568     4.136       -         
+channels_desired_on_0_0[1]                                    Net          -        -       0.806     -           3         
+channels_desired_on[1]                                        DFN0P1C1     D        In      -         4.943       -         
+============================================================================================================================
 Total path delay (propagation time + setup) of 7.642 is 5.708(74.7%) logic and 1.934(25.3%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
@@ -1226,26 +1234,26 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 Timing exceptions that could not be applied
 None
 
-Finished final timing analysis (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:20s; Memory used current: 120MB peak: 124MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:12s; Memory used current: 120MB peak: 124MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:23s; CPU Time elapsed 0h:00m:20s; Memory used current: 120MB peak: 124MB)
+Finished timing report (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:12s; Memory used current: 120MB peak: 124MB)
 
 --------------------------------------------------------------------------------
 Target Part: A3PN250_VQFP100_STD
 Report for cell top_lvr_fw.rtl
   Core Cell usage:
               cell count     area count*area
-              AND2   178      1.0      178.0
-               AO1   193      1.0      193.0
+              AND2   188      1.0      188.0
+               AO1   198      1.0      198.0
               AO13     6      1.0        6.0
-              AO18    26      1.0       26.0
-              AO1A    26      1.0       26.0
-              AO1B     1      1.0        1.0
-              AO1D     1      1.0        1.0
+              AO18    25      1.0       25.0
+              AO1A    24      1.0       24.0
+              AO1B     2      1.0        2.0
+              AOI1     1      1.0        1.0
              AOI1B     9      1.0        9.0
                AX1     5      1.0        5.0
-              AX1A     2      1.0        2.0
+              AX1A     1      1.0        1.0
               AX1C     7      1.0        7.0
               AXO6     1      1.0        1.0
              AXOI7     1      1.0        1.0
@@ -1253,30 +1261,32 @@ Report for cell top_lvr_fw.rtl
                GND    15      0.0        0.0
                INV     1      1.0        1.0
               MAJ3   547      1.0      547.0
-               MX2   153      1.0      153.0
-              MX2A    34      1.0       34.0
-              MX2B    19      1.0       19.0
+               MX2   151      1.0      151.0
+              MX2A    36      1.0       36.0
+              MX2B    20      1.0       20.0
               MX2C    16      1.0       16.0
-              NOR2   120      1.0      120.0
-             NOR2A    98      1.0       98.0
-             NOR2B   124      1.0      124.0
-              NOR3    41      1.0       41.0
-             NOR3A    28      1.0       28.0
-             NOR3B    33      1.0       33.0
-             NOR3C    96      1.0       96.0
-               OA1     3      1.0        3.0
-              OA1A    44      1.0       44.0
-              OA1B     6      1.0        6.0
-              OA1C     8      1.0        8.0
+              NOR2   123      1.0      123.0
+             NOR2A   109      1.0      109.0
+             NOR2B   127      1.0      127.0
+              NOR3    37      1.0       37.0
+             NOR3A    26      1.0       26.0
+             NOR3B    36      1.0       36.0
+             NOR3C    81      1.0       81.0
+               OA1     4      1.0        4.0
+              OA1A    38      1.0       38.0
+              OA1B     7      1.0        7.0
+              OA1C     7      1.0        7.0
               OAI1     5      1.0        5.0
                OR2    18      1.0       18.0
-              OR2A    18      1.0       18.0
-              OR2B     5      1.0        5.0
-               OR3   122      1.0      122.0
-              OR3A     9      1.0        9.0
-              OR3B     8      1.0        8.0
+              OR2A    22      1.0       22.0
+              OR2B     4      1.0        4.0
+               OR3   126      1.0      126.0
+              OR3A     3      1.0        3.0
+              OR3B     5      1.0        5.0
+              OR3C     1      1.0        1.0
             PLLINT     2      0.0        0.0
                VCC    15      0.0        0.0
+               XA1     5      1.0        5.0
               XA1A     5      1.0        5.0
               XA1B    11      1.0       11.0
               XA1C     7      1.0        7.0
@@ -1285,8 +1295,8 @@ Report for cell top_lvr_fw.rtl
              XNOR3    30      1.0       30.0
                XO1    10      1.0       10.0
               XO1A     1      1.0        1.0
-              XOR2   419      1.0      419.0
-              XOR3    42      1.0       42.0
+              XOR2   410      1.0      410.0
+              XOR3    45      1.0       45.0
 
 
             DFN0C0    15      1.0       15.0
@@ -1300,7 +1310,7 @@ Report for cell top_lvr_fw.rtl
               DLN1    30      1.0       30.0
             DYNCCC     1      0.0        0.0
                    -----          ----------
-             TOTAL  4226              4190.0
+             TOTAL  4231              4195.0
 
 
   IO Cell usage:
@@ -1311,7 +1321,7 @@ Report for cell top_lvr_fw.rtl
              TOTAL    61
 
 
-Core Cells         : 4190 of 6144 (68%)
+Core Cells         : 4195 of 6144 (68%)
 IO Cells           : 61
 
   RAM/ROM Usage Summary
@@ -1319,9 +1329,9 @@ Block Rams : 0 of 8 (0%)
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:24s; CPU Time elapsed 0h:00m:20s; Memory used current: 29MB peak: 124MB)
+At Mapper Exit (Real Time elapsed 0h:00m:14s; CPU Time elapsed 0h:00m:12s; Memory used current: 29MB peak: 124MB)
 
-Process took 0h:00m:24s realtime, 0h:00m:20s cputime
-# Mon Jul 27 17:01:03 2020
+Process took 0h:00m:14s realtime, 0h:00m:12s cputime
+# Fri Sep 18 08:51:58 2020
 
 ###########################################################]

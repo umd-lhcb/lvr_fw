@@ -8,7 +8,18 @@ Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys softwa
 
 @N: CD720 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
 @N:"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":33:7:33:16|Top entity is set to top_lvr_fw.
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\crc6.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\misc.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhdl_sim\synplify.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd\synattr.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\MAIN_SEQUENCER_NEW.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\Slow_PulseEn_Gen.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd changed - recompiling
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd changed - recompiling
 VHDL syntax check successful!
+File Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":33:7:33:16|Synthesizing work.top_lvr_fw.rtl.
 @W: CD434 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":353:95:353:116|Signal sw5_dutycycle_mode_bar in the sensitivity list is not used in the process. Make sure all variables in the sensitivity list are referenced in the process.
@@ -99,12 +110,12 @@ State machine has 3 reachable states with original encodings of:
    01
    10
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 79MB peak: 80MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 79MB peak: 80MB)
 
-Process took 0h:00m:03s realtime, 0h:00m:02s cputime
+Process took 0h:00m:04s realtime, 0h:00m:03s cputime
 
 Process completed successfully.
-# Mon Jul 27 17:00:28 2020
+# Fri Sep 18 08:51:31 2020
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -115,16 +126,16 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Jul 27 17:00:29 2020
+# Fri Sep 18 08:51:32 2020
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 3MB peak: 4MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 3MB peak: 4MB)
 
-Process took 0h:00m:04s realtime, 0h:00m:03s cputime
+Process took 0h:00m:05s realtime, 0h:00m:04s cputime
 
 Process completed successfully.
-# Mon Jul 27 17:00:29 2020
+# Fri Sep 18 08:51:32 2020
 
 ###########################################################]

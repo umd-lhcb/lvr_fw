@@ -58,13 +58,13 @@ SIZE="184"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.adb,adb"
 STATE="utd"
-TIME="1592789290"
-SIZE="4125696"
+TIME="1600433625"
+SIZE="4198912"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.ide_des,ide_des"
 STATE="utd"
-TIME="1593112550"
-SIZE="1031"
+TIME="1600433633"
+SIZE="1034"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw.stp,stp"
 STATE="ood"
@@ -73,18 +73,13 @@ SIZE="129700"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_compile_log.rpt,log"
 STATE="utd"
-TIME="1595626154"
-SIZE="2842"
+TIME="1600433627"
+SIZE="9696"
 ENDFILE
 VALUE "<project>\designer\impl1\top_lvr_fw_floorplan_log.rpt,log"
 STATE="utd"
 TIME="1586831425"
 SIZE="1975"
-ENDFILE
-VALUE "<project>\designer\impl1\top_lvr_fw_placeroute_log.rpt,log"
-STATE="utd"
-TIME="1595883943"
-SIZE="2448"
 ENDFILE
 VALUE "<project>\hdl\crc6.vhd,hdl"
 STATE="utd"
@@ -113,7 +108,7 @@ SIZE="12931"
 ENDFILE
 VALUE "<project>\hdl\top_lvr_fw.vhd,hdl"
 STATE="utd"
-TIME="1595883512"
+TIME="1600433469"
 SIZE="33408"
 ENDFILE
 VALUE "<project>\simulation\run.do,do"
@@ -159,22 +154,22 @@ SIZE="8903"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.edn,syn_edn"
 STATE="utd"
-TIME="1595883662"
-SIZE="2031369"
+TIME="1600433517"
+SIZE="2044482"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw.so,so"
 STATE="utd"
-TIME="1593112547"
+TIME="1600433517"
 SIZE="219"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1595883661"
+TIME="1600433517"
 SIZE="612"
 ENDFILE
 VALUE "<project>\synthesis\top_lvr_fw_syn.prj,prj"
 STATE="utd"
-TIME="1593112548"
+TIME="1600433520"
 SIZE="2242"
 ENDFILE
 ENDLIST
@@ -188,10 +183,9 @@ VALUE "<project>\stimulus\tb_top_lvr_fw.vhd,tb_hdl"
 ENDLIST
 LIST ProjectState5.1
 LIST Impl1
-LiberoState=Post_Layout
+LiberoState=Post_Synthesis
 ideSTIMULUS=StateSuccess
 ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
-ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -280,8 +274,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -316,10 +310,9 @@ ENDLIST
 LIST ProjectState5.1
 LIST "top_lvr_fw::work"
 LIST Impl1
-LiberoState=Post_Layout
+LiberoState=Post_Synthesis
 ideSTIMULUS=StateSuccess
 ideSYNTHESIS(<project>\synthesis\top_lvr_fw.edn,syn_edn)=StateSuccess
-ideDESIGNER(<project>\designer\impl1\top_lvr_fw.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -342,9 +335,8 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-Reports;Reports;0
-ReportsCurrentItem;Place and Route:top_lvr_fw_placeroute_log.rpt
-ACTIVEVIEW;Reports
+StartPage;StartPage;0
+ACTIVEVIEW;StartPage
 ENDLIST
 LIST ModuleSubBlockList
 LIST "CCC_Glob_3xBuff::work","smartgen\CCC_Glob_3xBuff\CCC_Glob_3xBuff.vhd","TRUE","FALSE"

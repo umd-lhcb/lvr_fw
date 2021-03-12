@@ -250,7 +250,7 @@ attribute syn_radhardlevel of rtl : architecture is "tmr";
   signal tx_crc, rx_crc, spi_rx_crc     : std_logic_vector(5 downto 0);
   signal spi_rx_command, spi_rx_command_reg                 : std_logic_vector(1 downto 0):="00";
 
-  constant fw_version : std_logic_vector(11 downto 0) := x"e01";
+  constant fw_version : std_logic_vector(11 downto 0) := x"207";
 -- debug
   signal iir_ovt_filt : std_logic_vector(8 downto 1);
 
@@ -382,13 +382,9 @@ begin
 
 
   -- Debug signals sent to J11 connector
-  J11_DEBUG(1 downto 0) <= SW4_SLAVE_PAIRS_BAR(2 downto 1);
-  J11_DEBUG(2)          <= SW2_SW3_CHANNEL_ON_BAR(2);
-  J11_DEBUG(3)          <= SW2_SW3_CHANNEL_ON_BAR(6);
-  J11_DEBUG(4)          <= SW5_DUTYCYCLE_MODE_BAR;
-  J11_DEBUG(5)          <= SW5_DEFAULT_TURNON_BAR;
-  J11_DEBUG(6)          <= SW2_SW3_CHANNEL_ON_BAR(1);
-  J11_DEBUG(7)          <= SW2_SW3_CHANNEL_ON_BAR(5);
+  J11_DEBUG(2 downto 0) <= spi_p_state_id(2 downto 0);
+  J11_DEBUG(3)          <= spi_rx_strb;
+  J11_DEBUG(7 downto 4) <= clk_fcnt_out(3 downto 0);
 
 
 -- this process synchronizes the external IN_POWERON_RST_B signal to the 40 mhz clock

@@ -1,9 +1,9 @@
-@P:  Worst Slack : -3.387
-@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Frequency : 37.3 MHz
+@P:  Worst Slack : -1.642
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Frequency : 42.9 MHz
 @P:  CCC_Glob_3xBuff|GLB_inferred_clock - Requested Frequency : 50.0 MHz
-@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Period : 26.774
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Estimated Period : 23.284
 @P:  CCC_Glob_3xBuff|GLB_inferred_clock - Requested Period : 20.000
-@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Slack : -3.387
+@P:  CCC_Glob_3xBuff|GLB_inferred_clock - Slack : -1.642
 @P:  clk_5m_gl - Estimated Frequency : 43.8 MHz
 @P:  clk_5m_gl - Requested Frequency : 5.0 MHz
 @P:  clk_5m_gl - Estimated Period : 22.810
@@ -29,20 +29,20 @@
 @P:  top_lvr_fw|CLK40M_OSC - Estimated Period : 5.978
 @P:  top_lvr_fw|CLK40M_OSC - Requested Period : 20.000
 @P:  top_lvr_fw|CLK40M_OSC - Slack : 14.022
-@P:  Total Area : 4195.0
+@P:  Total Area : 4222.0
 @P:  Total Area : 87.0
 @P:  Total Area : 146.0
-@P:  Total Area : 90.0
-@P:  Total Area : 87.0
+@P:  Total Area : 88.0
+@P:  Total Area : 88.0
 @P:  Total Area : 89.0
 @P:  Total Area : 88.0
-@P:  Total Area : 739.0
-@P:  Total Area : 559.0
+@P:  Total Area : 555.0
+@P:  Total Area : 558.0
+@P:  Total Area : 561.0
 @P:  Total Area : 556.0
-@P:  Total Area : 556.0
-@P:  Total Area : 7.0
-@P:  Total Area : 51.0
-@P:  Total Area : 911.0
+@P:  Total Area : 6.0
+@P:  Total Area : 119.0
+@P:  Total Area : 1052.0
 @P:  Total Area : 1.0
-@P:  Total Area : 4195.0
-@P:  CPU Time : 0h:00m:12s
+@P:  Total Area : 4222.0
+@P:  CPU Time : 0h:00m:04s

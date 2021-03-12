@@ -21,5 +21,5 @@
 @W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":108:4:108:5|Feedback mux created for signal clk_fcnt[5:0]. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
 @W: CL113 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":138:4:138:5|Feedback mux created for signal i_spi_miso. To avoid the feedback mux, assign values explicitly under all conditions of conditional assignment statements.
 @W: CL117 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":138:4:138:5|Latch generated from process for signal tx_32bit_sreg(31 downto 0); possible missing assignment in an if or case statement.
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":444:4:444:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":440:4:440:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
 

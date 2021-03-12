@@ -8,6 +8,17 @@ Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys softwa
 
 @N: CD720 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd":146:18:146:21|Setting time resolution to ps
 @N:"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":33:7:33:16|Top entity is set to top_lvr_fw.
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin64\c_vhdl.exe changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\location.map changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd\snps_haps_pkg.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std_textio.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\numeric.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd\umr_capim.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\arith.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\unsigned.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd\hyperents.vhd changed - recompiling
 File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd changed - recompiling
 File Z:\windows\lvr_fw\lvr_fw_2020\hdl\crc6.vhd changed - recompiling
 File Z:\windows\lvr_fw\lvr_fw_2020\hdl\IIR_FILT.vhd changed - recompiling
@@ -19,6 +30,21 @@ File Z:\windows\lvr_fw\lvr_fw_2020\hdl\Slow_PulseEn_Gen.vhd changed - recompilin
 File Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd changed - recompiling
 File Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd changed - recompiling
 VHDL syntax check successful!
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin64\c_vhdl.exe changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\location.map changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd\snps_haps_pkg.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std_textio.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\numeric.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd\umr_capim.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\arith.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\unsigned.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd\hyperents.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\proasic\proasic3.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\misc.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhdl_sim\synplify.vhd changed - recompiling
+File C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd\synattr.vhd changed - recompiling
 File Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd changed - recompiling
 @N: CD231 :"C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\lib\vhd2008\std1164.vhd":890:16:890:17|Using onehot encoding for type mvl9plus. For example, enumeration 'U' is mapped to "1000000000".
 @N: CD630 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":33:7:33:16|Synthesizing work.top_lvr_fw.rtl.
@@ -74,7 +100,7 @@ Post processing for proasic3.gnd.syn_black_box
 Post processing for proasic3.pllint.syn_black_box
 Post processing for work.ccc_glob_3xbuff.def_arch
 Post processing for work.top_lvr_fw.rtl
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":444:4:444:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":440:4:440:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":160:4:160:5|Trying to extract state machine for register spi_sm.
 Extracted state machine for register spi_sm
 State machine has 6 reachable states with original encodings of:
@@ -110,12 +136,12 @@ State machine has 3 reachable states with original encodings of:
    01
    10
 
-At c_vhdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 79MB peak: 80MB)
+At c_vhdl Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 78MB peak: 80MB)
 
-Process took 0h:00m:04s realtime, 0h:00m:03s cputime
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Fri Sep 18 08:51:31 2020
+# Fri Mar 12 15:21:22 2021
 
 ###########################################################]
 Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
@@ -126,16 +152,16 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Fri Sep 18 08:51:32 2020
+# Fri Mar 12 15:21:23 2021
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 3MB peak: 4MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 3MB peak: 4MB)
 
-Process took 0h:00m:05s realtime, 0h:00m:04s cputime
+Process took 0h:00m:02s realtime, 0h:00m:02s cputime
 
 Process completed successfully.
-# Fri Sep 18 08:51:32 2020
+# Fri Mar 12 15:21:23 2021
 
 ###########################################################]

@@ -52,7 +52,7 @@ Post processing for proasic3.gnd.syn_black_box
 Post processing for proasic3.pllint.syn_black_box
 Post processing for work.ccc_glob_3xbuff.def_arch
 Post processing for work.top_lvr_fw.rtl
-@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":444:4:444:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
+@W: CL169 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\top_lvr_fw.vhd":440:4:440:5|Pruning unused register dc50_test_strb_2. Make sure that there are no unused intermediate registers.
 @N: CL201 :"Z:\windows\lvr_fw\lvr_fw_2020\hdl\spi_slave.vhd":160:4:160:5|Trying to extract state machine for register spi_sm.
 Extracted state machine for register spi_sm
 State machine has 6 reachable states with original encodings of:

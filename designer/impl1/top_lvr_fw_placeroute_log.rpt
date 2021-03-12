@@ -2,24 +2,15 @@ Microsemi Libero Software
 Version: 11.9.2.1
 Release: v11.9 SP2
 
-Info: The design Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw.adb was last modified
-      by software version 11.9.2.1.
-Opened an existing Libero design Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw.adb.
+Info: The design top_lvr_fw.adb was last modified by software version 11.9.2.1.
+Opened an existing Libero design top_lvr_fw.adb.
 'BA_NAME' set to 'top_lvr_fw_ba'
-'KEEP_EXISTING_PHYSICAL_CONSTRAINTS' set to '1'
-'SDC_IMPORT_MERGE' set to '1'
 'IDE_DESIGNERVIEW_NAME' set to 'Impl1'
 'IDE_DESIGNERVIEW_COUNT' set to '1'
 'IDE_DESIGNERVIEW_REV0' set to 'Impl1'
 'IDE_DESIGNERVIEW_REVNUM0' set to '1'
 'IDE_DESIGNERVIEW_ROOTDIR' set to 'Z:\windows\lvr_fw\lvr_fw_2020\designer'
 'IDE_DESIGNERVIEW_LASTREV' set to '1'
-
-The Execute Script command succeeded ( 00:00:00 )
-Warning: You changed the output filename from
-         'Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw' to
-         'Z:\windows\lvr_fw\lvr_fw_2020\fw_files/experimental\ve_01_lvr_fw'. This may impact
-         Libero. Do you wish to continue? [YES]
 ***** Layout Variables *********************************************
 
 Mode: TIMING_DRIVEN
@@ -41,16 +32,16 @@ Global net placement completed successfully.
 
                         o - o - o - o - o - o
 
-Timing-driven Placer Started: Fri Sep 18 09:42:00 2020
+Timing-driven Placer Started: Fri Mar 12 15:21:56 2021
 
-Placer Finished: Fri Sep 18 09:42:53 2020
-Total Placer CPU Time:     00:00:53
+Placer Finished: Fri Mar 12 15:22:42 2021
+Total Placer CPU Time:     00:00:46
 
                         o - o - o - o - o - o
 
 
 Timing-driven Router 
-Design: top_lvr_fw                      Started: Fri Sep 18 09:43:01 2020
+Design: top_lvr_fw                      Started: Fri Mar 12 15:22:47 2021
 
  
 Iterative improvement...
@@ -58,88 +49,35 @@ Iterative improvement...
 Timing-driven Router completed successfully.
 
 Design: top_lvr_fw                      
-Finished: Fri Sep 18 09:43:31 2020
-Total CPU Time:     00:00:28            Total Elapsed Time: 00:00:30
-Total Memory Usage: 247.3 Mbytes
+Finished: Fri Mar 12 15:23:11 2021
+Total CPU Time:     00:00:22            Total Elapsed Time: 00:00:24
+Total Memory Usage: 247.9 Mbytes
                         o - o - o - o - o - o
 
 Loading the Timing data for the design.
 Finished loading the Timing data.
 
-The Layout command succeeded ( 00:01:43 )
+The Layout command succeeded ( 00:01:24 )
+Wrote status report to file: top_lvr_fw_place_and_route_report.txt
 
-The Export-map command succeeded ( 00:00:09 )
-Wrote to the file: Z:\windows\lvr_fw\lvr_fw_2020\fw_files\experimental\ve_01_lvr_fw.stp
-CHECKSUM: 589F
+The Report command succeeded ( 00:00:00 )
+Wrote globalnet report to file: top_lvr_fw_globalnet_report.txt
 
-The Generate programming file command succeeded ( 00:01:56 )
-Warning: You changed the output filename from
-         'Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw' to
-         'Z:\windows\lvr_fw\lvr_fw_2020\fw_files/experimental\ve-01_lvr_fw'. This may impact
-         Libero. Do you wish to continue? [YES]
-***** Layout Variables *********************************************
+The Report command succeeded ( 00:00:00 )
+Wrote globalusage report to file: top_lvr_fw_globalusage_report.txt
 
-Mode: TIMING_DRIVEN
-Power-driven Layout: OFF
-Incremental Placement: OFF
-Incremental Route: OFF
+The Report command succeeded ( 00:00:00 )
+Wrote iobank report to file: top_lvr_fw_iobank_report.txt
 
+The Report command succeeded ( 00:00:01 )
+Wrote pin report to file: top_lvr_fw_report_pin_byname.txt
 
+The Report command succeeded ( 00:00:00 )
+Wrote pin report to file: top_lvr_fw_report_pin_bynumber.txt
 
-Running I/O Bank Assigner.
-
-I/O Bank Assigner completed successfully.
- 
-
-Planning global net placement...
-
-
-Global net placement completed successfully.
-
-                        o - o - o - o - o - o
-
-Timing-driven Placer Started: Fri Sep 18 09:46:06 2020
-
-Placer Finished: Fri Sep 18 09:47:00 2020
-Total Placer CPU Time:     00:00:54
-
-                        o - o - o - o - o - o
-
-
-Timing-driven Router 
-Design: top_lvr_fw                      Started: Fri Sep 18 09:47:07 2020
-
- 
-Iterative improvement...
-
-Timing-driven Router completed successfully.
-
-Design: top_lvr_fw                      
-Finished: Fri Sep 18 09:47:40 2020
-Total CPU Time:     00:00:30            Total Elapsed Time: 00:00:33
-Total Memory Usage: 247.1 Mbytes
-                        o - o - o - o - o - o
-
-Loading the Timing data for the design.
-Finished loading the Timing data.
-
-The Layout command succeeded ( 00:01:47 )
-
-The Export-map command succeeded ( 00:00:10 )
-Wrote to the file: Z:\windows\lvr_fw\lvr_fw_2020\fw_files\experimental\ve-01_lvr_fw.stp
-CHECKSUM: 67DE
-
-The Generate programming file command succeeded ( 00:02:01 )
+The Report command succeeded ( 00:00:01 )
 Design saved to file Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw.adb.
-Wrote pin report to file:
-Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw_report_pin_byname.txt
 
-The Report command succeeded ( 00:00:01 )
-Wrote pin report to file:
-Z:\windows\lvr_fw\lvr_fw_2020\designer\impl1\top_lvr_fw_report_pin_bynumber.txt
-
-The Report command succeeded ( 00:00:01 )
-
-The Execute Script command succeeded ( 00:00:02 )
+The Execute Script command succeeded ( 00:01:29 )
 Design closed.
 
